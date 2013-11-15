@@ -15,6 +15,9 @@
 @implementation DisplayViewController
 
 @synthesize currentShow;
+@synthesize currentShowTitle;
+@synthesize currentShowHost;
+@synthesize currentShowTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    
+//	
+//    [self setTitle:[currentShow title]];
+//    [currentShowHost setText:[currentShow host]];
+//    [currentShowTime setText:[currentShow time]];
 }
 
 - (void)didReceiveMemoryWarning

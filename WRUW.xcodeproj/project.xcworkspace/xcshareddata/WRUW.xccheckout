@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>59878C87-791A-487C-9536-5A22F757C39A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WRUW</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</key>
+		<string>ssh://github.com/nickkjordan/wruw-iphone-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WRUW/WRUW.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</key>
+		<string>../../..</string>
+		<key>E17C8577-94B8-4173-875D-77CB974DD00A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/nickkjordan/wruw-iphone-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E17C8577-94B8-4173-875D-77CB974DD00A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WRUW</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Xcode</string>
+		</dict>
+	</array>
+</dict>
+</plist>
