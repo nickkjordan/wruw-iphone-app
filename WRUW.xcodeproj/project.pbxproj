@@ -49,7 +49,6 @@
 		01F981A7183537B20069C241 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A3183537B20069C241 /* TFHppleElement.m */; };
 		01F981A8183537B20069C241 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A5183537B20069C241 /* XPathQuery.m */; };
 		01F981AA183538D10069C241 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F981A9183538D10069C241 /* libxml2.dylib */; };
-		01F981AC183538DA0069C241 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F981AB183538DA0069C241 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +130,6 @@
 				0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
 				0170903E17DBA8F80005EC0F /* CoreGraphics.framework in Frameworks */,
 				01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */,
-				01F981AC183538DA0069C241 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +333,7 @@
 		0170902E17DBA8F80005EC0F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nick Jordan";
 			};
 			buildConfigurationList = 0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW" */;

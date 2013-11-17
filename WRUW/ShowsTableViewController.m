@@ -22,7 +22,7 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if ([segue.identifier isEqualToString:@"ShowSegue"]) {
+    if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
         DisplayViewController *dvc = [segue destinationViewController];
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
@@ -147,7 +147,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"ShowSegue" sender:self];
+    [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
 }
 
 /*

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+- (IBAction)streamPlay:(id)sender;
 
 @end

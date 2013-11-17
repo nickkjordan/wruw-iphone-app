@@ -7,9 +7,10 @@
 //
 
 #import "HomeViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface HomeViewController ()
-
+@interface HomeViewController () <AVAudioPlayerDelegate>
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation HomeViewController
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +37,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)streamPlay:(id)sender {
+    NSString *urlAddress = @"http://www.wruw.org/listen/stream.php?stream=live128";
+    NSURL *urlStream = [NSURL URLWithString:urlAddress];
+    AVPlayer *musicPlayer = [AVPlayer playerWithURL:urlStream];
+    [musicPlayer play];
+}
+
 
 @end

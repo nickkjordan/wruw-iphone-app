@@ -31,10 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//	
-//    [self setTitle:[currentShow title]];
-//    [currentShowHost setText:[currentShow host]];
-//    [currentShowTime setText:[currentShow time]];
+    
+    [self setTitle:currentShow.title];
+    [currentShowHost setText:currentShow.host];
+    [currentShowTime setText:currentShow.time];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+
 }
 
 - (void)didReceiveMemoryWarning
