@@ -16,5 +16,6 @@
 @synthesize time = _time;
 @synthesize genre = _genre;
 @synthesize lastShowUrl = _lastShowUrl;
+@synthesize day = _day;
 
 @end

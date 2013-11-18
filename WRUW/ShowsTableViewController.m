@@ -75,6 +75,8 @@
         time = [time stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         show.time = [time stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
+        show.day = [[show.time componentsSeparatedByString:@" "] objectAtIndex:0];
+        
         // 7
         show.url = [[showInfo firstChildWithTagName:@"a"] objectForKey:@"href"];
         
@@ -149,6 +151,12 @@
 {
     [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
 }
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return[NSArray arrayWithObjects:@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa", nil];
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.

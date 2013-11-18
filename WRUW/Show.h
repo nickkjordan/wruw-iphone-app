@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSString *lastShowUrl;
+@property (nonatomic, copy) NSString *day;
 
 @end

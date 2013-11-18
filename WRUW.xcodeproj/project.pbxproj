@@ -45,6 +45,12 @@
 		01CAC83417DFADC300057340 /* heart_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CAC83217DFADC300057340 /* heart_24.png */; };
 		01CAC83517DFADC300057340 /* home_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CAC83317DFADC300057340 /* home_24.png */; };
 		01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC43D717DBC685004916EA /* AVFoundation.framework */; };
+		01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DBF18396A7800BFA783 /* CoreMedia.framework */; };
+		01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC118396A8900BFA783 /* AVFoundation.framework */; };
+		01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC318396A9200BFA783 /* MediaPlayer.framework */; };
+		01F40DC618396DB000BFA783 /* 01 Twin Peaks Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01F40DC518396DB000BFA783 /* 01 Twin Peaks Theme.mp3 */; };
+		01F40DC818396DD800BFA783 /* 1-03 Tribulations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01F40DC718396DD800BFA783 /* 1-03 Tribulations.mp3 */; };
+		01F40DCB18398F1500BFA783 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F40DCA18398F1500BFA783 /* Playlist.m */; };
 		01F981A6183537B20069C241 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A1183537B20069C241 /* TFHpple.m */; };
 		01F981A7183537B20069C241 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A3183537B20069C241 /* TFHppleElement.m */; };
 		01F981A8183537B20069C241 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A5183537B20069C241 /* XPathQuery.m */; };
@@ -110,6 +116,13 @@
 		01CAC83217DFADC300057340 /* heart_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart_24.png; path = "../../../TWG Retina Icons/heart_24.png"; sourceTree = "<group>"; };
 		01CAC83317DFADC300057340 /* home_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_24.png; path = "../../../TWG Retina Icons/home_24.png"; sourceTree = "<group>"; };
 		01CC43D717DBC685004916EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
+		01F40DBF18396A7800BFA783 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		01F40DC118396A8900BFA783 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01F40DC318396A9200BFA783 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		01F40DC518396DB000BFA783 /* 01 Twin Peaks Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Twin Peaks Theme.mp3"; sourceTree = "<group>"; };
+		01F40DC718396DD800BFA783 /* 1-03 Tribulations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-03 Tribulations.mp3"; sourceTree = "<group>"; };
+		01F40DC918398F1500BFA783 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
+		01F40DCA18398F1500BFA783 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
 		01F981A0183537B20069C241 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		01F981A1183537B20069C241 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		01F981A2183537B20069C241 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -125,6 +138,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */,
+				01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */,
+				01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */,
 				01F981AA183538D10069C241 /* libxml2.dylib in Frameworks */,
 				0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */,
 				0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
@@ -178,6 +194,9 @@
 		0170903817DBA8F80005EC0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01F40DC318396A9200BFA783 /* MediaPlayer.framework */,
+				01F40DC118396A8900BFA783 /* AVFoundation.framework */,
+				01F40DBF18396A7800BFA783 /* CoreMedia.framework */,
 				01F981A9183538D10069C241 /* libxml2.dylib */,
 				01CC43D717DBC685004916EA /* AVFoundation.framework */,
 				0170903917DBA8F80005EC0F /* UIKit.framework */,
@@ -218,6 +237,8 @@
 				0170904217DBA8F80005EC0F /* InfoPlist.strings */,
 				0170904517DBA8F80005EC0F /* main.m */,
 				0170904717DBA8F80005EC0F /* WRUW-Prefix.pch */,
+				01F40DC718396DD800BFA783 /* 1-03 Tribulations.mp3 */,
+				01F40DC518396DB000BFA783 /* 01 Twin Peaks Theme.mp3 */,
 				0170904B17DBA8F80005EC0F /* Default.png */,
 				0170904D17DBA8F80005EC0F /* Default@2x.png */,
 				0170904F17DBA8F80005EC0F /* Default-568h@2x.png */,
@@ -271,6 +292,8 @@
 			children = (
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
+				01F40DC918398F1500BFA783 /* Playlist.h */,
+				01F40DCA18398F1500BFA783 /* Playlist.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,8 +391,10 @@
 				0170905A17DBA8F80005EC0F /* first@2x.png in Resources */,
 				0170905F17DBA8F80005EC0F /* second.png in Resources */,
 				0170906117DBA8F80005EC0F /* second@2x.png in Resources */,
+				01F40DC618396DB000BFA783 /* 01 Twin Peaks Theme.mp3 in Resources */,
 				01CAC82E17DFAD6500057340 /* heart_48.png in Resources */,
 				01CAC82F17DFAD6500057340 /* heart_64.png in Resources */,
+				01F40DC818396DD800BFA783 /* 1-03 Tribulations.mp3 in Resources */,
 				01CAC83017DFAD6500057340 /* home_48.png in Resources */,
 				01CAC83117DFAD6500057340 /* home_64.png in Resources */,
 				01CAC83417DFADC300057340 /* heart_24.png in Resources */,
@@ -422,6 +447,7 @@
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
+				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01418A9717DFA24B006F9EB4 /* FavoritesViewController.m in Sources */,
 				01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */,

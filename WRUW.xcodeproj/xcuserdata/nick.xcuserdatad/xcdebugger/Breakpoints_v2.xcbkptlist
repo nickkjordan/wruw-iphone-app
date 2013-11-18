@@ -6,17 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WRUW/ShowsTableViewController.m"
-            timestampString = "406319220.967619"
+            filePath = "WRUW/DisplayViewController.m"
+            timestampString = "406435911.325429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "@implementation ShowsTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-loadPlaylists"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
