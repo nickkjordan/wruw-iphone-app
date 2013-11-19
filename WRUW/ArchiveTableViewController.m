@@ -42,7 +42,7 @@
         
         for (int i = 1; i < [songInfo count] - 3; i++) {
             switch (i) {
-                case 3:
+                case 3: // set song.artist
                 {
                     NSString *artist = [[songInfo[i] firstChild] content];
                     artist = [artist stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -51,7 +51,7 @@
                 }
                     break;
                     
-                case 5:
+                case 5: // set song.title
                 {
                     NSString *songTitle = [[songInfo[i] firstChild] content];
                     songTitle = [songTitle stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -60,7 +60,7 @@
                 }
                     break;
                     
-                case 7:
+                case 7: // set song.album
                 {
                     NSString *album = [[songInfo[i] firstChild] content];
                     album = [album stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -69,7 +69,7 @@
                 }
                     break;
                     
-                case 9:
+                case 9: // set song.label
                 {
                     NSString *label = [[songInfo[i] firstChild] content];
                     label = [label stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -81,7 +81,8 @@
                 default:
                     break;
             }
-            
+            NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
+            song.image = [UIImage imageWithContentsOfFile:path];
         }
         
     }
@@ -148,6 +149,7 @@
     Song *thisSong = [_archive objectAtIndex:indexPath.row];
     
     [[cell textLabel] setText:thisSong.songName];
+    cell.imageView.image = thisSong.image;
     
     return cell;
 }

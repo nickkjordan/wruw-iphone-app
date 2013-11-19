@@ -14,5 +14,6 @@
 @synthesize album = _album;
 @synthesize songName = _songName;
 @synthesize label = _label;
+@synthesize image = _image;
 
 @end

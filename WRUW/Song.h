@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSString *songName;
 @property (nonatomic, copy) NSString *album;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) UIImage *image;
 
 @end
