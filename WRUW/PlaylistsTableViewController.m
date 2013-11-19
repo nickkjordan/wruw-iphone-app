@@ -18,6 +18,23 @@
 
 @synthesize currentShow, currentParser;
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showArchiveSegue"]) {
+        ArchiveTableViewController *atvc = [segue destinationViewController];
+        
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        
+        Playlist *p = [_playlists objectAtIndex:path.row];
+        
+        [atvc setCurrentPlaylist:p];
+        
+        NSString *showId = [[currentShow.url componentsSeparatedByString:@"="] objectAtIndex:1];
+        [atvc setCurrentShowId:showId];
+        [atvc setCurrentShowTitle:currentShow.title];
+    }
+}
+
 -(void)loadPlaylist {
     
     // 3
@@ -101,6 +118,11 @@
     [[cell textLabel] setText:thisPlaylist.date];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showArchiveSegue" sender:self];
 }
 
 /*

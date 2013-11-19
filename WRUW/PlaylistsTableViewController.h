@@ -10,6 +10,7 @@
 #import "Playlist.h"
 #import "TFHpple.h"
 #import "Show.h"
+#import "ArchiveTableViewController.h"
 
 @interface PlaylistsTableViewController : UITableViewController
 
