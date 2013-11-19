@@ -30,8 +30,6 @@
         
         [dvc setCurrentShow:c];
     }
-    
-    
 }
 
 -(void)loadShows {

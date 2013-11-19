@@ -27,6 +27,18 @@
 @synthesize currentShowTime;
 @synthesize currentShowInfo;
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showPlaylistsSegue"]) {
+        DisplayViewController *dvc = [segue destinationViewController];
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        
+        Show *c = [_objects objectAtIndex:path.row];
+        
+        [dvc setCurrentShow:c];
+    }
+}
+
 -(void)loadPlaylists {
     // 1
     NSURL *showsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/%@",currentShow.url]];
