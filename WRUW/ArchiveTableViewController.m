@@ -7,6 +7,7 @@
 //
 
 #import "ArchiveTableViewController.h"
+#import "SongTableViewCell.h"
 
 @interface ArchiveTableViewController ()
 {
@@ -106,6 +107,8 @@
     [super viewDidLoad];
     
     [self loadSongs];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -136,20 +139,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"SongTableViewCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SongTableViewCell *cell = (SongTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     Song *thisSong = [_archive objectAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:thisSong.songName];
-    cell.imageView.image = thisSong.image;
+    cell.nameLabel.text = thisSong.songName;
+    cell.albumLabel.text = thisSong.album;
+    cell.artistLabel.text = thisSong.artist;
+    cell.labelLabel.text = thisSong.label;
+    cell.thumbnailImageView.image = thisSong.image;
     
     return cell;
 }
