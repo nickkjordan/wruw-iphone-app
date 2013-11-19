@@ -10,12 +10,13 @@
 #import "TFHpple.h"
 #import "Playlist.h"
 #import <AVFoundation/AVFoundation.h>
+#import "PlaylistsTableViewController.h"
 
 @interface DisplayViewController () <AVAudioPlayerDelegate>
 {
     AVAudioPlayer *audioPlayer;
-    NSMutableArray *_playlists;
     UITableView *tableView;
+    TFHpple *showsParser;
 }
 @end
 
@@ -30,26 +31,22 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier isEqualToString:@"showPlaylistsSegue"]) {
-        DisplayViewController *dvc = [segue destinationViewController];
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        PlaylistsTableViewController *ptvc = [segue destinationViewController];
         
-        Show *c = [_objects objectAtIndex:path.row];
+        // pass along showsParser
         
-        [dvc setCurrentShow:c];
+        [ptvc setCurrentShow:currentShow];
+        [ptvc setCurrentParser:showsParser];
     }
 }
 
--(void)loadPlaylists {
+-(void)loadInfo {
     // 1
     NSURL *showsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/%@",currentShow.url]];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
     
     // 2
-    TFHpple *showsParser = [TFHpple hppleWithHTMLData:showsHtmlData];
-    
-    // 3
-    NSString *showsXpathQueryString = @"//*[@id='playlist']/p/select/option";
-    NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
+    showsParser = [TFHpple hppleWithHTMLData:showsHtmlData];
     
     NSString *infoXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/p[2]";
     NSArray *infoNode = [showsParser searchWithXPathQuery:infoXpathQueryString];
@@ -58,21 +55,7 @@
     showInfo = [showInfo stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     showInfo = [showInfo stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     [currentShowInfo setText:[showInfo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-
-    // 4
-    NSMutableArray *newPlaylists = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in showsNodes) {
-        // 5
-        Playlist *playlist = [[Playlist alloc] init];
-        [newPlaylists addObject:playlist];
-        
-        playlist.date = [[element firstChild] content];
-        playlist.idValue = [element objectForKey:@"value"];
-    }
     
-    // 8
-    _playlists = newPlaylists;
-    [tableView reloadData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -96,7 +79,7 @@
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
     
-    [self loadPlaylists];
+    [self loadInfo];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,38 +93,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return _playlists.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    Playlist *thisPlaylist = [_playlists objectAtIndex:indexPath.row];
-    
-    [[cell textLabel] setText:thisPlaylist.date];
-    
-    return cell;
-}
 
 #pragma mark - Audio player recent show
 

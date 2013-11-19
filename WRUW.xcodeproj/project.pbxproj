@@ -16,6 +16,7 @@
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
 		01418A9717DFA24B006F9EB4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9617DFA24B006F9EB4 /* FavoritesViewController.m */; };
 		01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9917DFA378006F9EB4 /* HomeViewController.m */; };
+		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170903E17DBA8F80005EC0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903D17DBA8F80005EC0F /* CoreGraphics.framework */; };
@@ -82,6 +83,8 @@
 		01418A9617DFA24B006F9EB4 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		01418A9817DFA378006F9EB4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		01418A9917DFA378006F9EB4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
+		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRUW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170903917DBA8F80005EC0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0170903B17DBA8F80005EC0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -220,6 +223,8 @@
 				011FECDC1836A506009B5BFA /* ShowsTableViewController.m */,
 				011FECDE1836A531009B5BFA /* DisplayViewController.h */,
 				011FECDF1836A531009B5BFA /* DisplayViewController.m */,
+				015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */,
+				015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */,
 				01CAC82917DFACE400057340 /* images */,
 				01418A9817DFA378006F9EB4 /* HomeViewController.h */,
 				01418A9917DFA378006F9EB4 /* HomeViewController.m */,
@@ -445,6 +450,7 @@
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
+				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
