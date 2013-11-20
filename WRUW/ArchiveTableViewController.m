@@ -29,7 +29,7 @@
     TFHpple *archiveParser = [TFHpple hppleWithHTMLData:archiveHtmlData];
     
     // 3
-    NSString *archiveXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/table/tr[position()>1]";
+    NSString *archiveXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/table/tr[position()>1 and not(contains(@id, 'comments'))]";
     NSArray *archiveNodes = [archiveParser searchWithXPathQuery:archiveXpathQueryString];
     
     // 4
