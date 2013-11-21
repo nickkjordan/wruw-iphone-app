@@ -83,7 +83,11 @@
     
     // 8
     _objects = newShows;
-    [self.tableView reloadData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -99,7 +103,9 @@
 {
     [super viewDidLoad];
     
-    [self loadShows];
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
+    
+    dispatch_async(myQueue, ^{ [self loadShows]; });
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -41,6 +41,11 @@
 }
 
 -(void)loadInfo {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [currentShowInfo setText:@""];
+    });
+    
     // 1
     NSURL *showsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/%@",currentShow.url]];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
@@ -54,7 +59,11 @@
     NSString *showInfo = [[infoNode[0] firstChild] content];
     showInfo = [showInfo stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     showInfo = [showInfo stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    [currentShowInfo setText:[showInfo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [currentShowInfo setText:[showInfo
+                                  stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    });
     
 }
 
@@ -79,7 +88,10 @@
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
     
-    [self loadInfo];
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
+    
+    dispatch_async(myQueue, ^{ [self loadInfo]; });
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

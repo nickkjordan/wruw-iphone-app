@@ -90,7 +90,11 @@
     
     // 8
     _archive = newSongs;
-    [self.tableView reloadData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -106,7 +110,9 @@
 {
     [super viewDidLoad];
     
-    [self loadSongs];
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
+    
+    dispatch_async(myQueue, ^{ [self loadSongs]; });
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
 
