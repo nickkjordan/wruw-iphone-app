@@ -15,5 +15,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *albumLabel;
 @property (nonatomic, weak) IBOutlet UILabel *labelLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
+@property (weak, nonatomic) IBOutlet UIView *socialView;
 
 @end
