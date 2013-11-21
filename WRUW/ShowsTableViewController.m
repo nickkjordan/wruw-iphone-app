@@ -14,6 +14,7 @@
 
 @interface ShowsTableViewController () {
     NSMutableArray *_objects;
+    UIActivityIndicatorView *spinner;
 }
 
 @end
@@ -34,7 +35,7 @@
 
 -(void)loadShows {
     // 1
-    NSURL *showsUrl = [NSURL URLWithString:@"http://www.wruw.org/guide/index.php?form_submit=1&g=&d="];
+    NSURL *showsUrl = [NSURL URLWithString:@"http://www.wruw.org/guide/index.php?form_submit=1&g=&d=5"];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
     
     // 2
@@ -85,6 +86,7 @@
     _objects = newShows;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [spinner stopAnimating];
         [self.tableView reloadData];
     });
 
@@ -102,6 +104,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
+    [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    spinner.color = [UIColor blueColor];
+    [self.view addSubview:spinner];
+    
+    [spinner startAnimating];
     
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     

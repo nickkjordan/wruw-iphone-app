@@ -12,6 +12,7 @@
 @interface ArchiveTableViewController ()
 {
     NSMutableArray *_archive;
+    UIActivityIndicatorView *spinner;
 }
 
 @end
@@ -92,6 +93,7 @@
     _archive = newSongs;
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [spinner stopAnimating];
         [self.tableView reloadData];
     });
     
@@ -109,6 +111,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
+    [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    spinner.color = [UIColor blueColor];
+    [self.view addSubview:spinner];
+    
+    [spinner startAnimating];
     
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
