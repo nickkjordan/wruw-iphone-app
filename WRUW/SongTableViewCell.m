@@ -90,7 +90,7 @@
         // Make a mutable copy.
         NSMutableArray *newContent = [oldContent mutableCopy];
         // Add new stuff.
-        [newContent addObject:currentSong];
+        [newContent insertObject:currentSong atIndex:0];
         // Now, write the plist:
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newContent];
         
