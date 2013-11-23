@@ -14,7 +14,9 @@
 		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
-		01418A9717DFA24B006F9EB4 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9617DFA24B006F9EB4 /* FavoritesViewController.m */; };
+		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
+		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
+		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9917DFA378006F9EB4 /* HomeViewController.m */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
@@ -86,8 +88,12 @@
 		011FECDC1836A506009B5BFA /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsTableViewController.m; sourceTree = "<group>"; };
 		011FECDE1836A531009B5BFA /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		011FECDF1836A531009B5BFA /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
-		01418A9517DFA24B006F9EB4 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
-		01418A9617DFA24B006F9EB4 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getFilePath.h; path = ../getFilePath.h; sourceTree = "<group>"; };
+		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = getFilePath.m; path = ../getFilePath.m; sourceTree = "<group>"; };
+		012C92681840025E00C94210 /* saveFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saveFavorite.h; sourceTree = "<group>"; };
+		012C92691840025E00C94210 /* saveFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saveFavorite.m; sourceTree = "<group>"; };
+		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
+		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		01418A9817DFA378006F9EB4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		01418A9917DFA378006F9EB4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
@@ -191,6 +197,17 @@
 			path = "App Icon [Squared]";
 			sourceTree = "<group>";
 		};
+		012C926B1840026600C94210 /* Save Data */ = {
+			isa = PBXGroup;
+			children = (
+				012C9265183FFF1900C94210 /* getFilePath.h */,
+				012C9266183FFF1900C94210 /* getFilePath.m */,
+				012C92681840025E00C94210 /* saveFavorite.h */,
+				012C92691840025E00C94210 /* saveFavorite.m */,
+			);
+			name = "Save Data";
+			sourceTree = "<group>";
+		};
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
@@ -236,12 +253,13 @@
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
+				012C926B1840026600C94210 /* Save Data */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01CAC82917DFACE400057340 /* images */,
+				012C926F184009E000C94210 /* FavoritesTableViewController.h */,
+				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
 				01418A9817DFA378006F9EB4 /* HomeViewController.h */,
 				01418A9917DFA378006F9EB4 /* HomeViewController.m */,
-				01418A9517DFA24B006F9EB4 /* FavoritesViewController.h */,
-				01418A9617DFA24B006F9EB4 /* FavoritesViewController.m */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUW;
@@ -496,7 +514,10 @@
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
+				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
+				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
+				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
@@ -504,7 +525,6 @@
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
-				01418A9717DFA24B006F9EB4 /* FavoritesViewController.m in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
 				01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */,
 			);

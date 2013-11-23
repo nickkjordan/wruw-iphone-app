@@ -54,6 +54,9 @@
                                 <state key="normal" image="heart_24.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="favoritePush:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="MNM-zF-j41"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO2-P7-1ec">
                                 <rect key="frame" x="139" y="22" width="24" height="24"/>
@@ -84,6 +87,7 @@
             <connections>
                 <outlet property="albumLabel" destination="IVG-7r-fYJ" id="V6c-YE-0HD"/>
                 <outlet property="artistLabel" destination="Gy3-MY-7r9" id="Asu-8v-YMB"/>
+                <outlet property="favButton" destination="yb1-nU-GID" id="oBb-3m-hxS"/>
                 <outlet property="labelLabel" destination="6dX-aq-EF6" id="xaF-Xd-5gR"/>
                 <outlet property="nameLabel" destination="r9l-lD-8hn" id="oiV-Wl-1Rj"/>
                 <outlet property="socialView" destination="xkC-vs-adv" id="HPH-tJ-5br"/>

@@ -16,5 +16,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *labelLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @property (weak, nonatomic) IBOutlet UIView *socialView;
+- (IBAction)favoritePush:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favButton;
+
 
 @end

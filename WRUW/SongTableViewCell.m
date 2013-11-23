@@ -7,10 +7,11 @@
 //
 
 #import "SongTableViewCell.h"
+#import "Song.h"
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, labelLabel, thumbnailImageView, socialView;
+@synthesize nameLabel, artistLabel, albumLabel, labelLabel, thumbnailImageView, socialView, favButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -72,4 +73,47 @@
     }
 }
 
+-(NSString *) getFilePath {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favorites.plist"];
+}
+
+-(void) saveFavorite:(Song *)currentSong {
+    
+    NSString *path = [self getFilePath];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    
+    if (fileExists) {
+        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
+        // Get current content.
+        NSMutableArray *oldContent = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+        // Make a mutable copy.
+        NSMutableArray *newContent = [oldContent mutableCopy];
+        // Add new stuff.
+        [newContent addObject:currentSong];
+        // Now, write the plist:
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newContent];
+        
+        [data writeToFile:path atomically:YES];
+    } else {
+        NSMutableArray *newFavorite = [[NSMutableArray alloc] initWithObjects:currentSong, nil];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorite];
+        
+        [data writeToFile:path atomically:YES];
+    }
+    
+}
+
+- (IBAction)favoritePush:(id)sender {
+    Song *currentSong = [Song alloc];
+    currentSong.artist = artistLabel.text;
+    currentSong.album = albumLabel.text;
+    currentSong.songName = nameLabel.text;
+    currentSong.label = labelLabel.text;
+    currentSong.image = thumbnailImageView.image;
+    [self saveFavorite:currentSong];
+    [UIView animateWithDuration:0.5 animations:^{
+        favButton.backgroundColor = [UIColor redColor];
+    }];
+}
 @end

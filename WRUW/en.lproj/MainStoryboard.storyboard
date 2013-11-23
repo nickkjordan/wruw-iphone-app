@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller - Favorites-->
-        <scene sceneID="ats-h6-GNM">
-            <objects>
-                <viewController title="Favorites" id="gna-Ro-HjJ" customClass="FavoritesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c18-k5-N6G"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lq4-fT-XXJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cI5-aU-8eJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart_24.png" id="pGg-Qy-uLb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKh-Kk-ZnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="987" y="62"/>
-        </scene>
         <!--Home View Controller - Home-->
         <scene sceneID="ASA-6V-ePb">
             <objects>
@@ -54,6 +35,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-hk-vK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="503" y="62"/>
+        </scene>
+        <!--Favorites Table View Controller - Favorites-->
+        <scene sceneID="VOb-Hb-W5f">
+            <objects>
+                <tableViewController id="GQ4-SB-Vkh" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="H8w-kU-TKS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="BwZ-fh-mNL">
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwZ-fh-mNL" id="yFg-eu-CVV">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GQ4-SB-Vkh" id="SfR-xb-HsT"/>
+                            <outlet property="delegate" destination="GQ4-SB-Vkh" id="NgN-5L-90Z"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="5rb-DD-tVN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmJ-ej-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="71"/>
         </scene>
         <!--Shows Table View Controller - WRUW Shows-->
         <scene sceneID="CrZ-Yg-l7n">
@@ -289,7 +299,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9f1-At-XRl" kind="relationship" relationship="viewControllers" id="pCF-ns-dJV"/>
-                        <segue destination="gna-Ro-HjJ" kind="relationship" relationship="viewControllers" id="0Hh-76-qSW"/>
+                        <segue destination="GQ4-SB-Vkh" kind="relationship" relationship="viewControllers" id="cgK-bz-MPR"/>
                         <segue destination="fvE-r2-zyz" kind="relationship" relationship="viewControllers" id="1ol-g7-tTG"/>
                     </connections>
                 </tabBarController>
@@ -297,11 +307,11 @@
             </objects>
             <point key="canvasLocation" x="-31" y="389"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Programs-->
         <scene sceneID="XBk-md-lI5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvE-r2-zyz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WRq-AE-rnn"/>
+                    <tabBarItem key="tabBarItem" title="Programs" id="WRq-AE-rnn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ltq-Rs-II2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,7 +328,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart_24.png" width="24" height="24"/>
         <image name="home_24.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
