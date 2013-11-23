@@ -173,6 +173,20 @@
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isSelected]) {
+        // Deselect manually.
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+        return nil;
+    }
+    
+    return indexPath;
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
