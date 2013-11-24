@@ -99,7 +99,7 @@
     
     cell.nameLabel.text = thisSong.songName;
     cell.albumLabel.text = thisSong.album;
-    cell.artistLabel.text = [NSString stringWithFormat:@"by %@", thisSong.artist];
+    cell.artistLabel.text = thisSong.artist;
     cell.labelLabel.text = thisSong.label;
     cell.thumbnailImageView.image = thisSong.image;
     

@@ -11,7 +11,7 @@
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, labelLabel, thumbnailImageView, socialView, favButton;
+@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -45,6 +45,10 @@
                           animations:^{
                               labelLabel.alpha = 0;
                           }];
+        [UILabel animateWithDuration:0.5
+                          animations:^{
+                              byLabel.alpha = 0;
+                          }];
         [UIView animateWithDuration:0.5
                           animations:^{
                               socialView.alpha = 1;
@@ -65,6 +69,10 @@
         [UILabel animateWithDuration:0.5
                           animations:^{
                               labelLabel.alpha = 1;
+                          }];
+        [UILabel animateWithDuration:0.5
+                          animations:^{
+                              byLabel.alpha = 1;
                           }];
         [UIView animateWithDuration:0.5
                          animations:^{
