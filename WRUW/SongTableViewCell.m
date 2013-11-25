@@ -8,10 +8,15 @@
 
 #import "SongTableViewCell.h"
 #import "Song.h"
+#import <Social/Social.h>
+
+@interface SongTableViewCell(){
+}
+@end
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton;
+@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton,ctrl;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -124,4 +129,30 @@
         favButton.backgroundColor = [UIColor redColor];
     }];
 }
+
+- (IBAction)composeFBPost:(id)sender {
+    
+   // if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *facebookPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        Song *currentSong = [Song alloc];
+        currentSong.artist = artistLabel.text;
+        currentSong.songName = nameLabel.text;
+        
+        [facebookPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",currentSong.songName,currentSong.artist]];
+        [ctrl presentViewController:facebookPost animated:YES completion:nil];
+   // }
+    
+    
+    
+}
+
+-(id)initWithViewController:(UITableViewController*)c {
+    
+    if (self = [super init]) {
+        ctrl = c;
+    }
+    return self;
+}
+
 @end

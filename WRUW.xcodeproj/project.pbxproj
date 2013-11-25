@@ -17,6 +17,7 @@
 		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
 		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
+		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9917DFA378006F9EB4 /* HomeViewController.m */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
@@ -94,6 +95,7 @@
 		012C92691840025E00C94210 /* saveFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saveFavorite.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		01418A9817DFA378006F9EB4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		01418A9917DFA378006F9EB4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0135505818430BB300534E5E /* Social.framework in Frameworks */,
 				01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */,
 				01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */,
 				01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */,
@@ -231,6 +234,7 @@
 		0170903817DBA8F80005EC0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0135505718430BB300534E5E /* Social.framework */,
 				01F40DC318396A9200BFA783 /* MediaPlayer.framework */,
 				01F40DC118396A8900BFA783 /* AVFoundation.framework */,
 				01F40DBF18396A7800BFA783 /* CoreMedia.framework */,

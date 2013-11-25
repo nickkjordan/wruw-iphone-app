@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIView *socialView;
 - (IBAction)favoritePush:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
+- (IBAction)composeFBPost:(id)sender;
 
+-(id)initWithViewController:(UIViewController*)c;
+@property (weak) UITableViewController *ctrl;
 
 @end

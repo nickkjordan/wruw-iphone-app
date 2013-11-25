@@ -8,6 +8,7 @@
 
 #import "ArchiveTableViewController.h"
 #import "SongTableViewCell.h"
+#import <Social/Social.h>
 
 @interface ArchiveTableViewController ()
 {
@@ -155,6 +156,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SongTableViewCell";
+    UITableViewController *c = self;
     
     SongTableViewCell *cell = (SongTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -169,6 +171,7 @@
     cell.artistLabel.text = thisSong.artist;
     cell.labelLabel.text = thisSong.label;
     cell.thumbnailImageView.image = thisSong.image;
+    cell.ctrl = c;
     
     return cell;
 }

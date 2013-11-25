@@ -78,6 +78,9 @@
                                 <state key="normal" image="facebook.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="composeFBPost:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="vU2-VG-CtA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-UE-9aG">
                                 <rect key="frame" x="139" y="61" width="24" height="24"/>
