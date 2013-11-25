@@ -132,19 +132,32 @@
 
 - (IBAction)composeFBPost:(id)sender {
     
-   // if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *facebookPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        Song *currentSong = [Song alloc];
-        currentSong.artist = artistLabel.text;
-        currentSong.songName = nameLabel.text;
+        NSString *artist = artistLabel.text;
+        NSString *song = nameLabel.text;
+        UIImage *albumArt = thumbnailImageView.image;
         
-        [facebookPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",currentSong.songName,currentSong.artist]];
+        [facebookPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
+        [facebookPost addURL:[NSURL URLWithString:@"wruw.org"]];
+        [facebookPost addImage:albumArt];
         [ctrl presentViewController:facebookPost animated:YES completion:nil];
-   // }
     
+}
+
+- (IBAction)composeTwitterPost:(id)sender {
     
-    
+        SLComposeViewController *twitterPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        NSString *artist = artistLabel.text;
+        NSString *song = nameLabel.text;
+        UIImage *albumArt = thumbnailImageView.image;
+        
+        [twitterPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
+        [twitterPost addURL:[NSURL URLWithString:@"wruw.org"]];
+        [twitterPost addImage:albumArt];
+        [ctrl presentViewController:twitterPost animated:YES completion:nil];
+
 }
 
 -(id)initWithViewController:(UITableViewController*)c {
