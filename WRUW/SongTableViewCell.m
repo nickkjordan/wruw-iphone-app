@@ -102,13 +102,12 @@
         // Make a mutable copy.
 //        NSMutableArray *newContent = [oldContent mutableCopy];
         
-        BOOL why = [content containsObject:currentSong];
-        
-        if (!why) {
+        if ([content containsObject:currentSong]) {
+            
+            [content removeObject:currentSong];
+        } else {
             // Add new stuff.
             [content insertObject:currentSong atIndex:0];
-        } else {
-            [content removeObjectIdenticalTo:currentSong];
         }
         
         // Now, write the plist:
@@ -121,7 +120,8 @@
         
         [data writeToFile:path atomically:YES];
     }
-    
+ 
+    [ctrl.tableView reloadData];
 }
 
 - (IBAction)favoritePush:(id)sender {
