@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) UIImage *image;
 
+-(BOOL)isEqualToSong:(Song *)song;
+
 @end

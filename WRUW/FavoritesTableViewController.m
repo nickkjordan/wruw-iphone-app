@@ -104,6 +104,7 @@
     cell.artistLabel.text = thisSong.artist;
     cell.labelLabel.text = thisSong.label;
     cell.thumbnailImageView.image = thisSong.image;
+    cell.currentSong = thisSong;
     cell.ctrl = c;
 
     return cell;

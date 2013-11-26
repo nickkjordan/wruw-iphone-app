@@ -7,7 +7,6 @@
 //
 
 #import "SongTableViewCell.h"
-#import "Song.h"
 #import <Social/Social.h>
 
 @interface SongTableViewCell(){
@@ -99,13 +98,21 @@
     if (fileExists) {
         NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
         // Get current content.
-        NSMutableArray *oldContent = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+        NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
         // Make a mutable copy.
-        NSMutableArray *newContent = [oldContent mutableCopy];
-        // Add new stuff.
-        [newContent insertObject:currentSong atIndex:0];
+//        NSMutableArray *newContent = [oldContent mutableCopy];
+        
+        BOOL why = [content containsObject:currentSong];
+        
+        if (!why) {
+            // Add new stuff.
+            [content insertObject:currentSong atIndex:0];
+        } else {
+            [content removeObjectIdenticalTo:currentSong];
+        }
+        
         // Now, write the plist:
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newContent];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:content];
         
         [data writeToFile:path atomically:YES];
     } else {
@@ -118,13 +125,8 @@
 }
 
 - (IBAction)favoritePush:(id)sender {
-    Song *currentSong = [Song alloc];
-    currentSong.artist = artistLabel.text;
-    currentSong.album = albumLabel.text;
-    currentSong.songName = nameLabel.text;
-    currentSong.label = labelLabel.text;
-    currentSong.image = thumbnailImageView.image;
-    [self saveFavorite:currentSong];
+
+    [self saveFavorite:_currentSong];
     [UIView animateWithDuration:0.5 animations:^{
         favButton.backgroundColor = [UIColor redColor];
     }];

@@ -35,4 +35,30 @@
     [encoder encodeObject:_image forKey:@"image"];
 }
 
+- (BOOL)isEqualToSong:(Song *)song {
+    
+    if(!song) {
+        return NO;
+    }
+    
+    BOOL haveEqualArtistNames = (!self.artist && !song.artist) || [self.artist isEqualToString:song.artist];
+    BOOL haveEqualSongTitles = (!self.songName && !song.songName) || [self.songName isEqualToString:song.songName];
+    
+    return haveEqualArtistNames && haveEqualSongTitles;
+}
+
+#pragma mark - NSObject
+
+- (NSUInteger)hash {
+    return [self.artist hash] ^ [self.songName hash];
+}
+
+-(BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [self isEqualToSong:other];
+}
+
 @end

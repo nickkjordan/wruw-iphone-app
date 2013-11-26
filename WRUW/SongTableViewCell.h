@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Song.h"
 
 @interface SongTableViewCell : UITableViewCell
 
@@ -24,5 +25,6 @@
 
 -(id)initWithViewController:(UIViewController*)c;
 @property (weak) UITableViewController *ctrl;
+@property (weak) Song *currentSong;
 
 @end
