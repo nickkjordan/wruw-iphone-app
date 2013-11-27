@@ -162,6 +162,14 @@
 
 }
 
+- (IBAction)searchSong:(id)sender {
+    
+    NSString *artist = [artistLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *title = [nameLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/search?q=%@+%@", title, artist]]];
+}
+
 -(id)initWithViewController:(UITableViewController*)c {
     
     if (self = [super init]) {
