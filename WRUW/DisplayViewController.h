@@ -11,9 +11,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
+#import <EventKitUI/EventKitUI.h>
 
 @interface DisplayViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate>
+<UITableViewDataSource,UITableViewDelegate,EKEventEditViewDelegate>
 
 // Show info
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTitle;
@@ -32,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *sliderOutlet;
 
 - (IBAction)togglePlayPauseTapped:(id)sender;
+- (IBAction)calendarTap:(id)sender;
 
 @property (strong, nonatomic) Show *currentShow;
 

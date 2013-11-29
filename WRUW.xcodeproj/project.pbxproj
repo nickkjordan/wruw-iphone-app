@@ -44,6 +44,9 @@
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
+		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
+		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
+		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
 		01CAC82E17DFAD6500057340 /* heart_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CAC82A17DFAD6500057340 /* heart_48.png */; };
 		01CAC82F17DFAD6500057340 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CAC82B17DFAD6500057340 /* heart_64.png */; };
 		01CAC83017DFAD6500057340 /* home_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CAC82C17DFAD6500057340 /* home_48.png */; };
@@ -131,6 +134,9 @@
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
+		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
+		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		01CAC82A17DFAD6500057340 /* heart_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart_48.png; path = "../../../TWG Retina Icons/heart_48.png"; sourceTree = "<group>"; };
 		01CAC82B17DFAD6500057340 /* heart_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart_64.png; path = "../../../TWG Retina Icons/heart_64.png"; sourceTree = "<group>"; };
 		01CAC82C17DFAD6500057340 /* home_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_48.png; path = "../../../TWG Retina Icons/home_48.png"; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */,
+				01C435071846BA220030B01F /* EventKit.framework in Frameworks */,
 				0135505818430BB300534E5E /* Social.framework in Frameworks */,
 				01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */,
 				01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */,
@@ -234,6 +242,8 @@
 		0170903817DBA8F80005EC0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01C435081846BBAC0030B01F /* EventKitUI.framework */,
+				01C435061846BA220030B01F /* EventKit.framework */,
 				0135505718430BB300534E5E /* Social.framework */,
 				01F40DC318396A9200BFA783 /* MediaPlayer.framework */,
 				01F40DC118396A8900BFA783 /* AVFoundation.framework */,
@@ -333,6 +343,7 @@
 		01CAC82917DFACE400057340 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				01C435041846B7CF0030B01F /* calendar_add.png */,
 				01FB78A5183EA89A0088C972 /* magnifier_48.png */,
 				01FB78A1183EA7EE0088C972 /* facebook.png */,
 				01FB78A2183EA7EE0088C972 /* twitter.png */,
@@ -467,6 +478,7 @@
 				01CAC82E17DFAD6500057340 /* heart_48.png in Resources */,
 				01CAC82F17DFAD6500057340 /* heart_64.png in Resources */,
 				01F40DC818396DD800BFA783 /* 1-03 Tribulations.mp3 in Resources */,
+				01C435051846B7CF0030B01F /* calendar_add.png in Resources */,
 				01CAC83017DFAD6500057340 /* home_48.png in Resources */,
 				01CAC83117DFAD6500057340 /* home_64.png in Resources */,
 				01CAC83417DFADC300057340 /* heart_24.png in Resources */,
