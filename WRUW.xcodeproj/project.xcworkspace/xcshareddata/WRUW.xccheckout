@@ -5,11 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>59878C87-791A-487C-9536-5A22F757C39A</string>
+	<string>517C2618-E429-482F-A816-C615E0D02DFC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>WRUW</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>4A6B27F9-9EBD-401E-B5A6-54648E156C36</key>
+		<string>https://github.com/nickkjordan/wruw-iphone-app.git</string>
 		<key>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</key>
 		<string>ssh://github.com/nickkjordan/wruw-iphone-app.git</string>
 	</dict>
@@ -17,13 +19,13 @@
 	<string>WRUW/WRUW.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>4A6B27F9-9EBD-401E-B5A6-54648E156C36</key>
+		<string>../..</string>
 		<key>9AB92D09-0CCE-496E-AB2D-D74AA31F5D83</key>
 		<string>../../..</string>
-		<key>E17C8577-94B8-4173-875D-77CB974DD00A</key>
-		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/nickkjordan/wruw-iphone-app.git</string>
+	<string>https://github.com/nickkjordan/wruw-iphone-app.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +36,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E17C8577-94B8-4173-875D-77CB974DD00A</string>
+			<string>4A6B27F9-9EBD-401E-B5A6-54648E156C36</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WRUW</string>
 		</dict>
