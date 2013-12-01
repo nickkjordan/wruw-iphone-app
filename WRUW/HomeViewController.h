@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFHpple.h"
 
 @interface HomeViewController : UIViewController
 - (IBAction)streamPlay:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentShowTitle;
+@property (weak, nonatomic) IBOutlet UITextView *currentShowDescription;
 @end

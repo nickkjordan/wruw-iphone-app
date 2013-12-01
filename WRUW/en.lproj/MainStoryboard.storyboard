@@ -57,6 +57,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home_24.png" id="vpH-kB-jNA"/>
+                    <connections>
+                        <outlet property="currentShowDescription" destination="j3G-Pj-yks" id="Fie-wi-oVJ"/>
+                        <outlet property="currentShowTitle" destination="wCc-V1-efe" id="Tdz-pX-92X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-hk-vK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
