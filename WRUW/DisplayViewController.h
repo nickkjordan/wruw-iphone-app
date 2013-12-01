@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *durationOutlet;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderOutlet;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
 - (IBAction)togglePlayPauseTapped:(id)sender;
 - (IBAction)calendarTap:(id)sender;
