@@ -167,7 +167,17 @@
                                 <rect key="frame" x="20" y="337" width="280" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-lU-U3H">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="listen to the last show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="112-Od-mft">
+                                        <rect key="frame" x="79" y="95" width="122" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="RsM-RW-h3P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsC-lU-U3H">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -195,37 +205,33 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="listen to the last show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="112-Od-mft">
-                                        <rect key="frame" x="0.0" y="97" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="112-Od-mft" firstAttribute="bottom" secondItem="fsC-lU-U3H" secondAttribute="bottom" constant="20" id="Yal-hT-4IK"/>
+                                    <constraint firstItem="fsC-lU-U3H" firstAttribute="top" secondItem="etM-Wt-RiE" secondAttribute="top" id="h6H-fr-zVB"/>
+                                    <constraint firstAttribute="centerX" secondItem="112-Od-mft" secondAttribute="centerX" id="hiv-aZ-GYQ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="8" symbolic="YES" id="11M-XE-0lp"/>
                             <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="AHF-7L-ulT" secondAttribute="top" constant="180" id="1Zw-Ed-c4T"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" id="63n-G6-5g8"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="8" symbolic="YES" id="CBs-VD-Lmp"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" id="6Mm-dS-hYB"/>
                             <constraint firstItem="pp8-CJ-X57" firstAttribute="centerY" secondItem="Od8-hO-PhB" secondAttribute="centerY" id="D4n-kS-ISA"/>
                             <constraint firstAttribute="trailing" secondItem="dyT-1h-vgG" secondAttribute="trailing" constant="15" id="HM0-ra-kxv"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="INS-2R-JCi"/>
                             <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="Ihe-eU-SjO"/>
                             <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="Iz2-PG-msx"/>
                             <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" symbolic="YES" id="NOP-Q7-60u"/>
-                            <constraint firstAttribute="trailing" secondItem="etM-Wt-RiE" secondAttribute="trailing" constant="20" id="Nix-Fx-Snl"/>
                             <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" constant="8" symbolic="YES" id="RLK-Re-Kmz"/>
                             <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="WZ3-cV-bHq"/>
                             <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="CeB-wA-C5l" secondAttribute="bottom" constant="20" id="ZzF-rQ-W42"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="GrK-1E-viR" secondAttribute="leading" id="aSU-Gc-5gh"/>
                             <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="cj3-Zy-45s"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="GrK-1E-viR" secondAttribute="leading" id="kTI-qh-MVi"/>
                             <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="Od8-hO-PhB" secondAttribute="bottom" constant="18" id="kdi-ss-SaW"/>
                             <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" symbolic="YES" id="rUW-SI-CRc"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="29" id="tju-rh-Mdj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">
