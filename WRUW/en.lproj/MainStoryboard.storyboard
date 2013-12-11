@@ -34,14 +34,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-hk-vK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="62"/>
+            <point key="canvasLocation" x="483" y="-671"/>
         </scene>
-        <!--Favorites Table View Controller - Favorites-->
+        <!--Favorites Table View Controller - Favorite Songs-->
         <scene sceneID="VOb-Hb-W5f">
             <objects>
-                <tableViewController id="GQ4-SB-Vkh" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Favorite Songs" id="GQ4-SB-Vkh" customClass="FavoritesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="H8w-kU-TKS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -63,7 +63,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmJ-ej-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="71"/>
+            <point key="canvasLocation" x="1114" y="-207"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="jKG-Y3-lkJ">
+            <objects>
+                <viewController id="t4b-uO-2kZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6ns-I9-tau"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bdd-Sd-vM7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1e-ht-Hk9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-6f-UvG">
+                                <rect key="frame" x="99" y="20" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWY-bV-IWP">
+                                <rect key="frame" x="0.0" y="56" width="320" height="463"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="GQ4-SB-Vkh" kind="embed" id="VdB-g2-UMD"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="p7s-zB-iIm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1L0-rv-W1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="127"/>
         </scene>
         <!--Shows Table View Controller - WRUW Shows-->
         <scene sceneID="CrZ-Yg-l7n">
@@ -332,7 +369,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9f1-At-XRl" kind="relationship" relationship="viewControllers" id="pCF-ns-dJV"/>
-                        <segue destination="GQ4-SB-Vkh" kind="relationship" relationship="viewControllers" id="cgK-bz-MPR"/>
+                        <segue destination="t4b-uO-2kZ" kind="relationship" relationship="viewControllers" id="PBx-1i-S0S"/>
                         <segue destination="fvE-r2-zyz" kind="relationship" relationship="viewControllers" id="1ol-g7-tTG"/>
                     </connections>
                 </tabBarController>
