@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="-207"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--Segmented View Controller - Item-->
         <scene sceneID="jKG-Y3-lkJ">
             <objects>
-                <viewController id="t4b-uO-2kZ" sceneMemberID="viewController">
+                <viewController id="t4b-uO-2kZ" customClass="SegmentedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ns-I9-tau"/>
                         <viewControllerLayoutGuide type="bottom" id="Bdd-Sd-vM7"/>
@@ -97,6 +97,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="p7s-zB-iIm"/>
+                    <connections>
+                        <outlet property="conatinerView" destination="CWY-bV-IWP" id="9z1-CU-1Bh"/>
+                        <outlet property="favoritesItem" destination="kaD-6f-UvG" id="SrX-xE-Coc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1L0-rv-W1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
