@@ -10,7 +10,12 @@
 
 @interface SegmentedViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *conatinerView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *favoritesItem;
+- (IBAction)switchContainerView:(id)sender;
+
+@property (weak, nonatomic) UITableViewController *favSongsVC;
+@property (weak, nonatomic) UITableViewController *favShowsVC;
+@property (weak, nonatomic) UIViewController *currentVC;
 
 @end
