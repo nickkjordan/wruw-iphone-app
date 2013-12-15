@@ -44,6 +44,7 @@
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
+		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -62,6 +63,7 @@
 		01F40DC618396DB000BFA783 /* 01 Twin Peaks Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01F40DC518396DB000BFA783 /* 01 Twin Peaks Theme.mp3 */; };
 		01F40DC818396DD800BFA783 /* 1-03 Tribulations.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01F40DC718396DD800BFA783 /* 1-03 Tribulations.mp3 */; };
 		01F40DCB18398F1500BFA783 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F40DCA18398F1500BFA783 /* Playlist.m */; };
+		01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */; };
 		01F981A6183537B20069C241 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A1183537B20069C241 /* TFHpple.m */; };
 		01F981A7183537B20069C241 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A3183537B20069C241 /* TFHppleElement.m */; };
 		01F981A8183537B20069C241 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A5183537B20069C241 /* XPathQuery.m */; };
@@ -134,6 +136,8 @@
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
+		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
+		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -154,6 +158,8 @@
 		01F40DC718396DD800BFA783 /* 1-03 Tribulations.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-03 Tribulations.mp3"; sourceTree = "<group>"; };
 		01F40DC918398F1500BFA783 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
 		01F40DCA18398F1500BFA783 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
+		01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShowsTableViewController.h; sourceTree = "<group>"; };
+		01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShowsTableViewController.m; sourceTree = "<group>"; };
 		01F981A0183537B20069C241 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		01F981A1183537B20069C241 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		01F981A2183537B20069C241 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
@@ -267,11 +273,15 @@
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
+				01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */,
+				01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */,
 				012C926B1840026600C94210 /* Save Data */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01CAC82917DFACE400057340 /* images */,
 				012C926F184009E000C94210 /* FavoritesTableViewController.h */,
 				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
+				01A254A8185990000069AB3F /* SegmentedViewController.h */,
+				01A254A9185990000069AB3F /* SegmentedViewController.m */,
 				01418A9817DFA378006F9EB4 /* HomeViewController.h */,
 				01418A9917DFA378006F9EB4 /* HomeViewController.m */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
@@ -539,6 +549,8 @@
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
+				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
+				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,

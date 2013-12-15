@@ -1,0 +1,13 @@
+//
+//  FavoriteShowsTableViewController.h
+//  WRUW
+//
+//  Created by Nick Jordan on 12/13/13.
+//  Copyright (c) 2013 Nick Jordan. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface FavoriteShowsTableViewController : UITableViewController
+
+@end

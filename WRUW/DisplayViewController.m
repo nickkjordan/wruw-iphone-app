@@ -64,6 +64,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [currentShowInfo setText:[showInfo
                                   stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+        self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
     });
     
 }
