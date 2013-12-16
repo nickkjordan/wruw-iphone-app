@@ -47,14 +47,14 @@
             if (self.currentVC == self.favShowsVC) {
                 [self addChildViewController:self.favSongsVC];
                 self.favSongsVC.view.frame = self.containerView.bounds;
-                [self moveToNewController:self.favSongsVC];
+                [self moveToNewController:self.favSongsVC direction:0];
             }
             break;
         case 1:
             if (self.currentVC == self.favSongsVC) {
                 [self addChildViewController:self.favShowsVC];
                 self.favShowsVC.view.frame = self.containerView.bounds;
-                [self moveToNewController:self.favShowsVC];
+                [self moveToNewController:self.favShowsVC direction:1];
             }
             break;
         default:
@@ -62,14 +62,33 @@
     }
 }
 
--(void)moveToNewController:(UIViewController *) newController {
+-(void)moveToNewController:(UIViewController *) newController direction:(int) param{
+    // direction param:
+    // 1 = right to left (Shows displayed)
+    // 0 = left to right (Songs displayed)
     [self.currentVC willMoveToParentViewController:nil];
-    [self transitionFromViewController:self.currentVC toViewController:newController duration:.6 options:UIViewAnimationOptionTransitionFlipFromLeft animations:nil
-                            completion:^(BOOL finished) {
-                                [self.currentVC removeFromParentViewController];
-                                [newController didMoveToParentViewController:self];
-                                self.currentVC = newController;
-                            }];
+    
+    if (param) {
+        [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
+                                   options:UIViewAnimationOptionTransitionFlipFromRight
+                                animations:nil
+                                completion:^(BOOL finished) {
+                                    [self.currentVC removeFromParentViewController];
+                                    [newController didMoveToParentViewController:self];
+                                    self.currentVC = newController;
+                                }];
+    } else {
+        [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
+                                   options:UIViewAnimationOptionTransitionFlipFromLeft
+                                animations:nil
+                                completion:^(BOOL finished) {
+                                    [self.currentVC removeFromParentViewController];
+                                    [newController didMoveToParentViewController:self];
+                                    self.currentVC = newController;
+                                }];
+    }
+    
+    
 }
 
 @end
