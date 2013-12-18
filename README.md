@@ -9,5 +9,5 @@ The purpose of this app is to increase the global reach of listeners.  Users wil
 ![alt text][logo1] ![alt text][logo3] ![alt text][logo3]
 
 [logo1]: https://raw.github.com/nickkjordan/wruw-iphone-app/master/Default@2x.png "Startup Screen"
-[logo1]: https://raw.github.com/nickkjordan/wruw-iphone-app/master/iOS%20Simulator%20Screen%20shot%204.png "Program Details"
-[logo1]: https://raw.github.com/nickkjordan/wruw-iphone-app/master/iOS%20Simulator%20Screen%20shot%206.png "Song List"
+[logo2]: https://raw.github.com/nickkjordan/wruw-iphone-app/master/iOS%20Simulator%20Screen%20shot%204.png "Program Details"
+[logo3]: https://raw.github.com/nickkjordan/wruw-iphone-app/master/iOS%20Simulator%20Screen%20shot%206.png "Song List"
