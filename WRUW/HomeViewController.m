@@ -8,12 +8,43 @@
 
 #import "HomeViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "TFHpple.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation HomeViewController
+@synthesize showTitle, showDescription;
+
+- (void)loadHomePage{
+    
+    
+    // 1
+    NSURL *homePageUrl = [NSURL URLWithString:@"http://www.wruw.org/"];
+    NSData *homePageHtmlData = [NSData dataWithContentsOfURL:homePageUrl];
+    
+    // 2
+    TFHpple *homePageParser = [TFHpple hppleWithHTMLData:homePageHtmlData];
+    
+    // 3
+    NSString *currentShowTitleXpathQueryString = @"/html/body/table[2]/tr[1]/td[2]/table[1]/tr[2]/td[2]/p[1]/a";
+    NSString *currentShowDescriptionXpathQueryString = @"/html/body/table[2]/tr[1]/td[2]/table[1]/tr[2]/td[2]/p[1]/text()";
+    NSArray *showTitleNode = [homePageParser searchWithXPathQuery:currentShowTitleXpathQueryString];
+    NSArray *showDescriptionNode = [homePageParser searchWithXPathQuery:currentShowDescriptionXpathQueryString];
+    
+    TFHppleElement *showTitleElement = showTitleNode[0];
+    NSString *title = [[showTitleElement firstChild] content];
+    
+    TFHppleElement *showDescriptionElement = showDescriptionNode[1];
+    NSString *description = [showDescriptionElement content];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [showTitle setText:title];
+        [showDescription setText:description];
+    });
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +58,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
+    dispatch_async(myQueue, ^{ [self loadHomePage]; });
     
 }
 

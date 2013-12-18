@@ -11,4 +11,6 @@
 @interface HomeViewController : UIViewController
 - (IBAction)streamPlay:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *showTitle;
+@property (weak, nonatomic) IBOutlet UITextView *showDescription;
 @end
