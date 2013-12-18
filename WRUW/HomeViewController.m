@@ -36,6 +36,9 @@
     TFHppleElement *showTitleElement = showTitleNode[0];
     NSString *title = [[showTitleElement firstChild] content];
     
+    NSString * url = [showTitleElement objectForKey:@"href"];
+
+    
     TFHppleElement *showDescriptionElement = showDescriptionNode[1];
     NSString *description = [showDescriptionElement content];
     
