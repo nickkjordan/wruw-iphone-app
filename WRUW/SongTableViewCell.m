@@ -36,50 +36,20 @@
         [UILabel animateWithDuration:0.5
                          animations:^{
                              nameLabel.alpha = 0;
-                         }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               artistLabel.alpha = 0;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               albumLabel.alpha = 0;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               labelLabel.alpha = 0;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               byLabel.alpha = 0;
-                          }];
-        [UIView animateWithDuration:0.5
-                          animations:^{
                               socialView.alpha = 1;
                           }];
     } else {
         [UILabel animateWithDuration:0.5
                           animations:^{
                               nameLabel.alpha = 1;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               artistLabel.alpha = 1;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               albumLabel.alpha = 1;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               labelLabel.alpha = 1;
-                          }];
-        [UILabel animateWithDuration:0.5
-                          animations:^{
                               byLabel.alpha = 1;
-                          }];
-        [UIView animateWithDuration:0.5
-                         animations:^{
                              socialView.alpha = 0;
                          }];
     }
