@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="1182" y="-415"/>
         </scene>
-        <!--Segmented View Controller - Item-->
+        <!--Segmented View Controller - Favorites-->
         <scene sceneID="jKG-Y3-lkJ">
             <objects>
                 <viewController id="t4b-uO-2kZ" customClass="SegmentedViewController" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="p7s-zB-iIm"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart_24.png" id="p7s-zB-iIm"/>
                     <connections>
                         <outlet property="containerView" destination="CWY-bV-IWP" id="cLG-pF-7dF"/>
                         <outlet property="favoritesItem" destination="kaD-6f-UvG" id="SrX-xE-Coc"/>
@@ -487,6 +487,7 @@
     </scenes>
     <resources>
         <image name="calendar_add.png" width="32" height="32"/>
+        <image name="heart_24.png" width="24" height="24"/>
         <image name="home_24.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
