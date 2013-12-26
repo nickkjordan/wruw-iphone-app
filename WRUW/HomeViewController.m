@@ -165,6 +165,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [showDescription setText:[NSString stringWithFormat:@""]];
+    [showTitle setText:[NSString stringWithFormat:@""]];
 	
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
