@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 - (IBAction)streamPlay:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *showTitle;
 @property (weak, nonatomic) IBOutlet UITextView *showDescription;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
