@@ -51,6 +51,7 @@
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
+		01B34A5518863EFC003E6D15 /* IntrinsicTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B34A5418863EFC003E6D15 /* IntrinsicTableView.m */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -144,6 +145,8 @@
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
+		01B34A5318863EFC003E6D15 /* IntrinsicTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrinsicTableView.h; sourceTree = "<group>"; };
+		01B34A5418863EFC003E6D15 /* IntrinsicTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntrinsicTableView.m; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -282,6 +285,8 @@
 				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
 				01A254A8185990000069AB3F /* SegmentedViewController.h */,
 				01A254A9185990000069AB3F /* SegmentedViewController.m */,
+				01B34A5318863EFC003E6D15 /* IntrinsicTableView.h */,
+				01B34A5418863EFC003E6D15 /* IntrinsicTableView.m */,
 				01418A9817DFA378006F9EB4 /* HomeViewController.h */,
 				01418A9917DFA378006F9EB4 /* HomeViewController.m */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
@@ -537,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019316DC183B5E67007755E8 /* Song.m in Sources */,
+				01B34A5518863EFC003E6D15 /* IntrinsicTableView.m in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,

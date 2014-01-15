@@ -168,6 +168,10 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
+    
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.infoView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 	
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
