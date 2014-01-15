@@ -168,11 +168,7 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
-    
-    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.infoView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-	
+    	
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
     dispatch_async(myQueue, ^{ [self loadHomePage]; });
@@ -205,11 +201,6 @@
 {
     // Return the number of rows in the section.
     return _archive.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-
-    return [NSString stringWithFormat:@"Recent Songs"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
