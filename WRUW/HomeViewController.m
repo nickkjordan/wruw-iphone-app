@@ -143,9 +143,9 @@
         }
         
     }
-    
+
     // 8
-    _archive = newSongs;
+    _archive = [[newSongs reverseObjectEnumerator] allObjects];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
