@@ -64,9 +64,29 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [currentShowInfo setText:[showInfo
                                   stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-        self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
     });
     
+    
+}
+
+- (void)adjustHeightOfInfoView
+{
+//    CGFloat height = self.currentShowInfo.contentSize.height;
+//    CGFloat maxHeight = self.currentShowInfo.superview.frame.size.height - self.currentShowInfo.frame.origin.y;
+    
+    // if the height of the content is greater than the maxHeight of
+    // total space on the screen, limit the height to the size of the
+    // superview.
+    
+//    if (height > maxHeight)
+//        height = maxHeight;
+    
+    // now set the height constraint accordingly
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
+        [self.view needsUpdateConstraints];
+    }];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -98,7 +118,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-
+    [self adjustHeightOfInfoView];
 }
 
 - (void)didReceiveMemoryWarning
