@@ -318,7 +318,7 @@
                             <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="GrK-1E-viR" secondAttribute="leading" priority="978" id="kTI-qh-MVi"/>
                             <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="Od8-hO-PhB" secondAttribute="bottom" priority="978" constant="18" id="kdi-ss-SaW"/>
                             <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" priority="978" constant="20" symbolic="YES" id="rUW-SI-CRc"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" priority="978" constant="29" id="tju-rh-Mdj"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" priority="978" constant="5" id="tju-rh-Mdj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">

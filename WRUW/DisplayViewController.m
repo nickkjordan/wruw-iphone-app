@@ -72,21 +72,10 @@
 
 - (void)adjustHeightOfInfoView
 {
-//    CGFloat height = self.currentShowInfo.contentSize.height;
-//    CGFloat maxHeight = self.currentShowInfo.superview.frame.size.height - self.currentShowInfo.frame.origin.y;
-    
-    // if the height of the content is greater than the maxHeight of
-    // total space on the screen, limit the height to the size of the
-    // superview.
-    
-//    if (height > maxHeight)
-//        height = maxHeight;
-    
-    // now set the height constraint accordingly
-    
-    [UIView animateWithDuration:1 animations:^{
-        self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
-        [self.view needsUpdateConstraints];
+    self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
+    [self.view setNeedsUpdateConstraints];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.view layoutIfNeeded];
     }];
 }
 
