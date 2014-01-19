@@ -64,6 +64,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [currentShowInfo setText:[showInfo
                                   stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+        [NSTimer scheduledTimerWithTimeInterval:.06 target:self selector:@selector(adjustHeightOfInfoView) userInfo:nil repeats:NO];
     });
     
     
@@ -83,7 +84,7 @@
     
     // now set the height constraint accordingly
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:1 animations:^{
         self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
         [self.view needsUpdateConstraints];
     }];
@@ -98,6 +99,12 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
+    
+    dispatch_async(myQueue, ^{ [self loadInfo]; });
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -110,15 +117,6 @@
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
     
-    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
-    
-    dispatch_async(myQueue, ^{ [self loadInfo]; });
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self adjustHeightOfInfoView];
 }
 
 - (void)didReceiveMemoryWarning
