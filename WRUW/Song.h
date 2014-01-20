@@ -17,5 +17,6 @@
 @property (nonatomic, copy) UIImage *image;
 
 -(BOOL)isEqualToSong:(Song *)song;
+-(void)loadImage;
 
 @end

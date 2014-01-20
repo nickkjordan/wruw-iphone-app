@@ -87,11 +87,7 @@
             NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
             song.image = [UIImage imageWithContentsOfFile:path];
             
-            dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
-            
-            dispatch_async(imageQueue, ^{ [self loadImages:song atIndex:i]; });
         }
-        
     }
     
     // 8
@@ -102,57 +98,21 @@
         [self.tableView reloadData];
     });
     
-}
-
--(void)loadImages:(Song *)song atIndex:(int)index{
-    
-    NSString *urlQuery;
-    
-    if (song.artist && song.album) {
-        NSString *artistUrlString = [song.artist stringByReplacingOccurrencesOfString:@" "
-                                                                           withString:@"+"];
-        NSString *albumUrlString = [song.album stringByReplacingOccurrencesOfString:@" "
-                                                                         withString:@"+"];
-        
-        urlQuery = [NSString stringWithFormat:@"%@+%@",artistUrlString,albumUrlString];
-        
-    } else if (song.album) {
-        NSString *albumUrlString = [song.album stringByReplacingOccurrencesOfString:@" "
-                                                                         withString:@"+"];
-        urlQuery = albumUrlString;
-    } else {
-        NSString *artistUrlString = [song.artist stringByReplacingOccurrencesOfString:@" "
-                                                                           withString:@"+"];
-        urlQuery = artistUrlString;
+    dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
+    int i = 0;
+    for (Song *song in _archive) {
+        dispatch_async(imageQueue, ^{
+            [song loadImage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView beginUpdates];
+                NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:i inSection:0];
+                NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
+                [self.tableView reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationNone];
+                [self.tableView endUpdates];
+            });
+        });
+        i++;
     }
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery]];
-    NSData *htmlData = [NSData dataWithContentsOfURL:url];
-    
-    // 2
-    TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
-    
-    // 3
-    NSString *xpathQueryString = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
-    NSArray *node = [parser searchWithXPathQuery:xpathQueryString];
-    
-    TFHppleElement *img = [node firstObject];
-    
-    NSString *imgUrl = [img objectForKey:@"src"];
-    
-    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
-    
-    UIImage *albumImage = [UIImage imageWithData:imgData];
-    
-    song.image = albumImage;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView beginUpdates];
-        NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:index inSection:0];
-        NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
-        [self.tableView reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
-    });
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
