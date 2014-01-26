@@ -16,6 +16,7 @@
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
+    UIActivityIndicatorView *spinner;
 }
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
@@ -148,6 +149,7 @@
     _archive = [[newSongs reverseObjectEnumerator] allObjects];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [spinner stopAnimating];
         [self.tableView reloadData];
     });
     
@@ -181,6 +183,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 400, 20, 30)];
+    [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    spinner.color = [UIColor blueColor];
+    [self.tableView addSubview:spinner];
+    
+    [spinner startAnimating];
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
