@@ -7,7 +7,6 @@
 //
 
 #import "SongTableViewCell.h"
-#import <Social/Social.h>
 
 @interface SongTableViewCell(){
 }
@@ -104,32 +103,29 @@
 
 - (IBAction)composeFBPost:(id)sender {
     
-        SLComposeViewController *facebookPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    SLComposeViewController *facebookPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        NSString *artist = artistLabel.text;
-        NSString *song = nameLabel.text;
-        UIImage *albumArt = thumbnailImageView.imageView.image;
-        
-        [facebookPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
-        [facebookPost addURL:[NSURL URLWithString:@"wruw.org"]];
-        [facebookPost addImage:albumArt];
-        [ctrl presentViewController:facebookPost animated:YES completion:nil];
+    [self postSocial:facebookPost];
     
 }
 
 - (IBAction)composeTwitterPost:(id)sender {
     
-        SLComposeViewController *twitterPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    SLComposeViewController *twitterPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        NSString *artist = artistLabel.text;
-        NSString *song = nameLabel.text;
-        UIImage *albumArt = thumbnailImageView.imageView.image;
-        
-        [twitterPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
-        [twitterPost addURL:[NSURL URLWithString:@"wruw.org"]];
-        [twitterPost addImage:albumArt];
-        [ctrl presentViewController:twitterPost animated:YES completion:nil];
+    [self postSocial:twitterPost];
 
+}
+
+-(void)postSocial:(SLComposeViewController *)social{
+    NSString *artist = artistLabel.text;
+    NSString *song = nameLabel.text;
+    UIImage *albumArt = thumbnailImageView.imageView.image;
+    
+    [social setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
+    [social addURL:[NSURL URLWithString:@"wruw.org"]];
+    [social addImage:albumArt];
+    [ctrl presentViewController:social animated:YES completion:nil];
 }
 
 - (IBAction)searchSong:(id)sender {

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Song.h"
+#import <Social/Social.h>
 
 @interface SongTableViewCell : UITableViewCell
 
@@ -27,6 +28,7 @@
 - (IBAction)imageTapped:(id)sender;
 
 -(id)initWithViewController:(UIViewController*)c;
+-(void)postSocial:(SLComposeViewController *)social;
 @property (weak) UITableViewController *ctrl;
 @property (weak) Song *currentSong;
 
