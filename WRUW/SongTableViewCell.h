@@ -16,13 +16,15 @@
 @property (nonatomic, weak) IBOutlet UILabel *albumLabel;
 @property (nonatomic, weak) IBOutlet UILabel *labelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *byLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
+@property (weak, nonatomic) IBOutlet UIButton *thumbnailImageView;
+
 @property (weak, nonatomic) IBOutlet UIView *socialView;
 - (IBAction)favoritePush:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
 - (IBAction)composeFBPost:(id)sender;
 - (IBAction)composeTwitterPost:(id)sender;
 - (IBAction)searchSong:(id)sender;
+- (IBAction)imageTapped:(id)sender;
 
 -(id)initWithViewController:(UIViewController*)c;
 @property (weak) UITableViewController *ctrl;

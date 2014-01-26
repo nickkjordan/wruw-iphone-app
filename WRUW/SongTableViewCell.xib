@@ -14,10 +14,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYe-TO-vrq">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f73-3k-9Ts">
                         <rect key="frame" x="7" y="5" width="90" height="90"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </imageView>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="imageTapped:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="Ajp-Bd-5Vj"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="r9l-lD-8hn">
                         <rect key="frame" x="105" y="5" width="195" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,7 +115,7 @@
                 <outlet property="labelLabel" destination="6dX-aq-EF6" id="xaF-Xd-5gR"/>
                 <outlet property="nameLabel" destination="r9l-lD-8hn" id="oiV-Wl-1Rj"/>
                 <outlet property="socialView" destination="xkC-vs-adv" id="HPH-tJ-5br"/>
-                <outlet property="thumbnailImageView" destination="PYe-TO-vrq" id="C8q-en-ZO2"/>
+                <outlet property="thumbnailImageView" destination="f73-3k-9Ts" id="xxF-js-jwU"/>
             </connections>
         </tableViewCell>
     </objects>

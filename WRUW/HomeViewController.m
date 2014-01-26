@@ -245,7 +245,7 @@
     cell.albumLabel.text = thisSong.album;
     cell.artistLabel.text = thisSong.artist;
     cell.labelLabel.text = thisSong.label;
-    cell.thumbnailImageView.image = thisSong.image;
+    [cell.thumbnailImageView setImage:thisSong.image forState:UIControlStateNormal];
     cell.currentSong = thisSong;
     cell.ctrl = c;
     

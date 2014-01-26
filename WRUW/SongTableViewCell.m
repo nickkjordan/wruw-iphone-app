@@ -108,7 +108,7 @@
         
         NSString *artist = artistLabel.text;
         NSString *song = nameLabel.text;
-        UIImage *albumArt = thumbnailImageView.image;
+        UIImage *albumArt = thumbnailImageView.imageView.image;
         
         [facebookPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
         [facebookPost addURL:[NSURL URLWithString:@"wruw.org"]];
@@ -123,7 +123,7 @@
         
         NSString *artist = artistLabel.text;
         NSString *song = nameLabel.text;
-        UIImage *albumArt = thumbnailImageView.image;
+        UIImage *albumArt = thumbnailImageView.imageView.image;
         
         [twitterPost setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
         [twitterPost addURL:[NSURL URLWithString:@"wruw.org"]];
@@ -138,6 +138,9 @@
     NSString *title = [nameLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/search?q=%@+%@", title, artist]]];
+}
+
+- (IBAction)imageTapped:(id)sender {
 }
 
 -(id)initWithViewController:(UITableViewController*)c {
