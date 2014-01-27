@@ -86,8 +86,8 @@
             }
             NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
             song.image = [UIImage imageWithContentsOfFile:path];
+            
         }
-        
     }
     
     // 8
@@ -98,6 +98,21 @@
         [self.tableView reloadData];
     });
     
+    dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
+    int i = 0;
+    for (Song *song in _archive) {
+        dispatch_async(imageQueue, ^{
+            [song loadImage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView beginUpdates];
+                NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:i inSection:0];
+                NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
+                [self.tableView reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationNone];
+                [self.tableView endUpdates];
+            });
+        });
+        i++;
+    }
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -170,7 +185,7 @@
     cell.albumLabel.text = thisSong.album;
     cell.artistLabel.text = thisSong.artist;
     cell.labelLabel.text = thisSong.label;
-    cell.thumbnailImageView.image = thisSong.image;
+    [cell.thumbnailImageView setImage:thisSong.image forState:UIControlStateNormal];
     cell.currentSong = thisSong;
     cell.ctrl = c;
     

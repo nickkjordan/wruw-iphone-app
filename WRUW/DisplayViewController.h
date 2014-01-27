@@ -14,7 +14,7 @@
 #import <EventKitUI/EventKitUI.h>
 
 @interface DisplayViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate,EKEventEditViewDelegate>
+<EKEventEditViewDelegate>
 
 // Show info
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTitle;

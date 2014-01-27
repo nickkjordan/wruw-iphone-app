@@ -303,22 +303,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="8" symbolic="YES" id="11M-XE-0lp"/>
-                            <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="AHF-7L-ulT" secondAttribute="top" constant="180" id="1Zw-Ed-c4T"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" id="6Mm-dS-hYB"/>
-                            <constraint firstItem="pp8-CJ-X57" firstAttribute="centerY" secondItem="Od8-hO-PhB" secondAttribute="centerY" id="D4n-kS-ISA"/>
-                            <constraint firstAttribute="trailing" secondItem="dyT-1h-vgG" secondAttribute="trailing" constant="15" id="HM0-ra-kxv"/>
-                            <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="Ihe-eU-SjO"/>
-                            <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="Iz2-PG-msx"/>
-                            <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" symbolic="YES" id="NOP-Q7-60u"/>
-                            <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" constant="8" symbolic="YES" id="RLK-Re-Kmz"/>
-                            <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" id="WZ3-cV-bHq"/>
-                            <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="CeB-wA-C5l" secondAttribute="bottom" constant="20" id="ZzF-rQ-W42"/>
-                            <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="cj3-Zy-45s"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="GrK-1E-viR" secondAttribute="leading" id="kTI-qh-MVi"/>
-                            <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="Od8-hO-PhB" secondAttribute="bottom" constant="18" id="kdi-ss-SaW"/>
-                            <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" constant="20" symbolic="YES" id="rUW-SI-CRc"/>
-                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="29" id="tju-rh-Mdj"/>
+                            <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="pp8-CJ-X57" secondAttribute="trailing" priority="978" constant="8" symbolic="YES" id="11M-XE-0lp"/>
+                            <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="AHF-7L-ulT" secondAttribute="top" priority="978" constant="180" id="1Zw-Ed-c4T"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" priority="978" id="6Mm-dS-hYB"/>
+                            <constraint firstItem="pp8-CJ-X57" firstAttribute="centerY" secondItem="Od8-hO-PhB" secondAttribute="centerY" priority="978" id="D4n-kS-ISA"/>
+                            <constraint firstAttribute="trailing" secondItem="dyT-1h-vgG" secondAttribute="trailing" priority="978" constant="15" id="HM0-ra-kxv"/>
+                            <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" priority="978" constant="20" id="Ihe-eU-SjO"/>
+                            <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" priority="978" constant="20" id="Iz2-PG-msx"/>
+                            <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" priority="978" constant="8" symbolic="YES" id="NOP-Q7-60u"/>
+                            <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" priority="978" constant="8" symbolic="YES" id="RLK-Re-Kmz"/>
+                            <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" priority="978" constant="20" id="WZ3-cV-bHq"/>
+                            <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="CeB-wA-C5l" secondAttribute="bottom" priority="978" constant="20" id="ZzF-rQ-W42"/>
+                            <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" priority="978" constant="20" id="cj3-Zy-45s"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="leading" secondItem="GrK-1E-viR" secondAttribute="leading" priority="978" id="kTI-qh-MVi"/>
+                            <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="Od8-hO-PhB" secondAttribute="bottom" priority="978" constant="18" id="kdi-ss-SaW"/>
+                            <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" priority="978" constant="20" symbolic="YES" id="rUW-SI-CRc"/>
+                            <constraint firstItem="etM-Wt-RiE" firstAttribute="top" secondItem="GrK-1E-viR" secondAttribute="bottom" priority="978" constant="5" id="tju-rh-Mdj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">

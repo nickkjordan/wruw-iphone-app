@@ -7,6 +7,7 @@
 //
 
 #import "Song.h"
+#import "TFHpple.h"
 
 @implementation Song
 
@@ -45,6 +46,49 @@
     BOOL haveEqualSongTitles = (!self.songName && !song.songName) || [self.songName isEqualToString:song.songName];
     
     return haveEqualArtistNames && haveEqualSongTitles;
+}
+
+-(void)loadImage {
+    
+    NSString *urlQuery;
+    
+    if (self.artist && self.album) {
+        NSString *artistUrlString = [self.artist stringByReplacingOccurrencesOfString:@" "
+                                                                           withString:@"+"];
+        NSString *albumUrlString = [self.album stringByReplacingOccurrencesOfString:@" "
+                                                                         withString:@"+"];
+        
+        urlQuery = [NSString stringWithFormat:@"%@+%@",artistUrlString,albumUrlString];
+        
+    } else if (self.album) {
+        NSString *albumUrlString = [self.album stringByReplacingOccurrencesOfString:@" "
+                                                                         withString:@"+"];
+        urlQuery = albumUrlString;
+    } else {
+        NSString *artistUrlString = [self.artist stringByReplacingOccurrencesOfString:@" "
+                                                                           withString:@"+"];
+        urlQuery = artistUrlString;
+    }
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery]];
+    NSData *htmlData = [NSData dataWithContentsOfURL:url];
+    
+    // 2
+    TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
+    
+    // 3
+    NSString *xpathQueryString = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
+    NSArray *node = [parser searchWithXPathQuery:xpathQueryString];
+    
+    TFHppleElement *img = [node firstObject];
+    
+    NSString *imgUrl = [img objectForKey:@"src"];
+    
+    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
+    
+    UIImage *albumImage = [UIImage imageWithData:imgData];
+    
+    self.image = albumImage;
 }
 
 #pragma mark - NSObject

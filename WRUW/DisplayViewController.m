@@ -64,9 +64,19 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [currentShowInfo setText:[showInfo
                                   stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-        self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
+        [NSTimer scheduledTimerWithTimeInterval:.06 target:self selector:@selector(adjustHeightOfInfoView) userInfo:nil repeats:NO];
     });
     
+    
+}
+
+- (void)adjustHeightOfInfoView
+{
+    self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
+    [self.view setNeedsUpdateConstraints];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -76,6 +86,12 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
+    
+    dispatch_async(myQueue, ^{ [self loadInfo]; });
 }
 
 - (void)viewDidLoad
@@ -90,15 +106,6 @@
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
     
-    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
-    
-    dispatch_async(myQueue, ^{ [self loadInfo]; });
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-
 }
 
 - (void)didReceiveMemoryWarning
