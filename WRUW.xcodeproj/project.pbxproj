@@ -13,6 +13,7 @@
 		0100D1A11865386500D08BC2 /* home_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19B1865386500D08BC2 /* home_24.png */; };
 		0100D1A21865386500D08BC2 /* home_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19C1865386500D08BC2 /* home_48.png */; };
 		0100D1A31865386500D08BC2 /* home_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19D1865386500D08BC2 /* home_64.png */; };
+		010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 010CF7A71898B8AC00875209 /* ArrayDataSource.m */; };
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
 		010F292E17E21F1400DC3631 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292D17E21F1400DC3631 /* Icon.png */; };
@@ -91,6 +92,8 @@
 		0100D19B1865386500D08BC2 /* home_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_24.png; sourceTree = "<group>"; };
 		0100D19C1865386500D08BC2 /* home_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_48.png; sourceTree = "<group>"; };
 		0100D19D1865386500D08BC2 /* home_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_64.png; sourceTree = "<group>"; };
+		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 		0170903F17DBA8F80005EC0F /* WRUW */ = {
 			isa = PBXGroup;
 			children = (
+				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
+				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				01F9819F183537A10069C241 /* hpple */,
 				01F9819B1835373C0069C241 /* Model */,
 				010F291817E21AE900DC3631 /* App Icon [Squared] */,
@@ -550,6 +555,7 @@
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
+				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,

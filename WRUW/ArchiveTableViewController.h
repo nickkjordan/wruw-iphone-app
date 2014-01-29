@@ -10,6 +10,7 @@
 #import "Playlist.h"
 #import "TFHpple.h"
 #import "Song.h"
+#import "ArrayDataSource.h"
 
 @interface ArchiveTableViewController : UITableViewController
 

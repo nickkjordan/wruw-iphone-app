@@ -147,4 +147,15 @@
     return self;
 }
 
+- (void)configureForSong:(Song *)song controlView:(UIViewController *)c
+{
+    self.nameLabel.text = song.songName;
+    self.albumLabel.text = song.album;
+    self.artistLabel.text = song.artist;
+    self.labelLabel.text = song.label;
+    [self.thumbnailImageView setImage:song.image forState:UIControlStateNormal];
+    self.currentSong = song;
+    self.ctrl = c;
+}
+
 @end
