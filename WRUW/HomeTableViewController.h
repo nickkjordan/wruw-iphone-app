@@ -12,6 +12,7 @@
 #import "Song.h"
 #include "Playlist.h"
 #import "SongTableViewCell.h"
+#import "ArrayDataSource.h"
 
 @interface HomeTableViewController : UITableViewController
 
