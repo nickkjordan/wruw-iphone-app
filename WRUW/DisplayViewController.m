@@ -91,6 +91,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
+    currentShowInfo.editable = NO;
     dispatch_async(myQueue, ^{ [self loadInfo]; });
 }
 

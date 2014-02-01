@@ -183,6 +183,7 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
+    showDescription.editable = NO;
     
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
