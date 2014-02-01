@@ -16,6 +16,7 @@
     NSMutableArray *_objects;
     UIActivityIndicatorView *spinner;
 }
+@property (nonatomic, strong) ArrayDataSource *showsArrayDataSource;
 
 @end
 
@@ -87,7 +88,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [spinner stopAnimating];
-        [self.tableView reloadData];
+        [self setupTableView];
     });
 
 }
@@ -131,33 +132,16 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setupTableView
 {
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return _objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
-    Show *thisShow = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = thisShow.title;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", thisShow.host, thisShow.time];
-    
-    return cell;
+    TableViewCellConfigureBlock configureCell = ^(ShowCell *cell, Show *show) {
+        [cell configureForShow:show];
+    };
+    self.showsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_objects
+                                                        cellIdentifier:@"ShowCell"
+                                                    configureCellBlock:configureCell];
+    self.tableView.dataSource = self.showsArrayDataSource;
+    [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

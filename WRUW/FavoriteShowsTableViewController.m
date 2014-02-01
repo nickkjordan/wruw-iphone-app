@@ -9,6 +9,10 @@
 #import "FavoriteShowsTableViewController.h"
 
 @interface FavoriteShowsTableViewController ()
+{
+    NSMutableArray *_favorites;
+}
+@property (nonatomic, strong) ArrayDataSource *showsArrayDataSource;
 
 @end
 
@@ -42,28 +46,16 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setupTableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    TableViewCellConfigureBlock configureCell = ^(ShowCell *cell, Show *show) {
+        [cell configureForShow:show];
+    };
+    self.showsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_favorites
+                                                        cellIdentifier:@"ShowCell"
+                                                    configureCellBlock:configureCell];
+    self.tableView.dataSource = self.showsArrayDataSource;
+    [self.tableView reloadData];
 }
 
 /*
