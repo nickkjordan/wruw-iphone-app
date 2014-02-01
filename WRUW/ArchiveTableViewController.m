@@ -95,8 +95,8 @@
     _archive = newSongs;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [spinner stopAnimating];
         [self setupTableView];
+        [spinner stopAnimating];
     });
     
     dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
