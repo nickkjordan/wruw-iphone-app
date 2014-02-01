@@ -25,7 +25,7 @@
 		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
-		01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01418A9917DFA378006F9EB4 /* HomeViewController.m */; };
+		0153B8F7189C827100331DD9 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeTableViewController.m */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
@@ -111,8 +111,8 @@
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		01418A9817DFA378006F9EB4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		01418A9917DFA378006F9EB4 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0153B8F5189C827100331DD9 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		0153B8F6189C827100331DD9 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRUW.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +281,8 @@
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
+				0153B8F5189C827100331DD9 /* HomeTableViewController.h */,
+				0153B8F6189C827100331DD9 /* HomeTableViewController.m */,
 				01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */,
 				01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */,
 				012C926B1840026600C94210 /* Save Data */,
@@ -292,8 +294,6 @@
 				01A254A9185990000069AB3F /* SegmentedViewController.m */,
 				01B34A5318863EFC003E6D15 /* IntrinsicTableView.h */,
 				01B34A5418863EFC003E6D15 /* IntrinsicTableView.m */,
-				01418A9817DFA378006F9EB4 /* HomeViewController.h */,
-				01418A9917DFA378006F9EB4 /* HomeViewController.m */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUW;
@@ -556,6 +556,7 @@
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
+				0153B8F7189C827100331DD9 /* HomeTableViewController.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
@@ -566,7 +567,6 @@
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
-				01418A9A17DFA378006F9EB4 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

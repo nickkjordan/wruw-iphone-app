@@ -1,27 +1,22 @@
 //
-//  HomeViewController.m
+//  HomeTableViewController.m
 //  WRUW
 //
-//  Created by Nick Jordan on 9/10/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
+//  Created by Nick Jordan on 1/31/14.
+//  Copyright (c) 2014 Nick Jordan. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import "TFHpple.h"
-#import "Song.h"
-#include "Playlist.h"
-#import "SongTableViewCell.h"
+#import "HomeTableViewController.h"
 
-@interface HomeViewController () <AVAudioPlayerDelegate>
+@interface HomeTableViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
     UIActivityIndicatorView *spinner;
 }
-@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
 @end
 
-@implementation HomeViewController
+@implementation HomeTableViewController
 @synthesize showTitle, showDescription;
 
 - (void)loadHomePage{
@@ -44,7 +39,7 @@
     NSString *title = [[showTitleElement firstChild] content];
     
     NSString * url = [showTitleElement objectForKey:@"href"];
-
+    
     
     TFHppleElement *showDescriptionElement = showDescriptionNode[1];
     NSString *description = [showDescriptionElement content];
@@ -77,7 +72,7 @@
 -(void)loadSongs:(NSString *)url playlist:(Playlist*)currentPlaylist {
     
     NSString *showId = [url stringByReplacingOccurrencesOfString:@"/guide/show.php?"
-                            withString:@""];
+                                                      withString:@""];
     // 1
     NSURL *archiveUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/playlists.php?%@&playlist_id=%@",showId,currentPlaylist.idValue]];
     NSData *archiveHtmlData = [NSData dataWithContentsOfURL:archiveUrl];
@@ -144,7 +139,7 @@
         }
         
     }
-
+    
     // 8
     _archive = [[newSongs reverseObjectEnumerator] allObjects];
     
@@ -193,7 +188,7 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
-    	
+    
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
     dispatch_async(myQueue, ^{ [self loadHomePage]; });
@@ -251,7 +246,5 @@
     
     return cell;
 }
-
-
 
 @end
