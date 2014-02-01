@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Show.h"
 #import "DisplayViewController.h"
+#import "ShowCell.h"
+#import "ArrayDataSource.h"
 
 @interface ShowsTableViewController : UITableViewController
 

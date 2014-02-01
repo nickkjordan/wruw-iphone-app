@@ -26,6 +26,7 @@
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0153B8F7189C827100331DD9 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeTableViewController.m */; };
+		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
@@ -112,6 +113,8 @@
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0153B8F5189C827100331DD9 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
+		0153B8F9189CA50100331DD9 /* ShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCell.m; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRUW.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,6 +335,8 @@
 		019316DD183B83A2007755E8 /* Shows ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0153B8F8189CA50100331DD9 /* ShowCell.h */,
+				0153B8F9189CA50100331DD9 /* ShowCell.m */,
 				019316E1183B8637007755E8 /* ArchiveTable */,
 				011FECDB1836A506009B5BFA /* ShowsTableViewController.h */,
 				011FECDC1836A506009B5BFA /* ShowsTableViewController.m */,
@@ -558,6 +563,7 @@
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
 				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,
+				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
