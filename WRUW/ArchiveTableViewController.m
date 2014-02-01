@@ -15,6 +15,7 @@
     NSMutableArray *_archive;
     UIActivityIndicatorView *spinner;
 }
+@property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 
 @end
 
@@ -95,7 +96,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [spinner stopAnimating];
-        [self.tableView reloadData];
+        [self setupTableView];
     });
     
     dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
@@ -104,11 +105,7 @@
         dispatch_async(imageQueue, ^{
             [song loadImage];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView beginUpdates];
-                NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
-                [self.tableView reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationNone];
-                [self.tableView endUpdates];
+                [self.tableView reloadData];
             });
         });
         i++;
@@ -128,6 +125,8 @@
 {
     [super viewDidLoad];
     
+    [self setupTableView];
+    
     spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blueColor];
@@ -139,57 +138,22 @@
     
     dispatch_async(myQueue, ^{ [self loadSongs]; });
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Table view delegate
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setupTableView
 {
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return _archive.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"SongTableViewCell";
-    UITableViewController *c = self;
-    
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
-    Song *thisSong = [_archive objectAtIndex:indexPath.row];
-    
-    cell.nameLabel.text = thisSong.songName;
-    cell.albumLabel.text = thisSong.album;
-    cell.artistLabel.text = thisSong.artist;
-    cell.labelLabel.text = thisSong.label;
-    [cell.thumbnailImageView setImage:thisSong.image forState:UIControlStateNormal];
-    cell.currentSong = thisSong;
-    cell.ctrl = c;
-    
-    return cell;
+    TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
+        [cell configureForSong:song controlView:self];
+    };
+    self.songsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_archive
+                                                        cellIdentifier:@"SongTableViewCell"
+                                                    configureCellBlock:configureCell];
+    self.tableView.dataSource = self.songsArrayDataSource;
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -205,56 +169,5 @@
     return indexPath;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

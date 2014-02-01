@@ -1,27 +1,22 @@
 //
-//  HomeViewController.m
+//  HomeTableViewController.m
 //  WRUW
 //
-//  Created by Nick Jordan on 9/10/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
+//  Created by Nick Jordan on 1/31/14.
+//  Copyright (c) 2014 Nick Jordan. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import "TFHpple.h"
-#import "Song.h"
-#include "Playlist.h"
-#import "SongTableViewCell.h"
+#import "HomeTableViewController.h"
 
-@interface HomeViewController () <AVAudioPlayerDelegate>
+@interface HomeTableViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
     UIActivityIndicatorView *spinner;
 }
-@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @end
 
-@implementation HomeViewController
+@implementation HomeTableViewController
 @synthesize showTitle, showDescription;
 
 - (void)loadHomePage{
@@ -44,7 +39,7 @@
     NSString *title = [[showTitleElement firstChild] content];
     
     NSString * url = [showTitleElement objectForKey:@"href"];
-
+    
     
     TFHppleElement *showDescriptionElement = showDescriptionNode[1];
     NSString *description = [showDescriptionElement content];
@@ -77,7 +72,7 @@
 -(void)loadSongs:(NSString *)url playlist:(Playlist*)currentPlaylist {
     
     NSString *showId = [url stringByReplacingOccurrencesOfString:@"/guide/show.php?"
-                            withString:@""];
+                                                      withString:@""];
     // 1
     NSURL *archiveUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/playlists.php?%@&playlist_id=%@",showId,currentPlaylist.idValue]];
     NSData *archiveHtmlData = [NSData dataWithContentsOfURL:archiveUrl];
@@ -144,15 +139,14 @@
         }
         
     }
-
+    
     // 8
     _archive = [[newSongs reverseObjectEnumerator] allObjects];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [spinner stopAnimating];
-        [self.tableView reloadData];
+        [self setupTableView];
     });
-    
     
     dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
     int i = 0;
@@ -160,11 +154,7 @@
         dispatch_async(imageQueue, ^{
             [song loadImage];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView beginUpdates];
-                NSIndexPath* rowToReload = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray* rowsToReload = [NSArray arrayWithObjects:rowToReload, nil];
-                [self.tableView reloadRowsAtIndexPaths:rowsToReload withRowAnimation:UITableViewRowAnimationNone];
-                [self.tableView endUpdates];
+                [self.tableView reloadData];
             });
         });
         i++;
@@ -193,7 +183,7 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
-    	
+    
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
     dispatch_async(myQueue, ^{ [self loadHomePage]; });
@@ -216,42 +206,16 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setupTableView
 {
-    // Return the number of sections.
-    return 1;
+    TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
+        [cell configureForSong:song controlView:self];
+    };
+    self.songsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_archive
+                                                        cellIdentifier:@"SongTableViewCell"
+                                                    configureCellBlock:configureCell];
+    self.tableView.dataSource = self.songsArrayDataSource;
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return _archive.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"SongTableViewCell";
-    UITableView *c = self.tableView;
-    
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
-    Song *thisSong = [_archive objectAtIndex:indexPath.row];
-    
-    cell.nameLabel.text = thisSong.songName;
-    cell.albumLabel.text = thisSong.album;
-    cell.artistLabel.text = thisSong.artist;
-    cell.labelLabel.text = thisSong.label;
-    [cell.thumbnailImageView setImage:thisSong.image forState:UIControlStateNormal];
-    cell.currentSong = thisSong;
-    cell.ctrl = c;
-    
-    return cell;
-}
-
-
 
 @end

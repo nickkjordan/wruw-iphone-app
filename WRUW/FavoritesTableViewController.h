@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArrayDataSource.h"
 
 @interface FavoritesTableViewController : UITableViewController
 
