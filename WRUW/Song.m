@@ -53,20 +53,16 @@
     NSString *urlQuery;
     
     if (self.artist && self.album) {
-        NSString *artistUrlString = [self.artist stringByReplacingOccurrencesOfString:@" "
-                                                                           withString:@"+"];
-        NSString *albumUrlString = [self.album stringByReplacingOccurrencesOfString:@" "
-                                                                         withString:@"+"];
+        NSString *artistUrlString = [self formatForURL:self.artist];
+        NSString *albumUrlString = [self formatForURL:self.album];
         
         urlQuery = [NSString stringWithFormat:@"%@+%@",artistUrlString,albumUrlString];
         
     } else if (self.album) {
-        NSString *albumUrlString = [self.album stringByReplacingOccurrencesOfString:@" "
-                                                                         withString:@"+"];
+        NSString *albumUrlString = [self formatForURL:self.album];
         urlQuery = albumUrlString;
     } else {
-        NSString *artistUrlString = [self.artist stringByReplacingOccurrencesOfString:@" "
-                                                                           withString:@"+"];
+        NSString *artistUrlString = [self formatForURL:self.artist];
         urlQuery = artistUrlString;
     }
     
@@ -99,6 +95,13 @@
         self.image = albumImage;
     }
     
+}
+
+-(NSString *)formatForURL:(NSString *)string {
+    NSString *returnString = [string stringByReplacingOccurrencesOfString:@" "
+                                                               withString:@"+"];
+    returnString = [returnString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    return returnString;
 }
 
 #pragma mark - NSObject

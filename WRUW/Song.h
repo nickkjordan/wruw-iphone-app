@@ -18,5 +18,6 @@
 
 -(BOOL)isEqualToSong:(Song *)song;
 -(void)loadImage;
+-(NSString *)formatForURL:(NSString *)string;
 
 @end
