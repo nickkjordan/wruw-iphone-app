@@ -70,25 +70,35 @@
         urlQuery = artistUrlString;
     }
     
+    // Complete url
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery]];
-    NSData *htmlData = [NSData dataWithContentsOfURL:url];
+    // Send a synchronous request
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *htmlData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                          returningResponse:&response
+                                                      error:&error];
     
-    // 2
-    TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
+    if (error == nil) {
+        // 2
+        TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
+        
+        // 3
+        NSString *xpathQueryString = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
+        NSArray *node = [parser searchWithXPathQuery:xpathQueryString];
+        
+        TFHppleElement *img = [node firstObject];
+        
+        NSString *imgUrl = [img objectForKey:@"src"];
+        
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
+        
+        UIImage *albumImage = [UIImage imageWithData:imgData];
+        
+        self.image = albumImage;
+    }
     
-    // 3
-    NSString *xpathQueryString = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
-    NSArray *node = [parser searchWithXPathQuery:xpathQueryString];
-    
-    TFHppleElement *img = [node firstObject];
-    
-    NSString *imgUrl = [img objectForKey:@"src"];
-    
-    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
-    
-    UIImage *albumImage = [UIImage imageWithData:imgData];
-    
-    self.image = albumImage;
 }
 
 #pragma mark - NSObject
