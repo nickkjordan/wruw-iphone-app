@@ -144,11 +144,6 @@
     [self.tableView reloadData];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
-}
-
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return[NSArray arrayWithObjects:@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa", nil];
 }
