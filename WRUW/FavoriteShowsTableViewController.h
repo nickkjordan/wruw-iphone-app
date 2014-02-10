@@ -10,6 +10,7 @@
 #import "ArrayDataSource.h"
 #import "Show.h"
 #import "ShowCell.h"
+#import "DisplayViewController.h"
 
 @interface FavoriteShowsTableViewController : UITableViewController
 

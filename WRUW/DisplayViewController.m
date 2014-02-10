@@ -23,11 +23,7 @@
 
 @implementation DisplayViewController
 
-@synthesize currentShow;
-@synthesize currentShowTitle;
-@synthesize currentShowHost;
-@synthesize currentShowTime;
-@synthesize currentShowInfo;
+@synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -89,6 +85,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO];
+    
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
     currentShowInfo.editable = NO;
@@ -189,6 +187,50 @@
         }
     }];
 
+}
+
+-(NSString *) getFilePath {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favoriteShows.plist"];
+}
+
+-(void) saveFavorite:(Show *)show {
+    
+    NSString *path = [self getFilePath];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    
+    if (fileExists) {
+        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
+        // Get current content.
+        NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+        // Make a mutable copy.
+        //        NSMutableArray *newContent = [oldContent mutableCopy];
+        
+        if ([content containsObject:show]) {
+            
+            [content removeObject:show];
+        } else {
+            // Add new stuff.
+            [content insertObject:show atIndex:0];
+        }
+        
+        // Now, write the plist:
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:content];
+        
+        [data writeToFile:path atomically:YES];
+    } else {
+        NSMutableArray *newFavorite = [[NSMutableArray alloc] initWithObjects:show, nil];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorite];
+        
+        [data writeToFile:path atomically:YES];
+    }
+}
+
+- (IBAction)favoritePush:(id)sender {
+    [self saveFavorite:currentShow];
+    [UIView animateWithDuration:0.5 animations:^{
+        favButton.backgroundColor = [UIColor redColor];
+    }];
 }
 
 #pragma mark - Audio player recent show
