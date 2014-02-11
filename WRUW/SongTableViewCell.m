@@ -90,15 +90,36 @@
         [data writeToFile:path atomically:YES];
     }
  
-    [ctrl.tableView reloadData];
 }
 
 - (IBAction)favoritePush:(id)sender {
 
     [self saveFavorite:_currentSong];
-    [UIView animateWithDuration:0.5 animations:^{
-        favButton.backgroundColor = [UIColor redColor];
-    }];
+    
+    if([[UIImage imageNamed:@"heart_24.png"] isEqual:favButton.currentImage]){
+    
+        UIImage *toImage = [UIImage imageNamed:@"heart_24_red.png"];
+        [UIView animateWithDuration:0.5 animations:^{
+            favButton.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            favButton.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
+            [favButton.imageView startAnimating];
+            [UIView animateWithDuration:0.5 animations:^{
+                favButton.alpha = 1.0f;
+            }];
+        }];
+    }else if ([[UIImage imageNamed:@"heart_24_red.png"] isEqual:favButton.currentImage]) {
+        UIImage *toImage = [UIImage imageNamed:@"heart_24.png"];
+        [UIView animateWithDuration:0.5 animations:^{
+            favButton.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            favButton.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
+            [favButton.imageView startAnimating];
+            [UIView animateWithDuration:0.5 animations:^{
+                favButton.alpha = 1.0f;
+            }];
+        }];
+    }
 }
 
 - (IBAction)composeFBPost:(id)sender {
