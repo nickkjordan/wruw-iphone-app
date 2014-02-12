@@ -228,9 +228,29 @@
 
 - (IBAction)favoritePush:(id)sender {
     [self saveFavorite:currentShow];
-    [UIView animateWithDuration:0.5 animations:^{
-        favButton.backgroundColor = [UIColor redColor];
-    }];
+    
+    UIImage *testHeart  = [UIImage imageNamed:@"heart_24.png"];
+    UIImage *currentHeart = favButton.currentImage;
+    
+    NSString *switchHeart = ([testHeart isEqual:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    
+    [self buttonAnimation:favButton withImage:switchHeart];
+    
+}
+
+-(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName {
+    
+    UIImage *toImage = [UIImage imageNamed:imageName];
+    
+    [UIView transitionWithView:self.view
+                      duration:0.3f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        button.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
+                        [button.imageView startAnimating];
+                        [button setImage:toImage forState:UIControlStateNormal];
+                    } completion:nil];
+    
 }
 
 #pragma mark - Audio player recent show
