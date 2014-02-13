@@ -279,6 +279,7 @@
 		0170903F17DBA8F80005EC0F /* WRUW */ = {
 			isa = PBXGroup;
 			children = (
+				01A721D118AC6808001FA64F /* Favorites Controllers */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				01F9819F183537A10069C241 /* hpple */,
@@ -289,15 +290,9 @@
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
 				0153B8F5189C827100331DD9 /* HomeTableViewController.h */,
 				0153B8F6189C827100331DD9 /* HomeTableViewController.m */,
-				01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */,
-				01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */,
 				012C926B1840026600C94210 /* Save Data */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01CAC82917DFACE400057340 /* images */,
-				012C926F184009E000C94210 /* FavoritesTableViewController.h */,
-				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
-				01A254A8185990000069AB3F /* SegmentedViewController.h */,
-				01A254A9185990000069AB3F /* SegmentedViewController.m */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUW;
@@ -364,6 +359,19 @@
 				01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */,
 			);
 			name = ArchiveTable;
+			sourceTree = "<group>";
+		};
+		01A721D118AC6808001FA64F /* Favorites Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */,
+				01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */,
+				012C926F184009E000C94210 /* FavoritesTableViewController.h */,
+				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
+				01A254A8185990000069AB3F /* SegmentedViewController.h */,
+				01A254A9185990000069AB3F /* SegmentedViewController.m */,
+			);
+			name = "Favorites Controllers";
 			sourceTree = "<group>";
 		};
 		01CAC82917DFACE400057340 /* images */ = {

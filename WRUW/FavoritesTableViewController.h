@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ArrayDataSource.h"
+#import "SongTableViewCell.h"
+#import "Song.h"
 
 @interface FavoritesTableViewController : UITableViewController
+
+-(void)deleteUnfavorited:(NSNotification *)notification;
 
 @end

@@ -7,13 +7,12 @@
 //
 
 #import "FavoritesTableViewController.h"
-#import "SongTableViewCell.h"
-#import "Song.h"
 #import <Social/Social.h>
 
 @interface FavoritesTableViewController ()
 {
     NSMutableArray *_favorites;
+    NSNotificationCenter *center;
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 
@@ -41,12 +40,20 @@
     [self loadFavs];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
+    
+    //Creates notification for cleared song
+    center = [NSNotificationCenter defaultCenter];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(void)viewDidAppear:(BOOL)animated{
+    [center addObserver:self
+               selector:@selector(deleteUnfavorited:)
+                   name:@"notification"
+                 object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [center removeObserver:self name:@"notification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +85,16 @@
     for (SongTableViewCell *cell in cells) {
         [cell buttonAnimation:cell.favButton withImage:@"heart_24_red.png"];
     }
+}
+
+-(void)deleteUnfavorited:(NSNotification *)notification {
+    NSIndexPath *clickedButtonPath = [self.tableView indexPathForCell:[[notification userInfo] objectForKey:@"cell"]];
+
+    NSArray *indexPaths = [NSArray arrayWithObject:clickedButtonPath];
+    
+    [_favorites removeObjectAtIndex:clickedButtonPath.row];
+    
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - Table view data source

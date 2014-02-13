@@ -74,6 +74,13 @@
         if ([content containsObject:currentSong]) {
             
             [content removeObject:currentSong];
+            
+            NSDictionary *dataDict2=[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:self]
+                                                                forKeys:[NSArray arrayWithObject:@"cell"]];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"notification"
+                                                                object:self
+                                                              userInfo:dataDict2];
         } else {
             // Add new stuff.
             [content insertObject:currentSong atIndex:0];
