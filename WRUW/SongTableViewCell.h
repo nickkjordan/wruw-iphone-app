@@ -26,10 +26,14 @@
 - (IBAction)composeTwitterPost:(id)sender;
 - (IBAction)searchSong:(id)sender;
 - (IBAction)imageTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 
 -(id)initWithViewController:(UIViewController*)c;
 -(void)postSocial:(SLComposeViewController *)social;
 - (void)configureForSong:(Song *)song controlView:(UIViewController *)c;
+-(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName;
+
 @property (weak) UITableViewController *ctrl;
 @property (weak) Song *currentSong;
 

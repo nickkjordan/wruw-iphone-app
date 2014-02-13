@@ -14,7 +14,7 @@
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton,ctrl;
+@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton, ctrl, facebookButton, twitterButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -90,15 +90,18 @@
         [data writeToFile:path atomically:YES];
     }
  
-    [ctrl.tableView reloadData];
 }
 
 - (IBAction)favoritePush:(id)sender {
 
     [self saveFavorite:_currentSong];
-    [UIView animateWithDuration:0.5 animations:^{
-        favButton.backgroundColor = [UIColor redColor];
-    }];
+    
+    UIImage *testHeart  = [UIImage imageNamed:@"heart_24.png"];
+    UIImage *currentHeart = favButton.currentImage;
+    
+    NSString *switchHeart = ([testHeart isEqual:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    
+    [self buttonAnimation:favButton withImage:switchHeart];
 }
 
 - (IBAction)composeFBPost:(id)sender {
@@ -122,10 +125,31 @@
     NSString *song = nameLabel.text;
     UIImage *albumArt = thumbnailImageView.imageView.image;
     
+    if (social.serviceType == SLServiceTypeFacebook){
+        [self buttonAnimation:facebookButton withImage:@"facebook_blue.png"];
+    } else if (social.serviceType == SLServiceTypeTwitter){
+        [self buttonAnimation:twitterButton withImage:@"twitter_blue.png"];
+    }
+    
     [social setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
     [social addURL:[NSURL URLWithString:@"wruw.org"]];
     [social addImage:albumArt];
     [ctrl presentViewController:social animated:YES completion:nil];
+}
+
+-(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName {
+    
+    UIImage *toImage = [UIImage imageNamed:imageName];
+    
+    [UIView transitionWithView:self.socialView
+                      duration:0.3f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        button.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
+                        [button.imageView startAnimating];
+                        [button setImage:toImage forState:UIControlStateNormal];
+                    } completion:nil];
+    
 }
 
 - (IBAction)searchSong:(id)sender {

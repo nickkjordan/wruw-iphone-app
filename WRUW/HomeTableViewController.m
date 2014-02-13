@@ -220,4 +220,17 @@
     [self.tableView reloadData];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isSelected]) {
+        // Deselect manually.
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        return nil;
+    }
+    
+    return indexPath;
+}
+
 @end

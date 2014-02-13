@@ -24,6 +24,9 @@
 		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
 		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
+		01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2718AA9402001FFD61 /* heart_24_red.png */; };
+		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
+		01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2A18AA9A74001FFD61 /* twitter_blue.png */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0153B8F7189C827100331DD9 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeTableViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
@@ -110,6 +113,9 @@
 		012C92691840025E00C94210 /* saveFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saveFavorite.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
+		01312D2718AA9402001FFD61 /* heart_24_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_24_red.png; sourceTree = "<group>"; };
+		01312D2918AA9A74001FFD61 /* facebook_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_blue.png; sourceTree = "<group>"; };
+		01312D2A18AA9A74001FFD61 /* twitter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_blue.png; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0153B8F5189C827100331DD9 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
@@ -363,6 +369,9 @@
 		01CAC82917DFACE400057340 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				01312D2918AA9A74001FFD61 /* facebook_blue.png */,
+				01312D2A18AA9A74001FFD61 /* twitter_blue.png */,
+				01312D2718AA9402001FFD61 /* heart_24_red.png */,
 				0100D1981865386500D08BC2 /* heart_24.png */,
 				0100D1991865386500D08BC2 /* heart_48.png */,
 				0100D19A1865386500D08BC2 /* heart_64.png */,
@@ -484,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0100D1A31865386500D08BC2 /* home_64.png in Resources */,
+				01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */,
 				0170904417DBA8F80005EC0F /* InfoPlist.strings in Resources */,
 				0170904C17DBA8F80005EC0F /* Default.png in Resources */,
 				0170904E17DBA8F80005EC0F /* Default@2x.png in Resources */,
@@ -495,6 +505,7 @@
 				0170905817DBA8F80005EC0F /* first.png in Resources */,
 				0170905A17DBA8F80005EC0F /* first@2x.png in Resources */,
 				0170905F17DBA8F80005EC0F /* second.png in Resources */,
+				01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */,
 				0170906117DBA8F80005EC0F /* second@2x.png in Resources */,
 				01F40DC618396DB000BFA783 /* 01 Twin Peaks Theme.mp3 in Resources */,
 				0100D19E1865386500D08BC2 /* heart_24.png in Resources */,
@@ -510,6 +521,7 @@
 				0100D1A01865386500D08BC2 /* heart_64.png in Resources */,
 				01FB78A4183EA7EE0088C972 /* twitter.png in Resources */,
 				01947CC917E2389500173474 /* Default.png in Resources */,
+				01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */,
 				0100D1A21865386500D08BC2 /* home_48.png in Resources */,
 				01947CCB17E238A400173474 /* Default@2x.png in Resources */,
 			);
