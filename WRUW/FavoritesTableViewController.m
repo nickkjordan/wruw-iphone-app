@@ -72,6 +72,12 @@
     }
     
     [self setupTableView];
+    
+    NSArray *cells = [self.tableView visibleCells];
+    
+    for (SongTableViewCell *cell in cells) {
+        [cell buttonAnimation:cell.favButton withImage:@"heart_24_red.png"];
+    }
 }
 
 #pragma mark - Table view data source
@@ -87,6 +93,7 @@
     self.tableView.dataSource = self.songsArrayDataSource;
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
+    
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
