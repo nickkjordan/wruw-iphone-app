@@ -94,21 +94,27 @@
     // 8
     _archive = newSongs;
     
+    __block BOOL setup;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self setupTableView];
+        setup = [self setupTableView];
         [spinner stopAnimating];
     });
     
     dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
-    int i = 0;
-    for (Song *song in _archive) {
-        dispatch_async(imageQueue, ^{
-            [song loadImage];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
+    if (setup) {
+        int i = 0;
+        for (Song *song in _archive) {
+            dispatch_async(imageQueue, ^{
+                [song loadImage];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                    NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                    [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+                });
             });
-        });
-        i++;
+            i++;
+        }
     }
 }
 
@@ -144,7 +150,7 @@
 
 #pragma mark - Table view delegate
 
-- (void)setupTableView
+- (BOOL)setupTableView
 {
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
