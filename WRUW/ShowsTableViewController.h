@@ -14,4 +14,6 @@
 
 @interface ShowsTableViewController : UITableViewController
 
+@property (atomic) int dayOfWeek;
+
 @end
