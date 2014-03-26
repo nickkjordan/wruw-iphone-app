@@ -22,6 +22,8 @@
 
 @implementation ShowsTableViewController
 
+@synthesize dayOfWeek;
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
@@ -35,8 +37,15 @@
 }
 
 -(void)loadShows {
+    NSString *url;
+    if (dayOfWeek >= 0) {
+        url = [NSString stringWithFormat:@"http://www.wruw.org/guide/index.php?form_submit=1&g=&d=%d", dayOfWeek];
+    } else {
+        url = @"http://www.wruw.org/guide/index.php?form_submit=1&g=&d=";
+    }
+    
     // 1
-    NSURL *showsUrl = [NSURL URLWithString:@"http://www.wruw.org/guide/index.php?form_submit=1&g=&d=5"];
+    NSURL *showsUrl = [NSURL URLWithString:url];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
     
     // 2
@@ -145,49 +154,11 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return[NSArray arrayWithObjects:@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa", nil];
+    if (dayOfWeek < 0) {
+        return [NSArray arrayWithObjects:@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa", nil];
+    }
+    else
+        return nil;
 }
-
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 @end

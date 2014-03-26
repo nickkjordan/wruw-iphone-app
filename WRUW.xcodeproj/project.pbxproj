@@ -27,6 +27,7 @@
 		01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2718AA9402001FFD61 /* heart_24_red.png */; };
 		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
 		01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2A18AA9A74001FFD61 /* twitter_blue.png */; };
+		0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0153B8F7189C827100331DD9 /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeTableViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
@@ -116,6 +117,8 @@
 		01312D2718AA9402001FFD61 /* heart_24_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_24_red.png; sourceTree = "<group>"; };
 		01312D2918AA9A74001FFD61 /* facebook_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_blue.png; sourceTree = "<group>"; };
 		01312D2A18AA9A74001FFD61 /* twitter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_blue.png; sourceTree = "<group>"; };
+		0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupedProgramsTableViewController.h; sourceTree = "<group>"; };
+		0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupedProgramsTableViewController.m; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0153B8F5189C827100331DD9 /* HomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
+				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
+				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
 				0153B8F5189C827100331DD9 /* HomeTableViewController.h */,
 				0153B8F6189C827100331DD9 /* HomeTableViewController.m */,
 				012C926B1840026600C94210 /* Save Data */,
@@ -474,6 +479,7 @@
 		0170902E17DBA8F80005EC0F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nick Jordan";
 			};
@@ -571,6 +577,7 @@
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
+				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
