@@ -130,7 +130,7 @@
 -(void)postSocial:(SLComposeViewController *)social{
     NSString *artist = artistLabel.text;
     NSString *song = nameLabel.text;
-    UIImage *albumArt = thumbnailImageView.imageView.image;
+    UIImage *albumArt = thumbnailImageView.image;
     
     if (social.serviceType == SLServiceTypeFacebook){
         [self buttonAnimation:facebookButton withImage:@"facebook_blue.png"];
@@ -167,9 +167,6 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/search?q=%@+%@", title, artist]]];
 }
 
-- (IBAction)imageTapped:(id)sender {
-}
-
 -(id)initWithViewController:(UITableViewController*)c {
     
     if (self = [super init]) {
@@ -184,7 +181,7 @@
     self.albumLabel.text = song.album;
     self.artistLabel.text = song.artist;
     self.labelLabel.text = song.label;
-    [self.thumbnailImageView setImage:song.image forState:UIControlStateNormal];
+    self.thumbnailImageView.image =  song.image;
     self.currentSong = song;
     self.ctrl = c;
 }

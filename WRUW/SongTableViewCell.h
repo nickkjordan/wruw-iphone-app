@@ -17,7 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *albumLabel;
 @property (nonatomic, weak) IBOutlet UILabel *labelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *byLabel;
-@property (weak, nonatomic) IBOutlet UIButton *thumbnailImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *socialView;
 - (IBAction)favoritePush:(id)sender;
@@ -25,7 +25,6 @@
 - (IBAction)composeFBPost:(id)sender;
 - (IBAction)composeTwitterPost:(id)sender;
 - (IBAction)searchSong:(id)sender;
-- (IBAction)imageTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 
