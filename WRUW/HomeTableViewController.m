@@ -210,13 +210,22 @@
 }
 
 - (IBAction)streamPlay:(id)sender {
-    // Load the array with the sample file
-    NSURL *urlAddress = [NSURL URLWithString:@"http://wruw-stream.wruw.org:443/stream.mp3"];
-    
-    //Create a URL object.
-    player= [AVPlayer playerWithURL:urlAddress];
-    [player addObserver:self forKeyPath:@"status" options:0 context:NULL];
-    
+    if(player.rate == 1.0)//means pause
+    {
+        //This will change the image of the button to play image
+        //[sender setSelected:NO];
+        [player pause];
+    }
+    else {
+        // Create a URL object.
+        NSURL *urlAddress = [NSURL URLWithString:@"http://wruw-stream.wruw.org:443/stream.mp3"];
+        // And send it to the avplayer
+        player= [AVPlayer playerWithURL:urlAddress];
+        
+        //This will change the image of the button to pause image
+        //[sender setSelected:YES];
+        [player addObserver:self forKeyPath:@"status" options:0 context:NULL];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
