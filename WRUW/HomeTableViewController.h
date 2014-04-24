@@ -23,4 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 
+@property (nonatomic,strong) AVPlayer *player;
+
 @end

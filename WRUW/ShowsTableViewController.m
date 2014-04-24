@@ -115,7 +115,8 @@
 {
     [super viewDidLoad];
     
-    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
+    spinner = [[UIActivityIndicatorView alloc] init];
+    spinner.center = CGPointMake(super.view.frame.size.width / 2.0, super.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blueColor];
     [self.view addSubview:spinner];

@@ -43,6 +43,10 @@
     
     //Creates notification for cleared song
     center = [NSNotificationCenter defaultCenter];
+    
+    // Fix for last TableView cell under tab bar
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
 }
 
 -(void)viewDidAppear:(BOOL)animated{

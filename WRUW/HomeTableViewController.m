@@ -17,7 +17,7 @@
 @end
 
 @implementation HomeTableViewController
-@synthesize showTitle, showDescription;
+@synthesize showTitle, showDescription, player;
 
 - (void)loadHomePage{
     
@@ -180,7 +180,8 @@
 {
     [super viewDidLoad];
     
-    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 400, 20, 30)];
+    spinner = [[UIActivityIndicatorView alloc] init];
+    spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blueColor];
     [self.tableView addSubview:spinner];
@@ -209,10 +210,23 @@
 }
 
 - (IBAction)streamPlay:(id)sender {
-    NSString *urlAddress = @"http://www.wruw.org/listen/stream.php?stream=live128";
-    NSURL *urlStream = [NSURL URLWithString:urlAddress];
-    AVPlayer *musicPlayer = [AVPlayer playerWithURL:urlStream];
-    [musicPlayer play];
+    // Load the array with the sample file
+    NSURL *urlAddress = [NSURL URLWithString:@"http://wruw-stream.wruw.org:443/stream.mp3"];
+    
+    //Create a URL object.
+    player= [AVPlayer playerWithURL:urlAddress];
+    [player addObserver:self forKeyPath:@"status" options:0 context:NULL];
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"status"]) {
+        if (player.status == AVPlayerStatusReadyToPlay) {
+            [player play];
+        } else if (player.status == AVPlayerStatusFailed) {
+            /* An error was encountered */
+        }
+    }
 }
 
 #pragma mark - Table view data source
