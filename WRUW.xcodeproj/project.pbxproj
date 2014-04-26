@@ -18,6 +18,7 @@
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
 		010F292E17E21F1400DC3631 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292D17E21F1400DC3631 /* Icon.png */; };
 		010F293017E21F1600DC3631 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292F17E21F1600DC3631 /* Icon@2x.png */; };
+		011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011FC228190C1E320074C93A /* AudioToolbox.framework */; };
 		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
@@ -100,6 +101,7 @@
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		010F292F17E21F1600DC3631 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
+		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		011FECD81836A2B6009B5BFA /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		011FECD91836A2B6009B5BFA /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
 		011FECDB1836A506009B5BFA /* ShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowsTableViewController.h; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */,
 				01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */,
 				01C435071846BA220030B01F /* EventKit.framework in Frameworks */,
 				0135505818430BB300534E5E /* Social.framework in Frameworks */,
@@ -259,6 +262,7 @@
 		0170903817DBA8F80005EC0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				011FC228190C1E320074C93A /* AudioToolbox.framework */,
 				01C435081846BBAC0030B01F /* EventKitUI.framework */,
 				01C435061846BA220030B01F /* EventKit.framework */,
 				0135505718430BB300534E5E /* Social.framework */,
