@@ -1,5 +1,5 @@
 //
-//  HomeTableViewController.h
+//  HomeViewController.h
 //  WRUW
 //
 //  Created by Nick Jordan on 1/31/14.
@@ -14,12 +14,14 @@
 #import "SongTableViewCell.h"
 #import "ArrayDataSource.h"
 
-@interface HomeTableViewController : UITableViewController
+@interface HomeViewController : UIViewController <UINavigationBarDelegate>
 
 - (IBAction)streamPlay:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *showTitle;
 @property (weak, nonatomic) IBOutlet UITextView *showDescription;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 

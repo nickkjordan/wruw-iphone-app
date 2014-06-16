@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,6 +19,28 @@
     [[AVAudioSession sharedInstance] setDelegate:self];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
+    // Customize Navigation Bar
+    // NSString *navString = @"nav-bar-background.png";
+    NSString *navString = @"nav-bg1.png";
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:navString] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance]
+     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],
+                               NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Light" size:21.0],
+                               } ];
+    
+    // Change Navigation Bar buttons font and color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Light" size:14.0f] }
+     forState:UIControlStateNormal];
+    
+    // Segmented Control color
+    [[UISegmentedControl appearance]
+     setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]
+                                                              } forState:UIControlStateNormal];
+
     /* Pick any one of them */
     // 1. Overriding the output audio route
     //UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;

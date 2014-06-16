@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Nick Jordan. All rights reserved.
 //
 
-#import "HomeTableViewController.h"
+#import "HomeViewController.h"
 
-@interface HomeTableViewController () <AVAudioPlayerDelegate>
+@interface HomeViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
     UIActivityIndicatorView *spinner;
@@ -16,7 +16,7 @@
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @end
 
-@implementation HomeTableViewController
+@implementation HomeViewController
 @synthesize showTitle, showDescription, player;
 
 - (void)loadHomePage{
@@ -201,6 +201,9 @@
     // Fix for last TableView cell under tab bar
     self.edgesForExtendedLayout = UIRectEdgeAll;
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
+    
+    // Set navigation bar
+    self.navigationBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -264,6 +267,13 @@
     }
     
     return indexPath;
+}
+
+#pragma mark - Navigation Bar delegate
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
 }
 
 @end
