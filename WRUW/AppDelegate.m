@@ -26,19 +26,20 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:navString] forBarMetrics:UIBarMetricsDefault];
     
+    // Title View
     [[UINavigationBar appearance]
      setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],
-                               NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Light" size:21.0],
+                               NSFontAttributeName:[UIFont fontWithName:@"GillSans-Light" size:28.0],
                                } ];
     
     // Change Navigation Bar buttons font and color
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
-     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Light" size:14.0f] }
+     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"GillSans-Light" size:14.0f] }
      forState:UIControlStateNormal];
     
     // Segmented Control color
     [[UISegmentedControl appearance]
-     setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Light" size:12.0f]
+     setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Futura" size:14.0f]
                                                               } forState:UIControlStateNormal];
 
     /* Pick any one of them */

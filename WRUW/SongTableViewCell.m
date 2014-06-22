@@ -26,6 +26,15 @@
     return self;
 }
 
+- (void)layoutSubviews
+{
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:nameLabel.text];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:0];
+    [attrString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, attrString.length)];
+    nameLabel.attributedText = attrString;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
