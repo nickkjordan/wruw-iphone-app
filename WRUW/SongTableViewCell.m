@@ -7,6 +7,9 @@
 //
 
 #import "SongTableViewCell.h"
+#import <AFHTTPRequestOperationManager.h>
+#import <UIImageView+AFNetworking.h>
+#import <QuartzCore/CALayer.h>
 
 @interface SongTableViewCell(){
 }
@@ -14,16 +17,31 @@
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, labelLabel, byLabel, thumbnailImageView, socialView, favButton, ctrl, facebookButton, twitterButton;
+@synthesize nameLabel, artistLabel, albumLabel, thumbnailImageView, socialView, favButton, ctrl, facebookButton, twitterButton, view;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
     }
     socialView.hidden = !socialView.hidden;
     return self;
+}
+
+- (void)awakeFromNib {
+    thumbnailImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+    thumbnailImageView.layer.shadowOffset = CGSizeMake(2, 2);
+    thumbnailImageView.layer.shadowOpacity = 0.36;
+    thumbnailImageView.layer.shadowRadius = 2.0;
+    thumbnailImageView.clipsToBounds = NO;
+    
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowOffset = CGSizeMake(0, 1);
+    view.layer.shadowOpacity = 0.36;
+    view.layer.shadowRadius = 0.5;
+    view.clipsToBounds = NO;
 }
 
 - (void)layoutSubviews
@@ -33,6 +51,21 @@
     [style setLineSpacing:0];
     [attrString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, attrString.length)];
     nameLabel.attributedText = attrString;
+    
+    NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
+    CGSize labelSize = (CGSize){self.nameLabel.bounds.size.width, FLT_MAX};
+    CGRect r = [self.nameLabel.attributedText.string boundingRectWithSize:labelSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont fontWithName:@"AvenirNextCondensed-Bold" size:16]} context:context];
+    
+    if (r.size.height > 25) {
+        CGRect frame = self.artistLabel.frame;
+        frame.origin.y = 56;
+        self.artistLabel.frame = frame;
+    } else if (self.artistLabel.frame.origin.y == 56) {
+        CGRect frame = self.artistLabel.frame;
+        frame.origin.y = 48;
+        self.artistLabel.frame = frame;
+    }
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -40,27 +73,13 @@
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
-    if (selected) {
-        [UILabel animateWithDuration:0.5
-                         animations:^{
-                             nameLabel.alpha = 0;
-                              artistLabel.alpha = 0;
-                              albumLabel.alpha = 0;
-                              labelLabel.alpha = 0;
-                              byLabel.alpha = 0;
-                              socialView.alpha = 1;
-                          }];
-    } else {
-        [UILabel animateWithDuration:0.5
-                          animations:^{
-                              nameLabel.alpha = 1;
-                              artistLabel.alpha = 1;
-                              albumLabel.alpha = 1;
-                              labelLabel.alpha = 1;
-                              byLabel.alpha = 1;
-                             socialView.alpha = 0;
-                         }];
-    }
+    [UILabel animateWithDuration:0.5
+                      animations:^{
+                          nameLabel.alpha = !selected;
+                          artistLabel.alpha = !selected;
+                          albumLabel.alpha = !selected;
+                          socialView.alpha = selected;
+                      }];
 }
 
 -(NSString *) getFilePath {
@@ -186,13 +205,21 @@
 
 - (void)configureForSong:(Song *)song controlView:(UIViewController *)c
 {
-    self.nameLabel.text = song.songName;
-    self.albumLabel.text = song.album;
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:song.songName];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:0];
+    [attrString addAttribute:NSParagraphStyleAttributeName
+                       value:style
+                       range:NSMakeRange(0, song.songName.length)];
+    self.nameLabel.attributedText = attrString;
+    self.albumLabel.text = [@[song.album, song.label] componentsJoinedByString:@" · "];
     self.artistLabel.text = song.artist;
-    self.labelLabel.text = song.label;
-    self.thumbnailImageView.image =  song.image;
     self.currentSong = song;
     self.ctrl = c;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
+    [self.thumbnailImageView setImageWithURL:[NSURL URLWithString:song.imageUrl] placeholderImage:[UIImage imageWithContentsOfFile:path]];
+    
 }
 
 @end

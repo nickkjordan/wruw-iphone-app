@@ -19,22 +19,15 @@
     [[AVAudioSession sharedInstance] setDelegate:self];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
-    // Customize Navigation Bar
-    // NSString *navString = @"nav-bar-background.png";
-    NSString *navString = @"nav-bg1.png";
-    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:navString] forBarMetrics:UIBarMetricsDefault];
-    
     // Title View
     [[UINavigationBar appearance]
-     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],
-                               NSFontAttributeName:[UIFont fontWithName:@"GillSans-Light" size:28.0],
+     setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],
+                               NSFontAttributeName:[UIFont fontWithName:@"Futura-Medium" size:24.0],
                                } ];
     
     // Change Navigation Bar buttons font and color
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
-     setTitleTextAttributes: @{ UITextAttributeTextColor:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"GillSans-Light" size:14.0f] }
+     setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"GillSans-Light" size:14.0f] }
      forState:UIControlStateNormal];
     
     // Segmented Control color

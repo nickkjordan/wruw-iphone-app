@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Nick Jordan. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface WRUWTests : SenTestCase
+@interface WRUWTests : XCTestCase
 
 @end

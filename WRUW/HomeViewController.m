@@ -7,6 +7,9 @@
 //
 
 #import "HomeViewController.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFOnoResponseSerializer.h"
+#import "Ono.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
@@ -17,36 +20,39 @@
 @end
 
 @implementation HomeViewController
-@synthesize showTitle, showDescription, player;
+@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer;
 
-- (void)loadHomePage{
+- (void)checkConnection{
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
+    [manager GET:@"http://www.wruw.org" parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
+        [self loadHomePage:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        return;
+    }];
     
-    // 1
-    NSURL *homePageUrl = [NSURL URLWithString:@"http://www.wruw.org/"];
-    NSData *homePageHtmlData = [NSData dataWithContentsOfURL:homePageUrl];
+}
+
+- (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
     
-    // 2
-    TFHpple *homePageParser = [TFHpple hppleWithHTMLData:homePageHtmlData];
-    
-    // 3
+    // Create XPath strings
     NSString *currentShowTitleXpathQueryString = @"/html/body/table[2]/tr[1]/td[2]/table[1]/tr[2]/td[2]/p[1]/a";
-    NSString *currentShowDescriptionXpathQueryString = @"/html/body/table[2]/tr[1]/td[2]/table[1]/tr[2]/td[2]/p[1]/text()";
-    NSArray *showTitleNode = [homePageParser searchWithXPathQuery:currentShowTitleXpathQueryString];
-    NSArray *showDescriptionNode = [homePageParser searchWithXPathQuery:currentShowDescriptionXpathQueryString];
     
-    TFHppleElement *showTitleElement = showTitleNode[0];
-    NSString *title = [[showTitleElement firstChild] content];
+    ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
     
-    NSString * url = [showTitleElement objectForKey:@"href"];
-    
-    
-    TFHppleElement *showDescriptionElement = showDescriptionNode[1];
-    NSString *description = [showDescriptionElement content];
+    NSString *title = [showTitleNode stringValue];
+    NSString *url = [[showTitleNode attributes] objectForKey:@"href"];
+    NSString *description = showTitleNode.nextSibling.nextSibling.stringValue;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [showTitle setText:title];
         [showDescription setText:description];
+        
+        [self resizeNowPlaying];
     });
     
     // 1
@@ -67,6 +73,17 @@
     recentPlaylist.idValue = [element objectForKey:@"value"];
     
     [self loadSongs:url playlist:recentPlaylist];
+}
+
+
+- (void)resizeNowPlaying {
+    CGSize sizeThatShouldFitTheContent = [showDescription sizeThatFits:showDescription.frame.size];
+    showDescriptionHeight.constant = sizeThatShouldFitTheContent.height;
+    
+    showViewHeight.constant = 85 + sizeThatShouldFitTheContent.height;
+    
+    infoView.frame = CGRectMake(0, 0, infoView.frame.size.width, showViewHeight.constant + 10);
+    self.tableView.tableHeaderView = infoView;
 }
 
 -(void)loadSongs:(NSString *)url playlist:(Playlist*)currentPlaylist {
@@ -134,14 +151,12 @@
                 default:
                     break;
             }
-            NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
-            song.image = [UIImage imageWithContentsOfFile:path];
         }
         
     }
     
     // 8
-    _archive = [[newSongs reverseObjectEnumerator] allObjects];
+    _archive = [NSMutableArray arrayWithArray:[[newSongs reverseObjectEnumerator] allObjects]];
     
     __block BOOL setup;
     
@@ -150,20 +165,17 @@
         [spinner stopAnimating];
     });
     
-    dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
-    if (setup) {
-        int i = 0;
-        for (Song *song in _archive) {
-            dispatch_async(imageQueue, ^{
-                [song loadImage];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                    NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                    [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-                });
+    int i = 0;
+    for (Song *song in _archive) {
+        [song loadImage:^void () {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
             });
-            i++;
-        }
+        }];
+        
+        i++;
     }
 }
 
@@ -180,6 +192,14 @@
 {
     [super viewDidLoad];
     
+    self.tableView.delegate = self;
+    
+    showContainer.layer.shadowColor = [UIColor blackColor].CGColor;
+    showContainer.layer.shadowOffset = CGSizeMake(0, 1);
+    showContainer.layer.shadowOpacity = 0.36;
+    showContainer.layer.shadowRadius = 0.5;
+    showContainer.clipsToBounds = NO;
+    
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
@@ -194,9 +214,10 @@
     
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
     
-    dispatch_async(myQueue, ^{ [self loadHomePage]; });
+    dispatch_async(myQueue, ^{ [self checkConnection]; });
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
+    [self.tableView setSeparatorColor:[UIColor clearColor]];
     
     // Fix for last TableView cell under tab bar
 //    self.edgesForExtendedLayout = UIRectEdgeAll;
@@ -254,7 +275,11 @@
     self.tableView.dataSource = self.songsArrayDataSource;
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
+    
+    return true;
 }
+
+#pragma mark – Table view delegate
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

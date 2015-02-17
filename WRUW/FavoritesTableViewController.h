@@ -11,8 +11,11 @@
 #import "SongTableViewCell.h"
 #import "Song.h"
 
-@interface FavoritesTableViewController : UITableViewController
+@interface FavoritesTableViewController : UIViewController <UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (id) initWithStyle:(UITableViewStyle)style;
 -(void)deleteUnfavorited:(NSNotification *)notification;
 
 @end

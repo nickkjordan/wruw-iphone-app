@@ -86,7 +86,7 @@
                     break;
             }
             NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
-            song.image = [UIImage imageWithContentsOfFile:path];
+            //song.image = [UIImage imageWithContentsOfFile:path];
             
         }
     }
@@ -101,20 +101,17 @@
         [spinner stopAnimating];
     });
     
-    dispatch_queue_t imageQueue = dispatch_queue_create("org.wruw.app", NULL);
-    if (setup) {
-        int i = 0;
-        for (Song *song in _archive) {
-            dispatch_async(imageQueue, ^{
-                [song loadImage];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                    NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                    [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-                });
+    int i = 0;
+    for (Song *song in _archive) {
+        [song loadImage:^void () {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
             });
-            i++;
-        }
+        }];
+        
+        i++;
     }
 }
 

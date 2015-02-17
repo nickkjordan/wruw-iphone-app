@@ -8,6 +8,7 @@
 
 #import "FavoritesTableViewController.h"
 #import <Social/Social.h>
+#import "EmptyFavoritesView.h"
 
 @interface FavoritesTableViewController ()
 {
@@ -15,22 +16,25 @@
     NSNotificationCenter *center;
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
+@property (nonatomic, strong) UIView *emptyView;
 
 @end
 
 @implementation FavoritesTableViewController
 
+@synthesize tableView;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        self.tableView.delegate = self;
     }
     return self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [self loadFavs];
+    [self checkIfEmpty];
 }
 
 - (void)viewDidLoad
@@ -54,6 +58,26 @@
                selector:@selector(deleteUnfavorited:)
                    name:@"notification"
                  object:nil];
+}
+
+-(void)checkIfEmpty:(float)time {
+    if (!_favorites.count) {
+        _emptyView = [EmptyFavoritesView emptySongs];
+        _emptyView.frame = self.view.frame;
+        _emptyView.bounds = self.view.bounds;
+
+        [_emptyView setAlpha:0.0];
+        [self.view addSubview:_emptyView];
+        [UIView animateWithDuration:time
+                         animations:^{_emptyView.alpha = 1.0;
+                         }];
+    } else if ([_emptyView isDescendantOfView:self.view]) {
+        [_emptyView removeFromSuperview];
+    }
+}
+
+-(void)checkIfEmpty {
+    [self checkIfEmpty:0.0];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -99,12 +123,16 @@
     [_favorites removeObjectAtIndex:clickedButtonPath.row];
     
     [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    
+    [self checkIfEmpty:0.5];
 }
 
 #pragma mark - Table view data source
 
 - (void)setupTableView
 {
+
+    
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
     };

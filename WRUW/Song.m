@@ -8,6 +8,9 @@
 
 #import "Song.h"
 #import "TFHpple.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import "AFOnoResponseSerializer.h"
+#import "ONOXMLDocument.h"
 
 @implementation Song
 
@@ -15,7 +18,7 @@
 @synthesize album = _album;
 @synthesize songName = _songName;
 @synthesize label = _label;
-@synthesize image = _image;
+@synthesize imageUrl = _imageUrl;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
@@ -23,7 +26,7 @@
         self.artist = [decoder decodeObjectForKey:@"artist"];
         self.album = [decoder decodeObjectForKey:@"album"];
         self.label = [decoder decodeObjectForKey:@"label"];
-        self.image = [decoder decodeObjectForKey:@"image"];
+        self.imageUrl = [decoder decodeObjectForKey:@"image"];
     }
     return self;
 }
@@ -33,7 +36,7 @@
     [encoder encodeObject:_artist forKey:@"artist"];
     [encoder encodeObject:_album forKey:@"album"];
     [encoder encodeObject:_label forKey:@"label"];
-    [encoder encodeObject:_image forKey:@"image"];
+    [encoder encodeObject:_imageUrl forKey:@"image"];
 }
 
 - (BOOL)isEqualToSong:(Song *)song {
@@ -48,7 +51,7 @@
     return haveEqualArtistNames && haveEqualSongTitles;
 }
 
--(void)loadImage {
+-(void)loadImage:(void (^)())succeeded {
     
     NSString *urlQuery;
     
@@ -67,33 +70,22 @@
     }
     
     // Complete url
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery]];
-    // Send a synchronous request
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *htmlData = [NSURLConnection sendSynchronousRequest:urlRequest
-                                          returningResponse:&response
-                                                      error:&error];
+    NSString *url = [NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery];
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    if (error == nil) {
-        // 2
-        TFHpple *parser = [TFHpple hppleWithHTMLData:htmlData];
-        
-        // 3
-        NSString *xpathQueryString = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
-        NSArray *node = [parser searchWithXPathQuery:xpathQueryString];
-        
-        TFHppleElement *img = [node firstObject];
-        
-        NSString *imgUrl = [img objectForKey:@"src"];
-        
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
-        
-        UIImage *albumImage = [UIImage imageWithData:imgData];
-        
-        self.image = albumImage;
-    }
+    // make request for first image in google search results with
+    // https://github.com/AFNetworking/AFOnoResponseSerializer
+    //
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
+        for (ONOXMLElement *element in [responseDocument XPath:@"//*[@id='ires']/table/tr[1]/td[1]/a/img"]) {
+            _imageUrl =[element valueForAttribute:@"src"];
+            succeeded();
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }];
     
 }
 

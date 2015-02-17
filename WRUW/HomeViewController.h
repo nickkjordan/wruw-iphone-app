@@ -14,7 +14,7 @@
 #import "SongTableViewCell.h"
 #import "ArrayDataSource.h"
 
-@interface HomeViewController : UIViewController <UINavigationBarDelegate>
+@interface HomeViewController : UIViewController <UINavigationBarDelegate, UITableViewDelegate>
 
 - (IBAction)streamPlay:(id)sender;
 
@@ -22,6 +22,11 @@
 @property (weak, nonatomic) IBOutlet UITextView *showDescription;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIView *showContainer;
+
+// Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showDescriptionHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showViewHeight;
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 

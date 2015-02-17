@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyFavoritesView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You don't have any Favorites yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKP-Zs-6zh">
+                    <rect key="frame" x="30" y="232" width="541" height="59"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="Vhv-uk-AhT"/>
+                        <constraint firstAttribute="height" constant="137" id="YTs-65-or2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                    <color key="textColor" red="0.27583240327380953" green="0.27583240327380953" blue="0.27583240327380953" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Vhv-uk-AhT"/>
+                            <exclude reference="YTs-65-or2"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="205" width="320" height="59"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <exclude reference="Vhv-uk-AhT"/>
+                            <include reference="YTs-65-or2"/>
+                        </mask>
+                    </variation>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_64.png" translatesAutoresizingMaskIntoConstraints="NO" id="OQO-t2-6Ld">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="eZ3-NN-sgh"/>
+                        <constraint firstAttribute="height" constant="60" id="rDR-Vu-RbP"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="eZ3-NN-sgh"/>
+                            <exclude reference="rDR-Vu-RbP"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="eZ3-NN-sgh"/>
+                            <include reference="rDR-Vu-RbP"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To add a favorite song, tap a song to reveal its interactive buttons, then tap the heart icon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38v-ig-Fwm">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="S0Q-BP-LhF"/>
+                        <constraint firstAttribute="height" constant="98" id="eKz-Ds-3NQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                    <color key="textColor" red="0.6705882352941176" green="0.6705882352941176" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="S0Q-BP-LhF"/>
+                            <exclude reference="eKz-Ds-3NQ"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <exclude reference="S0Q-BP-LhF"/>
+                            <include reference="eKz-Ds-3NQ"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.89053352437990962" green="0.89453998866886075" blue="0.90655938153571425" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="38v-ig-Fwm" secondAttribute="trailing" constant="20" id="2UF-ll-73s"/>
+                <constraint firstItem="DKP-Zs-6zh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="156" id="61Q-90-DpS"/>
+                <constraint firstItem="38v-ig-Fwm" firstAttribute="top" secondItem="OQO-t2-6Ld" secondAttribute="bottom" constant="68" id="8g4-Nm-Ee5">
+                    <variation key="heightClass=regular-widthClass=compact" constant="65"/>
+                </constraint>
+                <constraint firstItem="DKP-Zs-6zh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="BUa-xD-q9C"/>
+                <constraint firstItem="38v-ig-Fwm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="aTn-lL-dCv"/>
+                <constraint firstAttribute="trailing" secondItem="DKP-Zs-6zh" secondAttribute="trailing" constant="40" id="iMH-dm-HwW"/>
+                <constraint firstItem="OQO-t2-6Ld" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="125" id="qkh-F2-g52"/>
+                <constraint firstAttribute="centerX" secondItem="OQO-t2-6Ld" secondAttribute="centerX" id="tq7-HB-zSD"/>
+                <constraint firstAttribute="centerX" secondItem="38v-ig-Fwm" secondAttribute="centerX" id="ts2-Kb-KU6"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="OQO-t2-6Ld"/>
+                    <exclude reference="38v-ig-Fwm"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="2UF-ll-73s"/>
+                    <exclude reference="8g4-Nm-Ee5"/>
+                    <exclude reference="aTn-lL-dCv"/>
+                    <exclude reference="ts2-Kb-KU6"/>
+                    <exclude reference="qkh-F2-g52"/>
+                    <exclude reference="tq7-HB-zSD"/>
+                    <exclude reference="61Q-90-DpS"/>
+                    <exclude reference="BUa-xD-q9C"/>
+                    <exclude reference="iMH-dm-HwW"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="OQO-t2-6Ld"/>
+                    <include reference="38v-ig-Fwm"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="2UF-ll-73s"/>
+                    <include reference="8g4-Nm-Ee5"/>
+                    <include reference="aTn-lL-dCv"/>
+                    <exclude reference="ts2-Kb-KU6"/>
+                    <include reference="qkh-F2-g52"/>
+                    <include reference="tq7-HB-zSD"/>
+                    <include reference="61Q-90-DpS"/>
+                    <include reference="BUa-xD-q9C"/>
+                    <include reference="iMH-dm-HwW"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="infoText" destination="38v-ig-Fwm" id="ffq-RO-DeK"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart_64.png" width="64" height="64"/>
+    </resources>
+</document>

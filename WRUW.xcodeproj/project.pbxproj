@@ -32,7 +32,10 @@
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
+		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
+		015A16391A929724000FC518 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 015A16381A929724000FC518 /* heart_64.png */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
+		016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016C99111A93F522008634DA /* EmptyFavoritesView.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170903E17DBA8F80005EC0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903D17DBA8F80005EC0F /* CoreGraphics.framework */; };
@@ -47,7 +50,6 @@
 		0170905A17DBA8F80005EC0F /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170905917DBA8F80005EC0F /* first@2x.png */; };
 		0170905F17DBA8F80005EC0F /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170905E17DBA8F80005EC0F /* second.png */; };
 		0170906117DBA8F80005EC0F /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170906017DBA8F80005EC0F /* second@2x.png */; };
-		0170906917DBA8F80005EC0F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170906817DBA8F80005EC0F /* SenTestingKit.framework */; };
 		0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
@@ -79,6 +81,7 @@
 		01FB78A3183EA7EE0088C972 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A1183EA7EE0088C972 /* facebook.png */; };
 		01FB78A4183EA7EE0088C972 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A2183EA7EE0088C972 /* twitter.png */; };
 		01FB78A6183EA89A0088C972 /* magnifier_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A5183EA89A0088C972 /* magnifier_48.png */; };
+		47D67AF381E2ABAD6840FFDA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FAA79F1061A76977D248CF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +130,12 @@
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
 		0153B8F9189CA50100331DD9 /* ShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCell.m; sourceTree = "<group>"; };
+		015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyFavoritesView.xib; sourceTree = "<group>"; };
+		015A16381A929724000FC518 /* heart_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart_64.png; path = ../heart_64.png; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
+		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
+		016C99111A93F522008634DA /* EmptyFavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFavoritesView.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRUW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170903917DBA8F80005EC0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0170903B17DBA8F80005EC0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,8 +154,7 @@
 		0170905917DBA8F80005EC0F /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
 		0170905E17DBA8F80005EC0F /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../second.png; sourceTree = "<group>"; };
 		0170906017DBA8F80005EC0F /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../second@2x.png"; sourceTree = "<group>"; };
-		0170906717DBA8F80005EC0F /* WRUWTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0170906817DBA8F80005EC0F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170907017DBA8F80005EC0F /* WRUWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUWTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		01FB78A2183EA7EE0088C972 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		01FB78A5183EA89A0088C972 /* magnifier_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier_48.png; sourceTree = "<group>"; };
+		81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D8FAA79F1061A76977D248CF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +218,7 @@
 				0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
 				0170903E17DBA8F80005EC0F /* CoreGraphics.framework in Frameworks */,
 				01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */,
+				47D67AF381E2ABAD6840FFDA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +226,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0170906917DBA8F80005EC0F /* SenTestingKit.framework in Frameworks */,
 				0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */,
 				0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
 			);
@@ -253,6 +262,7 @@
 				0170906E17DBA8F80005EC0F /* WRUWTests */,
 				0170903817DBA8F80005EC0F /* Frameworks */,
 				0170903717DBA8F80005EC0F /* Products */,
+				4262C16CF2A9C7E8D6BC554B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				0170903617DBA8F80005EC0F /* WRUW.app */,
-				0170906717DBA8F80005EC0F /* WRUWTests.octest */,
+				0170906717DBA8F80005EC0F /* WRUWTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,7 +290,7 @@
 				0170903917DBA8F80005EC0F /* UIKit.framework */,
 				0170903B17DBA8F80005EC0F /* Foundation.framework */,
 				0170903D17DBA8F80005EC0F /* CoreGraphics.framework */,
-				0170906817DBA8F80005EC0F /* SenTestingKit.framework */,
+				D8FAA79F1061A76977D248CF /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -379,6 +389,9 @@
 				012C9270184009E000C94210 /* FavoritesTableViewController.m */,
 				01A254A8185990000069AB3F /* SegmentedViewController.h */,
 				01A254A9185990000069AB3F /* SegmentedViewController.m */,
+				016C99101A93F522008634DA /* EmptyFavoritesView.h */,
+				016C99111A93F522008634DA /* EmptyFavoritesView.m */,
+				015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */,
 			);
 			name = "Favorites Controllers";
 			sourceTree = "<group>";
@@ -386,6 +399,7 @@
 		01CAC82917DFACE400057340 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				015A16381A929724000FC518 /* heart_64.png */,
 				01BD5014191099CB00E09531 /* nav-bg1.png */,
 				01BD501219108F2700E09531 /* nav-bar-background.png */,
 				01312D2918AA9A74001FFD61 /* facebook_blue.png */,
@@ -441,6 +455,15 @@
 			name = hpple;
 			sourceTree = "<group>";
 		};
+		4262C16CF2A9C7E8D6BC554B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */,
+				81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,9 +471,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW" */;
 			buildPhases = (
+				61C8A1B85DC6CFF65203D13B /* Check Pods Manifest.lock */,
 				0170903217DBA8F80005EC0F /* Sources */,
 				0170903317DBA8F80005EC0F /* Frameworks */,
 				0170903417DBA8F80005EC0F /* Resources */,
+				03DBA05F48E492B46066D055 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -477,8 +502,8 @@
 			);
 			name = WRUWTests;
 			productName = WRUWTests;
-			productReference = 0170906717DBA8F80005EC0F /* WRUWTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 0170906717DBA8F80005EC0F /* WRUWTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -486,7 +511,7 @@
 		0170902E17DBA8F80005EC0F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0510;
+				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nick Jordan";
 			};
@@ -535,12 +560,14 @@
 				010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */,
 				010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */,
 				010F292E17E21F1400DC3631 /* Icon.png in Resources */,
+				015A16391A929724000FC518 /* heart_64.png in Resources */,
 				010F293017E21F1600DC3631 /* Icon@2x.png in Resources */,
 				01BD5015191099CB00E09531 /* nav-bg1.png in Resources */,
 				01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */,
 				01FB78A3183EA7EE0088C972 /* facebook.png in Resources */,
 				0100D1A01865386500D08BC2 /* heart_64.png in Resources */,
 				01FB78A4183EA7EE0088C972 /* twitter.png in Resources */,
+				015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */,
 				01947CC917E2389500173474 /* Default.png in Resources */,
 				01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */,
 				01BD501319108F2700E09531 /* nav-bar-background.png in Resources */,
@@ -573,6 +600,36 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		03DBA05F48E492B46066D055 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61C8A1B85DC6CFF65203D13B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -597,6 +654,7 @@
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
+				016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */,
 				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
@@ -677,11 +735,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -706,11 +764,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SDKROOT)/usr/include/libxml2",
 					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -719,9 +777,16 @@
 		};
 		0170907A17DBA8F80005EC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
 				INFOPLIST_FILE = "WRUW/WRUW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -730,9 +795,16 @@
 		};
 		0170907B17DBA8F80005EC0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
 				INFOPLIST_FILE = "WRUW/WRUW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -746,13 +818,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/WRUWTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -763,13 +835,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/WRUWTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

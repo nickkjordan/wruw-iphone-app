@@ -14,10 +14,10 @@
 @property (nonatomic, copy) NSString *songName;
 @property (nonatomic, copy) NSString *album;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic, copy) UIImage *image;
+@property (nonatomic, copy) NSString *imageUrl;
 
 -(BOOL)isEqualToSong:(Song *)song;
--(void)loadImage;
+-(void)loadImage:(void (^)())succeeded;
 -(NSString *)formatForURL:(NSString *)string;
 
 @end
