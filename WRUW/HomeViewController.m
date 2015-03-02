@@ -20,7 +20,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer;
+@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel;
 
 - (void)checkConnection{
 
@@ -40,7 +40,7 @@
 - (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
     
     // Create XPath strings
-    NSString *currentShowTitleXpathQueryString = @"/html/body/table[2]/tr[1]/td[2]/table[1]/tr[2]/td[2]/p[1]/a";
+    NSString *currentShowTitleXpathQueryString = @"//*[@id='main-nav']/div[1]/div/div[2]/div/div/div[2]/div[1]/span/a";
     
     ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
     
@@ -56,14 +56,29 @@
     });
     
     // 1
-    NSURL *showsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org%@",url]];
+    NSURL *showsUrl = [NSURL URLWithString:url];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
     
     // 2
     TFHpple *showsParser = [TFHpple hppleWithHTMLData:showsHtmlData];
     
+    NSString *hostXpath = @"//*[@id='main']/div/article/header/p[1]/a";
+    NSArray *hostsNodes = [showsParser searchWithXPathQuery:hostXpath];
+    NSString *hostNames = @"";
+    for (TFHppleElement *host in hostsNodes) {
+        if (hostNames.length > 0) {
+            hostNames = [@[hostNames, host.firstChild.content] componentsJoinedByString:@", "];
+        } else {
+            hostNames = host.firstChild.content;
+        }
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [hostLabel setText:hostNames];
+    });
+    
     // 3
-    NSString *showsXpathQueryString = @"//*[@id='playlist']/p/select/option";
+    NSString *showsXpathQueryString = @"//*[@id='playlist-select']/option";
     NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
     
     TFHppleElement *element = [showsNodes objectAtIndex:1];
@@ -72,88 +87,7 @@
     recentPlaylist.date = [[element firstChild] content];
     recentPlaylist.idValue = [element objectForKey:@"value"];
     
-    [self loadSongs:url playlist:recentPlaylist];
-}
-
-
-- (void)resizeNowPlaying {
-    CGSize sizeThatShouldFitTheContent = [showDescription sizeThatFits:showDescription.frame.size];
-    showDescriptionHeight.constant = sizeThatShouldFitTheContent.height;
-    
-    showViewHeight.constant = 85 + sizeThatShouldFitTheContent.height;
-    
-    infoView.frame = CGRectMake(0, 0, infoView.frame.size.width, showViewHeight.constant + 10);
-    self.tableView.tableHeaderView = infoView;
-}
-
--(void)loadSongs:(NSString *)url playlist:(Playlist*)currentPlaylist {
-    
-    NSString *showId = [url stringByReplacingOccurrencesOfString:@"/guide/show.php?"
-                                                      withString:@""];
-    // 1
-    NSURL *archiveUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/playlists.php?%@&playlist_id=%@",showId,currentPlaylist.idValue]];
-    NSData *archiveHtmlData = [NSData dataWithContentsOfURL:archiveUrl];
-    
-    // 2
-    TFHpple *archiveParser = [TFHpple hppleWithHTMLData:archiveHtmlData];
-    
-    // 3
-    NSString *archiveXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/table/tr[position()>1 and not(contains(@id, 'comments'))]";
-    NSArray *archiveNodes = [archiveParser searchWithXPathQuery:archiveXpathQueryString];
-    
-    // 4
-    NSMutableArray *newSongs = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in archiveNodes) {
-        // 5
-        Song *song = [[Song alloc] init];
-        [newSongs addObject:song];
-        
-        NSArray *songInfo = [element children];
-        
-        for (int i = 1; i < [songInfo count] - 3; i++) {
-            switch (i) {
-                case 3: // set song.artist
-                {
-                    NSString *artist = [[songInfo[i] firstChild] content];
-                    artist = [artist stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    artist = [artist stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.artist = [artist stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 5: // set song.title
-                {
-                    NSString *songTitle = [[songInfo[i] firstChild] content];
-                    songTitle = [songTitle stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    songTitle = [songTitle stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.songName = [songTitle stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 7: // set song.album
-                {
-                    NSString *album = [[songInfo[i] firstChild] content];
-                    album = [album stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    album = [album stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.album = [album stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 9: // set song.label
-                {
-                    NSString *label = [[songInfo[i] firstChild] content];
-                    label = [label stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    label = [label stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.label = [label stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                default:
-                    break;
-            }
-        }
-        
-    }
+    NSMutableArray *newSongs = [recentPlaylist loadSongs];
     
     // 8
     _archive = [NSMutableArray arrayWithArray:[[newSongs reverseObjectEnumerator] allObjects]];
@@ -177,6 +111,17 @@
         
         i++;
     }
+}
+
+
+- (void)resizeNowPlaying {
+    CGSize sizeThatShouldFitTheContent = [showDescription sizeThatFits:showDescription.frame.size];
+    showDescriptionHeight.constant = sizeThatShouldFitTheContent.height;
+    
+    showViewHeight.constant = 85 + sizeThatShouldFitTheContent.height;
+    
+    infoView.frame = CGRectMake(0, 0, infoView.frame.size.width, showViewHeight.constant + 10);
+    self.tableView.tableHeaderView = infoView;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -210,6 +155,7 @@
     
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
+    [hostLabel setText:[NSString stringWithFormat:@""]];
     showDescription.editable = NO;
     
     dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);

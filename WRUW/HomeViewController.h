@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIView *showContainer;
+@property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showDescriptionHeight;

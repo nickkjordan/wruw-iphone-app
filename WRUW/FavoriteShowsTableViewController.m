@@ -7,12 +7,14 @@
 //
 
 #import "FavoriteShowsTableViewController.h"
+#import "EmptyFavoritesView.h"
 
 @interface FavoriteShowsTableViewController ()
 {
     NSMutableArray *_favorites;
 }
 @property (nonatomic, strong) ArrayDataSource *showsArrayDataSource;
+@property (nonatomic, strong) UIView *emptyView;
 
 @end
 
@@ -45,17 +47,34 @@
     
     [self loadFavs];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)checkIfEmpty:(float)time {
+    if (!_favorites.count) {
+        _emptyView = [EmptyFavoritesView emptyShows];
+        _emptyView.frame = self.view.frame;
+        _emptyView.bounds = self.view.bounds;
+        
+        [_emptyView setAlpha:0.0];
+        [self.view addSubview:_emptyView];
+        [UIView animateWithDuration:time
+                         animations:^{_emptyView.alpha = 1.0;
+                         }];
+    } else if ([_emptyView isDescendantOfView:self.view]) {
+        [_emptyView removeFromSuperview];
+    }
+}
+
+-(void)checkIfEmpty {
+    [self checkIfEmpty:0.0];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES];
     [self loadFavs];
+    
+    [self checkIfEmpty];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,26 +122,5 @@
 {
 }
 */
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

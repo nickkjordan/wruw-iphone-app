@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *idValue;
 
+-(NSMutableArray *)loadSongs;
+
 @end

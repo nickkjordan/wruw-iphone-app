@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, FavoritesStyle) {
 
 @implementation EmptyFavoritesView
 
-@synthesize infoText;
+@synthesize infoText, headerText;
 
 -(id)initWithClass:(FavoritesStyle)style {
     self = [[[NSBundle mainBundle] loadNibNamed:@"EmptyFavoritesView" owner:self options:nil] objectAtIndex:0];
@@ -60,10 +60,12 @@ typedef NS_ENUM(NSInteger, FavoritesStyle) {
 -(void)getText {
     switch (_favoritesEnum) {
         case 0:
-            infoText.text = @"To add a favorite song, tap a song to reveal its interactive buttons, then tap the heart icon";
+            infoText.text = @"To add a song, tap a song to reveal its interactive buttons, then tap the heart icon";
+            headerText.text = @"You don't have any Favorite Songs yet";
             break;
         case 1:
-            infoText.text = @"To add a favorite show, click on a show from the Programs guide bellow, then tap the heart icon";
+            infoText.text = @"To add a show, click on a show from the Programs guide bellow, then tap the heart icon";
+            headerText.text = @"You don't have any Favorite Shows yet";
             break;
             
         default:

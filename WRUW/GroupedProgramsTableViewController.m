@@ -23,7 +23,7 @@
         ShowsTableViewController *stvc = [segue destinationViewController];
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
-        int day = (int)path.row - 1;
+        int day = (int)path.row;
         [stvc setDayOfWeek:day];
     }
 }

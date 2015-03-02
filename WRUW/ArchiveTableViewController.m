@@ -21,75 +21,11 @@
 
 @implementation ArchiveTableViewController
 
-@synthesize currentPlaylist, currentShowId, currentShowTitle;
+@synthesize currentPlaylist, currentShowTitle;
 
 -(void)loadSongs {
-    // 1
-    NSURL *archiveUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/playlists.php?show_id=%@&playlist_id=%@",currentShowId,currentPlaylist.idValue]];
-    NSData *archiveHtmlData = [NSData dataWithContentsOfURL:archiveUrl];
-    
-    // 2
-    TFHpple *archiveParser = [TFHpple hppleWithHTMLData:archiveHtmlData];
-    
-    // 3
-    NSString *archiveXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/table/tr[position()>1 and not(contains(@id, 'comments'))]";
-    NSArray *archiveNodes = [archiveParser searchWithXPathQuery:archiveXpathQueryString];
-    
-    // 4
-    NSMutableArray *newSongs = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in archiveNodes) {
-        // 5
-        Song *song = [[Song alloc] init];
-        [newSongs addObject:song];
-        
-        NSArray *songInfo = [element children];
-        
-        for (int i = 1; i < [songInfo count] - 3; i++) {
-            switch (i) {
-                case 3: // set song.artist
-                {
-                    NSString *artist = [[songInfo[i] firstChild] content];
-                    artist = [artist stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    artist = [artist stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.artist = [artist stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 5: // set song.title
-                {
-                    NSString *songTitle = [[songInfo[i] firstChild] content];
-                    songTitle = [songTitle stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    songTitle = [songTitle stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.songName = [songTitle stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 7: // set song.album
-                {
-                    NSString *album = [[songInfo[i] firstChild] content];
-                    album = [album stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    album = [album stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.album = [album stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                case 9: // set song.label
-                {
-                    NSString *label = [[songInfo[i] firstChild] content];
-                    label = [label stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-                    label = [label stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-                    song.label = [label stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-                }
-                    break;
-                    
-                default:
-                    break;
-            }
-            NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
-            //song.image = [UIImage imageWithContentsOfFile:path];
-            
-        }
-    }
+
+    NSMutableArray *newSongs = [currentPlaylist loadSongs];
     
     // 8
     _archive = newSongs;
@@ -128,6 +64,7 @@
 {
     [super viewDidLoad];
     
+    [self setTitle:currentPlaylist.date];
     [self setupTableView];
     
     spinner = [[UIActivityIndicatorView alloc] init];

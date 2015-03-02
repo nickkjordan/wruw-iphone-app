@@ -11,6 +11,7 @@
 @interface EmptyFavoritesView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *infoText;
+@property (weak, nonatomic) IBOutlet UILabel *headerText;
 
 +(instancetype)emptySongs;
 +(instancetype)emptyShows;

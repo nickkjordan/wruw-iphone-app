@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) Playlist *currentPlaylist;
 
-@property (nonatomic, strong) NSString *currentShowId;
-
 @property (nonatomic, strong) NSString *currentShowTitle;
 
 

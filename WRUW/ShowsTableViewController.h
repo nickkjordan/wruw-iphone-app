@@ -11,9 +11,13 @@
 #import "DisplayViewController.h"
 #import "ShowCell.h"
 #import "ArrayDataSource.h"
+#import <CoreData/CoreData.h>
 
-@interface ShowsTableViewController : UITableViewController
+@interface ShowsTableViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (atomic) int dayOfWeek;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

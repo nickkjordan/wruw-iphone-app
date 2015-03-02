@@ -29,8 +29,6 @@
         
         [atvc setCurrentPlaylist:p];
         
-        NSString *showId = [[currentShow.url componentsSeparatedByString:@"="] objectAtIndex:1];
-        [atvc setCurrentShowId:showId];
         [atvc setCurrentShowTitle:currentShow.title];
     }
 }
@@ -38,7 +36,7 @@
 -(void)loadPlaylist {
     
     // 3
-    NSString *showsXpathQueryString = @"//*[@id='playlist']/p/select/option";
+    NSString *showsXpathQueryString = @"//*[@id='playlist-select']/option[position()>1]";
     NSArray *showsNodes = [currentParser searchWithXPathQuery:showsXpathQueryString];
     
     // 4
@@ -74,11 +72,6 @@
     
     [self loadPlaylist];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,7 +108,14 @@
     
     Playlist *thisPlaylist = [_playlists objectAtIndex:indexPath.row];
     
-    [[cell textLabel] setText:thisPlaylist.date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    NSDate *myDate = [dateFormatter dateFromString:thisPlaylist.date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, yyyy"];
+    
+    [[cell textLabel] setText:[formatter stringFromDate:myDate]];
     
     return cell;
 }
@@ -124,56 +124,5 @@
 {
     [self performSegueWithIdentifier:@"showArchiveSegue" sender:self];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

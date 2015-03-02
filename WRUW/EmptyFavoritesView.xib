@@ -127,6 +127,7 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="headerText" destination="DKP-Zs-6zh" id="DUS-hN-mmH"/>
                 <outlet property="infoText" destination="38v-ig-Fwm" id="ffq-RO-DeK"/>
             </connections>
         </view>

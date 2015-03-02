@@ -44,7 +44,7 @@
     });
     
     // 1
-    NSURL *showsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.wruw.org/guide/%@",currentShow.url]];
+    NSURL *showsUrl = [NSURL URLWithString:currentShow.url];
     NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
     
     // 2
@@ -53,15 +53,15 @@
     NSString *infoXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/p[2]";
     NSArray *infoNode = [showsParser searchWithXPathQuery:infoXpathQueryString];
 
-    NSString *showInfo = [[infoNode[0] firstChild] content];
-    showInfo = [showInfo stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    showInfo = [showInfo stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    //    NSString *showInfo = [[infoNode[0] firstChild] content];
+//    showInfo = [showInfo stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//    showInfo = [showInfo stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [currentShowInfo setText:[showInfo
-                                  stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-        [NSTimer scheduledTimerWithTimeInterval:.06 target:self selector:@selector(adjustHeightOfInfoView) userInfo:nil repeats:NO];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [currentShowInfo setText:[showInfo
+//                                  stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+//        [NSTimer scheduledTimerWithTimeInterval:.06 target:self selector:@selector(adjustHeightOfInfoView) userInfo:nil repeats:NO];
+//    });
     
     
 }
