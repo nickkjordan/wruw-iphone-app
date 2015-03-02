@@ -16,6 +16,9 @@
     NSMutableArray *_objects;
     NSArray *_originalObjects;
     UIActivityIndicatorView *spinner;
+    NSArray *sectionTitles;
+    NSArray *sectionIndexTitles;
+    NSMutableDictionary *programs;
 }
 @property (nonatomic, strong) ArrayDataSource *showsArrayDataSource;
 
@@ -38,19 +41,7 @@
 }
 
 -(void)loadShows {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wruw.org/shows-schedule"] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
-    // Note that the URL is the "action" URL parameter from the form.
-    [request setHTTPMethod:@"POST"];
-//    [request setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request addValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-//    [request addValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
-    //this is hard coded based on your suggested values, obviously you'd probably need to make this more dynamic based on your application's specific data to send
-    NSString *postString = [NSString stringWithFormat:@"filtday=%d&filt-genre=&filt-orderby=schedule", dayOfWeek];
-    NSData *data = [postString dataUsingEncoding:NSUTF8StringEncoding];
-//    NSString *length = [NSString stringWithFormat:@"%lu", (unsigned long)[data length] + 1];
-//    [request setValue:length forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody:data];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wruw.org/shows-schedule"]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         // 2
@@ -59,6 +50,8 @@
         // 3
         NSString *showsXpathQueryString = @"//*[@id='main']/div/table[2]/tbody/tr";
         NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         
         // 4
         NSMutableArray *newShows = [[NSMutableArray alloc] initWithCapacity:0];
@@ -79,7 +72,11 @@
             show.genre = [[[elementInformation[2] firstChildWithTagName:@"a"] firstChild] content];
             
             show.time = [[elementInformation[3] firstChild] content];
-            show.day = [[show.time componentsSeparatedByString:@":"] objectAtIndex:0];
+            NSString *abbrWeekday = [[show.time componentsSeparatedByString:@":"] objectAtIndex:0];
+            [dateFormatter setDateFormat:@"EEE"];
+            NSDate *weekday =[dateFormatter dateFromString:abbrWeekday];
+            [dateFormatter setDateFormat:@"EEEE"];
+            show.day = [dateFormatter stringFromDate:weekday];
             
             // 7
             show.url = [[showInfo firstChildWithTagName:@"a"] objectForKey:@"href"];
@@ -88,15 +85,27 @@
         }
         
         // 8
-        _objects = newShows;
         _originalObjects = [NSArray arrayWithArray:newShows];
+        [self resetObjects];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [spinner stopAnimating];
-            [self setupTableView];
+            [self.tableView reloadData];
         });
 
     }];
+}
+
+- (void)resetObjects {
+    if (dayOfWeek > 0) {
+        NSString *weekday = [sectionTitles objectAtIndex:dayOfWeek - 1];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
+        
+        NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
+        _originalObjects = [NSMutableArray arrayWithArray:matches];
+    }
+    
+    _objects = [NSMutableArray arrayWithArray:_originalObjects];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -111,6 +120,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    sectionTitles = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
+    sectionIndexTitles = @[@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa"];
     
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(super.view.frame.size.width / 2.0, super.view.frame.size.height / 2.0);
@@ -132,6 +143,9 @@
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
+    
+    self.tableView.dataSource = self;
+    programs = [[NSMutableDictionary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,6 +153,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Search Results Updating delegate
 
 - (void)searchForText:(NSString *)searchText
 {
@@ -154,42 +170,11 @@
             [_objects addObjectsFromArray:matches];
         }
     } else {
-        _objects = [NSMutableArray arrayWithArray:_originalObjects];
+        [self resetObjects];
     }
     
-    [self setupTableView];
-}
-
-#pragma mark - Table view data source
-
-- (void)setupTableView
-{
-    TableViewCellConfigureBlock configureCell = ^(ShowCell *cell, Show *show) {
-        [cell configureForShow:show];
-    };
-    self.showsArrayDataSource = [[ArrayDataSource alloc] initWithItems:[NSMutableArray arrayWithArray:_objects]
-                                                        cellIdentifier:@"ShowCell"
-                                                    configureCellBlock:configureCell];
-    self.tableView.dataSource = self.showsArrayDataSource;
     [self.tableView reloadData];
 }
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if (dayOfWeek < 0) {
-        return [NSArray arrayWithObjects:@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa", nil];
-    }
-    else
-        return nil;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    CGRect searchBarFrame = self.searchController.searchBar.frame;
-    [self.tableView scrollRectToVisible:searchBarFrame animated:NO];
-    return NSNotFound;
-}
-
-#pragma mark - Search Results Updating delegate
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
@@ -203,6 +188,64 @@
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
     [self updateSearchResultsForSearchController:self.searchController];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (dayOfWeek == 0) {
+        return [sectionTitles count];
+    } else {
+        return 1;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (dayOfWeek == 0) {
+        return [sectionTitles objectAtIndex:section];
+    } else {
+        return nil;
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (dayOfWeek == 0) {
+        NSString *weekday = [sectionTitles objectAtIndex:section];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
+        
+        NSArray *matches = [_objects filteredArrayUsingPredicate:predicate];
+        (matches) ? [programs setObject:matches forKey:weekday] : nil;
+        return [matches count];
+    } else {
+        return _objects.count;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ShowCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"
+                                                            forIndexPath:indexPath];
+    Show *item;
+    if (programs.count > 0) {
+        NSString *weekday = [sectionTitles objectAtIndex:indexPath.section];
+        NSArray *sectionPrograms = [programs objectForKey:weekday];
+        item = [sectionPrograms objectAtIndex:indexPath.row];
+    } else {
+        item = [_objects objectAtIndex:indexPath.row];
+    }
+    [cell configureForShow:item];
+    return cell;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if (dayOfWeek == 0) {
+        return sectionIndexTitles;
+    }
+    else
+        return nil;
 }
 
 @end
