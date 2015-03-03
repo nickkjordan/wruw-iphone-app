@@ -226,8 +226,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShowCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"
-                                                            forIndexPath:indexPath];
+    ShowCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil] forCellReuseIdentifier:@"ShowCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
+    }
     Show *item;
     if (programs.count > 0) {
         NSString *weekday = [sectionTitles objectAtIndex:indexPath.section];

@@ -60,6 +60,7 @@
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
+		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
 		01BD501319108F2700E09531 /* nav-bar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD501219108F2700E09531 /* nav-bar-background.png */; };
 		01BD5015191099CB00E09531 /* nav-bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD5014191099CB00E09531 /* nav-bg1.png */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
@@ -168,6 +169,7 @@
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
+		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
 		01BD501219108F2700E09531 /* nav-bar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-background.png"; sourceTree = "<group>"; };
 		01BD5014191099CB00E09531 /* nav-bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bg1.png"; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			children = (
 				0153B8F8189CA50100331DD9 /* ShowCell.h */,
 				0153B8F9189CA50100331DD9 /* ShowCell.m */,
+				01ACEEE91AA5201E009FB3DB /* ShowCell.xib */,
 				019316E1183B8637007755E8 /* ArchiveTable */,
 				011FECDB1836A506009B5BFA /* ShowsTableViewController.h */,
 				011FECDC1836A506009B5BFA /* ShowsTableViewController.m */,
@@ -556,6 +559,7 @@
 				0170906117DBA8F80005EC0F /* second@2x.png in Resources */,
 				0100D19E1865386500D08BC2 /* heart_24.png in Resources */,
 				01C435051846B7CF0030B01F /* calendar_add.png in Resources */,
+				01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */,
 				0100D19F1865386500D08BC2 /* heart_48.png in Resources */,
 				010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */,
 				010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */,

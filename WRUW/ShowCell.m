@@ -28,8 +28,9 @@
 
 - (void)configureForShow:(Show *)show
 {
-    self.textLabel.text = show.title;
-    self.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", show.host, show.time];
+    self.showTextLabel.text = show.title;
+    self.hostTextLabel.text = show.host;
+    self.timeTextLabel.text = show.time;
 }
 
 @end
