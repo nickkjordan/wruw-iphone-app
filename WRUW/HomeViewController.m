@@ -20,7 +20,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel;
+@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel, button;
 
 - (void)checkConnection{
 
@@ -171,6 +171,9 @@
     
     // Set navigation bar
     self.navigationBar.delegate = self;
+    
+    [button setImage:[UIImage imageNamed:@"play-arrow-128.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"pause-128.png"] forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
@@ -183,17 +186,19 @@
     if(player.rate == 1.0)//means pause
     {
         //This will change the image of the button to play image
-        //[sender setSelected:NO];
+        [sender setSelected:NO];
         [player pause];
     }
     else {
         // Create a URL object.
         NSURL *urlAddress = [NSURL URLWithString:@"http://wruw-stream.wruw.org:443/stream.mp3"];
         // And send it to the avplayer
+        if (player != nil)
+            [player removeObserver:self forKeyPath:@"status"];
         player= [AVPlayer playerWithURL:urlAddress];
         
         //This will change the image of the button to pause image
-        //[sender setSelected:YES];
+        [sender setSelected:YES];
         [player addObserver:self forKeyPath:@"status" options:0 context:NULL];
     }
 }
