@@ -108,8 +108,8 @@
 		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
-		010F292F17E21F1600DC3631 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
+		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		010F292F17E21F1600DC3631 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		011FECD81836A2B6009B5BFA /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		011FECD91836A2B6009B5BFA /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 		011FECDC1836A506009B5BFA /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsTableViewController.m; sourceTree = "<group>"; };
 		011FECDE1836A531009B5BFA /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		011FECDF1836A531009B5BFA /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
-		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = getFilePath.h; path = ../getFilePath.h; sourceTree = "<group>"; };
-		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = getFilePath.m; path = ../getFilePath.m; sourceTree = "<group>"; };
+		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFilePath.h; sourceTree = "<group>"; };
+		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFilePath.m; sourceTree = "<group>"; };
 		012C92681840025E00C94210 /* saveFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saveFavorite.h; sourceTree = "<group>"; };
 		012C92691840025E00C94210 /* saveFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saveFavorite.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
 		0153B8F9189CA50100331DD9 /* ShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCell.m; sourceTree = "<group>"; };
 		015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyFavoritesView.xib; sourceTree = "<group>"; };
-		015A16381A929724000FC518 /* heart_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart_64.png; path = ../heart_64.png; sourceTree = "<group>"; };
+		015A16381A929724000FC518 /* heart_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_64.png; sourceTree = "<group>"; };
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
@@ -153,10 +153,10 @@
 		0170904D17DBA8F80005EC0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0170904F17DBA8F80005EC0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0170905217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0170905717DBA8F80005EC0F /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
-		0170905917DBA8F80005EC0F /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
-		0170905E17DBA8F80005EC0F /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = ../second.png; sourceTree = "<group>"; };
-		0170906017DBA8F80005EC0F /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "../second@2x.png"; sourceTree = "<group>"; };
+		0170905717DBA8F80005EC0F /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		0170905917DBA8F80005EC0F /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		0170905E17DBA8F80005EC0F /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		0170906017DBA8F80005EC0F /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170907017DBA8F80005EC0F /* WRUWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUWTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -166,9 +166,9 @@
 		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		019316DB183B5E67007755E8 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
-		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
-		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
-		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
+		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 				012C92681840025E00C94210 /* saveFavorite.h */,
 				012C92691840025E00C94210 /* saveFavorite.m */,
 			);
-			name = "Save Data";
+			path = "Save Data";
 			sourceTree = "<group>";
 		};
 		0170902D17DBA8F80005EC0F = {
@@ -336,7 +336,7 @@
 				0170904D17DBA8F80005EC0F /* Default@2x.png */,
 				0170904F17DBA8F80005EC0F /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		0170906E17DBA8F80005EC0F /* WRUWTests */ = {
@@ -355,7 +355,7 @@
 				0170907017DBA8F80005EC0F /* WRUWTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		019316DD183B83A2007755E8 /* Shows ViewControllers */ = {
@@ -372,7 +372,7 @@
 				015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */,
 				015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */,
 			);
-			name = "Shows ViewControllers";
+			path = "Shows ViewControllers";
 			sourceTree = "<group>";
 		};
 		019316E1183B8637007755E8 /* ArchiveTable */ = {
@@ -384,7 +384,7 @@
 				01CFAA55183BA0C200535F96 /* SongTableViewCell.m */,
 				01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */,
 			);
-			name = ArchiveTable;
+			path = ArchiveTable;
 			sourceTree = "<group>";
 		};
 		01A721D118AC6808001FA64F /* Favorites Controllers */ = {
@@ -400,7 +400,7 @@
 				016C99111A93F522008634DA /* EmptyFavoritesView.m */,
 				015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */,
 			);
-			name = "Favorites Controllers";
+			path = "Favorites Controllers";
 			sourceTree = "<group>";
 		};
 		01CAC82917DFACE400057340 /* images */ = {
@@ -448,7 +448,7 @@
 				019316DA183B5E67007755E8 /* Song.h */,
 				019316DB183B5E67007755E8 /* Song.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		01F9819F183537A10069C241 /* hpple */ = {
@@ -461,7 +461,7 @@
 				01F981A4183537B20069C241 /* XPathQuery.h */,
 				01F981A5183537B20069C241 /* XPathQuery.m */,
 			);
-			name = hpple;
+			path = hpple;
 			sourceTree = "<group>";
 		};
 		4262C16CF2A9C7E8D6BC554B /* Pods */ = {
@@ -700,6 +700,7 @@
 				0170904317DBA8F80005EC0F /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 		0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */ = {
@@ -708,6 +709,7 @@
 				0170905217DBA8F80005EC0F /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		0170907117DBA8F80005EC0F /* InfoPlist.strings */ = {
@@ -716,6 +718,7 @@
 				0170907217DBA8F80005EC0F /* en */,
 			);
 			name = InfoPlist.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -792,14 +795,14 @@
 			baseConfigurationReference = ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "WRUW/WRUW-Info.plist";
+				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -810,14 +813,14 @@
 			baseConfigurationReference = 81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "WRUW/WRUW-Info.plist";
+				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -833,8 +836,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
-				INFOPLIST_FILE = "WRUWTests/WRUWTests-Info.plist";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUWTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -850,8 +853,8 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/WRUW-Prefix.pch";
-				INFOPLIST_FILE = "WRUWTests/WRUWTests-Info.plist";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUWTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
