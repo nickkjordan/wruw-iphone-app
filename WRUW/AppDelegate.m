@@ -34,6 +34,10 @@
     [[UISegmentedControl appearance]
      setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Futura" size:14.0f]
                                                               } forState:UIControlStateNormal];
+    
+    UIColor *wruwOrange = [UIColor colorWithRed: (253.0/255.0) green: (159.0/255.0) blue: (47.0/255.0) alpha: 1.0];
+
+    [[UITabBar appearance] setTintColor:wruwOrange];
 
     /* Pick any one of them */
     // 1. Overriding the output audio route
@@ -43,7 +47,7 @@
     // 2. Changing the default output audio route
     UInt32 doChangeDefaultRoute = 1;
     AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
-    
+        
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     // Override point for customization after application launch.
     return YES;

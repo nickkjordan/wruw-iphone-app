@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *showContainer;
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIView *showView;
 
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showDescriptionHeight;
@@ -32,6 +33,5 @@
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 
-@property (nonatomic,strong) AVPlayer *player;
 
 @end

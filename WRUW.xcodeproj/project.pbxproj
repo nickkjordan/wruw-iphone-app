@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0100D19E1865386500D08BC2 /* heart_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D1981865386500D08BC2 /* heart_24.png */; };
 		0100D19F1865386500D08BC2 /* heart_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D1991865386500D08BC2 /* heart_48.png */; };
-		0100D1A01865386500D08BC2 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19A1865386500D08BC2 /* heart_64.png */; };
 		0100D1A11865386500D08BC2 /* home_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19B1865386500D08BC2 /* home_24.png */; };
 		0100D1A21865386500D08BC2 /* home_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19C1865386500D08BC2 /* home_48.png */; };
 		0100D1A31865386500D08BC2 /* home_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19D1865386500D08BC2 /* home_64.png */; };
+		01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C041AC06A42003112F3 /* AnimatedButton.swift */; };
+		01042C081AC06A42003112F3 /* BezierIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C051AC06A42003112F3 /* BezierIconView.swift */; };
+		01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */; };
 		010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 010CF7A71898B8AC00875209 /* ArrayDataSource.m */; };
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
@@ -30,6 +32,7 @@
 		01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2A18AA9A74001FFD61 /* twitter_blue.png */; };
 		0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
+		0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -104,6 +107,10 @@
 		0100D19B1865386500D08BC2 /* home_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_24.png; sourceTree = "<group>"; };
 		0100D19C1865386500D08BC2 /* home_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_48.png; sourceTree = "<group>"; };
 		0100D19D1865386500D08BC2 /* home_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_64.png; sourceTree = "<group>"; };
+		01042C041AC06A42003112F3 /* AnimatedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		01042C051AC06A42003112F3 /* BezierIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierIconView.swift; sourceTree = "<group>"; };
+		01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBezierIcons.swift; sourceTree = "<group>"; };
+		01042C561AC0764F003112F3 /* WRUWSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WRUWSwift.framework; path = "WRUWSwift/build/Debug-iphoneos/WRUWSwift.framework"; sourceTree = "<group>"; };
 		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
 		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
@@ -129,6 +136,8 @@
 		0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupedProgramsTableViewController.h; sourceTree = "<group>"; };
 		0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupedProgramsTableViewController.m; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WRUWModule-Bridging-Header.h"; path = "../WRUWModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPlayView.swift; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -240,6 +249,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01042C031AC06A42003112F3 /* AnimatedButton */ = {
+			isa = PBXGroup;
+			children = (
+				01042C041AC06A42003112F3 /* AnimatedButton.swift */,
+				01042C051AC06A42003112F3 /* BezierIconView.swift */,
+				01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */,
+			);
+			path = AnimatedButton;
+			sourceTree = "<group>";
+		};
 		010F291817E21AE900DC3631 /* App Icon [Squared] */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +303,7 @@
 		0170903817DBA8F80005EC0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01042C561AC0764F003112F3 /* WRUWSwift.framework */,
 				011FC228190C1E320074C93A /* AudioToolbox.framework */,
 				01C435081846BBAC0030B01F /* EventKitUI.framework */,
 				01C435061846BA220030B01F /* EventKit.framework */,
@@ -317,8 +337,10 @@
 				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
 				0153B8F5189C827100331DD9 /* HomeViewController.h */,
 				0153B8F6189C827100331DD9 /* HomeViewController.m */,
+				0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */,
 				012C926B1840026600C94210 /* Save Data */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
+				01042C031AC06A42003112F3 /* AnimatedButton */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
@@ -328,6 +350,7 @@
 		0170904017DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */,
 				0170904117DBA8F80005EC0F /* WRUW-Info.plist */,
 				0170904217DBA8F80005EC0F /* InfoPlist.strings */,
 				0170904517DBA8F80005EC0F /* main.m */,
@@ -521,7 +544,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Nick Jordan";
 			};
 			buildConfigurationList = 0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW" */;
@@ -577,7 +600,6 @@
 				01BD5015191099CB00E09531 /* nav-bg1.png in Resources */,
 				01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */,
 				01FB78A3183EA7EE0088C972 /* facebook.png in Resources */,
-				0100D1A01865386500D08BC2 /* heart_64.png in Resources */,
 				01FB78A4183EA7EE0088C972 /* twitter.png in Resources */,
 				015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */,
 				01947CC917E2389500173474 /* Default.png in Resources */,
@@ -654,7 +676,10 @@
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
+				01042C081AC06A42003112F3 /* BezierIconView.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
+				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
+				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
@@ -671,6 +696,7 @@
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
+				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +764,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -755,8 +783,12 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = WRUWModule;
+				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -774,6 +806,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -784,8 +818,12 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				New_Setting = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_MODULE_NAME = WRUWModule;
+				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -794,6 +832,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -803,6 +847,7 @@
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -812,6 +857,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -821,6 +872,7 @@
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -10,6 +10,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AFOnoResponseSerializer.h"
 #import "Ono.h"
+#import "WRUWModule-Swift.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
@@ -20,7 +21,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize showTitle, showDescription, player, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel, button;
+@synthesize showTitle, showDescription, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel, button;
 
 - (void)checkConnection{
 
@@ -51,8 +52,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [showTitle setText:title];
         [showDescription setText:description];
-        
-        [self resizeNowPlaying];
     });
     
     // 1
@@ -172,8 +171,8 @@
     // Set navigation bar
     self.navigationBar.delegate = self;
     
-    [button setImage:[UIImage imageNamed:@"play-arrow-128.png"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"pause-128.png"] forState:UIControlStateSelected | UIControlStateHighlighted];
+    StreamPlayView *view = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    [self.showView addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -183,35 +182,10 @@
 }
 
 - (IBAction)streamPlay:(id)sender {
-    if(player.rate == 1.0)//means pause
-    {
-        //This will change the image of the button to play image
-        [sender setSelected:NO];
-        [player pause];
-    }
-    else {
-        // Create a URL object.
-        NSURL *urlAddress = [NSURL URLWithString:@"http://wruw-stream.wruw.org:443/stream.mp3"];
-        // And send it to the avplayer
-        if (player != nil)
-            [player removeObserver:self forKeyPath:@"status"];
-        player= [AVPlayer playerWithURL:urlAddress];
-        
-        //This will change the image of the button to pause image
-        [sender setSelected:YES];
-        [player addObserver:self forKeyPath:@"status" options:0 context:NULL];
-    }
+    
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"status"]) {
-        if (player.status == AVPlayerStatusReadyToPlay) {
-            [player play];
-        } else if (player.status == AVPlayerStatusFailed) {
-            /* An error was encountered */
-        }
-    }
-}
+
 
 #pragma mark - Table view data source
 
