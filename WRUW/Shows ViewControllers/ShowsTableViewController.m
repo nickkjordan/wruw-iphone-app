@@ -11,6 +11,7 @@
 #import "TFHpple.h"
 #import "Show.h"
 #import "DisplayViewController.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface ShowsTableViewController () {
     NSMutableArray *_objects;
@@ -41,11 +42,18 @@
 }
 
 -(void)loadShows {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.wruw.org/shows-schedule"]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFCompoundResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters;
+    if (dayOfWeek > 0) {
+        parameters = @{@"filt-day": [NSString stringWithFormat:@"%d", dayOfWeek]};
+    } else {
+        parameters = @{@"filt-day": @"all"};
+    }
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        // 2
-        TFHpple *showsParser = [TFHpple hppleWithHTMLData:data];
+    [manager POST:@"http://www.wruw.org/shows-schedule" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        TFHpple *showsParser = [TFHpple hppleWithHTMLData:responseObject];
         
         // 3
         NSString *showsXpathQueryString = @"//*[@id='main']/div/table[2]/tbody/tr";
@@ -93,6 +101,8 @@
             [self.tableView reloadData];
         });
 
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
     }];
 }
 
