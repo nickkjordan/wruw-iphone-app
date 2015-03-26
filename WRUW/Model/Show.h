@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^LoadShowBlock)();
+
 @interface Show : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -17,5 +19,8 @@
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSString *lastShowUrl;
 @property (nonatomic, copy) NSString *day;
+@property (nonatomic, copy) NSString *infoDescription;
+
+- (void)loadInfo:(LoadShowBlock)successBlock;
 
 @end

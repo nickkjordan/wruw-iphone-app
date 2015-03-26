@@ -16,8 +16,15 @@
 {
     // Set AudioSession
     NSError *sessionError = nil;
-    [[AVAudioSession sharedInstance] setDelegate:self];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+
+    [session setActive:YES error:nil];
+    if (![session setCategory:AVAudioSessionCategoryPlayback
+                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                        error:&sessionError]) {
+        // handle error
+    }
     
     // Title View
     [[UINavigationBar appearance]
@@ -38,15 +45,6 @@
     UIColor *wruwOrange = [UIColor colorWithRed: (253.0/255.0) green: (159.0/255.0) blue: (47.0/255.0) alpha: 1.0];
 
     [[UITabBar appearance] setTintColor:wruwOrange];
-
-    /* Pick any one of them */
-    // 1. Overriding the output audio route
-    //UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
-    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
-    
-    // 2. Changing the default output audio route
-    UInt32 doChangeDefaultRoute = 1;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideCategoryDefaultToSpeaker, sizeof(doChangeDefaultRoute), &doChangeDefaultRoute);
         
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     // Override point for customization after application launch.

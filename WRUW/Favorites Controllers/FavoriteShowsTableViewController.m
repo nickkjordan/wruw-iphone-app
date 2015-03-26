@@ -47,6 +47,7 @@
     
     [self loadFavs];
 
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ] forCellReuseIdentifier:@"ShowCell"];
 }
 
 -(void)checkIfEmpty:(float)time {
@@ -100,6 +101,12 @@
     }
     
     [self setupTableView];
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
 }
 
 #pragma mark - Table view data source

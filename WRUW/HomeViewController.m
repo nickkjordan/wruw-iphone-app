@@ -11,6 +11,8 @@
 #import "AFOnoResponseSerializer.h"
 #import "Ono.h"
 #import "WRUWModule-Swift.h"
+#import "DisplayViewController.h"
+#import "Show.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
@@ -18,10 +20,20 @@
     UIActivityIndicatorView *spinner;
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
+@property (nonatomic, strong) Show *currentShow;
 @end
 
 @implementation HomeViewController
-@synthesize showTitle, showDescription, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel, button;
+@synthesize showTitle, showDescription, showDescriptionHeight, showViewHeight, infoView, showContainer, hostLabel;
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
+        DisplayViewController *dvc = [segue destinationViewController];
+        
+        [dvc setCurrentShow:_currentShow];
+    }
+}
 
 - (void)checkConnection{
 
@@ -71,6 +83,10 @@
             hostNames = host.firstChild.content;
         }
     }
+    
+    _currentShow.title = title;
+    _currentShow.host = hostNames;
+    _currentShow.url = url;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [hostLabel setText:hostNames];
@@ -123,20 +139,13 @@
     self.tableView.tableHeaderView = infoView;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.tableView.delegate = self;
+    
+    _currentShow = [[Show alloc] init];
     
     showContainer.layer.shadowColor = [UIColor blackColor].CGColor;
     showContainer.layer.shadowOffset = CGSizeMake(0, 1);
@@ -147,7 +156,7 @@
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor blueColor];
+    spinner.color = [UIColor orangeColor];
     [self.tableView addSubview:spinner];
     
     [spinner startAnimating];
@@ -174,18 +183,6 @@
     StreamPlayView *view = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
     [self.showView addSubview:view];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)streamPlay:(id)sender {
-    
-}
-
-
 
 #pragma mark - Table view data source
 

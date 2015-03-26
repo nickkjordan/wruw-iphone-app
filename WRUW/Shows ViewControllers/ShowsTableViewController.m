@@ -154,6 +154,8 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ] forCellReuseIdentifier:@"ShowCell"];
+    
     self.tableView.dataSource = self;
     programs = [[NSMutableDictionary alloc] init];
 }
@@ -198,6 +200,12 @@
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
     [self updateSearchResultsForSearchController:self.searchController];
+}
+
+#pragma mark - Table view delegate 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
 }
 
 #pragma mark - Table view data source

@@ -96,6 +96,8 @@
     self.tableView.dataSource = self.songsArrayDataSource;
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
+    
+    return YES;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

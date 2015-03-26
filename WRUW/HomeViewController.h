@@ -16,15 +16,12 @@
 
 @interface HomeViewController : UIViewController <UINavigationBarDelegate, UITableViewDelegate>
 
-- (IBAction)streamPlay:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UILabel *showTitle;
 @property (weak, nonatomic) IBOutlet UITextView *showDescription;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIView *showContainer;
 @property (weak, nonatomic) IBOutlet UILabel *hostLabel;
-@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UIView *showView;
 
 // Constraints

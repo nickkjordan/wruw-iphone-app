@@ -7,6 +7,9 @@
 //
 
 #import "Show.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFOnoResponseSerializer.h"
+#import "ONOXMLDocument.h"
 
 @implementation Show
 
@@ -17,6 +20,7 @@
 @synthesize genre = _genre;
 @synthesize lastShowUrl = _lastShowUrl;
 @synthesize day = _day;
+@synthesize infoDescription = _infoDescription;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
@@ -27,6 +31,7 @@
         self.genre = [decoder decodeObjectForKey:@"genre"];
         self.lastShowUrl = [decoder decodeObjectForKey:@"lastShowUrl"];
         self.day = [decoder decodeObjectForKey:@"day"];
+        self.infoDescription = [decoder decodeObjectForKey:@"infoDescription"];
     }
     return self;
 }
@@ -39,6 +44,7 @@
     [encoder encodeObject:_genre forKey:@"genre"];
     [encoder encodeObject:_lastShowUrl forKey:@"lastShowUrl"];
     [encoder encodeObject:_day forKey:@"day"];
+    [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
 }
 
 - (BOOL)isEqualToShow:(Show *)show {
@@ -50,6 +56,49 @@
     BOOL haveEqualShowTitles = (!self.title && !show.title) || [self.title isEqualToString:show.title];
     
     return haveEqualShowTitles;
+}
+
+- (void)loadInfo:(LoadShowBlock)successBlock {
+    assert(self.url != nil);
+    if (self.title && self.host && self.time && self.genre && self.day) {
+        return;
+    }
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:self.url parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
+        [self parseShowInfo:responseObject];
+        successBlock();
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        return;
+    }];
+}
+
+- (void)parseShowInfo:(ONOXMLDocument *)data {
+    ONOXMLElement *showHeader = [data firstChildWithXPath:@"//*[@id='main']/div/article"];
+    
+    self.title = [[showHeader firstChildWithCSS:@".entry-title"] stringValue];
+    self.host = [[showHeader firstChildWithCSS:@".show-details a"] stringValue];
+    self.day = @"";
+    [showHeader enumerateElementsWithXPath:@"header/ul/li/strong" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+        if (idx == 0) {
+            self.day = [element.stringValue stringByReplacingOccurrencesOfString:@":" withString:@""];
+        } else {
+            self.day = [NSString stringWithFormat:@"%@, %@", self.day, [element.stringValue stringByReplacingOccurrencesOfString:@":" withString:@""]];
+        }
+    }];
+    self.genre = @"";
+    [showHeader enumerateElementsWithXPath:@"header/p[3]/a" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+        if (idx == 0) {
+            self.genre = element.stringValue;
+        } else {
+            self.genre = [NSString stringWithFormat:@"%@, %@", self.genre, element.stringValue];
+        }
+    }];
+    self.time = [[showHeader firstChildWithXPath:@"header/ul/li"] stringValue];
+    self.infoDescription = [[showHeader firstChildWithXPath:@"div/p"] stringValue];
 }
 
 #pragma mark - NSObject

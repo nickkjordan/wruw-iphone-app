@@ -37,35 +37,6 @@
     }
 }
 
--(void)loadInfo {
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [currentShowInfo setText:@""];
-    });
-    
-    // 1
-    NSURL *showsUrl = [NSURL URLWithString:currentShow.url];
-    NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
-    
-    // 2
-    showsParser = [TFHpple hppleWithHTMLData:showsHtmlData];
-    
-    NSString *infoXpathQueryString = @"/html/body/table[2]/tr[1]/td/table/tr[2]/td[2]/p[2]";
-    NSArray *infoNode = [showsParser searchWithXPathQuery:infoXpathQueryString];
-
-    //    NSString *showInfo = [[infoNode[0] firstChild] content];
-//    showInfo = [showInfo stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-//    showInfo = [showInfo stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [currentShowInfo setText:[showInfo
-//                                  stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-//        [NSTimer scheduledTimerWithTimeInterval:.06 target:self selector:@selector(adjustHeightOfInfoView) userInfo:nil repeats:NO];
-//    });
-    
-    
-}
-
 - (void)adjustHeightOfInfoView
 {
     self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
@@ -75,28 +46,24 @@
     }];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO];
-    
-    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
-    
+        
     currentShowInfo.editable = NO;
-    dispatch_async(myQueue, ^{ [self loadInfo]; });
+    [currentShow loadInfo:^(){
+        [self updateLabels];
+    }];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self updateLabels];
+}
+
+-(void)updateLabels
+{
     NSRange wordRange = NSMakeRange(1, 5);
     NSArray *firstWords = [[currentShow.time componentsSeparatedByString:@" "] subarrayWithRange:wordRange];
     NSString *timeFrame = [firstWords componentsJoinedByString:@" "];
@@ -104,13 +71,7 @@
     [currentShowTitle setText:currentShow.title];
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [currentShowInfo setText:currentShow.infoDescription];
 }
 
 - (IBAction)calendarTap:(id)sender {
