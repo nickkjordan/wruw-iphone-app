@@ -23,7 +23,7 @@
 
 @implementation DisplayViewController
 
-@synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton;
+@synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton, showGenre;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -39,11 +39,23 @@
 
 - (void)adjustHeightOfInfoView
 {
-    self.textViewHeightConstraint.constant = currentShowInfo.contentSize.height;
-    [self.view setNeedsUpdateConstraints];
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.view layoutIfNeeded];
-    }];
+    currentShowInfo.frame = [self getSizeForText:currentShowInfo.text maxWidth:self.currentShowInfo.frame.size.width font:@"GillSans" fontSize:16];
+}
+
+- (CGRect)getSizeForText:(NSString *)text maxWidth:(CGFloat)width font:(NSString *)fontName fontSize:(float)fontSize {
+    CGSize constraintSize;
+    constraintSize.height = MAXFLOAT;
+    constraintSize.width = width;
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIFont fontWithName:fontName size:fontSize], NSFontAttributeName,
+                                          nil];
+    
+    CGRect frame = [text boundingRectWithSize:constraintSize
+                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                   attributes:attributesDictionary
+                                      context:nil];
+    
+    return frame;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -53,6 +65,11 @@
     [currentShow loadInfo:^(){
         [self updateLabels];
     }];
+    
+    currentShowInfo.editable = YES;
+    currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
+    currentShowInfo.contentInset = UIEdgeInsetsMake(0,-4,0,0);
+    currentShowInfo.editable = NO;
 }
 
 - (void)viewDidLoad
@@ -64,14 +81,17 @@
 
 -(void)updateLabels
 {
-    NSRange wordRange = NSMakeRange(1, 5);
-    NSArray *firstWords = [[currentShow.time componentsSeparatedByString:@" "] subarrayWithRange:wordRange];
+    NSArray *timeComponents = [currentShow.time componentsSeparatedByString:@" "];
+    NSRange wordRange = NSMakeRange(timeComponents.count - 5, 5);
+    NSArray *firstWords = [timeComponents subarrayWithRange:wordRange];
     NSString *timeFrame = [firstWords componentsJoinedByString:@" "];
     
     [currentShowTitle setText:currentShow.title];
-    [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", currentShow.host]];
+    [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [currentShow.host uppercaseString]]];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
     [currentShowInfo setText:currentShow.infoDescription];
+    [showGenre setText:[currentShow.genre uppercaseString]];
+    [self adjustHeightOfInfoView];
 }
 
 - (IBAction)calendarTap:(id)sender {
@@ -213,27 +233,5 @@
                     } completion:nil];
     
 }
-
-#pragma mark - Audio player recent show
-
-- (IBAction)playTapped:(id)sender {
-    NSString *aSongURL = [NSString stringWithFormat:@"http://in.orgware.in/testing/mp3/1.mp3"];
-    // NSLog(@"Song URL : %@", aSongURL);
-    
-    AVPlayerItem *aPlayerItem = [[AVPlayerItem alloc] initWithURL:[NSURL URLWithString:aSongURL]];
-    AVPlayer *anAudioStreamer = [[AVPlayer alloc] initWithPlayerItem:aPlayerItem];
-    [anAudioStreamer play];
-}
-
-// http://in.orgware.in/testing/mp3/1.mp3
-
-- (IBAction)togglePlayPauseTapped:(id)sender {
-    AVAudioPlayer *audioPlayer;
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"01 Twin Peaks Theme" ofType:@"mp3"];
-    NSURL *audioURL = [NSURL fileURLWithPath:audioPath];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
-    [audioPlayer play];
-}
-
 
 @end

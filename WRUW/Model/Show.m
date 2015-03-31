@@ -18,7 +18,7 @@
 @synthesize host = _host;
 @synthesize time = _time;
 @synthesize genre = _genre;
-@synthesize lastShowUrl = _lastShowUrl;
+@synthesize lastShow = _lastShow;
 @synthesize day = _day;
 @synthesize infoDescription = _infoDescription;
 
@@ -29,7 +29,7 @@
         self.host = [decoder decodeObjectForKey:@"host"];
         self.time = [decoder decodeObjectForKey:@"time"];
         self.genre = [decoder decodeObjectForKey:@"genre"];
-        self.lastShowUrl = [decoder decodeObjectForKey:@"lastShowUrl"];
+        self.lastShow = [decoder decodeObjectForKey:@"lastShow"];
         self.day = [decoder decodeObjectForKey:@"day"];
         self.infoDescription = [decoder decodeObjectForKey:@"infoDescription"];
     }
@@ -42,7 +42,7 @@
     [encoder encodeObject:_host forKey:@"host"];
     [encoder encodeObject:_time forKey:@"time"];
     [encoder encodeObject:_genre forKey:@"genre"];
-    [encoder encodeObject:_lastShowUrl forKey:@"lastShowUrl"];
+    [encoder encodeObject:_lastShow forKey:@"lastShow"];
     [encoder encodeObject:_day forKey:@"day"];
     [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
 }
@@ -59,8 +59,7 @@
 }
 
 - (void)loadInfo:(LoadShowBlock)successBlock {
-    assert(self.url != nil);
-    if (self.title && self.host && self.time && self.genre && self.day) {
+    if (self.title && self.host && self.time && self.genre && self.day && self.lastShow) {
         return;
     }
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -80,7 +79,14 @@
     ONOXMLElement *showHeader = [data firstChildWithXPath:@"//*[@id='main']/div/article"];
     
     self.title = [[showHeader firstChildWithCSS:@".entry-title"] stringValue];
-    self.host = [[showHeader firstChildWithCSS:@".show-details a"] stringValue];
+    self.host = @"";
+    [showHeader enumerateElementsWithXPath:@"header/p[1]/a" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+        if (idx == 0) {
+            self.host = element.stringValue;
+        } else {
+            self.host = [NSString stringWithFormat:@"%@, %@", self.host, element.stringValue];
+        }
+    }];
     self.day = @"";
     [showHeader enumerateElementsWithXPath:@"header/ul/li/strong" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
         if (idx == 0) {
@@ -99,6 +105,9 @@
     }];
     self.time = [[showHeader firstChildWithXPath:@"header/ul/li"] stringValue];
     self.infoDescription = [[showHeader firstChildWithXPath:@"div/p"] stringValue];
+    self.lastShow = [[Playlist alloc] init];
+    self.lastShow.idValue = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]/@value"] stringValue];
+    self.lastShow.date = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]"] stringValue];
 }
 
 #pragma mark - NSObject

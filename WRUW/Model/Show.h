@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Playlist.h"
 
 typedef void (^LoadShowBlock)();
 
@@ -17,9 +18,9 @@ typedef void (^LoadShowBlock)();
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSString *time;
-@property (nonatomic, copy) NSString *lastShowUrl;
 @property (nonatomic, copy) NSString *day;
 @property (nonatomic, copy) NSString *infoDescription;
+@property (nonatomic) Playlist *lastShow;
 
 - (void)loadInfo:(LoadShowBlock)successBlock;
 

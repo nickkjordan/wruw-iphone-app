@@ -35,8 +35,8 @@
         
         NSArray *songInfo = [element children];
         
-        song.songName = [[songInfo[0] firstChild] content];
-        song.artist = [[songInfo[1] firstChild] content];
+        song.songName = [[songInfo[1] firstChild] content];
+        song.artist = [[songInfo[0] firstChild] content];
         song.album = [[songInfo[2] firstChild] content];
         song.label = [[songInfo[3] firstChild] content];
     }

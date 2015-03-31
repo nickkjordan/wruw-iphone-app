@@ -29,102 +29,15 @@
 
 @synthesize dayOfWeek;
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)indexPath{
     
     if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
         DisplayViewController *dvc = [segue destinationViewController];
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
-        Show *c = [_objects objectAtIndex:path.row];
+        Show *item = [self showForIndexPath:indexPath];
         
-        [dvc setCurrentShow:c];
+        [dvc setCurrentShow:item];
     }
-}
-
--(void)loadShows {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFCompoundResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters;
-    if (dayOfWeek > 0) {
-        parameters = @{@"filt-day": [NSString stringWithFormat:@"%d", dayOfWeek]};
-    } else {
-        parameters = @{@"filt-day": @"all"};
-    }
-    
-    [manager POST:@"http://www.wruw.org/shows-schedule" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        TFHpple *showsParser = [TFHpple hppleWithHTMLData:responseObject];
-        
-        // 3
-        NSString *showsXpathQueryString = @"//*[@id='main']/div/table[2]/tbody/tr";
-        NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        
-        // 4
-        NSMutableArray *newShows = [[NSMutableArray alloc] initWithCapacity:0];
-        for (TFHppleElement *element in showsNodes) {
-            // 5
-            Show *show = [[Show alloc] init];
-            [newShows addObject:show];
-            
-            NSArray *elementInformation = [element childrenWithTagName:@"td"];
-            
-            TFHppleElement *showInfo = elementInformation[0];
-            
-            // 6
-            show.title = [[[showInfo firstChildWithTagName:@"a"] firstChild] content];
-            
-            show.host = [[[elementInformation[1] firstChildWithTagName:@"a"] firstChild] content];
-            
-            show.genre = [[[elementInformation[2] firstChildWithTagName:@"a"] firstChild] content];
-            
-            show.time = [[elementInformation[3] firstChild] content];
-            NSString *abbrWeekday = [[show.time componentsSeparatedByString:@":"] objectAtIndex:0];
-            [dateFormatter setDateFormat:@"EEE"];
-            NSDate *weekday =[dateFormatter dateFromString:abbrWeekday];
-            [dateFormatter setDateFormat:@"EEEE"];
-            show.day = [dateFormatter stringFromDate:weekday];
-            
-            // 7
-            show.url = [[showInfo firstChildWithTagName:@"a"] objectForKey:@"href"];
-            
-            show.lastShowUrl = [[elementInformation[4] firstChildWithTagName:@"a"] objectForKey:@"href"];
-        }
-        
-        // 8
-        _originalObjects = [NSArray arrayWithArray:newShows];
-        [self resetObjects];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [spinner stopAnimating];
-            [self.tableView reloadData];
-        });
-
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
-- (void)resetObjects {
-    if (dayOfWeek > 0) {
-        NSString *weekday = [sectionTitles objectAtIndex:dayOfWeek - 1];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
-        
-        NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
-        _originalObjects = [NSMutableArray arrayWithArray:matches];
-    }
-    
-    _objects = [NSMutableArray arrayWithArray:_originalObjects];
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -160,10 +73,104 @@
     programs = [[NSMutableDictionary alloc] init];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Helper methods
+
+-(void)loadShows {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFCompoundResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters;
+    if (dayOfWeek > 0) {
+        parameters = @{@"filt-day": [NSString stringWithFormat:@"%d", dayOfWeek]};
+    } else {
+        parameters = @{@"filt-day": @"all"};
+    }
+    
+    [manager POST:@"http://www.wruw.org/shows-schedule" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        TFHpple *showsParser = [TFHpple hppleWithHTMLData:responseObject];
+        
+        // 3
+        NSString *showsXpathQueryString = @"//*[@id='main']/div/table[2]/tbody/tr";
+        NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        
+        // 4
+        NSMutableArray *newShows = [[NSMutableArray alloc] initWithCapacity:0];
+        for (TFHppleElement *element in showsNodes) {
+            // 5
+            Show *show = [[Show alloc] init];
+            [newShows addObject:show];
+            
+            NSArray *elementInformation = [element childrenWithTagName:@"td"];
+            
+            TFHppleElement *showInfo = elementInformation[0];
+            
+            // 6
+            show.title = [[[showInfo firstChildWithTagName:@"a"] firstChild] content];
+            
+            NSMutableString *host = [[NSMutableString alloc] initWithString:@""];
+            [[elementInformation[1] childrenWithTagName:@"a"] enumerateObjectsUsingBlock:^(TFHppleElement *obj, NSUInteger idx, BOOL *stop) {
+                (idx == 0) ? : [host appendString:@", "];
+                [host appendString:obj.text];
+            }];
+            show.host = host;
+            
+            NSMutableString *genre = [[NSMutableString alloc] initWithString:@""];
+            [[elementInformation[2] childrenWithTagName:@"a"] enumerateObjectsUsingBlock:^(TFHppleElement *obj, NSUInteger idx, BOOL *stop) {
+                (idx == 0) ? : [genre appendString:@", "];
+                [genre appendString:obj.text];
+            }];
+            show.genre = genre;
+            
+            show.time = [[elementInformation[3] firstChild] content];
+            NSString *abbrWeekday = [[show.time componentsSeparatedByString:@":"] objectAtIndex:0];
+            [dateFormatter setDateFormat:@"EEE"];
+            NSDate *weekday =[dateFormatter dateFromString:abbrWeekday];
+            [dateFormatter setDateFormat:@"EEEE"];
+            show.day = [dateFormatter stringFromDate:weekday];
+            
+            // 7
+            show.url = [[showInfo firstChildWithTagName:@"a"] objectForKey:@"href"];
+        }
+        
+        // 8
+        _originalObjects = [NSArray arrayWithArray:newShows];
+        [self resetObjects];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [spinner stopAnimating];
+            [self.tableView reloadData];
+        });
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)resetObjects {
+    if (dayOfWeek > 0) {
+        NSString *weekday = [sectionTitles objectAtIndex:dayOfWeek - 1];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
+        
+        NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
+        _originalObjects = [NSMutableArray arrayWithArray:matches];
+    }
+    
+    _objects = [NSMutableArray arrayWithArray:_originalObjects];
+}
+
+- (Show *)showForIndexPath:(NSIndexPath *)indexPath {
+    Show *item;
+    if (programs.count > 0) {
+        NSString *weekday = [sectionTitles objectAtIndex:indexPath.section];
+        NSArray *sectionPrograms = [programs objectForKey:weekday];
+        item = [sectionPrograms objectAtIndex:indexPath.row];
+    } else {
+        item = [_objects objectAtIndex:indexPath.row];
+    }
+    
+    return item;
 }
 
 #pragma mark - Search Results Updating delegate
@@ -205,7 +212,7 @@
 #pragma mark - Table view delegate 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"showDisplaySegue" sender:self];
+    [self performSegueWithIdentifier:@"showDisplaySegue" sender:indexPath];
 }
 
 #pragma mark - Table view data source
@@ -249,14 +256,7 @@
         [tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil] forCellReuseIdentifier:@"ShowCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
     }
-    Show *item;
-    if (programs.count > 0) {
-        NSString *weekday = [sectionTitles objectAtIndex:indexPath.section];
-        NSArray *sectionPrograms = [programs objectForKey:weekday];
-        item = [sectionPrograms objectAtIndex:indexPath.row];
-    } else {
-        item = [_objects objectAtIndex:indexPath.row];
-    }
+    Show *item = [self showForIndexPath:indexPath];
     [cell configureForShow:item];
     return cell;
 }

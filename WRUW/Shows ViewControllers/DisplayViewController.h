@@ -24,17 +24,11 @@
 @property (weak, nonatomic) IBOutlet UITextView *currentShowInfo;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTime;
+@property (weak, nonatomic) IBOutlet UILabel *showGenre;
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
 
-// Player for last show
-@property (weak, nonatomic) IBOutlet UIButton *togglePlayPause;
-
-@property (weak, nonatomic) IBOutlet UILabel *durationOutlet;
-
-@property (weak, nonatomic) IBOutlet UISlider *sliderOutlet;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
-- (IBAction)togglePlayPauseTapped:(id)sender;
 - (IBAction)calendarTap:(id)sender;
 - (IBAction)favoritePush:(id)sender;
 

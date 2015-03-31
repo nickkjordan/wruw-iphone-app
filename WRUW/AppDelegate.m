@@ -26,11 +26,13 @@
         // handle error
     }
     
+        UIColor *wruwOrange = [UIColor colorWithRed: (253.0/255.0) green: (159.0/255.0) blue: (47.0/255.0) alpha: 1.0];
+    
     // Title View
     [[UINavigationBar appearance]
      setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],
-                               NSFontAttributeName:[UIFont fontWithName:@"Futura-Medium" size:24.0],
-                               } ];
+                               NSFontAttributeName:[UIFont fontWithName:@"GillSans-SemiBold" size:16.0],
+                               }];
     
     // Change Navigation Bar buttons font and color
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
@@ -42,7 +44,7 @@
      setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"Futura" size:14.0f]
                                                               } forState:UIControlStateNormal];
     
-    UIColor *wruwOrange = [UIColor colorWithRed: (253.0/255.0) green: (159.0/255.0) blue: (47.0/255.0) alpha: 1.0];
+
 
     [[UITabBar appearance] setTintColor:wruwOrange];
         

@@ -13,6 +13,7 @@
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
 #import "Show.h"
+#import "CBStoreHouseRefreshControl.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
@@ -21,6 +22,7 @@
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @property (nonatomic, strong) Show *currentShow;
+@property (nonatomic, strong) CBStoreHouseRefreshControl *storeHouseRefreshControl;
 @end
 
 @implementation HomeViewController
@@ -35,8 +37,8 @@
     }
 }
 
-- (void)checkConnection{
-
+- (void)checkConnection
+{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -45,6 +47,8 @@
         [self loadHomePage:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [self.storeHouseRefreshControl finishingLoading];
+        [spinner stopAnimating];
         return;
     }];
     
@@ -52,61 +56,42 @@
 
 - (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
     
+    Show *newShow = [[Show alloc] init];
+    
     // Create XPath strings
     NSString *currentShowTitleXpathQueryString = @"//*[@id='main-nav']/div[1]/div/div[2]/div/div/div[2]/div[1]/span/a";
     
     ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
     
-    NSString *title = [showTitleNode stringValue];
     NSString *url = [[showTitleNode attributes] objectForKey:@"href"];
-    NSString *description = showTitleNode.nextSibling.nextSibling.stringValue;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [showTitle setText:title];
-        [showDescription setText:description];
-    });
-    
-    // 1
-    NSURL *showsUrl = [NSURL URLWithString:url];
-    NSData *showsHtmlData = [NSData dataWithContentsOfURL:showsUrl];
-    
-    // 2
-    TFHpple *showsParser = [TFHpple hppleWithHTMLData:showsHtmlData];
-    
-    NSString *hostXpath = @"//*[@id='main']/div/article/header/p[1]/a";
-    NSArray *hostsNodes = [showsParser searchWithXPathQuery:hostXpath];
-    NSString *hostNames = @"";
-    for (TFHppleElement *host in hostsNodes) {
-        if (hostNames.length > 0) {
-            hostNames = [@[hostNames, host.firstChild.content] componentsJoinedByString:@", "];
-        } else {
-            hostNames = host.firstChild.content;
+    newShow.url = url;
+    [newShow loadInfo:^(){
+        self.moreInfoButton.enabled = YES;
+        
+        if (_archive.count == 0) {
+            [self loadCurrentPlaylist];
         }
-    }
+        if (![newShow isEqual:_currentShow]) {
+            _currentShow = newShow;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [showTitle setText:_currentShow.title];
+                [hostLabel setText:_currentShow.host];
+            });
+            
+            // remove current playlist
+            _archive = [NSMutableArray array];
+            [self loadCurrentPlaylist];
+        } else {
+            [self updateCurrentPlaylist];
+        }
+    }];
     
-    _currentShow.title = title;
-    _currentShow.host = hostNames;
-    _currentShow.url = url;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [hostLabel setText:hostNames];
-    });
-    
-    // 3
-    NSString *showsXpathQueryString = @"//*[@id='playlist-select']/option";
-    NSArray *showsNodes = [showsParser searchWithXPathQuery:showsXpathQueryString];
-    
-    TFHppleElement *element = [showsNodes objectAtIndex:1];
-    
-    Playlist *recentPlaylist = [[Playlist alloc] init];
-    recentPlaylist.date = [[element firstChild] content];
-    recentPlaylist.idValue = [element objectForKey:@"value"];
-    
-    NSMutableArray *newSongs = [recentPlaylist loadSongs];
-    
-    // 8
-    _archive = [NSMutableArray arrayWithArray:[[newSongs reverseObjectEnumerator] allObjects]];
-    
+}
+
+- (void)loadCurrentPlaylist {
+    _archive = [NSMutableArray arrayWithArray:[[[_currentShow.lastShow loadSongs] reverseObjectEnumerator] allObjects]];
+
     __block BOOL setup;
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -115,6 +100,7 @@
     });
     
     int i = 0;
+    [self.tableView beginUpdates];
     for (Song *song in _archive) {
         [song loadImage:^void () {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -126,17 +112,42 @@
         
         i++;
     }
+    [self.tableView endUpdates];
+    
+    [self.storeHouseRefreshControl finishingLoading];
 }
 
-
-- (void)resizeNowPlaying {
-    CGSize sizeThatShouldFitTheContent = [showDescription sizeThatFits:showDescription.frame.size];
-    showDescriptionHeight.constant = sizeThatShouldFitTheContent.height;
+- (void)updateCurrentPlaylist {
     
-    showViewHeight.constant = 85 + sizeThatShouldFitTheContent.height;
+    NSMutableArray *updatedPlaylist = [_currentShow.lastShow loadSongs];
     
-    infoView.frame = CGRectMake(0, 0, infoView.frame.size.width, showViewHeight.constant + 10);
-    self.tableView.tableHeaderView = infoView;
+    // 8
+    NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[updatedPlaylist reverseObjectEnumerator] allObjects]];
+    [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
+    
+    NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
+                           NSMakeRange(0,[newSongs count])];
+    [_archive insertObjects:newSongs atIndexes:indexes];
+    
+    int i = 0;
+    [self.tableView beginUpdates];
+    for (Song *song in newSongs) {
+        [song loadImage:^void () {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+            });
+        }];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+        
+        i++;
+    }
+    [self.tableView endUpdates];
+    
+    [self.storeHouseRefreshControl finishingLoading];
 }
 
 - (void)viewDidLoad
@@ -182,6 +193,19 @@
     
     StreamPlayView *view = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
     [self.showView addSubview:view];
+    
+    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl
+                                     attachToScrollView:self.tableView
+                                     target:self
+                                     refreshAction:@selector(refreshTriggered)
+                                     plist:@"WruwStorehouseIconList"
+                                     color:[UIColor darkGrayColor]
+                                     lineWidth:1.5
+                                     dropHeight:100
+                                     scale:1.5
+                                     horizontalRandomness:150
+                                     reverseLoadingAnimation:YES
+                                     internalAnimationFactor:0.5];
 }
 
 #pragma mark - Table view data source
@@ -221,6 +245,23 @@
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
 {
     return UIBarPositionTopAttached;
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.storeHouseRefreshControl scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.storeHouseRefreshControl scrollViewDidEndDragging];
+}
+
+- (void)refreshTriggered
+{
+    [self checkConnection];
 }
 
 @end

@@ -54,6 +54,18 @@
 #define COCOAPODS_VERSION_MINOR_AFOnoResponseSerializer 0
 #define COCOAPODS_VERSION_PATCH_AFOnoResponseSerializer 0
 
+// CBStoreHouseRefreshControl
+#define COCOAPODS_POD_AVAILABLE_CBStoreHouseRefreshControl
+#define COCOAPODS_VERSION_MAJOR_CBStoreHouseRefreshControl 1
+#define COCOAPODS_VERSION_MINOR_CBStoreHouseRefreshControl 0
+#define COCOAPODS_VERSION_PATCH_CBStoreHouseRefreshControl 0
+
+// MarqueeLabel
+#define COCOAPODS_POD_AVAILABLE_MarqueeLabel
+#define COCOAPODS_VERSION_MAJOR_MarqueeLabel 2
+#define COCOAPODS_VERSION_MINOR_MarqueeLabel 2
+#define COCOAPODS_VERSION_PATCH_MarqueeLabel 1
+
 // Ono
 #define COCOAPODS_POD_AVAILABLE_Ono
 #define COCOAPODS_VERSION_MAJOR_Ono 1
