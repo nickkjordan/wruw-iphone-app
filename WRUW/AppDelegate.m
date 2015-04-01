@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+WruwColors.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -26,17 +27,17 @@
         // handle error
     }
     
-        UIColor *wruwOrange = [UIColor colorWithRed: (253.0/255.0) green: (159.0/255.0) blue: (47.0/255.0) alpha: 1.0];
-    
     // Title View
     [[UINavigationBar appearance]
      setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],
                                NSFontAttributeName:[UIFont fontWithName:@"GillSans-SemiBold" size:16.0],
                                }];
     
+    [[UINavigationBar appearance] setTintColor:[UIColor wruwColor]];
+    
     // Change Navigation Bar buttons font and color
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
-     setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"GillSans-Light" size:14.0f] }
+     setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor wruwColor],                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"GillSans" size:14.0f] }
      forState:UIControlStateNormal];
     
     // Segmented Control color
@@ -46,7 +47,7 @@
     
 
 
-    [[UITabBar appearance] setTintColor:wruwOrange];
+    [[UITabBar appearance] setTintColor:[UIColor wruwColor]];
         
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     // Override point for customization after application launch.

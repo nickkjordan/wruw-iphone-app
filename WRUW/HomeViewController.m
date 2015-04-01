@@ -206,6 +206,8 @@
                                      horizontalRandomness:150
                                      reverseLoadingAnimation:YES
                                      internalAnimationFactor:0.5];
+    
+    [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkConnection) userInfo:nil repeats:YES];
 }
 
 #pragma mark - Table view data source

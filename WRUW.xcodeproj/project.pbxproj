@@ -112,8 +112,8 @@
 		01042C051AC06A42003112F3 /* BezierIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierIconView.swift; sourceTree = "<group>"; };
 		01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBezierIcons.swift; sourceTree = "<group>"; };
 		01042C561AC0764F003112F3 /* WRUWSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WRUWSwift.framework; path = "WRUWSwift/build/Debug-iphoneos/WRUWSwift.framework"; sourceTree = "<group>"; };
-		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
-		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayDataSource.h; path = ../ArrayDataSource.h; sourceTree = "<group>"; };
+		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayDataSource.m; path = ../ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -139,6 +139,7 @@
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WRUWModule-Bridging-Header.h"; path = "../WRUWModule-Bridging-Header.h"; sourceTree = "<group>"; };
 		0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPlayView.swift; sourceTree = "<group>"; };
+		01498CB71ACC5BE400D23F1B /* UIColor+WruwColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+WruwColors.h"; path = "Singletons/UIColor+WruwColors.h"; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -267,7 +268,8 @@
 				010F292117E21AE900DC3631 /* iTunesArtwork.png */,
 				010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */,
 			);
-			path = "App Icon [Squared]";
+			name = "App Icon [Squared]";
+			path = "../App Icon [Squared]";
 			sourceTree = "<group>";
 		};
 		012C926B1840026600C94210 /* Save Data */ = {
@@ -279,6 +281,14 @@
 				012C92691840025E00C94210 /* saveFavorite.m */,
 			);
 			path = "Save Data";
+			sourceTree = "<group>";
+		};
+		01498CB61ACC5B5D00D23F1B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01498CB71ACC5BE400D23F1B /* UIColor+WruwColors.h */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		0170902D17DBA8F80005EC0F = {
@@ -326,23 +336,21 @@
 		0170903F17DBA8F80005EC0F /* WRUW */ = {
 			isa = PBXGroup;
 			children = (
-				01A721D118AC6808001FA64F /* Favorites Controllers */,
-				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
-				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				01F9819F183537A10069C241 /* hpple */,
-				01F9819B1835373C0069C241 /* Model */,
-				010F291817E21AE900DC3631 /* App Icon [Squared] */,
+				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
-				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
-				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
-				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
 				0153B8F5189C827100331DD9 /* HomeViewController.h */,
 				0153B8F6189C827100331DD9 /* HomeViewController.m */,
+				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
+				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
 				0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */,
-				012C926B1840026600C94210 /* Save Data */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
+				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				01F9819B1835373C0069C241 /* Models */,
+				012C926B1840026600C94210 /* Save Data */,
 				01042C031AC06A42003112F3 /* AnimatedButton */,
+				01498CB61ACC5B5D00D23F1B /* Extensions */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
@@ -352,6 +360,7 @@
 		0170904017DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				010F291817E21AE900DC3631 /* App Icon [Squared] */,
 				0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */,
 				0170904117DBA8F80005EC0F /* WRUW-Info.plist */,
 				0170904217DBA8F80005EC0F /* InfoPlist.strings */,
@@ -464,9 +473,11 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		01F9819B1835373C0069C241 /* Model */ = {
+		01F9819B1835373C0069C241 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
+				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
 				01F40DC918398F1500BFA783 /* Playlist.h */,
@@ -474,6 +485,7 @@
 				019316DA183B5E67007755E8 /* Song.h */,
 				019316DB183B5E67007755E8 /* Song.m */,
 			);
+			name = Models;
 			path = Model;
 			sourceTree = "<group>";
 		};

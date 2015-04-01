@@ -210,10 +210,10 @@
 - (IBAction)favoritePush:(id)sender {
     [self saveFavorite:currentShow];
     
-    UIImage *testHeart  = [UIImage imageNamed:@"heart_24.png"];
-    UIImage *currentHeart = favButton.currentImage;
+    NSData *testHeart  = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
+    NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
     
-    NSString *switchHeart = ([testHeart isEqual:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
     
     [self buttonAnimation:favButton withImage:switchHeart];
     

@@ -12,6 +12,8 @@
 #import "Show.h"
 #import "DisplayViewController.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "UIColor+WruwColors.h"
+#import "WRUWModule-Swift.h"
 
 @interface ShowsTableViewController () {
     NSMutableArray *_objects;
@@ -45,11 +47,13 @@
     [super viewDidLoad];
     sectionTitles = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
     sectionIndexTitles = @[@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa"];
+    self.tableView.sectionIndexColor = [UIColor wruwColor];
+    self.tableView.sectionIndexBackgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
     
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(super.view.frame.size.width / 2.0, super.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor blueColor];
+    spinner.color = [UIColor wruwColor];
     [self.view addSubview:spinner];
     
     [spinner startAnimating];
@@ -63,6 +67,7 @@
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.scopeButtonTitles = @[];
     self.searchController.searchBar.delegate = self;
+    [self.searchController.searchBar setPlaceholder:@"Search by program, host, or genre"];
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
@@ -211,8 +216,59 @@
 
 #pragma mark - Table view delegate 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [self performSegueWithIdentifier:@"showDisplaySegue" sender:indexPath];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if ([self tableView:tableView numberOfRowsInSection:section]) {
+        return 60.0;
+    } else {
+        return 0.0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    // initialization
+    NSString *headerText = sectionTitles[section];
+    float width = dayOfWeek ? tableView.frame.size.width : tableView.frame.size.width - 18;
+    
+    // Initilize header view
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 60)];
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path,NULL,0.0,0.0);
+    CGPathAddLineToPoint(path, NULL, width, 0);
+    CGPathAddLineToPoint(path, NULL, width, 60);
+    CGPathAddLineToPoint(path, NULL, width/2 + 12.5, 60);
+    CGPathAddLineToPoint(path, NULL, width/2, 48);
+    CGPathAddLineToPoint(path, NULL, width/2 - 12.5, 60);
+    CGPathAddLineToPoint(path, NULL, 0, 60);
+    CGPathAddLineToPoint(path, NULL, 0, 0);
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setPath:path];
+    [shapeLayer setFillColor:[[[UIColor wruwColor] colorWithAlphaComponent:0.95] CGColor]];
+    [shapeLayer setBounds:CGRectMake(0.0f, 0.0f, width, 60)];
+    [shapeLayer setAnchorPoint:CGPointMake(0.0f, 0.0f)];
+    [shapeLayer setPosition:CGPointMake(0.0f, 0.0f)];
+    [[view layer] addSublayer:shapeLayer];
+
+    // Make label for day of week
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, width, 18)];
+    [label setFont:[UIFont fontWithName:@"GillSans-SemiBold" size:18.0]];
+    [label setText:headerText];
+    [label setTextColor:[UIColor whiteColor]];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    
+    // add subviews
+    [view addSubview:label];
+    label.center = view.center;
+    
+    return view;
 }
 
 #pragma mark - Table view data source

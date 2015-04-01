@@ -131,10 +131,10 @@
 
     [self saveFavorite:_currentSong];
     
-    UIImage *testHeart  = [UIImage imageNamed:@"heart_24.png"];
-    UIImage *currentHeart = favButton.currentImage;
+    NSData *testHeart  = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
+    NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
     
-    NSString *switchHeart = ([testHeart isEqual:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
     
     [self buttonAnimation:favButton withImage:switchHeart];
 }
@@ -177,7 +177,7 @@
     UIImage *toImage = [UIImage imageNamed:imageName];
     
     [UIView transitionWithView:self.socialView
-                      duration:0.3f
+                      duration:0.5f
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
                         button.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
