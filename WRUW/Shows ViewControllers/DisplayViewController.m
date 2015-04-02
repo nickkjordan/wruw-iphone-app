@@ -12,12 +12,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
 #import <EventKit/EventKit.h>
+#import "UIColor+WruwColors.h"
 
 @interface DisplayViewController () <AVAudioPlayerDelegate>
 {
     AVAudioPlayer *audioPlayer;
     UITableView *tableView;
     TFHpple *showsParser;
+    UIActivityIndicatorView *spinner;
 }
 @end
 
@@ -39,7 +41,11 @@
 
 - (void)adjustHeightOfInfoView
 {
-    currentShowInfo.frame = [self getSizeForText:currentShowInfo.text maxWidth:self.currentShowInfo.frame.size.width font:@"GillSans" fontSize:16];
+    [spinner stopAnimating];
+    CGFloat fixedWidth = currentShowInfo.frame.size.width;
+    currentShowInfo.frame = [self getSizeForText:currentShowInfo.text maxWidth:fixedWidth font:@"GillSans" fontSize:16];
+    
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 167 + currentShowInfo.frame.size.height)];
 }
 
 - (CGRect)getSizeForText:(NSString *)text maxWidth:(CGFloat)width font:(NSString *)fontName fontSize:(float)fontSize {
@@ -62,6 +68,9 @@
     [self.navigationController setNavigationBarHidden:NO];
         
     currentShowInfo.editable = NO;
+    if (currentShowInfo.text.length == 0) {
+        [spinner startAnimating];
+    }
     [currentShow loadInfo:^(){
         [self updateLabels];
     }];
@@ -75,6 +84,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    spinner = [[UIActivityIndicatorView alloc] init];
+    spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
+    [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    spinner.color = [UIColor wruwColor];
+    [self.view addSubview:spinner];
+    
+    [spinner startAnimating];
     
     [self updateLabels];
 }

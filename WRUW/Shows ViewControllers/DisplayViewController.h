@@ -18,14 +18,13 @@
 
 // Show info
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTitle;
-
 @property (weak, nonatomic) IBOutlet UILabel *currentShowHost;
-
 @property (weak, nonatomic) IBOutlet UITextView *currentShowInfo;
-
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTime;
 @property (weak, nonatomic) IBOutlet UILabel *showGenre;
+
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 

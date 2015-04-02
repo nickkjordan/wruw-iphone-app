@@ -15,6 +15,17 @@
 @synthesize date = _date;
 @synthesize idValue = _idValue;
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.idValue forKey:@"ID"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if(self = [super init]){
+        self.idValue = [aDecoder decodeObjectForKey:@"ID"];
+    }
+    return self;
+}
+
 -(NSMutableArray *)loadSongs {
     NSURL *archiveUrl = [NSURL URLWithString:self.idValue];
     NSData *archiveHtmlData = [NSData dataWithContentsOfURL:archiveUrl];

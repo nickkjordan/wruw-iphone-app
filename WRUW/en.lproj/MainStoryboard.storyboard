@@ -310,9 +310,9 @@
         <!--WRUW Shows-->
         <scene sceneID="CrZ-Yg-l7n">
             <objects>
-                <tableViewController id="HZv-gm-NPG" customClass="ShowsTableViewController" sceneMemberID="viewController">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="HZv-gm-NPG" customClass="ShowsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="60" sectionFooterHeight="22" id="cQo-Z7-heq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -350,81 +350,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
-                                <rect key="frame" x="36" y="234" width="248" height="310"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
-                                <rect key="frame" x="36" y="144" width="248" height="17"/>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp8-CJ-X57">
-                                <rect key="frame" x="36" y="161" width="248" height="17"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-hO-PhB">
-                                <rect key="frame" x="88" y="193" width="24" height="24"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
+                                        <rect key="frame" x="30" y="77" width="250" height="17"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp8-CJ-X57">
+                                        <rect key="frame" x="30" y="94" width="250" height="17"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-hO-PhB">
+                                        <rect key="frame" x="87" y="126" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ESn-9M-NLP"/>
+                                            <constraint firstAttribute="width" constant="24" id="u21-Ig-55M"/>
+                                        </constraints>
+                                        <state key="normal" image="calendar_add.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calendarTap:" destination="jHC-bi-R8q" eventType="touchUpInside" id="fis-aV-NTG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-51-Tc6">
+                                        <rect key="frame" x="45" y="127" width="24" height="24"/>
+                                        <state key="normal" image="heart_24.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="favoritePush:" destination="jHC-bi-R8q" eventType="touchUpInside" id="gpU-cv-dgN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENRE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLh-FS-2dc">
+                                        <rect key="frame" x="30" y="20" width="250" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="9UL-1E-Thn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="12"/>
+                                        <color key="textColor" red="0.99215686274509807" green="0.62352941176470589" blue="0.18431372549019609" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="285" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-1h-vgG">
+                                        <rect key="frame" x="30" y="35" width="250" height="34"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="28"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
+                                        <rect key="frame" x="30" y="167" width="250" height="292"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="ESn-9M-NLP"/>
-                                    <constraint firstAttribute="width" constant="24" id="u21-Ig-55M"/>
+                                    <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" id="0SN-Zk-9Xt"/>
+                                    <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" id="0lq-X3-e9v"/>
+                                    <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="7rf-51-Tc6" secondAttribute="trailing" constant="18" id="3un-IF-444"/>
+                                    <constraint firstAttribute="bottom" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="20" id="CYh-4j-iC1"/>
+                                    <constraint firstItem="7rf-51-Tc6" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="16" id="GEH-qo-Ztm"/>
+                                    <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="jLh-FS-2dc" secondAttribute="bottom" id="GUd-mS-a70"/>
+                                    <constraint firstAttribute="trailing" secondItem="dyT-1h-vgG" secondAttribute="trailing" constant="20" id="KiU-Ma-sLa"/>
+                                    <constraint firstAttribute="trailing" secondItem="jLh-FS-2dc" secondAttribute="trailing" constant="20" id="SJ1-z0-oo7"/>
+                                    <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="UDo-VU-jLc"/>
+                                    <constraint firstItem="jLh-FS-2dc" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="eUP-7x-TjF"/>
+                                    <constraint firstItem="jLh-FS-2dc" firstAttribute="top" secondItem="tkI-LC-ST2" secondAttribute="top" constant="20" id="fyU-HG-efs"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="7rf-51-Tc6" secondAttribute="bottom" constant="16" id="gGs-4l-rLP"/>
+                                    <constraint firstItem="7rf-51-Tc6" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="45" id="gUX-4f-7hQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="20" id="htu-75-hUc"/>
+                                    <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="izO-vt-mAy"/>
+                                    <constraint firstItem="Od8-hO-PhB" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="15" id="j2w-Fw-uyu"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="mpx-sj-eMD"/>
+                                    <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="obl-SY-hvq"/>
+                                    <constraint firstAttribute="trailing" secondItem="aNS-HD-XcD" secondAttribute="trailing" constant="20" id="rKj-KD-hju"/>
+                                    <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="uQh-01-nIB"/>
                                 </constraints>
-                                <state key="normal" image="calendar_add.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="calendarTap:" destination="jHC-bi-R8q" eventType="touchUpInside" id="fis-aV-NTG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-51-Tc6">
-                                <rect key="frame" x="46" y="194" width="24" height="24"/>
-                                <state key="normal" image="heart_24.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="favoritePush:" destination="jHC-bi-R8q" eventType="touchUpInside" id="gpU-cv-dgN"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GENRE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLh-FS-2dc">
-                                <rect key="frame" x="36" y="87" width="248" height="15"/>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="12"/>
-                                <color key="textColor" red="0.99215686274509807" green="0.62352941176470589" blue="0.18431372549019609" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="285" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-1h-vgG">
-                                <rect key="frame" x="36" y="102" width="248" height="34"/>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="28"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" id="8wd-RW-ABW"/>
-                            <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="20" id="Aey-Sp-Mk7"/>
-                            <constraint firstItem="jLh-FS-2dc" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="20" id="AoA-Ls-fvl"/>
-                            <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="7rf-51-Tc6" secondAttribute="bottom" constant="16" id="Bgr-1u-P0w"/>
-                            <constraint firstItem="Od8-hO-PhB" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="15" id="GKb-fI-DAH"/>
-                            <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="20" id="HTB-m4-BDK"/>
-                            <constraint firstItem="7rf-51-Tc6" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="16" id="Jq5-rC-VfC"/>
-                            <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="20" id="NUf-OE-I9e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jLh-FS-2dc" secondAttribute="trailing" constant="20" id="PSc-XA-97O"/>
-                            <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="20" id="SO3-UA-9gh"/>
-                            <constraint firstItem="jLh-FS-2dc" firstAttribute="top" secondItem="CeB-wA-C5l" secondAttribute="bottom" constant="23" id="XUj-g1-sA1"/>
-                            <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" id="chz-NJ-7C7"/>
-                            <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="7rf-51-Tc6" secondAttribute="trailing" constant="18" id="dHM-gs-QAN"/>
-                            <constraint firstItem="7rf-51-Tc6" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="30" id="efs-xd-hu2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dyT-1h-vgG" secondAttribute="trailing" constant="20" id="f5l-O7-5H9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aNS-HD-XcD" secondAttribute="trailing" constant="20" id="gfY-cL-MFF"/>
-                            <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="jLh-FS-2dc" secondAttribute="bottom" id="oGW-xW-SAz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="20" id="sLE-QI-lT1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="t33-R2-XIN"/>
+                            <constraint firstItem="tkI-LC-ST2" firstAttribute="top" secondItem="CeB-wA-C5l" secondAttribute="bottom" id="8fj-1b-LzD"/>
+                            <constraint firstItem="tkI-LC-ST2" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="-16" id="PRc-h8-x7b"/>
+                            <constraint firstItem="TUN-uK-brw" firstAttribute="top" secondItem="tkI-LC-ST2" secondAttribute="bottom" id="e9c-BQ-lGT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tkI-LC-ST2" secondAttribute="trailing" constant="-16" id="lZl-Es-6k4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">
@@ -440,6 +455,7 @@
                         <outlet property="currentShowTime" destination="pp8-CJ-X57" id="q5O-An-eeK"/>
                         <outlet property="currentShowTitle" destination="dyT-1h-vgG" id="ow5-e2-HqQ"/>
                         <outlet property="favButton" destination="7rf-51-Tc6" id="AXg-rV-aLS"/>
+                        <outlet property="scrollView" destination="tkI-LC-ST2" id="8XL-Mj-wh5"/>
                         <outlet property="showGenre" destination="jLh-FS-2dc" id="ehO-Bl-2sy"/>
                     </connections>
                 </viewController>

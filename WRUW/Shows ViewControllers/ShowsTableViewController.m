@@ -76,6 +76,11 @@
     
     self.tableView.dataSource = self;
     programs = [[NSMutableDictionary alloc] init];
+    
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    self.searchController.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - Helper methods
@@ -198,6 +203,7 @@
     }
     
     [self.tableView reloadData];
+
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
@@ -212,6 +218,14 @@
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
     [self updateSearchResultsForSearchController:self.searchController];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
 }
 
 #pragma mark - Table view delegate 
@@ -233,8 +247,15 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     // initialization
-    NSString *headerText = sectionTitles[section];
-    float width = dayOfWeek ? tableView.frame.size.width : tableView.frame.size.width - 18;
+    float width;
+    NSString *headerText;
+    if (dayOfWeek) {
+        headerText = sectionTitles[dayOfWeek - 1];
+        width = tableView.frame.size.width;
+    } else {
+        headerText = sectionTitles[section];
+        width = tableView.frame.size.width -18;
+    }
     
     // Initilize header view
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 60)];

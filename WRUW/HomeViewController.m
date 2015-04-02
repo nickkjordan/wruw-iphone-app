@@ -217,9 +217,6 @@
     //Once the view has loaded then we can register to begin recieving controls and we can become the first responder
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.streamPlay becomeFirstResponder];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"png"];
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:path];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
