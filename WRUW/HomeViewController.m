@@ -23,6 +23,7 @@
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @property (nonatomic, strong) Show *currentShow;
 @property (nonatomic, strong) CBStoreHouseRefreshControl *storeHouseRefreshControl;
+@property (nonatomic, strong) StreamPlayView *streamPlay;
 @end
 
 @implementation HomeViewController
@@ -191,8 +192,8 @@
     // Set navigation bar
     self.navigationBar.delegate = self;
     
-    StreamPlayView *view = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
-    [self.showView addSubview:view];
+    self.streamPlay = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    [self.showView addSubview:self.streamPlay];
     
     self.storeHouseRefreshControl = [CBStoreHouseRefreshControl
                                      attachToScrollView:self.tableView
@@ -208,6 +209,25 @@
                                      internalAnimationFactor:0.5];
     
     [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkConnection) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //Once the view has loaded then we can register to begin recieving controls and we can become the first responder
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self.streamPlay becomeFirstResponder];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Default" ofType:@"png"];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:path];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    //End recieving events
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self.streamPlay resignFirstResponder];
 }
 
 #pragma mark - Table view data source
