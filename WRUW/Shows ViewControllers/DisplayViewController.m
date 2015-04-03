@@ -41,7 +41,6 @@
 
 - (void)adjustHeightOfInfoView
 {
-    [spinner stopAnimating];
     CGFloat fixedWidth = currentShowInfo.frame.size.width;
     currentShowInfo.frame = [self getSizeForText:currentShowInfo.text maxWidth:fixedWidth font:@"GillSans" fontSize:16];
     
@@ -72,6 +71,7 @@
         [spinner startAnimating];
     }
     [currentShow loadInfo:^(){
+        [spinner stopAnimating];
         [self updateLabels];
     }];
     

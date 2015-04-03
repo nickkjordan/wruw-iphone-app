@@ -55,6 +55,7 @@
         _emptyView = [EmptyFavoritesView emptyShows];
         _emptyView.frame = self.view.frame;
         _emptyView.bounds = self.view.bounds;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
@@ -63,6 +64,7 @@
                          }];
     } else if ([_emptyView isDescendantOfView:self.view]) {
         [_emptyView removeFromSuperview];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
 }
 

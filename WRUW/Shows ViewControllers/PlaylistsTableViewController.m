@@ -33,28 +33,12 @@
     }
 }
 
--(void)loadPlaylist {
-    
-    // 3
-    NSString *showsXpathQueryString = @"//*[@id='playlist-select']/option[position()>1]";
-    NSArray *showsNodes = [currentParser searchWithXPathQuery:showsXpathQueryString];
-    
-    // 4
-    NSMutableArray *newPlaylists = [[NSMutableArray alloc] initWithCapacity:0];
-    for (int i = 1; i < [showsNodes count]; i++) {
-        TFHppleElement *element = [showsNodes objectAtIndex:i];
-        
-        // 5
-        Playlist *playlist = [[Playlist alloc] init];
-        [newPlaylists addObject:playlist];
-        
-        playlist.date = [[element firstChild] content];
-        playlist.idValue = [element objectForKey:@"value"];
-    }
-    
-    // 8
-    _playlists = newPlaylists;
-    [self.tableView reloadData];
+-(void)loadPlaylist
+{
+    [currentShow loadInfo:^{
+        _playlists = [NSMutableArray arrayWithArray:currentShow.playlists];
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewDidLoad
@@ -62,7 +46,6 @@
     [super viewDidLoad];
     
     [self loadPlaylist];
-
 }
 
 #pragma mark - Table view data source

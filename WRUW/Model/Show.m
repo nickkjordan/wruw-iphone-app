@@ -10,8 +10,12 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AFOnoResponseSerializer.h"
 #import "ONOXMLDocument.h"
+#import "Playlist.h"
 
 @implementation Show
+{
+    ONOXMLElement *showHeader;
+}
 
 @synthesize title = _title;
 @synthesize url = _url;
@@ -21,6 +25,7 @@
 @synthesize lastShow = _lastShow;
 @synthesize day = _day;
 @synthesize infoDescription = _infoDescription;
+@synthesize playlists = _playlists;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
@@ -58,25 +63,43 @@
     return haveEqualShowTitles;
 }
 
+- (BOOL)currentShowValid {
+    return self.title && self.host && self.time && self.genre && self.day && self.lastShow;
+}
+
 - (void)loadInfo:(LoadShowBlock)successBlock {
-    if (self.title && self.host && self.time && self.genre && self.day && self.lastShow) {
+    void (^loadShow)(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject);
+    
+    if ([self currentShowValid] && _playlists.count > 0) {
+        successBlock();
         return;
+    } else if ([self currentShowValid] && _playlists.count == 0) {
+        loadShow = ^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
+            showHeader = [responseObject firstChildWithXPath:@"//*[@id='main']/div/article"];
+            
+            successBlock();
+            [self loadPlaylists];
+        };
+    } else {
+        loadShow = ^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
+            showHeader = [responseObject firstChildWithXPath:@"//*[@id='main']/div/article"];
+            
+            [self parseShowInfo];
+            successBlock();
+            [self loadPlaylists];
+        };
     }
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    [manager GET:self.url parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-        [self parseShowInfo:responseObject];
-        successBlock();
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [manager GET:self.url parameters:nil success:loadShow failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
         return;
     }];
 }
 
-- (void)parseShowInfo:(ONOXMLDocument *)data {
-    ONOXMLElement *showHeader = [data firstChildWithXPath:@"//*[@id='main']/div/article"];
+- (void)parseShowInfo {
     
     self.title = [[showHeader firstChildWithCSS:@".entry-title"] stringValue];
     self.host = @"";
@@ -108,6 +131,24 @@
     self.lastShow = [[Playlist alloc] init];
     self.lastShow.idValue = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]/@value"] stringValue];
     self.lastShow.date = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]"] stringValue];
+    
+}
+
+- (void)checkPlaylists {
+    if (_playlists.count == 0) {
+        [self loadPlaylists];
+    }
+}
+
+- (void)loadPlaylists {
+    NSMutableArray *play = [[NSMutableArray alloc] init];
+    [showHeader enumerateElementsWithXPath:@"//*[@id='playlist-select']/option[position()>1]" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
+        Playlist *newPlaylist = [[Playlist alloc] init];
+        newPlaylist.idValue = [[element attributes] valueForKey:@"value"];
+        newPlaylist.date = [element stringValue];
+        [play addObject:newPlaylist];
+    }];
+    _playlists = play;
 }
 
 #pragma mark - NSObject

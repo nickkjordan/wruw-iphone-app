@@ -21,6 +21,7 @@ typedef void (^LoadShowBlock)();
 @property (nonatomic, copy) NSString *day;
 @property (nonatomic, copy) NSString *infoDescription;
 @property (nonatomic) Playlist *lastShow;
+@property (nonatomic, copy) NSArray *playlists;
 
 - (void)loadInfo:(LoadShowBlock)successBlock;
 
