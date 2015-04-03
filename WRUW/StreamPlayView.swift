@@ -10,13 +10,17 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-class StreamPlayView: UIView, Status {
+@objc class StreamPlayView: UIView, Status {
     
     let urlAddress = NSURL(string: "http://wruw-stream.wruw.org:443/stream.mp3")
     var player = AVPlayer?()
     var view = AnimatedButton(frame: CGRectMake(10, 10, 150, 150))
     let path = NSBundle.mainBundle().pathForResource("Default", ofType: "png")
     var image = UIImage()
+    
+    override class func `new`() -> StreamPlayView {
+        return StreamPlayView()
+    }
 
     override func didMoveToSuperview() {
         view.delegate = self
@@ -25,6 +29,10 @@ class StreamPlayView: UIView, Status {
         if let path = path {
             image = UIImage(contentsOfFile: path)!
         }
+    }
+    
+    @objc func didAppear() {
+        view.didAppear()
     }
     
     func statusChange() {

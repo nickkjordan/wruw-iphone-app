@@ -102,5 +102,9 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         status = !status
     }
 
-
+    func didAppear() {
+        if status {
+            self.circle.layer.addAnimation(self.scaleAnimation, forKey: "scale")
+        }
+    }
 }

@@ -32,5 +32,4 @@
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 
-
 @end

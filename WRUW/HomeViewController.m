@@ -209,6 +209,11 @@
                                      internalAnimationFactor:0.5];
     
     [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkConnection) userInfo:nil repeats:YES];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self.streamPlay
+                                            selector:@selector(didAppear)
+                                                name:UIApplicationDidBecomeActiveNotification
+                                              object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -217,6 +222,8 @@
     //Once the view has loaded then we can register to begin recieving controls and we can become the first responder
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.streamPlay becomeFirstResponder];
+    
+    [self.streamPlay didAppear];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
