@@ -72,3 +72,9 @@
 #define COCOAPODS_VERSION_MINOR_Ono 1
 #define COCOAPODS_VERSION_PATCH_Ono 3
 
+// SDCSegmentedViewController
+#define COCOAPODS_POD_AVAILABLE_SDCSegmentedViewController
+#define COCOAPODS_VERSION_MAJOR_SDCSegmentedViewController 1
+#define COCOAPODS_VERSION_MINOR_SDCSegmentedViewController 6
+#define COCOAPODS_VERSION_PATCH_SDCSegmentedViewController 0
+

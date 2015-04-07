@@ -9,6 +9,7 @@
 #import "FavoritesTableViewController.h"
 #import <Social/Social.h>
 #import "EmptyFavoritesView.h"
+#import <sys/utsname.h>
 
 @interface FavoritesTableViewController ()
 {
@@ -23,6 +24,15 @@
 @implementation FavoritesTableViewController
 
 @synthesize tableView;
+
+NSString* deviceName()
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -47,10 +57,6 @@
     
     //Creates notification for cleared song
     center = [NSNotificationCenter defaultCenter];
-    
-    // Fix for last TableView cell under tab bar
-    self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -145,12 +151,12 @@
     
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath *)tableView:(UITableView *)tableViewIn willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    SongTableViewCell *cell = (SongTableViewCell *)[tableViewIn cellForRowAtIndexPath:indexPath];
     if ([cell isSelected]) {
         // Deselect manually.
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [tableViewIn deselectRowAtIndexPath:indexPath animated:YES];
         
         return nil;
     }

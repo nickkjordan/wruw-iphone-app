@@ -15,29 +15,25 @@
 @implementation SegmentedViewController
 @synthesize containerView, favoritesItem;
 @synthesize currentVC, favShowsVC, favSongsVC;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    self.favSongsVC = self.childViewControllers.lastObject;
-    self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
-    self.currentVC = self.favSongsVC;
+    [self.view layoutIfNeeded];
+    
+    [self addStoryboardSegments:@[@"songsSegue", @"showsSegue"]];
+    
+//
+//    self.favSongsVC = self.childViewControllers.lastObject;
+//    self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
+//    self.currentVC = self.favSongsVC;
+//    [self addContainerViewConstraints:self.currentVC];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+    [super viewWillAppear:animated];
+    [self.view setNeedsLayout];
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
@@ -68,32 +64,60 @@
 }
 
 -(void)moveToNewController:(UIViewController *) newController direction:(int) param{
+
+    [self.currentVC willMoveToParentViewController:nil];
+    void (^completion)(BOOL) = ^(BOOL finished){
+        [self.currentVC removeFromParentViewController];
+        [newController didMoveToParentViewController:self];
+        self.currentVC = newController;
+        
+        [self addContainerViewConstraints:self.currentVC];
+    };
+    
     // direction param:
     // 1 = right to left (Shows displayed)
     // 0 = left to right (Songs displayed)
-    [self.currentVC willMoveToParentViewController:nil];
+    UIViewAnimationOptions options = param ? UIViewAnimationOptionTransitionFlipFromRight : UIViewAnimationOptionTransitionFlipFromLeft;
     
-    if (param) {
-        [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
-                                   options:UIViewAnimationOptionTransitionFlipFromRight
-                                animations:nil
-                                completion:^(BOOL finished) {
-                                    [self.currentVC removeFromParentViewController];
-                                    [newController didMoveToParentViewController:self];
-                                    self.currentVC = newController;
-                                }];
-    } else {
-        [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
-                                   options:UIViewAnimationOptionTransitionFlipFromLeft
-                                animations:nil
-                                completion:^(BOOL finished) {
-                                    [self.currentVC removeFromParentViewController];
-                                    [newController didMoveToParentViewController:self];
-                                    self.currentVC = newController;
-                                }];
-    }
+    [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
+                               options:options
+                            animations:nil
+                            completion:completion];
+}
+
+- (void)addContainerViewConstraints:(UIViewController *)viewController
+{
+    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+                                                                   attribute:NSLayoutAttributeTop
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:containerView
+                                                                   attribute:NSLayoutAttributeTop
+                                                                  multiplier:1.0
+                                                                    constant:0.0]];
     
+    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+                                                                   attribute:NSLayoutAttributeLeading
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:containerView
+                                                                   attribute:NSLayoutAttributeLeading
+                                                                  multiplier:1.0
+                                                                    constant:0.0]];
     
+    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+                                                                   attribute:NSLayoutAttributeBottom
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:containerView
+                                                                   attribute:NSLayoutAttributeBottom
+                                                                  multiplier:1.0
+                                                                    constant:0.0]];
+    
+    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+                                                                   attribute:NSLayoutAttributeTrailing
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:containerView
+                                                                   attribute:NSLayoutAttributeTrailing
+                                                                  multiplier:1.0
+                                                                    constant:0.0]];
 }
 
 @end

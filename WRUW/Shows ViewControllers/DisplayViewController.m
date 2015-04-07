@@ -111,81 +111,81 @@
     [self adjustHeightOfInfoView];
 }
 
-- (IBAction)calendarTap:(id)sender {
-    
-    EKEventStore *store = [[EKEventStore alloc] init];
-    
-    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-        // handle access here
-        
-        if (granted) {
-            
-            //
-            EKEventEditViewController* controller = [[EKEventEditViewController alloc] init];
-            controller.eventStore = store;
-            controller.editViewDelegate = self;
-            
-            //creating and modifying the event
-            EKEvent *showEvent = [EKEvent eventWithEventStore:store];
-            showEvent.title = currentShow.title;
-            
-            //find NSDates
-            NSDate *today = [NSDate date];
-            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-            [gregorian setLocale:[NSLocale currentLocale]];
-            
-            NSDateComponents *nowComponents = [gregorian components:NSYearCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
-            NSDateComponents *components = [[NSDateComponents alloc] init];
-            [components setWeekday:5]; //5 = Thursday
-            
-            NSLog(@"%d  ~=  %d",components.weekday, nowComponents.weekday);
-            if (components.weekday < nowComponents.weekday) {
-                [components setWeek: [nowComponents week] + 1]; //Next week
-            } else {
-                [components setWeek:nowComponents.week];
-            }
-            
-            NSString *meridian = [[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:2];
-            NSString *startString =[[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:1];
-            int start = startString.intValue;
-            
-            if ([meridian isEqualToString:@"AM"]) {
-                [components setHour:start]; //8a.m.
-            } else {
-                [components setHour:start+12];
-            }
-            
-            NSLog(@"%d", components.hour);
-            [components setMinute:0];
-            [components setSecond:0];
-            
-            NSDate *startDate = [gregorian dateFromComponents:components];
-            showEvent.startDate = startDate;
-            
-            NSString *endString =[[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:4];
-            
-            // adding weekly recurrence
-            EKRecurrenceRule *recurrence = [[EKRecurrenceRule alloc]
-                                            initRecurrenceWithFrequency:EKRecurrenceFrequencyWeekly
-                                            interval:1
-                                            end:nil];
-            [showEvent addRecurrenceRule:recurrence];
-            
-            // Adding the event to the View Controller and displaying it
-            controller.event = showEvent;
-            [self presentViewController:controller animated:YES completion:nil];
-            
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Event"
-                                                            message:@"To create a Calendar event for this show, you must allow access!"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles: nil];
-            [alert show];
-        }
-    }];
-
-}
+//- (IBAction)calendarTap:(id)sender {
+//    
+//    EKEventStore *store = [[EKEventStore alloc] init];
+//    
+//    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+//        // handle access here
+//        
+//        if (granted) {
+//            
+//            //
+//            EKEventEditViewController* controller = [[EKEventEditViewController alloc] init];
+//            controller.eventStore = store;
+//            controller.editViewDelegate = self;
+//            
+//            //creating and modifying the event
+//            EKEvent *showEvent = [EKEvent eventWithEventStore:store];
+//            showEvent.title = currentShow.title;
+//            
+//            //find NSDates
+//            NSDate *today = [NSDate date];
+//            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+//            [gregorian setLocale:[NSLocale currentLocale]];
+//            
+//            NSDateComponents *nowComponents = [gregorian components:NSYearCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:today];
+//            NSDateComponents *components = [[NSDateComponents alloc] init];
+//            [components setWeekday:5]; //5 = Thursday
+//            
+//            NSLog(@"%d  ~=  %d",components.weekday, nowComponents.weekday);
+//            if (components.weekday < nowComponents.weekday) {
+//                [components setWeek: [nowComponents week] + 1]; //Next week
+//            } else {
+//                [components setWeek:nowComponents.week];
+//            }
+//            
+//            NSString *meridian = [[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:2];
+//            NSString *startString =[[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:1];
+//            int start = startString.intValue;
+//            
+//            if ([meridian isEqualToString:@"AM"]) {
+//                [components setHour:start]; //8a.m.
+//            } else {
+//                [components setHour:start+12];
+//            }
+//            
+//            NSLog(@"%d", components.hour);
+//            [components setMinute:0];
+//            [components setSecond:0];
+//            
+//            NSDate *startDate = [gregorian dateFromComponents:components];
+//            showEvent.startDate = startDate;
+//            
+//            NSString *endString =[[currentShow.time componentsSeparatedByString:@" "] objectAtIndex:4];
+//            
+//            // adding weekly recurrence
+//            EKRecurrenceRule *recurrence = [[EKRecurrenceRule alloc]
+//                                            initRecurrenceWithFrequency:EKRecurrenceFrequencyWeekly
+//                                            interval:1
+//                                            end:nil];
+//            [showEvent addRecurrenceRule:recurrence];
+//            
+//            // Adding the event to the View Controller and displaying it
+//            controller.event = showEvent;
+//            [self presentViewController:controller animated:YES completion:nil];
+//            
+//        } else {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Event"
+//                                                            message:@"To create a Calendar event for this show, you must allow access!"
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles: nil];
+//            [alert show];
+//        }
+//    }];
+//
+//}
 
 -(NSString *) getFilePath {
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

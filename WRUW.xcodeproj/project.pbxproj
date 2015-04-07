@@ -46,9 +46,6 @@
 		0170904417DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170904217DBA8F80005EC0F /* InfoPlist.strings */; };
 		0170904617DBA8F80005EC0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170904517DBA8F80005EC0F /* main.m */; };
 		0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170904917DBA8F80005EC0F /* AppDelegate.m */; };
-		0170904C17DBA8F80005EC0F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170904B17DBA8F80005EC0F /* Default.png */; };
-		0170904E17DBA8F80005EC0F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170904D17DBA8F80005EC0F /* Default@2x.png */; };
-		0170905017DBA8F80005EC0F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170904F17DBA8F80005EC0F /* Default-568h@2x.png */; };
 		0170905317DBA8F80005EC0F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */; };
 		0170905817DBA8F80005EC0F /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170905717DBA8F80005EC0F /* first.png */; };
 		0170905A17DBA8F80005EC0F /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0170905917DBA8F80005EC0F /* first@2x.png */; };
@@ -58,6 +55,7 @@
 		0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
 		0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170907517DBA8F80005EC0F /* WRUWTests.m */; };
+		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
 		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
@@ -161,9 +159,6 @@
 		0170904717DBA8F80005EC0F /* WRUW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WRUW-Prefix.pch"; sourceTree = "<group>"; };
 		0170904817DBA8F80005EC0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0170904917DBA8F80005EC0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0170904B17DBA8F80005EC0F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0170904D17DBA8F80005EC0F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		0170904F17DBA8F80005EC0F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0170905217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0170905717DBA8F80005EC0F /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		0170905917DBA8F80005EC0F /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
@@ -174,6 +169,8 @@
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
 		0170907517DBA8F80005EC0F /* WRUWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRUWTests.m; sourceTree = "<group>"; };
+		0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MSLayoutSupport.h"; sourceTree = "<group>"; };
+		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
 		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
 		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -283,12 +280,14 @@
 			path = "Save Data";
 			sourceTree = "<group>";
 		};
-		01498CB61ACC5B5D00D23F1B /* Extensions */ = {
+		01498CB61ACC5B5D00D23F1B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				01498CB71ACC5BE400D23F1B /* UIColor+WruwColors.h */,
+				0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */,
+				0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */,
 			);
-			name = Extensions;
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		0170902D17DBA8F80005EC0F = {
@@ -350,7 +349,7 @@
 				01F9819B1835373C0069C241 /* Models */,
 				012C926B1840026600C94210 /* Save Data */,
 				01042C031AC06A42003112F3 /* AnimatedButton */,
-				01498CB61ACC5B5D00D23F1B /* Extensions */,
+				01498CB61ACC5B5D00D23F1B /* Categories */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
@@ -366,9 +365,6 @@
 				0170904217DBA8F80005EC0F /* InfoPlist.strings */,
 				0170904517DBA8F80005EC0F /* main.m */,
 				0170904717DBA8F80005EC0F /* WRUW-Prefix.pch */,
-				0170904B17DBA8F80005EC0F /* Default.png */,
-				0170904D17DBA8F80005EC0F /* Default@2x.png */,
-				0170904F17DBA8F80005EC0F /* Default-568h@2x.png */,
 				015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */,
 			);
 			path = "Supporting Files";
@@ -588,10 +584,7 @@
 				0100D1A31865386500D08BC2 /* home_64.png in Resources */,
 				01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */,
 				0170904417DBA8F80005EC0F /* InfoPlist.strings in Resources */,
-				0170904C17DBA8F80005EC0F /* Default.png in Resources */,
-				0170904E17DBA8F80005EC0F /* Default@2x.png in Resources */,
 				015CB28F1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist in Resources */,
-				0170905017DBA8F80005EC0F /* Default-568h@2x.png in Resources */,
 				01FB78A6183EA89A0088C972 /* magnifier_48.png in Resources */,
 				0170905317DBA8F80005EC0F /* MainStoryboard.storyboard in Resources */,
 				01CFAA58183BA0ED00535F96 /* SongTableViewCell.xib in Resources */,
@@ -703,6 +696,7 @@
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
+				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
@@ -798,7 +792,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_MODULE_NAME = WRUWModule;
@@ -833,7 +827,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				New_Setting = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_MODULE_NAME = WRUWModule;

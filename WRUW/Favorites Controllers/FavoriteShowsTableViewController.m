@@ -48,6 +48,7 @@
     [self loadFavs];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ] forCellReuseIdentifier:@"ShowCell"];
+
 }
 
 -(void)checkIfEmpty:(float)time {
@@ -74,7 +75,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES];
     [self loadFavs];
     
     [self checkIfEmpty];
@@ -124,12 +124,5 @@
     self.tableView.dataSource = self.showsArrayDataSource;
     [self.tableView reloadData];
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
 @end

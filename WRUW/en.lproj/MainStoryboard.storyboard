@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TJP-Mi-X5P">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vNj-rG-tSm">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vNj-rG-tSm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.90515141620238482" green="0.90922364563095526" blue="0.92144033391666658" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.86470431089999999" green="0.87034243349999996" blue="0.87863117459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +136,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="UeO-tP-MW6">
-                                    <rect key="frame" x="0.0" y="425" width="320" height="6"/>
+                                    <rect key="frame" x="0.0" y="361" width="320" height="6"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.89391391186385705" green="0.89793558434134513" blue="0.91000060177380948" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -156,6 +155,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86470431089999999" green="0.87034243349999996" blue="0.87863117459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vNj-rG-tSm" firstAttribute="leading" secondItem="E5U-ci-pBK" secondAttribute="leadingMargin" constant="-16" id="7tj-27-wrw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vNj-rG-tSm" secondAttribute="trailing" constant="-16" id="NAZ-ln-v0J"/>
                             <constraint firstItem="vNj-rG-tSm" firstAttribute="top" secondItem="HKb-MA-I2p" secondAttribute="bottom" constant="-64" id="SYO-gG-pxk"/>
                             <constraint firstItem="ZqK-Zl-Pgx" firstAttribute="top" secondItem="vNj-rG-tSm" secondAttribute="bottom" id="lzR-SW-OGy"/>
                         </constraints>
@@ -175,24 +176,23 @@
             </objects>
             <point key="canvasLocation" x="1593" y="-679"/>
         </scene>
-        <!--Favorite Songs-->
+        <!--Songs-->
         <scene sceneID="VOb-Hb-W5f">
             <objects>
-                <viewController title="Favorite Songs" id="GQ4-SB-Vkh" customClass="FavoritesTableViewController" sceneMemberID="viewController">
+                <viewController title="Songs" id="GQ4-SB-Vkh" customClass="FavoritesTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EBD-UN-t5q"/>
                         <viewControllerLayoutGuide type="bottom" id="gA0-dl-gSs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jcP-PW-029">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="jcP-PW-029">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="H8w-kU-TKS">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="60" sectionFooterHeight="60" id="H8w-kU-TKS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.88669632777650986" green="0.89068552871631101" blue="0.90265313153571425" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.89548990332596756" green="0.89951866610757092" blue="0.91160495445238088" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="s3B-1A-ZFd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.88806675513486699" green="0.89206212155650733" blue="0.90404822082142855" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -214,6 +214,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Favorites" id="5rb-DD-tVN"/>
                     <connections>
                         <outlet property="tableView" destination="H8w-kU-TKS" id="Cbl-f7-A94"/>
@@ -221,67 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmJ-ej-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680" y="-559"/>
-        </scene>
-        <!--Segmented View Controller-->
-        <scene sceneID="jKG-Y3-lkJ">
-            <objects>
-                <viewController id="t4b-uO-2kZ" customClass="SegmentedViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6ns-I9-tau"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bdd-Sd-vM7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I1e-ht-Hk9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWY-bV-IWP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="GQ4-SB-Vkh" kind="embed" id="aDN-TO-nTL"/>
-                                </connections>
-                            </containerView>
-                            <navigationBar alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bV-20-MUZ">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <connections>
-                                    <outlet property="delegate" destination="t4b-uO-2kZ" id="0do-Jn-E8B"/>
-                                </connections>
-                            </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kaD-6f-UvG">
-                                <rect key="frame" x="105" y="27" width="111" height="29"/>
-                                <segments>
-                                    <segment title="Songs"/>
-                                    <segment title="Shows"/>
-                                </segments>
-                                <connections>
-                                    <action selector="switchContainerView:" destination="t4b-uO-2kZ" eventType="valueChanged" id="0JZ-Rv-FtY"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Bdd-Sd-vM7" firstAttribute="top" secondItem="CWY-bV-IWP" secondAttribute="bottom" constant="1" id="1ON-k9-MUa"/>
-                            <constraint firstItem="2bV-20-MUZ" firstAttribute="trailing" secondItem="CWY-bV-IWP" secondAttribute="trailing" id="5Ps-EP-lqC"/>
-                            <constraint firstItem="2bV-20-MUZ" firstAttribute="centerX" secondItem="kaD-6f-UvG" secondAttribute="centerX" id="Hac-00-rQY"/>
-                            <constraint firstAttribute="trailing" secondItem="2bV-20-MUZ" secondAttribute="trailing" id="L6r-co-V5s"/>
-                            <constraint firstItem="CWY-bV-IWP" firstAttribute="top" secondItem="2bV-20-MUZ" secondAttribute="bottom" constant="-64" id="SHL-pi-nNJ"/>
-                            <constraint firstItem="2bV-20-MUZ" firstAttribute="leading" secondItem="CWY-bV-IWP" secondAttribute="leading" id="SN4-8T-dRB"/>
-                            <constraint firstItem="2bV-20-MUZ" firstAttribute="leading" secondItem="I1e-ht-Hk9" secondAttribute="leading" id="YMc-26-quB"/>
-                            <constraint firstItem="kaD-6f-UvG" firstAttribute="top" secondItem="6ns-I9-tau" secondAttribute="bottom" constant="7" id="gpm-lF-GcY"/>
-                            <constraint firstItem="2bV-20-MUZ" firstAttribute="top" secondItem="I1e-ht-Hk9" secondAttribute="top" constant="20" id="zRw-w8-5O7"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="EFS-Ee-YaF"/>
-                    <connections>
-                        <outlet property="containerView" destination="CWY-bV-IWP" id="cLG-pF-7dF"/>
-                        <outlet property="favoritesItem" destination="kaD-6f-UvG" id="SrX-xE-Coc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1L0-rv-W1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1587" y="141"/>
+            <point key="canvasLocation" x="2186" y="-577"/>
         </scene>
         <!--Programs-->
         <scene sceneID="qlM-pt-XyV">
@@ -364,11 +305,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TUN-uK-brw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AHF-7L-ulT">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
                                         <rect key="frame" x="30" y="77" width="250" height="17"/>
@@ -485,7 +426,7 @@
             <objects>
                 <tableViewController id="yL9-fc-jfL" customClass="PlaylistsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0yJ-sr-RHN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -517,7 +458,7 @@
             <objects>
                 <tableViewController id="cLJ-iw-wuT" customClass="ArchiveTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="s91-as-ncb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.89076192893963579" green="0.89476942080889343" blue="0.90679189641666658" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -560,16 +501,15 @@
             </objects>
             <point key="canvasLocation" x="1029" y="835"/>
         </scene>
-        <!--WRUW Shows-->
+        <!--Shows-->
         <scene sceneID="T3M-jd-0dH">
             <objects>
-                <tableViewController storyboardIdentifier="FavoriteShows" id="A1G-cC-2fC" customClass="FavoriteShowsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavoriteShows" title="Shows" id="A1G-cC-2fC" customClass="FavoriteShowsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="tqc-ZK-WGZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="iQP-jA-Mwh">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -607,6 +547,7 @@
                         </prototypes>
                         <sections/>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="WRUW Shows" id="tHz-Eb-CsJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anx-Fn-Db6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,21 +578,44 @@
         <!--Favorites-->
         <scene sceneID="zH7-PQ-gYE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4gL-qi-ltU" sceneMemberID="viewController">
+                <navigationController id="4gL-qi-ltU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart_24.png" id="p7s-zB-iIm"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IOe-9b-fTu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="IOe-9b-fTu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="t4b-uO-2kZ" kind="relationship" relationship="rootViewController" id="74D-93-S8x"/>
+                        <segue destination="tyu-91-SZY" kind="relationship" relationship="rootViewController" id="2Fy-HO-fxB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9O-M1-wsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1061" y="141"/>
+        </scene>
+        <!--Segmented View Controller-->
+        <scene sceneID="nIG-sw-2Zz">
+            <objects>
+                <viewController id="tyu-91-SZY" customClass="SegmentedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kh6-eh-4Io"/>
+                        <viewControllerLayoutGuide type="bottom" id="XF2-GL-Cnb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e8k-lb-XKp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yjX-bP-Lyt"/>
+                    <connections>
+                        <segue destination="GQ4-SB-Vkh" kind="custom" identifier="songsSegue" customClass="SDCEmbeddedSegmentSegue" id="dV4-W4-tc3"/>
+                        <segue destination="A1G-cC-2fC" kind="custom" identifier="showsSegue" customClass="SDCEmbeddedSegmentSegue" id="fKZ-XT-CHl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AnD-Tv-X44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="146"/>
         </scene>
         <!--Home-->
         <scene sceneID="wU0-Ot-8i5">
