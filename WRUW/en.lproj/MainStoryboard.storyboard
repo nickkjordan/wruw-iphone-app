@@ -308,8 +308,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
                                         <rect key="frame" x="30" y="77" width="250" height="17"/>
@@ -486,7 +486,7 @@
         <scene sceneID="XBk-md-lI5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvE-r2-zyz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Programs" id="WRq-AE-rnn"/>
+                    <tabBarItem key="tabBarItem" title="Programs" image="book_bookmark_24.png" id="WRq-AE-rnn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ltq-Rs-II2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -500,6 +500,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kk3-Xr-yFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1029" y="835"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="PEr-jF-Wnk">
+            <objects>
+                <viewController title="About" id="oMC-G1-mfc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MkH-Tg-JAy"/>
+                        <viewControllerLayoutGuide type="bottom" id="CGy-hM-mTf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y5d-fO-0IP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="info_24.png" id="wx7-R5-KgQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncn-mv-G5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="1482"/>
         </scene>
         <!--Shows-->
         <scene sceneID="T3M-jd-0dH">
@@ -569,6 +588,7 @@
                         <segue destination="Fat-bm-kOK" kind="relationship" relationship="viewControllers" id="PE1-bs-85i"/>
                         <segue destination="4gL-qi-ltU" kind="relationship" relationship="viewControllers" id="DmI-OW-ciD"/>
                         <segue destination="fvE-r2-zyz" kind="relationship" relationship="viewControllers" id="5Hi-3V-WrG"/>
+                        <segue destination="oMC-G1-mfc" kind="relationship" relationship="viewControllers" id="nCh-3Q-ZNB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjS-CV-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,7 +641,7 @@
         <scene sceneID="wU0-Ot-8i5">
             <objects>
                 <navigationController title="Home Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Fat-bm-kOK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home_24.png" id="Ovb-vl-d5N"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="mic_24.png" id="Ovb-vl-d5N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPb-9c-DCF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -638,9 +658,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book_bookmark_24.png" width="24" height="24"/>
         <image name="calendar_add.png" width="32" height="32"/>
         <image name="heart_24.png" width="24" height="24"/>
-        <image name="home_24.png" width="24" height="24"/>
+        <image name="info_24.png" width="24" height="24"/>
+        <image name="mic_24.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

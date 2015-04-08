@@ -14,6 +14,7 @@
 #import "DisplayViewController.h"
 #import "Show.h"
 #import "CBStoreHouseRefreshControl.h"
+#import "ARAnalytics.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
@@ -156,6 +157,9 @@
     [super viewDidLoad];
     
     [self setTitle:@"Now Playing"];
+    [ARAnalytics event:@"Screen view" withProperties:@{
+                                                       @"screen": @"Home View"
+                                                       }];
     
     self.tableView.delegate = self;
     

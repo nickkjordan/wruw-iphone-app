@@ -7,6 +7,7 @@
 //
 
 #import "GroupedProgramsTableViewController.h"
+#import "ARAnalytics.h"
 
 @interface GroupedProgramsTableViewController ()
 {
@@ -33,6 +34,9 @@
     [super viewDidLoad];
     
     [self setTitle:@"Programs"];
+    [ARAnalytics event:@"Screen view" withProperties:@{
+                                                       @"screen": @"Programs View"
+                                                       }];
     
     daysOfWeek = [[NSMutableArray alloc] initWithObjects:@"Any", @"Sunday", @"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", nil];
 }
