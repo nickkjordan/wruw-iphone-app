@@ -192,7 +192,8 @@
     NSString *artist = [artistLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *title = [nameLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/search?q=%@+%@", title, artist]]];
+    NSURL *url = [NSURL URLWithString:[[NSString stringWithFormat:@"https://www.google.com/search?q=%@+%@", title, artist] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 -(id)initWithViewController:(UITableViewController*)c {

@@ -155,6 +155,8 @@
 {
     [super viewDidLoad];
     
+    [self setTitle:@"Now Playing"];
+    
     self.tableView.delegate = self;
     
     _currentShow = [[Show alloc] init];

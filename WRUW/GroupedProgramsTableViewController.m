@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    [self setTitle:@"Programs"];
+    
     daysOfWeek = [[NSMutableArray alloc] initWithObjects:@"Any", @"Sunday", @"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", nil];
 }
 

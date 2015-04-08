@@ -227,7 +227,7 @@
         <!--Programs-->
         <scene sceneID="qlM-pt-XyV">
             <objects>
-                <tableViewController id="Jsf-nb-LkS" customClass="GroupedProgramsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Programs" id="Jsf-nb-LkS" customClass="GroupedProgramsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y8k-nH-7vc">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,7 +268,7 @@
         <!--WRUW Shows-->
         <scene sceneID="CrZ-Yg-l7n">
             <objects>
-                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="HZv-gm-NPG" customClass="ShowsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="WRUW Shows" extendedLayoutIncludesOpaqueBars="YES" id="HZv-gm-NPG" customClass="ShowsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="60" sectionFooterHeight="22" id="cQo-Z7-heq">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,17 +299,17 @@
         <!--Program Details-->
         <scene sceneID="EQl-1z-VBy">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jHC-bi-R8q" customClass="DisplayViewController" sceneMemberID="viewController">
+                <viewController title="Program Details" automaticallyAdjustsScrollViewInsets="NO" id="jHC-bi-R8q" customClass="DisplayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CeB-wA-C5l"/>
                         <viewControllerLayoutGuide type="bottom" id="TUN-uK-brw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AHF-7L-ulT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
                                         <rect key="frame" x="30" y="77" width="250" height="17"/>
@@ -421,12 +421,12 @@
             </objects>
             <point key="canvasLocation" x="2665" y="821"/>
         </scene>
-        <!--Playlists Table View Controller-->
+        <!--Playlists-->
         <scene sceneID="0AV-8r-I6f">
             <objects>
-                <tableViewController id="yL9-fc-jfL" customClass="PlaylistsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Playlists" id="yL9-fc-jfL" customClass="PlaylistsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0yJ-sr-RHN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -453,12 +453,12 @@
             </objects>
             <point key="canvasLocation" x="3101" y="821"/>
         </scene>
-        <!--Archive Table View Controller-->
+        <!--Archive List-->
         <scene sceneID="bMi-9T-ZOy">
             <objects>
-                <tableViewController id="cLJ-iw-wuT" customClass="ArchiveTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Archive List" id="cLJ-iw-wuT" customClass="ArchiveTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="s91-as-ncb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.89076192893963579" green="0.89476942080889343" blue="0.90679189641666658" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -594,10 +594,10 @@
             </objects>
             <point key="canvasLocation" x="1061" y="141"/>
         </scene>
-        <!--Segmented View Controller-->
+        <!--Favorites-->
         <scene sceneID="nIG-sw-2Zz">
             <objects>
-                <viewController id="tyu-91-SZY" customClass="SegmentedViewController" sceneMemberID="viewController">
+                <viewController title="Favorites" id="tyu-91-SZY" customClass="SegmentedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kh6-eh-4Io"/>
                         <viewControllerLayoutGuide type="bottom" id="XF2-GL-Cnb"/>
@@ -617,10 +617,10 @@
             </objects>
             <point key="canvasLocation" x="1585" y="146"/>
         </scene>
-        <!--Home-->
+        <!--Home Navigation-->
         <scene sceneID="wU0-Ot-8i5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fat-bm-kOK" sceneMemberID="viewController">
+                <navigationController title="Home Navigation" automaticallyAdjustsScrollViewInsets="NO" id="Fat-bm-kOK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home_24.png" id="Ovb-vl-d5N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPb-9c-DCF">
@@ -648,7 +648,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qG6-Qv-KTw"/>
+        <segue reference="FaE-l5-dMP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

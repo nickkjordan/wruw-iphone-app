@@ -13,6 +13,7 @@
 #import "PlaylistsTableViewController.h"
 #import <EventKit/EventKit.h>
 #import "UIColor+WruwColors.h"
+#import "ARAnalytics.h"
 
 @interface DisplayViewController () <AVAudioPlayerDelegate>
 {
@@ -230,10 +231,17 @@
     NSData *testHeart  = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
     NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
     
-    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    NSString *switchHeart;
+    if ([testHeart isEqualToData:currentHeart]){
+        switchHeart = @"heart_24_red.png";
+        [ARAnalytics event:@"Show Favorited" withProperties:@{
+                                                              @"Show": currentShow.title
+                                                              }];
+    } else {
+        switchHeart = @"heart_24.png";
+    }
     
     [self buttonAnimation:favButton withImage:switchHeart];
-    
 }
 
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName {

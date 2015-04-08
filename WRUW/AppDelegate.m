@@ -8,8 +8,14 @@
 
 #import "AppDelegate.h"
 #import "UIColor+WruwColors.h"
-
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#import <ARAnalytics/ARAnalytics.h>
+#import <ARAnalytics/ARDSL.h>
+#import <Keys/WRUWKeys.h>
+#import "WRUWModule-Swift.h"
+#import "SongTableViewCell.h"
+#import "ArchiveTableViewController.h"
+#import "HomeViewController.h"
+#import "GroupedProgramsTableViewController.h"
 
 @implementation AppDelegate
 
@@ -50,8 +56,77 @@
     [[UITabBar appearance] setTintColor:[UIColor wruwColor]];
         
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    // Override point for customization after application launch.
+    
+    
+    [self setupAnalytics];
+    
     return YES;
+}
+
+- (void)setupAnalytics
+{
+    WRUWKeys *keys = [[WRUWKeys alloc] init];
+    [ARAnalytics setupWithAnalytics:@{
+            ARMixpanelToken : keys.mixpanelToken
+        }
+                      configuration:@{
+                            ARAnalyticsTrackedScreens : @[ @{
+                                        ARAnalyticsClass: UIViewController.class,
+                                        ARAnalyticsDetails: @[ @{
+                                                ARAnalyticsPageNameKeyPath: @"title",
+                                                ARAnalyticsShouldFire: ^BOOL(UIViewController *controller, NSArray *parameters) {
+                                                    if ([controller isKindOfClass:ArchiveTableViewController.class] ||
+                                                        [controller isKindOfClass:HomeViewController.class] ||
+                                                        [controller isKindOfClass:GroupedProgramsTableViewController.class]) {
+                                                        return NO;
+                                                    }
+                                                    return controller.title != nil;
+                                                },
+                                                }],
+                                        },
+                                        @{
+                                        ARAnalyticsClass: ArchiveTableViewController.class,
+                                        ARAnalyticsDetails: @[ @{
+                                            ARAnalyticsPageName: @"Archive View",
+                                            }]},
+                                        @{
+                                        ARAnalyticsClass: HomeViewController.class,
+                                        ARAnalyticsDetails: @[ @{
+                                            ARAnalyticsPageName: @"Home View",
+                                            }]},
+                                        @{
+                                        ARAnalyticsClass: GroupedProgramsTableViewController.class,
+                                        ARAnalyticsDetails: @[ @{
+                                            ARAnalyticsPageName: @"Programs Selector View",
+                                            }]},
+                                    ],
+                            ARAnalyticsTrackedEvents : @[ @{
+                                        ARAnalyticsClass: StreamPlayView.class,
+                                        ARAnalyticsDetails: @[ @{
+                                                ARAnalyticsEventName: @"Stream Button Pressed",
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(statusChanged)),
+                                                }]
+                                        },
+                                                          @{
+                                        ARAnalyticsClass: SongTableViewCell.class,
+                                        ARAnalyticsDetails: @[ @{
+                                                ARAnalyticsEventName: @"Favorited Song",
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(favoritePush:))
+                                            },
+                                            @{
+                                                ARAnalyticsEventName: @"Searched Song",
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(searchSong:))
+                                            },
+                                            @{
+                                                ARAnalyticsEventName: @"Pushed Facebook",
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(composeFBPost:))
+                                            },
+                                            @{
+                                                ARAnalyticsEventName: @"Pushed Twitter",
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(composeTwitterPost:))
+                                            }]
+                                        }]
+    }];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
