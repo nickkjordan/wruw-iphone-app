@@ -31,6 +31,7 @@
 		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
 		01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2A18AA9A74001FFD61 /* twitter_blue.png */; };
 		0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */; };
+		01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01344B081ADC4C3F00F19914 /* AboutViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0137201A1AD5ACEF00BF3219 /* info_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720171AD5ACEF00BF3219 /* info_24.png */; };
 		0137201B1AD5ACEF00BF3219 /* info_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720181AD5ACEF00BF3219 /* info_48.png */; };
@@ -139,6 +140,8 @@
 		01312D2A18AA9A74001FFD61 /* twitter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_blue.png; sourceTree = "<group>"; };
 		0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupedProgramsTableViewController.h; sourceTree = "<group>"; };
 		0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupedProgramsTableViewController.m; sourceTree = "<group>"; };
+		01344B071ADC4C3F00F19914 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		01344B081ADC4C3F00F19914 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		013720171AD5ACEF00BF3219 /* info_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_24.png; sourceTree = "<group>"; };
 		013720181AD5ACEF00BF3219 /* info_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_48.png; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 			children = (
 				01F9819F183537A10069C241 /* hpple */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
+				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
+				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
 				0153B8F5189C827100331DD9 /* HomeViewController.h */,
@@ -710,6 +715,7 @@
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
+				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,

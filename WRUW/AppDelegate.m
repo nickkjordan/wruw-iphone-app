@@ -16,6 +16,7 @@
 #import "ArchiveTableViewController.h"
 #import "HomeViewController.h"
 #import "GroupedProgramsTableViewController.h"
+#import "SDStatusBarManager.h"
 
 @implementation AppDelegate
 
@@ -57,6 +58,7 @@
         
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
+    [[SDStatusBarManager sharedInstance] enableOverrides];
     
     [self setupAnalytics];
     

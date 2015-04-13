@@ -40,7 +40,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         icon.fillColor = UIColor.whiteColor()
     }
     
-    convenience override init () {
+    convenience init () {
         self.init(frame:CGRectZero)
     }
     

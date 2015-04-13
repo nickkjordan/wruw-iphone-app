@@ -46,6 +46,7 @@ PODS:
     - ReactiveCocoa/Core
   - RSSwizzle (0.1.0)
   - SDCSegmentedViewController (1.6)
+  - SimulatorStatusMagic (1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - MarqueeLabel
   - Ono
   - SDCSegmentedViewController
+  - SimulatorStatusMagic
 
 EXTERNAL SOURCES:
   Keys:
@@ -79,5 +81,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: fbe689fe218063b7bbed41032912c9ca4fdbe172
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
+  SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
 
 COCOAPODS: 0.36.3

@@ -15,9 +15,8 @@
 #import "UIColor+WruwColors.h"
 #import "ARAnalytics.h"
 
-@interface DisplayViewController () <AVAudioPlayerDelegate>
+@interface DisplayViewController ()
 {
-    AVAudioPlayer *audioPlayer;
     UITableView *tableView;
     TFHpple *showsParser;
     UIActivityIndicatorView *spinner;
@@ -26,7 +25,7 @@
 
 @implementation DisplayViewController
 
-@synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton, showGenre;
+@synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton, showGenre, playlistsButton;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -66,20 +65,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO];
-        
-    currentShowInfo.editable = NO;
-    if (currentShowInfo.text.length == 0) {
-        [spinner startAnimating];
-    }
-    [currentShow loadInfo:^(){
-        [spinner stopAnimating];
-        [self updateLabels];
-    }];
-    
-    currentShowInfo.editable = YES;
-    currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
-    currentShowInfo.contentInset = UIEdgeInsetsMake(0,-4,0,0);
-    currentShowInfo.editable = NO;
 }
 
 - (void)viewDidLoad
@@ -95,6 +80,22 @@
     [spinner startAnimating];
     
     [self updateLabels];
+    
+    
+    currentShowInfo.editable = NO;
+    if (currentShowInfo.text.length == 0) {
+        [spinner startAnimating];
+    }
+    [currentShow loadInfo:^(){
+        [spinner stopAnimating];
+        [self updateLabels];
+        [[self playlistsButton] setEnabled:YES];
+    }];
+    
+    currentShowInfo.editable = YES;
+    currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
+    currentShowInfo.contentInset = UIEdgeInsetsMake(0,-4,0,0);
+    currentShowInfo.editable = NO;
 }
 
 -(void)updateLabels

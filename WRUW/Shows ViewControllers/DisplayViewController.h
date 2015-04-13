@@ -16,6 +16,8 @@
 @interface DisplayViewController : UIViewController
 <EKEventEditViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *playlistsButton;
+
 // Show info
 @property (weak, nonatomic) IBOutlet UILabel *currentShowTitle;
 @property (weak, nonatomic) IBOutlet UILabel *currentShowHost;

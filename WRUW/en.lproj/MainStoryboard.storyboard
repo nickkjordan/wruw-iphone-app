@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TJP-Mi-X5P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TJP-Mi-X5P">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -193,6 +193,7 @@
                                 <color key="backgroundColor" red="0.88669632777650986" green="0.89068552871631101" blue="0.90265313153571425" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.89548990332596756" green="0.89951866610757092" blue="0.91160495445238088" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="s3B-1A-ZFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.88806675513486699" green="0.89206212155650733" blue="0.90404822082142855" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -323,19 +324,6 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-hO-PhB">
-                                        <rect key="frame" x="87" y="126" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="ESn-9M-NLP"/>
-                                            <constraint firstAttribute="width" constant="24" id="u21-Ig-55M"/>
-                                        </constraints>
-                                        <state key="normal" image="calendar_add.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="calendarTap:" destination="jHC-bi-R8q" eventType="touchUpInside" id="fis-aV-NTG"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-51-Tc6">
                                         <rect key="frame" x="45" y="127" width="24" height="24"/>
                                         <state key="normal" image="heart_24.png">
@@ -371,7 +359,6 @@
                                 <constraints>
                                     <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" id="0SN-Zk-9Xt"/>
                                     <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" id="0lq-X3-e9v"/>
-                                    <constraint firstItem="Od8-hO-PhB" firstAttribute="leading" secondItem="7rf-51-Tc6" secondAttribute="trailing" constant="18" id="3un-IF-444"/>
                                     <constraint firstAttribute="bottom" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="20" id="CYh-4j-iC1"/>
                                     <constraint firstItem="7rf-51-Tc6" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="16" id="GEH-qo-Ztm"/>
                                     <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="jLh-FS-2dc" secondAttribute="bottom" id="GUd-mS-a70"/>
@@ -384,7 +371,6 @@
                                     <constraint firstItem="7rf-51-Tc6" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="45" id="gUX-4f-7hQ"/>
                                     <constraint firstAttribute="trailing" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="20" id="htu-75-hUc"/>
                                     <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="izO-vt-mAy"/>
-                                    <constraint firstItem="Od8-hO-PhB" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="15" id="j2w-Fw-uyu"/>
                                     <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="mpx-sj-eMD"/>
                                     <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="obl-SY-hvq"/>
                                     <constraint firstAttribute="trailing" secondItem="aNS-HD-XcD" secondAttribute="trailing" constant="20" id="rKj-KD-hju"/>
@@ -401,7 +387,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">
-                        <barButtonItem key="rightBarButtonItem" title="Playlists" id="ny9-QD-2V6">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Playlists" id="ny9-QD-2V6">
                             <connections>
                                 <segue destination="yL9-fc-jfL" kind="push" identifier="showPlaylistsSegue" id="QY7-ga-bWj"/>
                             </connections>
@@ -413,6 +399,7 @@
                         <outlet property="currentShowTime" destination="pp8-CJ-X57" id="q5O-An-eeK"/>
                         <outlet property="currentShowTitle" destination="dyT-1h-vgG" id="ow5-e2-HqQ"/>
                         <outlet property="favButton" destination="7rf-51-Tc6" id="AXg-rV-aLS"/>
+                        <outlet property="playlistsButton" destination="ny9-QD-2V6" id="21W-C2-buz"/>
                         <outlet property="scrollView" destination="tkI-LC-ST2" id="8XL-Mj-wh5"/>
                         <outlet property="showGenre" destination="jLh-FS-2dc" id="ehO-Bl-2sy"/>
                     </connections>
@@ -504,17 +491,97 @@
         <!--About-->
         <scene sceneID="PEr-jF-Wnk">
             <objects>
-                <viewController title="About" id="oMC-G1-mfc" sceneMemberID="viewController">
+                <viewController title="About" id="oMC-G1-mfc" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MkH-Tg-JAy"/>
                         <viewControllerLayoutGuide type="bottom" id="CGy-hM-mTf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y5d-fO-0IP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-lv-EX8">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT THIS APP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8o-mT-YlD">
+                                        <rect key="frame" x="0.0" y="332" width="288" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="5ul-Te-LSF"/>
+                                            <constraint firstAttribute="width" constant="288" id="Wuv-RW-JnZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.62352941179999999" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF2-h7-d16">
+                                        <rect key="frame" x="16" y="47" width="288" height="275"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.99215686270000003" green="0.62352941179999999" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="5XA-k5-tvt"/>
+                                        </constraints>
+                                        <mutableString key="text">WRUW 91.1 FM is the campus radio station of Case Western Reserve University, located in the University Circle section of Cleveland, Ohio.  WRUW is a non-profit, commercial free, all volunteer staffed radio station.  WRUW operates 24 hours a day, seven days a week, every day of the year.  Although WRUW is the student radio station of Case, numerous community volunteers and alumni are involved, giving WRUW a continuity not found in most college radio stations.
+
+For more information, you can visit www.wruw.org, or call into the station at 216-368-2208.</mutableString>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBE-eV-ZcY">
+                                        <rect key="frame" x="16" y="364" width="288" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.99215686270000003" green="0.62352941179999999" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="d2t-q2-aAQ"/>
+                                        </constraints>
+                                        <string key="text">This app was created and is maintained by Nick Jordan, alumnus of CWRU and WRUW.  If you would like more information about the app, or would like to send feature requests or bug reports, email in to wruwapp@gmail.com.</string>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT WRUW" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-Dx-LcW">
+                                        <rect key="frame" x="16" y="15" width="288" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="9GP-30-BiI"/>
+                                            <constraint firstAttribute="height" constant="32" id="E2H-mD-eCc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.62352941179999999" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CBE-eV-ZcY" secondAttribute="bottom" constant="15" id="4Ge-2j-iLc"/>
+                                    <constraint firstAttribute="trailing" secondItem="aF2-h7-d16" secondAttribute="trailing" constant="16" id="6la-Lb-Ygu"/>
+                                    <constraint firstItem="CBE-eV-ZcY" firstAttribute="top" secondItem="B8o-mT-YlD" secondAttribute="bottom" id="8yh-Kg-zwd"/>
+                                    <constraint firstItem="B8o-mT-YlD" firstAttribute="top" secondItem="aF2-h7-d16" secondAttribute="bottom" constant="10" id="9aV-rZ-DjK"/>
+                                    <constraint firstItem="aF2-h7-d16" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="Aat-ac-xTK"/>
+                                    <constraint firstItem="Ge6-Dx-LcW" firstAttribute="top" secondItem="cdQ-lv-EX8" secondAttribute="top" constant="15" id="TJF-Cj-egk"/>
+                                    <constraint firstItem="aF2-h7-d16" firstAttribute="top" secondItem="Ge6-Dx-LcW" secondAttribute="bottom" id="dee-Ch-sTl"/>
+                                    <constraint firstAttribute="centerX" secondItem="CBE-eV-ZcY" secondAttribute="centerX" id="eoR-kM-C2E"/>
+                                    <constraint firstAttribute="width" constant="320" id="rL3-LD-aOG"/>
+                                    <constraint firstItem="Ge6-Dx-LcW" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="tfb-hQ-Qek"/>
+                                    <constraint firstAttribute="centerX" secondItem="B8o-mT-YlD" secondAttribute="centerX" constant="16" id="yaX-e0-hXF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cdQ-lv-EX8" secondAttribute="trailing" id="sOh-9a-LsN"/>
+                            <constraint firstItem="cdQ-lv-EX8" firstAttribute="leading" secondItem="Y5d-fO-0IP" secondAttribute="leading" id="vfb-sZ-y4J"/>
+                            <constraint firstItem="CGy-hM-mTf" firstAttribute="top" secondItem="cdQ-lv-EX8" secondAttribute="bottom" id="yHo-Sh-ojl"/>
+                            <constraint firstItem="cdQ-lv-EX8" firstAttribute="top" secondItem="Y5d-fO-0IP" secondAttribute="top" constant="20" id="zpw-XZ-FVN"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="About" image="info_24.png" id="wx7-R5-KgQ"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="appInfoText" destination="CBE-eV-ZcY" id="ZD1-Fi-nv2"/>
+                        <outlet property="wruwInfoText" destination="aF2-h7-d16" id="EwF-sU-eps"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncn-mv-G5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -529,6 +596,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="iQP-jA-Mwh">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         </view>
@@ -659,7 +727,6 @@
     </scenes>
     <resources>
         <image name="book_bookmark_24.png" width="24" height="24"/>
-        <image name="calendar_add.png" width="32" height="32"/>
         <image name="heart_24.png" width="24" height="24"/>
         <image name="info_24.png" width="24" height="24"/>
         <image name="mic_24.png" width="24" height="24"/>

@@ -12,6 +12,7 @@ pod 'MarqueeLabel'
 pod 'SDCSegmentedViewController'
 pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'
+pod 'SimulatorStatusMagic', :configurations => ['Debug']
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",

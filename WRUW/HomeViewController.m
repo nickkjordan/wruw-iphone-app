@@ -48,7 +48,18 @@
     [manager GET:@"http://www.wruw.org" parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
         [self loadHomePage:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Connection" message:@"Make sure you are connected to the internet, then drag down on \"Now Playing\" to reload." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
         [self.storeHouseRefreshControl finishingLoading];
         [spinner stopAnimating];
         return;
