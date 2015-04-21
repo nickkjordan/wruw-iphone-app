@@ -18,8 +18,6 @@
 		010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 010CF7A71898B8AC00875209 /* ArrayDataSource.m */; };
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
-		010F292E17E21F1400DC3631 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292D17E21F1400DC3631 /* Icon.png */; };
-		010F293017E21F1600DC3631 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292F17E21F1600DC3631 /* Icon@2x.png */; };
 		011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011FC228190C1E320074C93A /* AudioToolbox.framework */; };
 		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
@@ -67,6 +65,8 @@
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
 		0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170907517DBA8F80005EC0F /* WRUWTests.m */; };
 		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
+		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
+		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
@@ -120,8 +120,6 @@
 		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayDataSource.m; path = ../ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		010F292D17E21F1400DC3631 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		010F292F17E21F1600DC3631 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		011FECD81836A2B6009B5BFA /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		011FECD91836A2B6009B5BFA /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
@@ -171,24 +169,26 @@
 		015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WruwStorehouseIconList.plist; sourceTree = "<group>"; };
 		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
 		016C99111A93F522008634DA /* EmptyFavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFavoritesView.m; sourceTree = "<group>"; };
-		0170903617DBA8F80005EC0F /* WRUW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRUW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0170903617DBA8F80005EC0F /* WRUW-FM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WRUW-FM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170903917DBA8F80005EC0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0170903B17DBA8F80005EC0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0170903D17DBA8F80005EC0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0170904117DBA8F80005EC0F /* WRUW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-Info.plist"; sourceTree = "<group>"; };
+		0170904117DBA8F80005EC0F /* WRUW-FM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-FM-Info.plist"; sourceTree = "<group>"; };
 		0170904317DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0170904517DBA8F80005EC0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0170904717DBA8F80005EC0F /* WRUW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WRUW-Prefix.pch"; sourceTree = "<group>"; };
+		0170904717DBA8F80005EC0F /* WRUW-FM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WRUW-FM-Prefix.pch"; sourceTree = "<group>"; };
 		0170904817DBA8F80005EC0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0170904917DBA8F80005EC0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0170905217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0170907017DBA8F80005EC0F /* WRUWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUWTests-Info.plist"; sourceTree = "<group>"; };
+		0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WRUW-FMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-FMTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
 		0170907517DBA8F80005EC0F /* WRUWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRUWTests.m; sourceTree = "<group>"; };
 		0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MSLayoutSupport.h"; sourceTree = "<group>"; };
 		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
+		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
 		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -318,8 +318,8 @@
 		0170903717DBA8F80005EC0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0170903617DBA8F80005EC0F /* WRUW.app */,
-				0170906717DBA8F80005EC0F /* WRUWTests.xctest */,
+				0170903617DBA8F80005EC0F /* WRUW-FM.app */,
+				0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,10 +376,10 @@
 			children = (
 				010F291817E21AE900DC3631 /* App Icon [Squared] */,
 				0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */,
-				0170904117DBA8F80005EC0F /* WRUW-Info.plist */,
+				0170904117DBA8F80005EC0F /* WRUW-FM-Info.plist */,
 				0170904217DBA8F80005EC0F /* InfoPlist.strings */,
 				0170904517DBA8F80005EC0F /* main.m */,
-				0170904717DBA8F80005EC0F /* WRUW-Prefix.pch */,
+				0170904717DBA8F80005EC0F /* WRUW-FM-Prefix.pch */,
 				015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */,
 			);
 			path = "Supporting Files";
@@ -398,7 +398,7 @@
 		0170906F17DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0170907017DBA8F80005EC0F /* WRUWTests-Info.plist */,
+				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
 			);
 			path = "Supporting Files";
@@ -483,8 +483,8 @@
 				01947CCA17E238A400173474 /* Default@2x.png */,
 				01947CC817E2389500173474 /* Default.png */,
 				01947CC617E22A4000173474 /* Default-568h@2x.png */,
-				010F292F17E21F1600DC3631 /* Icon@2x.png */,
-				010F292D17E21F1400DC3631 /* Icon.png */,
+				01913E341AE0702900BEF0B8 /* Icon.png */,
+				01913E351AE0702900BEF0B8 /* Icon@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -530,9 +530,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0170903517DBA8F80005EC0F /* WRUW */ = {
+		0170903517DBA8F80005EC0F /* WRUW-FM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW" */;
+			buildConfigurationList = 0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FM" */;
 			buildPhases = (
 				61C8A1B85DC6CFF65203D13B /* Check Pods Manifest.lock */,
 				0170903217DBA8F80005EC0F /* Sources */,
@@ -544,14 +544,14 @@
 			);
 			dependencies = (
 			);
-			name = WRUW;
+			name = "WRUW-FM";
 			productName = WRUW;
-			productReference = 0170903617DBA8F80005EC0F /* WRUW.app */;
+			productReference = 0170903617DBA8F80005EC0F /* WRUW-FM.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0170906617DBA8F80005EC0F /* WRUWTests */ = {
+		0170906617DBA8F80005EC0F /* WRUW-FMTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUWTests" */;
+			buildConfigurationList = 0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FMTests" */;
 			buildPhases = (
 				0170906217DBA8F80005EC0F /* Sources */,
 				0170906317DBA8F80005EC0F /* Frameworks */,
@@ -563,9 +563,9 @@
 			dependencies = (
 				0170906D17DBA8F80005EC0F /* PBXTargetDependency */,
 			);
-			name = WRUWTests;
+			name = "WRUW-FMTests";
 			productName = WRUWTests;
-			productReference = 0170906717DBA8F80005EC0F /* WRUWTests.xctest */;
+			productReference = 0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -577,8 +577,13 @@
 				LastTestingUpgradeCheck = 0610;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Nick Jordan";
+				TargetAttributes = {
+					0170903517DBA8F80005EC0F = {
+						DevelopmentTeam = 7M2UVCY37Z;
+					};
+				};
 			};
-			buildConfigurationList = 0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW" */;
+			buildConfigurationList = 0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW-FM" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -590,8 +595,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0170903517DBA8F80005EC0F /* WRUW */,
-				0170906617DBA8F80005EC0F /* WRUWTests */,
+				0170903517DBA8F80005EC0F /* WRUW-FM */,
+				0170906617DBA8F80005EC0F /* WRUW-FMTests */,
 			);
 		};
 /* End PBXProject section */
@@ -623,13 +628,13 @@
 				013720261AD5AECA00BF3219 /* mic_24.png in Resources */,
 				0100D19F1865386500D08BC2 /* heart_48.png in Resources */,
 				0137201C1AD5ACEF00BF3219 /* info_64.png in Resources */,
+				01913E361AE0702900BEF0B8 /* Icon.png in Resources */,
 				010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */,
 				010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */,
-				010F292E17E21F1400DC3631 /* Icon.png in Resources */,
 				015A16391A929724000FC518 /* heart_64.png in Resources */,
-				010F293017E21F1600DC3631 /* Icon@2x.png in Resources */,
 				01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */,
 				01FB78A3183EA7EE0088C972 /* facebook.png in Resources */,
+				01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */,
 				013720281AD5AECA00BF3219 /* mic_64.png in Resources */,
 				0137201B1AD5ACEF00BF3219 /* info_48.png in Resources */,
 				0137202A1AD5AEE800BF3219 /* mic_24@2x.png in Resources */,
@@ -750,7 +755,7 @@
 /* Begin PBXTargetDependency section */
 		0170906D17DBA8F80005EC0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0170903517DBA8F80005EC0F /* WRUW */;
+			target = 0170903517DBA8F80005EC0F /* WRUW-FM */;
 			targetProxy = 0170906C17DBA8F80005EC0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -868,6 +873,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -875,16 +882,18 @@
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
+				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "WRUW-FM";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -893,6 +902,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -900,16 +911,18 @@
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
 				);
-				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-Info.plist";
+				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "WRUW-FM";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -925,8 +938,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
-				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUWTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				PRODUCT_NAME = "WRUW-FMTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -942,8 +955,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
-				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUWTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				PRODUCT_NAME = "WRUW-FMTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -951,7 +964,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW" */ = {
+		0170903117DBA8F80005EC0F /* Build configuration list for PBXProject "WRUW-FM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0170907717DBA8F80005EC0F /* Debug */,
@@ -960,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW" */ = {
+		0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0170907A17DBA8F80005EC0F /* Debug */,
@@ -969,7 +982,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUWTests" */ = {
+		0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0170907D17DBA8F80005EC0F /* Debug */,

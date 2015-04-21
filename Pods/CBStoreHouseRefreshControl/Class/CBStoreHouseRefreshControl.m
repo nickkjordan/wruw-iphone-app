@@ -111,7 +111,7 @@ NSString *const yKey = @"y";
         CGPoint startPoint = CGPointFromString(startPoints[i]);
         CGPoint endPoint = CGPointFromString(endPoints[i]);
 
-        BarItem *barItem = [[BarItem alloc] initWithFrame:refreshControl.frame startPoint:startPoint endPoint:endPoint color:[UIColor whiteColor] lineWidth:lineWidth];
+        BarItem *barItem = [[BarItem alloc] initWithFrame:refreshControl.frame startPoint:startPoint endPoint:endPoint color:color lineWidth:lineWidth];
         barItem.tag = i;
         barItem.alpha = 0;
         [mutableBarItems addObject:barItem];

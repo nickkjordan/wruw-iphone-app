@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, FavoritesStyle) {
             headerText.text = @"You don't have any Favorite Songs yet";
             break;
         case 1:
-            infoText.text = @"To add a show, click on a show from the Programs guide bellow, then tap the heart icon";
+            infoText.text = @"To add a show, click on a show from the Programs guide below, then tap the heart icon";
             headerText.text = @"You don't have any Favorite Shows yet";
             break;
             

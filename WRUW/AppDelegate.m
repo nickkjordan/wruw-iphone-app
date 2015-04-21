@@ -20,6 +20,12 @@
 
 @implementation AppDelegate
 
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Set AudioSession
@@ -58,9 +64,12 @@
         
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
-    [[SDStatusBarManager sharedInstance] enableOverrides];
+    //[[SDStatusBarManager sharedInstance] enableOverrides];
     
     [self setupAnalytics];
+    
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+ 
     
     return YES;
 }

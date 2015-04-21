@@ -30,7 +30,14 @@
 {
     self.showTextLabel.text = show.title;
     self.hostTextLabel.text = show.host;
-    self.timeTextLabel.text = show.time;
+    
+    NSArray *arr = [show.time componentsSeparatedByString:@": "];
+    if ([(NSString *)arr[0] length] > 3) {
+        NSString *threeCharDay = [arr[0] substringToIndex:3];
+        self.timeTextLabel.text = [NSString stringWithFormat:@"%@: %@",threeCharDay,arr[1]];
+    } else {
+        self.timeTextLabel.text = show.time;
+    }
 }
 
 @end

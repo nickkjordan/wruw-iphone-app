@@ -72,17 +72,24 @@
     NSString *url = [NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery];
     url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
+    NSString *xpath;
+#if TARGET_IPHONE_SIMULATOR
+    xpath = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
+#else
+    // Device
+    xpath = @"//*[@id='ires']/div[1]/a/img";
+#endif
+    
     // make request for first image in google search results with
     // https://github.com/AFNetworking/AFOnoResponseSerializer
     //
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
-        for (ONOXMLElement *element in [responseDocument XPath:@"//*[@id='ires']/table/tr[1]/td[1]/a/img"]) {
-            _imageUrl =[element valueForAttribute:@"src"];
-            succeeded();
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        ONOXMLElement *element = [responseDocument firstChildWithXPath:xpath];
+        _imageUrl =[element valueForAttribute:@"src"];
+        succeeded();
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", [error localizedDescription]);
     }];
     

@@ -69,8 +69,8 @@ NSString* deviceName()
 -(void)checkIfEmpty:(float)time {
     if (!_favorites.count) {
         _emptyView = [EmptyFavoritesView emptySongs];
-        _emptyView.frame = self.view.frame;
-        _emptyView.bounds = self.view.bounds;
+        _emptyView.frame = self.tableView.frame;
+        _emptyView.bounds = self.tableView.bounds;
 
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
@@ -118,6 +118,18 @@ NSString* deviceName()
     
     for (SongTableViewCell *cell in cells) {
         [cell buttonAnimation:cell.favButton withImage:@"heart_24_red.png"];
+    }
+}
+
++ (void)deletePList {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"favorites.plist"];
+    
+    NSError *error;
+    if(![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
+    {
+        //TODO: Handle/Log error
     }
 }
 

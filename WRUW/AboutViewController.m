@@ -24,7 +24,7 @@
 }
 
 - (void)setupTextView:(UITextView *)textView {
-    [textView setUserInteractionEnabled:NO];
+    [textView setUserInteractionEnabled:YES];
     [textView setEditable:NO];
     [textView setDataDetectorTypes:UIDataDetectorTypeAll];
     [textView setSelectable:YES];
