@@ -41,9 +41,10 @@ void uncaughtExceptionHandler(NSException *exception) {
     }
     
     // Title View
+    NSString *font = ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.2) ? @"GillSans-SemiBold" : @"GillSans";
     [[UINavigationBar appearance]
      setTitleTextAttributes: @{ NSForegroundColorAttributeName:[UIColor blackColor],
-                               NSFontAttributeName:[UIFont fontWithName:@"GillSans-SemiBold" size:16.0],
+                               NSFontAttributeName:[UIFont fontWithName:font size:16.0],
                                }];
     
     [[UINavigationBar appearance] setTintColor:[UIColor wruwColor]];
