@@ -18,9 +18,6 @@ import MediaPlayer
     let path = NSBundle.mainBundle().pathForResource("Default", ofType: "png")
     var image = UIImage()
     
-    override class func `new`() -> StreamPlayView {
-        return StreamPlayView()
-    }
 
     override func didMoveToSuperview() {
         view.delegate = self
@@ -55,14 +52,14 @@ import MediaPlayer
             if let play = player as AVPlayer? {
 
             }
-            player = AVPlayer(URL: urlAddress)
+            player = AVPlayer(URL: urlAddress!)
 
             player?.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.New, context: nil)
             
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if (keyPath == "status") {
             if (player?.status == AVPlayerStatus.ReadyToPlay) {
                 player?.play()
@@ -92,12 +89,12 @@ import MediaPlayer
 
     }
     
-    override func remoteControlReceivedWithEvent(event: UIEvent) {
-        println(event.subtype)
-        let rc = event.subtype
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
+        print(event!.subtype, terminator: "")
+        let rc = event!.subtype
         let p = player
-        println("received remote control \(rc.rawValue)") // 101 = pause, 100 = play
-        switch rc {
+        print("received remote control \(rc.rawValue)", terminator: "") // 101 = pause, 100 = play
+        switch (rc) {
         case .RemoteControlTogglePlayPause:
             view.tapHandler(UITapGestureRecognizer())
         case .RemoteControlPlay:
