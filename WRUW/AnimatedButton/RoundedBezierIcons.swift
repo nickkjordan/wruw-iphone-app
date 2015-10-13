@@ -22,7 +22,7 @@ class RoundedBezierIcons: UIBezierPath {
         let miny = CGRectGetMinY(rrect)
         let maxy = CGRectGetMaxY(rrect)
         
-        var bezier = UIBezierPath()
+        let bezier = UIBezierPath()
         
         bezier.moveToPoint(CGPoint(x: minx, y: maxy - radius))
         bezier.addArcWithCenter(
@@ -68,7 +68,7 @@ class RoundedBezierIcons: UIBezierPath {
         
         let tanArr = [CGFloat( atan(triLength / triHeight)), CGFloat( atan(triHeight) / triLength)]
         
-        var bezier = UIBezierPath()
+        let bezier = UIBezierPath()
         bezier.moveToPoint(CGPointMake(bottom.x, bottom.y + radius))
         bezier.addArcWithCenter(
             CGPointMake(bottom.x + radius, bottom.y + radius),
