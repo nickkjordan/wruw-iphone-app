@@ -1,13 +1,4 @@
-//
-//  BezierIconView.swift
-//  PlayPauseButtonDemo
-//
-//  Created by Nick Jordan on 3/18/15.
-//  Copyright (c) 2015 wruw. All rights reserved.
-//
-
 import UIKit
-
 
 class BezierIconView: UIView {
     let shapeLayer = CAShapeLayer()
@@ -35,7 +26,6 @@ class BezierIconView: UIView {
     }
     
     func prepareForTransition(transition:Bool){
-        
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = 1
         
@@ -55,6 +45,4 @@ class BezierIconView: UIView {
         shapeLayer.addAnimation(animation, forKey: nil)
         maskLayer.addAnimation(animation, forKey: nil)
     }
-
-
 }

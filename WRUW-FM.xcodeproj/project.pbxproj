@@ -77,6 +77,8 @@
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
+		01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */; };
+		01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */; };
 		01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC43D717DBC685004916EA /* AVFoundation.framework */; };
 		01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CFAA55183BA0C200535F96 /* SongTableViewCell.m */; };
 		01CFAA58183BA0ED00535F96 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */; };
@@ -202,6 +204,8 @@
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extensions.swift"; path = "Core Extensions/UIView+extensions.swift"; sourceTree = "<group>"; };
+		01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType+extensions.swift"; path = "Core Extensions/SequenceType+extensions.swift"; sourceTree = "<group>"; };
 		01CC43D717DBC685004916EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
 		01CFAA54183BA0C200535F96 /* SongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableViewCell.h; sourceTree = "<group>"; };
 		01CFAA55183BA0C200535F96 /* SongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewCell.m; sourceTree = "<group>"; };
@@ -293,14 +297,16 @@
 			path = "Save Data";
 			sourceTree = "<group>";
 		};
-		01498CB61ACC5B5D00D23F1B /* Categories */ = {
+		01498CB61ACC5B5D00D23F1B /* Core Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */,
 				01498CB71ACC5BE400D23F1B /* UIColor+WruwColors.h */,
 				0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */,
 				0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */,
+				01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */,
 			);
-			name = Categories;
+			name = "Core Extensions";
 			sourceTree = "<group>";
 		};
 		0170902D17DBA8F80005EC0F = {
@@ -364,7 +370,7 @@
 				01F9819B1835373C0069C241 /* Models */,
 				012C926B1840026600C94210 /* Save Data */,
 				01042C031AC06A42003112F3 /* AnimatedButton */,
-				01498CB61ACC5B5D00D23F1B /* Categories */,
+				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 			);
@@ -712,12 +718,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */,
 				019316DC183B5E67007755E8 /* Song.m in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
 				01042C081AC06A42003112F3 /* BezierIconView.swift in Sources */,
+				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,

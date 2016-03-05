@@ -1,20 +1,10 @@
-//
-//  AnimatedButton.swift
-//  PlayPauseButtonDemo
-//
-//  Created by Nick Jordan on 3/19/15.
-//  Copyright (c) 2015 wruw. All rights reserved.
-//
-
 import UIKit
 
-protocol Status
-{
+protocol Status {
     func statusChange()
 }
 
 class AnimatedButton: UIView, UIGestureRecognizerDelegate {
-    
     var delegate:Status?
     
     var status = false // status of button.  false = stopped; true = playing
@@ -44,13 +34,9 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         self.init(frame:CGRectZero)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError() }
     
     override func didMoveToSuperview() {
-
-        
         scaleAnimation.duration = 1.0
         scaleAnimation.repeatCount = HUGE
         scaleAnimation.autoreverses = true
@@ -58,15 +44,10 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         scaleAnimation.toValue = NSNumber(float: 1.4)
         scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
-        self.userInteractionEnabled = true
-        
         self.addSubview(circle)
         self.addSubview(icon)
-        
-        let gesture = UITapGestureRecognizer(target: self, action: "tapHandler:")
-        gesture.delegate = self
 
-        self.addGestureRecognizer(gesture)
+        onTap(target: self, selector: "tapHandler:")
     }
     
     func tapHandler(sender: UITapGestureRecognizer) {
@@ -92,12 +73,15 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         }
         
         icon.prepareForTransition(status)
-        UIView.animateWithDuration(1.0, animations: { () -> Void in
-            
+        let animations = {
             self.circle.backgroundColor = transformationColor
             self.circle.transform = scaleTransform
-            
-            }, completion: completion)
+        }
+        UIView.animateWithDuration(
+            1.0,
+            animations: animations,
+            completion: completion
+        )
         
         status = !status
     }
