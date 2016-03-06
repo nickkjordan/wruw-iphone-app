@@ -16,4 +16,9 @@ extension UIView {
         )
         return self
     }
+
+    func backgroundColor(color: UIColor) -> Self {
+        backgroundColor = color
+        return self
+    }
 }

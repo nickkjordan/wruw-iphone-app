@@ -7,7 +7,7 @@
 //
 
 #import "AboutViewController.h"
-#import "UIColor+WruwColors.h"
+#import "WRUWModule-Swift.h"
 
 @interface AboutViewController ()
 
@@ -28,8 +28,11 @@
     [textView setEditable:NO];
     [textView setDataDetectorTypes:UIDataDetectorTypeAll];
     [textView setSelectable:YES];
-    
-    [textView setLinkTextAttributes:@{NSForegroundColorAttributeName: [UIColor wruwColor], NSUnderlineStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]}];
+
+    [textView setLinkTextAttributes:@{
+        NSForegroundColorAttributeName: [[ThemeManager current] wruwMainOrangeColor],
+        NSUnderlineStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]
+    }];
 }
 
 @end

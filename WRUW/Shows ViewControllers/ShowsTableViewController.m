@@ -12,7 +12,6 @@
 #import "Show.h"
 #import "DisplayViewController.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "UIColor+WruwColors.h"
 #import "WRUWModule-Swift.h"
 
 @interface ShowsTableViewController () {
@@ -47,13 +46,13 @@
     [super viewDidLoad];
     sectionTitles = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
     sectionIndexTitles = @[@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa"];
-    self.tableView.sectionIndexColor = [UIColor wruwColor];
+    self.tableView.sectionIndexColor = [[ThemeManager current] wruwMainOrangeColor];
     self.tableView.sectionIndexBackgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
     
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(super.view.frame.size.width / 2.0, super.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor wruwColor];
+    spinner.color = [[ThemeManager current] wruwMainOrangeColor];
     [self.view addSubview:spinner];
     
     [spinner startAnimating];
@@ -272,21 +271,21 @@
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     [shapeLayer setPath:path];
-    [shapeLayer setFillColor:[[[UIColor wruwColor] colorWithAlphaComponent:0.95] CGColor]];
-    [shapeLayer setBounds:CGRectMake(0.0f, 0.0f, width, 60)];
-    [shapeLayer setAnchorPoint:CGPointMake(0.0f, 0.0f)];
-    [shapeLayer setPosition:CGPointMake(0.0f, 0.0f)];
-    [[view layer] addSublayer:shapeLayer];
+    [shapeLayer setFillColor: [[[[ThemeManager current] wruwMainOrangeColor] colorWithAlphaComponent: 0.95] CGColor]];
+    [shapeLayer setBounds: CGRectMake(0.0f, 0.0f, width, 60)];
+    [shapeLayer setAnchorPoint: CGPointMake(0.0f, 0.0f)];
+    [shapeLayer setPosition: CGPointMake(0.0f, 0.0f)];
+    [[view layer] addSublayer: shapeLayer];
 
     // Make label for day of week
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, width, 18)];
-    [label setFont:[UIFont fontWithName:@"GillSans-SemiBold" size:18.0]];
-    [label setText:headerText];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setTextAlignment:NSTextAlignmentCenter];
+    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(10, 5, width, 18)];
+    [label setFont: [UIFont fontWithName: @"GillSans-SemiBold" size: 18.0]];
+    [label setText: headerText];
+    [label setTextColor: [UIColor whiteColor]];
+    [label setTextAlignment: NSTextAlignmentCenter];
     
     // add subviews
-    [view addSubview:label];
+    [view addSubview: label];
     label.center = view.center;
     
     return view;
@@ -306,7 +305,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (dayOfWeek == 0) {
-        return [sectionTitles objectAtIndex:section];
+        return [sectionTitles objectAtIndex: section];
     } else {
         return nil;
     }
@@ -315,11 +314,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (dayOfWeek == 0) {
-        NSString *weekday = [sectionTitles objectAtIndex:section];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
+        NSString *weekday = [sectionTitles objectAtIndex: section];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"%K = %@", @"day", weekday];
         
-        NSArray *matches = [_objects filteredArrayUsingPredicate:predicate];
-        (matches) ? [programs setObject:matches forKey:weekday] : nil;
+        NSArray *matches = [_objects filteredArrayUsingPredicate: predicate];
+        (matches) ? [programs setObject: matches forKey: weekday] : nil;
         return [matches count];
     } else {
         return _objects.count;

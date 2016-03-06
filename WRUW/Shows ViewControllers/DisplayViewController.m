@@ -12,7 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
 #import <EventKit/EventKit.h>
-#import "UIColor+WruwColors.h"
+#import "WRUWModule-swift.h"
 #import "ARAnalytics.h"
 
 @interface DisplayViewController ()
@@ -74,7 +74,7 @@
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor wruwColor];
+    spinner.color = [[ThemeManager current] wruwMainOrangeColor];
     [self.view addSubview:spinner];
     
     [spinner startAnimating];
