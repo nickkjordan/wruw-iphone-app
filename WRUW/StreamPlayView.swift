@@ -3,52 +3,75 @@ import AVFoundation
 import MediaPlayer
 
 @objc class StreamPlayView: UIView, Status {
-    let urlAddress = NSURL(string: "http://wruw-stream.wruw.org:443/stream.mp3")
-    var player = AVPlayer?()
-    var view = AnimatedButton(frame: CGRectMake(10, 10, 150, 150))
-    let path = NSBundle.mainBundle().pathForResource("Default", ofType: "png")
-    var image = UIImage()
+    // previous stream url = "http://wruw-stream.wruw.org:443/stream.mp3"
+    // current stream url = "http://wruw-stream2.wruw.org:8000/stream256.mp3"
+    let urlAddress = NSURL(string: "http://wruw-stream2.wruw.org:8000/stream256.mp3")
+    private var player = AVPlayer?()
+
+    private lazy var animatedPlayPauseButton: AnimatedButton = {
+        return AnimatedButton(frame: CGRectMake(10, 10, 150, 150), delegate: self)
+    }()
+
+    private lazy var artworkImage: UIImage = {
+        let bundle = NSBundle.mainBundle()
+        if let path = bundle.pathForResource("Default", ofType: "png"),
+            imageView = UIImage(contentsOfFile: path) {
+            return imageView
+        }
+
+        return UIImage()
+    }()
+
+    private lazy var mediaItemArtwork: MPMediaItemArtwork = {
+        MPMediaItemArtwork(image: self.artworkImage)
+    }()
+
+    private lazy var nowPlayingInfoPaused: [String: AnyObject] = {
+        return self.nowPlayingInfo + [MPNowPlayingInfoPropertyPlaybackRate: 0.0]
+    }()
+
+    private lazy var nowPlayingInfoPlaying: [String: AnyObject] = {
+        return self.nowPlayingInfo + [MPNowPlayingInfoPropertyPlaybackRate: 1.0]
+    }()
+
+    private lazy var nowPlayingInfo: [String : AnyObject] = {
+        return [
+            MPMediaItemPropertyTitle: "Listening Live",
+            MPMediaItemPropertyArtist: "WRUW - 91.1 FM",
+            MPMediaItemPropertyArtwork: self.mediaItemArtwork
+        ]
+    }()
 
     override func didMoveToSuperview() {
-        view.delegate = self
-        
-        self.addSubview(view)
-        if let path = path {
-            image = UIImage(contentsOfFile: path)!
-        }
+        self.addSubview(animatedPlayPauseButton)
     }
     
     @objc func didAppear() {
-        view.didAppear()
+        animatedPlayPauseButton.didAppear()
     }
     
     func statusChange() {
-        if(player?.rate == 1.0)//means pause
-        {
+        player?.rate == 1.0 ? pausePlayer() : startPlayer()
+    }
+
+    func startPlayer() {
+        // Create a URL object.
+        // And send it to the avplayer
+        player = AVPlayer(URL: urlAddress!)
+
+        player?.addObserver(
+            self,
+            forKeyPath: "status",
+            options: NSKeyValueObservingOptions.New,
+            context: nil
+        )
+    }
+
+    func pausePlayer() {
             player?.pause()
             player?.removeObserver(self, forKeyPath: "status")
             
-            let artwork = MPMediaItemArtwork(image: image)
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [
-                MPMediaItemPropertyTitle : "Listening Live",
-                MPMediaItemPropertyArtist : "WRUW - 91.1 FM",
-                MPMediaItemPropertyArtwork : artwork,
-                MPNowPlayingInfoPropertyPlaybackRate : 0.0
-            ]
-        }
-
-        else {
-            // Create a URL object.
-            // And send it to the avplayer
-            player = AVPlayer(URL: urlAddress!)
-
-            player?.addObserver(
-                self,
-                forKeyPath: "status",
-                options: NSKeyValueObservingOptions.New,
-                context: nil
-            )
-        }
+            setNowPlayingInfo(nowPlayingInfoPaused)
     }
     
     override func observeValueForKeyPath(
@@ -68,13 +91,11 @@ import MediaPlayer
 
         player?.play()
         
-        let artwork = MPMediaItemArtwork(image: image)
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [
-            MPMediaItemPropertyTitle: "Listening Live",
-            MPMediaItemPropertyArtist: "WRUW - 91.1 FM",
-            MPMediaItemPropertyArtwork: artwork,
-            MPNowPlayingInfoPropertyPlaybackRate: 1.0
-        ]
+        setNowPlayingInfo(nowPlayingInfoPlaying)
+    }
+
+    func setNowPlayingInfo(info: [String: AnyObject]) {
+        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = info
     }
 
     override func canBecomeFirstResponder() -> Bool {
@@ -95,20 +116,14 @@ import MediaPlayer
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
         print(event!.subtype, terminator: "")
         let rc = event!.subtype
-        let p = player
         print("received remote control \(rc.rawValue)", terminator: "") // 101 = pause, 100 = play
 
-        switch (rc) {
-        case .RemoteControlTogglePlayPause:
-            view.tapHandler(UITapGestureRecognizer())
-
-        case .RemoteControlPlay:
-            view.tapHandler(UITapGestureRecognizer())
-
-        case .RemoteControlPause:
-            view.tapHandler(UITapGestureRecognizer())
-
-        default:break
+        guard rc == .RemoteControlTogglePlayPause ||
+            rc == .RemoteControlPlay ||
+            rc == .RemoteControlPause else {
+            return
         }
+
+        animatedPlayPauseButton.tapHandler(UITapGestureRecognizer())
     }
 }

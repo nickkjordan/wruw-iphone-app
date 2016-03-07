@@ -30,12 +30,12 @@ class BezierIconView: UIView {
         animation.duration = 1
         
         // Your new shape here
-        if (transition) {
-            animation.toValue = RoundedBezierIcons.RoundedPlayIcon(self.frame).CGPath
-        } else {
-            animation.toValue = RoundedBezierIcons.RoundedSquareIcon(self.frame).CGPath
-        }
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.toValue = transition ?
+            RoundedBezierIcons.RoundedPlayIcon(self.frame).CGPath :
+            RoundedBezierIcons.RoundedSquareIcon(self.frame).CGPath
+
+        animation.timingFunction =
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         // The next two line preserves the final shape of animation,
         // if you remove it the shape will return to the original shape after the animation finished

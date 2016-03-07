@@ -9,8 +9,6 @@
 import UIKit
 
 class RoundedBezierIcons: UIBezierPath {
-//    static let F_PI = CGFloat(M_PI)
-    
     class func RoundedSquareIcon(frame: CGRect) -> UIBezierPath {
         let F_PI = CGFloat(M_PI)
         

@@ -11,6 +11,14 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
 
     var scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
 
+    init(frame: CGRect, delegate: Status) {
+        super.init(frame: frame)
+
+        self.delegate = delegate
+    }
+
+    required init?(coder aDecoder: NSCoder) { fatalError() }
+
     override func didMoveToSuperview() {
         scaleAnimation.duration = 1.0
         scaleAnimation.repeatCount = HUGE
@@ -60,7 +68,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         
         delegate?.statusChange()
         
-        if (status) {
+        if status {
             transformationColor = ThemeManager.current().streamButtonOrangeColor
             scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
             self.circleView.layer.removeAnimationForKey("scale")
