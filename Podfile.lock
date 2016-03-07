@@ -31,7 +31,7 @@ PODS:
     - ARAnalytics/CoreIOS
     - Mixpanel
   - CBStoreHouseRefreshControl (1.0)
-  - Keys (1.0.2)
+  - Keys (1.0.0)
   - MarqueeLabel (2.2.1)
   - Mixpanel (2.7.3):
     - Mixpanel/MPCategoryHelpers (= 2.7.3)
@@ -45,6 +45,7 @@ PODS:
   - ReactiveCocoa/UI (2.3):
     - ReactiveCocoa/Core
   - RSSwizzle (0.1.0)
+  - RxSwift (2.2.0)
   - SDCSegmentedViewController (1.6)
   - SimulatorStatusMagic (1.4)
 
@@ -54,33 +55,30 @@ DEPENDENCIES:
   - ARAnalytics/DSL
   - ARAnalytics/Mixpanel
   - CBStoreHouseRefreshControl
-  - Keys (from `https://github.com/ashfurrow/empty-podspec.git`)
+  - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
   - Ono
+  - RxSwift (~> 2.0)
   - SDCSegmentedViewController
   - SimulatorStatusMagic
 
 EXTERNAL SOURCES:
   Keys:
-    :git: https://github.com/ashfurrow/empty-podspec.git
-
-CHECKOUT OPTIONS:
-  Keys:
-    :commit: dfc3c5e75dd23e5e9f938f4552eaceec4a8b4b73
-    :git: https://github.com/ashfurrow/empty-podspec.git
+    :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
   CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
-  Keys: 0feb3c779714b9ddbb40a8214ca348af3ea4986c
+  Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   Ono: 1122212de602280cc7af19d7ab12ee98a3fc0339
-  ReactiveCocoa: fbe689fe218063b7bbed41032912c9ca4fdbe172
+  ReactiveCocoa: 81ee2fb7df2dfc6bd52b5d70473662195e20ca7d
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
+  RxSwift: b8a749f2204c6c7a5c29b306a9c3bc11d5b87c5b
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.39.0

@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+platform :ios, '8.0'
+use_frameworks!
 
 local_podfile = "Pods/Podfile.local"
 #eval(File.open(local_podfile).read) if File.exist? local_podfile
@@ -13,6 +14,7 @@ pod 'SDCSegmentedViewController'
 pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
+pod 'RxSwift', '~> 2.0'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",
