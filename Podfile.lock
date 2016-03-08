@@ -36,6 +36,8 @@ PODS:
   - Mixpanel (2.7.3):
     - Mixpanel/MPCategoryHelpers (= 2.7.3)
   - Mixpanel/MPCategoryHelpers (2.7.3)
+  - NSObject+Rx (1.2.1):
+    - RxSwift (~> 2.1)
   - Ono (1.2.1)
   - ReactiveCocoa (2.3):
     - ReactiveCocoa/UI (= 2.3)
@@ -45,6 +47,8 @@ PODS:
   - ReactiveCocoa/UI (2.3):
     - ReactiveCocoa/Core
   - RSSwizzle (0.1.0)
+  - RxCocoa (2.2.0):
+    - RxSwift (~> 2.2)
   - RxSwift (2.2.0)
   - SDCSegmentedViewController (1.6)
   - SimulatorStatusMagic (1.4)
@@ -57,7 +61,9 @@ DEPENDENCIES:
   - CBStoreHouseRefreshControl
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
+  - NSObject+Rx
   - Ono
+  - RxCocoa
   - RxSwift (~> 2.0)
   - SDCSegmentedViewController
   - SimulatorStatusMagic
@@ -74,9 +80,11 @@ SPEC CHECKSUMS:
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
+  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
   Ono: 1122212de602280cc7af19d7ab12ee98a3fc0339
   ReactiveCocoa: 81ee2fb7df2dfc6bd52b5d70473662195e20ca7d
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
+  RxCocoa: 42efb7a7145a8d1d5878e94ce48a580d29e0c796
   RxSwift: b8a749f2204c6c7a5c29b306a9c3bc11d5b87c5b
   SDCSegmentedViewController: 10115e887dd94e32abde74e1ee32eaeb44812299
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1

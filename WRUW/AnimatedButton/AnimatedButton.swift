@@ -1,6 +1,8 @@
 import UIKit
+import RxSwift
 
 protocol Status {
+    var buttonIsAnimated: Observable<Bool> { get }
     func statusChange()
 }
 
@@ -15,6 +17,9 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         super.init(frame: frame)
 
         self.delegate = delegate
+        delegate.buttonIsAnimated
+            .skip(1)
+            .subscribeNext { self.activateAnimation($0) }
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
@@ -30,8 +35,15 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         
         self.addSubview(circleView)
         self.addSubview(iconView)
+    }
 
-        onTap(target: self, selector: "tapHandler:")
+    override func layoutSubviews() {
+        circleView.frame = CGRectMake(
+            self.frame.width / 8,
+            self.frame.height / 8,
+            CGFloat(self.frame.width / 2),
+            CGFloat(self.frame.height / 2)
+        )
     }
 
     lazy var circleView: UIView = {
@@ -60,15 +72,13 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         return iconView
     }()
 
-    func tapHandler(sender: UITapGestureRecognizer) {
+    func activateAnimation(active: Bool) {
         var transformationColor:UIColor
         var scaleTransform:CGAffineTransform
         
         var completion: ((Bool) -> (Void))
-        
-        delegate?.statusChange()
-        
-        if status {
+
+        if active {
             transformationColor = ThemeManager.current().streamButtonOrangeColor
             scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
             self.circleView.layer.removeAnimationForKey("scale")
@@ -82,7 +92,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
                     .addAnimation(self.scaleAnimation, forKey: "scale")
             }
         }
-        
+
         iconView.prepareForTransition(status)
         let animations = {
             self.circleView.backgroundColor = transformationColor
@@ -93,8 +103,6 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
             animations: animations,
             completion: completion
         )
-        
-        status = !status
     }
 
     func didAppear() {
