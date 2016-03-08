@@ -15,8 +15,6 @@ pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
 pod 'RxSwift', '~> 2.0'
-pod 'RxCocoa'
-pod 'NSObject+Rx'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",
