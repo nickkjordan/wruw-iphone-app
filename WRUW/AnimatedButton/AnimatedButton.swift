@@ -1,30 +1,57 @@
 import UIKit
 import RxSwift
+import NSObject_Rx
 
-protocol Status {
+protocol AnimatedButtonProtocol {
     var buttonIsAnimated: Observable<Bool> { get }
-    func statusChange()
 }
 
-class AnimatedButton: UIView, UIGestureRecognizerDelegate {
-    var delegate: Status?
-    
-    var status = false // status of button.  false = stopped; true = playing
+class AnimatedButton: UIView {
+    init(viewModel: AnimatedButtonProtocol) {
+        super.init(frame: CGRectZero)
 
-    var scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-
-    init(frame: CGRect, delegate: Status) {
-        super.init(frame: frame)
-
-        self.delegate = delegate
-        delegate.buttonIsAnimated
+        viewModel.buttonIsAnimated
             .skip(1)
-            .subscribeNext { self.activateAnimation($0) }
+            .distinctUntilChanged()
+            .bindTo(animationIsActive)
+            .addDisposableTo(rx_disposeBag)
+
+        addSubview(circleView) { make in
+            make.height.width.equalTo(self.snp_height).dividedBy(2)
+            make.center.equalTo(self)
+        }
+        addSubview(playStopIconView) { make in
+            make.center.equalTo(self)
+            make.height.width.equalTo(self.snp_height).dividedBy(3)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
-    override func didMoveToSuperview() {
+    // MARK: - Views
+    
+    private lazy var circleView: UIView = {
+        return CircleView()
+            .backgroundColor(ThemeManager.current().streamButtonOrangeColor)
+    }()
+
+    private lazy var playStopIconView =
+        PlayStopIconView(fillColor: UIColor.whiteColor())
+
+    // MARK: - Observables
+
+    private lazy var animationIsActive: Variable<Bool> = {
+        let animationIsActive = Variable(false)
+        animationIsActive.asObservable()
+            .subscribeNext { self.activateAnimation($0) }
+            .addDisposableTo(self.rx_disposeBag)
+        return animationIsActive
+    }()
+
+    // MARK: - Animation
+
+    lazy var scaleAnimation: CABasicAnimation = {
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.duration = 1.0
         scaleAnimation.repeatCount = HUGE
         scaleAnimation.autoreverses = true
@@ -32,44 +59,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         scaleAnimation.toValue = NSNumber(float: 1.4)
         scaleAnimation.timingFunction =
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
-        self.addSubview(circleView)
-        self.addSubview(iconView)
-    }
-
-    override func layoutSubviews() {
-        circleView.frame = CGRectMake(
-            self.frame.width / 8,
-            self.frame.height / 8,
-            CGFloat(self.frame.width / 2),
-            CGFloat(self.frame.height / 2)
-        )
-    }
-
-    lazy var circleView: UIView = {
-        let circleView = CircleView()
-            .backgroundColor(ThemeManager.current().streamButtonOrangeColor)
-
-        circleView.frame = CGRectMake(
-            self.frame.width / 8,
-            self.frame.height / 8,
-            CGFloat(self.frame.width / 2),
-            CGFloat(self.frame.height / 2)
-        )
-
-        return circleView
-    }()
-
-    lazy var iconView: BezierIconView = {
-        let iconView = BezierIconView()
-        iconView.frame.size = CGSizeMake(
-            self.circleView.frame.size.width * (2/3),
-            self.circleView.frame.size.height * (2/3)
-        )
-        iconView.center = self.circleView.center
-        iconView.fillColor = UIColor.whiteColor()
-
-        return iconView
+        return scaleAnimation
     }()
 
     func activateAnimation(active: Bool) {
@@ -78,7 +68,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
         
         var completion: ((Bool) -> (Void))
 
-        if active {
+        if !active {
             transformationColor = ThemeManager.current().streamButtonOrangeColor
             scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
             self.circleView.layer.removeAnimationForKey("scale")
@@ -93,7 +83,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
             }
         }
 
-        iconView.prepareForTransition(status)
+        playStopIconView.showPlayIcon(!active)
         let animations = {
             self.circleView.backgroundColor = transformationColor
             self.circleView.transform = scaleTransform
@@ -106,7 +96,7 @@ class AnimatedButton: UIView, UIGestureRecognizerDelegate {
     }
 
     func didAppear() {
-        if status {
+        if animationIsActive.value {
             self.circleView.layer
                 .addAnimation(self.scaleAnimation, forKey: "scale")
         }

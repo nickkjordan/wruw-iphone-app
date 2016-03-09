@@ -13,16 +13,15 @@ import MediaPlayer
         super.init(frame: frame)
 
         viewModel = StreamPlayViewModel(streamPath: urlAddress)
-        self.addSubview(animatedPlayPauseButton)
+        addSubview(animatedPlayPauseButton) { make in
+            make.edges.equalTo(self)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
     private lazy var animatedPlayPauseButton: AnimatedButton = {
-        return AnimatedButton(
-            frame: CGRectMake(10, 10, 150, 150),
-            delegate: self.viewModel
-        )
+        return AnimatedButton(viewModel: self.viewModel)
             .onTap(target: self, selector: "didTapPlayer")
     }()
 

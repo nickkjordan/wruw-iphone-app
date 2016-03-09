@@ -79,6 +79,10 @@ class StreamPlayViewModel: NSObject {
         _audioPlayerIsActive.value = _audioPlayerIsActive.value
     }
 
+    func statusChange() {
+        audioStreamPlayer.rate == 1.0 ? pausePlayer() : startPlayer()
+    }
+
     private lazy var _audioPlayerIsActive = Variable(false)
     private lazy var _buttonIsAnimated: Observable<Bool> = {
         let buttonIsAnimated = self._audioPlayerIsActive.asObservable()
@@ -122,10 +126,6 @@ class StreamPlayViewModel: NSObject {
     }()
 }
 
-extension StreamPlayViewModel: Status {
+extension StreamPlayViewModel: AnimatedButtonProtocol {
     var buttonIsAnimated: Observable<Bool> { return _buttonIsAnimated }
-
-    func statusChange() {
-        audioStreamPlayer.rate == 1.0 ? pausePlayer() : startPlayer()
-    }
 }

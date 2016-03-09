@@ -209,7 +209,7 @@
     // Set navigation bar
     self.navigationBar.delegate = self;
     
-    self.streamPlay = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    self.streamPlay = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 140, 150)];
     [self.showView addSubview:self.streamPlay];
     
     self.storeHouseRefreshControl = [CBStoreHouseRefreshControl

@@ -13,7 +13,7 @@
 		0100D1A21865386500D08BC2 /* home_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19C1865386500D08BC2 /* home_48.png */; };
 		0100D1A31865386500D08BC2 /* home_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0100D19D1865386500D08BC2 /* home_64.png */; };
 		01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C041AC06A42003112F3 /* AnimatedButton.swift */; };
-		01042C081AC06A42003112F3 /* BezierIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C051AC06A42003112F3 /* BezierIconView.swift */; };
+		01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C051AC06A42003112F3 /* PlayStopIconView.swift */; };
 		01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */; };
 		010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 010CF7A71898B8AC00875209 /* ArrayDataSource.m */; };
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
@@ -120,7 +120,7 @@
 		0100D19C1865386500D08BC2 /* home_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_48.png; sourceTree = "<group>"; };
 		0100D19D1865386500D08BC2 /* home_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_64.png; sourceTree = "<group>"; };
 		01042C041AC06A42003112F3 /* AnimatedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
-		01042C051AC06A42003112F3 /* BezierIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierIconView.swift; sourceTree = "<group>"; };
+		01042C051AC06A42003112F3 /* PlayStopIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStopIconView.swift; sourceTree = "<group>"; };
 		01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBezierIcons.swift; sourceTree = "<group>"; };
 		01042C561AC0764F003112F3 /* WRUWSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WRUWSwift.framework; path = "WRUWSwift/build/Debug-iphoneos/WRUWSwift.framework"; sourceTree = "<group>"; };
 		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayDataSource.h; path = ../ArrayDataSource.h; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				01042C041AC06A42003112F3 /* AnimatedButton.swift */,
-				01042C051AC06A42003112F3 /* BezierIconView.swift */,
+				01042C051AC06A42003112F3 /* PlayStopIconView.swift */,
 				01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */,
 			);
 			path = AnimatedButton;
@@ -770,7 +770,7 @@
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
 				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
-				01042C081AC06A42003112F3 /* BezierIconView.swift in Sources */,
+				01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */,
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,

@@ -1,16 +1,20 @@
 import UIKit
 
-class BezierIconView: UIView {
+class PlayStopIconView: UIView {
     let shapeLayer = CAShapeLayer()
     let maskLayer = CAShapeLayer()
     var initialPath = UIBezierPath()
-    var fillColor = UIColor()
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        
-        backgroundColor = UIColor.clearColor()
-        
+    var fillColor: UIColor!
+
+    init(fillColor: UIColor) {
+        super.init(frame: CGRectZero)
+
+        self.fillColor = fillColor
+    }
+
+    required init?(coder aDecoder: NSCoder) { fatalError() }
+
+    override func layoutSubviews() {
         // initial shape of the view
         initialPath = RoundedBezierIcons.RoundedPlayIcon(self.frame)
         
@@ -23,14 +27,22 @@ class BezierIconView: UIView {
         maskLayer.path = shapeLayer.path
         maskLayer.position =  shapeLayer.position
         layer.mask = maskLayer
+
+        super.layoutSubviews()
     }
-    
-    func prepareForTransition(transition:Bool){
+
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        backgroundColor = UIColor.clearColor()
+    }
+
+    func showPlayIcon(show: Bool){
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = 1
         
         // Your new shape here
-        animation.toValue = transition ?
+        animation.toValue = show ?
             RoundedBezierIcons.RoundedPlayIcon(self.frame).CGPath :
             RoundedBezierIcons.RoundedSquareIcon(self.frame).CGPath
 

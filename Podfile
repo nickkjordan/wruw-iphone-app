@@ -17,6 +17,7 @@ pod 'SimulatorStatusMagic', :configurations => ['Debug']
 pod 'RxSwift', '~> 2.0'
 pod 'RxCocoa'
 pod 'NSObject+Rx'
+pod 'SnapKit', '~> 0.15.0'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",

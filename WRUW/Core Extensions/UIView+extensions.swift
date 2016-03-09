@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 extension UIView {
     func onTap(target target: AnyObject, selector: Selector) -> Self {
@@ -19,6 +20,12 @@ extension UIView {
 
     func backgroundColor(color: UIColor) -> Self {
         backgroundColor = color
+        return self
+    }
+
+    func addSubview(subview: UIView, constraintMaker: ConstraintMaker -> ()) -> Self {
+        addSubview(subview)
+        subview.snp_makeConstraints(closure: constraintMaker)
         return self
     }
 }
