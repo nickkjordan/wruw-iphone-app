@@ -7,7 +7,17 @@ import NSObject_Rx
 class StreamPlayViewModel: NSObject {
     var urlAddress: NSURL?
 
-    lazy var audioStreamPlayer: AVPlayer = {
+    init(streamPath: String) {
+        urlAddress = NSURL(string: streamPath)
+    }
+
+    func changePlayerStatus() {
+        _audioPlayerIsActive.value = !_audioPlayerIsActive.value
+    }
+
+    // MARK: Audio Player
+    
+    private lazy var audioStreamPlayer: AVPlayer = {
         guard let urlStream = self.urlAddress else {
             return AVPlayer()
         }
@@ -15,13 +25,8 @@ class StreamPlayViewModel: NSObject {
         return AVPlayer(URL: urlStream)
     }()
 
-    init(streamPath: String) {
-        urlAddress = NSURL(string: streamPath)
-    }
-
-    func changePlayerStatus() {
-        _audioPlayerIsActive.value = !_audioPlayerIsActive.value
-        statusChange()
+    private func audioPlayerIsActive(active: Bool) {
+        active ? startPlayer() : pausePlayer()
     }
 
     private func startPlayer() {
@@ -47,8 +52,6 @@ class StreamPlayViewModel: NSObject {
             .addDisposableTo(rx_disposeBag)
     }
 
-    private var audioDisposable: Disposable?
-
     private func streamIsReadyToPlay() {
         audioStreamPlayer.play()
 
@@ -61,11 +64,7 @@ class StreamPlayViewModel: NSObject {
         setNowPlayingInfo(nowPlayingInfoPaused)
     }
 
-    func setNowPlayingInfo(info: [String: AnyObject]) {
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = info
-    }
-
-    func remoteControlReceivedWithEvent(event: UIEvent?) {
+    private func remoteControlReceivedWithEvent(event: UIEvent?) {
         print(event!.subtype, terminator: "")
         let eventSubtype = event!.subtype
         print("received remote control \(eventSubtype.rawValue)", terminator: "") // 101 = pause, 100 = play
@@ -79,19 +78,23 @@ class StreamPlayViewModel: NSObject {
         _audioPlayerIsActive.value = _audioPlayerIsActive.value
     }
 
-    func statusChange() {
-        audioStreamPlayer.rate == 1.0 ? pausePlayer() : startPlayer()
-    }
+    // MARK: - Observables for Playing/Paused status
 
     private lazy var _audioPlayerIsActive = Variable(false)
     private lazy var _buttonIsAnimated: Observable<Bool> = {
         let buttonIsAnimated = self._audioPlayerIsActive.asObservable()
         buttonIsAnimated
             .skip(1)
-            .subscribeNext { [unowned self] _ in self.statusChange() }
+            .subscribeNext { [unowned self] play in self.audioPlayerIsActive(play) }
             .addDisposableTo(self.rx_disposeBag)
         return buttonIsAnimated
     }()
+
+    /// MARK: - Now Playing info
+
+    private func setNowPlayingInfo(info: [String: AnyObject]) {
+        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = info
+    }
 
     private lazy var artworkImage: UIImage = {
         let bundle = NSBundle.mainBundle()
