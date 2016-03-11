@@ -9,6 +9,12 @@ class StreamPlayViewModel: NSObject {
 
     init(streamPath: String) {
         urlAddress = NSURL(string: streamPath)
+
+        super.init()
+    }
+
+    deinit {
+        removeRemoteCommandEvents()
     }
 
     func changePlayerStatus() {
@@ -40,6 +46,8 @@ class StreamPlayViewModel: NSObject {
             return
         }
 
+        setupRemoteControlEvents()
+
         audioStreamPlayer
             .rx_observe(
                 AVPlayerStatus.self,
@@ -64,18 +72,22 @@ class StreamPlayViewModel: NSObject {
         setNowPlayingInfo(nowPlayingInfoPaused)
     }
 
-    private func remoteControlReceivedWithEvent(event: UIEvent?) {
-        print(event!.subtype, terminator: "")
-        let eventSubtype = event!.subtype
-        print("received remote control \(eventSubtype.rawValue)", terminator: "") // 101 = pause, 100 = play
+    // MARK: - MPRemoteCommandCenter
 
-        guard eventSubtype == .RemoteControlTogglePlayPause ||
-            eventSubtype == .RemoteControlPlay ||
-            eventSubtype == .RemoteControlPause else {
-            return
-        }
+    private let changePlayerSelector: Selector = "changePlayerStatus"
 
-        _audioPlayerIsActive.value = _audioPlayerIsActive.value
+    private func setupRemoteControlEvents() {
+        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
+
+        commandCenter.playCommand.addTarget(self, action: changePlayerSelector)
+        commandCenter.pauseCommand.addTarget(self, action: changePlayerSelector)
+    }
+
+    private func removeRemoteCommandEvents() {
+        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
+
+        commandCenter.playCommand.removeTarget(self, action: changePlayerSelector)
+        commandCenter.pauseCommand.removeTarget(self, action: changePlayerSelector)
     }
 
     // MARK: - Observables for Playing/Paused status
@@ -90,7 +102,7 @@ class StreamPlayViewModel: NSObject {
         return buttonIsAnimated
     }()
 
-    /// MARK: - Now Playing info
+    // MARK: - Now Playing info
 
     private func setNowPlayingInfo(info: [String: AnyObject]) {
         MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = info
