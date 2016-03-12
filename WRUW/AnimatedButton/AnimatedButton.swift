@@ -50,7 +50,22 @@ class AnimatedButton: UIView {
 
     // MARK: - Animation
 
-    lazy var scaleAnimation: CABasicAnimation = {
+    private func activateAnimation(active: Bool) {
+        self.circleView.layer.removeAllAnimations()
+
+        playStopIconView.showPlayIcon(!active)
+
+        let animations = active ? playingColorAndScale : stoppedColorAndScale
+        let completion = active ? playingCompletion : nil
+
+        UIView.animateWithDuration(
+            1.0,
+            animations: animations,
+            completion: completion
+        )
+    }
+
+    private lazy var scaleAnimation: CABasicAnimation = {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.duration = 1.0
         scaleAnimation.repeatCount = HUGE
@@ -62,39 +77,27 @@ class AnimatedButton: UIView {
         return scaleAnimation
     }()
 
-    func activateAnimation(active: Bool) {
-        var transformationColor:UIColor
-        var scaleTransform:CGAffineTransform
-        
-        var completion: ((Bool) -> (Void))
+    private lazy var playingColorAndScale: () -> () = {
+        self.circleView.backgroundColor = ThemeManager.current().streamButtonRedColor
+        self.circleView.transform = CGAffineTransformMakeScale(1.6, 1.6)
+    }
 
-        if !active {
-            transformationColor = ThemeManager.current().streamButtonOrangeColor
-            scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
-            self.circleView.layer.removeAnimationForKey("scale")
-            completion = { value in }
-        } else {
-            transformationColor = ThemeManager.current().streamButtonRedColor
-            scaleTransform = CGAffineTransformMakeScale(1.6, 1.6)
-            completion = {
-                value in
-                self.circleView.layer
-                    .addAnimation(self.scaleAnimation, forKey: "scale")
-            }
-        }
+    private lazy var stoppedColorAndScale: () -> () = {
+        self.circleView.backgroundColor = ThemeManager.current().streamButtonOrangeColor
+        self.circleView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+    }
 
-        playStopIconView.showPlayIcon(!active)
-        let animations = {
-            self.circleView.backgroundColor = transformationColor
-            self.circleView.transform = scaleTransform
-        }
-        UIView.animateWithDuration(
-            1.0,
-            animations: animations,
-            completion: completion
+    private lazy var playingCompletion: ((Bool) -> Void)? = { completed in
+        guard completed else { return }
+
+        self.circleView.layer.addAnimation(
+            self.scaleAnimation,
+            forKey: "scale"
         )
     }
 
+    /// Function to reactivate animation when the view appears
+    /// Likely must be called by view controller
     func didAppear() {
         if animationIsActive.value {
             self.circleView.layer
