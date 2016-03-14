@@ -9,7 +9,7 @@
 #import "ArchiveTableViewController.h"
 #import "SongTableViewCell.h"
 #import <Social/Social.h>
-#import "UIColor+WruwColors.h"
+#import "WRUWModule-Swift.h"
 
 @interface ArchiveTableViewController ()
 {
@@ -71,7 +71,7 @@
     spinner = [[UIActivityIndicatorView alloc] init];
     spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor wruwColor];
+    spinner.color = [[ThemeManager current] wruwMainOrangeColor];
     [self.view addSubview:spinner];
     
     [spinner startAnimating];
