@@ -889,7 +889,7 @@
 				PRODUCT_MODULE_NAME = WRUWModule;
 				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -924,7 +924,7 @@
 				PRODUCT_MODULE_NAME = WRUWModule;
 				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -954,6 +954,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -983,6 +985,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

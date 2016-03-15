@@ -15,7 +15,7 @@
 #import "ArchiveTableViewController.h"
 #import "HomeViewController.h"
 #import "GroupedProgramsTableViewController.h"
-#import "SDStatusBarManager.h"
+//#import "SDStatusBarManager.h"
 
 @implementation AppDelegate
 
