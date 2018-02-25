@@ -20,7 +20,7 @@
     [super viewDidLoad];
     [self.view layoutIfNeeded];
     
-    [self addStoryboardSegments:@[@"songsSegue", @"showsSegue"]];
+//    [self addStoryboardSegments:@[@"songsSegue", @"showsSegue"]];
     
 //
 //    self.favSongsVC = self.childViewControllers.lastObject;

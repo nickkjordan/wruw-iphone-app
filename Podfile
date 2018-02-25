@@ -1,3 +1,5 @@
+target 'WRUW-FM' do
+
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
@@ -10,17 +12,18 @@ pod 'Ono'
 pod 'AFOnoResponseSerializer'
 pod 'CBStoreHouseRefreshControl'
 pod 'MarqueeLabel'
-pod 'SDCSegmentedViewController'
 pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
-pod 'RxSwift', '~> 2.0'
-pod 'RxCocoa'
+pod 'RxSwift', '~> 2.6.1'
+pod 'RxCocoa', '~> 2.6.1'
 pod 'NSObject+Rx'
-pod 'SnapKit', '~> 0.15.0'
+pod 'SnapKit', '~> 0.22.0'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",
     :keys => [
     "MixpanelToken"
     ]}
+
+end

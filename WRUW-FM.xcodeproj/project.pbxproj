@@ -99,7 +99,7 @@
 		01FB78A3183EA7EE0088C972 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A1183EA7EE0088C972 /* facebook.png */; };
 		01FB78A4183EA7EE0088C972 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A2183EA7EE0088C972 /* twitter.png */; };
 		01FB78A6183EA89A0088C972 /* magnifier_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A5183EA89A0088C972 /* magnifier_48.png */; };
-		2C3B943CD5EAF6F85DC2A1AF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B8AB567B82BDC3B2A90606 /* Pods.framework */; };
+		6EDB28A8C48B4086C0B6F5B5 /* Pods_WRUW_FM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,9 +237,10 @@
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		01FB78A2183EA7EE0088C972 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		01FB78A5183EA89A0088C972 /* magnifier_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier_48.png; sourceTree = "<group>"; };
+		19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.release.xcconfig"; sourceTree = "<group>"; };
 		44B8AB567B82BDC3B2A90606 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRUW_FM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +260,7 @@
 				0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
 				0170903E17DBA8F80005EC0F /* CoreGraphics.framework in Frameworks */,
 				01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */,
-				2C3B943CD5EAF6F85DC2A1AF /* Pods.framework in Frameworks */,
+				6EDB28A8C48B4086C0B6F5B5 /* Pods_WRUW_FM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +328,7 @@
 				0170906E17DBA8F80005EC0F /* WRUWTests */,
 				0170903817DBA8F80005EC0F /* Frameworks */,
 				0170903717DBA8F80005EC0F /* Products */,
-				4262C16CF2A9C7E8D6BC554B /* Pods */,
+				79746C83A8ACE2BA5C07C096 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +358,7 @@
 				0170903B17DBA8F80005EC0F /* Foundation.framework */,
 				0170903D17DBA8F80005EC0F /* CoreGraphics.framework */,
 				44B8AB567B82BDC3B2A90606 /* Pods.framework */,
+				80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -553,11 +555,11 @@
 			path = hpple;
 			sourceTree = "<group>";
 		};
-		4262C16CF2A9C7E8D6BC554B /* Pods */ = {
+		79746C83A8ACE2BA5C07C096 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */,
-				81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */,
+				AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */,
+				19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -569,12 +571,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0170907917DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FM" */;
 			buildPhases = (
-				61C8A1B85DC6CFF65203D13B /* Check Pods Manifest.lock */,
+				D4EBFFE41283A77CD2E6B76E /* [CP] Check Pods Manifest.lock */,
 				0170903217DBA8F80005EC0F /* Sources */,
 				0170903317DBA8F80005EC0F /* Frameworks */,
 				0170903417DBA8F80005EC0F /* Resources */,
-				03DBA05F48E492B46066D055 /* Copy Pods Resources */,
-				2ECF9A44286ED9C8A50F380C /* Embed Pods Frameworks */,
+				64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */,
+				F6DA7FC1D474CEB4FD22BFE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -618,6 +620,12 @@
 				TargetAttributes = {
 					0170903517DBA8F80005EC0F = {
 						DevelopmentTeam = 7M2UVCY37Z;
+						LastSwiftMigration = 0820;
+					};
+					0170906617DBA8F80005EC0F = {
+						DevelopmentTeam = 7M2UVCY37Z;
+						LastSwiftMigration = 0820;
+						TestTargetID = 0170903517DBA8F80005EC0F;
 					};
 				};
 			};
@@ -711,49 +719,83 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		03DBA05F48E492B46066D055 /* Copy Pods Resources */ = {
+		64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AFOnoResponseSerializer/AFOnoResponseSerializer.framework",
+				"${BUILT_PRODUCTS_DIR}/ARAnalytics/ARAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/CBStoreHouseRefreshControl/CBStoreHouseRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
+				"${BUILT_PRODUCTS_DIR}/RSSwizzle/RSSwizzle.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFOnoResponseSerializer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CBStoreHouseRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSwizzle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorStatusMagic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2ECF9A44286ED9C8A50F380C /* Embed Pods Frameworks */ = {
+		D4EBFFE41283A77CD2E6B76E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WRUW-FM-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61C8A1B85DC6CFF65203D13B /* Check Pods Manifest.lock */ = {
+		F6DA7FC1D474CEB4FD22BFE2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -890,6 +932,7 @@
 				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -925,13 +968,14 @@
 				PRODUCT_NAME = WRUW;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		0170907A17DBA8F80005EC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECD5CFA9C3A5F84611DB972E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -955,6 +999,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -962,7 +1007,7 @@
 		};
 		0170907B17DBA8F80005EC0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81A49EB6F2BC53972834FEFC /* Pods.release.xcconfig */;
+			baseConfigurationReference = 19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -986,6 +1031,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -994,7 +1040,9 @@
 		0170907D17DBA8F80005EC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WRUW.app/WRUW";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1004,14 +1052,17 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SWIFT_VERSION = 2.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
 		};
 		0170907E17DBA8F80005EC0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WRUW.app/WRUW";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1021,7 +1072,8 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SWIFT_VERSION = 2.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;
 		};

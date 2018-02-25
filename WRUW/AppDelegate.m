@@ -81,7 +81,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 - (void)setupAnalytics
 {
-    WruwKeys *keys = [[WruwKeys alloc] init];
+    WRUWKeys *keys = [[WRUWKeys alloc] init];
     [ARAnalytics setupWithAnalytics:@{
             ARMixpanelToken : keys.mixpanelToken
         }

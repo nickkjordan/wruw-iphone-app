@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SDCSegmentedViewController.h"
 
-@interface SegmentedViewController : SDCSegmentedViewController <UINavigationBarDelegate>
+@interface SegmentedViewController : UIViewController <UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *favoritesItem;
