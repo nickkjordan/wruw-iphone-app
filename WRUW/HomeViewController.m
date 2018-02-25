@@ -72,13 +72,14 @@
     Show *newShow = [[Show alloc] init];
     
     // Create XPath strings
-    NSString *currentShowTitleXpathQueryString = @"//*[@id='main-nav']/div[1]/div/div[2]/div/div/div[2]/div[1]/span/a";
+    NSString *currentShowTitleXpathQueryString = @"/html/body/div/main/div[1]/div/div/div/div[2]/div[1]/span/a";
     
     ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
     
     NSString *url = [[showTitleNode attributes] objectForKey:@"href"];
     
     newShow.url = url;
+    if (url.length == 0) { return; }
     [newShow loadInfo:^(){
         self.moreInfoButton.enabled = YES;
         
