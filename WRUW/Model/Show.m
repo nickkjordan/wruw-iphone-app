@@ -39,9 +39,9 @@
     if (self = [super init]) {
         self.title = dict[@"ShowName"];
         self.url = dict[@"ShowUrl"];
-        self.host = dict[@"host"];
+        self.host = dict[@"ShowUsers"][0][@"DJName"];
         self.time = dict[@"OnairTime"];
-        self.genre = dict[@"genre"];
+        self.genre = dict[@"ShowCategory"];
         self.lastShow = dict[@"lastShow"];
         self.day = dict[@"day"];
         self.infoDescription = dict[@"ShowDescription"];
