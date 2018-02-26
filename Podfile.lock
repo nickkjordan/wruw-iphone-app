@@ -23,6 +23,7 @@ PODS:
   - AFOnoResponseSerializer (1.0.0):
     - AFNetworking (~> 2.2)
     - Ono (~> 1.0)
+  - Alamofire (3.5.1)
   - ARAnalytics/CoreIOS (3.0.0)
   - ARAnalytics/DSL (3.0.0):
     - ReactiveCocoa (= 2.3)
@@ -56,6 +57,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
   - AFOnoResponseSerializer
+  - Alamofire (~> 3.5.0)
   - ARAnalytics/DSL
   - ARAnalytics/Mixpanel
   - CBStoreHouseRefreshControl
@@ -75,6 +77,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
   CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
   Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
@@ -89,6 +92,6 @@ SPEC CHECKSUMS:
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
 
-PODFILE CHECKSUM: e606151099c1bf4ff1f0ef5fb0581314af1c9482
+PODFILE CHECKSUM: 631911eebe47cf327664655e5f167fe9e0dee6e6
 
 COCOAPODS: 1.4.0

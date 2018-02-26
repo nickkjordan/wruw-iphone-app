@@ -74,8 +74,10 @@
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
 		01997EC51C8CE2390007C38D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC41C8CE2390007C38D /* CircleView.swift */; };
 		01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */; };
+		019D9FD320438D1900C05026 /* CurrentShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* CurrentShow.swift */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
+		01B94BA820437724000874E1 /* WruwWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwWebservice.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -204,9 +206,12 @@
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01997EC41C8CE2390007C38D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Shared/CircleView.swift; sourceTree = "<group>"; };
 		01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+extensions.swift"; path = "Core Extensions/Dictionary+extensions.swift"; sourceTree = "<group>"; };
+		019D9FD220438D1900C05026 /* CurrentShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentShow.swift; path = Shared/Webservice/CurrentShow.swift; sourceTree = "<group>"; };
+		019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WRUW-FM-Bridging-Header.h"; sourceTree = "<group>"; };
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
+		01B94BA720437724000874E1 /* WruwWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwWebservice.swift; path = Shared/Webservice/WruwWebservice.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -367,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				01F9819F183537A10069C241 /* hpple */,
+				019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
 				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
 				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
@@ -465,6 +471,15 @@
 			path = "Favorites Controllers";
 			sourceTree = "<group>";
 		};
+		01B94BA620437705000874E1 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				01B94BA720437724000874E1 /* WruwWebservice.swift */,
+				019D9FD220438D1900C05026 /* CurrentShow.swift */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
 		01CAC82917DFACE400057340 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +523,7 @@
 		01CAFF611C8B662000AD1E95 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				01B94BA620437705000874E1 /* Webservice */,
 				01F9819B1835373C0069C241 /* Models */,
 				01042C031AC06A42003112F3 /* AnimatedButton */,
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
@@ -729,6 +745,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AFOnoResponseSerializer/AFOnoResponseSerializer.framework",
 				"${BUILT_PRODUCTS_DIR}/ARAnalytics/ARAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CBStoreHouseRefreshControl/CBStoreHouseRefreshControl.framework",
 				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
@@ -747,6 +764,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFOnoResponseSerializer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CBStoreHouseRefreshControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
@@ -816,6 +834,7 @@
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
+				01B94BA820437724000874E1 /* WruwWebservice.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
@@ -826,6 +845,7 @@
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
 				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
+				019D9FD320438D1900C05026 /* CurrentShow.swift in Sources */,
 				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
@@ -998,7 +1018,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
@@ -1030,7 +1050,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
@@ -1052,6 +1072,7 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/wruw-iphone-app/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
@@ -1072,6 +1093,7 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/wruw-iphone-app/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};

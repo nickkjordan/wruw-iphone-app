@@ -1,16 +1,9 @@
-//
-//  Show.m
-//  WRUWShowTest
-//
-//  Created by Nick Jordan on 11/14/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "Show.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "AFOnoResponseSerializer.h"
 #import "ONOXMLDocument.h"
 #import "Playlist.h"
+#import "WRUWModule-Swift.h"
 
 @implementation Show
 {
@@ -38,6 +31,22 @@
         self.day = [decoder decodeObjectForKey:@"day"];
         self.infoDescription = [decoder decodeObjectForKey:@"infoDescription"];
     }
+    
+    return self;
+}
+
+- (instancetype)initWithJson:(NSDictionary *)dict {
+    if (self = [super init]) {
+        self.title = dict[@"ShowName"];
+        self.url = dict[@"ShowUrl"];
+        self.host = dict[@"host"];
+        self.time = dict[@"OnairTime"];
+        self.genre = dict[@"genre"];
+        self.lastShow = dict[@"lastShow"];
+        self.day = dict[@"day"];
+        self.infoDescription = dict[@"ShowDescription"];
+    }
+
     return self;
 }
 

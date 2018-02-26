@@ -68,39 +68,38 @@
 }
 
 - (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
+    CurrentShow *currentShowService = [[CurrentShow alloc] init];
+
+    [currentShowService request:^(WruwResult *result) {
+        if (result.success) {
+            Show *newShow = (Show *)[result success];
+
+            if (newShow.url.length == 0) { return; }
+
+            self.moreInfoButton.enabled = YES;
     
-    Show *newShow = [[Show alloc] init];
+            if (_archive.count == 0) {
+                [self loadCurrentPlaylist];
+            }
+            if (![newShow isEqual:_currentShow]) {
+                _currentShow = newShow;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [showTitle setText:_currentShow.title];
+                    [hostLabel setText:_currentShow.host];
+                });
     
-    // Create XPath strings
-    NSString *currentShowTitleXpathQueryString = @"/html/body/div/main/div[1]/div/div/div/div[2]/div[1]/span/a";
-    
-    ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
-    
-    NSString *url = [[showTitleNode attributes] objectForKey:@"href"];
-    
-    newShow.url = url;
-    if (url.length == 0) { return; }
-    [newShow loadInfo:^(){
-        self.moreInfoButton.enabled = YES;
-        
-        if (_archive.count == 0) {
-            [self loadCurrentPlaylist];
+                // remove current playlist
+                _archive = [NSMutableArray array];
+                [self loadCurrentPlaylist];
+            } else {
+                [self updateCurrentPlaylist];
+            }
         }
-        if (![newShow isEqual:_currentShow]) {
-            _currentShow = newShow;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [showTitle setText:_currentShow.title];
-                [hostLabel setText:_currentShow.host];
-            });
-            
-            // remove current playlist
-            _archive = [NSMutableArray array];
-            [self loadCurrentPlaylist];
-        } else {
-            [self updateCurrentPlaylist];
+
+        if (result.failure) {
+
         }
     }];
-    
 }
 
 - (void)loadCurrentPlaylist {

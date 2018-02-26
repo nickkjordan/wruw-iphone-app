@@ -19,6 +19,7 @@ pod 'RxSwift', '~> 2.6.1'
 pod 'RxCocoa', '~> 2.6.1'
 pod 'NSObject+Rx'
 pod 'SnapKit', '~> 0.22.0'
+pod 'Alamofire', '~> 3.5.0'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",

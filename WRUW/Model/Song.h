@@ -1,14 +1,8 @@
-//
-//  Song.h
-//  WRUW
-//
-//  Created by Nick Jordan on 11/19/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@interface Song : NSObject <NSCoding>
+@protocol JSONConvertible;
+
+@interface Song : NSObject <NSCoding, JSONConvertible>
 
 @property (nonatomic, copy) NSString *artist;
 @property (nonatomic, copy) NSString *songName;
@@ -19,5 +13,7 @@
 -(BOOL)isEqualToSong:(Song *)song;
 -(void)loadImage:(void (^)())succeeded;
 -(NSString *)formatForURL:(NSString *)string;
+
+- (instancetype)initWithJson:(NSDictionary *)dict;
 
 @end

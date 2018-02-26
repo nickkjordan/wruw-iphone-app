@@ -1,17 +1,11 @@
-//
-//  Show.h
-//  WRUWShowTest
-//
-//  Created by Nick Jordan on 11/14/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "Playlist.h"
 
+@protocol JSONConvertible;
+
 typedef void (^LoadShowBlock)();
 
-@interface Show : NSObject
+@interface Show : NSObject <JSONConvertible>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
@@ -24,5 +18,7 @@ typedef void (^LoadShowBlock)();
 @property (nonatomic, copy) NSArray *playlists;
 
 - (void)loadInfo:(LoadShowBlock)successBlock;
+
+- (instancetype)initWithJson:(NSDictionary *)dict;
 
 @end

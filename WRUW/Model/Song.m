@@ -1,15 +1,8 @@
-//
-//  Song.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/19/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "Song.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "AFOnoResponseSerializer.h"
 #import "ONOXMLDocument.h"
+#import "WRUWModule-Swift.h"
 
 @implementation Song
 
@@ -27,6 +20,18 @@
         self.label = [decoder decodeObjectForKey:@"label"];
         self.imageUrl = [decoder decodeObjectForKey:@"image"];
     }
+    return self;
+}
+
+-(instancetype)initWithJson:(NSDictionary *)dict {
+    if (self = [super init]) {
+        self.songName = dict[@"songName"];
+        self.artist = dict[@"artist"];
+        self.album = dict[@"album"];
+        self.label = dict[@"label"];
+        self.imageUrl = dict[@"imageUrl"];
+    }
+    
     return self;
 }
 
