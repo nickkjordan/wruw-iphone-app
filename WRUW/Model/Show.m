@@ -16,7 +16,7 @@
 @synthesize time = _time;
 @synthesize genre = _genre;
 @synthesize lastShow = _lastShow;
-@synthesize day = _day;
+@synthesize days = _days;
 @synthesize infoDescription = _infoDescription;
 @synthesize playlists = _playlists;
 
@@ -28,7 +28,7 @@
         self.time = [decoder decodeObjectForKey:@"time"];
         self.genre = [decoder decodeObjectForKey:@"genre"];
         self.lastShow = [decoder decodeObjectForKey:@"lastShow"];
-        self.day = [decoder decodeObjectForKey:@"day"];
+        self.days = [decoder decodeObjectForKey:@"day"];
         self.infoDescription = [decoder decodeObjectForKey:@"infoDescription"];
     }
     
@@ -43,7 +43,7 @@
         self.time = dict[@"OnairTime"];
         self.genre = dict[@"ShowCategory"];
         self.lastShow = dict[@"lastShow"];
-        self.day = dict[@"Weekdays"][0];
+        self.days = dict[@"Weekdays"];
         self.infoDescription = dict[@"ShowDescription"];
     }
 
@@ -57,7 +57,7 @@
     [encoder encodeObject:_time forKey:@"time"];
     [encoder encodeObject:_genre forKey:@"genre"];
     [encoder encodeObject:_lastShow forKey:@"lastShow"];
-    [encoder encodeObject:_day forKey:@"day"];
+    [encoder encodeObject:_days forKey:@"day"];
     [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
 }
 
@@ -73,91 +73,7 @@
 }
 
 - (BOOL)currentShowValid {
-    return self.title && self.host && self.time && self.genre && self.day && self.lastShow;
-}
-
-- (void)loadInfo:(LoadShowBlock)successBlock {
-    void (^loadShow)(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject);
-    
-    if ([self currentShowValid] && _playlists.count > 0) {
-        successBlock();
-        return;
-    } else if ([self currentShowValid] && _playlists.count == 0) {
-        loadShow = ^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-            showHeader = [responseObject firstChildWithXPath:@"//*[@id='main']/div/article"];
-            
-            successBlock();
-            [self loadPlaylists];
-        };
-    } else {
-        loadShow = ^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-            showHeader = [responseObject firstChildWithXPath:@"//*[@id='main']/div/article"];
-            
-            [self parseShowInfo];
-            successBlock();
-            [self loadPlaylists];
-        };
-    }
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [manager GET:self.url parameters:nil success:loadShow failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        return;
-    }];
-}
-
-- (void)parseShowInfo {
-    
-    self.title = [[showHeader firstChildWithCSS:@".entry-title"] stringValue];
-    self.host = @"";
-    [showHeader enumerateElementsWithXPath:@"header/p[1]/a" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        if (idx == 0) {
-            self.host = element.stringValue;
-        } else {
-            self.host = [NSString stringWithFormat:@"%@, %@", self.host, element.stringValue];
-        }
-    }];
-    self.day = @"";
-    [showHeader enumerateElementsWithXPath:@"header/ul/li/strong" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        if (idx == 0) {
-            self.day = [element.stringValue stringByReplacingOccurrencesOfString:@":" withString:@""];
-        } else {
-            self.day = [NSString stringWithFormat:@"%@, %@", self.day, [element.stringValue stringByReplacingOccurrencesOfString:@":" withString:@""]];
-        }
-    }];
-    self.genre = @"";
-    [showHeader enumerateElementsWithXPath:@"header/p[3]/a" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        if (idx == 0) {
-            self.genre = element.stringValue;
-        } else {
-            self.genre = [NSString stringWithFormat:@"%@, %@", self.genre, element.stringValue];
-        }
-    }];
-    self.time = [[showHeader firstChildWithXPath:@"header/ul/li"] stringValue];
-    self.infoDescription = [[showHeader firstChildWithXPath:@"div/p"] stringValue];
-    self.lastShow = [[Playlist alloc] init];
-    self.lastShow.idValue = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]/@value"] stringValue];
-    self.lastShow.date = [[showHeader firstChildWithXPath:@"//*[@id='playlist-select']/option[2]"] stringValue];
-    
-}
-
-- (void)checkPlaylists {
-    if (_playlists.count == 0) {
-        [self loadPlaylists];
-    }
-}
-
-- (void)loadPlaylists {
-    NSMutableArray *play = [[NSMutableArray alloc] init];
-    [showHeader enumerateElementsWithXPath:@"//*[@id='playlist-select']/option[position()>1]" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop) {
-        Playlist *newPlaylist = [[Playlist alloc] init];
-        newPlaylist.idValue = [[element attributes] valueForKey:@"value"];
-        newPlaylist.date = [element stringValue];
-        [play addObject:newPlaylist];
-    }];
-    _playlists = play;
+    return self.title && self.host && self.time && self.genre && self.days && self.lastShow;
 }
 
 #pragma mark - NSObject

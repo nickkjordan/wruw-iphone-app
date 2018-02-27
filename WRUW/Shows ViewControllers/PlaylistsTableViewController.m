@@ -35,10 +35,6 @@
 
 -(void)loadPlaylist
 {
-    [currentShow loadInfo:^{
-        _playlists = [NSMutableArray arrayWithArray:currentShow.playlists];
-        [self.tableView reloadData];
-    }];
 }
 
 - (void)viewDidLoad

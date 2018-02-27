@@ -12,12 +12,10 @@ typedef void (^LoadShowBlock)();
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSString *time;
-@property (nonatomic, copy) NSString *day;
+@property (nonatomic, copy) NSArray *days;
 @property (nonatomic, copy) NSString *infoDescription;
 @property (nonatomic) Playlist *lastShow;
 @property (nonatomic, copy) NSArray *playlists;
-
-- (void)loadInfo:(LoadShowBlock)successBlock;
 
 - (instancetype)initWithJson:(NSDictionary *)dict;
 

@@ -99,7 +99,7 @@
 
 - (void)loadCurrentPlaylist {
     GetPlaylist *playlistService =
-        [[GetPlaylist alloc] initWithShowName:_currentShow.title date:@"2018-01-01"];
+        [[GetPlaylist alloc] initWithShowName:_currentShow.title date:@"2018-02-27"];
 
     [playlistService request:^(WruwResult *result) {
         if (result.success) {

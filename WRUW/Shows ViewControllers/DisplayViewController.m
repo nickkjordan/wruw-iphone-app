@@ -86,11 +86,11 @@
     if (currentShowInfo.text.length == 0) {
         [spinner startAnimating];
     }
-    [currentShow loadInfo:^(){
-        [spinner stopAnimating];
-        [self updateLabels];
-        [[self playlistsButton] setEnabled:YES];
-    }];
+//    [currentShow loadInfo:^(){
+//        [spinner stopAnimating];
+//        [self updateLabels];
+//        [[self playlistsButton] setEnabled:YES];
+//    }];
     
     currentShowInfo.editable = YES;
     currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
@@ -107,7 +107,7 @@
     
     [currentShowTitle setText:currentShow.title];
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [currentShow.host uppercaseString]]];
-    [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
+    [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.days, timeFrame]];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];
     [self adjustHeightOfInfoView];
