@@ -74,13 +74,8 @@
         if (result.success) {
             Show *newShow = (Show *)[result success];
 
-            if (newShow.url.length == 0) { return; }
-
             self.moreInfoButton.enabled = YES;
     
-            if (_archive.count == 0) {
-                [self loadCurrentPlaylist];
-            }
             if (![newShow isEqual:_currentShow]) {
                 _currentShow = newShow;
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -103,31 +98,40 @@
 }
 
 - (void)loadCurrentPlaylist {
-    _archive = [NSMutableArray arrayWithArray:[[[_currentShow.lastShow loadSongs] reverseObjectEnumerator] allObjects]];
+    GetPlaylist *playlistService =
+        [[GetPlaylist alloc] initWithShowName:_currentShow.title date:@"2018-01-01"];
 
-    __block BOOL setup;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        setup = [self setupTableView];
-        [spinner stopAnimating];
-    });
-    
-    int i = 0;
-    [self.tableView beginUpdates];
-    for (Song *song in _archive) {
-        [song loadImage:^void () {
+    [playlistService request:^(WruwResult *result) {
+        if (result.success) {
+            Playlist *playlist = (Playlist *)[result success];
+
+            _archive = [[[[playlist songs] reverseObjectEnumerator] allObjects] mutableCopy];
+
+            __block BOOL setup;
+
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+                setup = [self setupTableView];
+                [spinner stopAnimating];
             });
-        }];
-        
-        i++;
-    }
-    [self.tableView endUpdates];
-    
-    [self.storeHouseRefreshControl finishingLoading];
+
+            int i = 0;
+            [self.tableView beginUpdates];
+            for (Song *song in _archive) {
+                [song loadImage:^void () {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+                    });
+                }];
+                
+                i++;
+            }
+            [self.tableView endUpdates];
+            
+            [self.storeHouseRefreshControl finishingLoading];
+        }
+    }];
 }
 
 - (void)updateCurrentPlaylist {

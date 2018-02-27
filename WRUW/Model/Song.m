@@ -25,11 +25,10 @@
 
 -(instancetype)initWithJson:(NSDictionary *)dict {
     if (self = [super init]) {
-        self.songName = dict[@"songName"];
-        self.artist = dict[@"artist"];
-        self.album = dict[@"album"];
-        self.label = dict[@"label"];
-        self.imageUrl = dict[@"imageUrl"];
+        self.songName = dict[@"SongName"];
+        self.artist = dict[@"ArtistName"];
+        self.album = dict[@"DiskName"];
+        self.label = dict[@"LabelName"];
     }
     
     return self;

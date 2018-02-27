@@ -2,14 +2,21 @@ import Foundation
 import Alamofire
 
 @objc class WruwAPIRouter: NSObject, URLRequestConvertible {
-    private let baseUrlString = "https://wruwapi.isaac-nicholas.com/"
+    private let baseUrlString = "https://wruwapi.isaac-nicholas.com"
 
     private let method: Alamofire.Method
     private let path: String
+
+    private var parameters: NSDictionary?
     
-    init(path: String, method: Alamofire.Method = .GET) {
+    init(
+        path: String,
+        method: Alamofire.Method = .GET,
+        parameters: NSDictionary? = nil
+    ) {
         self.path = path
         self.method = method
+        self.parameters = parameters
     }
 
     var URLRequest: NSMutableURLRequest {
@@ -19,13 +26,40 @@ import Alamofire
             return NSMutableURLRequest()
         }
         
-        print("Created url request: \(url.absoluteString ?? "")")
+        print("Created url request: \(path ?? "")", terminator: "\n\n")
         
-        let urlRequest = NSMutableURLRequest(URL: url)
-        
+        let urlRequest: NSMutableURLRequest
+
+        switch method {
+        case .GET:
+            let components =
+                NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+            components?.queryItems = parameters?.flatMap { (key, value) in
+                NSURLQueryItem(name: key as! String, value: value as? String)
+            }
+
+            urlRequest = components.flatMap { $0.URL }
+                .flatMap(NSMutableURLRequest.init(URL:))
+                ?? NSMutableURLRequest()
+
+        default:
+            urlRequest = NSMutableURLRequest(URL: url)
+
+            if let parameters = parameters {
+                do {
+                    urlRequest.HTTPBody = try NSJSONSerialization
+                        .dataWithJSONObject(parameters, options: [])
+                    print("HTTP Body: ", urlRequest.HTTPBody)
+                } catch {
+                    print("Error processing \(path) parameters")
+                    print("Parameters: ", parameters)
+                }
+            }
+        }
+
         // Set HTTP Method
         urlRequest.HTTPMethod = method.rawValue
-        
+
         // No Header in WRUW API
         return urlRequest
     }

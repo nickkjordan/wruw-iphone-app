@@ -1,5 +1,5 @@
-import Foundation
 import Alamofire
+import Foundation
 
 @objc class CurrentShow: NSObject, WruwAPIClient {
     typealias CompletionResult = Show
