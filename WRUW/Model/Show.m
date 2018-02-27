@@ -43,7 +43,7 @@
         self.time = dict[@"OnairTime"];
         self.genre = dict[@"ShowCategory"];
         self.lastShow = dict[@"lastShow"];
-        self.day = dict[@"day"];
+        self.day = dict[@"Weekdays"][0];
         self.infoDescription = dict[@"ShowDescription"];
     }
 

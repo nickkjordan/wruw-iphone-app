@@ -23,4 +23,8 @@ import Foundation
             .request(router)
             .responseJSON { completion(self.process($0)) }
     }
+
+    func processResultFrom(json: AnyObject) -> WruwResult {
+        return processElement(json)
+    }
 }
