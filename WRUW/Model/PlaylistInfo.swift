@@ -19,7 +19,7 @@ import Foundation
     static var dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
 
-        formatter.dateFormat = "yyyy-MM-DD"
+        formatter.dateFormat = "yyyy-MM-dd"
 
         return formatter
     }()

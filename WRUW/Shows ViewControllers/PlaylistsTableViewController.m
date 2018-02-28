@@ -55,8 +55,8 @@
     PlaylistInfo *thisPlaylist = [_playlists objectAtIndex:indexPath.row];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, yyyy"];
-    
+    formatter.dateStyle = NSDateFormatterMediumStyle;
+
     [[cell textLabel] setText:[formatter stringFromDate:thisPlaylist.date]];
     
     return cell;
