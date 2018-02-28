@@ -26,8 +26,6 @@ import Alamofire
             return NSMutableURLRequest()
         }
         
-        print("Created url request: \(path ?? "")", terminator: "\n\n")
-        
         let urlRequest: NSMutableURLRequest
 
         switch method {
@@ -38,9 +36,14 @@ import Alamofire
                 NSURLQueryItem(name: key as! String, value: value as? String)
             }
 
-            urlRequest = components.flatMap { $0.URL }
+            let addedFragmentsUrl = components.flatMap { $0.URL }
+
+            urlRequest = addedFragmentsUrl
                 .flatMap(NSMutableURLRequest.init(URL:))
-                ?? NSMutableURLRequest()
+                    ?? NSMutableURLRequest()
+            
+            print("Created url request:\n" +
+                "\t\(addedFragmentsUrl?.absoluteString ?? "")")
 
         default:
             urlRequest = NSMutableURLRequest(URL: url)
@@ -52,10 +55,11 @@ import Alamofire
                     print("HTTP Body: ", urlRequest.HTTPBody)
                 } catch {
                     print("Error processing \(path) parameters")
-                    print("Parameters: ", parameters)
                 }
             }
         }
+
+        print("")
 
         // Set HTTP Method
         urlRequest.HTTPMethod = method.rawValue

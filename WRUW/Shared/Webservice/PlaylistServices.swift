@@ -24,3 +24,32 @@ import Foundation
         return processElement(json)
     }
 }
+
+@objc class GetPlaylists: NSObject, WruwAPIClient {
+    typealias CompletionResult = [PlaylistInfo]
+
+    private let parameters: NSDictionary
+
+    var router: WruwAPIRouter {
+        return WruwAPIRouter(path: "/getshow.php", parameters: parameters)
+    }
+
+    init(showName: String) {
+        self.parameters = ["showname": showName]
+    }
+
+    @objc func request(completion: (WruwResult) -> Void) {
+        Alamofire
+            .request(router)
+            .responseJSON { completion(self.process($0)) }
+    }
+
+    func processResultFrom(json: AnyObject) -> WruwResult {
+        guard let json = json as? JSONDict,
+            let playlists = json["playlists"] else {
+            return WruwResult(failure: processingError)
+        }
+
+        return processArray(playlists)
+    }
+}

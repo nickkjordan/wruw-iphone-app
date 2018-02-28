@@ -86,12 +86,16 @@
     if (currentShowInfo.text.length == 0) {
         [spinner startAnimating];
     }
-//    [currentShow loadInfo:^(){
-//        [spinner stopAnimating];
-//        [self updateLabels];
-//        [[self playlistsButton] setEnabled:YES];
-//    }];
-    
+
+    GetPlaylists *playlistsService =
+        [[GetPlaylists alloc] initWithShowName:currentShow.path];
+
+    [playlistsService request:^(WruwResult *result) {
+        currentShow.playlists = result.success;
+        [spinner stopAnimating];
+        [[self playlistsButton] setEnabled:YES];
+    }];
+
     currentShowInfo.editable = YES;
     currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
     currentShowInfo.contentInset = UIEdgeInsetsMake(0,-4,0,0);
@@ -100,14 +104,12 @@
 
 -(void)updateLabels
 {
-    NSArray *timeComponents = [currentShow.time componentsSeparatedByString:@" "];
-    NSRange wordRange = NSMakeRange(timeComponents.count - 5, 5);
-    NSArray *firstWords = [timeComponents subarrayWithRange:wordRange];
-    NSString *timeFrame = [firstWords componentsJoinedByString:@" "];
+    //curent show.startTime - currentShow.endTime
+    NSString *days = [currentShow.days componentsJoinedByString:@", "];
     
     [currentShowTitle setText:currentShow.title];
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [currentShow.host uppercaseString]]];
-    [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.days, timeFrame]];
+    [currentShowTime setText:[NSString stringWithFormat:@"on %@ from ", days]];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];
     [self adjustHeightOfInfoView];

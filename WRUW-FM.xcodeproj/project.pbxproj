@@ -53,6 +53,7 @@
 		015A16391A929724000FC518 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 015A16381A929724000FC518 /* heart_64.png */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		015CB28F1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */; };
+		016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A21CB2047382300474490 /* PlaylistInfo.swift */; };
 		016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016C99111A93F522008634DA /* EmptyFavoritesView.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
@@ -177,6 +178,7 @@
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WruwStorehouseIconList.plist; sourceTree = "<group>"; };
+		016A21CB2047382300474490 /* PlaylistInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
 		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
 		016C99111A93F522008634DA /* EmptyFavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFavoritesView.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW-FM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WRUW-FM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -553,6 +555,7 @@
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
 				01F40DC918398F1500BFA783 /* Playlist.h */,
+				016A21CB2047382300474490 /* PlaylistInfo.swift */,
 				01F40DCA18398F1500BFA783 /* Playlist.m */,
 				019316DA183B5E67007755E8 /* Song.h */,
 				019316DB183B5E67007755E8 /* Song.m */,
@@ -861,6 +864,7 @@
 				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,
 				01997EC51C8CE2390007C38D /* CircleView.swift in Sources */,
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
+				016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
