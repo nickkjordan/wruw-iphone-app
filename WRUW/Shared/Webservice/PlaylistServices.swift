@@ -11,10 +11,6 @@ import Foundation
     private let parameters: NSDictionary
 
     init(showName: String, date: String) {
-        let showName = showName
-            .lowercaseString
-            .stringByReplacingOccurrencesOfString(" ", withString: "-")
-        
         self.parameters = ["showname": showName, "date": date]
     }
 

@@ -61,6 +61,23 @@
     [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
 }
 
+- (NSString *)path {
+    NSCharacterSet *nonLetterSet = [NSCharacterSet punctuationCharacterSet];
+
+    NSString *base = [[_title.lowercaseString
+                       componentsSeparatedByCharactersInSet:nonLetterSet]
+                      componentsJoinedByString:@""];
+
+    return [base stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+}
+
++ (NSString *)formatPathForDate:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+
+    return [formatter stringFromDate:date];
+}
+
 - (BOOL)isEqualToShow:(Show *)show {
     
     if(!show) {

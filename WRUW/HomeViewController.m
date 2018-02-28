@@ -98,8 +98,12 @@
 }
 
 - (void)loadCurrentPlaylist {
-    GetPlaylist *playlistService =
-        [[GetPlaylist alloc] initWithShowName:_currentShow.title date:@"2018-02-27"];
+    NSDate *todaysDate = [[NSDate alloc] init];
+    NSString *todaysDateString = [Show formatPathForDate:todaysDate];
+
+    GetPlaylist *playlistService = [[GetPlaylist alloc]
+                                    initWithShowName: _currentShow.path
+                                    date: todaysDateString];
 
     [playlistService request:^(WruwResult *result) {
         if (result.success) {
