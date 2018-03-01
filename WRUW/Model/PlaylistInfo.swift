@@ -1,7 +1,7 @@
 import Foundation
 
 @objc class PlaylistInfo: NSObject, JSONConvertible {
-    let id: Int,
+    @objc let id: Int,
     date: NSDate,
     showName: String
 
@@ -23,4 +23,8 @@ import Foundation
 
         return formatter
     }()
+
+    @objc var dateString: String {
+        return PlaylistInfo.dateFormatter.stringFromDate(self.date)
+    }
 }

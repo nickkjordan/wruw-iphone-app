@@ -88,7 +88,7 @@
     }
 
     GetPlaylists *playlistsService =
-        [[GetPlaylists alloc] initWithShowName:currentShow.path];
+        [[GetPlaylists alloc] initWithShowName:currentShow.title.asQuery];
 
     [playlistsService request:^(WruwResult *result) {
         currentShow.playlists = result.success;

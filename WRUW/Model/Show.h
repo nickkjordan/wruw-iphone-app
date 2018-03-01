@@ -19,8 +19,6 @@ typedef void (^LoadShowBlock)();
 
 - (instancetype)initWithJson:(NSDictionary *)dict;
 
-- (NSString *)path;
-
 + (NSString *)formatPathForDate:(NSDate *)date;
 
 @end

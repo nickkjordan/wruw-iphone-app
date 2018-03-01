@@ -104,7 +104,7 @@
     NSString *todaysDateString = [Show formatPathForDate:todaysDate];
 
     GetPlaylist *playlistService = [[GetPlaylist alloc]
-                                    initWithShowName: _currentShow.path
+                                    initWithShowName: _currentShow.title.asQuery
                                     date: todaysDateString];
 
     [playlistService request:^(WruwResult *result) {

@@ -83,6 +83,7 @@
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
+		01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */; };
 		01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */; };
 		01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */; };
 		01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF621C8B663600AD1E95 /* Theme.swift */; };
@@ -219,6 +220,7 @@
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebserviceHelpers.swift; path = Shared/Webservice/WebserviceHelpers.swift; sourceTree = "<group>"; };
 		01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extensions.swift"; path = "Core Extensions/UIView+extensions.swift"; sourceTree = "<group>"; };
 		01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType+extensions.swift"; path = "Core Extensions/SequenceType+extensions.swift"; sourceTree = "<group>"; };
 		01CAFF621C8B663600AD1E95 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Shared/Theme.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				01B94BA720437724000874E1 /* WruwWebservice.swift */,
 				019D9FD220438D1900C05026 /* ShowServices.swift */,
 				0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */,
+				01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				01997EC51C8CE2390007C38D /* CircleView.swift in Sources */,
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */,
+				01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
