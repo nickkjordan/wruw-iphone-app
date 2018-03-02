@@ -33,6 +33,16 @@
             });
 
             int i = 0;
+
+            for (Song *song in _archive.songs) {
+                GetReleases *releasesService =
+                    [[GetReleases alloc] initWithRelease:song.album
+                                                  artist:song.artist];
+
+                [releasesService request:^(WruwResult *result) {
+                    printf("%s", result.success);
+                }];
+            }
 //            for (Playlist *playlist in _archive) {
 //                [song loadImage:^void () {
 //                    dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,28 +58,21 @@
     }];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setTitle:currentPlaylist.dateString];
     [self setupTableView];
     
     spinner = [[UIActivityIndicatorView alloc] init];
-    spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
+    spinner.center =
+        CGPointMake(self.view.frame.size.width / 2.0,
+                    self.view.frame.size.height / 2.0);
+    
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [[ThemeManager current] wruwMainOrangeColor];
     [self.view addSubview:spinner];
-    
+
     [spinner startAnimating];
     
     [self loadSongs];
@@ -83,26 +86,31 @@
 
 #pragma mark - Table view delegate
 
-- (BOOL)setupTableView
-{
-    TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
-        [cell configureForSong:song controlView:self];
-    };
+- (BOOL)setupTableView {
+    TableViewCellConfigureBlock configureCell =
+        ^(SongTableViewCell *cell, Song *song) {
+            [cell configureForSong:song controlView:self];
+        };
+
     self.songsArrayDataSource =
         [[ArrayDataSource alloc] initWithItems:_archive.songs.mutableCopy
                                 cellIdentifier:@"SongTableViewCell"
                             configureCellBlock:configureCell];
 
     self.tableView.dataSource = self.songsArrayDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell"
+                                               bundle:nil ]
+         forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
     
     return YES;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+- (NSIndexPath *)tableView:(UITableView *)tableView
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SongTableViewCell *cell =
+        (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+
     if ([cell isSelected]) {
         // Deselect manually.
         [tableView deselectRowAtIndexPath:indexPath animated:YES];

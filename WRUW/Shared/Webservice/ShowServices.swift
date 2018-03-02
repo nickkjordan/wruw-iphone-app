@@ -4,13 +4,13 @@ import Foundation
 @objc class CurrentShow: NSObject, WruwAPIClient {
     typealias CompletionResult = Show
     
-    var router: WruwAPIRouter {
+    var router: NSUrlRequestConvertible {
         return WruwAPIRouter(path: "/currentshow.php")
     }
 
     @objc func request(completion: (WruwResult) -> Void) {
         Alamofire
-            .request(router)
+            .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }
 
@@ -22,13 +22,13 @@ import Foundation
 @objc class GetAllShows: NSObject, WruwAPIClient {
     typealias CompletionResult = [Show]
 
-    var router: WruwAPIRouter {
+    var router: NSUrlRequestConvertible {
         return WruwAPIRouter(path: "/getfullplaylist.php") 
     }
 
     @objc func request(completion: (WruwResult) -> Void) {
         Alamofire
-            .request(router)
+            .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }
 

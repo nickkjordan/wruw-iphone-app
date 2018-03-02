@@ -4,7 +4,7 @@ import Foundation
 @objc class GetPlaylist: NSObject, WruwAPIClient {
     typealias CompletionResult = Playlist
 
-    var router: WruwAPIRouter {
+    var router: NSUrlRequestConvertible {
         return WruwAPIRouter(path: "/getplaylist.php", parameters: parameters)
     }
 
@@ -16,7 +16,7 @@ import Foundation
 
     @objc func request(completion: (WruwResult) -> Void) {
         Alamofire
-            .request(router)
+            .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }
 
@@ -30,7 +30,7 @@ import Foundation
 
     private let parameters: NSDictionary
 
-    var router: WruwAPIRouter {
+    var router: NSUrlRequestConvertible {
         return WruwAPIRouter(path: "/getshow.php", parameters: parameters)
     }
 
@@ -40,7 +40,7 @@ import Foundation
 
     @objc func request(completion: (WruwResult) -> Void) {
         Alamofire
-            .request(router)
+            .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }
 

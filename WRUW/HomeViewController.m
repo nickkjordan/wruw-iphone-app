@@ -123,6 +123,15 @@
             int i = 0;
             [self.tableView beginUpdates];
             for (Song *song in _archive) {
+                GetReleases *releasesService =
+                [[GetReleases alloc] initWithRelease:song.album
+                                              artist:song.artist];
+
+                [releasesService request:^(WruwResult *result) {
+                    printf("%s", result.success);
+                }];
+            }
+            for (Song *song in _archive) {
                 [song loadImage:^void () {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
