@@ -35,12 +35,26 @@
             int i = 0;
 
             for (Song *song in _archive.songs) {
+                if (song.album.length == 0 && song.artist.length == 0) {
+                    continue;
+                }
+
                 GetReleases *releasesService =
                     [[GetReleases alloc] initWithRelease:song.album
                                                   artist:song.artist];
 
                 [releasesService request:^(WruwResult *result) {
-                    printf("%s", result.success);
+                    Release *release = [(NSArray *)result.success firstObject];
+                    if (release.id.length == 0) {
+                        return;
+                    }
+
+                    GetCoverArt *coverArtService =
+                        [[GetCoverArt alloc] initWithReleaseId:release.id];
+
+                    [coverArtService request:^(WruwResult *result) {
+                        song.image = result.success;
+                    }];
                 }];
             }
 //            for (Playlist *playlist in _archive) {

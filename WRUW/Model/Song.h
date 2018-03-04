@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol JSONConvertible;
 
@@ -8,10 +9,9 @@
 @property (nonatomic, copy) NSString *songName;
 @property (nonatomic, copy) NSString *album;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) UIImage *image;
 
 -(BOOL)isEqualToSong:(Song *)song;
--(void)loadImage:(void (^)())succeeded;
 -(NSString *)formatForURL:(NSString *)string;
 
 - (instancetype)initWithJson:(NSDictionary *)dict;

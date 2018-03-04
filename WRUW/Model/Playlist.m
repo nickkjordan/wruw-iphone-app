@@ -24,10 +24,12 @@
     if (self = [super init]) {
         NSMutableArray *songs = [[NSMutableArray alloc] init];
 
-        for (NSDictionary *song in dict[@"songs"]) {
-            Song *playlistSong = [[Song alloc] initWithJson:song];
+        if ([dict[@"songs"] isKindOfClass:[NSArray class]]) {
+            for (NSDictionary *song in dict[@"songs"]) {
+                Song *playlistSong = [[Song alloc] initWithJson:song];
 
-            [songs addObject:playlistSong];
+                [songs addObject:playlistSong];
+            }
         }
 
         self.songs = songs;

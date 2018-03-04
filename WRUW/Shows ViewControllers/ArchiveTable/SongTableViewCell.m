@@ -218,11 +218,8 @@
     self.currentSong = song;
     self.ctrl = c;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork" ofType:@"png"];
-    
-    UIImage *placeholder = [UIImage imageWithContentsOfFile:path];
-    [self.thumbnailImageView setImageWithURL:[NSURL URLWithString:song.imageUrl] placeholderImage:placeholder];
-    
+    [thumbnailImageView setImage:song.image];
+
 }
 
 @end

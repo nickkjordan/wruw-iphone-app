@@ -18,10 +18,10 @@ import Alamofire
     private let parameters: NSDictionary?
 
     init(release: String, artist: String) {
-        let query = "release:\(release) artist:\(artist)"
+        let query = "release:\(release) AND artist:\(artist)"
 
         parameters = [
-            "query": query.insertingAndInSpaces,
+            "query": query,
             "fmt": "json"
         ]
     }
@@ -39,11 +39,5 @@ import Alamofire
         }
 
         return processArray(releases)
-    }
-}
-
-private extension String {
-    var insertingAndInSpaces: String {
-        return stringByReplacingOccurrencesOfString(" ", withString: " AND ")
     }
 }

@@ -95,6 +95,7 @@
 		01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */; };
 		01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058C2049C8FA006F8012 /* ReleasesServices.swift */; };
 		01ED058F2049CBDA006F8012 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058E2049CBDA006F8012 /* Release.swift */; };
+		01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED05902049D1E6006F8012 /* CoverArtServices.swift */; };
 		01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DBF18396A7800BFA783 /* CoreMedia.framework */; };
 		01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC118396A8900BFA783 /* AVFoundation.framework */; };
 		01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC318396A9200BFA783 /* MediaPlayer.framework */; };
@@ -237,6 +238,7 @@
 		01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicBrainzAPIRouter.swift; path = Shared/Webservice/MusicBrainzAPIRouter.swift; sourceTree = "<group>"; };
 		01ED058C2049C8FA006F8012 /* ReleasesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReleasesServices.swift; path = Shared/Webservice/ReleasesServices.swift; sourceTree = "<group>"; };
 		01ED058E2049CBDA006F8012 /* Release.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
+		01ED05902049D1E6006F8012 /* CoverArtServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverArtServices.swift; path = Shared/Webservice/CoverArtServices.swift; sourceTree = "<group>"; };
 		01F40DBF18396A7800BFA783 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		01F40DC118396A8900BFA783 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		01F40DC318396A9200BFA783 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -495,6 +497,7 @@
 				01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */,
 				01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */,
 				01ED058C2049C8FA006F8012 /* ReleasesServices.swift */,
+				01ED05902049D1E6006F8012 /* CoverArtServices.swift */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -847,6 +850,7 @@
 				01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */,
 				01ED058F2049CBDA006F8012 /* Release.swift in Sources */,
 				019316DC183B5E67007755E8 /* Song.m in Sources */,
+				01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */,
 				01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
 				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,

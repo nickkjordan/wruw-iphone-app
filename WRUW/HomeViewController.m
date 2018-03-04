@@ -131,17 +131,17 @@
                     printf("%s", result.success);
                 }];
             }
-            for (Song *song in _archive) {
-                [song loadImage:^void () {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-                    });
-                }];
-                
-                i++;
-            }
+//            for (Song *song in _archive) {
+//                [song loadImage:^void () {
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+//                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+//                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+//                    });
+//                }];
+//                
+//                i++;
+//            }
             [self.tableView endUpdates];
             
             [self.storeHouseRefreshControl finishingLoading];
@@ -163,20 +163,20 @@
     
     int i = 0;
     [self.tableView beginUpdates];
-    for (Song *song in newSongs) {
-        [song loadImage:^void () {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-            });
-        }];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-        
-        i++;
-    }
+//    for (Song *song in newSongs) {
+//        [song loadImage:^void () {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+//                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+//                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+//            });
+//        }];
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+//        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+//        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
+//        
+//        i++;
+//    }
     [self.tableView endUpdates];
     
     [self.storeHouseRefreshControl finishingLoading];

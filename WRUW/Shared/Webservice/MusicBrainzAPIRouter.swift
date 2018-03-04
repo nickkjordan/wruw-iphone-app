@@ -23,29 +23,37 @@ extension MusicBrainzApiRouter: URLRequestConvertible {
                 return NSMutableURLRequest()
         }
 
-        let urlRequest: NSMutableURLRequest
+        let urlRequest = NSMutableURLRequest(URL: url)
+        let encoding = customEncoding
+        let parameters = self.parameters as? [String: AnyObject]
 
-        let components =
-            NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
-        components?.queryItems = parameters?.flatMap { (key, value) in
-            NSURLQueryItem(name: key as! String, value: value as? String)
-        }
-
-        let addedFragmentsUrl = components.flatMap { $0.URL }
-
-        urlRequest = addedFragmentsUrl
-            .flatMap(NSMutableURLRequest.init(URL:))
-            ?? NSMutableURLRequest()
+        let (request, _) = encoding.encode(urlRequest, parameters: parameters)
 
         print("Created url request:\n" +
-            "\t\(addedFragmentsUrl?.absoluteString ?? "")")
+            "\t\(request.URLString)")
 
         print("")
 
         // Set HTTP Method
-        urlRequest.HTTPMethod = method.rawValue
+        request.HTTPMethod = method.rawValue
 
         // No Header in WRUW API
-        return urlRequest
+        return request
+    }
+}
+
+private extension MusicBrainzApiRouter {
+    var customEncoding: ParameterEncoding {
+        return ParameterEncoding.Custom { requestConvertible, parameters in
+            let (mutableRequest, error) = ParameterEncoding.URL
+                .encode(requestConvertible, parameters: parameters)
+
+            let urlString = mutableRequest.URLString
+                .stringByReplacingOccurrencesOfString("%3A", withString: ":")
+
+            mutableRequest.URL = NSURL(string: urlString)
+
+            return (mutableRequest, error)
+        }
     }
 }
