@@ -53,20 +53,26 @@
                         [[GetCoverArt alloc] initWithReleaseId:release.id];
 
                     [coverArtService request:^(WruwResult *result) {
+                        if (!result.success) {
+                            return;
+                        }
+                        
                         song.image = result.success;
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                            NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                            [self.tableView reloadRowsAtIndexPaths:indexArray
+                                                  withRowAnimation:UITableViewRowAnimationNone];
+                        });
                     }];
                 }];
+                
+                i++;
             }
 //            for (Playlist *playlist in _archive) {
 //                [song loadImage:^void () {
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-//                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-//                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-//                    });
-//                }];
 //                
-//                i++;
 //            }
         }
     }];
