@@ -79,7 +79,7 @@
 		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
-		01B94BA820437724000874E1 /* WruwWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwWebservice.swift */; };
+		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -221,7 +221,7 @@
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
-		01B94BA720437724000874E1 /* WruwWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwWebservice.swift; path = Shared/Webservice/WruwWebservice.swift; sourceTree = "<group>"; };
+		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -339,6 +339,26 @@
 				01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */,
 			);
 			name = "Core Extensions";
+			sourceTree = "<group>";
+		};
+		014C4327204DD83200B09F6F /* MusicBrainz */ = {
+			isa = PBXGroup;
+			children = (
+				01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */,
+				01ED058C2049C8FA006F8012 /* ReleasesServices.swift */,
+				01ED05902049D1E6006F8012 /* CoverArtServices.swift */,
+			);
+			name = MusicBrainz;
+			sourceTree = "<group>";
+		};
+		014C4328204DD83F00B09F6F /* WRUW */ = {
+			isa = PBXGroup;
+			children = (
+				01B94BA720437724000874E1 /* WruwApiRouter.swift */,
+				019D9FD220438D1900C05026 /* ShowServices.swift */,
+				0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */,
+			);
+			name = WRUW;
 			sourceTree = "<group>";
 		};
 		0170902D17DBA8F80005EC0F = {
@@ -490,14 +510,10 @@
 		01B94BA620437705000874E1 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
-				01B94BA720437724000874E1 /* WruwWebservice.swift */,
-				019D9FD220438D1900C05026 /* ShowServices.swift */,
-				0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */,
-				01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */,
 				01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */,
-				01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */,
-				01ED058C2049C8FA006F8012 /* ReleasesServices.swift */,
-				01ED05902049D1E6006F8012 /* CoverArtServices.swift */,
+				01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */,
+				014C4327204DD83200B09F6F /* MusicBrainz */,
+				014C4328204DD83F00B09F6F /* WRUW */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -854,7 +870,7 @@
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
-				01B94BA820437724000874E1 /* WruwWebservice.swift in Sources */,
+				01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,

@@ -5,7 +5,7 @@ import Foundation
     typealias CompletionResult = Show
     
     var router: NSUrlRequestConvertible {
-        return WruwAPIRouter(path: "/currentshow.php")
+        return WruwApiRouter(path: "/currentshow.php")
     }
 
     @objc func request(completion: (WruwResult) -> Void) {
@@ -23,7 +23,7 @@ import Foundation
     typealias CompletionResult = [Show]
 
     var router: NSUrlRequestConvertible {
-        return WruwAPIRouter(path: "/getfullplaylist.php") 
+        return WruwApiRouter(path: "/getfullplaylist.php")
     }
 
     @objc func request(completion: (WruwResult) -> Void) {

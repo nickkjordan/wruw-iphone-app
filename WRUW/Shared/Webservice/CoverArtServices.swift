@@ -50,10 +50,10 @@ extension CoverArtApiRouter: URLRequestConvertible {
     }
 
     func request(completion: (WruwResult) -> Void) {
-        Alamofire.Manager.sharedInstance.delegate
-            .taskWillPerformHTTPRedirection = {
-            Alamofire.Manager.sharedInstance.delegate
-                .taskWillPerformHTTPRedirection = nil
+        let alamofire = Alamofire.Manager.sharedInstance
+
+        alamofire.delegate.taskWillPerformHTTPRedirection = {
+            alamofire.delegate.taskWillPerformHTTPRedirection = nil
             return $0.3
         }
 

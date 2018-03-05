@@ -1,7 +1,7 @@
 import Foundation
 import Alamofire
 
-@objc class WruwAPIRouter: NSObject, APIRouter, URLRequestConvertible {
+@objc class WruwApiRouter: NSObject, APIRouter, URLRequestConvertible {
     let baseUrlString = "https://wruwapi.isaac-nicholas.com"
 
     var method: Alamofire.Method = .GET
@@ -28,20 +28,13 @@ import Alamofire
 
         switch method {
         case .GET:
-            let components =
-                NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
-            components?.queryItems = parameters?.flatMap { (key, value) in
-                NSURLQueryItem(name: key as! String, value: value as? String)
-            }
+            let request = NSMutableURLRequest(URL: url)
+            let encoding = Alamofire.ParameterEncoding.URL
+            let parameters = self.parameters as? [String: AnyObject]
 
-            let addedFragmentsUrl = components.flatMap { $0.URL }
+            (urlRequest, _) = encoding.encode(request, parameters: parameters)
 
-            urlRequest = addedFragmentsUrl
-                .flatMap(NSMutableURLRequest.init(URL:))
-                    ?? NSMutableURLRequest()
-            
-            print("Created url request:\n" +
-                "\t\(addedFragmentsUrl?.absoluteString ?? "")")
+            print("Created url request:\n\t\(urlRequest.URLString)")
 
         default:
             urlRequest = NSMutableURLRequest(URL: url)

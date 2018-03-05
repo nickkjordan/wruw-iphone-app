@@ -4,7 +4,6 @@ import Alamofire
 @objc protocol APIRouter: NSUrlRequestConvertible {
     var baseUrlString: String { get }
 
-//    var method: String { get }
     var path: String { get }
 
     var parameters: NSDictionary? { get set }

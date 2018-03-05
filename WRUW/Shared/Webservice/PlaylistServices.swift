@@ -5,7 +5,7 @@ import Foundation
     typealias CompletionResult = Playlist
 
     var router: NSUrlRequestConvertible {
-        return WruwAPIRouter(path: "/getplaylist.php", parameters: parameters)
+        return WruwApiRouter(path: "/getplaylist.php", parameters: parameters)
     }
 
     private let parameters: NSDictionary
@@ -31,7 +31,7 @@ import Foundation
     private let parameters: NSDictionary
 
     var router: NSUrlRequestConvertible {
-        return WruwAPIRouter(path: "/getshow.php", parameters: parameters)
+        return WruwApiRouter(path: "/getshow.php", parameters: parameters)
     }
 
     init(showName: String) {
