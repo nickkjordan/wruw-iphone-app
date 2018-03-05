@@ -1,7 +1,4 @@
 #import "Song.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "AFOnoResponseSerializer.h"
-#import "ONOXMLDocument.h"
 #import "WRUWModule-Swift.h"
 
 @implementation Song

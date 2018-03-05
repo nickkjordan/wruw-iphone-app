@@ -3,8 +3,6 @@
 
 @protocol JSONConvertible;
 
-typedef void (^LoadShowBlock)();
-
 @interface Show : NSObject <JSONConvertible>
 
 @property (nonatomic, copy) NSString *title;

@@ -11,7 +11,6 @@
 #import "TFHpple.h"
 #import "Show.h"
 #import "DisplayViewController.h"
-#import "AFHTTPRequestOperationManager.h"
 #import "WRUWModule-Swift.h"
 
 @interface ShowsTableViewController () {

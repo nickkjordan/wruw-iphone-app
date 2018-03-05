@@ -7,9 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "AFHTTPRequestOperationManager.h"
-#import "AFOnoResponseSerializer.h"
-#import "Ono.h"
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
 #import "Show.h"
@@ -39,37 +36,7 @@
     }
 }
 
-- (void)checkConnection
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [manager GET:@"http://www.wruw.org" parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-        [self loadHomePage:responseObject];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertController *alert =
-            [UIAlertController alertControllerWithTitle:@"No Connection"
-                                                message:@"Make sure you are connected to the internet, then drag down on \"Now Playing\" to reload."
-                                         preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* ok =
-            [UIAlertAction actionWithTitle:@"OK"
-                                     style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction * action) {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                             }];
-        
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        [self.storeHouseRefreshControl finishingLoading];
-        [spinner stopAnimating];
-        return;
-    }];
-    
-}
-
-- (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
+- (void)loadHomePage {
     CurrentShow *currentShowService = [[CurrentShow alloc] init];
 
     [currentShowService request:^(WruwResult *result) {
@@ -94,7 +61,23 @@
         }
 
         if (result.failure) {
+            UIAlertController *alert =
+            [UIAlertController alertControllerWithTitle:@"No Connection"
+                                                message:@"Make sure you are connected to the internet, then drag down on \"Now Playing\" to reload."
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok =
+            [UIAlertAction actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                   }];
 
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+
+            [self.storeHouseRefreshControl finishingLoading];
+            [spinner stopAnimating];
+            return;
         }
     }];
 }
@@ -186,9 +169,8 @@
     [super viewDidLoad];
     
     [self setTitle:@"Now Playing"];
-    [ARAnalytics event:@"Screen view" withProperties:@{
-                                                       @"screen": @"Home View"
-                                                       }];
+    [ARAnalytics event:@"Screen view"
+        withProperties:@{ @"screen": @"Home View" }];
     
     self.tableView.delegate = self;
     
@@ -213,10 +195,8 @@
     [hostLabel setText:[NSString stringWithFormat:@""]];
     showDescription.editable = NO;
     
-    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
-    
-    dispatch_async(myQueue, ^{ [self checkConnection]; });
-    
+    [self loadHomePage];
+
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     
@@ -243,12 +223,16 @@
                                      reverseLoadingAnimation:YES
                                      internalAnimationFactor:0.5];
     
-    [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkConnection) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:60.0
+                                     target:self
+                                   selector:@selector(loadCoverArt)
+                                   userInfo:nil
+                                    repeats:YES];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self.streamPlay
-                                            selector:@selector(didAppear)
-                                                name:UIApplicationDidBecomeActiveNotification
-                                              object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self.streamPlay
+                                             selector:@selector(didAppear)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -271,16 +255,20 @@
 
 #pragma mark - Table view data source
 
-- (BOOL)setupTableView
-{
+- (BOOL)setupTableView {
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
     };
-    self.songsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_archive
-                                                        cellIdentifier:@"SongTableViewCell"
-                                                    configureCellBlock:configureCell];
+
+    self.songsArrayDataSource =
+        [[ArrayDataSource alloc] initWithItems:_archive
+                                cellIdentifier:@"SongTableViewCell"
+                            configureCellBlock:configureCell];
     self.tableView.dataSource = self.songsArrayDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
     
     return true;
@@ -288,9 +276,11 @@
 
 #pragma mark – Table view delegate
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+- (NSIndexPath *)tableView:(UITableView *)tableView
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SongTableViewCell *cell =
+        (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+
     if ([cell isSelected]) {
         // Deselect manually.
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -303,26 +293,22 @@
 
 #pragma mark - Navigation Bar delegate
 
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
 }
 
 #pragma mark - Scroll view delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.storeHouseRefreshControl scrollViewDidScroll];
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self.storeHouseRefreshControl scrollViewDidEndDragging];
 }
 
-- (void)refreshTriggered
-{
-    [self checkConnection];
+- (void)refreshTriggered {
+    [self loadHomePage];
 }
 
 @end

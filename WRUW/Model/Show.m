@@ -1,14 +1,8 @@
 #import "Show.h"
-#import "AFHTTPRequestOperationManager.h"
-#import "AFOnoResponseSerializer.h"
-#import "ONOXMLDocument.h"
 #import "Playlist.h"
 #import "WRUWModule-Swift.h"
 
 @implementation Show
-{
-    ONOXMLElement *showHeader;
-}
 
 @synthesize title = _title;
 @synthesize url = _url;

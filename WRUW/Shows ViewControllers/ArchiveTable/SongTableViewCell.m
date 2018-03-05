@@ -7,8 +7,6 @@
 //
 
 #import "SongTableViewCell.h"
-#import "AFHTTPRequestOperationManager.h"
-#import "UIImageView+AFNetworking.h"
 #import <QuartzCore/CALayer.h>
 
 @interface SongTableViewCell(){
