@@ -8,8 +8,6 @@
 @property (nonatomic, copy) NSString *idValue;
 @property (nonatomic, copy) NSArray *songs;
 
--(NSMutableArray *)loadSongs;
-
 -(instancetype)initWithJson:(NSDictionary *)dict;
 
 @end

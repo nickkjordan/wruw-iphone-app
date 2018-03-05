@@ -74,7 +74,7 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - MPRemoteCommandCenter
 
-    private let changePlayerSelector: Selector = "changePlayerStatus"
+    private let changePlayerSelector: Selector = #selector(changePlayerStatus)
 
     private func setupRemoteControlEvents() {
         let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()

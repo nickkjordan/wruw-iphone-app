@@ -1,11 +1,3 @@
-//
-//  HomeTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 1/31/14.
-//  Copyright (c) 2014 Nick Jordan. All rights reserved.
-//
-
 #import "HomeViewController.h"
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
@@ -82,15 +74,21 @@
     }];
 }
 
-- (void)loadCurrentPlaylist {
+- (void)loadPlaylistForShow:(Show *)show completion:(void (^) (WruwResult *))completion {
     NSDate *todaysDate = [[NSDate alloc] init];
     NSString *todaysDateString = [Show formatPathForDate:todaysDate];
 
     GetPlaylist *playlistService = [[GetPlaylist alloc]
-                                    initWithShowName: _currentShow.title.asQuery
+                                    initWithShowName: show.title.asQuery
                                     date: todaysDateString];
 
     [playlistService request:^(WruwResult *result) {
+        completion(result);
+    }];
+}
+
+- (void)loadCurrentPlaylist {
+    [self loadPlaylistForShow:_currentShow completion:^(WruwResult *result) {
         if (result.success) {
             Playlist *playlist = (Playlist *)[result success];
 
@@ -149,19 +147,22 @@
 }
 
 - (void)updateCurrentPlaylist {
-    NSMutableArray *updatedPlaylist = [_currentShow.lastShow loadSongs];
+    [self loadPlaylistForShow:_currentShow completion:^(WruwResult *result) {
+        if (result.success) {
+            Playlist *playlist = (Playlist *)[result success];
 
-    // 8
-    NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[updatedPlaylist reverseObjectEnumerator] allObjects]];
-    [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
+            NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[playlist.songs reverseObjectEnumerator] allObjects]];
+            [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
 
-    NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
-                           NSMakeRange(0,[newSongs count])];
-    [_archive insertObjects:newSongs atIndexes:indexes];
+            NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
+                                   NSMakeRange(0,[newSongs count])];
+            [_archive insertObjects:newSongs atIndexes:indexes];
 
-    [self loadCoverArt];
-    
-    [self.storeHouseRefreshControl finishingLoading];
+            [self loadCoverArt];
+
+            [self.storeHouseRefreshControl finishingLoading];
+        }
+    }];
 }
 
 - (void)viewDidLoad

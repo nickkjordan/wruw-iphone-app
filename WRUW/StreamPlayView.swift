@@ -20,7 +20,7 @@ import MediaPlayer
 
     private lazy var animatedPlayPauseButton: AnimatedButton = {
         return AnimatedButton(viewModel: self.viewModel)
-            .onTap(target: self, selector: "didTapPlayer")
+            .onTap(target: self, selector: #selector(didTapPlayer))
     }()
 
     func didTapPlayer() {

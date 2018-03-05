@@ -29,6 +29,8 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
     thumbnailImageView.layer.shadowColor = [UIColor blackColor].CGColor;
     thumbnailImageView.layer.shadowOffset = CGSizeMake(2, 2);
     thumbnailImageView.layer.shadowOpacity = 0.36;
@@ -42,8 +44,7 @@
     view.clipsToBounds = NO;
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:nameLabel.text];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:0];
@@ -202,8 +203,7 @@
     return self;
 }
 
-- (void)configureForSong:(Song *)song controlView:(UIViewController *)c
-{
+- (void)configureForSong:(Song *)song controlView:(UIViewController *)c {
     NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:song.songName];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:0];
