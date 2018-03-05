@@ -120,64 +120,63 @@
                 [spinner stopAnimating];
             });
 
-            int i = 0;
-            [self.tableView beginUpdates];
-            for (Song *song in _archive) {
-                GetReleases *releasesService =
-                [[GetReleases alloc] initWithRelease:song.album
-                                              artist:song.artist];
-
-                [releasesService request:^(WruwResult *result) {
-                    printf("%s", result.success);
-                }];
-            }
-//            for (Song *song in _archive) {
-//                [song loadImage:^void () {
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-//                        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-//                        [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-//                    });
-//                }];
-//                
-//                i++;
-//            }
-            [self.tableView endUpdates];
+            [self loadCoverArt];
             
             [self.storeHouseRefreshControl finishingLoading];
         }
     }];
 }
 
+- (void)loadCoverArt {
+    int i = 0;
+    [self.tableView beginUpdates];
+
+    for (Song *song in _archive) {
+        GetReleases *releasesService =
+        [[GetReleases alloc] initWithRelease:song.album
+                                      artist:song.artist];
+
+        [releasesService request:^(WruwResult *result) {
+            Release *release = [(NSArray *)result.success firstObject];
+            if (release.id.length == 0) {
+                return;
+            }
+
+            GetCoverArt *coverArtService =
+            [[GetCoverArt alloc] initWithReleaseId:release.id];
+
+            [coverArtService request:^(WruwResult *result) {
+                if (!result.success) {
+                    return;
+                }
+
+                song.image = result.success;
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                    NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+                    [self.tableView reloadRowsAtIndexPaths:indexArray
+                                          withRowAnimation:UITableViewRowAnimationNone];
+                });
+            }];
+        }];
+    }
+
+    [self.tableView endUpdates];
+}
+
 - (void)updateCurrentPlaylist {
-    
     NSMutableArray *updatedPlaylist = [_currentShow.lastShow loadSongs];
-    
+
     // 8
     NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[updatedPlaylist reverseObjectEnumerator] allObjects]];
     [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
-    
+
     NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
                            NSMakeRange(0,[newSongs count])];
     [_archive insertObjects:newSongs atIndexes:indexes];
-    
-    int i = 0;
-    [self.tableView beginUpdates];
-//    for (Song *song in newSongs) {
-//        [song loadImage:^void () {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-//                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-//                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-//            });
-//        }];
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-//        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-//        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-//        
-//        i++;
-//    }
-    [self.tableView endUpdates];
+
+    [self loadCoverArt];
     
     [self.storeHouseRefreshControl finishingLoading];
 }

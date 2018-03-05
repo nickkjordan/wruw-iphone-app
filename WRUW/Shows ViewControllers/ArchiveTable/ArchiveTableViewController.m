@@ -70,10 +70,6 @@
                 
                 i++;
             }
-//            for (Playlist *playlist in _archive) {
-//                [song loadImage:^void () {
-//                
-//            }
         }
     }];
 }

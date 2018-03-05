@@ -6,7 +6,7 @@ extension NSString {
 
         let base = lowercaseString
             .componentsSeparatedByCharactersInSet(nonLetterSet)
-            .joinWithSeparator(" ")
+            .joinWithSeparator("")
 
         return base.stringByReplacingOccurrencesOfString(" ", withString: "-")
     }
