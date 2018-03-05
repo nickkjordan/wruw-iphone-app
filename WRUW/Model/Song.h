@@ -3,12 +3,7 @@
 
 @protocol JSONConvertible;
 
-#pragma clang diagnostic push
-
-// To get rid of 'No protocol definition found' warnings which are not accurate
-#pragma clang diagnostic ignored "-W#pragma-messages"
 @interface Song : NSObject <NSCoding, JSONConvertible>
-#pragma clang diagnostic pop
 
 @property (nonatomic, copy) NSString *artist;
 @property (nonatomic, copy) NSString *songName;
