@@ -1,0 +1,2108 @@
+ [
+  {
+  "ShowID": 228,
+  "ShowUsers": [
+                {
+                "UserID": 39,
+                "DJName": "Filthy Rich"
+                },
+                {
+                "UserID": 1,
+                "DJName": "Laura"
+                }
+                ],
+  "ShowName": "Radio Children",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "00:00:00",
+  "OffairTime": "02:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Metal",
+  "ShowUrl": "",
+  "ShowDescription": "Metal, hard rock"
+  },
+  {
+  "ShowID": 438,
+  "ShowUsers": [
+                {
+                "UserID": 174,
+                "DJName": "Mark Hornyak"
+                }
+                ],
+  "ShowName": "Radio Noise Project",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "02:00:00",
+  "OffairTime": "04:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Japanese",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 457,
+  "ShowUsers": [
+                {
+                "UserID": 367,
+                "DJName": "Aladdin"
+                }
+                ],
+  "ShowName": "Aladdin's Airwaves",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "04:00:00",
+  "OffairTime": "06:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 111,
+  "ShowUsers": [
+                {
+                "UserID": 120,
+                "DJName": "Nurahn"
+                }
+                ],
+  "ShowName": "Friend Hospital",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "06:00:00",
+  "OffairTime": "08:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 11,
+  "ShowUsers": [
+                {
+                "UserID": 3,
+                "DJName": "Ed"
+                }
+                ],
+  "ShowName": "Chasing Infinity",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "08:00:00",
+  "OffairTime": "10:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Indie Rock",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 147,
+  "ShowUsers": [
+                {
+                "UserID": 157,
+                "DJName": "Brandt"
+                }
+                ],
+  "ShowName": "The Cream of Broccoli Radio Hour",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "10:00:00",
+  "OffairTime": "12:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 21,
+  "ShowUsers": [
+                {
+                "UserID": 5,
+                "DJName": "David Caban",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_5_sm.jpeg"
+                },
+                "DJImgL": {
+                "width": 200,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_5_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Sunday Matinee",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "12:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "http://www.sundaymatinee.org",
+  "ShowImgL": {
+  "width": 200,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_8_lg.jpeg"
+  },
+  "ShowImgS": {
+  "width": 60,
+  "height": 60,
+  "href": "http://spinitron.com/public/logos/wruw/show_21_sm.jpeg"
+  },
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 294,
+  "ShowUsers": [
+                {
+                "UserID": 252,
+                "DJName": "The Cynic"
+                }
+                ],
+  "ShowName": "Soul Delirium",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Soul",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 65,
+  "ShowUsers": [
+                {
+                "UserID": 41,
+                "DJName": "Roger Weist"
+                }
+                ],
+  "ShowName": "Beyond the Pale",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "18:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Irish",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 346,
+  "ShowUsers": [
+                {
+                "UserID": 315,
+                "DJName": "DJ BG",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_315_sm.png"
+                }
+                }
+                ],
+  "ShowName": "Erie Effusion",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "18:00:00",
+  "OffairTime": "20:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 91,
+  "ShowUsers": [
+                {
+                "UserID": 109,
+                "DJName": "The Counselor"
+                }
+                ],
+  "ShowName": "The Counselor's Cornucopia Of Classic Rock & Curios",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "20:00:00",
+  "OffairTime": "22:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": "An eclectic mix of seldom heard songs from the classic rock and oldies era. Spotlighting music,past & present,by well known and forgotten artists of the 1960’s & 70’s. Also featuring covers, oddities, tributes, and theme shows. Plus a weekly segment, The Song Retains The Name, where I play 2 or more different songs with the same song title."
+  },
+  {
+  "ShowID": 564,
+  "ShowUsers": [
+                {
+                "UserID": 177,
+                "DJName": "Heather"
+                },
+                {
+                "UserID": 405,
+                "DJName": "Lyn"
+                }
+                ],
+  "ShowName": "chakra couch",
+  "Weekdays": [
+               "Sun"
+               ],
+  "OnairTime": "22:00:00",
+  "OffairTime": "00:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 126,
+  "ShowUsers": [
+                {
+                "UserID": 160,
+                "DJName": "Trevor"
+                }
+                ],
+  "ShowName": "Treasure Trove",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "00:00:00",
+  "OffairTime": "02:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "https://www.facebook.com/TreasureTroveRadio",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 381,
+  "ShowUsers": [
+                {
+                "UserID": 341,
+                "DJName": "Nick"
+                }
+                ],
+  "ShowName": "Nix Mix",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "02:00:00",
+  "OffairTime": "03:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 547,
+  "ShowUsers": [
+                {
+                "UserID": 370,
+                "DJName": "Tiger"
+                },
+                {
+                "UserID": 385,
+                "DJName": "Brendan"
+                }
+                ],
+  "ShowName": "Bowl of Oatmeal",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "03:00:00",
+  "OffairTime": "05:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 442,
+  "ShowUsers": [
+                {
+                "UserID": 357,
+                "DJName": "AJ"
+                },
+                {
+                "UserID": 363,
+                "DJName": "Ann"
+                }
+                ],
+  "ShowName": "The Wakeup Crew",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "05:00:00",
+  "OffairTime": "06:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 472,
+  "ShowUsers": [
+                {
+                "UserID": 378,
+                "DJName": "Sydney & Olivia"
+                }
+                ],
+  "ShowName": "Crossing the Universe",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "06:00:00",
+  "OffairTime": "07:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 297,
+  "ShowUsers": [
+                {
+                "UserID": 250,
+                "DJName": "Ron"
+                }
+                ],
+  "ShowName": "Fat Monday",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "07:00:00",
+  "OffairTime": "09:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 270,
+  "ShowUsers": [
+                {
+                "UserID": 235,
+                "DJName": "Mike James"
+                }
+                ],
+  "ShowName": "Defend Cleveland",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "09:00:00",
+  "OffairTime": "12:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 445,
+  "ShowUsers": [
+                {
+                "UserID": 79,
+                "DJName": "maddie"
+                }
+                ],
+  "ShowName": "Accidental Realism",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "12:00:00",
+  "OffairTime": "13:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 448,
+  "ShowUsers": [
+                {
+                "UserID": 114,
+                "DJName": "Linda Xu"
+                }
+                ],
+  "ShowName": "Soy Milk and Fried Dough",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "13:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "http://www.facebook.com/soymilkandfrieddough/",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 222,
+  "ShowUsers": [
+                {
+                "UserID": 189,
+                "DJName": "Eric Charnofsky"
+                }
+                ],
+  "ShowName": "Not Your Grandmother's Classical Music",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Classical",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 267,
+  "ShowUsers": [
+                {
+                "UserID": 30,
+                "DJName": "Isaac Nicholas"
+                }
+                ],
+  "ShowName": "Democracy Now",
+  "Weekdays": [
+               "Mon",
+               "Tue",
+               "Wed",
+               "Thu",
+               "Fri"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "News",
+  "ShowUrl": "https://www.democracynow.org/",
+  "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+  },
+  {
+  "ShowID": 352,
+  "ShowUsers": [
+                {
+                "UserID": 318,
+                "DJName": "Patty",
+                "DJImgL": {
+                "width": 200,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_318_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "The Spandex Years",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "18:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowImgL": {
+  "width": 120,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_352_lg.jpeg"
+  },
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 135,
+  "ShowUsers": [
+                {
+                "UserID": 154,
+                "DJName": "DJ AKA"
+                }
+                ],
+  "ShowName": "Digital Horizons",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "18:00:00",
+  "OffairTime": "20:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 451,
+  "ShowUsers": [
+                {
+                "UserID": 64,
+                "DJName": "Jeremy Novak"
+                }
+                ],
+  "ShowName": "Electric Feel",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "20:00:00",
+  "OffairTime": "21:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 373,
+  "ShowUsers": [
+                {
+                "UserID": 334,
+                "DJName": "Darrell Stout"
+                }
+                ],
+  "ShowName": "Beat Matrix",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "21:00:00",
+  "OffairTime": "23:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 259,
+  "ShowUsers": [
+                {
+                "UserID": 223,
+                "DJName": "Jeff"
+                }
+                ],
+  "ShowName": "What You Need",
+  "Weekdays": [
+               "Mon"
+               ],
+  "OnairTime": "23:00:00",
+  "OffairTime": "01:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowImgL": {
+  "width": 150,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_259_lg.jpeg"
+  },
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 460,
+  "ShowUsers": [
+                {
+                "UserID": 369,
+                "DJName": "Architektur",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_369_sm.jpeg"
+                },
+                "DJImgL": {
+                "width": 200,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_369_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Passport",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "01:00:00",
+  "OffairTime": "03:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Downtempo",
+  "ShowUrl": "http://www.loungeproductions.com/",
+  "ShowImgL": {
+  "width": 200,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_460_lg.jpeg"
+  },
+  "ShowImgS": {
+  "width": 60,
+  "height": 60,
+  "href": "http://spinitron.com/public/logos/wruw/show_460_sm.jpeg"
+  },
+  "ShowDescription": "Est. 2003. The premier Downbeat & Dub radio program, with host Architektur, features carefully crafted programming....a deep, fluid soundtrack to complement your life. Passport plays: Kruder & Dorfmeister, Gotan Project, Massive Attack, Sofa Surfers, Thievery Corporation, Yonderboi, Tosca, Nightmares On Wax, Xploding Plastix and loads of heavy Dub!"
+  },
+  {
+  "ShowID": 463,
+  "ShowUsers": [
+                {
+                "UserID": 123,
+                "DJName": "JME"
+                }
+                ],
+  "ShowName": "Tripod Terrace",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "03:00:00",
+  "OffairTime": "05:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": "Turn it up!"
+  },
+  {
+  "ShowID": 475,
+  "ShowUsers": [
+                {
+                "UserID": 391,
+                "DJName": "Mika"
+                }
+                ],
+  "ShowName": "A Good Companion",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "05:00:00",
+  "OffairTime": "07:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 153,
+  "ShowUsers": [
+                {
+                "UserID": 103,
+                "DJName": "Charlie Saber",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_103_sm.jpeg"
+                },
+                "DJImgL": {
+                "width": 120,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_103_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Charlie Saber's Rock & Country Casserole",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "07:00:00",
+  "OffairTime": "09:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Americana",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 198,
+  "ShowUsers": [
+                {
+                "UserID": 135,
+                "DJName": "Jimmie Wilson"
+                }
+                ],
+  "ShowName": "The Music Gallery",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "09:00:00",
+  "OffairTime": "12:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 342,
+  "ShowUsers": [
+                {
+                "UserID": 286,
+                "DJName": "Lazybones"
+                }
+                ],
+  "ShowName": "Sweet and Lowdown",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "12:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Jazz",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 466,
+  "ShowUsers": [
+                {
+                "UserID": 208,
+                "DJName": "DR. DAVID"
+                }
+                ],
+  "ShowName": "And No Kenny G",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "15:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 558,
+  "ShowUsers": [
+                {
+                "UserID": 394,
+                "DJName": "Courtney"
+                }
+                ],
+  "ShowName": "Queen of Themes",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "15:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 267,
+  "ShowUsers": [
+                {
+                "UserID": 30,
+                "DJName": "Isaac Nicholas"
+                }
+                ],
+  "ShowName": "Democracy Now",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "News",
+  "ShowUrl": "https://www.democracynow.org/",
+  "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+  },
+  {
+  "ShowID": 481,
+  "ShowUsers": [
+                {
+                "UserID": 372,
+                "DJName": "Emily"
+                }
+                ],
+  "ShowName": "Cat Fight",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "18:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Female Fronted",
+  "ShowUrl": "",
+  "ShowDescription": "Tune into Cat Fight for your weekly dose of girl-led rock, pop, and everything in between."
+  },
+  {
+  "ShowID": 484,
+  "ShowUsers": [
+                {
+                "UserID": 382,
+                "DJName": "Miruna"
+                },
+                {
+                "UserID": 388,
+                "DJName": "Maia"
+                }
+                ],
+  "ShowName": "Astral Trash",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "18:00:00",
+  "OffairTime": "19:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "http://www.facebook.com/AstralTrash",
+  "ShowDescription": "celestial garbage"
+  },
+  {
+  "ShowID": 33,
+  "ShowUsers": [
+                {
+                "UserID": 12,
+                "DJName": "Dr. Metal"
+                }
+                ],
+  "ShowName": "Metal Meltdown",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "19:00:00",
+  "OffairTime": "21:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 85,
+  "ShowUsers": [
+                {
+                "UserID": 63,
+                "DJName": "Dot"
+                },
+                {
+                "UserID": 180,
+                "DJName": "Steph"
+                },
+                {
+                "UserID": 78,
+                "DJName": "Kstar"
+                },
+                {
+                "UserID": 399,
+                "DJName": "Henry"
+                }
+                ],
+  "ShowName": "Voices and Choices",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "21:00:00",
+  "OffairTime": "22:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Talk",
+  "ShowUrl": "",
+  "ShowDescription": "Voices and Choices is a weekly pro-choice public affairs program dedicated to sharing news and perspectives on gender, race, sexuality, arts, culture and social justice. We believe in the importance of public awareness and conversation about these issues. We aim to foster a forum for discussion where we can raise voices and perspectives that are otherwise not heard, and encourage action that will generate change.\r\n\r\nVoices and Choices has aired weekly on WRUW since 2001."
+  },
+  {
+  "ShowID": 117,
+  "ShowUsers": [
+                {
+                "UserID": 120,
+                "DJName": "Nurahn"
+                },
+                {
+                "UserID": 192,
+                "DJName": "Liz"
+                }
+                ],
+  "ShowName": "The Orchid Shoplifter",
+  "Weekdays": [
+               "Tue"
+               ],
+  "OnairTime": "22:00:00",
+  "OffairTime": "00:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 487,
+  "ShowUsers": [
+                {
+                "UserID": 115,
+                "DJName": "Mandy"
+                }
+                ],
+  "ShowName": "Off the Wall",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "00:00:00",
+  "OffairTime": "01:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 490,
+  "ShowUsers": [
+                {
+                "UserID": 352,
+                "DJName": "lorenzo cups"
+                }
+                ],
+  "ShowName": "whatsapp me for atonement",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "01:00:00",
+  "OffairTime": "03:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Hip-hop",
+  "ShowUrl": "",
+  "ShowDescription": "rap-centric vibrations"
+  },
+  {
+  "ShowID": 493,
+  "ShowUsers": [
+                {
+                "UserID": 238,
+                "DJName": "ICE"
+                }
+                ],
+  "ShowName": "Welcom 2 Wonderland",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "03:00:00",
+  "OffairTime": "05:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 496,
+  "ShowUsers": [
+                {
+                "UserID": 291,
+                "DJName": "Volesus"
+                }
+                ],
+  "ShowName": "Powerhour!",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "05:00:00",
+  "OffairTime": "06:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 204,
+  "ShowUsers": [
+                {
+                "UserID": 96,
+                "DJName": "El Gato Blanco"
+                }
+                ],
+  "ShowName": "El Gato Blanco",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "06:00:00",
+  "OffairTime": "07:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Eclectic",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 253,
+  "ShowUsers": [
+                {
+                "UserID": 211,
+                "DJName": "Genevieve"
+                }
+                ],
+  "ShowName": "Exploding Plastic Inevitable",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "07:00:00",
+  "OffairTime": "09:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 300,
+  "ShowUsers": [
+                {
+                "UserID": 276,
+                "DJName": "Carl"
+                }
+                ],
+  "ShowName": "Route 66",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "09:00:00",
+  "OffairTime": "12:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 315,
+  "ShowUsers": [
+                {
+                "UserID": 285,
+                "DJName": "Shari"
+                }
+                ],
+  "ShowName": "Ivy's Red Sweater",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "12:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 201,
+  "ShowUsers": [
+                {
+                "UserID": 166,
+                "DJName": "Bryan Chandler"
+                }
+                ],
+  "ShowName": "Erie Wax",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 267,
+  "ShowUsers": [
+                {
+                "UserID": 30,
+                "DJName": "Isaac Nicholas"
+                }
+                ],
+  "ShowName": "Democracy Now",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "News",
+  "ShowUrl": "https://www.democracynow.org/",
+  "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+  },
+  {
+  "ShowID": 289,
+  "ShowUsers": [
+                {
+                "UserID": 277,
+                "DJName": "Neal Dare Waves",
+                "DJImgL": {
+                "width": 120,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_277_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "DareWaves",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "19:30:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "https://www.facebook.com/Dare-Waves-on-WRUW-911-FM-297341070298180/",
+  "ShowImgL": {
+  "width": 120,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_289_lg.jpeg"
+  },
+  "ShowImgS": {
+  "width": 60,
+  "height": 60,
+  "href": "http://spinitron.com/public/logos/wruw/show_289_sm.jpeg"
+  },
+  "ShowDescription": "One of Cleveland's longest running radio shows, Dare Waves features a unique mix of new releases and old favourites, soundtracks and compilations, CDs LPs 45s and cassettes, and your requests (via the web or by phone). The emphasis of the show is electronic and guitar-based music, but Neal is known to meander to remote corners of the music library. An emphasis is placed on local music and bands coming to town for concerts (tied in to ticket giveaways, which happen almost every week). In-studio guests (local bands and DJs) are also occurring more frequently. So join Neal and listen to the Waves that other don’t Dare . . . ."
+  },
+  {
+  "ShowID": 499,
+  "ShowUsers": [
+                {
+                "UserID": 241,
+                "DJName": "Michael"
+                }
+                ],
+  "ShowName": "Night Radio",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "19:30:00",
+  "OffairTime": "20:30:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 502,
+  "ShowUsers": [
+                {
+                "UserID": 201,
+                "DJName": "lauren"
+                }
+                ],
+  "ShowName": "dirt don't hurt",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "20:30:00",
+  "OffairTime": "22:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Indie Rock",
+  "ShowUrl": "",
+  "ShowDescription": "cuz god made dirt and dirt don't hurt"
+  },
+  {
+  "ShowID": 574,
+  "ShowUsers": [
+                {
+                "UserID": 232,
+                "DJName": "Natalie",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_232_sm.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Popular Favorites",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "22:00:00",
+  "OffairTime": "23:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Punk",
+  "ShowUrl": "",
+  "ShowImgL": {
+  "width": 164,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_574_lg.jpeg"
+  },
+  "ShowDescription": "Punk and related music from 10-11pm every Wednesday night. 80s hardcore, thrash metal, garage punk, sludge, noise rock, post punk, etc, etc, etc......"
+  },
+  {
+  "ShowID": 505,
+  "ShowUsers": [
+                {
+                "UserID": 88,
+                "DJName": "Ethan"
+                },
+                {
+                "UserID": 26,
+                "DJName": "Sydney"
+                },
+                {
+                "UserID": 46,
+                "DJName": "Riggity Rich"
+                }
+                ],
+  "ShowName": "Audio Daydream",
+  "Weekdays": [
+               "Wed"
+               ],
+  "OnairTime": "23:00:00",
+  "OffairTime": "01:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 309,
+  "ShowUsers": [
+                {
+                "UserID": 264,
+                "DJName": "Polka Paul"
+                }
+                ],
+  "ShowName": "Dain Bramage",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "01:00:00",
+  "OffairTime": "03:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 235,
+  "ShowUsers": [
+                {
+                "UserID": 195,
+                "DJName": "Joe"
+                }
+                ],
+  "ShowName": "Aging Hipster Blues",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "03:00:00",
+  "OffairTime": "05:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 30,
+  "ShowUsers": [
+                {
+                "UserID": 11,
+                "DJName": "riot grrrl"
+                }
+                ],
+  "ShowName": "Shocking Females In Trousers",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "05:00:00",
+  "OffairTime": "07:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 210,
+  "ShowUsers": [
+                {
+                "UserID": 105,
+                "DJName": "Prosper Hazzard"
+                }
+                ],
+  "ShowName": "Prosper Hazzard",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "07:00:00",
+  "OffairTime": "08:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 15,
+  "ShowUsers": [
+                {
+                "UserID": 9,
+                "DJName": "Teddy"
+                }
+                ],
+  "ShowName": "The '59 Sound",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "08:00:00",
+  "OffairTime": "10:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": "Exploring the history and traditions of music, one album at a time."
+  },
+  {
+  "ShowID": 331,
+  "ShowUsers": [
+                {
+                "UserID": 288,
+                "DJName": "Tony Vasquez"
+                }
+                ],
+  "ShowName": "Latin Perspective",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "10:00:00",
+  "OffairTime": "11:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 508,
+  "ShowUsers": [
+                {
+                "UserID": 29,
+                "DJName": "Jasmine"
+                }
+                ],
+  "ShowName": "The Grand Optimist",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "11:00:00",
+  "OffairTime": "12:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 511,
+  "ShowUsers": [
+                {
+                "UserID": 54,
+                "DJName": "bianca"
+                },
+                {
+                "UserID": 111,
+                "DJName": "Rebecca"
+                }
+                ],
+  "ShowName": "The Mahogany Turntables",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "12:00:00",
+  "OffairTime": "13:30:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 334,
+  "ShowUsers": [
+                {
+                "UserID": 301,
+                "DJName": "John Graves"
+                }
+                ],
+  "ShowName": "Regionally Speaking",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "13:30:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Talk",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 337,
+  "ShowUsers": [
+                {
+                "UserID": 301,
+                "DJName": "John Graves"
+                }
+                ],
+  "ShowName": "Gaywaves",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "15:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Talk",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 267,
+  "ShowUsers": [
+                {
+                "UserID": 30,
+                "DJName": "Isaac Nicholas"
+                }
+                ],
+  "ShowName": "Democracy Now",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "News",
+  "ShowUrl": "https://www.democracynow.org/",
+  "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+  },
+  {
+  "ShowID": 165,
+  "ShowUsers": [
+                {
+                "UserID": 151,
+                "DJName": "Chip"
+                }
+                ],
+  "ShowName": "Woodchopper's Ball",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "19:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 283,
+  "ShowUsers": [
+                {
+                "UserID": 279,
+                "DJName": "ATM"
+                },
+                {
+                "UserID": 249,
+                "DJName": "Dr. Polka"
+                },
+                {
+                "UserID": 264,
+                "DJName": "Polka Paul"
+                }
+                ],
+  "ShowName": "Polka Changed My Life Today",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "19:00:00",
+  "OffairTime": "20:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 312,
+  "ShowUsers": [
+                {
+                "UserID": 282,
+                "DJName": "Mr. JEG"
+                }
+                ],
+  "ShowName": "Laying Down Tracks",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "20:00:00",
+  "OffairTime": "22:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 108,
+  "ShowUsers": [
+                {
+                "UserID": 123,
+                "DJName": "JME"
+                },
+                {
+                "UserID": 15,
+                "DJName": "T Nick"
+                },
+                {
+                "UserID": 38,
+                "DJName": "Rachel H."
+                },
+                {
+                "UserID": 39,
+                "DJName": "Filthy Rich"
+                }
+                ],
+  "ShowName": "Live From Cleveland",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "22:00:00",
+  "OffairTime": "23:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Live Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 556,
+  "ShowUsers": [
+                {
+                "UserID": 183,
+                "DJName": "Sprout",
+                "DJImgL": {
+                "width": 151,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_183_lg.png"
+                }
+                }
+                ],
+  "ShowName": "Solitude",
+  "Weekdays": [
+               "Thu"
+               ],
+  "OnairTime": "23:00:00",
+  "OffairTime": "01:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Rock",
+  "ShowUrl": "",
+  "ShowImgL": {
+  "width": 135,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_556_lg.jpeg"
+  },
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 177,
+  "ShowUsers": [
+                {
+                "UserID": 82,
+                "DJName": "Smuggler"
+                }
+                ],
+  "ShowName": "Beautiful Dreadnought",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "01:00:00",
+  "OffairTime": "03:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Metal",
+  "ShowUrl": "",
+  "ShowImgL": {
+  "width": 200,
+  "height": 120,
+  "href": "http://spinitron.com/public/logos/wruw/show_177_lg.jpeg"
+  },
+  "ShowImgS": {
+  "width": 60,
+  "height": 60,
+  "href": "http://spinitron.com/public/logos/wruw/show_177_sm.jpeg"
+  },
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 517,
+  "ShowUsers": [
+                {
+                "UserID": 91,
+                "DJName": "Dr. Tasty"
+                }
+                ],
+  "ShowName": "Synth City",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "03:00:00",
+  "OffairTime": "04:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 520,
+  "ShowUsers": [
+                {
+                "UserID": 360,
+                "DJName": "Jimmy"
+                }
+                ],
+  "ShowName": "In the Groove",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "04:00:00",
+  "OffairTime": "06:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 523,
+  "ShowUsers": [
+                {
+                "UserID": 381,
+                "DJName": "N and Z"
+                }
+                ],
+  "ShowName": "Round Trip Ticket",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "06:00:00",
+  "OffairTime": "07:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 355,
+  "ShowUsers": [
+                {
+                "UserID": 274,
+                "DJName": "Annie"
+                }
+                ],
+  "ShowName": "Sunny Day",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "07:00:00",
+  "OffairTime": "09:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 328,
+  "ShowUsers": [
+                {
+                "UserID": 297,
+                "DJName": "Jaystone"
+                }
+                ],
+  "ShowName": "Lend Me Your Ear",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "09:00:00",
+  "OffairTime": "11:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 526,
+  "ShowUsers": [
+                {
+                "UserID": 226,
+                "DJName": "spacechick"
+                }
+                ],
+  "ShowName": "Reachin for the Sky and Tearin Up the Ground",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "11:00:00",
+  "OffairTime": "13:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Metal",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 339,
+  "ShowUsers": [
+                {
+                "UserID": 307,
+                "DJName": "Matt Hooke"
+                }
+                ],
+  "ShowName": "A Different Drum",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "13:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 180,
+  "ShowUsers": [
+                {
+                "UserID": 163,
+                "DJName": "John D"
+                }
+                ],
+  "ShowName": "Survey Class",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 267,
+  "ShowUsers": [
+                {
+                "UserID": 30,
+                "DJName": "Isaac Nicholas"
+                }
+                ],
+  "ShowName": "Democracy Now",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "News",
+  "ShowUrl": "https://www.democracynow.org/",
+  "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+  },
+  {
+  "ShowID": 186,
+  "ShowUsers": [
+                {
+                "UserID": 144,
+                "DJName": "Chris"
+                }
+                ],
+  "ShowName": "Three Left Turns",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "19:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 426,
+  "ShowUsers": [
+                {
+                "UserID": 271,
+                "DJName": "Rich Lowe"
+                }
+                ],
+  "ShowName": "Night of the Living Dread",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "19:00:00",
+  "OffairTime": "21:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 12,
+  "ShowUsers": [
+                {
+                "UserID": 6,
+                "DJName": "DJ EC and the Mystery Dancer"
+                }
+                ],
+  "ShowName": "Innominate",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "21:00:00",
+  "OffairTime": "23:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": "Creepy Geeky Dancey Dreamy"
+  },
+  {
+  "ShowID": 38,
+  "ShowUsers": [
+                {
+                "UserID": 20,
+                "DJName": "Jim Szabo",
+                "DJImgL": {
+                "width": 200,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_20_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Down by the Cuyahoga",
+  "Weekdays": [
+               "Fri"
+               ],
+  "OnairTime": "23:00:00",
+  "OffairTime": "02:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Jazz",
+  "ShowUrl": "http://www.facebook.com/wruwdbtc",
+  "ShowDescription": "Jazz - Jazz Calendar at Midnight"
+  },
+  {
+  "ShowID": 306,
+  "ShowUsers": [
+                {
+                "UserID": 231,
+                "DJName": "Jam Master James"
+                }
+                ],
+  "ShowName": "Urban Evolution",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "02:00:00",
+  "OffairTime": "04:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 529,
+  "ShowUsers": [
+                {
+                "UserID": 57,
+                "DJName": "Alex the AP"
+                }
+                ],
+  "ShowName": "The Mixtape Vol.2",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "04:00:00",
+  "OffairTime": "05:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 72,
+  "ShowUsers": [
+                {
+                "UserID": 42,
+                "DJName": "Wade"
+                }
+                ],
+  "ShowName": "Diversified, Inc.",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "05:00:00",
+  "OffairTime": "09:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 244,
+  "ShowUsers": [
+                {
+                "UserID": 205,
+                "DJName": "Christine"
+                }
+                ],
+  "ShowName": "stonecoldbikini",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "09:00:00",
+  "OffairTime": "11:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": "Saturday morning rock and roll radio"
+  },
+  {
+  "ShowID": 532,
+  "ShowUsers": [
+                {
+                "UserID": 141,
+                "DJName": "Fea"
+                }
+                ],
+  "ShowName": "Radio Basis Function",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "11:00:00",
+  "OffairTime": "13:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Freeform",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 552,
+  "ShowUsers": [
+                {
+                "UserID": 330,
+                "DJName": "Meryl"
+                }
+                ],
+  "ShowName": "It's About Justice",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "13:00:00",
+  "OffairTime": "14:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Talk",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 535,
+  "ShowUsers": [
+                {
+                "UserID": 60,
+                "DJName": "Nicoli Spicoli"
+                }
+                ],
+  "ShowName": "Velvet Goldmine",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "14:00:00",
+  "OffairTime": "15:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 538,
+  "ShowUsers": [
+                {
+                "UserID": 72,
+                "DJName": "Maria"
+                },
+                {
+                "UserID": 376,
+                "DJName": "Cole Roberg"
+                }
+                ],
+  "ShowName": "Peripheral Taste",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "15:00:00",
+  "OffairTime": "16:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 541,
+  "ShowUsers": [
+                {
+                "UserID": 139,
+                "DJName": "DJ Or"
+                }
+                ],
+  "ShowName": "The Tasty Beat Treats Experiment",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "16:00:00",
+  "OffairTime": "17:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Electronic Dance Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 544,
+  "ShowUsers": [
+                {
+                "UserID": 319,
+                "DJName": "VP"
+                }
+                ],
+  "ShowName": "Caribella",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "17:00:00",
+  "OffairTime": "18:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Traditional",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 41,
+  "ShowUsers": [
+                {
+                "UserID": 23,
+                "DJName": "Tony",
+                "DJImgS": {
+                "width": 60,
+                "height": 60,
+                "href": "http://spinitron.com/public/logos/wruw/dj_23_sm.jpeg"
+                },
+                "DJImgL": {
+                "width": 200,
+                "height": 120,
+                "href": "http://spinitron.com/public/logos/wruw/dj_23_lg.jpeg"
+                }
+                }
+                ],
+  "ShowName": "Radio Italia of Cleveland",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "18:00:00",
+  "OffairTime": "20:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": "Italian Musical Treasures"
+  },
+  {
+  "ShowID": 60,
+  "ShowUsers": [
+                {
+                "UserID": 38,
+                "DJName": "Rachel H."
+                }
+                ],
+  "ShowName": "Guilty Pleasures",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "20:00:00",
+  "OffairTime": "22:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Music",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  },
+  {
+  "ShowID": 63,
+  "ShowUsers": [
+                {
+                "UserID": 214,
+                "DJName": "Matthew Night"
+                }
+                ],
+  "ShowName": "Rock FM",
+  "Weekdays": [
+               "Sat"
+               ],
+  "OnairTime": "22:00:00",
+  "OffairTime": "00:00:00",
+  "Scheduled": true,
+  "ShowCategory": "Rock",
+  "ShowUrl": "",
+  "ShowDescription": ""
+  }
+  ]

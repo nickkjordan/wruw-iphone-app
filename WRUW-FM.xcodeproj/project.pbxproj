@@ -47,6 +47,10 @@
 		013720301AD5B3D700BF3219 /* book_bookmark_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0137202D1AD5B3D700BF3219 /* book_bookmark_64.png */; };
 		013720321AD5B40200BF3219 /* book_bookmark_24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720311AD5B40200BF3219 /* book_bookmark_24@2x.png */; };
 		0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */; };
+		014D505420509025003D42C0 /* CurrentShow.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505320509025003D42C0 /* CurrentShow.json */; };
+		014D50572050912E003D42C0 /* AllShows.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D50562050912E003D42C0 /* AllShows.json */; };
+		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
+		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -172,6 +176,10 @@
 		013720311AD5B40200BF3219 /* book_bookmark_24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book_bookmark_24@2x.png"; sourceTree = "<group>"; };
 		0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WRUWModule-Bridging-Header.h"; path = "../WRUWModule-Bridging-Header.h"; sourceTree = "<group>"; };
 		0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPlayView.swift; sourceTree = "<group>"; };
+		014D505320509025003D42C0 /* CurrentShow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CurrentShow.json; path = "Supporting Files/StubbedResponses/CurrentShow.json"; sourceTree = "<group>"; };
+		014D50562050912E003D42C0 /* AllShows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AllShows.json; path = "Supporting Files/StubbedResponses/AllShows.json"; sourceTree = "<group>"; };
+		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
+		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -352,6 +360,18 @@
 			name = WRUW;
 			sourceTree = "<group>";
 		};
+		014D50552050902F003D42C0 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				014D50562050912E003D42C0 /* AllShows.json */,
+				014D505820509213003D42C0 /* Archive.json */,
+				014D505320509025003D42C0 /* CurrentShow.json */,
+				014D505A2050926B003D42C0 /* Show.json */,
+			);
+			name = StubbedResponses;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +466,7 @@
 		0170906F17DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				014D50552050902F003D42C0 /* StubbedResponses */,
 				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
 			);
@@ -732,7 +753,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014D505420509025003D42C0 /* CurrentShow.json in Resources */,
 				0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */,
+				014D505B2050926B003D42C0 /* Show.json in Resources */,
+				014D505920509213003D42C0 /* Archive.json in Resources */,
+				014D50572050912E003D42C0 /* AllShows.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
