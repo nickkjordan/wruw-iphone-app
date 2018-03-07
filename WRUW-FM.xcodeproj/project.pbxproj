@@ -51,6 +51,7 @@
 		014D50572050912E003D42C0 /* AllShows.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D50562050912E003D42C0 /* AllShows.json */; };
 		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
 		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
+		014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505C20509529003D42C0 /* TestingHelpers.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -180,6 +181,7 @@
 		014D50562050912E003D42C0 /* AllShows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AllShows.json; path = "Supporting Files/StubbedResponses/AllShows.json"; sourceTree = "<group>"; };
 		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
 		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
+		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -203,7 +205,7 @@
 		0170904817DBA8F80005EC0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0170904917DBA8F80005EC0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0170905217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WRUW-FMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-FMTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
@@ -388,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				0170903617DBA8F80005EC0F /* WRUW-FM.app */,
-				0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */,
+				0170906717DBA8F80005EC0F /* WRUWTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -469,6 +471,7 @@
 				014D50552050902F003D42C0 /* StubbedResponses */,
 				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
+				014D505C20509529003D42C0 /* TestingHelpers.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -648,7 +651,6 @@
 				0170906217DBA8F80005EC0F /* Sources */,
 				0170906317DBA8F80005EC0F /* Frameworks */,
 				0170906417DBA8F80005EC0F /* Resources */,
-				0170906517DBA8F80005EC0F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -657,7 +659,7 @@
 			);
 			name = "WRUW-FMTests";
 			productName = WRUWTests;
-			productReference = 0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */;
+			productReference = 0170906717DBA8F80005EC0F /* WRUWTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -764,19 +766,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0170906517DBA8F80005EC0F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,6 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
 				0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1110,11 +1100,11 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
-				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/wruw-iphone-app/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.0;
+				PRODUCT_NAME = WRUWTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
@@ -1131,11 +1121,11 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
-				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/wruw-iphone-app/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.0;
+				PRODUCT_NAME = WRUWTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;
