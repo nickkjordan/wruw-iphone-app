@@ -9,7 +9,7 @@
 
 @implementation PlaylistsTableViewController
 
-@synthesize currentShow, currentParser;
+@synthesize currentShow;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     

@@ -102,9 +102,6 @@
 		01F40DCB18398F1500BFA783 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F40DCA18398F1500BFA783 /* Playlist.m */; };
 		01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */; };
 		01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */; };
-		01F981A6183537B20069C241 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A1183537B20069C241 /* TFHpple.m */; };
-		01F981A7183537B20069C241 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A3183537B20069C241 /* TFHppleElement.m */; };
-		01F981A8183537B20069C241 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A5183537B20069C241 /* XPathQuery.m */; };
 		01F981AA183538D10069C241 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F981A9183538D10069C241 /* libxml2.dylib */; };
 		01FB78A3183EA7EE0088C972 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A1183EA7EE0088C972 /* facebook.png */; };
 		01FB78A4183EA7EE0088C972 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A2183EA7EE0088C972 /* twitter.png */; };
@@ -247,12 +244,6 @@
 		01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShowsTableViewController.h; sourceTree = "<group>"; };
 		01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShowsTableViewController.m; sourceTree = "<group>"; };
 		01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamPlayViewModel.swift; path = StreamPlay/StreamPlayViewModel.swift; sourceTree = "<group>"; };
-		01F981A0183537B20069C241 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		01F981A1183537B20069C241 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		01F981A2183537B20069C241 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		01F981A3183537B20069C241 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		01F981A4183537B20069C241 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		01F981A5183537B20069C241 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		01F981A9183538D10069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		01F981AB183538DA0069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -407,7 +398,6 @@
 		0170903F17DBA8F80005EC0F /* WRUW */ = {
 			isa = PBXGroup;
 			children = (
-				01F9819F183537A10069C241 /* hpple */,
 				019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
 				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
@@ -596,19 +586,6 @@
 			);
 			name = Models;
 			path = Model;
-			sourceTree = "<group>";
-		};
-		01F9819F183537A10069C241 /* hpple */ = {
-			isa = PBXGroup;
-			children = (
-				01F981A0183537B20069C241 /* TFHpple.h */,
-				01F981A1183537B20069C241 /* TFHpple.m */,
-				01F981A2183537B20069C241 /* TFHppleElement.h */,
-				01F981A3183537B20069C241 /* TFHppleElement.m */,
-				01F981A4183537B20069C241 /* XPathQuery.h */,
-				01F981A5183537B20069C241 /* XPathQuery.m */,
-			);
-			path = hpple;
 			sourceTree = "<group>";
 		};
 		79746C83A8ACE2BA5C07C096 /* Pods */ = {
@@ -863,8 +840,6 @@
 				01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */,
 				01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
-				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
-				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
 				01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */,
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
@@ -879,7 +854,6 @@
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
-				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				019D9FD320438D1900C05026 /* ShowServices.swift in Sources */,
 				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,

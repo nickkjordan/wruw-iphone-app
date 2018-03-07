@@ -1,13 +1,4 @@
-//
-//  DisplayViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/15/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "DisplayViewController.h"
-#import "TFHpple.h"
 #import "Playlist.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
@@ -18,7 +9,6 @@
 @interface DisplayViewController ()
 {
     UITableView *tableView;
-    TFHpple *showsParser;
     UIActivityIndicatorView *spinner;
 }
 @end
@@ -35,7 +25,6 @@
         // pass along showsParser
         
         [ptvc setCurrentShow:currentShow];
-        [ptvc setCurrentParser:showsParser];
     }
 }
 

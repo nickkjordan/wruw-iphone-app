@@ -1,14 +1,4 @@
-//
-//  ShowsTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/15/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "ShowsTableViewController.h"
-
-#import "TFHpple.h"
 #import "Show.h"
 #import "DisplayViewController.h"
 #import "WRUWModule-Swift.h"
