@@ -52,6 +52,7 @@
 		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
 		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
 		014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505C20509529003D42C0 /* TestingHelpers.swift */; };
+		014D505F20509D03003D42C0 /* LoadResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505E20509D03003D42C0 /* LoadResourcesTest.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -70,7 +71,6 @@
 		0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
-		0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170907517DBA8F80005EC0F /* WRUWTests.m */; };
 		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
@@ -112,6 +112,7 @@
 		01FB78A4183EA7EE0088C972 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A2183EA7EE0088C972 /* twitter.png */; };
 		01FB78A6183EA89A0088C972 /* magnifier_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A5183EA89A0088C972 /* magnifier_48.png */; };
 		6EDB28A8C48B4086C0B6F5B5 /* Pods_WRUW_FM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */; };
+		D2DF02AA1088E9E5FBF3F939 /* Pods_WRUW_FMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
 		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
 		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
+		014D505E20509D03003D42C0 /* LoadResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadResourcesTest.swift; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -208,8 +210,6 @@
 		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-FMTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
-		0170907517DBA8F80005EC0F /* WRUWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRUWTests.m; sourceTree = "<group>"; };
 		0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MSLayoutSupport.h"; sourceTree = "<group>"; };
 		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -255,11 +255,13 @@
 		01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShowsTableViewController.m; sourceTree = "<group>"; };
 		01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamPlayViewModel.swift; path = StreamPlay/StreamPlayViewModel.swift; sourceTree = "<group>"; };
 		01F981A9183538D10069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		01F981AB183538DA0069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		01FB78A2183EA7EE0088C972 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		01FB78A5183EA89A0088C972 /* magnifier_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier_48.png; sourceTree = "<group>"; };
 		19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.release.xcconfig"; sourceTree = "<group>"; };
+		3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests.release.xcconfig"; sourceTree = "<group>"; };
+		43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRUW_FMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B8AB567B82BDC3B2A90606 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRUW_FM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			files = (
 				0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */,
 				0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
+				D2DF02AA1088E9E5FBF3F939 /* Pods_WRUW_FMTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +380,6 @@
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
-				01F981AB183538DA0069C241 /* libxml2.dylib */,
 				0170903F17DBA8F80005EC0F /* WRUW */,
 				0170906E17DBA8F80005EC0F /* WRUWTests */,
 				0170903817DBA8F80005EC0F /* Frameworks */,
@@ -413,6 +415,7 @@
 				0170903D17DBA8F80005EC0F /* CoreGraphics.framework */,
 				44B8AB567B82BDC3B2A90606 /* Pods.framework */,
 				80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */,
+				43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -458,8 +461,7 @@
 		0170906E17DBA8F80005EC0F /* WRUWTests */ = {
 			isa = PBXGroup;
 			children = (
-				0170907417DBA8F80005EC0F /* WRUWTests.h */,
-				0170907517DBA8F80005EC0F /* WRUWTests.m */,
+				014D505E20509D03003D42C0 /* LoadResourcesTest.swift */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUWTests;
@@ -617,6 +619,8 @@
 			children = (
 				AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */,
 				19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */,
+				43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */,
+				3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -648,9 +652,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FMTests" */;
 			buildPhases = (
+				086B96F88EAB6A3FAF574774 /* [CP] Check Pods Manifest.lock */,
 				0170906217DBA8F80005EC0F /* Sources */,
 				0170906317DBA8F80005EC0F /* Frameworks */,
 				0170906417DBA8F80005EC0F /* Resources */,
+				402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */,
+				074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -766,6 +773,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		086B96F88EAB6A3FAF574774 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WRUW-FMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -899,7 +954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
-				0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */,
+				014D505F20509D03003D42C0 /* LoadResourcesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,14 +1145,18 @@
 		};
 		0170907D17DBA8F80005EC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
@@ -1111,14 +1170,18 @@
 		};
 		0170907E17DBA8F80005EC0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";

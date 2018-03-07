@@ -18,6 +18,10 @@ pod 'NSObject+Rx'
 pod 'SnapKit', '~> 0.22.0'
 pod 'Alamofire', '~> 3.5.0'
 
+  target 'WRUW-FMTests' do
+    inherit! :search_paths
+  end
+
 plugin 'cocoapods-keys', {
     :project => "WRUW",
     :keys => [
