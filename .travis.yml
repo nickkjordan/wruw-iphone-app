@@ -5,4 +5,5 @@ xcode_project: WRUW-FM.xcworkspace # path to your xcodeproj folder
 xcode_scheme: WRUW-FMTests
 
 install:
+ - gem install cocoapods-keys
  - pod keys set "MixpanelToken" "-"
