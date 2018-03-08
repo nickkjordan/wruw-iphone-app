@@ -1,0 +1,6 @@
+language: swift
+swift:
+ - 2.3
+xcode_project: WRUW-FM.xcworkspace # path to your xcodeproj folder
+xcode_scheme: WRUW-FMTests
+
