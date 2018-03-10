@@ -52,7 +52,6 @@
 		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
 		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
 		014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505C20509529003D42C0 /* TestingHelpers.swift */; };
-		014D505F20509D03003D42C0 /* LoadResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505E20509D03003D42C0 /* LoadResourcesTest.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -72,6 +71,8 @@
 		0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
 		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
+		0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */; };
+		0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */; };
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
@@ -183,7 +184,6 @@
 		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
 		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
 		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
-		014D505E20509D03003D42C0 /* LoadResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadResourcesTest.swift; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -212,6 +212,8 @@
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MSLayoutSupport.h"; sourceTree = "<group>"; };
 		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
+		0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelpersTests.swift; sourceTree = "<group>"; };
+		0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicBrainzApiRouterTests.swift; sourceTree = "<group>"; };
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
@@ -461,7 +463,8 @@
 		0170906E17DBA8F80005EC0F /* WRUWTests */ = {
 			isa = PBXGroup;
 			children = (
-				014D505E20509D03003D42C0 /* LoadResourcesTest.swift */,
+				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
+				0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUWTests;
@@ -954,7 +957,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
-				014D505F20509D03003D42C0 /* LoadResourcesTest.swift in Sources */,
+				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
+				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,6 +1091,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
@@ -1119,6 +1124,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
@@ -1161,6 +1167,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
@@ -1186,6 +1193,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
