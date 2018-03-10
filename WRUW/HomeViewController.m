@@ -134,6 +134,8 @@
 
                     return;
                 }
+
+                NSLog(@"release number: %@", [[NSNumber alloc] initWithInt:index]);
                 completion = nil;
 
                 song.image = result.success;

@@ -18,7 +18,8 @@ import Alamofire
     private let parameters: NSDictionary?
 
     init(release: String, artist: String) {
-        let query = "release:\(release) AND artist:\(artist)"
+        let components = release.componentsSeparatedByString("-")
+        let query = "release:\(components[0]) AND artist:\(artist)"
 
         parameters = [
             "query": query,
