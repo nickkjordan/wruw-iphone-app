@@ -101,14 +101,14 @@
                 [spinner stopAnimating];
             });
 
-            [self loadCoverArt];
+            [self getReleaseInfo];
             
             [self.storeHouseRefreshControl finishingLoading];
         }
     }];
 }
 
-- (void)loadCoverArt {
+- (void)getReleaseInfo {
     int i = 0;
     [self.tableView beginUpdates];
 
@@ -118,32 +118,73 @@
                                       artist:song.artist];
 
         [releasesService request:^(WruwResult *result) {
-            Release *release = [(NSArray *)result.success firstObject];
-            if (release.id.length == 0) {
+            NSMutableArray *releases = (NSMutableArray *)result.success;
+
+            if (!releases) {
                 return;
             }
 
-            GetCoverArt *coverArtService =
-            [[GetCoverArt alloc] initWithReleaseId:release.id];
-
-            [coverArtService request:^(WruwResult *result) {
+            __block int index = 0;
+            void (^__block completion)(WruwResult *) = ^void(WruwResult *result){
                 if (!result.success) {
+                    index++;
+                    [self loadCoverArtForReleases:releases
+                                          atIndex:index
+                                       completion:completion];
+
                     return;
                 }
+                completion = nil;
 
                 song.image = result.success;
 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                    NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                    [self.tableView reloadRowsAtIndexPaths:indexArray
-                                          withRowAnimation:UITableViewRowAnimationNone];
-                });
-            }];
+                [self reloadSongAtRow:i];
+            };
+
+            [self loadCoverArtForReleases:releases
+                                  atIndex:index
+                               completion:completion];
         }];
+
+        i++;
     }
 
     [self.tableView endUpdates];
+}
+
+- (void)loadCoverArtForReleases:(NSMutableArray *)releases
+                        atIndex:(int)index
+                     completion:(void (^) (WruwResult *))completion {
+    if (releases.count == 0) {
+        return;
+    }
+
+    Release *release = [releases objectAtIndex:index];
+
+    if (release.id.length == 0) {
+        return;
+    }
+
+    [self loadCoverArt:release.id completion:^(WruwResult *result) {
+        completion(result);
+    }];
+}
+
+- (void)reloadSongAtRow:(int)row {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+        [self.tableView reloadRowsAtIndexPaths:indexArray
+                              withRowAnimation:UITableViewRowAnimationNone];
+    });
+}
+
+- (void)loadCoverArt:(NSString*)id completion:(void (^) (WruwResult *))completion {
+    GetCoverArt *coverArtService = [[GetCoverArt alloc] initWithReleaseId:id];
+
+    [coverArtService request:^(WruwResult *result) {
+        completion(result);
+    }];
 }
 
 - (void)updateCurrentPlaylist {
@@ -158,7 +199,7 @@
                                    NSMakeRange(0,[newSongs count])];
             [_archive insertObjects:newSongs atIndexes:indexes];
 
-            [self loadCoverArt];
+            [self getReleaseInfo];
 
             [self.storeHouseRefreshControl finishingLoading];
         }
@@ -226,7 +267,7 @@
     
     [NSTimer scheduledTimerWithTimeInterval:60.0
                                      target:self
-                                   selector:@selector(loadCoverArt)
+                                   selector:@selector(getReleaseInfo)
                                    userInfo:nil
                                     repeats:YES];
     
