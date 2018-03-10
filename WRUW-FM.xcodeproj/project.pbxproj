@@ -73,6 +73,7 @@
 		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
 		0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */; };
 		0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */; };
+		0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151E2054660500EB7773 /* WruwApiRouterTests.swift */; };
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
@@ -214,6 +215,7 @@
 		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
 		0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelpersTests.swift; sourceTree = "<group>"; };
 		0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicBrainzApiRouterTests.swift; sourceTree = "<group>"; };
+		0177151E2054660500EB7773 /* WruwApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WruwApiRouterTests.swift; sourceTree = "<group>"; };
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
 				0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
+				0177151E2054660500EB7773 /* WruwApiRouterTests.swift */,
 			);
 			path = WRUWTests;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 			files = (
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
+				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
 				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
