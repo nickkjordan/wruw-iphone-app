@@ -16,8 +16,19 @@ import Alamofire
     }
 
     private let parameters: NSDictionary?
+    private let manager: Manager
 
-    init(release: String, artist: String) {
+    convenience init(release: String, artist: String) {
+        self.init(
+            manager: Manager.sharedInstance,
+            release: release,
+            artist: artist
+        )
+    }
+
+    init(manager: Manager, release: String, artist: String) {
+        self.manager = manager
+        
         let components = release.componentsSeparatedByString("-")
         let query = "release:\(components[0]) AND artist:\(artist)"
 
@@ -28,7 +39,7 @@ import Alamofire
     }
 
     func request(completion: (WruwResult) -> Void) {
-        Alamofire
+        manager
             .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }

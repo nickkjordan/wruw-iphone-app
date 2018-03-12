@@ -114,8 +114,8 @@
 
     for (Song *song in _archive) {
         GetReleases *releasesService =
-        [[GetReleases alloc] initWithRelease:song.album
-                                      artist:song.artist];
+            [[GetReleases alloc] initWithRelease:song.album
+                                          artist:song.artist];
 
         [releasesService request:^(WruwResult *result) {
             NSMutableArray *releases = (NSMutableArray *)result.success;

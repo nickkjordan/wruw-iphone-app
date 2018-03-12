@@ -39,7 +39,7 @@
                     continue;
                 }
 
-                GetReleases *releasesService =
+                GetReleases *releasesService = 
                     [[GetReleases alloc] initWithRelease:song.album
                                                   artist:song.artist];
 

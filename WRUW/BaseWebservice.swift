@@ -38,6 +38,14 @@ typealias JSONDict = [NSObject: AnyObject]
 }
 
 extension WruwAPIClient {
+    func request(completion: (WruwResult) -> Void) {
+        Alamofire
+            .request(router as! URLRequestConvertible)
+            .responseJSON { completion(self.process($0)) }
+    }
+}
+
+extension WruwAPIClient {
     func process(response: Response<AnyObject, NSError>) -> WruwResult {
         switch response.result {
 
