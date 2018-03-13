@@ -8,8 +8,20 @@ import Foundation
         return WruwApiRouter(path: "/currentshow.php")
     }
 
+    private let manager: Manager
+
+    override convenience init() {
+        self.init(manager: Manager.sharedInstance)
+    }
+
+    init(manager: Manager) {
+        self.manager = manager
+
+        super.init()
+    }
+
     @objc func request(completion: (WruwResult) -> Void) {
-        Alamofire
+        manager
             .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }
@@ -26,8 +38,20 @@ import Foundation
         return WruwApiRouter(path: "/getfullplaylist.php")
     }
 
+    private let manager: Manager
+
+    override convenience init() {
+        self.init(manager: Manager.sharedInstance)
+    }
+
+    init(manager: Manager) {
+        self.manager = manager
+
+        super.init()
+    }
+
     @objc func request(completion: (WruwResult) -> Void) {
-        Alamofire
+        manager
             .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
     }

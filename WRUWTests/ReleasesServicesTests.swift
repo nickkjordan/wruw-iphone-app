@@ -18,24 +18,28 @@ class ReleasesServicesTests: XCTestCase {
     }
 
     // MARK: - Enabled Tests
-//    func testManagerInit() {
-//        let manager = releasesService.manager
-//
-//        XCTAssert(manager, mockManager)
-//    }
-
     func testSuccessResponse() {
         mockManager.expectedRequest?.expectedData = stubbedResponse("Releases")
+
+        var releases: [Release]?
+
+        let requestExpectation = expectationWithDescription("request completed")
 
         releasesService.request { response in
             XCTAssertNotNil(response.success)
 
-            guard let releases = response.success as? [Release] else {
+            guard let success = response.success as? [Release] else {
                 XCTFail("Failed to process releases json")
                 return
             }
 
-            XCTAssertEqual(releases.count, 10)
+            releases = success
+            requestExpectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(10) { _ in
+            XCTAssertNotNil(releases)
+            XCTAssertEqual(releases?.count, 25)
         }
     }
 }

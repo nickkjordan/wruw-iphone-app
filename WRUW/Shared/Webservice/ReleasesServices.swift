@@ -16,7 +16,7 @@ import Alamofire
     }
 
     private let parameters: NSDictionary?
-    private let manager: Manager
+    private let manager: NetworkManager
 
     convenience init(release: String, artist: String) {
         self.init(
@@ -26,7 +26,7 @@ import Alamofire
         )
     }
 
-    init(manager: Manager, release: String, artist: String) {
+    init(manager: NetworkManager, release: String, artist: String) {
         self.manager = manager
         
         let components = release.componentsSeparatedByString("-")
@@ -40,8 +40,8 @@ import Alamofire
 
     func request(completion: (WruwResult) -> Void) {
         manager
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
+            .networkRequest (router as! URLRequestConvertible)
+            .json { completion(self.process($0)) }
     }
 
     func processResultFrom(json: AnyObject) -> WruwResult {
