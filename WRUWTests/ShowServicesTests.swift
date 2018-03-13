@@ -21,7 +21,7 @@ class CurrentShowTests: ShowServicesTests {
     override func setUp() {
         super.setUp()
 
-//        currentShowService = CurrentShow(manager: mockManager)
+        currentShowService = CurrentShow(manager: mockManager)
     }
 
     // MARK: - Enabled Tests
@@ -48,7 +48,7 @@ class GetAllShowTests: ShowServicesTests {
     override func setUp() {
         super.setUp()
 
-//        getAllShowsService = GetAllShows(manager: mockManager)
+        getAllShowsService = GetAllShows(manager: mockManager)
     }
     
     // MARK: - Enabled Tests
@@ -63,7 +63,7 @@ class GetAllShowTests: ShowServicesTests {
                 return
             }
 
-            XCTAssertEqual(shows.count, 60)
+            XCTAssertEqual(shows.count, 100)
         }
     }
 }

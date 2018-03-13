@@ -8,13 +8,13 @@ import Foundation
         return WruwApiRouter(path: "/currentshow.php")
     }
 
-    private let manager: Manager
+    private let manager: NetworkManager
 
     override convenience init() {
         self.init(manager: Manager.sharedInstance)
     }
 
-    init(manager: Manager) {
+    init(manager: NetworkManager) {
         self.manager = manager
 
         super.init()
@@ -22,8 +22,8 @@ import Foundation
 
     @objc func request(completion: (WruwResult) -> Void) {
         manager
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
+            .networkRequest(router as! URLRequestConvertible)
+            .json { completion(self.process($0)) }
     }
 
     func processResultFrom(json: AnyObject) -> WruwResult {
@@ -38,13 +38,13 @@ import Foundation
         return WruwApiRouter(path: "/getfullplaylist.php")
     }
 
-    private let manager: Manager
+    private let manager: NetworkManager
 
     override convenience init() {
         self.init(manager: Manager.sharedInstance)
     }
 
-    init(manager: Manager) {
+    init(manager: NetworkManager) {
         self.manager = manager
 
         super.init()
@@ -52,8 +52,8 @@ import Foundation
 
     @objc func request(completion: (WruwResult) -> Void) {
         manager
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
+            .networkRequest(router as! URLRequestConvertible)
+            .json { completion(self.process($0)) }
     }
 
     func processResultFrom(json: AnyObject) -> WruwResult {
