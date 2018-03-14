@@ -1,21 +1,7 @@
 import XCTest
 @testable import WRUWModule
 
-class ShowServicesTests: XCTestCase {
-    // MARK: - Private Properties
-    private var mockManager: MockManager!
-    private var mockRequest: MockRequest!
-
-    // MARK: - Override Methods
-    override func setUp() {
-        super.setUp()
-
-        mockManager = MockManager()
-        mockManager.expectedRequest = MockRequest()
-    }
-}
-
-class CurrentShowTests: ShowServicesTests {
+class CurrentShowTests: NetworkingTests {
     private var currentShowService: CurrentShow!
 
     override func setUp() {
@@ -38,11 +24,14 @@ class CurrentShowTests: ShowServicesTests {
             }
 
             XCTAssertEqual(currentShow.title, "Democracy Now")
+            self.requestExpectation.fulfill()
         }
+
+        waitForExpectationsWithTimeout(1, handler: nil)
     }
 }
 
-class GetAllShowTests: ShowServicesTests {
+class GetAllShowTests: NetworkingTests {
     private var getAllShowsService: GetAllShows!
 
     override func setUp() {
@@ -64,6 +53,9 @@ class GetAllShowTests: ShowServicesTests {
             }
 
             XCTAssertEqual(shows.count, 100)
+            self.requestExpectation.fulfill()
         }
+
+        waitForExpectationsWithTimeout(1, handler: nil)
     }
 }

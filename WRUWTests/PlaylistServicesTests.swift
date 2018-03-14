@@ -1,21 +1,7 @@
 import XCTest
 @testable import WRUWModule
 
-class PlaylistServicesTests: XCTestCase {
-    // MARK: - Private Properties
-    private var mockManager: MockManager!
-    private var mockRequest: MockRequest!
-
-    // MARK: - Override Methods
-    override func setUp() {
-        super.setUp()
-
-        mockManager = MockManager()
-        mockManager.expectedRequest = MockRequest()
-    }   
-}
-
-class GetPlaylistTests: PlaylistServicesTests {
+class GetPlaylistTests: NetworkingTests {
     private var playlistService: GetPlaylist!
 
     override func setUp() {
@@ -29,8 +15,6 @@ class GetPlaylistTests: PlaylistServicesTests {
     func testSuccessResponse() {
         mockManager.expectedRequest?.expectedData = stubbedResponse("Archive")
 
-        let requestExpectation = expectationWithDescription("request completed")
-
         playlistService.request { response in
             XCTAssertNotNil(response.success)
 
@@ -39,15 +23,15 @@ class GetPlaylistTests: PlaylistServicesTests {
                 return
             }
 
-            XCTAssertEqual(playlist.songs.count, 30)
-            requestExpectation.fulfill()
+            XCTAssertEqual(playlist.songs.count, 27)
+            self.requestExpectation.fulfill()
         }
 
         waitForExpectationsWithTimeout(1) { _ in }
     }
 }
 
-class GetPlaylistsTests: PlaylistServicesTests {
+class GetPlaylistsTests: NetworkingTests {
     private var playlistsService: GetPlaylists!
 
     override func setUp() {
@@ -60,8 +44,6 @@ class GetPlaylistsTests: PlaylistServicesTests {
     func testSuccessResponse() {
         mockManager.expectedRequest?.expectedData = stubbedResponse("Show")
 
-        let requestExpectation = expectationWithDescription("completed request")
-
         playlistsService.request { response in
             XCTAssertNotNil(response.success)
 
@@ -71,7 +53,7 @@ class GetPlaylistsTests: PlaylistServicesTests {
             }
 
             XCTAssertEqual(playlists.count, 17)
-            requestExpectation.fulfill()
+            self.requestExpectation.fulfill()
         }
 
         waitForExpectationsWithTimeout(1, handler: nil)

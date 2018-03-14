@@ -1,4 +1,5 @@
 import Foundation
+import XCTest
 @testable import Alamofire
 @testable import WRUWModule
 
@@ -9,6 +10,22 @@ func stubbedResponse(filename: String) -> NSData! {
     let path = bundle.pathForResource(filename, ofType: "json")
     
     return NSData(contentsOfURL: NSURL(fileURLWithPath: path!))
+}
+
+class NetworkingTests: XCTestCase {
+    // MARK: - Private Properties
+    var mockManager: MockManager!
+    var mockRequest: MockRequest!
+    var requestExpectation: XCTestExpectation!
+
+    // MARK: - Override Methods
+    override func setUp() {
+        super.setUp()
+
+        mockManager = MockManager()
+        mockManager.expectedRequest = MockRequest()
+        requestExpectation = expectationWithDescription("completed request")
+    }
 }
 
 class MockManager: NetworkManager {
@@ -24,13 +41,8 @@ class MockManager: NetworkManager {
 }
 
 class MockRequest {
-    var expectedData: NSData?
-    var expectedError: NSError?
-
-    init() {
-        expectedData = nil
-        expectedError = nil
-    }
+    var expectedData: NSData? = nil
+    var expectedError: NSError? = nil
 }
 
 extension MockRequest: NetworkRequest {

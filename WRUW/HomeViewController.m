@@ -157,7 +157,7 @@
 - (void)loadCoverArtForReleases:(NSMutableArray *)releases
                         atIndex:(int)index
                      completion:(void (^) (WruwResult *))completion {
-    if (releases.count == 0) {
+    if (releases.count <= index) {
         return;
     }
 
