@@ -191,7 +191,7 @@
 		014D50562050912E003D42C0 /* AllShows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AllShows.json; path = "Supporting Files/StubbedResponses/AllShows.json"; sourceTree = "<group>"; };
 		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
 		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
-		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingHelpers.swift; sourceTree = "<group>"; };
+		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestingHelpers.swift; path = "Supporting Files/TestingHelpers.swift"; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -474,12 +474,7 @@
 		0170906E17DBA8F80005EC0F /* WRUWTests */ = {
 			isa = PBXGroup;
 			children = (
-				0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */,
-				019285432059751000A54822 /* PlaylistServicesTests.swift */,
-				0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */,
-				0109957C205726D300BD8BDE /* ShowServicesTests.swift */,
-				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
-				0177151E2054660500EB7773 /* WruwApiRouterTests.swift */,
+				0192854520597ED400A54822 /* Networking Tests */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUWTests;
@@ -491,9 +486,38 @@
 				014D50552050902F003D42C0 /* StubbedResponses */,
 				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
-				014D505C20509529003D42C0 /* TestingHelpers.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0192854520597ED400A54822 /* Networking Tests */ = {
+			isa = PBXGroup;
+			children = (
+				014D505C20509529003D42C0 /* TestingHelpers.swift */,
+				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
+				0192854620597EF200A54822 /* Router Tests */,
+				0192854720597EFF00A54822 /* Request Tests */,
+			);
+			name = "Networking Tests";
+			sourceTree = "<group>";
+		};
+		0192854620597EF200A54822 /* Router Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */,
+				0177151E2054660500EB7773 /* WruwApiRouterTests.swift */,
+			);
+			name = "Router Tests";
+			sourceTree = "<group>";
+		};
+		0192854720597EFF00A54822 /* Request Tests */ = {
+			isa = PBXGroup;
+			children = (
+				019285432059751000A54822 /* PlaylistServicesTests.swift */,
+				0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */,
+				0109957C205726D300BD8BDE /* ShowServicesTests.swift */,
+			);
+			name = "Request Tests";
 			sourceTree = "<group>";
 		};
 		019316DD183B83A2007755E8 /* Shows ViewControllers */ = {
