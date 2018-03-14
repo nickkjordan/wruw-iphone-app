@@ -21,25 +21,21 @@ class ReleasesServicesTests: XCTestCase {
     func testSuccessResponse() {
         mockManager.expectedRequest?.expectedData = stubbedResponse("Releases")
 
-        var releases: [Release]?
-
         let requestExpectation = expectationWithDescription("request completed")
 
         releasesService.request { response in
             XCTAssertNotNil(response.success)
 
-            guard let success = response.success as? [Release] else {
+            guard let releases = response.success as? [Release] else {
                 XCTFail("Failed to process releases json")
                 return
             }
 
-            releases = success
+            XCTAssertNotNil(releases)
+            XCTAssertEqual(releases.count, 25)
             requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(10) { _ in
-            XCTAssertNotNil(releases)
-            XCTAssertEqual(releases?.count, 25)
-        }
+        waitForExpectationsWithTimeout(1) { _ in }
     }
 }

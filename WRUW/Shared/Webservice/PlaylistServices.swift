@@ -9,15 +9,22 @@ import Foundation
     }
 
     private let parameters: NSDictionary
+    private let manager: NetworkManager
 
-    init(showName: String, date: String) {
+    convenience init(showName: String, date: String) {
+        self.init(
+            manager: Manager.sharedInstance, showName: showName, date: date)
+    }
+
+    init(manager: NetworkManager, showName: String, date: String) {
         self.parameters = ["showname": showName, "date": date]
+        self.manager = manager
     }
 
     @objc func request(completion: (WruwResult) -> Void) {
-        Alamofire
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
+        manager
+            .networkRequest(router as! URLRequestConvertible)
+            .json { completion(self.process($0)) }
     }
 
     func processResultFrom(json: AnyObject) -> WruwResult {
@@ -29,19 +36,25 @@ import Foundation
     typealias CompletionResult = [PlaylistInfo]
 
     private let parameters: NSDictionary
+    private let manager: NetworkManager
 
     var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getshow.php", parameters: parameters)
     }
 
-    init(showName: String) {
+    init(manager: NetworkManager, showName: String) {
         self.parameters = ["showname": showName]
+        self.manager = manager
+    }
+    
+    convenience init(showName: String) {
+        self.init(manager: Manager.sharedInstance, showName: showName)
     }
 
     @objc func request(completion: (WruwResult) -> Void) {
-        Alamofire
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
+        manager
+            .networkRequest(router as! URLRequestConvertible)
+            .json { completion(self.process($0)) }
     }
 
     func processResultFrom(json: AnyObject) -> WruwResult {
