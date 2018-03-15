@@ -3,6 +3,7 @@ import XCTest
 @testable import Alamofire
 @testable import WRUWModule
 
+// Access stubbed json responses
 func stubbedResponse(filename: String) -> NSData! {
     @objc class TestClass: NSObject { }
 
@@ -12,6 +13,7 @@ func stubbedResponse(filename: String) -> NSData! {
     return NSData(contentsOfURL: NSURL(fileURLWithPath: path!))
 }
 
+// Parent class to test services
 class NetworkingTests: XCTestCase {
     // MARK: - Private Properties
     var mockManager: MockManager!
@@ -28,6 +30,9 @@ class NetworkingTests: XCTestCase {
     }
 }
 
+// MARK: Mock classes
+
+// Mock Alamofire.Manager
 class MockManager: NetworkManager {
     var expectedRequest: MockRequest?
 
@@ -40,33 +45,36 @@ class MockManager: NetworkManager {
     }
 }
 
+// Mock Alamofire.Request
 class MockRequest {
     var expectedData: NSData? = nil
     var expectedError: NSError? = nil
 }
 
 extension MockRequest: NetworkRequest {
+    // Replicating Request.responseJSON() 
     func responseJSON(
         queue queue: dispatch_queue_t?,
         options: NSJSONReadingOptions,
         completionHandler: Response<AnyObject, NSError> -> Void
     ) -> Self {
+        // Process response
         let result = Request
             .JSONResponseSerializer(options: options)
             .serializeResponse(nil, nil, expectedData, expectedError)
 
-        if let object = result.value {
-            let result: Result<AnyObject, NSError> = .Success(object)
-            let response = Response(request: nil, response: nil, data: nil, result: result)
-            completionHandler(response)
-        } else if let error = result.error {
-            let result: Result<AnyObject, NSError> = .Failure(error)
-            let response = Response(request: nil, response: nil, data: nil, result: result)
-            completionHandler(response)
-        } else {
-            fatalError("Both data and error are empty.")
-        }
+        // Handling a Result instance, error or success
+        let response = Response(result: result)
+        completionHandler(response)
 
         return self
+    }
+}
+
+// MARK: Convenience extensions
+
+extension Response {
+    init(result: Result<Value, Error>) {
+        self.init(request: nil, response: nil, data: nil, result: result)
     }
 }
