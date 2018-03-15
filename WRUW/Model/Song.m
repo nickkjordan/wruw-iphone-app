@@ -1,15 +1,5 @@
-//
-//  Song.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/19/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "Song.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "AFOnoResponseSerializer.h"
-#import "ONOXMLDocument.h"
+#import "WRUWModule-Swift.h"
 
 @implementation Song
 
@@ -17,7 +7,7 @@
 @synthesize album = _album;
 @synthesize songName = _songName;
 @synthesize label = _label;
-@synthesize imageUrl = _imageUrl;
+@synthesize image = _image;
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
@@ -25,8 +15,24 @@
         self.artist = [decoder decodeObjectForKey:@"artist"];
         self.album = [decoder decodeObjectForKey:@"album"];
         self.label = [decoder decodeObjectForKey:@"label"];
-        self.imageUrl = [decoder decodeObjectForKey:@"image"];
+        self.image = [decoder decodeObjectForKey:@"image"];
     }
+    return self;
+}
+
+-(instancetype)initWithJson:(NSDictionary *)dict {
+    if (self = [super init]) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"iTunesArtwork"
+                                                         ofType:@"png"];
+        
+        self.image = [UIImage imageWithContentsOfFile:path];
+
+        self.songName = dict[@"SongName"];
+        self.artist = dict[@"ArtistName"];
+        self.album = dict[@"DiskName"];
+        self.label = dict[@"LabelName"];
+    }
+    
     return self;
 }
 
@@ -35,11 +41,10 @@
     [encoder encodeObject:_artist forKey:@"artist"];
     [encoder encodeObject:_album forKey:@"album"];
     [encoder encodeObject:_label forKey:@"label"];
-    [encoder encodeObject:_imageUrl forKey:@"image"];
+    [encoder encodeObject:_image forKey:@"image"];
 }
 
 - (BOOL)isEqualToSong:(Song *)song {
-    
     if(!song) {
         return NO;
     }
@@ -48,51 +53,6 @@
     BOOL haveEqualSongTitles = (!self.songName && !song.songName) || [self.songName isEqualToString:song.songName];
     
     return haveEqualArtistNames && haveEqualSongTitles;
-}
-
--(void)loadImage:(void (^)())succeeded {
-    
-    NSString *urlQuery;
-    
-    if (self.artist && self.album) {
-        NSString *artistUrlString = [self formatForURL:self.artist];
-        NSString *albumUrlString = [self formatForURL:self.album];
-        
-        urlQuery = [NSString stringWithFormat:@"%@+%@",artistUrlString,albumUrlString];
-        
-    } else if (self.album) {
-        NSString *albumUrlString = [self formatForURL:self.album];
-        urlQuery = albumUrlString;
-    } else {
-        NSString *artistUrlString = [self formatForURL:self.artist];
-        urlQuery = artistUrlString;
-    }
-    
-    // Complete url
-    NSString *url = [NSString stringWithFormat:@"https://www.google.com/images?q=%@&sout=1",urlQuery];
-    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSString *xpath;
-#if TARGET_IPHONE_SIMULATOR
-    xpath = @"//*[@id='ires']/table/tr[1]/td[1]/a/img";
-#else
-    // Device
-    xpath = @"//*[@id='ires']/div[1]/a/img";
-#endif
-    
-    // make request for first image in google search results with
-    // https://github.com/AFNetworking/AFOnoResponseSerializer
-    //
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
-        ONOXMLElement *element = [responseDocument firstChildWithXPath:xpath];
-        _imageUrl =[element valueForAttribute:@"src"];
-        succeeded();
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", [error localizedDescription]);
-    }];
-    
 }
 
 -(NSString *)formatForURL:(NSString *)string {

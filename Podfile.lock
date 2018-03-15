@@ -1,28 +1,5 @@
 PODS:
-  - AFNetworking (2.5.2):
-    - AFNetworking/NSURLConnection (= 2.5.2)
-    - AFNetworking/NSURLSession (= 2.5.2)
-    - AFNetworking/Reachability (= 2.5.2)
-    - AFNetworking/Security (= 2.5.2)
-    - AFNetworking/Serialization (= 2.5.2)
-    - AFNetworking/UIKit (= 2.5.2)
-  - AFNetworking/NSURLConnection (2.5.2):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.2):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.2)
-  - AFNetworking/Security (2.5.2)
-  - AFNetworking/Serialization (2.5.2)
-  - AFNetworking/UIKit (2.5.2):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - AFOnoResponseSerializer (1.0.0):
-    - AFNetworking (~> 2.2)
-    - Ono (~> 1.0)
+  - Alamofire (3.5.1)
   - ARAnalytics/CoreIOS (3.0.0)
   - ARAnalytics/DSL (3.0.0):
     - ReactiveCocoa (= 2.3)
@@ -38,7 +15,6 @@ PODS:
   - Mixpanel/MPCategoryHelpers (2.7.3)
   - NSObject+Rx (1.2.1):
     - RxSwift (~> 2.1)
-  - Ono (1.2.1)
   - ReactiveCocoa (2.3):
     - ReactiveCocoa/UI (= 2.3)
   - ReactiveCocoa/Core (2.3):
@@ -54,15 +30,13 @@ PODS:
   - SnapKit (0.22.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5.0)
-  - AFOnoResponseSerializer
+  - Alamofire (~> 3.5.0)
   - ARAnalytics/DSL
   - ARAnalytics/Mixpanel
   - CBStoreHouseRefreshControl
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
   - NSObject+Rx
-  - Ono
   - RxCocoa (~> 2.6.1)
   - RxSwift (~> 2.6.1)
   - SimulatorStatusMagic
@@ -73,15 +47,13 @@ EXTERNAL SOURCES:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
-  AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
   CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
   Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
-  Ono: 1122212de602280cc7af19d7ab12ee98a3fc0339
   ReactiveCocoa: 81ee2fb7df2dfc6bd52b5d70473662195e20ca7d
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   RxCocoa: 3bb2820fd2a1ba48a70d38926bec0803838ae802
@@ -89,6 +61,6 @@ SPEC CHECKSUMS:
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
 
-PODFILE CHECKSUM: e606151099c1bf4ff1f0ef5fb0581314af1c9482
+PODFILE CHECKSUM: 4ceb23b39e75490c70c0b42f3e07a972cff8afca
 
 COCOAPODS: 1.4.0

@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Playlist.h"
-#import "TFHpple.h"
 #import "Show.h"
 #import "ArchiveTableViewController.h"
 
 @interface PlaylistsTableViewController : UITableViewController
 
 @property (nonatomic, strong) Show *currentShow;
-@property (nonatomic, strong) TFHpple *currentParser;
 
 @end

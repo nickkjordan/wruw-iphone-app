@@ -1,13 +1,4 @@
-//
-//  DisplayViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/15/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "DisplayViewController.h"
-#import "TFHpple.h"
 #import "Playlist.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
@@ -18,7 +9,6 @@
 @interface DisplayViewController ()
 {
     UITableView *tableView;
-    TFHpple *showsParser;
     UIActivityIndicatorView *spinner;
 }
 @end
@@ -35,7 +25,6 @@
         // pass along showsParser
         
         [ptvc setCurrentShow:currentShow];
-        [ptvc setCurrentParser:showsParser];
     }
 }
 
@@ -86,12 +75,16 @@
     if (currentShowInfo.text.length == 0) {
         [spinner startAnimating];
     }
-    [currentShow loadInfo:^(){
+
+    GetPlaylists *playlistsService =
+        [[GetPlaylists alloc] initWithShowName:currentShow.title.asQuery];
+
+    [playlistsService request:^(WruwResult *result) {
+        currentShow.playlists = result.success;
         [spinner stopAnimating];
-        [self updateLabels];
         [[self playlistsButton] setEnabled:YES];
     }];
-    
+
     currentShowInfo.editable = YES;
     currentShowInfo.font = [UIFont fontWithName:@"GillSans" size:16];
     currentShowInfo.contentInset = UIEdgeInsetsMake(0,-4,0,0);
@@ -100,14 +93,12 @@
 
 -(void)updateLabels
 {
-    NSArray *timeComponents = [currentShow.time componentsSeparatedByString:@" "];
-    NSRange wordRange = NSMakeRange(timeComponents.count - 5, 5);
-    NSArray *firstWords = [timeComponents subarrayWithRange:wordRange];
-    NSString *timeFrame = [firstWords componentsJoinedByString:@" "];
+    //curent show.startTime - currentShow.endTime
+    NSString *days = [currentShow.days componentsJoinedByString:@", "];
     
     [currentShowTitle setText:currentShow.title];
     [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [currentShow.host uppercaseString]]];
-    [currentShowTime setText:[NSString stringWithFormat:@"on %@s from %@",currentShow.day, timeFrame]];
+    [currentShowTime setText:[NSString stringWithFormat:@"on %@ from ", days]];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];
     [self adjustHeightOfInfoView];

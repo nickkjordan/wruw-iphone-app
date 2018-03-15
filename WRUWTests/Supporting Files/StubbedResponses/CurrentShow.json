@@ -1,0 +1,23 @@
+{
+    "ShowID": 267,
+    "ShowUsers": [
+                  {
+                  "UserID": 30,
+                  "DJName": "Isaac Nicholas"
+                  }
+                  ],
+    "ShowName": "Democracy Now",
+    "Weekdays": [
+                 "Mon",
+                 "Tue",
+                 "Wed",
+                 "Thu",
+                 "Fri"
+                 ],
+    "OnairTime": "16:00:00",
+    "OffairTime": "17:00:00",
+    "Scheduled": true,
+    "ShowCategory": "News",
+    "ShowUrl": "https://www.democracynow.org/",
+    "ShowDescription": "Democracy Now! is a national, daily, independent, award-winning news program hosted by journalists Amy Goodman and Juan Gonzalez. Pioneering the largest public media collaboration in the U.S., Democracy Now! is broadcast on Pacifica, NPR, community, and college radio stations; on public access, PBS, satellite television; and on the internet. DN!’s podcast is one of the most popular on the web.\r\n\r\nDemocracy Now!’s War and Peace Report provides our audience with access to people and perspectives rarely heard in the U.S.corporate-sponsored media, including independent and international journalists, ordinary people from around the world who are directly affected by U.S. foreign policy, grassroots leaders and peace activists, artists, academics and independent analysts. In addition, Democracy Now! hosts real debates–debates between people who substantially disagree, such as between the White House or the Pentagon spokespeople on the one hand, and grassroots activists on the other."
+}

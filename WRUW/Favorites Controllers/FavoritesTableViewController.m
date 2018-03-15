@@ -147,10 +147,7 @@ NSString* deviceName()
 
 #pragma mark - Table view data source
 
-- (void)setupTableView
-{
-
-    
+- (void)setupTableView {
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
     };

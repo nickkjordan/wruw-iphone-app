@@ -15,6 +15,10 @@
 		01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C041AC06A42003112F3 /* AnimatedButton.swift */; };
 		01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C051AC06A42003112F3 /* PlayStopIconView.swift */; };
 		01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */; };
+		0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */; };
+		0109957720571C3D00BD8BDE /* ReleasesServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */; };
+		010995792057219E00BD8BDE /* Releases.json in Resources */ = {isa = PBXBuildFile; fileRef = 010995782057219E00BD8BDE /* Releases.json */; };
+		0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109957C205726D300BD8BDE /* ShowServicesTests.swift */; };
 		010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 010CF7A71898B8AC00875209 /* ArrayDataSource.m */; };
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
@@ -46,12 +50,18 @@
 		013720301AD5B3D700BF3219 /* book_bookmark_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0137202D1AD5B3D700BF3219 /* book_bookmark_64.png */; };
 		013720321AD5B40200BF3219 /* book_bookmark_24@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720311AD5B40200BF3219 /* book_bookmark_24@2x.png */; };
 		0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */; };
+		014D505420509025003D42C0 /* CurrentShow.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505320509025003D42C0 /* CurrentShow.json */; };
+		014D50572050912E003D42C0 /* AllShows.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D50562050912E003D42C0 /* AllShows.json */; };
+		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
+		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
+		014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505C20509529003D42C0 /* TestingHelpers.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
 		015A16391A929724000FC518 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 015A16381A929724000FC518 /* heart_64.png */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		015CB28F1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */; };
+		016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A21CB2047382300474490 /* PlaylistInfo.swift */; };
 		016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016C99111A93F522008634DA /* EmptyFavoritesView.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170903C17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
@@ -63,10 +73,13 @@
 		0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
 		0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903B17DBA8F80005EC0F /* Foundation.framework */; };
 		0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0170907117DBA8F80005EC0F /* InfoPlist.strings */; };
-		0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170907517DBA8F80005EC0F /* WRUWTests.m */; };
 		0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */; };
+		0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */; };
+		0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */; };
+		0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151E2054660500EB7773 /* WruwApiRouterTests.swift */; };
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
+		019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019285432059751000A54822 /* PlaylistServicesTests.swift */; };
 		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
@@ -74,11 +87,15 @@
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
 		01997EC51C8CE2390007C38D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC41C8CE2390007C38D /* CircleView.swift */; };
 		01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */; };
+		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
+		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
+		01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */; };
+		01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */; };
 		01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */; };
 		01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */; };
 		01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF621C8B663600AD1E95 /* Theme.swift */; };
@@ -86,20 +103,22 @@
 		01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC43D717DBC685004916EA /* AVFoundation.framework */; };
 		01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CFAA55183BA0C200535F96 /* SongTableViewCell.m */; };
 		01CFAA58183BA0ED00535F96 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */; };
+		01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */; };
+		01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058C2049C8FA006F8012 /* ReleasesServices.swift */; };
+		01ED058F2049CBDA006F8012 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058E2049CBDA006F8012 /* Release.swift */; };
+		01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED05902049D1E6006F8012 /* CoverArtServices.swift */; };
 		01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DBF18396A7800BFA783 /* CoreMedia.framework */; };
 		01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC118396A8900BFA783 /* AVFoundation.framework */; };
 		01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC318396A9200BFA783 /* MediaPlayer.framework */; };
 		01F40DCB18398F1500BFA783 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F40DCA18398F1500BFA783 /* Playlist.m */; };
 		01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */; };
 		01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */; };
-		01F981A6183537B20069C241 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A1183537B20069C241 /* TFHpple.m */; };
-		01F981A7183537B20069C241 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A3183537B20069C241 /* TFHppleElement.m */; };
-		01F981A8183537B20069C241 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F981A5183537B20069C241 /* XPathQuery.m */; };
 		01F981AA183538D10069C241 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F981A9183538D10069C241 /* libxml2.dylib */; };
 		01FB78A3183EA7EE0088C972 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A1183EA7EE0088C972 /* facebook.png */; };
 		01FB78A4183EA7EE0088C972 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A2183EA7EE0088C972 /* twitter.png */; };
 		01FB78A6183EA89A0088C972 /* magnifier_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FB78A5183EA89A0088C972 /* magnifier_48.png */; };
 		6EDB28A8C48B4086C0B6F5B5 /* Pods_WRUW_FM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */; };
+		D2DF02AA1088E9E5FBF3F939 /* Pods_WRUW_FMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +142,10 @@
 		01042C051AC06A42003112F3 /* PlayStopIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStopIconView.swift; sourceTree = "<group>"; };
 		01042C061AC06A42003112F3 /* RoundedBezierIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBezierIcons.swift; sourceTree = "<group>"; };
 		01042C561AC0764F003112F3 /* WRUWSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WRUWSwift.framework; path = "WRUWSwift/build/Debug-iphoneos/WRUWSwift.framework"; sourceTree = "<group>"; };
+		0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaylistServices.swift; path = Shared/Webservice/PlaylistServices.swift; sourceTree = "<group>"; };
+		0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleasesServicesTests.swift; sourceTree = "<group>"; };
+		010995782057219E00BD8BDE /* Releases.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Releases.json; path = "Supporting Files/StubbedResponses/Releases.json"; sourceTree = "<group>"; };
+		0109957C205726D300BD8BDE /* ShowServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowServicesTests.swift; sourceTree = "<group>"; };
 		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayDataSource.h; path = ../ArrayDataSource.h; sourceTree = "<group>"; };
 		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayDataSource.m; path = ../ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
@@ -164,6 +187,11 @@
 		013720311AD5B40200BF3219 /* book_bookmark_24@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book_bookmark_24@2x.png"; sourceTree = "<group>"; };
 		0138A91F1AC0A2B30091B7E5 /* WRUWModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WRUWModule-Bridging-Header.h"; path = "../WRUWModule-Bridging-Header.h"; sourceTree = "<group>"; };
 		0138A9201AC0A4140091B7E5 /* StreamPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPlayView.swift; sourceTree = "<group>"; };
+		014D505320509025003D42C0 /* CurrentShow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CurrentShow.json; path = "Supporting Files/StubbedResponses/CurrentShow.json"; sourceTree = "<group>"; };
+		014D50562050912E003D42C0 /* AllShows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AllShows.json; path = "Supporting Files/StubbedResponses/AllShows.json"; sourceTree = "<group>"; };
+		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
+		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
+		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestingHelpers.swift; path = "Supporting Files/TestingHelpers.swift"; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -173,6 +201,7 @@
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WruwStorehouseIconList.plist; sourceTree = "<group>"; };
+		016A21CB2047382300474490 /* PlaylistInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
 		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
 		016C99111A93F522008634DA /* EmptyFavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFavoritesView.m; sourceTree = "<group>"; };
 		0170903617DBA8F80005EC0F /* WRUW-FM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WRUW-FM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,15 +215,17 @@
 		0170904817DBA8F80005EC0F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0170904917DBA8F80005EC0F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0170905217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WRUW-FMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0170906717DBA8F80005EC0F /* WRUWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRUWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WRUW-FMTests-Info.plist"; sourceTree = "<group>"; };
 		0170907217DBA8F80005EC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0170907417DBA8F80005EC0F /* WRUWTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRUWTests.h; sourceTree = "<group>"; };
-		0170907517DBA8F80005EC0F /* WRUWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WRUWTests.m; sourceTree = "<group>"; };
 		0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MSLayoutSupport.h"; sourceTree = "<group>"; };
 		0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MSLayoutSupport.m"; sourceTree = "<group>"; };
+		0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelpersTests.swift; sourceTree = "<group>"; };
+		0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicBrainzApiRouterTests.swift; sourceTree = "<group>"; };
+		0177151E2054660500EB7773 /* WruwApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WruwApiRouterTests.swift; sourceTree = "<group>"; };
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		019285432059751000A54822 /* PlaylistServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistServicesTests.swift; sourceTree = "<group>"; };
 		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
 		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -204,12 +235,17 @@
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01997EC41C8CE2390007C38D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Shared/CircleView.swift; sourceTree = "<group>"; };
 		01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+extensions.swift"; path = "Core Extensions/Dictionary+extensions.swift"; sourceTree = "<group>"; };
+		019D9FD220438D1900C05026 /* ShowServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowServices.swift; path = Shared/Webservice/ShowServices.swift; sourceTree = "<group>"; };
+		019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WRUW-FM-Bridging-Header.h"; sourceTree = "<group>"; };
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
+		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebserviceHelpers.swift; path = Shared/Webservice/WebserviceHelpers.swift; sourceTree = "<group>"; };
+		01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebservice.swift; sourceTree = "<group>"; };
 		01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extensions.swift"; path = "Core Extensions/UIView+extensions.swift"; sourceTree = "<group>"; };
 		01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType+extensions.swift"; path = "Core Extensions/SequenceType+extensions.swift"; sourceTree = "<group>"; };
 		01CAFF621C8B663600AD1E95 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Shared/Theme.swift; sourceTree = "<group>"; };
@@ -218,6 +254,10 @@
 		01CFAA54183BA0C200535F96 /* SongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableViewCell.h; sourceTree = "<group>"; };
 		01CFAA55183BA0C200535F96 /* SongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewCell.m; sourceTree = "<group>"; };
 		01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
+		01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicBrainzAPIRouter.swift; path = Shared/Webservice/MusicBrainzAPIRouter.swift; sourceTree = "<group>"; };
+		01ED058C2049C8FA006F8012 /* ReleasesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReleasesServices.swift; path = Shared/Webservice/ReleasesServices.swift; sourceTree = "<group>"; };
+		01ED058E2049CBDA006F8012 /* Release.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
+		01ED05902049D1E6006F8012 /* CoverArtServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoverArtServices.swift; path = Shared/Webservice/CoverArtServices.swift; sourceTree = "<group>"; };
 		01F40DBF18396A7800BFA783 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		01F40DC118396A8900BFA783 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		01F40DC318396A9200BFA783 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -226,18 +266,14 @@
 		01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShowsTableViewController.h; sourceTree = "<group>"; };
 		01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShowsTableViewController.m; sourceTree = "<group>"; };
 		01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamPlayViewModel.swift; path = StreamPlay/StreamPlayViewModel.swift; sourceTree = "<group>"; };
-		01F981A0183537B20069C241 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		01F981A1183537B20069C241 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		01F981A2183537B20069C241 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		01F981A3183537B20069C241 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		01F981A4183537B20069C241 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		01F981A5183537B20069C241 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		01F981A9183538D10069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		01F981AB183538DA0069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		01FB78A2183EA7EE0088C972 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		01FB78A5183EA89A0088C972 /* magnifier_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier_48.png; sourceTree = "<group>"; };
 		19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.release.xcconfig"; sourceTree = "<group>"; };
+		3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests.release.xcconfig"; sourceTree = "<group>"; };
+		43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRUW_FMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B8AB567B82BDC3B2A90606 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRUW_FM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRUW-FM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +306,7 @@
 			files = (
 				0170906A17DBA8F80005EC0F /* UIKit.framework in Frameworks */,
 				0170906B17DBA8F80005EC0F /* Foundation.framework in Frameworks */,
+				D2DF02AA1088E9E5FBF3F939 /* Pods_WRUW_FMTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,10 +357,42 @@
 			name = "Core Extensions";
 			sourceTree = "<group>";
 		};
+		014C4327204DD83200B09F6F /* MusicBrainz */ = {
+			isa = PBXGroup;
+			children = (
+				01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */,
+				01ED058C2049C8FA006F8012 /* ReleasesServices.swift */,
+				01ED05902049D1E6006F8012 /* CoverArtServices.swift */,
+			);
+			name = MusicBrainz;
+			sourceTree = "<group>";
+		};
+		014C4328204DD83F00B09F6F /* WRUW */ = {
+			isa = PBXGroup;
+			children = (
+				01B94BA720437724000874E1 /* WruwApiRouter.swift */,
+				019D9FD220438D1900C05026 /* ShowServices.swift */,
+				0104CCC82044BC8500D3EB8F /* PlaylistServices.swift */,
+			);
+			name = WRUW;
+			sourceTree = "<group>";
+		};
+		014D50552050902F003D42C0 /* StubbedResponses */ = {
+			isa = PBXGroup;
+			children = (
+				014D50562050912E003D42C0 /* AllShows.json */,
+				014D505820509213003D42C0 /* Archive.json */,
+				014D505320509025003D42C0 /* CurrentShow.json */,
+				014D505A2050926B003D42C0 /* Show.json */,
+				010995782057219E00BD8BDE /* Releases.json */,
+			);
+			name = StubbedResponses;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
-				01F981AB183538DA0069C241 /* libxml2.dylib */,
 				0170903F17DBA8F80005EC0F /* WRUW */,
 				0170906E17DBA8F80005EC0F /* WRUWTests */,
 				0170903817DBA8F80005EC0F /* Frameworks */,
@@ -336,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				0170903617DBA8F80005EC0F /* WRUW-FM.app */,
-				0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */,
+				0170906717DBA8F80005EC0F /* WRUWTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,6 +428,7 @@
 				0170903D17DBA8F80005EC0F /* CoreGraphics.framework */,
 				44B8AB567B82BDC3B2A90606 /* Pods.framework */,
 				80644988C2315A5BA7CEFA20 /* Pods_WRUW_FM.framework */,
+				43F93015E7C3DBC9042A0929 /* Pods_WRUW_FMTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,7 +436,7 @@
 		0170903F17DBA8F80005EC0F /* WRUW */ = {
 			isa = PBXGroup;
 			children = (
-				01F9819F183537A10069C241 /* hpple */,
+				019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
 				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
 				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
@@ -379,6 +449,7 @@
 				01F925DC1C8E3DBB00206537 /* StreamPlay */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				01B94BA620437705000874E1 /* Webservice */,
 				01CAFF611C8B662000AD1E95 /* Shared */,
 				012C926B1840026600C94210 /* Save Data */,
 				01CAC82917DFACE400057340 /* images */,
@@ -404,8 +475,7 @@
 		0170906E17DBA8F80005EC0F /* WRUWTests */ = {
 			isa = PBXGroup;
 			children = (
-				0170907417DBA8F80005EC0F /* WRUWTests.h */,
-				0170907517DBA8F80005EC0F /* WRUWTests.m */,
+				0192854520597ED400A54822 /* Networking Tests */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 			);
 			path = WRUWTests;
@@ -414,10 +484,41 @@
 		0170906F17DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				014D50552050902F003D42C0 /* StubbedResponses */,
 				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0192854520597ED400A54822 /* Networking Tests */ = {
+			isa = PBXGroup;
+			children = (
+				014D505C20509529003D42C0 /* TestingHelpers.swift */,
+				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
+				0192854620597EF200A54822 /* Router Tests */,
+				0192854720597EFF00A54822 /* Request Tests */,
+			);
+			name = "Networking Tests";
+			sourceTree = "<group>";
+		};
+		0192854620597EF200A54822 /* Router Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */,
+				0177151E2054660500EB7773 /* WruwApiRouterTests.swift */,
+			);
+			name = "Router Tests";
+			sourceTree = "<group>";
+		};
+		0192854720597EFF00A54822 /* Request Tests */ = {
+			isa = PBXGroup;
+			children = (
+				019285432059751000A54822 /* PlaylistServicesTests.swift */,
+				0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */,
+				0109957C205726D300BD8BDE /* ShowServicesTests.swift */,
+			);
+			name = "Request Tests";
 			sourceTree = "<group>";
 		};
 		019316DD183B83A2007755E8 /* Shows ViewControllers */ = {
@@ -463,6 +564,17 @@
 				015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */,
 			);
 			path = "Favorites Controllers";
+			sourceTree = "<group>";
+		};
+		01B94BA620437705000874E1 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */,
+				01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */,
+				014C4327204DD83200B09F6F /* MusicBrainz */,
+				014C4328204DD83F00B09F6F /* WRUW */,
+			);
+			name = Webservice;
 			sourceTree = "<group>";
 		};
 		01CAC82917DFACE400057340 /* images */ = {
@@ -529,11 +641,13 @@
 		01F9819B1835373C0069C241 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01ED058E2049CBDA006F8012 /* Release.swift */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
 				01F40DC918398F1500BFA783 /* Playlist.h */,
+				016A21CB2047382300474490 /* PlaylistInfo.swift */,
 				01F40DCA18398F1500BFA783 /* Playlist.m */,
 				019316DA183B5E67007755E8 /* Song.h */,
 				019316DB183B5E67007755E8 /* Song.m */,
@@ -542,24 +656,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		01F9819F183537A10069C241 /* hpple */ = {
-			isa = PBXGroup;
-			children = (
-				01F981A0183537B20069C241 /* TFHpple.h */,
-				01F981A1183537B20069C241 /* TFHpple.m */,
-				01F981A2183537B20069C241 /* TFHppleElement.h */,
-				01F981A3183537B20069C241 /* TFHppleElement.m */,
-				01F981A4183537B20069C241 /* XPathQuery.h */,
-				01F981A5183537B20069C241 /* XPathQuery.m */,
-			);
-			path = hpple;
-			sourceTree = "<group>";
-		};
 		79746C83A8ACE2BA5C07C096 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */,
 				19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */,
+				43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */,
+				3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -591,10 +694,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0170907C17DBA8F80005EC0F /* Build configuration list for PBXNativeTarget "WRUW-FMTests" */;
 			buildPhases = (
+				086B96F88EAB6A3FAF574774 /* [CP] Check Pods Manifest.lock */,
 				0170906217DBA8F80005EC0F /* Sources */,
 				0170906317DBA8F80005EC0F /* Frameworks */,
 				0170906417DBA8F80005EC0F /* Resources */,
-				0170906517DBA8F80005EC0F /* ShellScript */,
+				402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */,
+				074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -603,7 +708,7 @@
 			);
 			name = "WRUW-FMTests";
 			productName = WRUWTests;
-			productReference = 0170906717DBA8F80005EC0F /* WRUW-FMTests.xctest */;
+			productReference = 0170906717DBA8F80005EC0F /* WRUWTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -699,25 +804,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014D505420509025003D42C0 /* CurrentShow.json in Resources */,
+				010995792057219E00BD8BDE /* Releases.json in Resources */,
 				0170907317DBA8F80005EC0F /* InfoPlist.strings in Resources */,
+				014D505B2050926B003D42C0 /* Show.json in Resources */,
+				014D505920509213003D42C0 /* Archive.json in Resources */,
+				014D50572050912E003D42C0 /* AllShows.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0170906517DBA8F80005EC0F /* ShellScript */ = {
+		074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		086B96F88EAB6A3FAF574774 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WRUW-FMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -726,15 +871,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AFOnoResponseSerializer/AFOnoResponseSerializer.framework",
 				"${BUILT_PRODUCTS_DIR}/ARAnalytics/ARAnalytics.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CBStoreHouseRefreshControl/CBStoreHouseRefreshControl.framework",
 				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
-				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
 				"${BUILT_PRODUCTS_DIR}/RSSwizzle/RSSwizzle.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -744,15 +887,13 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFOnoResponseSerializer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARAnalytics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CBStoreHouseRefreshControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSwizzle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -806,16 +947,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */,
+				01ED058F2049CBDA006F8012 /* Release.swift in Sources */,
 				019316DC183B5E67007755E8 /* Song.m in Sources */,
+				01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */,
 				01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
-				01F981A7183537B20069C241 /* TFHppleElement.m in Sources */,
-				01F981A8183537B20069C241 /* XPathQuery.m in Sources */,
 				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
 				01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */,
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
+				01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
@@ -824,21 +966,27 @@
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
-				01F981A6183537B20069C241 /* TFHpple.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
+				019D9FD320438D1900C05026 /* ShowServices.swift in Sources */,
 				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
+				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
+				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
 				016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */,
 				01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */,
+				01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */,
 				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,
 				01997EC51C8CE2390007C38D /* CircleView.swift in Sources */,
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
+				016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */,
+				01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */,
 				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
+				01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
 				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
 			);
@@ -848,7 +996,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0170907617DBA8F80005EC0F /* WRUWTests.m in Sources */,
+				0109957720571C3D00BD8BDE /* ReleasesServicesTests.swift in Sources */,
+				019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */,
+				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
+				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
+				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
+				0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */,
+				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +1135,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
@@ -998,7 +1153,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
@@ -1013,6 +1168,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
@@ -1030,7 +1186,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
@@ -1039,40 +1195,52 @@
 		};
 		0170907D17DBA8F80005EC0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43DA03303DE8F53DF4DDF468 /* Pods-WRUW-FMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
-				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_VERSION = 2.0;
+				PRODUCT_MODULE_NAME = WRUWModuleTests;
+				PRODUCT_NAME = WRUWTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
 		};
 		0170907E17DBA8F80005EC0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E70AFD8307A4A093211EAA6 /* Pods-WRUW-FMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
+					"@loader_path/Frameworks",
+					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
-				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_VERSION = 2.0;
+				PRODUCT_MODULE_NAME = WRUWModuleTests;
+				PRODUCT_NAME = WRUWTests;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;
