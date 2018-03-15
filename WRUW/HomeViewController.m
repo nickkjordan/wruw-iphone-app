@@ -1,15 +1,4 @@
-//
-//  HomeTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 1/31/14.
-//  Copyright (c) 2014 Nick Jordan. All rights reserved.
-//
-
 #import "HomeViewController.h"
-#import "AFHTTPRequestOperationManager.h"
-#import "AFOnoResponseSerializer.h"
-#import "Ono.h"
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
 #import "Show.h"
@@ -39,129 +28,184 @@
     }
 }
 
-- (void)checkConnection
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+- (void)loadHomePage {
+    CurrentShow *currentShowService = [[CurrentShow alloc] init];
+
+    [currentShowService request:^(WruwResult *result) {
+        if (result.success) {
+            Show *newShow = (Show *)[result success];
+
+            self.moreInfoButton.enabled = YES;
     
-    [manager GET:@"http://www.wruw.org" parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-        [self loadHomePage:responseObject];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Connection" message:@"Make sure you are connected to the internet, then drag down on \"Now Playing\" to reload." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        [self.storeHouseRefreshControl finishingLoading];
-        [spinner stopAnimating];
-        return;
+            if (![newShow isEqual:_currentShow]) {
+                _currentShow = newShow;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [showTitle setText:_currentShow.title];
+                    [hostLabel setText:_currentShow.host];
+                });
+    
+                // remove current playlist
+                _archive = [NSMutableArray array];
+                [self loadCurrentPlaylist];
+            } else {
+                [self updateCurrentPlaylist];
+            }
+        }
+
+        if (result.failure) {
+            UIAlertController *alert =
+            [UIAlertController alertControllerWithTitle:@"No Connection"
+                                                message:@"Make sure you are connected to the internet, then drag down on \"Now Playing\" to reload."
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok =
+            [UIAlertAction actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                   }];
+
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+
+            [self.storeHouseRefreshControl finishingLoading];
+            [spinner stopAnimating];
+            return;
+        }
     }];
-    
 }
 
-- (void)loadHomePage:(ONOXMLDocument *)homePageHtmlData {
-    
-    Show *newShow = [[Show alloc] init];
-    
-    // Create XPath strings
-    NSString *currentShowTitleXpathQueryString = @"/html/body/div/main/div[1]/div/div/div/div[2]/div[1]/span/a";
-    
-    ONOXMLElement *showTitleNode = [homePageHtmlData firstChildWithXPath:currentShowTitleXpathQueryString];
-    
-    NSString *url = [[showTitleNode attributes] objectForKey:@"href"];
-    
-    newShow.url = url;
-    if (url.length == 0) { return; }
-    [newShow loadInfo:^(){
-        self.moreInfoButton.enabled = YES;
-        
-        if (_archive.count == 0) {
-            [self loadCurrentPlaylist];
-        }
-        if (![newShow isEqual:_currentShow]) {
-            _currentShow = newShow;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [showTitle setText:_currentShow.title];
-                [hostLabel setText:_currentShow.host];
-            });
-            
-            // remove current playlist
-            _archive = [NSMutableArray array];
-            [self loadCurrentPlaylist];
-        } else {
-            [self updateCurrentPlaylist];
-        }
+- (void)loadPlaylistForShow:(Show *)show completion:(void (^) (WruwResult *))completion {
+    NSDate *todaysDate = [[NSDate alloc] init];
+    NSString *todaysDateString = [Show formatPathForDate:todaysDate];
+
+    GetPlaylist *playlistService = [[GetPlaylist alloc]
+                                    initWithShowName: show.title.asQuery
+                                    date: todaysDateString];
+
+    [playlistService request:^(WruwResult *result) {
+        completion(result);
     }];
-    
 }
 
 - (void)loadCurrentPlaylist {
-    _archive = [NSMutableArray arrayWithArray:[[[_currentShow.lastShow loadSongs] reverseObjectEnumerator] allObjects]];
+    [self loadPlaylistForShow:_currentShow completion:^(WruwResult *result) {
+        if (result.success) {
+            Playlist *playlist = (Playlist *)[result success];
 
-    __block BOOL setup;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        setup = [self setupTableView];
-        [spinner stopAnimating];
-    });
-    
+            _archive = [[[[playlist songs] reverseObjectEnumerator] allObjects] mutableCopy];
+
+            __block BOOL setup;
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                setup = [self setupTableView];
+                [spinner stopAnimating];
+            });
+
+            [self getReleaseInfo];
+            
+            [self.storeHouseRefreshControl finishingLoading];
+        }
+    }];
+}
+
+- (void)getReleaseInfo {
     int i = 0;
     [self.tableView beginUpdates];
+
     for (Song *song in _archive) {
-        [song loadImage:^void () {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-            });
+        GetReleases *releasesService =
+            [[GetReleases alloc] initWithRelease:song.album
+                                          artist:song.artist];
+
+        [releasesService request:^(WruwResult *result) {
+            NSMutableArray *releases = (NSMutableArray *)result.success;
+
+            if (!releases) {
+                return;
+            }
+
+            __block int index = 0;
+            void (^__block completion)(WruwResult *) = ^void(WruwResult *result){
+                if (!result.success) {
+                    index++;
+                    [self loadCoverArtForReleases:releases
+                                          atIndex:index
+                                       completion:completion];
+
+                    return;
+                }
+
+                NSLog(@"release number: %@", [[NSNumber alloc] initWithInt:index]);
+                completion = nil;
+
+                song.image = result.success;
+
+                [self reloadSongAtRow:i];
+            };
+
+            [self loadCoverArtForReleases:releases
+                                  atIndex:index
+                               completion:completion];
         }];
-        
+
         i++;
     }
+
     [self.tableView endUpdates];
-    
-    [self.storeHouseRefreshControl finishingLoading];
+}
+
+- (void)loadCoverArtForReleases:(NSMutableArray *)releases
+                        atIndex:(int)index
+                     completion:(void (^) (WruwResult *))completion {
+    if (releases.count <= index) {
+        return;
+    }
+
+    Release *release = [releases objectAtIndex:index];
+
+    if (release.id.length == 0) {
+        return;
+    }
+
+    [self loadCoverArt:release.id completion:^(WruwResult *result) {
+        completion(result);
+    }];
+}
+
+- (void)reloadSongAtRow:(int)row {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
+        [self.tableView reloadRowsAtIndexPaths:indexArray
+                              withRowAnimation:UITableViewRowAnimationNone];
+    });
+}
+
+- (void)loadCoverArt:(NSString*)id completion:(void (^) (WruwResult *))completion {
+    GetCoverArt *coverArtService = [[GetCoverArt alloc] initWithReleaseId:id];
+
+    [coverArtService request:^(WruwResult *result) {
+        completion(result);
+    }];
 }
 
 - (void)updateCurrentPlaylist {
-    
-    NSMutableArray *updatedPlaylist = [_currentShow.lastShow loadSongs];
-    
-    // 8
-    NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[updatedPlaylist reverseObjectEnumerator] allObjects]];
-    [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
-    
-    NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
-                           NSMakeRange(0,[newSongs count])];
-    [_archive insertObjects:newSongs atIndexes:indexes];
-    
-    int i = 0;
-    [self.tableView beginUpdates];
-    for (Song *song in newSongs) {
-        [song loadImage:^void () {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-                [self.tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-            });
-        }];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        NSArray *indexArray = [NSArray arrayWithObjects:indexPath, nil];
-        [self.tableView insertRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationNone];
-        
-        i++;
-    }
-    [self.tableView endUpdates];
-    
-    [self.storeHouseRefreshControl finishingLoading];
+    [self loadPlaylistForShow:_currentShow completion:^(WruwResult *result) {
+        if (result.success) {
+            Playlist *playlist = (Playlist *)[result success];
+
+            NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[playlist.songs reverseObjectEnumerator] allObjects]];
+            [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
+
+            NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
+                                   NSMakeRange(0,[newSongs count])];
+            [_archive insertObjects:newSongs atIndexes:indexes];
+
+            [self getReleaseInfo];
+
+            [self.storeHouseRefreshControl finishingLoading];
+        }
+    }];
 }
 
 - (void)viewDidLoad
@@ -169,9 +213,8 @@
     [super viewDidLoad];
     
     [self setTitle:@"Now Playing"];
-    [ARAnalytics event:@"Screen view" withProperties:@{
-                                                       @"screen": @"Home View"
-                                                       }];
+    [ARAnalytics event:@"Screen view"
+        withProperties:@{ @"screen": @"Home View" }];
     
     self.tableView.delegate = self;
     
@@ -196,10 +239,8 @@
     [hostLabel setText:[NSString stringWithFormat:@""]];
     showDescription.editable = NO;
     
-    dispatch_queue_t myQueue = dispatch_queue_create("org.wruw.app", NULL);
-    
-    dispatch_async(myQueue, ^{ [self checkConnection]; });
-    
+    [self loadHomePage];
+
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     
@@ -226,12 +267,16 @@
                                      reverseLoadingAnimation:YES
                                      internalAnimationFactor:0.5];
     
-    [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(checkConnection) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:60.0
+                                     target:self
+                                   selector:@selector(getReleaseInfo)
+                                   userInfo:nil
+                                    repeats:YES];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self.streamPlay
-                                            selector:@selector(didAppear)
-                                                name:UIApplicationDidBecomeActiveNotification
-                                              object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self.streamPlay
+                                             selector:@selector(didAppear)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -254,16 +299,20 @@
 
 #pragma mark - Table view data source
 
-- (BOOL)setupTableView
-{
+- (BOOL)setupTableView {
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
     };
-    self.songsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_archive
-                                                        cellIdentifier:@"SongTableViewCell"
-                                                    configureCellBlock:configureCell];
+
+    self.songsArrayDataSource =
+        [[ArrayDataSource alloc] initWithItems:_archive
+                                cellIdentifier:@"SongTableViewCell"
+                            configureCellBlock:configureCell];
     self.tableView.dataSource = self.songsArrayDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"SongTableViewCell"];
     [self.tableView reloadData];
     
     return true;
@@ -271,9 +320,11 @@
 
 #pragma mark – Table view delegate
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SongTableViewCell *cell = (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+- (NSIndexPath *)tableView:(UITableView *)tableView
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SongTableViewCell *cell =
+        (SongTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+
     if ([cell isSelected]) {
         // Deselect manually.
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -286,26 +337,22 @@
 
 #pragma mark - Navigation Bar delegate
 
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
 }
 
 #pragma mark - Scroll view delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.storeHouseRefreshControl scrollViewDidScroll];
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self.storeHouseRefreshControl scrollViewDidEndDragging];
 }
 
-- (void)refreshTriggered
-{
-    [self checkConnection];
+- (void)refreshTriggered {
+    [self loadHomePage];
 }
 
 @end

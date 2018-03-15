@@ -1,18 +1,13 @@
-//
-//  Playlist.h
-//  WRUW
-//
-//  Created by Nick Jordan on 11/17/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@interface Playlist : NSObject
+@protocol JSONConvertible;
+
+@interface Playlist : NSObject <JSONConvertible>
 
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *idValue;
+@property (nonatomic, copy) NSArray *songs;
 
--(NSMutableArray *)loadSongs;
+-(instancetype)initWithJson:(NSDictionary *)dict;
 
 @end

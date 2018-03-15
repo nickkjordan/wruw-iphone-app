@@ -1,0 +1,2505 @@
+{
+    "created": "2018-03-12T20:27:04.291Z",
+    "count": 128,
+    "offset": 0,
+    "releases": [
+                 {
+                 "id": "ee9a2164-db8e-4332-82e2-50fa4c32d7a7",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "3c174d9d-139b-4fa7-8f0b-ae8eceb4271c",
+                                   "name": "Marsmobil",
+                                   "sort-name": "Marsmobil",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Roberto di Gioia's Marsmobil",
+                                               "name": "Roberto di Gioia's Marsmobil",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Roberto Di Gioia's Marsmobil",
+                                               "name": "Roberto Di Gioia's Marsmobil",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "6b68b7aa-8cd9-4205-aacd-72fb8ac93fb5",
+                 "primary-type": "Album"
+                 },
+                 "date": "2011-08-26",
+                 "release-events": [
+                                    {
+                                    "date": "2011-08-26"
+                                    }
+                                    ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "disc-count": 0,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "3d7a22e7-640c-43ec-b1c9-02749d390e23",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "None",
+                 "text-representation": {
+                 "language": "spa",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "b057660f-32e4-420e-b5f2-b4e89cd1af28",
+                                   "name": "Displomen",
+                                   "sort-name": "Displomen"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "428251df-d97b-4154-9e31-ac37425461b3",
+                 "primary-type": "Album"
+                 },
+                 "date": "2007-09-04",
+                 "country": "XW",
+                 "release-events": [
+                                    {
+                                    "date": "2007-09-04",
+                                    "area": {
+                                    "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                                    "name": "[Worldwide]",
+                                    "sort-name": "[Worldwide]",
+                                    "iso-3166-1-codes": [
+                                                         "XW"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "",
+                 "label-info": [
+                                {
+                                "catalog-number": "LTS 016",
+                                "label": {
+                                "id": "157afde4-4bf5-4039-8ad2-5a15acc85176",
+                                "name": "[no label]"
+                                }
+                                }
+                                ],
+                 "track-count": 18,
+                 "media": [
+                           {
+                           "format": "Digital Media",
+                           "disc-count": 0,
+                           "track-count": 18
+                           }
+                           ]
+                 },
+                 {
+                 "id": "86c58cc7-9996-435a-a82a-2277f86256cd",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "Digipak",
+                 "text-representation": {
+                 "language": "fra",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "55808e24-5150-4abd-b86b-7c3d7a080da3",
+                                   "name": "Akhenaton",
+                                   "sort-name": "Akhenaton",
+                                   "disambiguation": "French MC / Producer",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "AKH",
+                                               "name": "AKH",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Akhenathon",
+                                               "name": "Akhenathon",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "0f180796-2f64-35fb-a62e-bf690dcf7229",
+                 "primary-type": "Album"
+                 },
+                 "date": "2002-11",
+                 "country": "FR",
+                 "release-events": [
+                                    {
+                                    "date": "2002-11",
+                                    "area": {
+                                    "id": "08310658-51eb-3801-80de-5a0739207115",
+                                    "name": "France",
+                                    "sort-name": "France",
+                                    "iso-3166-1-codes": [
+                                                         "FR"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "724381282724",
+                 "asin": "B00006IX2O",
+                 "label-info": [
+                                {
+                                "catalog-number": "7243 8 12827 2 4",
+                                "label": {
+                                "id": "965f4b01-739b-47b7-b33a-2b3f7ce74bc8",
+                                "name": "Delabel"
+                                }
+                                }
+                                ],
+                 "track-count": 18,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 1,
+                           "track-count": 18
+                           }
+                           ],
+                 "tags": [
+                          {
+                          "count": 1,
+                          "name": "hip hop"
+                          }
+                          ]
+                 },
+                 {
+                 "id": "a02a19bf-28f6-42d5-b911-a2098de00251",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "fra",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "c4dc0648-cf89-4e38-81de-28ab8a2a41b9",
+                                   "name": "Lunatic",
+                                   "sort-name": "Lunatic",
+                                   "disambiguation": "French rap group"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "e8ef7d53-1c9e-3be5-bb63-a1d48b533db7",
+                 "primary-type": "Album"
+                 },
+                 "date": "2006-03-20",
+                 "country": "FR",
+                 "release-events": [
+                                    {
+                                    "date": "2006-03-20",
+                                    "area": {
+                                    "id": "08310658-51eb-3801-80de-5a0739207115",
+                                    "name": "France",
+                                    "sort-name": "France",
+                                    "iso-3166-1-codes": [
+                                                         "FR"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "8287679925250",
+                 "asin": "B000EWC1SI",
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "508bc8b8-0b06-4fe9-ab59-7368b7f6ca7b",
+                                "name": "45 Scientific"
+                                }
+                                }
+                                ],
+                 "track-count": 18,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 18
+                           }
+                           ]
+                 },
+                 {
+                 "id": "9ccd5be4-3f6c-4303-bd96-15cccc4cdbb9",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "date": "1994-11-22",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "1994-11-22",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "asin": "B000008JLN",
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 5,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "ced4be9c-4563-4039-bfae-0243abcb80b2",
+                 "score": "100",
+                 "count": 1,
+                 "title": "BLACK ALBUM",
+                 "status": "Official",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "mul",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "2726c78c-fee9-4c78-8a85-37e1b674121d",
+                                   "name": "VELTPUNCH",
+                                   "sort-name": "VELTPUNCH"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "4759d131-8215-4e25-b180-5100f351d0a9",
+                 "primary-type": "Album"
+                 },
+                 "date": "2010-02-17",
+                 "country": "JP",
+                 "release-events": [
+                                    {
+                                    "date": "2010-02-17",
+                                    "area": {
+                                    "id": "2db42837-c832-3c27-b4a3-08198f75693c",
+                                    "name": "Japan",
+                                    "sort-name": "Japan",
+                                    "iso-3166-1-codes": [
+                                                         "JP"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "4582241310354",
+                 "asin": "B0031L6OUA",
+                 "label-info": [
+                                {
+                                "catalog-number": "EVOL-1008",
+                                "label": {
+                                "id": "6bf646fd-4de0-4223-b3a2-fc0c18ee9f7a",
+                                "name": "EVOL RECORDS"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "disc-count": 0,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "0877db8a-8eab-44fd-ba94-51c0722be1ef",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "disambiguation": "Limited Edition",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "date": "1994-11-22",
+                 "country": "CA",
+                 "release-events": [
+                                    {
+                                    "date": "1994-11-22",
+                                    "area": {
+                                    "id": "71bbafaa-e825-3e15-8ca9-017dcad1748b",
+                                    "name": "Canada",
+                                    "sort-name": "Canada",
+                                    "iso-3166-1-codes": [
+                                                         "CA"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "093624579328",
+                 "asin": "B000008JLN",
+                 "label-info": [
+                                {
+                                "catalog-number": "45793",
+                                "label": {
+                                "id": "c595c289-47ce-4fba-b999-b87503e8cb71",
+                                "name": "Warner Bros. Records"
+                                }
+                                },
+                                {
+                                "catalog-number": "CDW 45793",
+                                "label": {
+                                "id": "c595c289-47ce-4fba-b999-b87503e8cb71",
+                                "name": "Warner Bros. Records"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "569f98b2-6c61-4587-af98-f56fb143cf69",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "None",
+                 "text-representation": {
+                 "language": "fra",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "55808e24-5150-4abd-b86b-7c3d7a080da3",
+                                   "name": "Akhenaton",
+                                   "sort-name": "Akhenaton",
+                                   "disambiguation": "French MC / Producer",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "AKH",
+                                               "name": "AKH",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Akhenathon",
+                                               "name": "Akhenathon",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "0f180796-2f64-35fb-a62e-bf690dcf7229",
+                 "primary-type": "Album"
+                 },
+                 "asin": "B00252ZH1I",
+                 "track-count": 18,
+                 "media": [
+                           {
+                           "format": "Digital Media",
+                           "disc-count": 0,
+                           "track-count": 18
+                           }
+                           ],
+                 "tags": [
+                          {
+                          "count": 1,
+                          "name": "hip hop"
+                          }
+                          ]
+                 },
+                 {
+                 "id": "45350c90-b801-49fe-8ea1-fd26787ed389",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Bootleg",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "country": "XE",
+                 "release-events": [
+                                    {
+                                    "area": {
+                                    "id": "89a675c2-3e37-3518-b83c-418bad59a85a",
+                                    "name": "Europe",
+                                    "sort-name": "Europe",
+                                    "iso-3166-1-codes": [
+                                                         "XE"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "",
+                 "label-info": [
+                                {
+                                "catalog-number": "6708",
+                                "label": {
+                                "id": "66272fdb-8205-41f6-824f-80d496897a9b",
+                                "name": "Caporal"
+                                }
+                                },
+                                {
+                                "catalog-number": "WX 147",
+                                "label": {
+                                "id": "6ae5e050-2fc5-481e-ae30-19e687de9547",
+                                "name": "X' Records"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 1,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "7d3bcb89-2b2c-4e0c-ac3d-bce5c3540053",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Promotion",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "date": "1994",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "1994",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "",
+                 "label-info": [
+                                {
+                                "catalog-number": "2-45793",
+                                "label": {
+                                "id": "c595c289-47ce-4fba-b999-b87503e8cb71",
+                                "name": "Warner Bros. Records"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "2c34a1fb-ba84-42a7-96df-aa70fd98c63b",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "disambiguation": "Limited Edition",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "country": "DE",
+                 "release-events": [
+                                    {
+                                    "area": {
+                                    "id": "85752fda-13c4-31a3-bee5-0e5cb1f51dad",
+                                    "name": "Germany",
+                                    "sort-name": "Germany",
+                                    "iso-3166-1-codes": [
+                                                         "DE"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "093624579328",
+                 "label-info": [
+                                {
+                                "catalog-number": "9362-45793-2",
+                                "label": {
+                                "id": "c595c289-47ce-4fba-b999-b87503e8cb71",
+                                "name": "Warner Bros. Records"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 1,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "0390ac62-68ae-49ef-ba0e-b8b48ab79950",
+                 "score": "100",
+                 "count": 1,
+                 "title": "BLACK ALBUM",
+                 "status": "Official",
+                 "disambiguation": "初回デジパック盤",
+                 "packaging": "Digipak",
+                 "text-representation": {
+                 "language": "jpn",
+                 "script": "Jpan"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "29b5e2d7-3800-40aa-bf7c-3cdc481ee25a",
+                                   "name": "96",
+                                   "sort-name": "96",
+                                   "disambiguation": "黒沢大佑 / 黒沢ダイスケ / Daisuke Kurosawa; BEMANI",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "くろ",
+                                               "name": "96",
+                                               "locale": "ja",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "96 (kuro)",
+                                               "name": "96 (kuro)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "dd887611-f3fd-4545-bcb6-f804ec5db783",
+                 "primary-type": "Album"
+                 },
+                 "date": "2013-03-27",
+                 "country": "JP",
+                 "release-events": [
+                                    {
+                                    "date": "2013-03-27",
+                                    "area": {
+                                    "id": "2db42837-c832-3c27-b4a3-08198f75693c",
+                                    "name": "Japan",
+                                    "sort-name": "Japan",
+                                    "iso-3166-1-codes": [
+                                                         "JP"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "4988602165227",
+                 "label-info": [
+                                {
+                                "catalog-number": "LC2168",
+                                "label": {
+                                "id": "7b34fad8-fed7-4598-9ebb-8dc1054a6c53",
+                                "name": "KONAMI"
+                                }
+                                }
+                                ],
+                 "track-count": 19,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 19
+                           }
+                           ]
+                 },
+                 {
+                 "id": "cdc2e2c8-fb71-4832-beca-9b726da95c44",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "None",
+                 "text-representation": {
+                 "language": "fra",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "ee836afb-4214-44c4-a9bc-ea46be37dd71",
+                                   "name": "Jeff Le Nerf",
+                                   "sort-name": "Jeff Le Nerf"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "76f01fa2-1afa-46ca-93a4-d844d24778d8",
+                 "primary-type": "Album"
+                 },
+                 "date": "2015-12-04",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "2015-12-04",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "6f9b5cad-6816-488e-bcd8-3530e3794783",
+                                "name": "Musicast"
+                                }
+                                }
+                                ],
+                 "track-count": 15,
+                 "media": [
+                           {
+                           "format": "Digital Media",
+                           "disc-count": 0,
+                           "track-count": 15
+                           }
+                           ]
+                 },
+                 {
+                 "id": "9f7ddef8-9153-4a80-8b7f-43ffec65e078",
+                 "score": "100",
+                 "count": 1,
+                 "title": "BLACK ALBUM",
+                 "status": "Official",
+                 "packaging": "None",
+                 "text-representation": {
+                 "language": "jpn",
+                 "script": "Jpan"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "29b5e2d7-3800-40aa-bf7c-3cdc481ee25a",
+                                   "name": "96",
+                                   "sort-name": "96",
+                                   "disambiguation": "黒沢大佑 / 黒沢ダイスケ / Daisuke Kurosawa; BEMANI",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "くろ",
+                                               "name": "96",
+                                               "locale": "ja",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "96 (kuro)",
+                                               "name": "96 (kuro)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "dd887611-f3fd-4545-bcb6-f804ec5db783",
+                 "primary-type": "Album"
+                 },
+                 "date": "2013-03-27",
+                 "country": "JP",
+                 "release-events": [
+                                    {
+                                    "date": "2013-03-27",
+                                    "area": {
+                                    "id": "2db42837-c832-3c27-b4a3-08198f75693c",
+                                    "name": "Japan",
+                                    "sort-name": "Japan",
+                                    "iso-3166-1-codes": [
+                                                         "JP"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "4988602165227",
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "7b34fad8-fed7-4598-9ebb-8dc1054a6c53",
+                                "name": "KONAMI"
+                                }
+                                }
+                                ],
+                 "track-count": 19,
+                 "media": [
+                           {
+                           "format": "Digital Media",
+                           "disc-count": 0,
+                           "track-count": 19
+                           }
+                           ]
+                 },
+                 {
+                 "id": "1bb9faa1-10e5-4714-a17e-62b9cdf115c7",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "packaging": "None",
+                 "text-representation": {
+                 "language": "deu",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "96e0d852-52f1-49dd-bcc1-e902979ff3b1",
+                                   "name": "SounDDefekt",
+                                   "sort-name": "SounDDefekt"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "fda15107-d360-4492-81d7-a4a1ac2e32a2",
+                 "primary-type": "Album"
+                 },
+                 "date": "2015",
+                 "country": "DE",
+                 "release-events": [
+                                    {
+                                    "date": "2015",
+                                    "area": {
+                                    "id": "85752fda-13c4-31a3-bee5-0e5cb1f51dad",
+                                    "name": "Germany",
+                                    "sort-name": "Germany",
+                                    "iso-3166-1-codes": [
+                                                         "DE"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "track-count": 3,
+                 "media": [
+                           {
+                           "disc-count": 0,
+                           "track-count": 3
+                           }
+                           ]
+                 },
+                 {
+                 "id": "d65e2f60-03fa-421b-8e8f-29f8057430ec",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "fra",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "5e147adf-9146-48ee-9828-998b5a794b8c",
+                                   "name": "Mr R",
+                                   "sort-name": "Mr R",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Monsieur R",
+                                               "name": "Monsieur R",
+                                               "locale": null,
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Monsieur \"R\"",
+                                               "name": "Monsieur \"R\"",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Mr R",
+                                               "name": "Mr R",
+                                               "locale": null,
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Mr “R”",
+                                               "name": "Mr “R”",
+                                               "locale": null,
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "e2983bce-a069-4758-bc47-e05405753c1d",
+                 "primary-type": "Album"
+                 },
+                 "date": "2006",
+                 "country": "FR",
+                 "release-events": [
+                                    {
+                                    "date": "2006",
+                                    "area": {
+                                    "id": "08310658-51eb-3801-80de-5a0739207115",
+                                    "name": "France",
+                                    "sort-name": "France",
+                                    "iso-3166-1-codes": [
+                                                         "FR"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "0826596010014",
+                 "asin": "B000FEB6EA",
+                 "label-info": [
+                                {
+                                "catalog-number": "OTCD1001",
+                                "label": {
+                                "id": "d11f3f4e-6e23-4f20-877f-2bc9a429cc77",
+                                "name": "Nocturne"
+                                }
+                                }
+                                ],
+                 "track-count": 10,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 10
+                           }
+                           ]
+                 },
+                 {
+                 "id": "3ba02bce-2f6f-4777-9ea5-4fa9649c8eeb",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "fra"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "e1164802-5a16-46cc-90f3-42f2d6a9762d",
+                                   "name": "Furax Barbarossa",
+                                   "sort-name": "Furax Barbarossa",
+                                   "disambiguation": "French rapper"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "625f97c4-f7d5-423a-b12b-d79e4e7b349f",
+                 "primary-type": "Album",
+                 "secondary-types": [
+                                     "Compilation"
+                                     ]
+                 },
+                 "date": "2006-01-01",
+                 "country": "FR",
+                 "release-events": [
+                                    {
+                                    "date": "2006-01-01",
+                                    "area": {
+                                    "id": "08310658-51eb-3801-80de-5a0739207115",
+                                    "name": "France",
+                                    "sort-name": "France",
+                                    "iso-3166-1-codes": [
+                                                         "FR"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "track-count": 7,
+                 "media": [
+                           {
+                           "disc-count": 0,
+                           "track-count": 7
+                           }
+                           ]
+                 },
+                 {
+                 "id": "146ba733-a7ce-4bfe-b551-f6d85ebc356a",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "status": "Official",
+                 "packaging": "Cardboard/Paper Sleeve",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "070d193a-845c-479f-980e-bef15710653e",
+                                   "name": "Prince",
+                                   "sort-name": "Prince",
+                                   "disambiguation": "“The Artist Formerly Known as…”",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "♀♂",
+                                               "name": "♀♂",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Ƭ̵̬̊",
+                                               "name": "Ƭ̵̬̊",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Formerly Prince",
+                                               "name": "Formerly Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Coco, Joey",
+                                               "name": "Joey Coco",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": "1985",
+                                               "end-date": "1987"
+                                               },
+                                               {
+                                               "sort-name": "O(+>",
+                                               "name": "O(+>",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "O(+>)",
+                                               "name": "O(+>)",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Prince",
+                                               "name": "Prince",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Nelson, Prince Rogers",
+                                               "name": "Prince Rogers Nelson",
+                                               "locale": "en",
+                                               "type": "Legal name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Symbol",
+                                               "name": "Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "T.A.F.K.A.P.",
+                                               "name": "T.A.F.K.A.P.",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Artist Formerly Known as Prince",
+                                               "name": "The Artist Formerly Known as Prince",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Love Symbol",
+                                               "name": "The Love Symbol",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "(us 1) PRINCE",
+                                               "name": "(us 1) PRINCE",
+                                               "locale": null,
+                                               "type": "Search hint",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "97327d7f-f905-339c-8b04-73dadbffa829",
+                 "primary-type": "Album"
+                 },
+                 "date": "1994",
+                 "country": "XE",
+                 "release-events": [
+                                    {
+                                    "date": "1994",
+                                    "area": {
+                                    "id": "89a675c2-3e37-3518-b83c-418bad59a85a",
+                                    "name": "Europe",
+                                    "sort-name": "Europe",
+                                    "iso-3166-1-codes": [
+                                                         "XE"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "093624579311",
+                 "label-info": [
+                                {
+                                "catalog-number": "9362-45793-1",
+                                "label": {
+                                "id": "c595c289-47ce-4fba-b999-b87503e8cb71",
+                                "name": "Warner Bros. Records"
+                                }
+                                }
+                                ],
+                 "track-count": 8,
+                 "media": [
+                           {
+                           "format": "12\" Vinyl",
+                           "disc-count": 0,
+                           "track-count": 8
+                           }
+                           ]
+                 },
+                 {
+                 "id": "9f1b4f43-f149-45d9-b119-86b6cdcb2568",
+                 "score": "100",
+                 "count": 1,
+                 "title": "Black Album",
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                                   "name": "Metallica",
+                                   "sort-name": "Metallica",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "メタリカ",
+                                               "name": "メタリカ",
+                                               "locale": "ja",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "메탈리카",
+                                               "name": "메탈리카",
+                                               "locale": "ko_KR",
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Metalica",
+                                               "name": "Metalica",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Metallica",
+                                               "name": "Metallica",
+                                               "locale": "en",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "09464c93-bd43-4642-ab85-3c600d601390",
+                 "primary-type": "Album"
+                 },
+                 "date": "1991-08-13",
+                 "release-events": [
+                                    {
+                                    "date": "1991-08-13"
+                                    }
+                                    ],
+                 "track-count": 12,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 12
+                           }
+                           ]
+                 },
+                 {
+                 "id": "70497ee0-e4a3-404d-8a3c-0c1e09e7550d",
+                 "score": "80",
+                 "count": 1,
+                 "title": "X Black Album",
+                 "status": "Official",
+                 "packaging": "Jewel Case",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "f3f74f1f-cdbd-42b5-941c-46a437abce10",
+                                   "name": "S.U.N. Project",
+                                   "sort-name": "S.U.N. Project",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Sun Project",
+                                               "name": "Sun Project",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "2c56c37c-77de-34bc-9b42-c926d386206e",
+                 "primary-type": "Album"
+                 },
+                 "date": "2009-01-05",
+                 "country": "DE",
+                 "release-events": [
+                                    {
+                                    "date": "2009-01-05",
+                                    "area": {
+                                    "id": "85752fda-13c4-31a3-bee5-0e5cb1f51dad",
+                                    "name": "Germany",
+                                    "sort-name": "Germany",
+                                    "iso-3166-1-codes": [
+                                                         "DE"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "asin": "B001O9R7XY",
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "4180dba6-3502-4ad5-b8e6-f4c45f5c3b2f",
+                                "name": "S.U.N. Project Germany"
+                                }
+                                }
+                                ],
+                 "track-count": 9,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 9
+                           }
+                           ],
+                 "tags": [
+                          {
+                          "count": 1,
+                          "name": "trance"
+                          },
+                          {
+                          "count": 1,
+                          "name": "goa"
+                          }
+                          ]
+                 },
+                 {
+                 "id": "b0f2050d-62d7-43f2-aa07-208781ffa11f",
+                 "score": "80",
+                 "count": 2,
+                 "title": "The Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "5f572b31-8fd9-45ae-9beb-358c98d839df",
+                                   "name": "The Dandy Warhols",
+                                   "sort-name": "Dandy Warhols, The",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Dandy Warhols",
+                                               "name": "Dandy Warhols",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Dandy Worhols",
+                                               "name": "Dandy Worhols",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "the dandy warholes",
+                                               "name": "the dandy warholes",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Dandy Worhols",
+                                               "name": "The Dandy Worhols",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "923b5d7b-3e12-3970-9b7d-84653cf93038",
+                 "primary-type": "Album",
+                 "secondary-types": [
+                                     "Compilation"
+                                     ]
+                 },
+                 "date": "2004-04-20",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "2004-04-20",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "asin": "B000S9AAVM",
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "a8e2948d-2841-400f-a142-40543cc94b0b",
+                                "name": "Beat the World Records"
+                                }
+                                }
+                                ],
+                 "track-count": 29,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 11
+                           },
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 18
+                           }
+                           ]
+                 },
+                 {
+                 "id": "3ef7529d-7075-4fb9-a30b-7e81f25550d5",
+                 "score": "80",
+                 "count": 1,
+                 "title": "The Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "bfd95b65-f6e1-4394-867a-9558fdb4fdbb",
+                                   "name": "Boyd Rice",
+                                   "sort-name": "Rice, Boyd"
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "d068c1c6-7978-3f51-ba48-4827a457b747",
+                 "primary-type": "Album"
+                 },
+                 "date": "1977",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "1977",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "label-info": [
+                                {
+                                "label": {
+                                "id": "157afde4-4bf5-4039-8ad2-5a15acc85176",
+                                "name": "[no label]"
+                                }
+                                }
+                                ],
+                 "track-count": 9,
+                 "media": [
+                           {
+                           "format": "Vinyl",
+                           "disc-count": 0,
+                           "track-count": 9
+                           }
+                           ]
+                 },
+                 {
+                 "id": "1490509c-33dd-4060-b279-59f029e541a5",
+                 "score": "80",
+                 "count": 1,
+                 "title": "The Black Album",
+                 "status": "Bootleg",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "5dfdca28-9ddc-4853-933c-8bc97d87beec",
+                                   "name": "Marilyn Manson",
+                                   "sort-name": "Marilyn Manson",
+                                   "disambiguation": "the band",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "マリリン・マンソン",
+                                               "name": "マリリン・マンソン",
+                                               "locale": "ja",
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Manson Marilyn",
+                                               "name": "Manson Marilyn",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Mar1lyn Man5on",
+                                               "name": "Mar1lyn Man5on",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Marilin Manson",
+                                               "name": "Marilin Manson",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "marily manson",
+                                               "name": "marily manson",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Marilyn Manson",
+                                               "name": "Marilyn Manson",
+                                               "locale": null,
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": "1992",
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Marilyn Manson and the Spooky Kids",
+                                               "name": "Marilyn Manson and the Spooky Kids",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Marilyn Manson & the Spooky Kids",
+                                               "name": "Marilyn Manson & the Spooky Kids",
+                                               "locale": null,
+                                               "type": "Artist name",
+                                               "primary": null,
+                                               "begin-date": "1989",
+                                               "end-date": "1992"
+                                               },
+                                               {
+                                               "sort-name": "Mariyln Manson",
+                                               "name": "Mariyln Manson",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Marylin Manson",
+                                               "name": "Marylin Manson",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Spooky Kids",
+                                               "name": "The Spooky Kids",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "3e3b44e3-a187-3d2c-957c-c2a64048657f",
+                 "primary-type": "Album",
+                 "secondary-types": [
+                                     "Compilation"
+                                     ]
+                 },
+                 "date": "2006",
+                 "country": "US",
+                 "release-events": [
+                                    {
+                                    "date": "2006",
+                                    "area": {
+                                    "id": "489ce91b-6658-3307-9877-795b68554c98",
+                                    "name": "United States",
+                                    "sort-name": "United States",
+                                    "iso-3166-1-codes": [
+                                                         "US"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "track-count": 12,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 0,
+                           "track-count": 12
+                           }
+                           ]
+                 },
+                 {
+                 "id": "b4515470-d104-4354-8627-83601ebbe13d",
+                 "score": "80",
+                 "count": 2,
+                 "title": "The Black Album",
+                 "status": "Official",
+                 "disambiguation": "25th anniversary edition",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "77d21c13-846f-4f48-9546-873949eff6ae",
+                                   "name": "The Damned",
+                                   "sort-name": "Damned, The",
+                                   "disambiguation": "UK punk band",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Damned",
+                                               "name": "Damned",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Damned Night, The",
+                                               "name": "The Damned Night",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Doomed",
+                                               "name": "The Doomed",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "2bfdbb62-b11e-390e-a515-cd6ab295de4a",
+                 "primary-type": "Album"
+                 },
+                 "date": "2005-12-05",
+                 "country": "GB",
+                 "release-events": [
+                                    {
+                                    "date": "2005-12-05",
+                                    "area": {
+                                    "id": "8a754a16-0027-3a29-b6d7-2b40ea0481ed",
+                                    "name": "United Kingdom",
+                                    "sort-name": "United Kingdom",
+                                    "iso-3166-1-codes": [
+                                                         "GB"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "barcode": "029667427524",
+                 "asin": "B000BPN2CM",
+                 "label-info": [
+                                {
+                                "catalog-number": "CDWKM2 275",
+                                "label": {
+                                "id": "b6bc9c68-0913-42d7-b0c6-3002a9147732",
+                                "name": "Chiswick"
+                                }
+                                }
+                                ],
+                 "track-count": 27,
+                 "media": [
+                           {
+                           "format": "CD",
+                           "disc-count": 1,
+                           "track-count": 12
+                           },
+                           {
+                           "format": "CD",
+                           "disc-count": 1,
+                           "track-count": 15
+                           }
+                           ]
+                 },
+                 {
+                 "id": "5de72450-776a-35ed-af2b-a1ee2fe88aa3",
+                 "score": "80",
+                 "count": 2,
+                 "title": "The Black Album",
+                 "status": "Official",
+                 "text-representation": {
+                 "language": "eng",
+                 "script": "Latn"
+                 },
+                 "artist-credit": [
+                                   {
+                                   "artist": {
+                                   "id": "77d21c13-846f-4f48-9546-873949eff6ae",
+                                   "name": "The Damned",
+                                   "sort-name": "Damned, The",
+                                   "disambiguation": "UK punk band",
+                                   "aliases": [
+                                               {
+                                               "sort-name": "Damned",
+                                               "name": "Damned",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "Damned Night, The",
+                                               "name": "The Damned Night",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               },
+                                               {
+                                               "sort-name": "The Doomed",
+                                               "name": "The Doomed",
+                                               "locale": null,
+                                               "type": null,
+                                               "primary": null,
+                                               "begin-date": null,
+                                               "end-date": null
+                                               }
+                                               ]
+                                   }
+                                   }
+                                   ],
+                 "release-group": {
+                 "id": "2bfdbb62-b11e-390e-a515-cd6ab295de4a",
+                 "primary-type": "Album"
+                 },
+                 "date": "1980-10",
+                 "country": "GB",
+                 "release-events": [
+                                    {
+                                    "date": "1980-10",
+                                    "area": {
+                                    "id": "8a754a16-0027-3a29-b6d7-2b40ea0481ed",
+                                    "name": "United Kingdom",
+                                    "sort-name": "United Kingdom",
+                                    "iso-3166-1-codes": [
+                                                         "GB"
+                                                         ]
+                                    }
+                                    }
+                                    ],
+                 "label-info": [
+                                {
+                                "catalog-number": "CWK 3015",
+                                "label": {
+                                "id": "b6bc9c68-0913-42d7-b0c6-3002a9147732",
+                                "name": "Chiswick"
+                                }
+                                }
+                                ],
+                 "track-count": 18,
+                 "media": [
+                           {
+                           "format": "12\" Vinyl",
+                           "disc-count": 0,
+                           "track-count": 11
+                           },
+                           {
+                           "format": "12\" Vinyl",
+                           "disc-count": 0,
+                           "track-count": 7
+                           }
+                           ]
+                 }
+                 ]
+}

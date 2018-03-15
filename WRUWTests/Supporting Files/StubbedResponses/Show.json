@@ -1,0 +1,293 @@
+{
+    "ShowID": 147,
+    "ShowUsers": [
+                  {
+                  "UserID": 157,
+                  "DJName": "Brandt"
+                  }
+                  ],
+    "ShowName": "The Cream of Broccoli Radio Hour",
+    "Weekdays": [
+                 "Sun"
+                 ],
+    "OnairTime": "10:00:00",
+    "OffairTime": "12:00:00",
+    "Scheduled": true,
+    "ShowCategory": "Music",
+    "ShowUrl": "",
+    "ShowDescription": "",
+    "playlists": [
+                  {
+                  "PlaylistID": 3734,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-03-04",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 3532,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-02-25",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 3311,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-02-18",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 3097,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-02-11",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 2878,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-02-04",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 2649,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-01-28",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 2425,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-01-21",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 2224,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-01-14",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 2010,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2018-01-07",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 1785,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-12-31",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 1544,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-12-24",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 1349,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-12-17",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 1137,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-12-10",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 927,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-12-03",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 792,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-11-26",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 675,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-11-19",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  },
+                  {
+                  "PlaylistID": 607,
+                  "PlaylistUserID": 157,
+                  "PlaylistDate": "2017-11-12",
+                  "ShowID": 147,
+                  "ShowUserIDs": [
+                                  157
+                                  ],
+                  "ShowName": "The Cream of Broccoli Radio Hour",
+                  "OnairTime": "10:00:00",
+                  "OffairTime": "12:00:00",
+                  "ShowCategory": "Music",
+                  "ShowUrl": "",
+                  "ShowDescription": "",
+                  "DJName": "Brandt"
+                  }
+                  ]
+}

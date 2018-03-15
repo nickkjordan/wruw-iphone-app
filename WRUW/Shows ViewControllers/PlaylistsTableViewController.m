@@ -1,12 +1,5 @@
-//
-//  PlaylistsTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/18/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "PlaylistsTableViewController.h"
+#import "WRUWModule-Swift.h"
 
 @interface PlaylistsTableViewController (){
     NSMutableArray *_playlists;
@@ -16,7 +9,7 @@
 
 @implementation PlaylistsTableViewController
 
-@synthesize currentShow, currentParser;
+@synthesize currentShow;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -25,7 +18,7 @@
         
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
-        Playlist *p = [_playlists objectAtIndex:path.row];
+        PlaylistInfo *p = [_playlists objectAtIndex:path.row];
         
         [atvc setCurrentPlaylist:p];
         
@@ -33,28 +26,13 @@
     }
 }
 
--(void)loadPlaylist
-{
-    [currentShow loadInfo:^{
-        _playlists = [NSMutableArray arrayWithArray:currentShow.playlists];
-        [self.tableView reloadData];
-    }];
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self loadPlaylist];
+
+    _playlists = [currentShow.playlists mutableCopy];
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -74,16 +52,12 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    Playlist *thisPlaylist = [_playlists objectAtIndex:indexPath.row];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
-    NSDate *myDate = [dateFormatter dateFromString:thisPlaylist.date];
+    PlaylistInfo *thisPlaylist = [_playlists objectAtIndex:indexPath.row];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, yyyy"];
-    
-    [[cell textLabel] setText:[formatter stringFromDate:myDate]];
+    formatter.dateStyle = NSDateFormatterMediumStyle;
+
+    [[cell textLabel] setText:[formatter stringFromDate:thisPlaylist.date]];
     
     return cell;
 }
