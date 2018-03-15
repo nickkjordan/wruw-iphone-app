@@ -27,7 +27,7 @@ class MusicBrainzApiRouterTests: XCTestCase {
         XCTAssertNotNil(url)
 
         let fullExpectedUrlString = router.baseUrlString + path + "?key=value"
-        let expectedUrl = NSURL(string: fullExpectedUrlString)
+        let expectedUrl = URL(string: fullExpectedUrlString)
 
         XCTAssertEqual(url, expectedUrl)
     }
@@ -42,7 +42,7 @@ class MusicBrainzApiRouterTests: XCTestCase {
         let fullExpectedUrlString =
             router.baseUrlString + path + "?release=artist:the%20beatles"
 
-        let expectedUrl = NSURL(string: fullExpectedUrlString)
+        let expectedUrl = URL(string: fullExpectedUrlString)
 
         XCTAssertEqual(url, expectedUrl)
     }

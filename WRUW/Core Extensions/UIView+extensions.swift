@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 
 extension UIView {
-    func onTap(target: AnyObject, selector: Selector) -> Self {
+    func onTap(_ target: AnyObject, selector: Selector) -> Self {
         isUserInteractionEnabled = true
 
         let tapGesture = gestureRecognizers?.first { $0 is UITapGestureRecognizer }

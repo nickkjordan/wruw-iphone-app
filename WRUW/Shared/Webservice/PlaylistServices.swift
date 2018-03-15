@@ -8,8 +8,8 @@ import Foundation
         return WruwApiRouter(path: "/getplaylist.php", parameters: parameters)
     }
 
-    private let parameters: NSDictionary
-    private let manager: NetworkManager
+    fileprivate let parameters: NSDictionary
+    fileprivate let manager: NetworkManager
 
     convenience init(showName: String, date: String) {
         self.init(
@@ -21,13 +21,13 @@ import Foundation
         self.manager = manager
     }
 
-    @objc func request(completion: (WruwResult) -> Void) {
+    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(json: AnyObject) -> WruwResult {
+    func processResultFrom(_ json: AnyObject) -> WruwResult {
         return processElement(json)
     }
 }
@@ -35,8 +35,8 @@ import Foundation
 @objc class GetPlaylists: NSObject, WruwAPIClient {
     typealias CompletionResult = [PlaylistInfo]
 
-    private let parameters: NSDictionary
-    private let manager: NetworkManager
+    fileprivate let parameters: NSDictionary
+    fileprivate let manager: NetworkManager
 
     var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getshow.php", parameters: parameters)
@@ -51,13 +51,13 @@ import Foundation
         self.init(manager: Manager.sharedInstance, showName: showName)
     }
 
-    @objc func request(completion: (WruwResult) -> Void) {
+    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(json: AnyObject) -> WruwResult {
+    func processResultFrom(_ json: AnyObject) -> WruwResult {
         guard let json = json as? JSONDict,
             let playlists = json["playlists"] else {
             return WruwResult(failure: processingError)

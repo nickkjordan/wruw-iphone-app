@@ -17,13 +17,13 @@ import Alamofire
 
 extension CoverArtApiRouter: URLRequestConvertible {
     var URLRequest: NSMutableURLRequest {
-        guard let baseUrl = NSURL(string: baseUrlString),
-            let url = baseUrl.URLByAppendingPathComponent(path) else {
+        guard let baseUrl = URL(string: baseUrlString),
+            let url = baseUrl.appendingPathComponent(path) else {
                 print("Failed to construct url from base: \(baseUrlString)")
                 return NSMutableURLRequest()
         }
 
-        let urlRequest = NSMutableURLRequest(URL: url)
+        let urlRequest = NSMutableURLRequest(url: url)
 
         print("Created url request:\n" +
             "\t\(url.absoluteString ?? "")")
@@ -43,13 +43,13 @@ extension CoverArtApiRouter: URLRequestConvertible {
         return CoverArtApiRouter(path: path, parameters: nil)
     }
 
-    private let path: String
+    fileprivate let path: String
 
     init(releaseId: String) {
         self.path = "release/\(releaseId)/front-500"
     }
 
-    func request(completion: (WruwResult) -> Void) {
+    func request(_ completion: @escaping (WruwResult) -> Void) {
         let alamofire = Alamofire.Manager.sharedInstance
 
         alamofire.delegate.taskWillPerformHTTPRedirection = {
@@ -79,18 +79,18 @@ extension CoverArtApiRouter: URLRequestConvertible {
             }
     }
 
-    func processResultFrom(json: AnyObject) -> WruwResult {
+    func processResultFrom(_ json: AnyObject) -> WruwResult {
         print("Unused processing result called")
         return WruwResult(failure: processingError)
     }
 
-    func processImage(data: NSData?) -> WruwResult {
+    func processImage(_ data: Data?) -> WruwResult {
         return WruwResult(success: UIImage(data: data))
     }
 }
 
 private extension UIImage {
-    convenience init?(data: NSData?) {
+    convenience init?(data: Data?) {
         guard let data = data else { return nil }
 
         self.init(data: data)

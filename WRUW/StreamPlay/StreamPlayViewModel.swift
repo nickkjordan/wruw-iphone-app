@@ -31,7 +31,7 @@ class StreamPlayViewModel: NSObject {
         return AVPlayer(url: urlStream)
     }()
 
-    fileprivate func audioPlayerIs(active: Bool) {
+    fileprivate func audioPlayerIs(_ active: Bool) {
         active ? startPlayer() : pausePlayer()
     }
 
@@ -125,12 +125,12 @@ class StreamPlayViewModel: NSObject {
     fileprivate lazy var nowPlayingInfoPaused: [String: AnyObject] = {
         return self.nowPlayingInfo +
             [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 0.0 as Double)]
-    }()
+    }() as [String : AnyObject]
 
     fileprivate lazy var nowPlayingInfoPlaying: [String: AnyObject] = {
         return self.nowPlayingInfo +
             [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0 as Double)]
-    }()
+    }() as [String : AnyObject]
 
     fileprivate lazy var nowPlayingInfo: [String : Any] = {
         return [

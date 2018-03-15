@@ -15,8 +15,8 @@ import Alamofire
         )
     }
 
-    private let parameters: NSDictionary?
-    private let manager: NetworkManager
+    fileprivate let parameters: NSDictionary?
+    fileprivate let manager: NetworkManager
 
     convenience init(release: String, artist: String) {
         self.init(
@@ -29,7 +29,7 @@ import Alamofire
     init(manager: NetworkManager, release: String, artist: String) {
         self.manager = manager
         
-        let components = release.componentsSeparatedByString("-")
+        let components = release.components(separatedBy: "-")
         let query = "release:\(components[0]) AND artist:\(artist)"
 
         parameters = [
@@ -38,13 +38,13 @@ import Alamofire
         ]
     }
 
-    func request(completion: (WruwResult) -> Void) {
+    func request(_ completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest (router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(json: AnyObject) -> WruwResult {
+    func processResultFrom(_ json: AnyObject) -> WruwResult {
         guard let json = json as? JSONDict,
             let releases = json["releases"] else {
             return WruwResult(failure: processingError)

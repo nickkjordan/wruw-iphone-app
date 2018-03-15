@@ -4,13 +4,13 @@ import XCTest
 @testable import WRUWModule
 
 // Access stubbed json responses
-func stubbedResponse(filename: String) -> NSData! {
+func stubbedResponse(_ filename: String) -> Data! {
     @objc class TestClass: NSObject { }
 
-    let bundle = NSBundle(forClass: TestClass.self)
-    let path = bundle.pathForResource(filename, ofType: "json")
+    let bundle = Bundle(for: TestClass.self)
+    let path = bundle.path(forResource: filename, ofType: "json")
     
-    return NSData(contentsOfURL: NSURL(fileURLWithPath: path!))
+    return (try? Data(contentsOf: URL(fileURLWithPath: path!)))
 }
 
 // Parent class to test services
@@ -26,7 +26,7 @@ class NetworkingTests: XCTestCase {
 
         mockManager = MockManager()
         mockManager.expectedRequest = MockRequest()
-        requestExpectation = expectationWithDescription("completed request")
+        requestExpectation = expectation(description: "completed request")
     }
 }
 
@@ -36,7 +36,7 @@ class NetworkingTests: XCTestCase {
 class MockManager: NetworkManager {
     var expectedRequest: MockRequest?
 
-    func networkRequest(URLRequest: URLRequestConvertible) -> NetworkRequest {
+    func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest {
         guard let request = expectedRequest else {
             fatalError("Request is empty.")
         }
@@ -47,16 +47,16 @@ class MockManager: NetworkManager {
 
 // Mock Alamofire.Request
 class MockRequest {
-    var expectedData: NSData? = nil
+    var expectedData: Data? = nil
     var expectedError: NSError? = nil
 }
 
 extension MockRequest: NetworkRequest {
     // Replicating Request.responseJSON() 
     func responseJSON(
-        queue queue: dispatch_queue_t?,
-        options: NSJSONReadingOptions,
-        completionHandler: Response<AnyObject, NSError> -> Void
+        queue: DispatchQueue?,
+        options: JSONSerialization.ReadingOptions,
+        completionHandler: (Response<AnyObject, NSError>) -> Void
     ) -> Self {
         // Process response
         let result = Request

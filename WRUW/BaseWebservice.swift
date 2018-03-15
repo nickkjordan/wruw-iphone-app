@@ -11,7 +11,7 @@ import Alamofire
     init(path: String, parameters: NSDictionary?)
 }
 
-typealias JSONDict = [NSObject: AnyObject]
+typealias JSONDict = [AnyHashable: Any]
 
 @objc protocol JSONConvertible {
     init(json dict: JSONDict!)
@@ -38,7 +38,7 @@ typealias JSONDict = [NSObject: AnyObject]
 }
 
 extension WruwAPIClient {
-    func request(completion: (WruwResult) -> Void) {
+    func request(completion: @escaping (WruwResult) -> Void) {
         Alamofire
             .request(router as! URLRequestConvertible)
             .responseJSON { completion(self.process($0)) }
@@ -46,7 +46,7 @@ extension WruwAPIClient {
 }
 
 extension WruwAPIClient {
-    func process(response: Response<AnyObject, NSError>) -> WruwResult {
+    func process(_ response: Response<AnyObject, NSError>) -> WruwResult {
         switch response.result {
 
         case .Success(let JSON):
@@ -74,7 +74,7 @@ extension WruwAPIClient {
 //}
 
 extension WruwAPIClient where CompletionResult: JSONConvertible {
-    func processElement(json: AnyObject) -> WruwResult {
+    func processElement(_ json: AnyObject) -> WruwResult {
         guard let jsonDict = json as? JSONDict else {
             print("Incorrect processing of json as dictionary",
                   terminator: "\n\n")
@@ -89,12 +89,12 @@ extension WruwAPIClient where CompletionResult: JSONConvertible {
     }
 }
 
-typealias JSONArray = SequenceType
+typealias JSONArray = Sequence
 
 extension WruwAPIClient
     where CompletionResult: JSONArray,
-CompletionResult.Generator.Element: JSONConvertible {
-    func processArray(json: AnyObject) -> WruwResult {
+CompletionResult.Iterator.Element: JSONConvertible {
+    func processArray(_ json: AnyObject) -> WruwResult {
         guard let jsonArray = json as? [JSONDict] else {
             print("Incorrect processing of json as array", terminator: "\n\n")
             print(json)
@@ -102,8 +102,8 @@ CompletionResult.Generator.Element: JSONConvertible {
             return WruwResult(failure: processingError)
         }
 
-        let result = jsonArray.map { CompletionResult.Generator.Element(json: $0) }
+        let result = jsonArray.map { CompletionResult.Iterator.Element(json: $0) }
         
-        return WruwResult(success: result)
+        return WruwResult(success: result as AnyObject?)
     }
 }

@@ -18,8 +18,8 @@ import Alamofire
     }
 
     var URLRequest: NSMutableURLRequest {
-        guard let baseUrl = NSURL(string: baseUrlString),
-            let url = baseUrl.URLByAppendingPathComponent(path) else {
+        guard let baseUrl = URL(string: baseUrlString),
+            let url = baseUrl.appendingPathComponent(path) else {
             print("Failed to construct url from base: \(baseUrlString)")
             return NSMutableURLRequest()
         }
@@ -28,7 +28,7 @@ import Alamofire
 
         switch method {
         case .GET:
-            let request = NSMutableURLRequest(URL: url)
+            let request = NSMutableURLRequest(url: url)
             let encoding = Alamofire.ParameterEncoding.URL
             let parameters = self.parameters as? [String: AnyObject]
 
@@ -37,13 +37,13 @@ import Alamofire
             print("Created url request:\n\t\(urlRequest.URLString)")
 
         default:
-            urlRequest = NSMutableURLRequest(URL: url)
+            urlRequest = NSMutableURLRequest(url: url)
 
             if let parameters = parameters {
                 do {
-                    urlRequest.HTTPBody = try NSJSONSerialization
-                        .dataWithJSONObject(parameters, options: [])
-                    print("HTTP Body: ", urlRequest.HTTPBody)
+                    urlRequest.httpBody = try JSONSerialization
+                        .data(withJSONObject: parameters, options: [])
+                    print("HTTP Body: ", urlRequest.httpBody)
                 } catch {
                     print("Error processing \(path) parameters")
                 }

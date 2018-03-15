@@ -3,39 +3,39 @@ import Alamofire
 
 extension NSString {
     var asQuery: NSString {
-        let nonLetterSet = NSCharacterSet.punctuationCharacterSet()
+        let nonLetterSet = CharacterSet.punctuationCharacters
 
-        let base = lowercaseString
-            .componentsSeparatedByCharactersInSet(nonLetterSet)
-            .joinWithSeparator("")
+        let base = lowercased
+            .components(separatedBy: nonLetterSet)
+            .joined(separator: "")
 
-        return base.stringByReplacingOccurrencesOfString(" ", withString: "-")
+        return base.replacingOccurrences(of: " ", with: "-") as NSString
     }
 }
 
 protocol NetworkManager {
-    func networkRequest(URLRequest: URLRequestConvertible) -> NetworkRequest
+    func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest
 }
 
 extension Manager: NetworkManager {
-    func networkRequest(URLRequest: URLRequestConvertible) -> NetworkRequest {
+    func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest {
         return request(URLRequest) as NetworkRequest
     }
 }
 
 public protocol NetworkRequest {
     func responseJSON(
-        queue queue: dispatch_queue_t?,
-        options: NSJSONReadingOptions,
-        completionHandler: Response<AnyObject, NSError> -> Void
+        queue: DispatchQueue?,
+        options: JSONSerialization.ReadingOptions,
+        completionHandler: (Response<AnyObject, NSError>) -> Void
     ) -> Self
 }
 
 extension NetworkRequest {
     func json(
-        queue queue: dispatch_queue_t? = nil,
-        options: NSJSONReadingOptions = .AllowFragments,
-        completionHandler: Response<AnyObject, NSError> -> Void
+        queue: DispatchQueue? = nil,
+        options: JSONSerialization.ReadingOptions = .allowFragments,
+        completionHandler: (Response<AnyObject, NSError>) -> Void
     ) -> Self {
         return responseJSON(
             queue: queue,

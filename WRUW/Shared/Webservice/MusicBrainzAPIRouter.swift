@@ -17,13 +17,13 @@ import Alamofire
 
 extension MusicBrainzApiRouter: URLRequestConvertible {
     var URLRequest: NSMutableURLRequest {
-        guard let baseUrl = NSURL(string: baseUrlString),
-            let url = baseUrl.URLByAppendingPathComponent(path) else {
+        guard let baseUrl = URL(string: baseUrlString),
+            let url = baseUrl.appendingPathComponent(path) else {
                 print("Failed to construct url from base: \(baseUrlString)")
                 return NSMutableURLRequest()
         }
 
-        let urlRequest = NSMutableURLRequest(URL: url)
+        let urlRequest = NSMutableURLRequest(url: url)
         let encoding = customEncoding
         let parameters = self.parameters as? [String: AnyObject]
 
