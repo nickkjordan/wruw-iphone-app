@@ -7,7 +7,7 @@ class PlayStopIconView: UIView {
     var fillColor: UIColor!
 
     init(fillColor: UIColor) {
-        super.init(frame: CGRectZero)
+        super.init(frame: .zero)
 
         self.fillColor = fillColor
     }
@@ -19,8 +19,8 @@ class PlayStopIconView: UIView {
         initialPath = RoundedBezierIcons.RoundedPlayIcon(self.frame)
         
         // Create initial shape of the view
-        shapeLayer.path = initialPath.CGPath
-        shapeLayer.fillColor = fillColor.CGColor
+        shapeLayer.path = initialPath.cgPath
+        shapeLayer.fillColor = fillColor.cgColor
         layer.addSublayer(shapeLayer)
         
         //mask layer
@@ -34,17 +34,17 @@ class PlayStopIconView: UIView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
     }
 
-    func showPlayIcon(show: Bool){
+    func showPlayIcon(_ show: Bool){
         let animation = CABasicAnimation(keyPath: "path")
         animation.duration = 1
         
         // Your new shape here
         animation.toValue = show ?
-            RoundedBezierIcons.RoundedPlayIcon(self.frame).CGPath :
-            RoundedBezierIcons.RoundedSquareIcon(self.frame).CGPath
+            RoundedBezierIcons.RoundedPlayIcon(self.frame).cgPath :
+            RoundedBezierIcons.RoundedSquareIcon(self.frame).cgPath
 
         animation.timingFunction =
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
@@ -52,9 +52,9 @@ class PlayStopIconView: UIView {
         // The next two line preserves the final shape of animation,
         // if you remove it the shape will return to the original shape after the animation finished
         animation.fillMode = kCAFillModeForwards
-        animation.removedOnCompletion = false
+        animation.isRemovedOnCompletion = false
         
-        shapeLayer.addAnimation(animation, forKey: nil)
-        maskLayer.addAnimation(animation, forKey: nil)
+        shapeLayer.add(animation, forKey: nil)
+        maskLayer.add(animation, forKey: nil)
     }
 }

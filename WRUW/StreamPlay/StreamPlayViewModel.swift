@@ -5,10 +5,10 @@ import RxCocoa
 import NSObject_Rx
 
 class StreamPlayViewModel: NSObject {
-    var urlAddress: NSURL?
+    var urlAddress: URL?
 
     init(streamPath: String) {
-        urlAddress = NSURL(string: streamPath)
+        urlAddress = URL(string: streamPath)
 
         super.init()
     }
@@ -23,25 +23,25 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: Audio Player
     
-    private lazy var audioStreamPlayer: AVPlayer = {
+    fileprivate lazy var audioStreamPlayer: AVPlayer = {
         guard let urlStream = self.urlAddress else {
             return AVPlayer()
         }
 
-        return AVPlayer(URL: urlStream)
+        return AVPlayer(url: urlStream)
     }()
 
-    private func audioPlayerIsActive(active: Bool) {
+    fileprivate func audioPlayerIs(active: Bool) {
         active ? startPlayer() : pausePlayer()
     }
 
-    private func startPlayer() {
+    fileprivate func startPlayer() {
         guard urlAddress != nil else {
             pausePlayer()
             return
         }
 
-        if audioStreamPlayer.status == .ReadyToPlay {
+        if audioStreamPlayer.status == .readyToPlay {
             streamIsReadyToPlay()
             return
         }
@@ -60,13 +60,13 @@ class StreamPlayViewModel: NSObject {
             .addDisposableTo(rx_disposeBag)
     }
 
-    private func streamIsReadyToPlay() {
+    fileprivate func streamIsReadyToPlay() {
         audioStreamPlayer.play()
 
         setNowPlayingInfo(nowPlayingInfoPlaying)
     }
 
-    private func pausePlayer() {
+    fileprivate func pausePlayer() {
         audioStreamPlayer.pause()
 
         setNowPlayingInfo(nowPlayingInfoPaused)
@@ -74,17 +74,17 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - MPRemoteCommandCenter
 
-    private let changePlayerSelector: Selector = "changePlayerStatus"
+    fileprivate let changePlayerSelector: Selector = #selector(StreamPlayViewModel.changePlayerStatus)
 
-    private func setupRemoteControlEvents() {
-        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
+    fileprivate func setupRemoteControlEvents() {
+        let commandCenter = MPRemoteCommandCenter.shared()
 
         commandCenter.playCommand.addTarget(self, action: changePlayerSelector)
         commandCenter.pauseCommand.addTarget(self, action: changePlayerSelector)
     }
 
-    private func removeRemoteCommandEvents() {
-        let commandCenter = MPRemoteCommandCenter.sharedCommandCenter()
+    fileprivate func removeRemoteCommandEvents() {
+        let commandCenter = MPRemoteCommandCenter.shared()
 
         commandCenter.playCommand.removeTarget(self, action: changePlayerSelector)
         commandCenter.pauseCommand.removeTarget(self, action: changePlayerSelector)
@@ -92,47 +92,47 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - Observables for Playing/Paused status
 
-    private lazy var _audioPlayerIsActive = Variable(false)
-    private lazy var _buttonIsAnimated: Observable<Bool> = {
+    fileprivate lazy var _audioPlayerIsActive = Variable(false)
+    fileprivate lazy var _buttonIsAnimated: Observable<Bool> = {
         let buttonIsAnimated = self._audioPlayerIsActive.asObservable()
         buttonIsAnimated
             .skip(1)
-            .subscribeNext { [unowned self] play in self.audioPlayerIsActive(play) }
+            .subscribeNext { [unowned self] play in self.audioPlayerIs(active: play) }
             .addDisposableTo(self.rx_disposeBag)
         return buttonIsAnimated
     }()
 
     // MARK: - Now Playing info
 
-    private func setNowPlayingInfo(info: [String: AnyObject]) {
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = info
+    fileprivate func setNowPlayingInfo(_ info: [String: AnyObject]) {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
 
-    private lazy var artworkImage: UIImage = {
-        let bundle = NSBundle.mainBundle()
-        if let path = bundle.pathForResource("Default", ofType: "png"),
-            imageView = UIImage(contentsOfFile: path) {
+    fileprivate lazy var artworkImage: UIImage = {
+        let bundle = Bundle.main
+        if let path = bundle.path(forResource: "Default", ofType: "png"),
+            let imageView = UIImage(contentsOfFile: path) {
             return imageView
         }
 
         return UIImage()
     }()
 
-    private lazy var mediaItemArtwork: MPMediaItemArtwork = {
+    fileprivate lazy var mediaItemArtwork: MPMediaItemArtwork = {
         MPMediaItemArtwork(image: self.artworkImage)
     }()
 
-    private lazy var nowPlayingInfoPaused: [String: AnyObject] = {
+    fileprivate lazy var nowPlayingInfoPaused: [String: AnyObject] = {
         return self.nowPlayingInfo +
-            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(double: 0.0)]
+            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 0.0 as Double)]
     }()
 
-    private lazy var nowPlayingInfoPlaying: [String: AnyObject] = {
+    fileprivate lazy var nowPlayingInfoPlaying: [String: AnyObject] = {
         return self.nowPlayingInfo +
-            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(double: 1.0)]
+            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0 as Double)]
     }()
 
-    private lazy var nowPlayingInfo: [String : AnyObject] = {
+    fileprivate lazy var nowPlayingInfo: [String : Any] = {
         return [
             MPMediaItemPropertyTitle: "Listening Live",
             MPMediaItemPropertyArtist: "WRUW - 91.1 FM",

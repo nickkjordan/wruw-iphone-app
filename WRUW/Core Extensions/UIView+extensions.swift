@@ -2,8 +2,8 @@ import UIKit
 import SnapKit
 
 extension UIView {
-    func onTap(target target: AnyObject, selector: Selector) -> Self {
-        userInteractionEnabled = true
+    func onTap(target: AnyObject, selector: Selector) -> Self {
+        isUserInteractionEnabled = true
 
         let tapGesture = gestureRecognizers?.first { $0 is UITapGestureRecognizer }
 
@@ -18,12 +18,12 @@ extension UIView {
         return self
     }
 
-    func backgroundColor(color: UIColor) -> Self {
+    func backgroundColor(_ color: UIColor) -> Self {
         backgroundColor = color
         return self
     }
 
-    func addSubview(subview: UIView, constraintMaker: ConstraintMaker -> ()) -> Self {
+    func addSubview(_ subview: UIView, constraintMaker: (ConstraintMaker) -> ()) -> Self {
         addSubview(subview)
         subview.snp_makeConstraints(closure: constraintMaker)
         return self

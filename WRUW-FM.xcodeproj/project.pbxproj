@@ -233,7 +233,6 @@
 		01F981A4183537B20069C241 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		01F981A5183537B20069C241 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		01F981A9183538D10069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		01F981AB183538DA0069C241 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		01FB78A1183EA7EE0088C972 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		01FB78A2183EA7EE0088C972 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		01FB78A5183EA89A0088C972 /* magnifier_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier_48.png; sourceTree = "<group>"; };
@@ -323,7 +322,6 @@
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
-				01F981AB183538DA0069C241 /* libxml2.dylib */,
 				0170903F17DBA8F80005EC0F /* WRUW */,
 				0170906E17DBA8F80005EC0F /* WRUWTests */,
 				0170903817DBA8F80005EC0F /* Frameworks */,
@@ -999,7 +997,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1031,7 +1029,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WRUW/${PRODUCT_MODULE_NAME}-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1052,7 +1050,7 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_VERSION = 2.0;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
@@ -1072,7 +1070,7 @@
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
 				PRODUCT_NAME = "WRUW-FMTests";
-				SWIFT_VERSION = 2.0;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;
