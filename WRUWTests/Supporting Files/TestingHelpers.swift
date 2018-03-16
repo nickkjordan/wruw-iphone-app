@@ -56,15 +56,15 @@ extension MockRequest: NetworkRequest {
     func responseJSON(
         queue: DispatchQueue?,
         options: JSONSerialization.ReadingOptions,
-        completionHandler: (Response<AnyObject, NSError>) -> Void
+        completionHandler: @escaping (DataResponse<Any>) -> Void
     ) -> Self {
         // Process response
-        let result = Request
-            .JSONResponseSerializer(options: options)
+        let result = DataRequest
+            .jsonResponseSerializer(options: options)
             .serializeResponse(nil, nil, expectedData, expectedError)
 
         // Handling a Result instance, error or success
-        let response = Response(result: result)
+        let response = DataResponse(result: result)
         completionHandler(response)
 
         return self
@@ -73,8 +73,8 @@ extension MockRequest: NetworkRequest {
 
 // MARK: Convenience extensions
 
-extension Response {
-    init(result: Result<Value, Error>) {
+extension DataResponse {
+    init(result: Result<Value>) {
         self.init(request: nil, response: nil, data: nil, result: result)
     }
 }

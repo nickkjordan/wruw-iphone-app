@@ -20,9 +20,9 @@ class MusicBrainzApiRouterTests: XCTestCase {
     func testUrlRequest() {
         let router = MusicBrainzApiRouter(path: path, parameters: params)
 
-        let urlRequest = router.URLRequest
+        let urlRequest = router.urlRequest
 
-        let url = urlRequest.URL?.absoluteURL
+        let url = urlRequest?.url?.absoluteURL
 
         XCTAssertNotNil(url)
 
@@ -37,7 +37,7 @@ class MusicBrainzApiRouterTests: XCTestCase {
 
         let router = MusicBrainzApiRouter(path: path, parameters: params)
 
-        let url = router.URLRequest.URL?.absoluteURL
+        let url = router.urlRequest?.url?.absoluteURL
 
         let fullExpectedUrlString =
             router.baseUrlString + path + "?release=artist:the%20beatles"
