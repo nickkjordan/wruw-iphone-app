@@ -17,7 +17,7 @@ protocol NetworkManager {
     func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest
 }
 
-extension Manager: NetworkManager {
+extension SessionManager: NetworkManager {
     func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest {
         return request(URLRequest) as NetworkRequest
     }
@@ -27,15 +27,15 @@ public protocol NetworkRequest {
     func responseJSON(
         queue: DispatchQueue?,
         options: JSONSerialization.ReadingOptions,
-        completionHandler: (Response<AnyObject, NSError>) -> Void
+        completionHandler: @escaping (DataResponse<Any>) -> Void
     ) -> Self
 }
 
 extension NetworkRequest {
-    func json(
+    @discardableResult func json(
         queue: DispatchQueue? = nil,
         options: JSONSerialization.ReadingOptions = .allowFragments,
-        completionHandler: (Response<AnyObject, NSError>) -> Void
+        completionHandler: @escaping (DataResponse<Any>) -> Void
     ) -> Self {
         return responseJSON(
             queue: queue,
@@ -45,4 +45,4 @@ extension NetworkRequest {
     }
 }
 
-extension Request: NetworkRequest { }
+extension DataRequest: NetworkRequest { }

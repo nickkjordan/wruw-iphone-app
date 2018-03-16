@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.5.1)
+  - Alamofire (4.4.0)
   - ARAnalytics/CoreIOS (3.0.0)
   - ARAnalytics/DSL (3.0.0):
     - ReactiveCocoa (= 2.3)
@@ -13,8 +13,8 @@ PODS:
   - Mixpanel (2.7.3):
     - Mixpanel/MPCategoryHelpers (= 2.7.3)
   - Mixpanel/MPCategoryHelpers (2.7.3)
-  - NSObject+Rx (1.2.1):
-    - RxSwift (~> 2.1)
+  - NSObject+Rx (3.0.0):
+    - RxSwift (~> 3.0)
   - ReactiveCocoa (2.3):
     - ReactiveCocoa/UI (= 2.3)
   - ReactiveCocoa/Core (2.3):
@@ -23,44 +23,44 @@ PODS:
   - ReactiveCocoa/UI (2.3):
     - ReactiveCocoa/Core
   - RSSwizzle (0.1.0)
-  - RxCocoa (2.6.1):
-    - RxSwift (~> 2.6)
-  - RxSwift (2.6.1)
+  - RxCocoa (3.3.1):
+    - RxSwift (~> 3.3)
+  - RxSwift (3.3.1)
   - SimulatorStatusMagic (1.4)
-  - SnapKit (0.22.0)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.5.0)
+  - Alamofire (~> 4.4.0)
   - ARAnalytics/DSL
   - ARAnalytics/Mixpanel
   - CBStoreHouseRefreshControl
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
-  - NSObject+Rx
-  - RxCocoa (~> 2.6.1)
-  - RxSwift (~> 2.6.1)
+  - NSObject+Rx (~> 3.0.0)
+  - RxCocoa (~> 3.3.1)
+  - RxSwift (~> 3.3.1)
   - SimulatorStatusMagic
-  - SnapKit (~> 0.22.0)
+  - SnapKit (~> 3.2.0)
 
 EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
   CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
   Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
-  NSObject+Rx: 5d032a7f161602dec6b82dcf12731e91ce15b8da
+  NSObject+Rx: 9c60a6e602ca647c0b2b34403383c305b1c6edc5
   ReactiveCocoa: 81ee2fb7df2dfc6bd52b5d70473662195e20ca7d
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
-  RxCocoa: 3bb2820fd2a1ba48a70d38926bec0803838ae802
-  RxSwift: 0147fbf94e65c6085da9540de92848189ac1c3f6
+  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
+  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
-  SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 4ceb23b39e75490c70c0b42f3e07a972cff8afca
+PODFILE CHECKSUM: e9211e1d07d509bd507b01923ca974f615f7192c
 
 COCOAPODS: 1.4.0

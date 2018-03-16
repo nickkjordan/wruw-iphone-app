@@ -13,7 +13,7 @@ import Foundation
 
     convenience init(showName: String, date: String) {
         self.init(
-            manager: Manager.sharedInstance, showName: showName, date: date)
+            manager: SessionManager.default, showName: showName, date: date)
     }
 
     init(manager: NetworkManager, showName: String, date: String) {
@@ -21,14 +21,14 @@ import Foundation
         self.manager = manager
     }
 
-    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
+    @objc func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(_ json: AnyObject) -> WruwResult {
-        return processElement(json)
+    func processResultFrom(json: Any) -> WruwResult {
+        return processElement(json, type: Playlist.self)
     }
 }
 
@@ -48,21 +48,21 @@ import Foundation
     }
     
     convenience init(showName: String) {
-        self.init(manager: Manager.sharedInstance, showName: showName)
+        self.init(manager: SessionManager.default, showName: showName)
     }
 
-    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
+    @objc func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(_ json: AnyObject) -> WruwResult {
+    func processResultFrom(json: Any) -> WruwResult {
         guard let json = json as? JSONDict,
             let playlists = json["playlists"] else {
             return WruwResult(failure: processingError)
         }
 
-        return processArray(playlists)
+        return processArray(playlists, type: [PlaylistInfo].self)
     }
 }

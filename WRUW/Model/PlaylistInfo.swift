@@ -5,7 +5,7 @@ import Foundation
     date: Date,
     showName: String
 
-    @objc required init(json dict: JSONDict!) {
+    @objc required init(json dict: JSONDict) {
         let dict = dict as! [String: AnyObject]
 
         let dateString = dict["PlaylistDate"] as? String ?? ""

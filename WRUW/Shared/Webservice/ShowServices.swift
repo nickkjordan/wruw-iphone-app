@@ -11,7 +11,7 @@ import Foundation
     fileprivate let manager: NetworkManager
 
     override convenience init() {
-        self.init(manager: Manager.sharedInstance)
+        self.init(manager: SessionManager.default)
     }
 
     init(manager: NetworkManager) {
@@ -20,14 +20,14 @@ import Foundation
         super.init()
     }
 
-    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
+    @objc func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(_ json: AnyObject) -> WruwResult {
-        return processElement(json)
+    func processResultFrom(json: Any) -> WruwResult {
+        return processElement(json, type: Show.self)
     }
 }
 
@@ -41,7 +41,7 @@ import Foundation
     fileprivate let manager: NetworkManager
 
     override convenience init() {
-        self.init(manager: Manager.sharedInstance)
+        self.init(manager: SessionManager.default)
     }
 
     init(manager: NetworkManager) {
@@ -50,13 +50,13 @@ import Foundation
         super.init()
     }
 
-    @objc func request(_ completion: @escaping (WruwResult) -> Void) {
+    @objc func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(_ json: AnyObject) -> WruwResult {
-        return processArray(json)
+    func processResultFrom(json: Any) -> WruwResult {
+        return processArray(json, type: [Show].self)
     }
 }

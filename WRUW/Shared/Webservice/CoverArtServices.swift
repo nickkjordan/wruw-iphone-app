@@ -4,7 +4,7 @@ import Alamofire
 @objc class CoverArtApiRouter: NSObject, APIRouter {
     let baseUrlString: String = "https://coverartarchive.org/"
 
-    var method: Alamofire.Method = .GET
+    var method: HTTPMethod = .get
     var path: String
 
     var parameters: NSDictionary?
@@ -16,21 +16,21 @@ import Alamofire
 }
 
 extension CoverArtApiRouter: URLRequestConvertible {
-    var URLRequest: NSMutableURLRequest {
-        guard let baseUrl = URL(string: baseUrlString),
-            let url = baseUrl.appendingPathComponent(path) else {
-                print("Failed to construct url from base: \(baseUrlString)")
-                return NSMutableURLRequest()
+    func asURLRequest() throws -> URLRequest {
+        guard let baseUrl = URL(string: baseUrlString) else {
+            print("Failed to construct url from base: \(baseUrlString)")
+            throw ApiError.invalidBaseUrl(string: baseUrlString)
         }
 
-        let urlRequest = NSMutableURLRequest(url: url)
+        let url = baseUrl.appendingPathComponent(path)
 
-        print("Created url request:\n" +
-            "\t\(url.absoluteString ?? "")")
+        var urlRequest = URLRequest(url: url)
+
+        print("Created url request:\n" + "\t\(url.absoluteString)")
 
         print("")
 
-        urlRequest.HTTPMethod = method.rawValue
+        urlRequest.httpMethod = method.rawValue
 
         return urlRequest
     }
@@ -49,8 +49,8 @@ extension CoverArtApiRouter: URLRequestConvertible {
         self.path = "release/\(releaseId)/front-500"
     }
 
-    func request(_ completion: @escaping (WruwResult) -> Void) {
-        let alamofire = Alamofire.Manager.sharedInstance
+    func request(completion: @escaping (WruwResult) -> Void) {
+        let alamofire = SessionManager.default
 
         alamofire.delegate.taskWillPerformHTTPRedirection = {
             alamofire.delegate.taskWillPerformHTTPRedirection = nil
@@ -63,11 +63,8 @@ extension CoverArtApiRouter: URLRequestConvertible {
                 let result = response.result
 
                 print("success: ", result.isSuccess)
-                if let value = result.value {
-                    let string = String(
-                        data: value,
-                        encoding: NSUTF8StringEncoding
-                    )
+                if let value = result.value,
+                    let string = String(data: value, encoding: String.Encoding.utf8) {
                     print("value: ", string)
                 }
 
@@ -79,7 +76,7 @@ extension CoverArtApiRouter: URLRequestConvertible {
             }
     }
 
-    func processResultFrom(_ json: AnyObject) -> WruwResult {
+    func processResultFrom(json: Any) -> WruwResult {
         print("Unused processing result called")
         return WruwResult(failure: processingError)
     }

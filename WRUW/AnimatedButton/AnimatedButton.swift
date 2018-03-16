@@ -14,15 +14,15 @@ class AnimatedButton: UIView {
             .skip(1)
             .distinctUntilChanged()
             .bindTo(animationIsActive)
-            .addDisposableTo(rx_disposeBag)
+            .addDisposableTo(disposeBag)
 
         addSubview(circleView) { make in
-            make.height.width.equalTo(self.snp_height).dividedBy(2)
+            make.height.width.equalTo(self.snp.height).dividedBy(2)
             make.center.equalTo(self)
         }
         addSubview(playStopIconView) { make in
             make.center.equalTo(self)
-            make.height.width.equalTo(self.snp_height).dividedBy(3)
+            make.height.width.equalTo(self.snp.height).dividedBy(3)
         }
     }
 
@@ -43,8 +43,8 @@ class AnimatedButton: UIView {
     fileprivate lazy var animationIsActive: Variable<Bool> = {
         let animationIsActive = Variable(false)
         animationIsActive.asObservable()
-            .subscribeNext { self.activateAnimation($0) }
-            .addDisposableTo(self.rx_disposeBag)
+            .subscribe(onNext: { self.activateAnimation($0) })
+            .addDisposableTo(self.disposeBag)
         return animationIsActive
     }()
 

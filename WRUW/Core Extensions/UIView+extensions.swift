@@ -5,7 +5,8 @@ extension UIView {
     func onTap(_ target: AnyObject, selector: Selector) -> Self {
         isUserInteractionEnabled = true
 
-        let tapGesture = gestureRecognizers?.first { $0 is UITapGestureRecognizer }
+        let tapGesture = gestureRecognizers?
+            .first { $0 is UITapGestureRecognizer }
 
         if let tapGesture = tapGesture {
             tapGesture.addTarget(target, action: selector)
@@ -23,9 +24,12 @@ extension UIView {
         return self
     }
 
-    func addSubview(_ subview: UIView, constraintMaker: (ConstraintMaker) -> ()) -> Self {
+    @discardableResult func addSubview(
+        _ subview: UIView,
+        constraintMaker: (ConstraintMaker) -> ()
+    ) -> Self {
         addSubview(subview)
-        subview.snp_makeConstraints(closure: constraintMaker)
+        subview.snp.makeConstraints(constraintMaker)
         return self
     }
 }

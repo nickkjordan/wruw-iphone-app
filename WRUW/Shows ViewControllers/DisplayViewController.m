@@ -79,7 +79,7 @@
     GetPlaylists *playlistsService =
         [[GetPlaylists alloc] initWithShowName:currentShow.title.asQuery];
 
-    [playlistsService request:^(WruwResult *result) {
+    [playlistsService requestWithCompletion:^(WruwResult *result) {
         currentShow.playlists = result.success;
         [spinner stopAnimating];
         [[self playlistsButton] setEnabled:YES];

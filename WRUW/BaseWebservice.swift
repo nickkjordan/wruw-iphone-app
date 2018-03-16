@@ -14,17 +14,22 @@ import Alamofire
 typealias JSONDict = [AnyHashable: Any]
 
 @objc protocol JSONConvertible {
-    init(json dict: JSONDict!)
+    init(json dict: JSONDict)
 }
 
 @objc class WruwResult: NSObject {
     var success: AnyObject?
-    var failure: NSError?
+    var failure: Error?
 
-    init(success: AnyObject? = nil, failure: NSError? = nil) {
+    init(success: AnyObject? = nil, failure: Error? = nil) {
         self.success = success
         self.failure = failure
     }
+}
+
+enum ApiError: Error {
+    case invalidBaseUrl(string: String)
+    case urlEncodingError
 }
 
 @objc protocol WruwAPIClient {
@@ -32,27 +37,28 @@ typealias JSONDict = [AnyHashable: Any]
 
     var router: NSUrlRequestConvertible { get }
 
-    @objc func request(completion: (WruwResult) -> Void)
+    @objc func request(completion: @escaping (WruwResult) -> Void)
 
-    func processResultFrom(json: AnyObject) -> WruwResult
+    func processResultFrom(json: Any) -> WruwResult
 }
 
-extension WruwAPIClient {
-    func request(completion: @escaping (WruwResult) -> Void) {
-        Alamofire
-            .request(router as! URLRequestConvertible)
-            .responseJSON { completion(self.process($0)) }
-    }
-}
+//@objc extension WruwAPIClient {
+//    @objc func request(completion: @escaping (WruwResult) -> Void) {
+//        Alamofire
+//            .request(router as! URLRequestConvertible)
+//            .json { completion(self.process($0)) }
+////            .responseJSON { completion(self.process($0)) }
+//    }
+//}
 
 extension WruwAPIClient {
-    func process(_ response: Response<AnyObject, NSError>) -> WruwResult {
+    func process(_ response: DataResponse<Any>) -> WruwResult {
         switch response.result {
 
-        case .Success(let JSON):
-            return processResultFrom(JSON)
+        case .success(let JSON):
+            return processResultFrom(json: JSON)
 
-        case .Failure(let error):
+        case .failure(let error):
             print("Request failed with error: \(error)")
 
             return WruwResult(failure: error)
@@ -65,16 +71,9 @@ extension WruwAPIClient {
     }
 }
 
-//@objc extension WruwAPIClient {
-//    @objc func request(completion: (WruwResult) -> Void) {
-//        Alamofire
-//            .request(router)
-//            .responseJSON { completion(self.process($0)) }
-//    }
-//}
-
-extension WruwAPIClient where CompletionResult: JSONConvertible {
-    func processElement(_ json: AnyObject) -> WruwResult {
+extension WruwAPIClient {
+    func processElement<T>(_ json: Any, type: T.Type)
+        -> WruwResult where T: JSONConvertible {
         guard let jsonDict = json as? JSONDict else {
             print("Incorrect processing of json as dictionary",
                   terminator: "\n\n")
@@ -83,18 +82,13 @@ extension WruwAPIClient where CompletionResult: JSONConvertible {
             return WruwResult(failure: processingError)
         }
 
-        let result = CompletionResult(json: jsonDict)
+        let result = T(json: jsonDict)
 
         return WruwResult(success: result)
     }
-}
 
-typealias JSONArray = Sequence
-
-extension WruwAPIClient
-    where CompletionResult: JSONArray,
-CompletionResult.Iterator.Element: JSONConvertible {
-    func processArray(_ json: AnyObject) -> WruwResult {
+    func processArray<T>(_ json: Any, type: T.Type)
+        -> WruwResult where T: Sequence, T.Iterator.Element: JSONConvertible {
         guard let jsonArray = json as? [JSONDict] else {
             print("Incorrect processing of json as array", terminator: "\n\n")
             print(json)
@@ -102,8 +96,8 @@ CompletionResult.Iterator.Element: JSONConvertible {
             return WruwResult(failure: processingError)
         }
 
-        let result = jsonArray.map { CompletionResult.Iterator.Element(json: $0) }
-        
+        let result = jsonArray.map { T.Iterator.Element(json: $0) }
+
         return WruwResult(success: result as AnyObject?)
     }
 }

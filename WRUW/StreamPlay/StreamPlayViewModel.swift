@@ -48,16 +48,16 @@ class StreamPlayViewModel: NSObject {
 
         setupRemoteControlEvents()
 
-        audioStreamPlayer
-            .rx_observe(
+        audioStreamPlayer.rx
+            .observe(
                 AVPlayerStatus.self,
                 "status",
-                options: .New,
+                options: .new,
                 retainSelf: true
             )
-            .filter { $0 == .ReadyToPlay }
-            .subscribeNext { [unowned self] _ in self.streamIsReadyToPlay() }
-            .addDisposableTo(rx_disposeBag)
+            .filter { $0 == .readyToPlay }
+            .subscribe(onNext: { [unowned self] _ in self.streamIsReadyToPlay() })
+            .addDisposableTo(disposeBag)
     }
 
     fileprivate func streamIsReadyToPlay() {
@@ -97,8 +97,8 @@ class StreamPlayViewModel: NSObject {
         let buttonIsAnimated = self._audioPlayerIsActive.asObservable()
         buttonIsAnimated
             .skip(1)
-            .subscribeNext { [unowned self] play in self.audioPlayerIs(active: play) }
-            .addDisposableTo(self.rx_disposeBag)
+            .subscribe(onNext: { [unowned self] play in self.audioPlayerIs(play) })
+            .addDisposableTo(self.disposeBag)
         return buttonIsAnimated
     }()
 

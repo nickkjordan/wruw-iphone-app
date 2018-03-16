@@ -21,7 +21,7 @@
         [[GetPlaylist alloc] initWithShowName:currentPlaylist.showName.asQuery
                                          date:currentPlaylist.dateString];
 
-    [playlistService request:^(WruwResult *result) {
+    [playlistService requestWithCompletion:^(WruwResult *result) {
         if (result.success) {
             _archive = result.success;
 
@@ -43,7 +43,7 @@
                     [[GetReleases alloc] initWithRelease:song.album
                                                   artist:song.artist];
 
-                [releasesService request:^(WruwResult *result) {
+                [releasesService requestWithCompletion:^(WruwResult *result) {
                     Release *release = [(NSArray *)result.success firstObject];
                     if (release.id.length == 0) {
                         return;
@@ -52,7 +52,7 @@
                     GetCoverArt *coverArtService =
                         [[GetCoverArt alloc] initWithReleaseId:release.id];
 
-                    [coverArtService request:^(WruwResult *result) {
+                    [coverArtService requestWithCompletion:^(WruwResult *result) {
                         if (!result.success) {
                             return;
                         }

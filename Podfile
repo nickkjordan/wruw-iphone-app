@@ -12,11 +12,11 @@ pod 'MarqueeLabel'
 pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
-pod 'RxSwift', '~> 2.6.1'
-pod 'RxCocoa', '~> 2.6.1'
-pod 'NSObject+Rx'
-pod 'SnapKit', '~> 0.22.0'
-pod 'Alamofire', '~> 3.5.0'
+pod 'RxSwift', '~> 3.3.1'
+pod 'RxCocoa', '~> 3.3.1'
+pod 'NSObject+Rx', '~> 3.0.0'
+pod 'SnapKit', '~> 3.2.0'
+pod 'Alamofire', '~> 4.4.0'
 
   target 'WRUW-FMTests' do
     inherit! :search_paths
