@@ -31,7 +31,7 @@
 - (void)loadHomePage {
     CurrentShow *currentShowService = [[CurrentShow alloc] init];
 
-    [currentShowService request:^(WruwResult *result) {
+    [currentShowService requestWithCompletion:^(WruwResult *result) {
         if (result.success) {
             Show *newShow = (Show *)[result success];
 
@@ -82,7 +82,7 @@
                                     initWithShowName: show.title.asQuery
                                     date: todaysDateString];
 
-    [playlistService request:^(WruwResult *result) {
+    [playlistService requestWithCompletion:^(WruwResult *result) {
         completion(result);
     }];
 }
@@ -117,7 +117,7 @@
             [[GetReleases alloc] initWithRelease:song.album
                                           artist:song.artist];
 
-        [releasesService request:^(WruwResult *result) {
+        [releasesService requestWithCompletion:^(WruwResult *result) {
             NSMutableArray *releases = (NSMutableArray *)result.success;
 
             if (!releases) {
@@ -184,7 +184,7 @@
 - (void)loadCoverArt:(NSString*)id completion:(void (^) (WruwResult *))completion {
     GetCoverArt *coverArtService = [[GetCoverArt alloc] initWithReleaseId:id];
 
-    [coverArtService request:^(WruwResult *result) {
+    [coverArtService requestWithCompletion:^(WruwResult *result) {
         completion(result);
     }];
 }

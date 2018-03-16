@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 @objc protocol NSUrlRequestConvertible {
-    var URLRequest: NSMutableURLRequest { get }
+    func asURLRequest() throws -> URLRequest
 }
 
 @objc class GetReleases: NSObject, WruwAPIClient {
@@ -15,12 +15,12 @@ import Alamofire
         )
     }
 
-    private let parameters: NSDictionary?
-    private let manager: NetworkManager
+    fileprivate let parameters: NSDictionary?
+    fileprivate let manager: NetworkManager
 
     convenience init(release: String, artist: String) {
         self.init(
-            manager: Manager.sharedInstance,
+            manager: SessionManager.default,
             release: release,
             artist: artist
         )
@@ -29,7 +29,7 @@ import Alamofire
     init(manager: NetworkManager, release: String, artist: String) {
         self.manager = manager
         
-        let components = release.componentsSeparatedByString("-")
+        let components = release.components(separatedBy: "-")
         let query = "release:\(components[0]) AND artist:\(artist)"
 
         parameters = [
@@ -38,18 +38,18 @@ import Alamofire
         ]
     }
 
-    func request(completion: (WruwResult) -> Void) {
+    func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest (router as! URLRequestConvertible)
             .json { completion(self.process($0)) }
     }
 
-    func processResultFrom(json: AnyObject) -> WruwResult {
+    func processResultFrom(json: Any) -> WruwResult {
         guard let json = json as? JSONDict,
             let releases = json["releases"] else {
             return WruwResult(failure: processingError)
         }
 
-        return processArray(releases)
+        return processArray(releases, type: [Release].self)
     }
 }

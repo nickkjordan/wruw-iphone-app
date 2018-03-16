@@ -4,7 +4,7 @@ import Alamofire
 @objc class WruwApiRouter: NSObject, APIRouter, URLRequestConvertible {
     let baseUrlString = "https://wruwapi.isaac-nicholas.com"
 
-    var method: Alamofire.Method = .GET
+    var method: HTTPMethod = .get
     var path: String
 
     internal var parameters: NSDictionary?
@@ -17,33 +17,36 @@ import Alamofire
         self.parameters = parameters
     }
 
-    var URLRequest: NSMutableURLRequest {
-        guard let baseUrl = NSURL(string: baseUrlString),
-            let url = baseUrl.URLByAppendingPathComponent(path) else {
+    func asURLRequest() throws -> URLRequest {
+        guard let baseUrl = URL(string: baseUrlString) else {
             print("Failed to construct url from base: \(baseUrlString)")
-            return NSMutableURLRequest()
+            throw ApiError.invalidBaseUrl(string: baseUrlString)
         }
-        
-        let urlRequest: NSMutableURLRequest
+
+        let url = baseUrl.appendingPathComponent(path)
+        var urlRequest: URLRequest!
 
         switch method {
-        case .GET:
-            let request = NSMutableURLRequest(URL: url)
-            let encoding = Alamofire.ParameterEncoding.URL
-            let parameters = self.parameters as? [String: AnyObject]
+        case .get:
+            let request = URLRequest(url: url)
+            let encoding = URLEncoding()
+            let parameters = self.parameters as? [String: Any]
 
-            (urlRequest, _) = encoding.encode(request, parameters: parameters)
-
-            print("Created url request:\n\t\(urlRequest.URLString)")
+            do {
+                urlRequest = try encoding.encode(request, with: parameters)
+                print("Created url request:\n\t\(urlRequest)")
+            } catch {
+                throw ApiError.urlEncodingError
+            }
 
         default:
-            urlRequest = NSMutableURLRequest(URL: url)
+            urlRequest = URLRequest(url: url)
 
             if let parameters = parameters {
                 do {
-                    urlRequest.HTTPBody = try NSJSONSerialization
-                        .dataWithJSONObject(parameters, options: [])
-                    print("HTTP Body: ", urlRequest.HTTPBody)
+                    urlRequest.httpBody = try JSONSerialization
+                        .data(withJSONObject: parameters, options: [])
+                    print("HTTP Body: ", urlRequest.httpBody)
                 } catch {
                     print("Error processing \(path) parameters")
                 }
@@ -53,7 +56,7 @@ import Alamofire
         print("")
 
         // Set HTTP Method
-        urlRequest.HTTPMethod = method.rawValue
+        urlRequest.httpMethod = method.rawValue
 
         // No Header in WRUW API
         return urlRequest

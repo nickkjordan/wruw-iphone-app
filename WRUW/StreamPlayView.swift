@@ -18,9 +18,9 @@ import MediaPlayer
 
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
-    private lazy var animatedPlayPauseButton: AnimatedButton = {
+    fileprivate lazy var animatedPlayPauseButton: AnimatedButton = {
         return AnimatedButton(viewModel: self.viewModel)
-            .onTap(target: self, selector: #selector(didTapPlayer))
+            .onTap(self, selector: #selector(didTapPlayer))
     }()
 
     func didTapPlayer() {

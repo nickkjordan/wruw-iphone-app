@@ -2,7 +2,7 @@ import XCTest
 @testable import WRUWModule
 
 class GetPlaylistTests: NetworkingTests {
-    private var playlistService: GetPlaylist!
+    fileprivate var playlistService: GetPlaylist!
 
     override func setUp() {
         super.setUp()
@@ -27,12 +27,12 @@ class GetPlaylistTests: NetworkingTests {
             self.requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1) { _ in }
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
 
 class GetPlaylistsTests: NetworkingTests {
-    private var playlistsService: GetPlaylists!
+    fileprivate var playlistsService: GetPlaylists!
 
     override func setUp() {
         super.setUp()
@@ -56,6 +56,6 @@ class GetPlaylistsTests: NetworkingTests {
             self.requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }

@@ -74,7 +74,7 @@
 #pragma mark - Helper methods
 
 -(void)loadShows {
-    [[[GetAllShows alloc] init] request:^(WruwResult *result) {
+    [[[GetAllShows alloc] init] requestWithCompletion:^(WruwResult *result) {
         if (result.success) {
             _originalObjects = result.success;
             [self resetObjects];

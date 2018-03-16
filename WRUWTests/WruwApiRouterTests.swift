@@ -20,14 +20,14 @@ class WruwApiRouterTests: XCTestCase {
     func testUrlRequest() {
         let router = WruwApiRouter(path: path, parameters: params)
 
-        let urlRequest = router.URLRequest
+        let urlRequest = router.urlRequest
 
-        let url = urlRequest.URL?.absoluteURL
+        let url = urlRequest?.url?.absoluteURL
 
         XCTAssertNotNil(url)
 
         let fullExpectedUrlString = router.baseUrlString + path + "?key=value"
-        let expectedUrl = NSURL(string: fullExpectedUrlString)
+        let expectedUrl = URL(string: fullExpectedUrlString)
 
         XCTAssertEqual(url, expectedUrl)
     }
@@ -37,13 +37,13 @@ class WruwApiRouterTests: XCTestCase {
 
         let router = WruwApiRouter(path: path, parameters: params)
 
-        let url = router.URLRequest.URL?.absoluteURL
+        let url = router.urlRequest?.url?.absoluteURL
 
         let fullExpectedUrlString = router.baseUrlString +
             path +
             "?showname=emergency-donuts&date=2016-02-01"
 
-        let expectedUrl = NSURL(string: fullExpectedUrlString)
+        let expectedUrl = URL(string: fullExpectedUrlString)
 
         XCTAssertEqual(url?.path, expectedUrl?.path)
         XCTAssertEqual(url?.host, url?.host)
@@ -52,9 +52,8 @@ class WruwApiRouterTests: XCTestCase {
     }
 }
 
-private extension NSURL {
+private extension URL {
     var sortedQueries: [String]? {
-        return query?.componentsSeparatedByString("&")
-            .sort()
+        return query?.components(separatedBy: "&").sorted()
     }
 }

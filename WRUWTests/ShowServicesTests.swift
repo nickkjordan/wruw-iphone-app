@@ -2,7 +2,7 @@ import XCTest
 @testable import WRUWModule
 
 class CurrentShowTests: NetworkingTests {
-    private var currentShowService: CurrentShow!
+    fileprivate var currentShowService: CurrentShow!
 
     override func setUp() {
         super.setUp()
@@ -27,12 +27,12 @@ class CurrentShowTests: NetworkingTests {
             self.requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
 
 class GetAllShowTests: NetworkingTests {
-    private var getAllShowsService: GetAllShows!
+    fileprivate var getAllShowsService: GetAllShows!
 
     override func setUp() {
         super.setUp()
@@ -56,6 +56,6 @@ class GetAllShowTests: NetworkingTests {
             self.requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }

@@ -97,7 +97,6 @@
 		01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */; };
 		01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */; };
 		01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */; };
-		01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */; };
 		01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF621C8B663600AD1E95 /* Theme.swift */; };
 		01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF641C8B677800AD1E95 /* UIColor+extensions.swift */; };
 		01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC43D717DBC685004916EA /* AVFoundation.framework */; };
@@ -247,7 +246,6 @@
 		01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebserviceHelpers.swift; path = Shared/Webservice/WebserviceHelpers.swift; sourceTree = "<group>"; };
 		01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebservice.swift; sourceTree = "<group>"; };
 		01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+extensions.swift"; path = "Core Extensions/UIView+extensions.swift"; sourceTree = "<group>"; };
-		01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SequenceType+extensions.swift"; path = "Core Extensions/SequenceType+extensions.swift"; sourceTree = "<group>"; };
 		01CAFF621C8B663600AD1E95 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Shared/Theme.swift; sourceTree = "<group>"; };
 		01CAFF641C8B677800AD1E95 /* UIColor+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+extensions.swift"; path = "Core Extensions/UIColor+extensions.swift"; sourceTree = "<group>"; };
 		01CC43D717DBC685004916EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
@@ -348,7 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */,
-				01CAFF5F1C8B4ADA00AD1E95 /* SequenceType+extensions.swift */,
 				01CAFF641C8B677800AD1E95 /* UIColor+extensions.swift */,
 				0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */,
 				0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */,
@@ -946,7 +943,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01CAFF601C8B4ADA00AD1E95 /* SequenceType+extensions.swift in Sources */,
 				01ED058F2049CBDA006F8012 /* Release.swift in Sources */,
 				019316DC183B5E67007755E8 /* Song.m in Sources */,
 				01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */,
@@ -1154,7 +1150,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1187,7 +1183,7 @@
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1214,7 +1210,7 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
@@ -1240,7 +1236,7 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;

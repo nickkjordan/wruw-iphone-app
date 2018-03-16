@@ -3,7 +3,7 @@ import XCTest
 
 class ReleasesServicesTests: NetworkingTests {
     // MARK: - Private Properties
-    private var releasesService: GetReleases!
+    fileprivate var releasesService: GetReleases!
 
     // MARK: - Override Methods
     override func setUp() {
@@ -30,6 +30,6 @@ class ReleasesServicesTests: NetworkingTests {
             self.requestExpectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
