@@ -74,7 +74,7 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - MPRemoteCommandCenter
 
-    fileprivate let changePlayerSelector: Selector = #selector(StreamPlayViewModel.changePlayerStatus)
+    fileprivate let changePlayerSelector = #selector(changePlayerStatus)
 
     fileprivate func setupRemoteControlEvents() {
         let commandCenter = MPRemoteCommandCenter.shared()
@@ -104,7 +104,7 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - Now Playing info
 
-    fileprivate func setNowPlayingInfo(_ info: [String: AnyObject]) {
+    fileprivate func setNowPlayingInfo(_ info: [String: Any]) {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
 
@@ -122,15 +122,15 @@ class StreamPlayViewModel: NSObject {
         MPMediaItemArtwork(image: self.artworkImage)
     }()
 
-    fileprivate lazy var nowPlayingInfoPaused: [String: AnyObject] = {
+    fileprivate lazy var nowPlayingInfoPaused: [String: Any] = {
         return self.nowPlayingInfo +
-            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 0.0 as Double)]
-    }() as [String : AnyObject]
+            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 0.0)]
+    }()
 
-    fileprivate lazy var nowPlayingInfoPlaying: [String: AnyObject] = {
+    fileprivate lazy var nowPlayingInfoPlaying: [String: Any] = {
         return self.nowPlayingInfo +
-            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0 as Double)]
-    }() as [String : AnyObject]
+            [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0)]
+    }()
 
     fileprivate lazy var nowPlayingInfo: [String : Any] = {
         return [

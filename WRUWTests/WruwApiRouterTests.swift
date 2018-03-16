@@ -54,7 +54,6 @@ class WruwApiRouterTests: XCTestCase {
 
 private extension URL {
     var sortedQueries: [String]? {
-        return query?.components(separatedBy: "&")
-            .sorted()
+        return query?.components(separatedBy: "&").sorted()
     }
 }
