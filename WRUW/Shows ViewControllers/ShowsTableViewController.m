@@ -94,7 +94,10 @@
 - (void)resetObjects {
     if (dayOfWeek > 0) {
         NSString *weekday = [sectionTitles objectAtIndex:dayOfWeek - 1];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
+        NSPredicate *predicate =
+            [NSPredicate predicateWithFormat: @"ANY %K BEGINSWITH %@",
+                 @"days",
+                 [weekday substringToIndex:2]];
         
         NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
         _originalObjects = [NSMutableArray arrayWithArray:matches];
@@ -245,18 +248,22 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-//    if (dayOfWeek == 0) {
-//        NSString *weekday = [sectionTitles objectAtIndex: section];
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"%K = %@", @"day", weekday];
-//        
-//        NSArray *matches = [_objects filteredArrayUsingPredicate: predicate];
-//        (matches) ? [programs setObject: matches forKey: weekday] : nil;
-//        return [matches count];
-//    } else {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    if (dayOfWeek == 0) {
+        NSString *weekday = [sectionTitles objectAtIndex: section];
+
+        NSPredicate *predicate =
+            [NSPredicate predicateWithFormat: @"ANY %K BEGINSWITH %@",
+                 @"days",
+                 [weekday substringToIndex:2]];
+        
+        NSArray *matches = [_objects filteredArrayUsingPredicate: predicate];
+        (matches) ? [programs setObject: matches forKey: weekday] : nil;
+        return [matches count];
+    } else {
         return _objects.count;
-//    }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
