@@ -93,14 +93,23 @@
 
 - (void)resetObjects {
     if (dayOfWeek > 0) {
-        NSString *weekday = [sectionTitles objectAtIndex:dayOfWeek - 1];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"day", weekday];
-        
-        NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
+        NSPredicate *predicate = [self predicateForDayOfWeek:dayOfWeek];
+
+        NSArray *matches =
+            [_originalObjects filteredArrayUsingPredicate:predicate];
+
         _originalObjects = [NSMutableArray arrayWithArray:matches];
     }
     
     _objects = [NSMutableArray arrayWithArray:_originalObjects];
+}
+
+- (NSPredicate *)predicateForDayOfWeek:(int)day {
+    NSString *weekday = [sectionTitles objectAtIndex:day];
+    NSString *shortenedDay = [weekday substringToIndex:2];
+
+    return [NSPredicate predicateWithFormat:@"ANY %K BEGINSWITH %@"
+                                  argumentArray:@[@"days", shortenedDay]];
 }
 
 - (Show *)showForIndexPath:(NSIndexPath *)indexPath {
@@ -245,18 +254,19 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-//    if (dayOfWeek == 0) {
-//        NSString *weekday = [sectionTitles objectAtIndex: section];
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"%K = %@", @"day", weekday];
-//        
-//        NSArray *matches = [_objects filteredArrayUsingPredicate: predicate];
-//        (matches) ? [programs setObject: matches forKey: weekday] : nil;
-//        return [matches count];
-//    } else {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    if (dayOfWeek == 0) {
+        NSString *weekday = [sectionTitles objectAtIndex: section];
+
+        NSPredicate *predicate = [self predicateForDayOfWeek:(int)section];
+        
+        NSArray *matches = [_objects filteredArrayUsingPredicate: predicate];
+        (matches) ? [programs setObject: matches forKey: weekday] : nil;
+        return [matches count];
+    } else {
         return _objects.count;
-//    }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
