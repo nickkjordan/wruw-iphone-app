@@ -91,6 +91,7 @@
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
 		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
+		01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -240,6 +241,7 @@
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
 		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
+		01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableView.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -451,6 +453,7 @@
 				012C926B1840026600C94210 /* Save Data */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
+				01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */,
 			);
 			path = WRUW;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
+				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,

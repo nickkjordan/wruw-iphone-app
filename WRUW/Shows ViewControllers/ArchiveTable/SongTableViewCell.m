@@ -203,7 +203,7 @@
     return self;
 }
 
-- (void)configureForSong:(Song *)song controlView:(UIViewController *)c {
+- (void)configureForSong:(Song *)song controlView:(UIView *)c {
     NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:song.songName];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:0];
