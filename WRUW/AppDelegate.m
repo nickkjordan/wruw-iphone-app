@@ -12,7 +12,7 @@
 #import <Keys/WRUWKeys.h>
 #import "WRUWModule-Swift.h"
 #import "SongTableViewCell.h"
-#import "ArchiveTableViewController.h"
+#import "ArchiveViewController.h"
 #import "HomeViewController.h"
 #import "GroupedProgramsTableViewController.h"
 //#import "SDStatusBarManager.h"
@@ -91,7 +91,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                                         ARAnalyticsDetails: @[ @{
                                                 ARAnalyticsPageNameKeyPath: @"title",
                                                 ARAnalyticsShouldFire: ^BOOL(UIViewController *controller, NSArray *parameters) {
-                                                    if ([controller isKindOfClass:ArchiveTableViewController.class] ||
+                                                    if ([controller isKindOfClass:ArchiveViewController.class] ||
                                                         [controller isKindOfClass:HomeViewController.class] ||
                                                         [controller isKindOfClass:GroupedProgramsTableViewController.class]) {
                                                         return NO;
@@ -101,7 +101,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                                                 }],
                                         },
                                         @{
-                                        ARAnalyticsClass: ArchiveTableViewController.class,
+                                        ARAnalyticsClass: ArchiveViewController.class,
                                         ARAnalyticsDetails: @[ @{
                                             ARAnalyticsPageName: @"Archive View",
                                             }]},

@@ -45,7 +45,11 @@
                 });
     
                 // remove current playlist
-                [self.tableView loadWithShow:newShow date:[[NSDate alloc] init]];
+                NSDate *todaysDate = [[NSDate alloc] init];
+                NSString *dateString = [Show formatPathForDate: todaysDate];
+                [self.tableView loadWithShow:newShow.title.asQuery
+                                        date:dateString];
+                
                 _archive = [NSMutableArray array];
             } else {
                 [self.tableView updateCurrentPlaylist];

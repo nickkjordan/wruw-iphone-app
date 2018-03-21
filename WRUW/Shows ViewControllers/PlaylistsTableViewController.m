@@ -14,7 +14,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier isEqualToString:@"showArchiveSegue"]) {
-        ArchiveTableViewController *atvc = [segue destinationViewController];
+        ArchiveViewController *atvc = [segue destinationViewController];
         
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         

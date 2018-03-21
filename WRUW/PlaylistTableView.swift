@@ -2,11 +2,11 @@ import Foundation
 
 class PlaylistTableView: UITableView {
     var archive: [Song]!
-    var show: Show!,
-        date: Date!,
+    var show: String!,
+        date: String!,
         arrayDataSource: ArrayDataSource!
 
-    func load(show: Show, date: Date) {
+    func load(show: String, date: String) {
         self.show = show
         self.date = date
 
@@ -22,11 +22,7 @@ class PlaylistTableView: UITableView {
     }
 
     func load(success: @escaping ([Song]) -> Void) {
-        guard let dateString = Show.formatPath(for: date) else { return }
-
-        let showName = show.title.asQuery as String
-
-        let playlistService = GetPlaylist(showName: showName, date: dateString)
+        let playlistService = GetPlaylist(showName: show, date: date)
 
         playlistService.request { result in
             guard let playlist = result.success as? Playlist,

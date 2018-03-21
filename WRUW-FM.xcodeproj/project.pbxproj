@@ -80,7 +80,7 @@
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019285432059751000A54822 /* PlaylistServicesTests.swift */; };
-		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
+		019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveViewController.m */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
@@ -226,8 +226,8 @@
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019285432059751000A54822 /* PlaylistServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistServicesTests.swift; sourceTree = "<group>"; };
-		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
-		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
+		019316D7183B5731007755E8 /* ArchiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveViewController.h; sourceTree = "<group>"; };
+		019316D8183B5731007755E8 /* ArchiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		019316DB183B5E67007755E8 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -541,8 +541,8 @@
 		019316E1183B8637007755E8 /* ArchiveTable */ = {
 			isa = PBXGroup;
 			children = (
-				019316D7183B5731007755E8 /* ArchiveTableViewController.h */,
-				019316D8183B5731007755E8 /* ArchiveTableViewController.m */,
+				019316D7183B5731007755E8 /* ArchiveViewController.h */,
+				019316D8183B5731007755E8 /* ArchiveViewController.m */,
 				01CFAA54183BA0C200535F96 /* SongTableViewCell.h */,
 				01CFAA55183BA0C200535F96 /* SongTableViewCell.m */,
 				01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */,
@@ -988,7 +988,7 @@
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
-				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
+				019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
