@@ -445,15 +445,14 @@
 				0153B8F6189C827100331DD9 /* HomeViewController.m */,
 				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
 				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
-				01F925DC1C8E3DBB00206537 /* StreamPlay */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				01B51B262062EA4200FB7C3D /* Views */,
 				01B94BA620437705000874E1 /* Webservice */,
 				01CAFF611C8B662000AD1E95 /* Shared */,
 				012C926B1840026600C94210 /* Save Data */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
-				01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */,
 			);
 			path = WRUW;
 			sourceTree = "<group>";
@@ -566,6 +565,16 @@
 			path = "Favorites Controllers";
 			sourceTree = "<group>";
 		};
+		01B51B262062EA4200FB7C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01042C031AC06A42003112F3 /* AnimatedButton */,
+				01F925DC1C8E3DBB00206537 /* StreamPlay */,
+				01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		01B94BA620437705000874E1 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,7 +630,6 @@
 			isa = PBXGroup;
 			children = (
 				01F9819B1835373C0069C241 /* Models */,
-				01042C031AC06A42003112F3 /* AnimatedButton */,
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01997EC41C8CE2390007C38D /* CircleView.swift */,

@@ -1,11 +1,14 @@
 import Foundation
 
 class PlaylistTableView: UITableView {
-    var archive: [Song]!
-    var show: String!,
+    fileprivate var archive: [Song]!,
+        show: String!,
         date: String!,
         arrayDataSource: ArrayDataSource!
 
+    // MARK: Load archive requests
+
+    // Setup with show name and playlist date, then request playlist
     func load(show: String, date: String) {
         self.show = show
         self.date = date
@@ -21,6 +24,23 @@ class PlaylistTableView: UITableView {
         }
     }
 
+    // Request any new songs in current playlist
+    func updateCurrentPlaylist() {
+        load { songs in
+            let songs = songs.filter { !self.archive.contains($0) }
+
+            if songs.isEmpty { return }
+
+            self.archive.insert(contentsOf: songs, at: 0)
+            self.reloadData()
+
+            self.getReleaseInfo()
+        }
+    }
+}
+
+fileprivate extension PlaylistTableView {
+    // Request the current playlist
     func load(success: @escaping ([Song]) -> Void) {
         let playlistService = GetPlaylist(showName: show, date: date)
 
@@ -34,19 +54,13 @@ class PlaylistTableView: UITableView {
         }
     }
 
-    func updateCurrentPlaylist() {
-        load { songs in
-            let songs = songs.filter { !self.archive.contains($0) }
+    // MARK: Release and Covert Art Requests
 
-            if songs.isEmpty { return }
-
-            self.archive.insert(contentsOf: songs, at: 0)
-            self.reloadData()
-
-            self.getReleaseInfo()
-        }
-    }
-
+    // Get a list of possible releases for each playlist song,
+    // then attempt to request cover art
+    //
+    // If release has no cover art, request is attempted with the next release
+    // in order
     func getReleaseInfo() {
         for (i, song) in archive.enumerated() {
             let releasesService =
@@ -90,6 +104,7 @@ class PlaylistTableView: UITableView {
         }
     }
 
+    // Setup and request cover art for song
     func loadCoverArt(
         for releases: [Release],
         index: Int,
@@ -100,14 +115,11 @@ class PlaylistTableView: UITableView {
 
             guard !release.id.isEmpty else { return }
 
-            loadCoverArt(id: release.id, completion: completion)
+            GetCoverArt(releaseId: release.id).request(completion: completion)
         }
     }
 
-    func loadCoverArt(id: String, completion: @escaping (WruwResult) -> Void) {
-        GetCoverArt(releaseId: id).request(completion: completion)
-    }
-
+    // Reload song cell at row
     func reloadCoverArt(at row: Int) {
         DispatchQueue.main.async {
             self.beginUpdates()
@@ -118,6 +130,9 @@ class PlaylistTableView: UITableView {
         }
     }
 
+    // MARK: Config
+
+    // Setup the dataSource with associated cell class
     func setupTableView() {
         let closure: TableViewCellConfigureBlock = { (cell, song) in
             guard let cell = cell as? SongTableViewCell,
