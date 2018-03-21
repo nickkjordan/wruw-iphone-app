@@ -40,10 +40,13 @@ class PlaylistTableView: UITableView {
 
     func updateCurrentPlaylist() {
         load { songs in
-            let songs = songs.filter { self.archive.contains($0) }
+            let songs = songs.filter { !self.archive.contains($0) }
+
+            if songs.isEmpty { return }
 
             self.archive
-                .insert(contentsOf: songs, at: self.archive.endIndex - 1)
+                .insert(contentsOf: songs, at: 0)
+            self.reloadData()
 
             self.getReleaseInfo()
         }
@@ -112,9 +115,11 @@ class PlaylistTableView: UITableView {
 
     func reloadCoverArt(at row: Int) {
         DispatchQueue.main.async {
+            self.beginUpdates()
             let indexPath = IndexPath(row: row, section: 0)
 
             self.reloadRows(at: [indexPath], with: .none)
+            self.endUpdates()
         }
     }
 
