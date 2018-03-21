@@ -109,7 +109,6 @@
     
     [self loadHomePage];
 
-//    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     
     // Fix for last TableView cell under tab bar

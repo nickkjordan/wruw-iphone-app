@@ -40,8 +40,7 @@ class PlaylistTableView: UITableView {
 
             if songs.isEmpty { return }
 
-            self.archive
-                .insert(contentsOf: songs, at: 0)
+            self.archive.insert(contentsOf: songs, at: 0)
             self.reloadData()
 
             self.getReleaseInfo()

@@ -14,5 +14,4 @@
 
 @property (strong, nonatomic) IBOutlet PlaylistTableView *tableView;
 
-
 @end
