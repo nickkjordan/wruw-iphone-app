@@ -7,12 +7,22 @@ class PlaylistTableView: UITableView {
         arrayDataSource: ArrayDataSource!
 
     func load(show: Show, date: Date) {
-        guard let dateString = Show.formatPath(for: date) else {
-            return
-        }
-
         self.show = show
         self.date = date
+
+        load { songs in
+            self.archive = songs
+
+            DispatchQueue.main.async {
+                self.setupTableView()
+            }
+
+            self.getReleaseInfo()
+        }
+    }
+
+    func load(success: @escaping ([Song]) -> Void) {
+        guard let dateString = Show.formatPath(for: date) else { return }
 
         let showName = show.title.asQuery as String
 
@@ -24,11 +34,16 @@ class PlaylistTableView: UITableView {
                 return
             }
 
-            self.archive = Array(songs.reversed())
+            success(Array(songs.reversed()))
+        }
+    }
 
-            DispatchQueue.main.async {
-                self.setupTableView()
-            }
+    func updateCurrentPlaylist() {
+        load { songs in
+            let songs = songs.filter { self.archive.contains($0) }
+
+            self.archive
+                .insert(contentsOf: songs, at: self.archive.endIndex - 1)
 
             self.getReleaseInfo()
         }
@@ -68,7 +83,11 @@ class PlaylistTableView: UITableView {
                     self.reloadCoverArt(at: i)
                 }
 
-                self.loadCoverArt(for: releases, index: index, completion: completion)
+                self.loadCoverArt(
+                    for: releases,
+                    index: index,
+                    completion: completion
+                )
             }
         }
     }
@@ -130,7 +149,10 @@ class PlaylistTableView: UITableView {
 }
 
 extension PlaylistTableView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    func tableView(
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath? {
         let cell = cellForRow(at: indexPath)
 
         if (cell?.isSelected)! {

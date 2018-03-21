@@ -47,9 +47,8 @@
                 // remove current playlist
                 [self.tableView loadWithShow:newShow date:[[NSDate alloc] init]];
                 _archive = [NSMutableArray array];
-//                [self loadCurrentPlaylist];
             } else {
-                [self updateCurrentPlaylist];
+                [self.tableView updateCurrentPlaylist];
             }
         }
 
@@ -71,38 +70,6 @@
             [self.storeHouseRefreshControl finishingLoading];
             [spinner stopAnimating];
             return;
-        }
-    }];
-}
-
-- (void)loadPlaylistForShow:(Show *)show completion:(void (^) (WruwResult *))completion {
-    NSDate *todaysDate = [[NSDate alloc] init];
-    NSString *todaysDateString = [Show formatPathForDate:todaysDate];
-
-    GetPlaylist *playlistService = [[GetPlaylist alloc]
-                                    initWithShowName: show.title.asQuery
-                                    date: todaysDateString];
-
-    [playlistService requestWithCompletion:^(WruwResult *result) {
-        completion(result);
-    }];
-}
-
-- (void)updateCurrentPlaylist {
-    [self loadPlaylistForShow:_currentShow completion:^(WruwResult *result) {
-        if (result.success) {
-            Playlist *playlist = (Playlist *)[result success];
-
-            NSMutableArray *newSongs = [NSMutableArray arrayWithArray:[[playlist.songs reverseObjectEnumerator] allObjects]];
-            [newSongs removeObjectsInArray:[NSMutableArray arrayWithArray:[[_archive reverseObjectEnumerator] allObjects]]];
-
-            NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
-                                   NSMakeRange(0,[newSongs count])];
-            [_archive insertObjects:newSongs atIndexes:indexes];
-
-            //[self getReleaseInfo];
-
-            [self.storeHouseRefreshControl finishingLoading];
         }
     }];
 }
@@ -166,7 +133,7 @@
     
     [NSTimer scheduledTimerWithTimeInterval:60.0
                                      target:_tableView
-                                   selector:@selector(getReleaseInfo)
+                                   selector:@selector(updateCurrentPlaylist)
                                    userInfo:nil
                                     repeats:YES];
     
