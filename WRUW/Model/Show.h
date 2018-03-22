@@ -7,7 +7,7 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *host;
+@property (nonatomic, copy) NSArray *hosts;
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSArray *days;
