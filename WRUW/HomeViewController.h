@@ -5,12 +5,13 @@
 #import "SongTableViewCell.h"
 #import "ArrayDataSource.h"
 #import "MarqueeLabel.h"
+#import "WRUWModule-Swift.h"
 
-@interface HomeViewController : UIViewController <UINavigationBarDelegate, UITableViewDelegate, UIScrollViewDelegate>
+@interface HomeViewController : UIViewController <UINavigationBarDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MarqueeLabel *showTitle;
 @property (weak, nonatomic) IBOutlet UITextView *showDescription;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet PlaylistTableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UIView *showContainer;
 @property (weak, nonatomic) IBOutlet MarqueeLabel *hostLabel;

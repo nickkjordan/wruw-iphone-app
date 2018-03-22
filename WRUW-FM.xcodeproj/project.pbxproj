@@ -80,7 +80,7 @@
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019285432059751000A54822 /* PlaylistServicesTests.swift */; };
-		019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveTableViewController.m */; };
+		019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveViewController.m */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
@@ -91,6 +91,7 @@
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
 		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
+		01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
@@ -225,8 +226,8 @@
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019285432059751000A54822 /* PlaylistServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistServicesTests.swift; sourceTree = "<group>"; };
-		019316D7183B5731007755E8 /* ArchiveTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveTableViewController.h; sourceTree = "<group>"; };
-		019316D8183B5731007755E8 /* ArchiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveTableViewController.m; sourceTree = "<group>"; };
+		019316D7183B5731007755E8 /* ArchiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveViewController.h; sourceTree = "<group>"; };
+		019316D8183B5731007755E8 /* ArchiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveViewController.m; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		019316DB183B5E67007755E8 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -240,6 +241,7 @@
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
 		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
+		01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableView.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
@@ -443,9 +445,9 @@
 				0153B8F6189C827100331DD9 /* HomeViewController.m */,
 				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
 				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
-				01F925DC1C8E3DBB00206537 /* StreamPlay */,
 				019316DD183B83A2007755E8 /* Shows ViewControllers */,
 				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				01B51B262062EA4200FB7C3D /* Views */,
 				01B94BA620437705000874E1 /* Webservice */,
 				01CAFF611C8B662000AD1E95 /* Shared */,
 				012C926B1840026600C94210 /* Save Data */,
@@ -538,8 +540,8 @@
 		019316E1183B8637007755E8 /* ArchiveTable */ = {
 			isa = PBXGroup;
 			children = (
-				019316D7183B5731007755E8 /* ArchiveTableViewController.h */,
-				019316D8183B5731007755E8 /* ArchiveTableViewController.m */,
+				019316D7183B5731007755E8 /* ArchiveViewController.h */,
+				019316D8183B5731007755E8 /* ArchiveViewController.m */,
 				01CFAA54183BA0C200535F96 /* SongTableViewCell.h */,
 				01CFAA55183BA0C200535F96 /* SongTableViewCell.m */,
 				01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */,
@@ -561,6 +563,16 @@
 				015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */,
 			);
 			path = "Favorites Controllers";
+			sourceTree = "<group>";
+		};
+		01B51B262062EA4200FB7C3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01042C031AC06A42003112F3 /* AnimatedButton */,
+				01F925DC1C8E3DBB00206537 /* StreamPlay */,
+				01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		01B94BA620437705000874E1 /* Webservice */ = {
@@ -618,7 +630,6 @@
 			isa = PBXGroup;
 			children = (
 				01F9819B1835373C0069C241 /* Models */,
-				01042C031AC06A42003112F3 /* AnimatedButton */,
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01997EC41C8CE2390007C38D /* CircleView.swift */,
@@ -958,6 +969,7 @@
 				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
+				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,
 				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
@@ -984,7 +996,7 @@
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
-				019316D9183B5731007755E8 /* ArchiveTableViewController.m in Sources */,
+				019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
