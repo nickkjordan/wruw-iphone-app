@@ -35,7 +35,7 @@ import Alamofire
             .removingSymbols
             .replacingWhitespace(separator: " OR ")
 
-        let query = "release:\(release) " + "AND artist:\(artistQuery)"
+        let query = "release:\(release) AND artist:\(artistQuery)"
 
         parameters = [
             "query": query,
@@ -63,8 +63,7 @@ private extension String {
     var removingSymbols: String {
         let allowedSet = CharacterSet.alphanumerics.union(.whitespaces)
 
-        return components(separatedBy: allowedSet.inverted)
-            .joined(separator: "")
+        return components(separatedBy: allowedSet.inverted).joined()
     }
 
     func replacingWhitespace(separator: String) -> String {
