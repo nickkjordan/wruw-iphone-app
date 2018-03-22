@@ -60,7 +60,8 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     self.definesPresentationContext = YES;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ] forCellReuseIdentifier:@"ShowCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ]
+         forCellReuseIdentifier:@"ShowCell"];
     
     self.tableView.dataSource = self;
     programs = [[NSMutableDictionary alloc] init];
@@ -105,7 +106,7 @@
 }
 
 - (NSPredicate *)predicateForDayOfWeek:(int)day {
-    NSString *weekday = [sectionTitles objectAtIndex:day];
+    NSString *weekday = [sectionTitles objectAtIndex:day - 1];
     NSString *shortenedDay = [weekday substringToIndex:2];
 
     return [NSPredicate predicateWithFormat:@"ANY %K BEGINSWITH %@"
@@ -282,11 +283,7 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if (dayOfWeek == 0) {
-        return sectionIndexTitles;
-    }
-    else
-        return nil;
+    return (dayOfWeek == 0) ? sectionIndexTitles : nil;
 }
 
 @end
