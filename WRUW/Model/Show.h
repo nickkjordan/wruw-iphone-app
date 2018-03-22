@@ -19,4 +19,6 @@
 
 + (NSString *)formatPathForDate:(NSDate *)date;
 
+- (NSString *)hostsDisplay;
+
 @end

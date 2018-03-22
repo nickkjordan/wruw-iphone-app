@@ -68,6 +68,10 @@
     return [formatter stringFromDate:date];
 }
 
+- (NSString *)hostsDisplay {
+    return [_hosts componentsJoinedByString:@", "];
+}
+
 - (BOOL)isEqualToShow:(Show *)show {
     
     if(!show) {

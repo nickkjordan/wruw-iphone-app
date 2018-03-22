@@ -95,10 +95,11 @@
     //curent show.startTime - currentShow.endTime
     NSString *days = [currentShow.days componentsJoinedByString:@", "];
 
-    NSString *hosts = [currentShow.hosts componentsJoinedByString:@", "];
+    NSString *hosts =
+        [NSString stringWithFormat:@"hosted by %@", currentShow.hostsDisplay];
     
     [currentShowTitle setText:currentShow.title];
-    [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [hosts uppercaseString]]];
+    [currentShowHost setText:hosts];
     [currentShowTime setText:[NSString stringWithFormat:@"on %@ from ", days]];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];

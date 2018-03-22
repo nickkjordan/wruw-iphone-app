@@ -4,7 +4,7 @@
 
 - (void)configureForShow:(Show *)show {
     self.showTextLabel.text = show.title;
-    self.hostTextLabel.text = [show.hosts componentsJoinedByString:@", "];
+    self.hostTextLabel.text = show.hostsDisplay;
     self.timeTextLabel.text = show.time;
 }
 

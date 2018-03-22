@@ -39,12 +39,10 @@
     
             if (![newShow isEqual:_currentShow]) {
                 _currentShow = newShow;
-                NSString *hosts =
-                    [_currentShow.hosts componentsJoinedByString:@", "];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [showTitle setText:_currentShow.title];
-                    [hostLabel setText:hosts];
+                    [hostLabel setText:_currentShow.hostsDisplay];
                 });
     
                 // remove current playlist
