@@ -2,9 +2,15 @@ import Foundation
 
 class PlaylistTableView: UITableView {
     fileprivate var archive: [Song]!,
-        show: String!,
-        date: String!,
+        show: String?,
+        date: String?,
         arrayDataSource: ArrayDataSource!
+
+    // Configure order of song list
+    //
+    // true: top is most recent song.
+    // false: playlist in order in which songs were played (most recent is last)
+    var reversed = false
 
     // MARK: Load archive requests
 
@@ -31,7 +37,9 @@ class PlaylistTableView: UITableView {
 
             if songs.isEmpty { return }
 
-            self.archive.insert(contentsOf: songs, at: 0)
+            let index = self.reversed ? 0 : self.archive.endIndex
+
+            self.archive.insert(contentsOf: songs, at: index)
             self.reloadData()
 
             self.getReleaseInfo()
@@ -42,6 +50,10 @@ class PlaylistTableView: UITableView {
 fileprivate extension PlaylistTableView {
     // Request the current playlist
     func load(success: @escaping ([Song]) -> Void) {
+        guard let show = show, let date = date else {
+            return
+        }
+
         let playlistService = GetPlaylist(showName: show, date: date)
 
         playlistService.request { result in
@@ -50,11 +62,14 @@ fileprivate extension PlaylistTableView {
                 return
             }
 
-            success(Array(songs.reversed()))
+            // Set order in ascending or descending based on time played
+            let songList = self.reversed ? Array(songs.reversed()) : songs
+            
+            success(songList)
         }
     }
 
-    // MARK: Release and Covert Art Requests
+    // MARK: Release and Cover Art Requests
 
     // Get a list of possible releases for each playlist song,
     // then attempt to request cover art
@@ -67,6 +82,7 @@ fileprivate extension PlaylistTableView {
                 GetReleases(release: song.album, artist: song.artist)
 
             releasesService.request { result in
+                // Check for correct result
                 guard let releases = result.success as? [Release],
                     !releases.isEmpty else {
                     return
@@ -77,6 +93,7 @@ fileprivate extension PlaylistTableView {
                 var completion: ((WruwResult) -> Void)!
 
                 completion = { (result: WruwResult) in
+                    // Retry with next release in list if no cover art found
                     guard let image = result.success as? UIImage else {
                         index += 1
 
@@ -91,6 +108,7 @@ fileprivate extension PlaylistTableView {
 
                     print("release number: ", index)
 
+                    // Cover art found, load image at cell
                     song.image = image
                     self.reloadCoverArt(at: i)
                 }
@@ -110,13 +128,16 @@ fileprivate extension PlaylistTableView {
         index: Int,
         completion: @escaping (WruwResult) -> Void
     ) {
-        if releases.count > index {
-            let release = releases[index]
-
-            guard !release.id.isEmpty else { return }
-
-            GetCoverArt(releaseId: release.id).request(completion: completion)
+        guard releases.count > index else {
+            print(releases.count, " - ", index)
+            return
         }
+
+        let release = releases[index]
+
+        guard !release.id.isEmpty else { return }
+
+        GetCoverArt(releaseId: release.id).request(completion: completion)
     }
 
     // Reload song cell at row

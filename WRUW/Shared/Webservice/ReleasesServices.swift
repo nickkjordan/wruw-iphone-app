@@ -28,9 +28,14 @@ import Alamofire
 
     init(manager: NetworkManager, release: String, artist: String) {
         self.manager = manager
-        
-        let components = release.components(separatedBy: "-")
-        let query = "release:\(components[0]) AND artist:\(artist)"
+
+        let release = release.removingSymbols
+
+        let artistQuery = artist
+            .removingSymbols
+            .replacingWhitespace(separator: " OR ")
+
+        let query = "release:\(release) AND artist:\(artistQuery)"
 
         parameters = [
             "query": query,
@@ -51,5 +56,18 @@ import Alamofire
         }
 
         return processArray(releases, type: [Release].self)
+    }
+}
+
+private extension String {
+    var removingSymbols: String {
+        let allowedSet = CharacterSet.alphanumerics.union(.whitespaces)
+
+        return components(separatedBy: allowedSet.inverted).joined()
+    }
+
+    func replacingWhitespace(separator: String) -> String {
+        return components(separatedBy: .whitespaces)
+            .joined(separator: separator)
     }
 }

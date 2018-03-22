@@ -110,6 +110,7 @@
     [self loadHomePage];
 
     [self.tableView setSeparatorColor:[UIColor clearColor]];
+    _tableView.reversed = true;
     
     // Fix for last TableView cell under tab bar
 //    self.edgesForExtendedLayout = UIRectEdgeAll;
