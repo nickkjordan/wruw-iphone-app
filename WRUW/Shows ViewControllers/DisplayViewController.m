@@ -91,14 +91,23 @@
     currentShowInfo.editable = NO;
 }
 
--(void)updateLabels
-{
+-(void)updateLabels {
     //curent show.startTime - currentShow.endTime
     NSString *days = [currentShow.days componentsJoinedByString:@", "];
+
+    NSString *hosts =
+        [NSString stringWithFormat:@"hosted by %@", currentShow.hostsDisplay];
+
+    NSString *time =
+        [NSString stringWithFormat:@"on %@ from %@ to %@",
+            days,
+            currentShow.startTime.displayTime,
+            currentShow.endTime.displayTime
+        ];
     
     [currentShowTitle setText:currentShow.title];
-    [currentShowHost setText:[NSString stringWithFormat:@"hosted by %@", [currentShow.host uppercaseString]]];
-    [currentShowTime setText:[NSString stringWithFormat:@"on %@ from ", days]];
+    [currentShowHost setText:hosts];
+    [currentShowTime setText:time];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];
     [self adjustHeightOfInfoView];

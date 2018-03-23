@@ -39,9 +39,10 @@
     
             if (![newShow isEqual:_currentShow]) {
                 _currentShow = newShow;
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [showTitle setText:_currentShow.title];
-                    [hostLabel setText:_currentShow.host];
+                    [hostLabel setText:_currentShow.hostsDisplay];
                 });
     
                 // remove current playlist

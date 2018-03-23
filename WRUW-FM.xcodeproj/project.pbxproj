@@ -90,6 +90,8 @@
 		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
+		01B02B69206558DF00673F25 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B02B68206558DF00673F25 /* Time.swift */; };
+		01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B02B6A20655C5F00673F25 /* TimeTests.swift */; };
 		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
 		01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */; };
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
@@ -240,6 +242,8 @@
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
+		01B02B68206558DF00673F25 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = Shared/Time.swift; sourceTree = "<group>"; };
+		01B02B6A20655C5F00673F25 /* TimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTests.swift; sourceTree = "<group>"; };
 		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
 		01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableView.swift; sourceTree = "<group>"; };
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
@@ -476,6 +480,7 @@
 			children = (
 				0192854520597ED400A54822 /* Networking Tests */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
+				01B02B6A20655C5F00673F25 /* TimeTests.swift */,
 			);
 			path = WRUWTests;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01997EC41C8CE2390007C38D /* CircleView.swift */,
+				01B02B68206558DF00673F25 /* Time.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -978,6 +984,7 @@
 				019D9FD320438D1900C05026 /* ShowServices.swift in Sources */,
 				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
+				01B02B69206558DF00673F25 /* Time.swift in Sources */,
 				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
@@ -1008,6 +1015,7 @@
 				019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */,
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
+				01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */,
 				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
 				0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */,
 				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
