@@ -7,7 +7,8 @@
 @synthesize title = _title;
 @synthesize url = _url;
 @synthesize hosts = _hosts;
-@synthesize time = _time;
+@synthesize startTime = _startTime;
+@synthesize endTime = _endTime;
 @synthesize genre = _genre;
 @synthesize lastShow = _lastShow;
 @synthesize days = _days;
@@ -19,7 +20,8 @@
         self.title = [decoder decodeObjectForKey:@"title"];
         self.url = [decoder decodeObjectForKey:@"url"];
         self.hosts = [decoder decodeObjectForKey:@"hosts"];
-        self.time = [decoder decodeObjectForKey:@"time"];
+        self.startTime = [decoder decodeObjectForKey:@"startTime"];
+        self.endTime = [decoder decodeObjectForKey:@"endTime"];
         self.genre = [decoder decodeObjectForKey:@"genre"];
         self.lastShow = [decoder decodeObjectForKey:@"lastShow"];
         self.days = [decoder decodeObjectForKey:@"day"];
@@ -33,7 +35,8 @@
     if (self = [super init]) {
         self.title = dict[@"ShowName"];
         self.url = dict[@"ShowUrl"];
-        self.time = dict[@"OnairTime"];
+        self.startTime = dict[@"OnairTime"];
+        self.endTime = dict[@"OffairTime"];
         self.genre = dict[@"ShowCategory"];
         self.lastShow = dict[@"lastShow"];
         self.days = dict[@"Weekdays"];
@@ -54,7 +57,7 @@
     [encoder encodeObject:_title forKey:@"title"];
     [encoder encodeObject:_url forKey:@"url"];
     [encoder encodeObject:_hosts forKey:@"hosts"];
-    [encoder encodeObject:_time forKey:@"time"];
+    [encoder encodeObject:_startTime forKey:@"startTime"];
     [encoder encodeObject:_genre forKey:@"genre"];
     [encoder encodeObject:_lastShow forKey:@"lastShow"];
     [encoder encodeObject:_days forKey:@"day"];
@@ -84,7 +87,7 @@
 }
 
 - (BOOL)currentShowValid {
-    return self.title && self.hosts && self.time && self.genre && self.days && self.lastShow;
+    return self.title && self.hosts && self.startTime && self.genre && self.days && self.lastShow;
 }
 
 #pragma mark - NSObject

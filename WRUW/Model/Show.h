@@ -9,7 +9,8 @@
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSArray *hosts;
 @property (nonatomic, copy) NSString *genre;
-@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *startTime;
+@property (nonatomic, copy) NSString *endTime;
 @property (nonatomic, copy) NSArray *days;
 @property (nonatomic, copy) NSString *infoDescription;
 @property (nonatomic) Playlist *lastShow;
