@@ -97,10 +97,17 @@
 
     NSString *hosts =
         [NSString stringWithFormat:@"hosted by %@", currentShow.hostsDisplay];
+
+    NSString *time =
+        [NSString stringWithFormat:@"on %@ from %@ to %@",
+            days,
+            currentShow.startTime.displayTime,
+            currentShow.endTime.displayTime
+        ];
     
     [currentShowTitle setText:currentShow.title];
     [currentShowHost setText:hosts];
-    [currentShowTime setText:[NSString stringWithFormat:@"on %@ from ", days]];
+    [currentShowTime setText:time];
     [currentShowInfo setText:currentShow.infoDescription];
     [showGenre setText:[currentShow.genre uppercaseString]];
     [self adjustHeightOfInfoView];
