@@ -2,6 +2,7 @@
 #import "Playlist.h"
 
 @protocol JSONConvertible;
+@class Time;
 
 @interface Show : NSObject <JSONConvertible>
 
@@ -9,8 +10,8 @@
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSArray *hosts;
 @property (nonatomic, copy) NSString *genre;
-@property (nonatomic, copy) NSString *startTime;
-@property (nonatomic, copy) NSString *endTime;
+@property (nonatomic) Time *startTime;
+@property (nonatomic) Time *endTime;
 @property (nonatomic, copy) NSArray *days;
 @property (nonatomic, copy) NSString *infoDescription;
 @property (nonatomic) Playlist *lastShow;

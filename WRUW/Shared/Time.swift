@@ -1,6 +1,6 @@
 import Foundation
 
-class Time {
+@objc class Time: NSObject {
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
@@ -30,7 +30,7 @@ class Time {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var displayTime: String {
+    func displayTime() -> String {
         return Time.displayFormatter.string(from: self.date)
     }
 }

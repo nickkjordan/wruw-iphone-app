@@ -22,13 +22,13 @@ class TimeTests: XCTestCase {
     }
 
     func testDisplayTime() {
-        XCTAssertEqual("12:00 AM", time.displayTime)
+        XCTAssertEqual("12:00 AM", time.displayTime())
     }
 
     func testPostMeridiem() {
         let laterTime = Time(string: "14:00:00")
         
-        XCTAssertEqual("2:00 PM", laterTime!.displayTime)
+        XCTAssertEqual("2:00 PM", laterTime!.displayTime())
     }
 
     func testComparableTimes() {

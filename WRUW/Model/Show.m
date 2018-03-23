@@ -35,8 +35,8 @@
     if (self = [super init]) {
         self.title = dict[@"ShowName"];
         self.url = dict[@"ShowUrl"];
-        self.startTime = dict[@"OnairTime"];
-        self.endTime = dict[@"OffairTime"];
+        self.startTime = [[Time alloc] initWithString:dict[@"OnairTime"]];
+        self.endTime = [[Time alloc] initWithString:dict[@"OffairTime"]];
         self.genre = dict[@"ShowCategory"];
         self.lastShow = dict[@"lastShow"];
         self.days = dict[@"Weekdays"];
