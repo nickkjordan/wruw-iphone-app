@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Playlist.h"
 #import "Show.h"
 
 @interface PlaylistsTableViewController : UITableViewController

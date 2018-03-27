@@ -1,5 +1,4 @@
 #import "Show.h"
-#import "Playlist.h"
 #import "WRUWModule-Swift.h"
 
 @implementation Show

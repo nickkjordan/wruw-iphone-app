@@ -72,7 +72,7 @@ fileprivate extension PlaylistTableView {
             self.spinnerView.stopAnimating()
 
             guard let playlist = result.success as? Playlist,
-                let songs = playlist.songs as? [Song] else {
+                let songs = playlist.songs else {
                 return
             }
 

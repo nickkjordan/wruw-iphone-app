@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "Playlist.h"
 
 @protocol JSONConvertible;
 @class Time;
+@class Playlist;
 
 @interface Show : NSObject <JSONConvertible>
 

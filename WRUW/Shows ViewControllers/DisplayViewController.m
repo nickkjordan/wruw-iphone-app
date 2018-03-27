@@ -1,5 +1,4 @@
 #import "DisplayViewController.h"
-#import "Playlist.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"
 #import <EventKit/EventKit.h>
