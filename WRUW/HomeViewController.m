@@ -31,6 +31,8 @@
     CurrentShow *currentShowService = [[CurrentShow alloc] init];
 
     [currentShowService requestWithCompletion:^(WruwResult *result) {
+        [self.storeHouseRefreshControl finishingLoading];
+
         if (result.success) {
             Show *newShow = (Show *)[result success];
 
@@ -71,7 +73,6 @@
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
 
-            [self.storeHouseRefreshControl finishingLoading];
             return;
         }
     }];
@@ -101,6 +102,7 @@
 
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.reversed = true;
+    _tableView.scrollViewDelegate = self;
     
     // Set navigation bar
     self.navigationBar.delegate = self;
@@ -108,18 +110,18 @@
     self.streamPlay = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 140, 150)];
     [self.showView addSubview:self.streamPlay];
     
-    self.storeHouseRefreshControl = [CBStoreHouseRefreshControl
-                                     attachToScrollView:self.tableView
-                                     target:self
-                                     refreshAction:@selector(refreshTriggered)
-                                     plist:@"WruwStorehouseIconList"
-                                     color:[UIColor darkGrayColor]
-                                     lineWidth:1.5
-                                     dropHeight:100
-                                     scale:1.5
-                                     horizontalRandomness:150
-                                     reverseLoadingAnimation:YES
-                                     internalAnimationFactor:0.5];
+    self.storeHouseRefreshControl =
+        [CBStoreHouseRefreshControl attachToScrollView:self.tableView
+                                                target:self
+                                         refreshAction:@selector(refreshTriggered)
+                                                 plist:@"WruwStorehouseIconList"
+                                                 color:[UIColor darkGrayColor]
+                                             lineWidth:1.5
+                                            dropHeight:100
+                                                 scale:1.5
+                                  horizontalRandomness:150
+                               reverseLoadingAnimation:YES
+                               internalAnimationFactor:0.5];
     
     [NSTimer scheduledTimerWithTimeInterval:60.0
                                      target:_tableView
@@ -163,7 +165,8 @@
     [self.storeHouseRefreshControl scrollViewDidScroll];
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+                  willDecelerate:(BOOL)decelerate {
     [self.storeHouseRefreshControl scrollViewDidEndDragging];
 }
 
