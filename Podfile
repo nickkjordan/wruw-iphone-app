@@ -7,7 +7,6 @@ use_frameworks!
 local_podfile = "Pods/Podfile.local"
 #eval(File.open(local_podfile).read) if File.exist? local_podfile
 
-pod 'CBStoreHouseRefreshControl'
 pod 'MarqueeLabel'
 pod 'ARAnalytics/Mixpanel'
 pod 'ARAnalytics/DSL'

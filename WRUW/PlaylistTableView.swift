@@ -6,6 +6,8 @@ class PlaylistTableView: UITableView {
         date: String?,
         arrayDataSource: ArrayDataSource!
 
+    var scrollViewDelegate: UIScrollViewDelegate?
+
     lazy var spinnerView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
         self.addSubview(view) { make in
@@ -212,5 +214,17 @@ extension PlaylistTableView: UITableViewDelegate {
         }
 
         return indexPath
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollViewDelegate?.scrollViewDidScroll?(scrollView)
+    }
+
+    func scrollViewDidEndDragging(
+        _ scrollView: UIScrollView,
+        willDecelerate decelerate: Bool
+    ) {
+        scrollViewDelegate?
+            .scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
 }
