@@ -2,16 +2,15 @@
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
 #import "Show.h"
-#import "CBStoreHouseRefreshControl.h"
 #import "ARAnalytics.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
+    UIRefreshControl *_refreshControl;
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @property (nonatomic, strong) Show *currentShow;
-@property (nonatomic, strong) CBStoreHouseRefreshControl *storeHouseRefreshControl;
 @property (nonatomic, strong) StreamPlayView *streamPlay;
 @end
 
@@ -31,7 +30,7 @@
     CurrentShow *currentShowService = [[CurrentShow alloc] init];
 
     [currentShowService requestWithCompletion:^(WruwResult *result) {
-        [self.storeHouseRefreshControl finishingLoading];
+        [_refreshControl endRefreshing];
 
         if (result.success) {
             Show *newShow = (Show *)[result success];
@@ -80,7 +79,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self setTitle:@"Now Playing"];
     [ARAnalytics event:@"Screen view"
         withProperties:@{ @"screen": @"Home View" }];
@@ -103,29 +102,24 @@
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.reversed = true;
     _tableView.scrollViewDelegate = self;
-    
+
+    _refreshControl = [[UIRefreshControl alloc] init];
+    _refreshControl.tintColor = [[ThemeManager current] wruwMainOrangeColor];
+    [_refreshControl addTarget:self
+                        action:@selector(loadHomePage)
+              forControlEvents:UIControlEventPrimaryActionTriggered];
+
+    _tableView.refreshControl = _refreshControl;
+
     // Set navigation bar
     self.navigationBar.delegate = self;
     
     self.streamPlay = [[StreamPlayView alloc] initWithFrame:CGRectMake(0, 0, 140, 150)];
     [self.showView addSubview:self.streamPlay];
     
-    self.storeHouseRefreshControl =
-        [CBStoreHouseRefreshControl attachToScrollView:self.tableView
-                                                target:self
-                                         refreshAction:@selector(refreshTriggered)
-                                                 plist:@"WruwStorehouseIconList"
-                                                 color:[UIColor darkGrayColor]
-                                             lineWidth:1.5
-                                            dropHeight:100
-                                                 scale:1.5
-                                  horizontalRandomness:150
-                               reverseLoadingAnimation:YES
-                               internalAnimationFactor:0.5];
-    
     [NSTimer scheduledTimerWithTimeInterval:60.0
-                                     target:_tableView
-                                   selector:@selector(updateCurrentPlaylist)
+                                     target:self
+                                   selector:@selector(loadHomePage)
                                    userInfo:nil
                                     repeats:YES];
     
@@ -157,21 +151,6 @@
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
-}
-
-#pragma mark - Scroll view delegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.storeHouseRefreshControl scrollViewDidScroll];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
-                  willDecelerate:(BOOL)decelerate {
-    [self.storeHouseRefreshControl scrollViewDidEndDragging];
-}
-
-- (void)refreshTriggered {
-    [self loadHomePage];
 }
 
 @end
