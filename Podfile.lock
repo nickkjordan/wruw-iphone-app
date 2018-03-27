@@ -7,7 +7,6 @@ PODS:
   - ARAnalytics/Mixpanel (3.0.0):
     - ARAnalytics/CoreIOS
     - Mixpanel
-  - CBStoreHouseRefreshControl (1.0)
   - Keys (1.0.0)
   - MarqueeLabel (2.2.1)
   - Mixpanel (2.7.3):
@@ -33,7 +32,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.4.0)
   - ARAnalytics/DSL
   - ARAnalytics/Mixpanel
-  - CBStoreHouseRefreshControl
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
   - NSObject+Rx (~> 3.0.0)
@@ -49,7 +47,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
-  CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
   Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
@@ -61,6 +58,6 @@ SPEC CHECKSUMS:
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: e9211e1d07d509bd507b01923ca974f615f7192c
+PODFILE CHECKSUM: b49fac83f29fba00d9df57bb3a85a1a6d62b1134
 
 COCOAPODS: 1.4.0
