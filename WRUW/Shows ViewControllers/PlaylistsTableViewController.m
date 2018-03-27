@@ -19,10 +19,9 @@
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
         PlaylistInfo *p = [_playlists objectAtIndex:path.row];
-        
-        [atvc setCurrentPlaylist:p];
-        
-        [atvc setCurrentShowTitle:currentShow.title];
+
+        atvc.currentPlaylist = p;
+        atvc.currentShowTitle = currentShow.title;
     }
 }
 
