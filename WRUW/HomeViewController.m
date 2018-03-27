@@ -8,7 +8,6 @@
 @interface HomeViewController () <AVAudioPlayerDelegate>
 {
     NSMutableArray *_archive;
-    UIActivityIndicatorView *spinner;
 }
 @property (nonatomic, strong) ArrayDataSource *songsArrayDataSource;
 @property (nonatomic, strong) Show *currentShow;
@@ -73,14 +72,12 @@
             [self presentViewController:alert animated:YES completion:nil];
 
             [self.storeHouseRefreshControl finishingLoading];
-            [spinner stopAnimating];
             return;
         }
     }];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setTitle:@"Now Playing"];
@@ -95,14 +92,6 @@
     showContainer.layer.shadowRadius = 0.5;
     showContainer.clipsToBounds = NO;
     
-    spinner = [[UIActivityIndicatorView alloc] init];
-    spinner.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
-    [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    spinner.color = [UIColor orangeColor];
-//    [self.tableView addSubview:spinner];
-
-//    [spinner startAnimating];
-
     [showDescription setText:[NSString stringWithFormat:@""]];
     [showTitle setText:[NSString stringWithFormat:@""]];
     [hostLabel setText:[NSString stringWithFormat:@""]];
@@ -112,10 +101,6 @@
 
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     _tableView.reversed = true;
-    
-    // Fix for last TableView cell under tab bar
-//    self.edgesForExtendedLayout = UIRectEdgeAll;
-//    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, CGRectGetHeight(self.tabBarController.tabBar.frame), 0.0f);
     
     // Set navigation bar
     self.navigationBar.delegate = self;

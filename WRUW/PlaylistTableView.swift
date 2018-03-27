@@ -6,6 +6,16 @@ class PlaylistTableView: UITableView {
         date: String?,
         arrayDataSource: ArrayDataSource!
 
+    lazy var spinnerView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        self.addSubview(view) { make in
+            make.center.equalTo(self)
+        }
+        view.activityIndicatorViewStyle = .gray
+        view.color = UIColor.orange
+        return view
+    }()
+
     // Configure order of song list
     //
     // true: top is most recent song.
@@ -56,9 +66,13 @@ fileprivate extension PlaylistTableView {
 
         let playlistService = GetPlaylist(showName: show, date: date)
 
+        spinnerView.startAnimating()
+
         playlistService.request { result in
+            self.spinnerView.stopAnimating()
+
             guard let playlist = result.success as? Playlist,
-                let songs = playlist.songs as? [Song] else {
+                let songs = playlist.songs else {
                 return
             }
 

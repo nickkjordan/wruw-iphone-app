@@ -23,7 +23,7 @@ class GetPlaylistTests: NetworkingTests {
                 return
             }
 
-            XCTAssertEqual(playlist.songs.count, 27)
+            XCTAssertEqual(playlist.songs?.count, 27)
             self.requestExpectation.fulfill()
         }
 

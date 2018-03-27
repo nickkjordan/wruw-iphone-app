@@ -80,7 +80,8 @@
 		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
 		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019285432059751000A54822 /* PlaylistServicesTests.swift */; };
-		019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316D8183B5731007755E8 /* ArchiveViewController.m */; };
+		0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7D206A950100462061 /* ArchiveViewController.swift */; };
+		0192BF80206A98CD00462061 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7F206A98CD00462061 /* Playlist.swift */; };
 		019316DC183B5E67007755E8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 019316DB183B5E67007755E8 /* Song.m */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
@@ -112,7 +113,6 @@
 		01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DBF18396A7800BFA783 /* CoreMedia.framework */; };
 		01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC118396A8900BFA783 /* AVFoundation.framework */; };
 		01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC318396A9200BFA783 /* MediaPlayer.framework */; };
-		01F40DCB18398F1500BFA783 /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F40DCA18398F1500BFA783 /* Playlist.m */; };
 		01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */; };
 		01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */; };
 		01F981AA183538D10069C241 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F981A9183538D10069C241 /* libxml2.dylib */; };
@@ -228,8 +228,8 @@
 		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019285432059751000A54822 /* PlaylistServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistServicesTests.swift; sourceTree = "<group>"; };
-		019316D7183B5731007755E8 /* ArchiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveViewController.h; sourceTree = "<group>"; };
-		019316D8183B5731007755E8 /* ArchiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveViewController.m; sourceTree = "<group>"; };
+		0192BF7D206A950100462061 /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		0192BF7F206A98CD00462061 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		019316DA183B5E67007755E8 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		019316DB183B5E67007755E8 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -265,8 +265,6 @@
 		01F40DBF18396A7800BFA783 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		01F40DC118396A8900BFA783 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		01F40DC318396A9200BFA783 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		01F40DC918398F1500BFA783 /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playlist.h; sourceTree = "<group>"; };
-		01F40DCA18398F1500BFA783 /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playlist.m; sourceTree = "<group>"; };
 		01F89AA0185ACE9700D327B9 /* FavoriteShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteShowsTableViewController.h; sourceTree = "<group>"; };
 		01F89AA1185ACE9700D327B9 /* FavoriteShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteShowsTableViewController.m; sourceTree = "<group>"; };
 		01F925DD1C8E3DD300206537 /* StreamPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreamPlayViewModel.swift; path = StreamPlay/StreamPlayViewModel.swift; sourceTree = "<group>"; };
@@ -545,8 +543,7 @@
 		019316E1183B8637007755E8 /* ArchiveTable */ = {
 			isa = PBXGroup;
 			children = (
-				019316D7183B5731007755E8 /* ArchiveViewController.h */,
-				019316D8183B5731007755E8 /* ArchiveViewController.m */,
+				0192BF7D206A950100462061 /* ArchiveViewController.swift */,
 				01CFAA54183BA0C200535F96 /* SongTableViewCell.h */,
 				01CFAA55183BA0C200535F96 /* SongTableViewCell.m */,
 				01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */,
@@ -655,14 +652,13 @@
 		01F9819B1835373C0069C241 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				01ED058E2049CBDA006F8012 /* Release.swift */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
-				01F40DC918398F1500BFA783 /* Playlist.h */,
 				016A21CB2047382300474490 /* PlaylistInfo.swift */,
-				01F40DCA18398F1500BFA783 /* Playlist.m */,
+				0192BF7F206A98CD00462061 /* Playlist.swift */,
+				01ED058E2049CBDA006F8012 /* Release.swift */,
 				019316DA183B5E67007755E8 /* Song.h */,
 				019316DB183B5E67007755E8 /* Song.m */,
 			);
@@ -988,6 +984,8 @@
 				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
+				0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */,
+				0192BF80206A98CD00462061 /* Playlist.swift in Sources */,
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
@@ -999,11 +997,9 @@
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */,
 				01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */,
-				01F40DCB18398F1500BFA783 /* Playlist.m in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
-				019316D9183B5731007755E8 /* ArchiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
