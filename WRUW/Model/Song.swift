@@ -35,4 +35,18 @@ class Song: NSObject, NSCoding, JSONConvertible {
         aCoder.encode(label, forKey: "label")
         aCoder.encode(image, forKey: "image")
     }
+
+    override func isEqual(_ object: Any?) -> Bool {
+        guard let song = object as? Song else {
+            return false
+        }
+
+        return self == song
+    }
+}
+
+extension Song {
+    override var description: String {
+        return "Song \"\(songName)\" by \(artist)\n"
+    }
 }
