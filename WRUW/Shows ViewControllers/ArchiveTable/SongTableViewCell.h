@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Song.h"
 #import <Social/Social.h>
+
+@class Song;
 
 @interface SongTableViewCell : UITableViewCell
 

@@ -8,6 +8,7 @@
 
 #import "SongTableViewCell.h"
 #import <QuartzCore/CALayer.h>
+#import "WRUWModule-Swift.h"
 
 @interface SongTableViewCell(){
 }
