@@ -6,7 +6,7 @@ class PlaylistTableView: UITableView {
         date: String?,
         arrayDataSource: ArrayDataSource!
 
-    var scrollViewDelegate: UIScrollViewDelegate?
+    weak var scrollViewDelegate: UIScrollViewDelegate?
 
     lazy var spinnerView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
@@ -31,7 +31,7 @@ class PlaylistTableView: UITableView {
         self.show = show
         self.date = date
 
-        load { songs in
+        load { [unowned self] songs in
             self.archive = songs
 
             DispatchQueue.main.async {
@@ -45,13 +45,16 @@ class PlaylistTableView: UITableView {
     // Request any new songs in current playlist
     func updateCurrentPlaylist() {
         load { songs in
-            let songs = songs.filter { !self.archive.contains($0) }
+            var newSongs = songs.filter { !self.archive.contains($0) }
 
-            if songs.isEmpty { return }
+            if newSongs.isEmpty { return }
 
             let index = self.reversed ? 0 : self.archive.endIndex
+            if self.reversed {
+                newSongs.reverse()
+            }
 
-            self.archive.insert(contentsOf: songs, at: index)
+            self.archive.insert(contentsOf: newSongs, at: index)
             self.reloadData()
 
             self.getReleaseInfo()
@@ -70,7 +73,7 @@ fileprivate extension PlaylistTableView {
 
         spinnerView.startAnimating()
 
-        playlistService.request { result in
+        playlistService.request { [unowned self] result in
             self.spinnerView.stopAnimating()
 
             guard let playlist = result.success as? Playlist,
@@ -79,8 +82,10 @@ fileprivate extension PlaylistTableView {
             }
 
             // Set order in ascending or descending based on time played
-            let songList = self.reversed ? Array(songs.reversed()) : songs
-            
+            let songList = self.reversed ?
+                Array(songs.reversed()) :
+                songs
+
             success(songList)
         }
     }
@@ -94,10 +99,14 @@ fileprivate extension PlaylistTableView {
     // in order
     func getReleaseInfo() {
         for (i, song) in archive.enumerated() {
+            guard song.noImage else {
+                return
+            }
+
             let releasesService =
                 GetReleases(release: song.album, artist: song.artist)
 
-            releasesService.request { result in
+            releasesService.request { [unowned self] result in
                 // Check for correct result
                 guard let releases = result.success as? [Release],
                     !releases.isEmpty else {
@@ -108,12 +117,12 @@ fileprivate extension PlaylistTableView {
 
                 var completion: ((WruwResult) -> Void)!
 
-                completion = { (result: WruwResult) in
+                completion = { [weak self] (result: WruwResult) in
                     // Retry with next release in list if no cover art found
                     guard let image = result.success as? UIImage else {
                         index += 1
 
-                        self.loadCoverArt(
+                        self?.loadCoverArt(
                             for: releases,
                             index: index,
                             completion: completion
@@ -126,7 +135,7 @@ fileprivate extension PlaylistTableView {
 
                     // Cover art found, load image at cell
                     song.image = image
-                    self.reloadCoverArt(at: i)
+                    self?.reloadCoverArt(at: i)
                 }
 
                 self.loadCoverArt(
@@ -171,7 +180,9 @@ fileprivate extension PlaylistTableView {
 
     // Setup the dataSource with associated cell class
     func setupTableView() {
-        let closure: TableViewCellConfigureBlock = { (cell, song) in
+        let closure: TableViewCellConfigureBlock = {
+            [unowned self] (cell, song) in
+
             guard let cell = cell as? SongTableViewCell,
                 let song = song as? Song? else {
                 return

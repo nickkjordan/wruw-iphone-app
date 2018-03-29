@@ -215,7 +215,7 @@
     self.albumLabel.text = [@[song.album, song.label] componentsJoinedByString:@" · "];
     self.artistLabel.text = song.artist;
     self.currentSong = song;
-    self.ctrl = c;
+    //self.ctrl = c;
     
     [thumbnailImageView setImage:song.image];
 
