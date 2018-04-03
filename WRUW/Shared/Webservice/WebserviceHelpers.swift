@@ -8,8 +8,17 @@ extension NSString {
         let base = lowercased
             .components(separatedBy: nonLetterSet)
             .joined(separator: "")
+            .singleWhitespace
 
         return base.replacingOccurrences(of: " ", with: "-") as NSString
+    }
+}
+
+extension String {
+    var singleWhitespace: String {
+        return components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
     }
 }
 

@@ -94,7 +94,7 @@
 
 - (void)resetObjects {
     if (dayOfWeek > 0) {
-        NSPredicate *predicate = [self predicateForDayOfWeek:dayOfWeek];
+        NSPredicate *predicate = [self predicateForDayOfWeek:dayOfWeek - 1];
 
         NSArray *matches =
             [_originalObjects filteredArrayUsingPredicate:predicate];
@@ -106,7 +106,7 @@
 }
 
 - (NSPredicate *)predicateForDayOfWeek:(int)day {
-    NSString *weekday = [sectionTitles objectAtIndex:day - 1];
+    NSString *weekday = [sectionTitles objectAtIndex:day];
     NSString *shortenedDay = [weekday substringToIndex:2];
 
     return [NSPredicate predicateWithFormat:@"ANY %K BEGINSWITH %@"
@@ -270,13 +270,17 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ShowCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
+
     if (!cell) {
-        [tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil] forCellReuseIdentifier:@"ShowCell"];
+        [tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil]
+        forCellReuseIdentifier:@"ShowCell"];
+        
         cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
     }
+    
     Show *item = [self showForIndexPath:indexPath];
     [cell configureForShow:item];
     return cell;

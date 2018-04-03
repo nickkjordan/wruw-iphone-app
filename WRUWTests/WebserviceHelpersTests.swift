@@ -17,4 +17,12 @@ class WRUWTests: XCTestCase {
 
         XCTAssertEqual(query, "the-59-sound")
     }
+
+    func testAmpersandCharacter() {
+        let showName: NSString = "Charlie Saber's Rock & Country Casserole"
+
+        let query = showName.asQuery
+
+        XCTAssertEqual(query, "charlie-sabers-rock-country-casserole")
+    }
 }
