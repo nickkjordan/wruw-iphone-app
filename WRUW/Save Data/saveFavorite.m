@@ -7,8 +7,9 @@
 //
 
 #import "saveFavorite.h"
-#import "Song.h"
 #import "getFilePath.h"
+
+@class Song;
 
 @implementation saveFavorite
 

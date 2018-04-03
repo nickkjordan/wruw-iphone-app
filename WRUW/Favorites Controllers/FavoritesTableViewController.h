@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ArrayDataSource.h"
 #import "SongTableViewCell.h"
-#import "Song.h"
 
 @interface FavoritesTableViewController : UIViewController <UITableViewDelegate>
 
