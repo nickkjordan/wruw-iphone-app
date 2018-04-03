@@ -19,10 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self.view layoutIfNeeded];
     
-//    [self addStoryboardSegments:@[@"songsSegue", @"showsSegue"]];
-
     self.favSongsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteSongs"];
     self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
     self.currentVC = self.favSongsVC;
@@ -63,7 +62,6 @@
 }
 
 -(void)moveToNewController:(UIViewController *) newController direction:(int) param{
-
     [self.currentVC willMoveToParentViewController:nil];
     [self addChildViewController:newController];
     
@@ -90,41 +88,16 @@
                             completion:completion];
 }
 
-- (void)addContainerViewConstraints:(UIViewController *)viewController
-{
-    [self.view addSubview:viewController.view];
+- (void)addContainerViewConstraints:(UIViewController *)viewController {
+    UIView *subview = viewController.view;
+    UILayoutGuide *layoutMarginsGuide = self.view.layoutMarginsGuide;
+    
+    [self.view addSubview:subview];
 
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
-                                                                   attribute:NSLayoutAttributeTop
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.view
-                                                                   attribute:NSLayoutAttributeTop
-                                                                  multiplier:1.0
-                                                                    constant:0.0]];
-    
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
-                                                                   attribute:NSLayoutAttributeLeading
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.view
-                                                                   attribute:NSLayoutAttributeLeading
-                                                                  multiplier:1.0
-                                                                    constant:0.0]];
-    
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
-                                                                   attribute:NSLayoutAttributeBottom
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.view
-                                                                   attribute:NSLayoutAttributeBottom
-                                                                  multiplier:1.0
-                                                                    constant:0.0]];
-    
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
-                                                                   attribute:NSLayoutAttributeTrailing
-                                                                   relatedBy:NSLayoutRelationEqual
-                                                                      toItem:self.view
-                                                                   attribute:NSLayoutAttributeTrailing
-                                                                  multiplier:1.0
-                                                                    constant:0.0]];
+    [subview.leadingAnchor constraintEqualToAnchor:layoutMarginsGuide.leadingAnchor];
+    [subview.topAnchor constraintEqualToAnchor:layoutMarginsGuide.topAnchor];
+    [subview.bottomAnchor constraintEqualToAnchor:layoutMarginsGuide.bottomAnchor];
+    [subview.trailingAnchor constraintEqualToAnchor:layoutMarginsGuide.trailingAnchor];
 }
 
 @end
