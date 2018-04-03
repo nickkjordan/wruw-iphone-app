@@ -26,6 +26,7 @@
     self.favSongsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteSongs"];
     self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
     self.currentVC = self.favSongsVC;
+    [self addChildViewController:favSongsVC];
     [self addContainerViewConstraints:self.currentVC];
 }
 
@@ -64,6 +65,8 @@
 -(void)moveToNewController:(UIViewController *) newController direction:(int) param{
 
     [self.currentVC willMoveToParentViewController:nil];
+    [self addChildViewController:newController];
+    
     void (^completion)(BOOL) = ^(BOOL finished){
         [self.currentVC removeFromParentViewController];
         [newController didMoveToParentViewController:self];
