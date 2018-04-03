@@ -83,6 +83,7 @@
 		0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7D206A950100462061 /* ArchiveViewController.swift */; };
 		0192BF80206A98CD00462061 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7F206A98CD00462061 /* Playlist.swift */; };
 		0192E761206C522E00231091 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E760206C522E00231091 /* Song.swift */; };
+		0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E762206C757F00231091 /* PlaylistTableViewTests.swift */; };
 		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
 		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
 		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
@@ -231,6 +232,7 @@
 		0192BF7D206A950100462061 /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		0192BF7F206A98CD00462061 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		0192E760206C522E00231091 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		0192E762206C757F00231091 /* PlaylistTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewTests.swift; sourceTree = "<group>"; };
 		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				0192854520597ED400A54822 /* Networking Tests */,
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 				01B02B6A20655C5F00673F25 /* TimeTests.swift */,
+				0192E762206C757F00231091 /* PlaylistTableViewTests.swift */,
 			);
 			path = WRUWTests;
 			sourceTree = "<group>";
@@ -1009,6 +1012,7 @@
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
 				01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */,
 				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
+				0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */,
 				0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */,
 				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
 			);
