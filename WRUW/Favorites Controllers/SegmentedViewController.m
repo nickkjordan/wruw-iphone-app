@@ -13,8 +13,9 @@
 @end
 
 @implementation SegmentedViewController
-@synthesize containerView, favoritesItem;
+
 @synthesize currentVC, favShowsVC, favSongsVC;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,14 +45,14 @@
         case 0:
             if (self.currentVC == self.favShowsVC) {
                 [self addChildViewController:self.favSongsVC];
-                self.favSongsVC.view.frame = self.containerView.bounds;
+                self.favSongsVC.view.frame = self.view.bounds;
                 [self moveToNewController:self.favSongsVC direction:0];
             }
             break;
         case 1:
             if (self.currentVC == self.favSongsVC) {
                 [self addChildViewController:self.favShowsVC];
-                self.favShowsVC.view.frame = self.containerView.bounds;
+                self.favShowsVC.view.frame = self.view.bounds;
                 [self moveToNewController:self.favShowsVC direction:1];
             }
             break;
@@ -88,36 +89,36 @@
 
 - (void)addContainerViewConstraints:(UIViewController *)viewController
 {
-    [containerView addSubview:viewController.view];
+    [self.view addSubview:viewController.view];
 
-    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
                                                                    attribute:NSLayoutAttributeTop
                                                                    relatedBy:NSLayoutRelationEqual
-                                                                      toItem:containerView
+                                                                      toItem:self.view
                                                                    attribute:NSLayoutAttributeTop
                                                                   multiplier:1.0
                                                                     constant:0.0]];
     
-    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
                                                                    attribute:NSLayoutAttributeLeading
                                                                    relatedBy:NSLayoutRelationEqual
-                                                                      toItem:containerView
+                                                                      toItem:self.view
                                                                    attribute:NSLayoutAttributeLeading
                                                                   multiplier:1.0
                                                                     constant:0.0]];
     
-    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
                                                                    attribute:NSLayoutAttributeBottom
                                                                    relatedBy:NSLayoutRelationEqual
-                                                                      toItem:containerView
+                                                                      toItem:self.view
                                                                    attribute:NSLayoutAttributeBottom
                                                                   multiplier:1.0
                                                                     constant:0.0]];
     
-    [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
                                                                    attribute:NSLayoutAttributeTrailing
                                                                    relatedBy:NSLayoutRelationEqual
-                                                                      toItem:containerView
+                                                                      toItem:self.view
                                                                    attribute:NSLayoutAttributeTrailing
                                                                   multiplier:1.0
                                                                     constant:0.0]];
