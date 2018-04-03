@@ -74,9 +74,13 @@
     // direction param:
     // 1 = right to left (Shows displayed)
     // 0 = left to right (Songs displayed)
-    UIViewAnimationOptions options = param ? UIViewAnimationOptionTransitionFlipFromRight : UIViewAnimationOptionTransitionFlipFromLeft;
+    UIViewAnimationOptions options = param ?
+        UIViewAnimationOptionTransitionFlipFromRight :
+        UIViewAnimationOptionTransitionFlipFromLeft;
     
-    [self transitionFromViewController:self.currentVC toViewController:newController duration:.6
+    [self transitionFromViewController:self.currentVC
+                      toViewController:newController
+                              duration:.6
                                options:options
                             animations:nil
                             completion:completion];

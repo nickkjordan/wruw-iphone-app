@@ -50,7 +50,7 @@ NSString* deviceName()
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self loadFavs];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
@@ -87,13 +87,9 @@ NSString* deviceName()
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-    [center removeObserver:self name:@"notification" object:nil];
-}
+    [super viewWillDisappear:animated];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [center removeObserver:self name:@"notification" object:nil];
 }
 
 -(NSString *) getFilePath {
@@ -151,18 +147,24 @@ NSString* deviceName()
     TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
         [cell configureForSong:song controlView:self];
     };
-    self.songsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_favorites
-                                                        cellIdentifier:@"SongTableViewCell"
-                                                    configureCellBlock:configureCell];
+    self.songsArrayDataSource =
+        [[ArrayDataSource alloc] initWithItems:_favorites
+                                cellIdentifier:@"SongTableViewCell"
+                            configureCellBlock:configureCell];
+
     self.tableView.dataSource = self.songsArrayDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ]
+         forCellReuseIdentifier:@"SongTableViewCell"];
+
     [self.tableView reloadData];
     
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableViewIn willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    SongTableViewCell *cell = (SongTableViewCell *)[tableViewIn cellForRowAtIndexPath:indexPath];
+- (NSIndexPath *)tableView:(UITableView *)tableViewIn
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SongTableViewCell *cell =
+        (SongTableViewCell *)[tableViewIn cellForRowAtIndexPath:indexPath];
+    
     if ([cell isSelected]) {
         // Deselect manually.
         [tableViewIn deselectRowAtIndexPath:indexPath animated:YES];
