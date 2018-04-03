@@ -9,14 +9,12 @@ class PlaylistTableViewTests: XCTestCase {
         autoreleasepool {
             var tableView: PlaylistTableView? = PlaylistTableView(frame: .zero)
 
-            var viewController: UITableViewController? = UITableViewController()
-            viewController?.view.addSubview(tableView!)
-            _ = viewController?.view
+            let viewController = UITableViewController()
+            viewController.view.addSubview(tableView!)
             tableView?.scrollViewDelegate = viewController
 
             weakTableView = tableView
 
-            viewController = nil
             tableView = nil
         }
 
