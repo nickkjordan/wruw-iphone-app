@@ -10,8 +10,6 @@
 
 @interface SegmentedViewController : UIViewController <UINavigationBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *favoritesItem;
 - (IBAction)switchContainerView:(id)sender;
 
 @property (strong, nonatomic) UITableViewController *favSongsVC;

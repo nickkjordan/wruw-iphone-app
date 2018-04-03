@@ -27,11 +27,21 @@ import Foundation
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        guard let date = aDecoder.decodeObject(forKey: "date") as? Date else {
+            return nil
+        }
+
+        self.date = date
     }
 
     func displayTime() -> String {
         return Time.displayFormatter.string(from: self.date)
+    }
+}
+
+extension Time: NSCoding {
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(date, forKey: "date")
     }
 }
 
