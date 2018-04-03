@@ -21,23 +21,20 @@
     [self.view layoutIfNeeded];
     
 //    [self addStoryboardSegments:@[@"songsSegue", @"showsSegue"]];
-    
-//
-//    self.favSongsVC = self.childViewControllers.lastObject;
-//    self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
-//    self.currentVC = self.favSongsVC;
-//    [self addContainerViewConstraints:self.currentVC];
+
+    self.favSongsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteSongs"];
+    self.favShowsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteShows"];
+    self.currentVC = self.favSongsVC;
+    [self addContainerViewConstraints:self.currentVC];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
     [self.view setNeedsLayout];
 }
 
-- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
-{
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
 }
 
@@ -87,6 +84,8 @@
 
 - (void)addContainerViewConstraints:(UIViewController *)viewController
 {
+    [containerView addSubview:viewController.view];
+
     [self.containerView addConstraint:[NSLayoutConstraint constraintWithItem:viewController.view
                                                                    attribute:NSLayoutAttributeTop
                                                                    relatedBy:NSLayoutRelationEqual
