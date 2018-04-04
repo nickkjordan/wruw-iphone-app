@@ -1,31 +1,22 @@
-//
-//  SongTableViewCell.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/19/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "SongTableViewCell.h"
 #import <QuartzCore/CALayer.h>
 #import "WRUWModule-Swift.h"
 
-@interface SongTableViewCell(){
-}
+@interface SongTableViewCell(){ }
+
 @end
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, thumbnailImageView, socialView, favButton, ctrl, facebookButton, twitterButton, view;
+@synthesize nameLabel, artistLabel, albumLabel, thumbnailImageView, socialView, favButton, facebookButton, twitterButton, view;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier {
+
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-        
-    }
+
     socialView.hidden = !socialView.hidden;
+    
     return self;
 }
 
@@ -65,11 +56,9 @@
         frame.origin.y = 48;
         self.artistLabel.frame = frame;
     }
-
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
@@ -88,7 +77,6 @@
 }
 
 -(void) saveFavorite:(Song *)currentSong {
-    
     NSString *path = [self getFilePath];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
     
@@ -128,52 +116,46 @@
 }
 
 - (IBAction)favoritePush:(id)sender {
-
     [self saveFavorite:_currentSong];
     
-    NSData *testHeart  = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
+    NSData *testHeart = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
     NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
     
-    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ? (@"heart_24_red.png") : (@"heart_24.png");
+    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ?
+        (@"heart_24_red.png") :
+        (@"heart_24.png");
     
     [self buttonAnimation:favButton withImage:switchHeart];
 }
 
 - (IBAction)composeFBPost:(id)sender {
-    
-    SLComposeViewController *facebookPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-    [self postSocial:facebookPost];
-    
+    [self postSocial:SLServiceTypeFacebook];
+    [self buttonAnimation:facebookButton withImage:@"facebook_blue.png"];
 }
 
 - (IBAction)composeTwitterPost:(id)sender {
-    
-    SLComposeViewController *twitterPost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-    [self postSocial:twitterPost];
-
+    [self postSocial:SLServiceTypeTwitter];
+    [self buttonAnimation:twitterButton withImage:@"twitter_blue.png"];
 }
 
--(void)postSocial:(SLComposeViewController *)social{
-    NSString *artist = artistLabel.text;
-    NSString *song = nameLabel.text;
+-(void)postSocial:(NSString *)serviceType{
+    SocialComposeViewController *socialController = (SocialComposeViewController *)
+        [SocialComposeViewController composeViewControllerForServiceType:serviceType];
+    
     UIImage *albumArt = thumbnailImageView.image;
-    
-    if (social.serviceType == SLServiceTypeFacebook){
-        [self buttonAnimation:facebookButton withImage:@"facebook_blue.png"];
-    } else if (social.serviceType == SLServiceTypeTwitter){
-        [self buttonAnimation:twitterButton withImage:@"twitter_blue.png"];
-    }
-    
-    [social setInitialText:[NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",song,artist]];
-    [social addURL:[NSURL URLWithString:@"wruw.org"]];
-    [social addImage:albumArt];
-    [ctrl presentViewController:social animated:YES completion:nil];
+    NSString *postText =
+        [NSString stringWithFormat:@"Listening to \"%@\" by %@ on WRUW!",
+                                   nameLabel.text,
+                                   artistLabel.text];
+
+    [socialController setInitialText:postText];
+    [socialController addURL:[NSURL URLWithString:@"wruw.org"]];
+    [socialController addImage:albumArt];
+
+    [socialController showWithAnimated:true completion:nil];
 }
 
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName {
-    
     UIImage *toImage = [UIImage imageNamed:imageName];
     
     [UIView transitionWithView:self.socialView
@@ -183,12 +165,12 @@
                         button.imageView.animationImages = [NSArray arrayWithObjects:toImage,nil];
                         [button.imageView startAnimating];
                         [button setImage:toImage forState:UIControlStateNormal];
-                    } completion:nil];
+                    }
+                    completion:nil];
     
 }
 
 - (IBAction)searchSong:(id)sender {
-    
     NSString *artist = [artistLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *title = [nameLabel.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
@@ -196,15 +178,7 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
--(id)initWithViewController:(UITableViewController*)c {
-    
-    if (self = [super init]) {
-        ctrl = c;
-    }
-    return self;
-}
-
-- (void)configureForSong:(Song *)song controlView:(UIView *)c {
+- (void)configureForSong:(Song *)song {
     NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:song.songName];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:0];
@@ -215,10 +189,8 @@
     self.albumLabel.text = [@[song.album, song.label] componentsJoinedByString:@" · "];
     self.artistLabel.text = song.artist;
     self.currentSong = song;
-    //self.ctrl = c;
     
     [thumbnailImageView setImage:song.image];
-
 }
 
 @end
