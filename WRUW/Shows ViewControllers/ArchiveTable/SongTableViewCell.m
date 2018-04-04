@@ -139,8 +139,8 @@
 }
 
 -(void)postSocial:(NSString *)serviceType{
-    SLComposeViewController *socialController =
-        [SLComposeViewController composeViewControllerForServiceType:serviceType];
+    SocialComposeViewController *socialController = (SocialComposeViewController *)
+        [SocialComposeViewController composeViewControllerForServiceType:serviceType];
     
     UIImage *albumArt = thumbnailImageView.image;
     NSString *postText =
@@ -151,7 +151,8 @@
     [socialController setInitialText:postText];
     [socialController addURL:[NSURL URLWithString:@"wruw.org"]];
     [socialController addImage:albumArt];
-    [ctrl presentViewController:socialController animated:YES completion:nil];
+
+    [socialController showWithAnimated:true completion:nil];
 }
 
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName {
