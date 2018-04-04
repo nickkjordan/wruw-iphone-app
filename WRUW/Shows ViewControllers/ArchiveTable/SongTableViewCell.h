@@ -29,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 
 -(id)initWithViewController:(UIViewController*)c;
--(void)postSocial:(SLComposeViewController *)social;
 - (void)configureForSong:(Song *)song controlView:(UIView *)c;
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName;
 
