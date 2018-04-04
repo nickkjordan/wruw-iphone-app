@@ -29,10 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 
 -(id)initWithViewController:(UIViewController*)c;
-- (void)configureForSong:(Song *)song controlView:(UIView *)c;
+- (void)configureForSong:(Song *)song;
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName;
 
-@property (weak) UITableViewController *ctrl;
 @property (weak) Song *currentSong;
 
 @end

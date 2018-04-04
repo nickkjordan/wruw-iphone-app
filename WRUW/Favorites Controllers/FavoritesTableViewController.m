@@ -144,9 +144,11 @@ NSString* deviceName()
 #pragma mark - Table view data source
 
 - (void)setupTableView {
-    TableViewCellConfigureBlock configureCell = ^(SongTableViewCell *cell, Song *song) {
-        [cell configureForSong:song controlView:self];
-    };
+    TableViewCellConfigureBlock configureCell =
+        ^(SongTableViewCell *cell, Song *song) {
+            [cell configureForSong:song];
+        };
+
     self.songsArrayDataSource =
         [[ArrayDataSource alloc] initWithItems:_favorites
                                 cellIdentifier:@"SongTableViewCell"

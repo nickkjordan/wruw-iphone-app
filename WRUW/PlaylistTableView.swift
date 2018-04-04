@@ -180,15 +180,13 @@ fileprivate extension PlaylistTableView {
 
     // Setup the dataSource with associated cell class
     func setupTableView() {
-        let closure: TableViewCellConfigureBlock = {
-            [unowned self] (cell, song) in
-
+        let closure: TableViewCellConfigureBlock = { (cell, song) in
             guard let cell = cell as? SongTableViewCell,
                 let song = song as? Song? else {
                 return
             }
 
-            cell.configure(for: song, controlView: self)
+            cell.configure(for: song)
         }
 
         let archive = NSMutableArray(array: self.archive)

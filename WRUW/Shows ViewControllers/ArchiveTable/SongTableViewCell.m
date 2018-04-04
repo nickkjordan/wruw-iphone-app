@@ -8,7 +8,7 @@
 
 @implementation SongTableViewCell
 
-@synthesize nameLabel, artistLabel, albumLabel, thumbnailImageView, socialView, favButton, ctrl, facebookButton, twitterButton, view;
+@synthesize nameLabel, artistLabel, albumLabel, thumbnailImageView, socialView, favButton, facebookButton, twitterButton, view;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier {
@@ -178,14 +178,7 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
--(id)initWithViewController:(UITableViewController*)c {
-    if (self = [super init]) {
-        ctrl = c;
-    }
-    return self;
-}
-
-- (void)configureForSong:(Song *)song controlView:(UIView *)c {
+- (void)configureForSong:(Song *)song {
     NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:song.songName];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:0];
@@ -196,7 +189,6 @@
     self.albumLabel.text = [@[song.album, song.label] componentsJoinedByString:@" · "];
     self.artistLabel.text = song.artist;
     self.currentSong = song;
-    //self.ctrl = c;
     
     [thumbnailImageView setImage:song.image];
 }
