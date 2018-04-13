@@ -33,8 +33,6 @@ enum ApiError: Error {
 }
 
 @objc protocol WruwAPIClient {
-    associatedtype CompletionResult
-
     var router: NSUrlRequestConvertible { get }
 
     @objc func request(completion: @escaping (WruwResult) -> Void)

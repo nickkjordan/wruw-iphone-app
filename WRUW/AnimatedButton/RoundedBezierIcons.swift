@@ -10,7 +10,7 @@ import UIKit
 
 class RoundedBezierIcons: UIBezierPath {
     class func RoundedSquareIcon(_ frame: CGRect) -> UIBezierPath {
-        let F_PI = CGFloat(M_PI)
+        let F_PI = CGFloat.pi
         
         let rrect = CGRect(x: 0.125 * frame.size.width, y: 0.125 * frame.size.width, width: 0.75 * frame.size.width, height: 0.75 * frame.size.height)
         let radius = CGFloat(0.08 * frame.size.width)
@@ -53,7 +53,7 @@ class RoundedBezierIcons: UIBezierPath {
     }
     
     class func RoundedPlayIcon(_ frame: CGRect) -> UIBezierPath {
-        let F_PI = CGFloat(M_PI)
+        let F_PI = CGFloat.pi
         
         let side = frame.size.width
         let radius = CGFloat(0.04 * side)
