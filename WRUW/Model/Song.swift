@@ -4,6 +4,8 @@ func ==(lhs: Song, rhs: Song) -> Bool {
     return lhs.artist == rhs.artist && lhs.songName == rhs.songName
 }
 
+@objc(Song)
+
 class Song: NSObject, NSCoding, JSONConvertible {
     var artist: String,
         songName: String,
