@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G19009" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="TJP-Mi-X5P">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="TJP-Mi-X5P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -225,19 +225,19 @@
             <objects>
                 <tableViewController title="Programs" id="Jsf-nb-LkS" customClass="GroupedProgramsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y8k-nH-7vc">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="0M8-ui-eno" style="IBUITableViewCellStyleDefault" id="JEc-V3-ImK">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEc-V3-ImK" id="Us5-eM-ch7">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0M8-ui-eno">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -274,7 +274,7 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UXv-hF-8zq" id="GY6-Dk-fZe">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -308,19 +308,19 @@
                                 <rect key="frame" x="0.0" y="20" width="359" height="647"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
-                                        <rect key="frame" x="30" y="77" width="250" height="17"/>
+                                        <rect key="frame" x="30" y="76" width="250" height="17"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp8-CJ-X57">
-                                        <rect key="frame" x="30" y="94" width="250" height="17"/>
+                                        <rect key="frame" x="30" y="93" width="250" height="16.5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-51-Tc6">
-                                        <rect key="frame" x="45" y="127" width="24" height="24"/>
+                                        <rect key="frame" x="45" y="125.5" width="24" height="24"/>
                                         <state key="normal" image="heart_24.png">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -329,7 +329,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENRE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLh-FS-2dc">
-                                        <rect key="frame" x="30" y="20" width="250" height="15"/>
+                                        <rect key="frame" x="30" y="20" width="250" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="9UL-1E-Thn"/>
                                         </constraints>
@@ -338,12 +338,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="285" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-1h-vgG">
-                                        <rect key="frame" x="30" y="35" width="250" height="34"/>
+                                        <rect key="frame" x="30" y="34.5" width="250" height="33.5"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="28"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
-                                        <rect key="frame" x="30" y="167" width="250" height="292"/>
+                                        <rect key="frame" x="30" y="165.5" width="250" height="292"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -417,7 +417,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d6V-lM-Py1" id="BrV-4T-90g">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -471,7 +471,7 @@
                     <tabBarItem key="tabBarItem" title="Programs" image="book_bookmark_24.png" id="WRq-AE-rnn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ltq-Rs-II2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -496,50 +496,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-lv-EX8">
-                                <rect key="frame" x="0.0" y="20" width="320" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT THIS APP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8o-mT-YlD">
-                                        <rect key="frame" x="16" y="331.5" width="288" height="32"/>
+                                        <rect key="frame" x="16" y="335" width="343" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="5ul-Te-LSF"/>
-                                            <constraint firstAttribute="width" constant="288" id="Wuv-RW-JnZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
                                         <color key="textColor" red="0.98150384426116943" green="0.55352252721786499" blue="0.14393456280231476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF2-h7-d16">
-                                        <rect key="frame" x="16" y="47" width="288" height="274.5"/>
+                                        <rect key="frame" x="16" y="72" width="343" height="223"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.98150384426116943" green="0.55352252721786499" blue="0.14393456280231476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="288" id="5XA-k5-tvt"/>
-                                        </constraints>
-                                        <string key="text">WRUW 91.1 FM is the campus radio station of Case Western Reserve University, located in the University Circle section of Cleveland, Ohio.  WRUW is a non-profit, commercial free, all volunteer staffed radio station.  WRUW operates 24 hours a day, seven days a week, every day of the year.  Although WRUW is the student radio station of Case, numerous community volunteers and alumni are involved, giving WRUW a continuity not found in most college radio stations.
+                                        <mutableString key="text">WRUW 91.1 FM is the campus radio station of Case Western Reserve University, located in the University Circle section of Cleveland, Ohio.  WRUW is a non-profit, commercial free, all volunteer staffed radio station.  WRUW operates 24 hours a day, seven days a week, every day of the year.  Although WRUW is the student radio station of Case, numerous community volunteers and alumni are involved, giving WRUW a continuity not found in most college radio stations.
 
-For more information, you can visit www.wruw.org, or call into the station at 216-368-2208.</string>
+For more information, you can visit www.wruw.org, or call into the station at 216-368-2208.</mutableString>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBE-eV-ZcY">
-                                        <rect key="frame" x="16" y="363.5" width="288" height="119.5"/>
+                                        <rect key="frame" x="16" y="367" width="343" height="119.5"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.98150384426116943" green="0.55352252721786499" blue="0.14393456280231476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="288" id="d2t-q2-aAQ"/>
-                                        </constraints>
-                                        <string key="text">This app was created and is maintained by Nick Jordan, alumnus of CWRU and WRUW.  If you would like more information about the app, or would like to send feature requests or bug reports, email in to wruwapp@gmail.com.</string>
+                                        <string key="text">This app was created and is maintained by Nick Jordan, alumnus of CWRU and WRUW.   If you would like more information about the app, or would like to send feature requests or bug reports, email in to wruwapp@gmail.com.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT WRUW" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-Dx-LcW">
-                                        <rect key="frame" x="16" y="15" width="288" height="32"/>
+                                        <rect key="frame" x="16" y="40" width="343" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="288" id="9GP-30-BiI"/>
                                             <constraint firstAttribute="height" constant="32" id="E2H-mD-eCc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="24"/>
@@ -551,15 +543,16 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                                     <constraint firstAttribute="bottom" secondItem="CBE-eV-ZcY" secondAttribute="bottom" constant="15" id="4Ge-2j-iLc"/>
                                     <constraint firstAttribute="trailing" secondItem="aF2-h7-d16" secondAttribute="trailing" constant="16" id="6la-Lb-Ygu"/>
                                     <constraint firstItem="CBE-eV-ZcY" firstAttribute="top" secondItem="B8o-mT-YlD" secondAttribute="bottom" id="8yh-Kg-zwd"/>
-                                    <constraint firstItem="B8o-mT-YlD" firstAttribute="top" secondItem="aF2-h7-d16" secondAttribute="bottom" constant="10" id="9aV-rZ-DjK"/>
+                                    <constraint firstItem="B8o-mT-YlD" firstAttribute="top" secondItem="aF2-h7-d16" secondAttribute="bottom" constant="40" id="9aV-rZ-DjK"/>
                                     <constraint firstItem="aF2-h7-d16" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="Aat-ac-xTK"/>
-                                    <constraint firstItem="Ge6-Dx-LcW" firstAttribute="top" secondItem="cdQ-lv-EX8" secondAttribute="top" constant="15" id="TJF-Cj-egk"/>
+                                    <constraint firstItem="Ge6-Dx-LcW" firstAttribute="top" secondItem="cdQ-lv-EX8" secondAttribute="top" constant="40" id="TJF-Cj-egk"/>
                                     <constraint firstAttribute="trailing" secondItem="Ge6-Dx-LcW" secondAttribute="trailing" constant="16" id="VBZ-EO-N9O"/>
+                                    <constraint firstAttribute="trailing" secondItem="CBE-eV-ZcY" secondAttribute="trailing" constant="16" id="XN1-HX-0cQ"/>
                                     <constraint firstAttribute="trailing" secondItem="B8o-mT-YlD" secondAttribute="trailing" constant="16" id="Z64-5O-R5a"/>
                                     <constraint firstItem="aF2-h7-d16" firstAttribute="top" secondItem="Ge6-Dx-LcW" secondAttribute="bottom" id="dee-Ch-sTl"/>
                                     <constraint firstAttribute="centerX" secondItem="CBE-eV-ZcY" secondAttribute="centerX" id="eoR-kM-C2E"/>
-                                    <constraint firstAttribute="width" constant="320" id="rL3-LD-aOG"/>
                                     <constraint firstItem="Ge6-Dx-LcW" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="tfb-hQ-Qek"/>
+                                    <constraint firstItem="CBE-eV-ZcY" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="wUj-Fq-iq6"/>
                                     <constraint firstItem="B8o-mT-YlD" firstAttribute="leading" secondItem="cdQ-lv-EX8" secondAttribute="leading" constant="16" id="yNu-CI-j8a"/>
                                 </constraints>
                             </scrollView>
@@ -602,7 +595,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                                 <rect key="frame" x="0.0" y="22" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9U-HL-uAk" id="oPb-pW-W8K">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snl-5y-g95">
@@ -671,7 +664,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart_24.png" id="p7s-zB-iIm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="IOe-9b-fTu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -692,14 +685,14 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                         <viewControllerLayoutGuide type="bottom" id="XF2-GL-Cnb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e8k-lb-XKp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="yjX-bP-Lyt">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="b6g-qk-kIz">
-                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Songs"/>
@@ -727,7 +720,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                     <tabBarItem key="tabBarItem" title="Home" image="mic_24.png" id="Ovb-vl-d5N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPb-9c-DCF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -746,11 +739,6 @@ For more information, you can visit www.wruw.org, or call into the station at 21
         <image name="info_24.png" width="24" height="24"/>
         <image name="mic_24.png" width="24" height="24"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qG6-Qv-KTw"/>
     </inferredMetricsTieBreakers>
