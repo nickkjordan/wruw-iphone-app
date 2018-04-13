@@ -25,35 +25,30 @@
 
 @synthesize tableView;
 
-NSString* deviceName()
-{
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    
-    return [NSString stringWithCString:systemInfo.machine
-                              encoding:NSUTF8StringEncoding];
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     if (self = [super initWithNibName:nil bundle:nil]) {
         self.tableView.delegate = self;
     }
+
     return self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
     [self loadFavs];
     [self checkIfEmpty];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     [self loadFavs];
+
+    UINib *cellNib = [UINib nibWithNibName:@"SongTableViewCell" bundle:nil];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ] forCellReuseIdentifier:@"SongTableCellType"];
+    [self.tableView registerNib:cellNib
+         forCellReuseIdentifier:@"SongTableCellType"];
     
     //Creates notification for cleared song
     center = [NSNotificationCenter defaultCenter];
@@ -69,11 +64,17 @@ NSString* deviceName()
 -(void)checkIfEmpty:(float)time {
     if (!_favorites.count) {
         _emptyView = [EmptyFavoritesView emptySongs];
-        _emptyView.frame = self.tableView.frame;
-        _emptyView.bounds = self.tableView.bounds;
+
+        UILayoutGuide *layoutMarginsGuide = self.view.layoutMarginsGuide;
 
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
+
+        [_emptyView.leftAnchor constraintEqualToAnchor:layoutMarginsGuide.leftAnchor];
+        [_emptyView.topAnchor constraintEqualToAnchor:layoutMarginsGuide.topAnchor];
+        [_emptyView.bottomAnchor constraintEqualToAnchor:layoutMarginsGuide.bottomAnchor];
+        [_emptyView.rightAnchor constraintEqualToAnchor:layoutMarginsGuide.rightAnchor];
+
         [UIView animateWithDuration:time
                          animations:^{_emptyView.alpha = 1.0;
                          }];
