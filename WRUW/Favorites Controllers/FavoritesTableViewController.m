@@ -64,16 +64,11 @@
 -(void)checkIfEmpty:(float)time {
     if (!_favorites.count) {
         _emptyView = [EmptyFavoritesView emptySongs];
-
-        UILayoutGuide *layoutMarginsGuide = self.view.layoutMarginsGuide;
+        _emptyView.frame = self.view.frame;
+        _emptyView.bounds = self.view.bounds;
 
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
-
-        [_emptyView.leftAnchor constraintEqualToAnchor:layoutMarginsGuide.leftAnchor];
-        [_emptyView.topAnchor constraintEqualToAnchor:layoutMarginsGuide.topAnchor];
-        [_emptyView.bottomAnchor constraintEqualToAnchor:layoutMarginsGuide.bottomAnchor];
-        [_emptyView.rightAnchor constraintEqualToAnchor:layoutMarginsGuide.rightAnchor];
 
         [UIView animateWithDuration:time
                          animations:^{_emptyView.alpha = 1.0;
