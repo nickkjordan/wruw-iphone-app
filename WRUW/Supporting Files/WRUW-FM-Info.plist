@@ -39,8 +39,6 @@
 	<array>
 		<string>audio</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>Default-568h@2x</string>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIPrerenderedIcon</key>
