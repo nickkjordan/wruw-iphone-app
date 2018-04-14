@@ -21,7 +21,6 @@
 @implementation FavoriteShowsTableViewController
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
         DisplayViewController *dvc = [segue destinationViewController];
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
@@ -32,23 +31,13 @@
     }
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self loadFavs];
 
-    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ] forCellReuseIdentifier:@"ShowCell"];
-
+    [self.tableView registerNib:[UINib nibWithNibName:@"ShowCell" bundle:nil ]
+         forCellReuseIdentifier:@"ShowCell"];
 }
 
 -(void)checkIfEmpty:(float)time {
@@ -73,17 +62,11 @@
     [self checkIfEmpty:0.0];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self loadFavs];
-    
-    [self checkIfEmpty];
-}
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self loadFavs];
+    [self checkIfEmpty];
 }
 
 -(NSString *) getFilePath {

@@ -2,8 +2,6 @@ import Alamofire
 import Foundation
 
 @objc class CurrentShow: NSObject, WruwAPIClient {
-    typealias CompletionResult = Show
-    
     var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/currentshow.php")
     }
@@ -32,8 +30,6 @@ import Foundation
 }
 
 @objc class GetAllShows: NSObject, WruwAPIClient {
-    typealias CompletionResult = [Show]
-
     var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getfullplaylist.php")
     }

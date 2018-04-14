@@ -28,7 +28,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 
--(id)initWithViewController:(UIViewController*)c;
 - (void)configureForSong:(Song *)song;
 -(void)buttonAnimation:(UIButton *)button withImage:(NSString *)imageName;
 

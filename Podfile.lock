@@ -1,26 +1,18 @@
 PODS:
   - Alamofire (4.4.0)
-  - ARAnalytics/CoreIOS (3.0.0)
-  - ARAnalytics/DSL (3.0.0):
-    - ReactiveCocoa (= 2.3)
+  - ARAnalytics/CoreIOS (5.0.1)
+  - ARAnalytics/DSL (5.0.1):
+    - ReactiveObjC (~> 2.0)
     - RSSwizzle (~> 0.1.0)
-  - ARAnalytics/Mixpanel (3.0.0):
+  - ARAnalytics/Mixpanel (5.0.1):
     - ARAnalytics/CoreIOS
     - Mixpanel
   - Keys (1.0.0)
   - MarqueeLabel (2.2.1)
-  - Mixpanel (2.7.3):
-    - Mixpanel/MPCategoryHelpers (= 2.7.3)
-  - Mixpanel/MPCategoryHelpers (2.7.3)
+  - Mixpanel (3.2.8)
   - NSObject+Rx (3.0.0):
     - RxSwift (~> 3.0)
-  - ReactiveCocoa (2.3):
-    - ReactiveCocoa/UI (= 2.3)
-  - ReactiveCocoa/Core (2.3):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.3)
-  - ReactiveCocoa/UI (2.3):
-    - ReactiveCocoa/Core
+  - ReactiveObjC (2.1.2)
   - RSSwizzle (0.1.0)
   - RxCocoa (3.3.1):
     - RxSwift (~> 3.3)
@@ -30,8 +22,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
-  - ARAnalytics/DSL
-  - ARAnalytics/Mixpanel
+  - ARAnalytics/DSL (~> 5.0.1)
+  - ARAnalytics/Mixpanel (~> 5.0.1)
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
   - NSObject+Rx (~> 3.0.0)
@@ -46,18 +38,18 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  ARAnalytics: 9669efd110dd9a92c0b3f6e073f01f8eec9a8a21
+  ARAnalytics: 896e530551168721fbb8852e044b8afb9baffdde
   Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
   MarqueeLabel: c024bab67a1558e8e127132be3b6d66a702405fe
-  Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
+  Mixpanel: 3ce48d42a5b28e4bb822776058b2713a4b1a6909
   NSObject+Rx: 9c60a6e602ca647c0b2b34403383c305b1c6edc5
-  ReactiveCocoa: 81ee2fb7df2dfc6bd52b5d70473662195e20ca7d
+  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   SimulatorStatusMagic: dd84bf4fba55e0e4dea8eb2af1d20dab377be8c1
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: b49fac83f29fba00d9df57bb3a85a1a6d62b1134
+PODFILE CHECKSUM: 082d0038b68d82161bb0c078b1036f6406245bce
 
 COCOAPODS: 1.4.0

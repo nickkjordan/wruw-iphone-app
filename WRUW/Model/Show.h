@@ -14,7 +14,6 @@
 @property (nonatomic) Time *endTime;
 @property (nonatomic, copy) NSArray *days;
 @property (nonatomic, copy) NSString *infoDescription;
-@property (nonatomic) Playlist *lastShow;
 @property (nonatomic, copy) NSArray *playlists;
 
 - (instancetype)initWithJson:(NSDictionary *)dict;

@@ -60,9 +60,7 @@ void uncaughtExceptionHandler(NSException *exception) {
         setTitleTextAttributes: @{
             NSFontAttributeName:[UIFont fontWithName:@"Futura" size:14.0f]
         }
-        forState: UIControlStateNormal];
-
-
+           forState: UIControlStateNormal];
 
     [[UITabBar appearance] setTintColor:[[ThemeManager current] wruwMainOrangeColor]];
         
@@ -73,14 +71,13 @@ void uncaughtExceptionHandler(NSException *exception) {
     [self setupAnalytics];
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
- 
-    
+
     return YES;
 }
 
-- (void)setupAnalytics
-{
+- (void)setupAnalytics {
     WRUWKeys *keys = [[WRUWKeys alloc] init];
+
     [ARAnalytics setupWithAnalytics:@{
             ARMixpanelToken : keys.mixpanelToken
         }

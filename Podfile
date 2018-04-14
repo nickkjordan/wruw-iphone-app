@@ -8,8 +8,7 @@ local_podfile = "Pods/Podfile.local"
 #eval(File.open(local_podfile).read) if File.exist? local_podfile
 
 pod 'MarqueeLabel'
-pod 'ARAnalytics/Mixpanel'
-pod 'ARAnalytics/DSL'
+pod 'ARAnalytics', '~> 5.0.1', :subspecs => ["Mixpanel", "DSL"]
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
 pod 'RxSwift', '~> 3.3.1'
 pod 'RxCocoa', '~> 3.3.1'

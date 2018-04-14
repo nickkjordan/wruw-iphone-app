@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,20 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6R-Pf-xLc" id="cew-i7-D9X">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-ml-El7">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-ml-El7">
                         <rect key="frame" x="6" y="5" width="308" height="110"/>
                         <subviews>
                             <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkC-vs-adv">
                                 <rect key="frame" x="91" y="6" width="213" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb1-nU-GID">
                                         <rect key="frame" x="38" y="6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" image="heart_24.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" image="heart_24_red.png"/>
                                         <connections>
@@ -33,9 +39,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO2-P7-1ec">
                                         <rect key="frame" x="138" y="6" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" title="Button" image="magnifier_48.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="searchSong:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="Rbl-qx-reb"/>
@@ -43,9 +50,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJv-NO-Xjh">
                                         <rect key="frame" x="38" y="50" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" image="facebook.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="composeFBPost:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="vU2-VG-CtA"/>
@@ -53,41 +61,71 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wU-UE-9aG">
                                         <rect key="frame" x="138" y="50" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                         <state key="normal" image="twitter.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="composeTwitterPost:" destination="l6R-Pf-xLc" eventType="touchUpInside" id="jMB-TP-TqM"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy3-MY-7r9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gy3-MY-7r9">
                                 <rect key="frame" x="105" y="48" width="195" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cI8-c7-06s"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVG-7r-fYJ">
-                                <rect key="frame" x="105" y="77" width="195" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVG-7r-fYJ">
+                                <rect key="frame" x="105" y="77" width="195" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-S6-P0n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xdf-S6-P0n">
                                 <rect key="frame" x="6" y="10" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Po9-mi-nFN"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="205" translatesAutoresizingMaskIntoConstraints="NO" id="r9l-lD-8hn">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="205" translatesAutoresizingMaskIntoConstraints="NO" id="r9l-lD-8hn">
                                 <rect key="frame" x="105" y="10" width="195" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6tS-xg-cV3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xdf-S6-P0n" firstAttribute="leading" secondItem="hnG-ml-El7" secondAttribute="leading" constant="6" id="0zK-kz-IZJ"/>
+                            <constraint firstItem="Gy3-MY-7r9" firstAttribute="leading" secondItem="hnG-ml-El7" secondAttribute="leading" constant="105" id="3fU-Ua-7NK"/>
+                            <constraint firstItem="IVG-7r-fYJ" firstAttribute="top" secondItem="Gy3-MY-7r9" secondAttribute="bottom" constant="8" id="4xQ-ab-R2s"/>
+                            <constraint firstAttribute="bottom" secondItem="Xdf-S6-P0n" secondAttribute="bottom" constant="10" id="MrY-ez-z6U"/>
+                            <constraint firstItem="Gy3-MY-7r9" firstAttribute="top" secondItem="r9l-lD-8hn" secondAttribute="bottom" constant="-7" id="PSl-Yw-PfN"/>
+                            <constraint firstItem="Xdf-S6-P0n" firstAttribute="top" secondItem="hnG-ml-El7" secondAttribute="top" constant="10" id="UWS-gy-SUA"/>
+                            <constraint firstItem="IVG-7r-fYJ" firstAttribute="leading" secondItem="hnG-ml-El7" secondAttribute="leading" constant="105" id="Y8G-wI-D1F"/>
+                            <constraint firstAttribute="trailing" secondItem="r9l-lD-8hn" secondAttribute="trailing" constant="8" id="ath-Lj-ahD"/>
+                            <constraint firstItem="r9l-lD-8hn" firstAttribute="leading" secondItem="hnG-ml-El7" secondAttribute="leading" constant="105" id="dXV-uN-Wu7"/>
+                            <constraint firstItem="r9l-lD-8hn" firstAttribute="top" secondItem="hnG-ml-El7" secondAttribute="top" constant="10" id="edZ-j1-DTn"/>
+                            <constraint firstAttribute="trailing" secondItem="Gy3-MY-7r9" secondAttribute="trailing" constant="8" id="iIO-jh-RZN"/>
+                            <constraint firstAttribute="trailing" secondItem="IVG-7r-fYJ" secondAttribute="trailing" constant="8" id="ytS-Xg-im2"/>
+                        </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.89928141901742209" green="0.90332723963211425" blue="0.91546470147619041" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.89928141901742209" green="0.90332723963211425" blue="0.91546470147619041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="hnG-ml-El7" secondAttribute="bottom" constant="4.5" id="Q85-aC-af7"/>
+                    <constraint firstItem="hnG-ml-El7" firstAttribute="top" secondItem="cew-i7-D9X" secondAttribute="top" constant="5" id="Sfb-Q0-QjR"/>
+                    <constraint firstItem="hnG-ml-El7" firstAttribute="leading" secondItem="cew-i7-D9X" secondAttribute="leading" constant="6" id="hGY-aJ-SRx"/>
+                    <constraint firstAttribute="trailing" secondItem="hnG-ml-El7" secondAttribute="trailing" constant="6" id="zxW-Ud-bwd"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="albumLabel" destination="IVG-7r-fYJ" id="V6c-YE-0HD"/>
@@ -110,9 +148,4 @@
         <image name="magnifier_48.png" width="48" height="48"/>
         <image name="twitter.png" width="32" height="32"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

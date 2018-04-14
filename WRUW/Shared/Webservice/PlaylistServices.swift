@@ -2,8 +2,6 @@ import Alamofire
 import Foundation
 
 @objc class GetPlaylist: NSObject, WruwAPIClient {
-    typealias CompletionResult = Playlist
-
     var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getplaylist.php", parameters: parameters)
     }
@@ -33,8 +31,6 @@ import Foundation
 }
 
 @objc class GetPlaylists: NSObject, WruwAPIClient {
-    typealias CompletionResult = [PlaylistInfo]
-
     fileprivate let parameters: NSDictionary
     fileprivate let manager: NetworkManager
 

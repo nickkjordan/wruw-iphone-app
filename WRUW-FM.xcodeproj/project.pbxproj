@@ -26,6 +26,7 @@
 		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
+		01282C6420817BC600C873B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01282C6320817BC600C873B6 /* Assets.xcassets */; };
 		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
 		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
@@ -77,16 +78,11 @@
 		0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */; };
 		0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */; };
 		0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177151E2054660500EB7773 /* WruwApiRouterTests.swift */; };
-		01913E361AE0702900BEF0B8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E341AE0702900BEF0B8 /* Icon.png */; };
-		01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01913E351AE0702900BEF0B8 /* Icon@2x.png */; };
 		019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019285432059751000A54822 /* PlaylistServicesTests.swift */; };
 		0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7D206A950100462061 /* ArchiveViewController.swift */; };
 		0192BF80206A98CD00462061 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7F206A98CD00462061 /* Playlist.swift */; };
 		0192E761206C522E00231091 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E760206C522E00231091 /* Song.swift */; };
 		0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E762206C757F00231091 /* PlaylistTableViewTests.swift */; };
-		01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC617E22A4000173474 /* Default-568h@2x.png */; };
-		01947CC917E2389500173474 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CC817E2389500173474 /* Default.png */; };
-		01947CCB17E238A400173474 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01947CCA17E238A400173474 /* Default@2x.png */; };
 		01997EC51C8CE2390007C38D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC41C8CE2390007C38D /* CircleView.swift */; };
 		01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */; };
 		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
@@ -161,6 +157,7 @@
 		011FECDC1836A506009B5BFA /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsTableViewController.m; sourceTree = "<group>"; };
 		011FECDE1836A531009B5BFA /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		011FECDF1836A531009B5BFA /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		01282C6320817BC600C873B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFilePath.h; sourceTree = "<group>"; };
 		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFilePath.m; sourceTree = "<group>"; };
 		012C92681840025E00C94210 /* saveFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saveFavorite.h; sourceTree = "<group>"; };
@@ -226,16 +223,11 @@
 		0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelpersTests.swift; sourceTree = "<group>"; };
 		0177151B2054648C00EB7773 /* MusicBrainzApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicBrainzApiRouterTests.swift; sourceTree = "<group>"; };
 		0177151E2054660500EB7773 /* WruwApiRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WruwApiRouterTests.swift; sourceTree = "<group>"; };
-		01913E341AE0702900BEF0B8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		01913E351AE0702900BEF0B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		019285432059751000A54822 /* PlaylistServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistServicesTests.swift; sourceTree = "<group>"; };
 		0192BF7D206A950100462061 /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		0192BF7F206A98CD00462061 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		0192E760206C522E00231091 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0192E762206C757F00231091 /* PlaylistTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewTests.swift; sourceTree = "<group>"; };
-		01947CC617E22A4000173474 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		01947CC817E2389500173474 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		01947CCA17E238A400173474 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		01997EC41C8CE2390007C38D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Shared/CircleView.swift; sourceTree = "<group>"; };
 		01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+extensions.swift"; path = "Core Extensions/Dictionary+extensions.swift"; sourceTree = "<group>"; };
 		019D9FD220438D1900C05026 /* ShowServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowServices.swift; path = Shared/Webservice/ShowServices.swift; sourceTree = "<group>"; };
@@ -458,6 +450,7 @@
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 				01F5A0BB2075254900C92C75 /* SocialComposeViewController.swift */,
+				01282C6320817BC600C873B6 /* Assets.xcassets */,
 			);
 			path = WRUW;
 			sourceTree = "<group>";
@@ -622,11 +615,6 @@
 				01FB78A5183EA89A0088C972 /* magnifier_48.png */,
 				01FB78A1183EA7EE0088C972 /* facebook.png */,
 				01FB78A2183EA7EE0088C972 /* twitter.png */,
-				01947CCA17E238A400173474 /* Default@2x.png */,
-				01947CC817E2389500173474 /* Default.png */,
-				01947CC617E22A4000173474 /* Default-568h@2x.png */,
-				01913E341AE0702900BEF0B8 /* Icon.png */,
-				01913E351AE0702900BEF0B8 /* Icon@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -791,24 +779,20 @@
 				013720261AD5AECA00BF3219 /* mic_24.png in Resources */,
 				0100D19F1865386500D08BC2 /* heart_48.png in Resources */,
 				0137201C1AD5ACEF00BF3219 /* info_64.png in Resources */,
-				01913E361AE0702900BEF0B8 /* Icon.png in Resources */,
 				010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */,
 				010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */,
+				01282C6420817BC600C873B6 /* Assets.xcassets in Resources */,
 				015A16391A929724000FC518 /* heart_64.png in Resources */,
-				01947CC717E22A4000173474 /* Default-568h@2x.png in Resources */,
 				01FB78A3183EA7EE0088C972 /* facebook.png in Resources */,
-				01913E371AE0702900BEF0B8 /* Icon@2x.png in Resources */,
 				013720281AD5AECA00BF3219 /* mic_64.png in Resources */,
 				0137201B1AD5ACEF00BF3219 /* info_48.png in Resources */,
 				0137202A1AD5AEE800BF3219 /* mic_24@2x.png in Resources */,
 				01FB78A4183EA7EE0088C972 /* twitter.png in Resources */,
 				015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */,
 				0137202F1AD5B3D700BF3219 /* book_bookmark_48.png in Resources */,
-				01947CC917E2389500173474 /* Default.png in Resources */,
 				013720221AD5AE7D00BF3219 /* info_24@2x.png in Resources */,
 				01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */,
 				0100D1A21865386500D08BC2 /* home_48.png in Resources */,
-				01947CCB17E238A400173474 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +874,7 @@
 				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/RSSwizzle/RSSwizzle.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
@@ -905,7 +889,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSSwizzle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorStatusMagic.framework",
@@ -1067,6 +1051,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1110,6 +1095,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1145,9 +1131,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA900BEF463A154E554E3547 /* Pods-WRUW-FM.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1179,9 +1168,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19CEA5D56519158BE08AB5C9 /* Pods-WRUW-FM.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (

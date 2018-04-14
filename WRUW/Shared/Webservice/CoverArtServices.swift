@@ -37,8 +37,6 @@ extension CoverArtApiRouter: URLRequestConvertible {
 }
 
 @objc class GetCoverArt: NSObject, WruwAPIClient {
-    typealias CompletionResult = UIImage
-
     var router: NSUrlRequestConvertible {
         return CoverArtApiRouter(path: path, parameters: nil)
     }

@@ -6,8 +6,6 @@ import Alamofire
 }
 
 @objc class GetReleases: NSObject, WruwAPIClient {
-    typealias CompletionResult = [Release]
-
     var router: NSUrlRequestConvertible {
         return MusicBrainzApiRouter(
             path: "/release/",

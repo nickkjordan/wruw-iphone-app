@@ -9,7 +9,6 @@
 @synthesize startTime = _startTime;
 @synthesize endTime = _endTime;
 @synthesize genre = _genre;
-@synthesize lastShow = _lastShow;
 @synthesize days = _days;
 @synthesize infoDescription = _infoDescription;
 @synthesize playlists = _playlists;
@@ -19,11 +18,23 @@
         self.title = [decoder decodeObjectForKey:@"title"];
         self.url = [decoder decodeObjectForKey:@"url"];
         self.hosts = [decoder decodeObjectForKey:@"hosts"];
+
+        if (self.hosts == nil) {
+            NSString *host = [decoder decodeObjectForKey:@"host"];
+            self.hosts = [[NSArray alloc] initWithObjects:host, nil];
+        }
+
         self.startTime = [decoder decodeObjectForKey:@"startTime"];
         self.endTime = [decoder decodeObjectForKey:@"endTime"];
         self.genre = [decoder decodeObjectForKey:@"genre"];
-        self.lastShow = [decoder decodeObjectForKey:@"lastShow"];
-        self.days = [decoder decodeObjectForKey:@"day"];
+
+        NSObject *days = [decoder decodeObjectForKey:@"day"];
+        if ([days isKindOfClass:NSArray.class]) {
+            self.days = (NSArray *)days;
+        } else {
+            self.days = [[NSArray alloc] initWithObjects:days, nil];
+        }
+
         self.infoDescription = [decoder decodeObjectForKey:@"infoDescription"];
     }
     
@@ -37,7 +48,6 @@
         self.startTime = [[Time alloc] initWithString:dict[@"OnairTime"]];
         self.endTime = [[Time alloc] initWithString:dict[@"OffairTime"]];
         self.genre = dict[@"ShowCategory"];
-        self.lastShow = dict[@"lastShow"];
         self.days = dict[@"Weekdays"];
         self.infoDescription = dict[@"ShowDescription"];
 
@@ -58,7 +68,6 @@
     [encoder encodeObject:_hosts forKey:@"hosts"];
     [encoder encodeObject:_startTime forKey:@"startTime"];
     [encoder encodeObject:_genre forKey:@"genre"];
-    [encoder encodeObject:_lastShow forKey:@"lastShow"];
     [encoder encodeObject:_days forKey:@"day"];
     [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
 }
@@ -86,7 +95,7 @@
 }
 
 - (BOOL)currentShowValid {
-    return self.title && self.hosts && self.startTime && self.genre && self.days && self.lastShow;
+    return self.title && self.hosts && self.startTime && self.genre && self.days;
 }
 
 #pragma mark - NSObject

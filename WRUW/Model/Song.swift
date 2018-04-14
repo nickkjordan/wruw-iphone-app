@@ -4,6 +4,8 @@ func ==(lhs: Song, rhs: Song) -> Bool {
     return lhs.artist == rhs.artist && lhs.songName == rhs.songName
 }
 
+@objc(Song)
+
 class Song: NSObject, NSCoding, JSONConvertible {
     var artist: String,
         songName: String,
@@ -16,11 +18,6 @@ class Song: NSObject, NSCoding, JSONConvertible {
         get { return _image ?? Song.defaultAlbumArt }
         set { _image = newValue }
     }
-
-    static let setupArchiver: Void = {
-        NSKeyedArchiver.setClassName("Song", for: Song.self)
-        NSKeyedUnarchiver.setClass(Song.self, forClassName: "Song")
-    }()
 
     static var defaultAlbumArt: UIImage = {
         let path = Bundle.main.path(forResource: "iTunesArtwork", ofType: "png")
@@ -47,8 +44,6 @@ class Song: NSObject, NSCoding, JSONConvertible {
         self.artist = dict["ArtistName"] as? String ?? ""
         self.album = dict["DiskName"] as? String ?? ""
         self.label = dict["LabelName"] as? String ?? ""
-
-        Song.setupArchiver
     }
 
     func encode(with aCoder: NSCoder) {
