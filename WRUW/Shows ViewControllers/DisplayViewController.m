@@ -17,7 +17,6 @@
 @synthesize currentShow, currentShowTitle, currentShowHost, currentShowTime, currentShowInfo, favButton, showGenre, playlistsButton;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     if ([segue.identifier isEqualToString:@"showPlaylistsSegue"]) {
         PlaylistsTableViewController *ptvc = [segue destinationViewController];
         
@@ -27,8 +26,7 @@
     }
 }
 
-- (void)adjustHeightOfInfoView
-{
+- (void)adjustHeightOfInfoView {
     CGFloat fixedWidth = currentShowInfo.frame.size.width;
     currentShowInfo.frame = [self getSizeForText:currentShowInfo.text
                                         maxWidth:fixedWidth
@@ -61,11 +59,12 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     [self.navigationController setNavigationBarHidden:NO];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     
     spinner = [[UIActivityIndicatorView alloc] init];
@@ -77,7 +76,6 @@
     [spinner startAnimating];
     
     [self updateLabels];
-    
     
     currentShowInfo.editable = NO;
     if (currentShowInfo.text.length == 0) {
@@ -100,7 +98,6 @@
 }
 
 -(void)updateLabels {
-    //curent show.startTime - currentShow.endTime
     NSString *days = [currentShow.days componentsJoinedByString:@", "];
 
     NSString *hosts =
