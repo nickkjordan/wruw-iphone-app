@@ -1,2 +1,3 @@
 /* Localized versions of Info.plist keys */
 
+NSPhotoLibraryUsageDescription = "To attach a photo, we need access to your Photo Library.";
