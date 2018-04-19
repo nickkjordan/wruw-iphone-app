@@ -20,7 +20,6 @@
 @synthesize dayOfWeek;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(NSIndexPath *)indexPath{
-    
     if ([segue.identifier isEqualToString:@"showDisplaySegue"]) {
         DisplayViewController *dvc = [segue destinationViewController];
         
@@ -30,9 +29,9 @@
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+
     sectionTitles = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
     sectionIndexTitles = @[@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa"];
     self.tableView.sectionIndexColor = [[ThemeManager current] wruwMainOrangeColor];
@@ -128,12 +127,11 @@
 
 #pragma mark - Search Results Updating delegate
 
-- (void)searchForText:(NSString *)searchText
-{
+- (void)searchForText:(NSString *)searchText {
     [_objects removeAllObjects];
+
     if (searchText.length > 0) {
-        
-        NSArray *keys = @[@"title", @"host", @"genre"];
+        NSArray *keys = @[@"title", @"hosts", @"genre"];
         
         for (NSString *key in keys) {
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@", key, searchText];
@@ -146,11 +144,9 @@
     }
     
     [self.tableView reloadData];
-
 }
 
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
-{
+- (void)updateSearchResultsForSearchController:(UISearchController *) searchController{
     NSString *searchString = searchController.searchBar.text;
     [self searchForText:searchString];
     [self.tableView reloadData];
@@ -158,28 +154,17 @@
 
 #pragma mark - Search bar delegate
 
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
-{
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     [self updateSearchResultsForSearchController:self.searchController];
-}
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-}
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
 }
 
 #pragma mark - Table view delegate 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"showDisplaySegue" sender:indexPath];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self tableView:tableView numberOfRowsInSection:section]) {
         return 60.0;
     } else {
@@ -187,11 +172,11 @@
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     // initialization
     float width;
     NSString *headerText;
+
     if (dayOfWeek) {
         headerText = sectionTitles[dayOfWeek - 1];
         width = tableView.frame.size.width;

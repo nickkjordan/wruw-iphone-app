@@ -55,6 +55,8 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
     [center addObserver:self
                selector:@selector(deleteUnfavorited:)
                    name:@"notification"
@@ -88,7 +90,7 @@
     [center removeObserver:self name:@"notification" object:nil];
 }
 
--(NSString *) getFilePath {
+-(NSString *)getFilePath {
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favorites.plist"];
 }
