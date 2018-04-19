@@ -29,9 +29,9 @@
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+
     sectionTitles = @[@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"];
     sectionIndexTitles = @[@"Su", @"Mo", @"Tu", @"We", @"Th", @"Fr", @"Sa"];
     self.tableView.sectionIndexColor = [[ThemeManager current] wruwMainOrangeColor];

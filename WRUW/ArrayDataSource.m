@@ -36,30 +36,28 @@
     return self;
 }
 
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath {
     return self.items[(NSUInteger) indexPath.row];
 }
 
-
 #pragma mark UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
-                                                            forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
+                                        forIndexPath:indexPath];
+
     id item = [self itemAtIndexPath:indexPath];
     self.configureCellBlock(cell, item);
+
     return cell;
 }
 

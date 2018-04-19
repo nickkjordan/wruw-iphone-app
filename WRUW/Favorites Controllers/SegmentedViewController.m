@@ -90,14 +90,45 @@
 
 - (void)addContainerViewConstraints:(UIViewController *)viewController {
     UIView *subview = viewController.view;
-    UILayoutGuide *layoutMarginsGuide = self.view.layoutMarginsGuide;
     
     [self.view addSubview:subview];
 
-    [subview.leadingAnchor constraintEqualToAnchor:layoutMarginsGuide.leadingAnchor];
-    [subview.topAnchor constraintEqualToAnchor:layoutMarginsGuide.topAnchor];
-    [subview.bottomAnchor constraintEqualToAnchor:layoutMarginsGuide.bottomAnchor];
-    [subview.trailingAnchor constraintEqualToAnchor:layoutMarginsGuide.trailingAnchor];
+    subview.translatesAutoresizingMaskIntoConstraints = NO;
+
+    [self.view addConstraints:@[
+        [NSLayoutConstraint constraintWithItem:subview
+                                     attribute:NSLayoutAttributeTop
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.view
+                                     attribute:NSLayoutAttributeTop
+                                    multiplier:1.0
+                                      constant:0],
+
+        [NSLayoutConstraint constraintWithItem:subview
+                                     attribute:NSLayoutAttributeLeft
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.view
+                                     attribute:NSLayoutAttributeLeft
+                                    multiplier:1.0
+                                      constant:0],
+
+        [NSLayoutConstraint constraintWithItem:subview
+                                     attribute:NSLayoutAttributeBottom
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.view
+                                     attribute:NSLayoutAttributeBottom
+                                    multiplier:1.0
+                                      constant:0],
+
+        [NSLayoutConstraint constraintWithItem:subview
+                                     attribute:NSLayoutAttributeRight
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.view
+                                     attribute:NSLayoutAttributeRight
+                                    multiplier:1
+                                      constant:0],
+                                ]
+     ];
 }
 
 @end

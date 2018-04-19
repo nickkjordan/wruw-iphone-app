@@ -180,10 +180,10 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hc5-Fl-hf2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="60" sectionFooterHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="H8w-kU-TKS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.88669632777650986" green="0.89068552871631101" blue="0.90265313153571425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.89548990332596756" green="0.89951866610757092" blue="0.91160495445238088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="s3B-1A-ZFd">
@@ -209,13 +209,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="H8w-kU-TKS" firstAttribute="top" secondItem="hhb-y2-psn" secondAttribute="bottom" id="7hk-ux-zGC"/>
-                            <constraint firstItem="H8w-kU-TKS" firstAttribute="leading" secondItem="hc5-Fl-hf2" secondAttribute="leading" id="JrL-qD-GYy"/>
-                            <constraint firstAttribute="trailing" secondItem="H8w-kU-TKS" secondAttribute="trailing" id="KAp-Az-9Qo"/>
-                            <constraint firstItem="64M-Pn-ik2" firstAttribute="top" secondItem="H8w-kU-TKS" secondAttribute="bottom" id="zvd-YE-dSC"/>
+                            <constraint firstItem="H8w-kU-TKS" firstAttribute="top" secondItem="hc5-Fl-hf2" secondAttribute="top" id="7hk-ux-zGC"/>
+                            <constraint firstItem="H8w-kU-TKS" firstAttribute="leading" secondItem="hc5-Fl-hf2" secondAttribute="leading" priority="999" id="JrL-qD-GYy"/>
+                            <constraint firstAttribute="trailing" secondItem="H8w-kU-TKS" secondAttribute="trailing" priority="999" id="KAp-Az-9Qo"/>
+                            <constraint firstAttribute="bottom" secondItem="H8w-kU-TKS" secondAttribute="bottom" id="zvd-YE-dSC"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Favorites" id="5rb-DD-tVN"/>
                     <connections>
                         <outlet property="tableView" destination="H8w-kU-TKS" id="Cbl-f7-A94"/>
@@ -306,11 +305,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hAQ-9O-ocG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AHF-7L-ulT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
-                                <rect key="frame" x="0.0" y="64" width="359" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="359" height="647"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
                                         <rect key="frame" x="30" y="76" width="250" height="17"/>
@@ -414,7 +413,7 @@
             <objects>
                 <tableViewController title="Playlists" id="yL9-fc-jfL" customClass="PlaylistsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0yJ-sr-RHN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -446,7 +445,7 @@
             <objects>
                 <viewController title="Archive List" id="cLJ-iw-wuT" customClass="ArchiveViewController" customModule="WRUWModule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="s91-as-ncb" customClass="PlaylistTableView" customModule="WRUWModule" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.89076192893963579" green="0.89476942080889343" blue="0.90679189641666658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -516,9 +515,9 @@
                                         <rect key="frame" x="16" y="72" width="343" height="223"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.98150384426116943" green="0.55352252721786499" blue="0.14393456280231476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <mutableString key="text">WRUW 91.1 FM is the campus radio station of Case Western Reserve University, located in the University Circle section of Cleveland, Ohio.  WRUW is a non-profit, commercial free, all volunteer staffed radio station.  WRUW operates 24 hours a day, seven days a week, every day of the year.  Although WRUW is the student radio station of Case, numerous community volunteers and alumni are involved, giving WRUW a continuity not found in most college radio stations.
+                                        <string key="text">WRUW 91.1 FM is the campus radio station of Case Western Reserve University, located in the University Circle section of Cleveland, Ohio.  WRUW is a non-profit, commercial free, all volunteer staffed radio station.  WRUW operates 24 hours a day, seven days a week, every day of the year.  Although WRUW is the student radio station of Case, numerous community volunteers and alumni are involved, giving WRUW a continuity not found in most college radio stations.
 
-For more information, you can visit www.wruw.org, or call into the station at 216-368-2208.</mutableString>
+For more information, you can visit www.wruw.org, or call into the station at 216-368-2208.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -694,6 +693,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="yjX-bP-Lyt">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="b6g-qk-kIz">
@@ -745,7 +745,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
         <image name="mic_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FaE-l5-dMP"/>
+        <segue reference="qG6-Qv-KTw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
