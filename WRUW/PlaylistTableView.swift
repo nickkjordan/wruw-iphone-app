@@ -6,7 +6,7 @@ class PlaylistTableView: UITableView {
         date: String?,
         arrayDataSource: ArrayDataSource!
 
-    weak var scrollViewDelegate: UIScrollViewDelegate?
+    @objc weak var scrollViewDelegate: UIScrollViewDelegate?
 
     lazy var spinnerView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
@@ -22,12 +22,12 @@ class PlaylistTableView: UITableView {
     //
     // true: top is most recent song.
     // false: playlist in order in which songs were played (most recent is last)
-    var reversed = false
+    @objc var reversed = false
 
     // MARK: Load archive requests
 
     // Setup with show name and playlist date, then request playlist
-    func load(show: String, date: String) {
+    @objc func load(show: String, date: String) {
         self.show = show
         self.date = date
 
@@ -43,7 +43,7 @@ class PlaylistTableView: UITableView {
     }
 
     // Request any new songs in current playlist
-    func updateCurrentPlaylist() {
+    @objc func updateCurrentPlaylist() {
         load { songs in
             var newSongs = songs.filter { !self.archive.contains($0) }
 

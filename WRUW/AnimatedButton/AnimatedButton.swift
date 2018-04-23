@@ -13,8 +13,8 @@ class AnimatedButton: UIView {
         viewModel.buttonIsAnimated
             .skip(1)
             .distinctUntilChanged()
-            .bindTo(animationIsActive)
-            .addDisposableTo(disposeBag)
+            .bind(to: animationIsActive)
+            .disposed(by: rx.disposeBag)
 
         addSubview(circleView) { make in
             make.height.width.equalTo(self.snp.height).dividedBy(2)
@@ -44,7 +44,7 @@ class AnimatedButton: UIView {
         let animationIsActive = Variable(false)
         animationIsActive.asObservable()
             .subscribe(onNext: { self.activateAnimation($0) })
-            .addDisposableTo(self.disposeBag)
+            .disposed(by: self.rx.disposeBag)
         return animationIsActive
     }()
 

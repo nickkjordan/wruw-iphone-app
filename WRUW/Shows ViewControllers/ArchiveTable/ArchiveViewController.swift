@@ -1,7 +1,7 @@
 import Foundation
 
 class ArchiveViewController: UIViewController {
-    var currentPlaylist: PlaylistInfo!,
+    @objc var currentPlaylist: PlaylistInfo!,
         currentShowTitle: String!
 
     @IBOutlet var tableView: PlaylistTableView!

@@ -725,11 +725,11 @@
 				TargetAttributes = {
 					0170903517DBA8F80005EC0F = {
 						DevelopmentTeam = 7M2UVCY37Z;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 					};
 					0170906617DBA8F80005EC0F = {
 						DevelopmentTeam = 7M2UVCY37Z;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 						TestTargetID = 0170903517DBA8F80005EC0F;
 					};
 				};
@@ -1158,7 +1158,8 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = Social/Social.h;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1195,7 +1196,8 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = Social/Social.h;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1222,7 +1224,8 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
@@ -1248,7 +1251,8 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;

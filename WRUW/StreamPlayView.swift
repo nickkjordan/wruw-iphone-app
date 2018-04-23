@@ -23,7 +23,7 @@ import MediaPlayer
             .onTap(self, selector: #selector(didTapPlayer))
     }()
 
-    func didTapPlayer() {
+    @objc func didTapPlayer() {
         viewModel.changePlayerStatus()
     }
 

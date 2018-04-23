@@ -17,7 +17,7 @@ class StreamPlayViewModel: NSObject {
         removeRemoteCommandEvents()
     }
 
-    func changePlayerStatus() {
+    @objc func changePlayerStatus() {
         _audioPlayerIsActive.value = !_audioPlayerIsActive.value
     }
 
@@ -57,7 +57,7 @@ class StreamPlayViewModel: NSObject {
             )
             .filter { $0 == .readyToPlay }
             .subscribe(onNext: { [unowned self] _ in self.streamIsReadyToPlay() })
-            .addDisposableTo(disposeBag)
+            .disposed(by: rx.disposeBag)
     }
 
     fileprivate func streamIsReadyToPlay() {
@@ -98,7 +98,7 @@ class StreamPlayViewModel: NSObject {
         buttonIsAnimated
             .skip(1)
             .subscribe(onNext: { [unowned self] play in self.audioPlayerIs(play) })
-            .addDisposableTo(self.disposeBag)
+            .disposed(by: self.rx.disposeBag)
         return buttonIsAnimated
     }()
 

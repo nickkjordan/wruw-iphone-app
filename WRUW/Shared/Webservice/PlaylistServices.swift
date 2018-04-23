@@ -43,7 +43,7 @@ import Foundation
         self.manager = manager
     }
     
-    convenience init(showName: String) {
+    @objc convenience init(showName: String) {
         self.init(manager: SessionManager.default, showName: showName)
     }
 

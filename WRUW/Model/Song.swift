@@ -7,14 +7,14 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 @objc(Song)
 
 class Song: NSObject, NSCoding, JSONConvertible {
-    var artist: String,
+    @objc var artist: String,
         songName: String,
         album: String,
         label: String
 
     fileprivate var _image: UIImage?
 
-    var image: UIImage {
+    @objc var image: UIImage {
         get { return _image ?? Song.defaultAlbumArt }
         set { _image = newValue }
     }

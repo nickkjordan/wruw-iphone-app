@@ -18,7 +18,7 @@ import Foundation
 
     let date: Date
     
-    init?(string: String) {
+    @objc init?(string: String) {
         guard let date = Time.dateFormatter.date(from: string) else {
             return nil
         }
@@ -34,7 +34,7 @@ import Foundation
         self.date = date
     }
 
-    func displayTime() -> String {
+    @objc func displayTime() -> String {
         return Time.displayFormatter.string(from: self.date)
     }
 }

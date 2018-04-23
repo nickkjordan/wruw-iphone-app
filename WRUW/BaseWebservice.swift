@@ -18,8 +18,8 @@ typealias JSONDict = [AnyHashable: Any]
 }
 
 @objc class WruwResult: NSObject {
-    var success: AnyObject?
-    var failure: Error?
+    @objc var success: AnyObject?
+    @objc var failure: Error?
 
     init(success: AnyObject? = nil, failure: Error? = nil) {
         self.success = success

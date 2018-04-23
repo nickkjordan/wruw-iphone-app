@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 extension NSString {
-    var asQuery: NSString {
+    @objc var asQuery: NSString {
         let nonLetterSet = CharacterSet.punctuationCharacters
 
         let base = lowercased

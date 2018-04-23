@@ -4,7 +4,7 @@ import Social
 class SocialComposeViewController: SLComposeViewController {
     var alertWindow: UIWindow?
 
-    func show(animated: Bool = true, completion: (() -> Void)? = nil) {
+    @objc func show(animated: Bool = true, completion: (() -> Void)? = nil) {
         alertWindow = UIWindow(frame: UIScreen.main.bounds)
         alertWindow?.rootViewController = UIViewController()
 

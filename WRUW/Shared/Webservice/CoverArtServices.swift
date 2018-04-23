@@ -52,7 +52,7 @@ extension CoverArtApiRouter: URLRequestConvertible {
 
         alamofire.delegate.taskWillPerformHTTPRedirection = {
             alamofire.delegate.taskWillPerformHTTPRedirection = nil
-            return $0.3
+            return $3
         }
 
         Alamofire
