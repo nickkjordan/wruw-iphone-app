@@ -30,19 +30,19 @@
     CurrentShow *currentShowService = [[CurrentShow alloc] init];
 
     [currentShowService requestWithCompletion:^(WruwResult *result) {
-        [_refreshControl endRefreshing];
+        [self->_refreshControl endRefreshing];
 
         if (result.success) {
             Show *newShow = (Show *)[result success];
 
             self.moreInfoButton.enabled = YES;
     
-            if (![newShow isEqual:_currentShow]) {
-                _currentShow = newShow;
+            if (![newShow isEqual:self->_currentShow]) {
+                self->_currentShow = newShow;
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [showTitle setText:_currentShow.title];
-                    [hostLabel setText:_currentShow.hostsDisplay];
+                    [self->showTitle setText:self->_currentShow.title];
+                    [self->hostLabel setText:self->_currentShow.hostsDisplay];
                 });
     
                 // remove current playlist
@@ -51,7 +51,7 @@
                 [self.tableView loadWithShow:newShow.title.asQuery
                                         date:dateString];
                 
-                _archive = [NSMutableArray array];
+                self->_archive = [NSMutableArray array];
             } else {
                 [self.tableView updateCurrentPlaylist];
             }

@@ -64,10 +64,10 @@
     // Configure the view for the selected state
     [UILabel animateWithDuration:0.5
                       animations:^{
-                          nameLabel.alpha = !selected;
-                          artistLabel.alpha = !selected;
-                          albumLabel.alpha = !selected;
-                          socialView.alpha = selected;
+                          self->nameLabel.alpha = !selected;
+                          self->artistLabel.alpha = !selected;
+                          self->albumLabel.alpha = !selected;
+                          self->socialView.alpha = selected;
                       }];
 }
 

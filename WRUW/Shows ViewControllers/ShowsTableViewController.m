@@ -76,11 +76,11 @@
 -(void)loadShows {
     [[[GetAllShows alloc] init] requestWithCompletion:^(WruwResult *result) {
         if (result.success) {
-            _originalObjects = result.success;
+            self->_originalObjects = result.success;
             [self resetObjects];
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                [spinner stopAnimating];
+                [self->spinner stopAnimating];
                 [self.tableView reloadData];
             });
         }

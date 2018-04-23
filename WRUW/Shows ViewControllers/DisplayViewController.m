@@ -86,8 +86,8 @@
         [[GetPlaylists alloc] initWithShowName:currentShow.title.asQuery];
 
     [playlistsService requestWithCompletion:^(WruwResult *result) {
-        currentShow.playlists = result.success;
-        [spinner stopAnimating];
+        self->currentShow.playlists = result.success;
+        [self->spinner stopAnimating];
         [[self playlistsButton] setEnabled:YES];
     }];
 
@@ -262,7 +262,6 @@
                         [button.imageView startAnimating];
                         [button setImage:toImage forState:UIControlStateNormal];
                     } completion:nil];
-    
 }
 
 @end

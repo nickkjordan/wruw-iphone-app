@@ -50,7 +50,7 @@
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
         [UIView animateWithDuration:time
-                         animations:^{_emptyView.alpha = 1.0;
+                         animations:^{self->_emptyView.alpha = 1.0;
                          }];
     } else if ([_emptyView isDescendantOfView:self.view]) {
         [_emptyView removeFromSuperview];
