@@ -68,7 +68,6 @@ extension CoverArtApiRouter: URLRequestConvertible {
 
                 let error = result.error
                 let image = UIImage(data: result.value)
-                print(image)
 
                 completion(WruwResult(success: image, failure: error))
             }

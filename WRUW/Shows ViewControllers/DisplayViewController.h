@@ -14,7 +14,6 @@
 #import <EventKitUI/EventKitUI.h>
 
 @interface DisplayViewController : UIViewController
-<EKEventEditViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *playlistsButton;
 
@@ -30,7 +29,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
-- (IBAction)calendarTap:(id)sender;
 - (IBAction)favoritePush:(id)sender;
 
 @property (strong, nonatomic) Show *currentShow;

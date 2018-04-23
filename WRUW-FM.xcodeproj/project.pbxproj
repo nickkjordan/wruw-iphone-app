@@ -28,7 +28,6 @@
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
 		01282C6420817BC600C873B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01282C6320817BC600C873B6 /* Assets.xcassets */; };
 		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
-		012C926A1840025E00C94210 /* saveFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C92691840025E00C94210 /* saveFavorite.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2718AA9402001FFD61 /* heart_24_red.png */; };
 		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
@@ -160,8 +159,6 @@
 		01282C6320817BC600C873B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFilePath.h; sourceTree = "<group>"; };
 		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFilePath.m; sourceTree = "<group>"; };
-		012C92681840025E00C94210 /* saveFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saveFavorite.h; sourceTree = "<group>"; };
-		012C92691840025E00C94210 /* saveFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = saveFavorite.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		01312D2718AA9402001FFD61 /* heart_24_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_24_red.png; sourceTree = "<group>"; };
@@ -334,8 +331,6 @@
 			children = (
 				012C9265183FFF1900C94210 /* getFilePath.h */,
 				012C9266183FFF1900C94210 /* getFilePath.m */,
-				012C92681840025E00C94210 /* saveFavorite.h */,
-				012C92691840025E00C94210 /* saveFavorite.m */,
 			);
 			path = "Save Data";
 			sourceTree = "<group>";
@@ -944,7 +939,6 @@
 				01ED05912049D1E6006F8012 /* CoverArtServices.swift in Sources */,
 				01F925DE1C8E3DD300206537 /* StreamPlayViewModel.swift in Sources */,
 				011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */,
-				012C926A1840025E00C94210 /* saveFavorite.m in Sources */,
 				01042C081AC06A42003112F3 /* PlayStopIconView.swift in Sources */,
 				01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */,
 				0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */,
@@ -1175,10 +1169,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1214,10 +1205,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/WRUWSwift/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
