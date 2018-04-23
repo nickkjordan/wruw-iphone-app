@@ -1237,20 +1237,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
-					"@loader_path/Frameworks",
-					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wruw.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
@@ -1264,20 +1262,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 7M2UVCY37Z;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"$(inherited)",
-					"@loader_path/Frameworks",
-					"@executable_path/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WRUW/Supporting Files/WRUW-FM-Prefix.pch";
 				INFOPLIST_FILE = "WRUWTests/Supporting Files/WRUW-FMTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wruw.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
