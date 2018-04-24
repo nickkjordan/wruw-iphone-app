@@ -50,7 +50,19 @@ import Foundation
     @objc func request(completion: @escaping (WruwResult) -> Void) {
         manager
             .networkRequest(router as! URLRequestConvertible)
-            .json { completion(self.process($0)) }
+            .data { completion(self.processData($0)) }
+    }
+
+    func processData(_ data: DataResponse<Data>) -> WruwResult {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(PlaylistInfo.dateFormatter)
+
+        guard let value = data.value,
+            let result = try? decoder.decode(Archives.self, from: value) else {
+            return WruwResult(failure: processingError)
+        }
+
+        return WruwResult(success: result.playlists as AnyObject?)
     }
 
     func processResultFrom(json: Any) -> WruwResult {

@@ -6,7 +6,7 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 
 @objc(Song)
 
-class Song: NSObject, NSCoding, JSONConvertible {
+class Song: NSObject, NSCoding, JSONConvertible, Decodable {
     @objc var artist: String,
         songName: String,
         album: String,
@@ -27,6 +27,13 @@ class Song: NSObject, NSCoding, JSONConvertible {
 
     var noImage: Bool {
         return _image == nil
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case songName = "SongName"
+        case artist = "ArtistName"
+        case album = "DiskName"
+        case label = "LabelName"
     }
 
     required init?(coder aDecoder: NSCoder) {

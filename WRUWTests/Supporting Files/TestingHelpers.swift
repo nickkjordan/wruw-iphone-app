@@ -58,13 +58,37 @@ extension MockRequest: NetworkRequest {
         options: JSONSerialization.ReadingOptions,
         completionHandler: @escaping (DataResponse<Any>) -> Void
     ) -> Self {
+        return response(
+            serializer: DataRequest.jsonResponseSerializer(options: options),
+            completionHandler: completionHandler
+        )
+    }
+
+    func responseData(
+        queue: DispatchQueue?,
+        completionHandler: @escaping (DataResponse<Data>) -> Void
+    ) -> Self {
+        return response(
+            serializer: DataRequest.dataResponseSerializer(),
+            completionHandler: completionHandler
+        )
+    }
+
+    func response<T>(
+        serializer: DataResponseSerializer<T>,
+        completionHandler: @escaping (DataResponse<T>) -> Void
+    ) -> Self {
         // Process response
-        let result = DataRequest
-            .jsonResponseSerializer(options: options)
-            .serializeResponse(nil, nil, expectedData, expectedError)
+        let result =
+            serializer.serializeResponse(nil, nil, expectedData, expectedError)
 
         // Handling a Result instance, error or success
-        let response = DataResponse(result: result)
+        let response = DataResponse(
+            request: nil,
+            response: nil,
+            data: nil,
+            result: result
+        )
         completionHandler(response)
 
         return self

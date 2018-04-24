@@ -145,8 +145,8 @@
 		0109957620571C3D00BD8BDE /* ReleasesServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleasesServicesTests.swift; sourceTree = "<group>"; };
 		010995782057219E00BD8BDE /* Releases.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Releases.json; path = "Supporting Files/StubbedResponses/Releases.json"; sourceTree = "<group>"; };
 		0109957C205726D300BD8BDE /* ShowServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowServicesTests.swift; sourceTree = "<group>"; };
-		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrayDataSource.h; path = ../ArrayDataSource.h; sourceTree = "<group>"; };
-		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArrayDataSource.m; path = ../ArrayDataSource.m; sourceTree = "<group>"; };
+		010CF7A61898B8AC00875209 /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		010CF7A71898B8AC00875209 /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -619,6 +619,8 @@
 			children = (
 				01F9819B1835373C0069C241 /* Models */,
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
+				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
+				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01997EC41C8CE2390007C38D /* CircleView.swift */,
 				01B02B68206558DF00673F25 /* Time.swift */,
@@ -638,8 +640,6 @@
 		01F9819B1835373C0069C241 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
-				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				011FECD81836A2B6009B5BFA /* Show.h */,
 				011FECD91836A2B6009B5BFA /* Show.m */,
 				016A21CB2047382300474490 /* PlaylistInfo.swift */,

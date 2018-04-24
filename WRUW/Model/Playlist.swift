@@ -1,9 +1,15 @@
 import Foundation
 
-@objc class Playlist: NSObject, JSONConvertible {
+@objc class Playlist: NSObject, JSONConvertible, Decodable {
     var date: String?,
         idValue: String?,
         songs: [Song]?
+
+    enum CodingKeys: String, CodingKey {
+        case songs
+        case idValue = "PlaylistID"
+        case date = "PlaylistDate"
+    }
 
     required init(json dict: JSONDict) {
         let songs = dict["songs"] as? [JSONDict]

@@ -1,6 +1,6 @@
 import Foundation
 
-@objc class Release: NSObject, JSONConvertible {
+@objc class Release: NSObject, JSONConvertible, Decodable {
     let id: String,
         title: String
 

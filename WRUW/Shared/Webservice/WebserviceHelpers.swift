@@ -38,6 +38,11 @@ public protocol NetworkRequest {
         options: JSONSerialization.ReadingOptions,
         completionHandler: @escaping (DataResponse<Any>) -> Void
     ) -> Self
+
+    func responseData(
+        queue: DispatchQueue?,
+        completionHandler: @escaping (DataResponse<Data>) -> Void
+    ) -> Self
 }
 
 extension NetworkRequest {
@@ -51,6 +56,13 @@ extension NetworkRequest {
             options: options,
             completionHandler: completionHandler
         )
+    }
+
+    @discardableResult func data(
+        queue: DispatchQueue? = nil,
+        completionHandler: @escaping (DataResponse<Data>) -> Void
+    ) -> Self {
+        return responseData(queue: queue, completionHandler: completionHandler)
     }
 }
 

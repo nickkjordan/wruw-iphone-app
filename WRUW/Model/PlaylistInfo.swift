@@ -1,9 +1,19 @@
 import Foundation
 
-@objc class PlaylistInfo: NSObject, JSONConvertible {
+struct Archives: Decodable {
+    let playlists: [PlaylistInfo]
+}
+
+@objc class PlaylistInfo: NSObject, JSONConvertible, Decodable {
     @objc let id: Int,
     date: Date,
     showName: String
+
+    enum CodingKeys: String, CodingKey {
+        case id = "PlaylistID"
+        case showName = "ShowName"
+        case date = "PlaylistDate"
+    }
 
     @objc required init(json dict: JSONDict) {
         let dict = dict as! [String: AnyObject]
