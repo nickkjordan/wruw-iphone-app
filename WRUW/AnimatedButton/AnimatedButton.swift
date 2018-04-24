@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 import NSObject_Rx
 
 protocol AnimatedButtonProtocol {
@@ -40,8 +41,8 @@ class AnimatedButton: UIView {
 
     // MARK: - Observables
 
-    fileprivate lazy var animationIsActive: Variable<Bool> = {
-        let animationIsActive = Variable(false)
+    fileprivate lazy var animationIsActive: BehaviorRelay<Bool> = {
+        let animationIsActive = BehaviorRelay(value: false)
         animationIsActive.asObservable()
             .subscribe(onNext: { self.activateAnimation($0) })
             .disposed(by: self.rx.disposeBag)

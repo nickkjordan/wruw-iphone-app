@@ -18,7 +18,7 @@ class StreamPlayViewModel: NSObject {
     }
 
     @objc func changePlayerStatus() {
-        _audioPlayerIsActive.value = !_audioPlayerIsActive.value
+        _audioPlayerIsActive.accept(!_audioPlayerIsActive.value)
     }
 
     // MARK: Audio Player
@@ -92,7 +92,7 @@ class StreamPlayViewModel: NSObject {
 
     // MARK: - Observables for Playing/Paused status
 
-    fileprivate lazy var _audioPlayerIsActive = Variable(false)
+    fileprivate lazy var _audioPlayerIsActive = BehaviorRelay(value: false)
     fileprivate lazy var _buttonIsAnimated: Observable<Bool> = {
         let buttonIsAnimated = self._audioPlayerIsActive.asObservable()
         buttonIsAnimated
