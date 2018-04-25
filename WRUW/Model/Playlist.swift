@@ -2,7 +2,7 @@ import Foundation
 
 @objc class Playlist: NSObject, JSONConvertible, Decodable {
     var date: String?,
-        idValue: String?,
+        idValue: Int?,
         songs: [Song]?
 
     enum CodingKeys: String, CodingKey {
@@ -15,7 +15,7 @@ import Foundation
         let songs = dict["songs"] as? [JSONDict]
 
         self.songs = songs?.map(Song.init(json: ))
-        self.idValue = dict["PlaylistID"] as? String
+        self.idValue = dict["PlaylistID"] as? Int
         self.date = dict["PlaylistDate"] as? String
 
         super.init()

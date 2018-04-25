@@ -5,8 +5,8 @@ import Alamofire
     func asURLRequest() throws -> URLRequest
 }
 
-@objc class GetReleases: NSObject, WruwAPIClient {
-    var router: NSUrlRequestConvertible {
+@objc class GetReleases: WruwApiClient {
+    override var router: NSUrlRequestConvertible {
         return MusicBrainzApiRouter(
             path: "/release/",
             parameters: parameters
@@ -14,7 +14,6 @@ import Alamofire
     }
 
     fileprivate let parameters: NSDictionary?
-    fileprivate let manager: NetworkManager
 
     convenience init(release: String, artist: String) {
         self.init(
@@ -25,8 +24,6 @@ import Alamofire
     }
 
     init(manager: NetworkManager, release: String, artist: String) {
-        self.manager = manager
-
         let release = release.removingSymbols
 
         let artistQuery = artist
@@ -39,21 +36,14 @@ import Alamofire
             "query": query,
             "fmt": "json"
         ]
+
+        super.init()
+
+        self.manager = manager
     }
 
-    func request(completion: @escaping (WruwResult) -> Void) {
-        manager
-            .networkRequest (router as! URLRequestConvertible)
-            .json { completion(self.process($0)) }
-    }
-
-    func processResultFrom(json: Any) -> WruwResult {
-        guard let json = json as? JSONDict,
-            let releases = json["releases"] else {
-            return WruwResult(failure: processingError)
-        }
-
-        return processArray(releases, type: [Release].self)
+    override func decode(from data: Data) throws -> Any {
+        return try decoder.decode([Release].self, from: data)
     }
 }
 

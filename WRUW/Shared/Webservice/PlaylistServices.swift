@@ -1,13 +1,13 @@
 import Alamofire
 import Foundation
 
-@objc class GetPlaylist: NSObject, WruwAPIClient {
-    var router: NSUrlRequestConvertible {
+@objc class GetPlaylist: WruwApiClient {
+    override var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getplaylist.php", parameters: parameters)
+            as NSUrlRequestConvertible
     }
 
     fileprivate let parameters: NSDictionary
-    fileprivate let manager: NetworkManager
 
     convenience init(showName: String, date: String) {
         self.init(
@@ -16,61 +16,40 @@ import Foundation
 
     init(manager: NetworkManager, showName: String, date: String) {
         self.parameters = ["showname": showName, "date": date]
+        super.init()
         self.manager = manager
     }
 
-    @objc func request(completion: @escaping (WruwResult) -> Void) {
-        manager
-            .networkRequest(router as! URLRequestConvertible)
-            .json { completion(self.process($0)) }
-    }
-
-    func processResultFrom(json: Any) -> WruwResult {
-        return processElement(json, type: Playlist.self)
+    override func decode(from data: Data) throws -> Any {
+        return try decoder.decode(Playlist.self, from: data)
     }
 }
 
-@objc class GetPlaylists: NSObject, WruwAPIClient {
+@objc class GetPlaylists: WruwApiClient {
     fileprivate let parameters: NSDictionary
-    fileprivate let manager: NetworkManager
 
-    var router: NSUrlRequestConvertible {
+    override var router: NSUrlRequestConvertible {
         return WruwApiRouter(path: "/getshow.php", parameters: parameters)
     }
 
     init(manager: NetworkManager, showName: String) {
         self.parameters = ["showname": showName]
+
+        super.init()
+
         self.manager = manager
+        decoder.dateDecodingStrategy = .formatted(PlaylistInfo.dateFormatter)
     }
     
     @objc convenience init(showName: String) {
         self.init(manager: SessionManager.default, showName: showName)
     }
 
-    @objc func request(completion: @escaping (WruwResult) -> Void) {
-        manager
-            .networkRequest(router as! URLRequestConvertible)
-            .data { completion(self.processData($0)) }
+    @objc override func transform(result: Any) -> Any? {
+        return (result as? Archives)?.playlists
     }
 
-    func processData(_ data: DataResponse<Data>) -> WruwResult {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(PlaylistInfo.dateFormatter)
-
-        guard let value = data.value,
-            let result = try? decoder.decode(Archives.self, from: value) else {
-            return WruwResult(failure: processingError)
-        }
-
-        return WruwResult(success: result.playlists as AnyObject?)
-    }
-
-    func processResultFrom(json: Any) -> WruwResult {
-        guard let json = json as? JSONDict,
-            let playlists = json["playlists"] else {
-            return WruwResult(failure: processingError)
-        }
-
-        return processArray(playlists, type: [PlaylistInfo].self)
+    override func decode(from data: Data) throws -> Any {
+        return try decoder.decode(Archives.self, from: data)
     }
 }

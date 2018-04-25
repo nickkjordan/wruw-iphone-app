@@ -18,12 +18,16 @@ typealias JSONDict = [AnyHashable: Any]
 }
 
 @objc class WruwResult: NSObject {
-    @objc var success: AnyObject?
+    @objc var success: Any?
     @objc var failure: Error?
 
     init(success: AnyObject? = nil, failure: Error? = nil) {
         self.success = success
         self.failure = failure
+    }
+
+    override var description: String {
+        return success.debugDescription + failure.debugDescription
     }
 }
 
@@ -32,33 +36,68 @@ enum ApiError: Error {
     case urlEncodingError
 }
 
-@objc protocol WruwAPIClient {
+protocol APIClient {
     var router: NSUrlRequestConvertible { get }
 
-    @objc func request(completion: @escaping (WruwResult) -> Void)
+    func request(completion: @escaping (WruwResult) -> Void)
 
     func processResultFrom(json: Any) -> WruwResult
+
+    func transform(result: Any) -> Any?
 }
 
-//@objc extension WruwAPIClient {
-//    @objc func request(completion: @escaping (WruwResult) -> Void) {
-//        Alamofire
-//            .request(router as! URLRequestConvertible)
-//            .json { completion(self.process($0)) }
-////            .responseJSON { completion(self.process($0)) }
-//    }
-//}
+class WruwApiClient: NSObject, APIClient {
+    internal var manager: NetworkManager = SessionManager.default
+    var router: NSUrlRequestConvertible {
+        fatalError()
+    }
 
-extension WruwAPIClient {
     func process(_ response: DataResponse<Any>) -> WruwResult {
         switch response.result {
-
         case .success(let JSON):
             return processResultFrom(json: JSON)
-
         case .failure(let error):
             print("Request failed with error: \(error)")
+            return WruwResult(failure: error)
+        }
+    }
 
+    func decode(from data: Data) throws -> Any {
+        fatalError("Overwrite required")
+    }
+
+    @objc func request(completion: @escaping (WruwResult) -> Void) {
+        manager
+            .networkRequest(router as! URLRequestConvertible)
+            .data { completion(self.processData(response: $0)) }
+    }
+
+    func processResultFrom(json: Any) -> WruwResult {
+        return WruwResult(success: nil, failure: nil)
+    }
+
+    lazy var decoder = JSONDecoder()
+
+    @objc func transform(result: Any) -> Any? {
+        return result
+    }
+}
+
+extension WruwApiClient {
+    func processData(response: DataResponse<Data>) -> WruwResult {
+        if let error = response.error {
+            return WruwResult(failure: error)
+        }
+
+        guard let data = response.value else {
+            return WruwResult(failure: processingError)
+        }
+
+        do {
+            let result = try decode(from: data)
+            return WruwResult(success: transform(result: result) as AnyObject)
+        } catch let error {
+            print(error.localizedDescription)
             return WruwResult(failure: error)
         }
     }
@@ -69,7 +108,7 @@ extension WruwAPIClient {
     }
 }
 
-extension WruwAPIClient {
+extension WruwApiClient {
     func processElement<T>(_ json: Any, type: T.Type)
         -> WruwResult where T: JSONConvertible {
         guard let jsonDict = json as? JSONDict else {

@@ -36,8 +36,8 @@ extension CoverArtApiRouter: URLRequestConvertible {
     }
 }
 
-@objc class GetCoverArt: NSObject, WruwAPIClient {
-    var router: NSUrlRequestConvertible {
+@objc class GetCoverArt: WruwApiClient {
+    override var router: NSUrlRequestConvertible {
         return CoverArtApiRouter(path: path, parameters: nil)
     }
 
@@ -47,7 +47,7 @@ extension CoverArtApiRouter: URLRequestConvertible {
         self.path = "release/\(releaseId)/front-500"
     }
 
-    func request(completion: @escaping (WruwResult) -> Void) {
+    override func request(completion: @escaping (WruwResult) -> Void) {
         let alamofire = SessionManager.default
 
         alamofire.delegate.taskWillPerformHTTPRedirection = {
@@ -73,7 +73,7 @@ extension CoverArtApiRouter: URLRequestConvertible {
             }
     }
 
-    func processResultFrom(json: Any) -> WruwResult {
+    override func processResultFrom(json: Any) -> WruwResult {
         print("Unused processing result called")
         return WruwResult(failure: processingError)
     }
