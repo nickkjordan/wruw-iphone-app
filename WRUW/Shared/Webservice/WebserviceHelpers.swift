@@ -67,3 +67,28 @@ extension NetworkRequest {
 }
 
 extension DataRequest: NetworkRequest { }
+
+extension JSONDecoder {
+    func decode<T>(type: T.Type, nested key: String, from data: Data) throws -> T where T: Decodable {
+        let json = try
+            JSONSerialization.jsonObject(with: data) as? [String: Any]
+
+        guard let nestedItem = json?[key] else {
+            let codingKey = CodingKeys.parent
+            let context = DecodingError.Context(
+                codingPath: [codingKey],
+                debugDescription: "nested key \(key) not found"
+            )
+
+            throw DecodingError.keyNotFound(codingKey, context)
+        }
+
+        let data = try JSONSerialization.data(withJSONObject: nestedItem)
+
+        return try decode(type, from: data)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case parent
+    }
+}

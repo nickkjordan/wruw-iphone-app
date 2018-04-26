@@ -42,8 +42,6 @@ protocol APIClient {
     func request(completion: @escaping (WruwResult) -> Void)
 
     func processResultFrom(json: Any) -> WruwResult
-
-    func transform(result: Any) -> Any?
 }
 
 class WruwApiClient: NSObject, APIClient {
@@ -77,10 +75,6 @@ class WruwApiClient: NSObject, APIClient {
     }
 
     lazy var decoder = JSONDecoder()
-
-    @objc func transform(result: Any) -> Any? {
-        return result
-    }
 }
 
 extension WruwApiClient {
@@ -95,7 +89,10 @@ extension WruwApiClient {
 
         do {
             let result = try decode(from: data)
-            return WruwResult(success: transform(result: result) as AnyObject)
+            return WruwResult(success: result as AnyObject)
+        } catch let error as DecodingError {
+            print(error.errorDescription ?? error.localizedDescription)
+            return WruwResult(failure: error)
         } catch let error {
             print(error.localizedDescription)
             return WruwResult(failure: error)

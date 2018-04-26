@@ -43,7 +43,8 @@ import Alamofire
     }
 
     override func decode(from data: Data) throws -> Any {
-        return try decoder.decode([Release].self, from: data)
+        return try
+            decoder.decode(type: [Release].self, nested: "releases", from: data)
     }
 }
 

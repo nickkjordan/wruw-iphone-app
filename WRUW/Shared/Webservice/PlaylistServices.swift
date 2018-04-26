@@ -45,11 +45,11 @@ import Foundation
         self.init(manager: SessionManager.default, showName: showName)
     }
 
-    @objc override func transform(result: Any) -> Any? {
-        return (result as? Archives)?.playlists
-    }
-
     override func decode(from data: Data) throws -> Any {
-        return try decoder.decode(Archives.self, from: data)
+        return try decoder.decode(
+            type: [PlaylistInfo].self,
+            nested: "playlists",
+            from: data
+        )
     }
 }
