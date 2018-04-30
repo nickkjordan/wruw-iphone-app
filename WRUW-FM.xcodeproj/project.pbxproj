@@ -379,6 +379,22 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		014F00CF20976C8B00BAF5AE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
+				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
+				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
+				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
+				0153B8F5189C827100331DD9 /* HomeViewController.h */,
+				0153B8F6189C827100331DD9 /* HomeViewController.m */,
+				01F5A0BB2075254900C92C75 /* SocialComposeViewController.swift */,
+				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				019316DD183B83A2007755E8 /* Shows ViewControllers */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		0170902D17DBA8F80005EC0F = {
 			isa = PBXGroup;
 			children = (
@@ -427,23 +443,16 @@
 			children = (
 				019D9FD4204390CB00C05026 /* WRUW-FM-Bridging-Header.h */,
 				0170905117DBA8F80005EC0F /* MainStoryboard.storyboard */,
-				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
-				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
 				0170904817DBA8F80005EC0F /* AppDelegate.h */,
 				0170904917DBA8F80005EC0F /* AppDelegate.m */,
-				0153B8F5189C827100331DD9 /* HomeViewController.h */,
-				0153B8F6189C827100331DD9 /* HomeViewController.m */,
-				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
-				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
-				019316DD183B83A2007755E8 /* Shows ViewControllers */,
-				01A721D118AC6808001FA64F /* Favorites Controllers */,
+				01F9819B1835373C0069C241 /* Models */,
 				01B51B262062EA4200FB7C3D /* Views */,
+				014F00CF20976C8B00BAF5AE /* View Controllers */,
 				01B94BA620437705000874E1 /* Webservice */,
 				01CAFF611C8B662000AD1E95 /* Shared */,
 				012C926B1840026600C94210 /* Save Data */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
-				01F5A0BB2075254900C92C75 /* SocialComposeViewController.swift */,
 				01282C6320817BC600C873B6 /* Assets.xcassets */,
 			);
 			path = WRUW;
@@ -616,7 +625,6 @@
 		01CAFF611C8B662000AD1E95 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				01F9819B1835373C0069C241 /* Models */,
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
