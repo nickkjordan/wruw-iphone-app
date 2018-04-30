@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ArrayDataSource.h"
-#import "Show.h"
 #import "ShowCell.h"
 #import "DisplayViewController.h"
 

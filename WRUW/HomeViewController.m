@@ -1,7 +1,6 @@
 #import "HomeViewController.h"
 #import "WRUWModule-Swift.h"
 #import "DisplayViewController.h"
-#import "Show.h"
 #import "ARAnalytics.h"
 
 @interface HomeViewController () <AVAudioPlayerDelegate>
@@ -47,7 +46,7 @@
     
                 // remove current playlist
                 NSDate *todaysDate = [[NSDate alloc] init];
-                NSString *dateString = [Show formatPathForDate: todaysDate];
+                NSString *dateString = [Show formatPathFor:todaysDate];
                 [self.tableView loadWithShow:newShow.title.asQuery
                                         date:dateString];
                 

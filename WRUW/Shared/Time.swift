@@ -1,6 +1,6 @@
 import Foundation
 
-@objc class Time: NSObject {
+@objc class Time: NSObject, Codable {
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
@@ -17,6 +17,19 @@ import Foundation
     }()
 
     let date: Date
+
+    enum CodingKeys: String, CodingKey {
+        case date
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let string = try container.decode(String.self)
+
+        self.date = Time.dateFormatter.date(from: string) ?? Date()
+
+        super.init()
+    }
     
     @objc init?(string: String) {
         guard let date = Time.dateFormatter.date(from: string) else {
@@ -25,23 +38,15 @@ import Foundation
 
         self.date = date
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        guard let date = aDecoder.decodeObject(forKey: "date") as? Date else {
-            return nil
-        }
 
-        self.date = date
+    override init() {
+        self.date = Date()
+
+        super.init()
     }
 
     @objc func displayTime() -> String {
         return Time.displayFormatter.string(from: self.date)
-    }
-}
-
-extension Time: NSCoding {
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(date, forKey: "date")
     }
 }
 

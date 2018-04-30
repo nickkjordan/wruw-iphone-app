@@ -1,5 +1,4 @@
 #import "ShowsTableViewController.h"
-#import "Show.h"
 #import "DisplayViewController.h"
 #import "WRUWModule-Swift.h"
 

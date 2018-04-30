@@ -23,10 +23,10 @@
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
 		011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011FC228190C1E320074C93A /* AudioToolbox.framework */; };
-		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
 		01282C6420817BC600C873B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01282C6320817BC600C873B6 /* Assets.xcassets */; };
+		012AF1A72093625F00AC5869 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012AF1A62093625F00AC5869 /* Show.swift */; };
 		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2718AA9402001FFD61 /* heart_24_red.png */; };
@@ -150,13 +150,12 @@
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		011FECD81836A2B6009B5BFA /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
-		011FECD91836A2B6009B5BFA /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
 		011FECDB1836A506009B5BFA /* ShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowsTableViewController.h; sourceTree = "<group>"; };
 		011FECDC1836A506009B5BFA /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsTableViewController.m; sourceTree = "<group>"; };
 		011FECDE1836A531009B5BFA /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		011FECDF1836A531009B5BFA /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		01282C6320817BC600C873B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		012AF1A62093625F00AC5869 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFilePath.h; sourceTree = "<group>"; };
 		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFilePath.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
@@ -640,12 +639,11 @@
 		01F9819B1835373C0069C241 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				011FECD81836A2B6009B5BFA /* Show.h */,
-				011FECD91836A2B6009B5BFA /* Show.m */,
 				016A21CB2047382300474490 /* PlaylistInfo.swift */,
 				0192BF7F206A98CD00462061 /* Playlist.swift */,
 				01ED058E2049CBDA006F8012 /* Release.swift */,
 				0192E760206C522E00231091 /* Song.swift */,
+				012AF1A62093625F00AC5869 /* Show.swift */,
 			);
 			name = Models;
 			path = Model;
@@ -946,7 +944,6 @@
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
 				01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
-				011FECDA1836A2B6009B5BFA /* Show.m in Sources */,
 				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
@@ -968,6 +965,7 @@
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
 				016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */,
+				012AF1A72093625F00AC5869 /* Show.swift in Sources */,
 				01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */,
 				01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */,
 				01F89AA2185ACE9700D327B9 /* FavoriteShowsTableViewController.m in Sources */,

@@ -45,6 +45,8 @@ extension CoverArtApiRouter: URLRequestConvertible {
 
     init(releaseId: String) {
         self.path = "release/\(releaseId)/front-500"
+
+        super.init()
     }
 
     override func request(completion: @escaping (WruwResult) -> Void) {
@@ -71,11 +73,6 @@ extension CoverArtApiRouter: URLRequestConvertible {
 
                 completion(WruwResult(success: image, failure: error))
             }
-    }
-
-    override func processResultFrom(json: Any) -> WruwResult {
-        print("Unused processing result called")
-        return WruwResult(failure: processingError)
     }
 
     func processImage(_ data: Data?) -> WruwResult {

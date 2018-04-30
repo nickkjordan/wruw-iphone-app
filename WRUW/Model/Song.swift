@@ -6,7 +6,7 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 
 @objc(Song)
 
-class Song: NSObject, NSCoding, JSONConvertible, Decodable {
+class Song: NSObject, NSCoding, Decodable {
     @objc var artist: String,
         songName: String,
         album: String,
@@ -44,13 +44,6 @@ class Song: NSObject, NSCoding, JSONConvertible, Decodable {
         self._image = aDecoder.decodeObject(forKey: "image") as? UIImage
 
         super.init()
-    }
-
-    required init(json dict: JSONDict) {
-        self.songName = dict["SongName"] as? String ?? ""
-        self.artist = dict["ArtistName"] as? String ?? ""
-        self.album = dict["DiskName"] as? String ?? ""
-        self.label = dict["LabelName"] as? String ?? ""
     }
 
     func encode(with aCoder: NSCoder) {

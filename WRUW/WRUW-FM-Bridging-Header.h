@@ -9,7 +9,6 @@
 #ifndef WRUW_FM_Bridging_Header_h
 #define WRUW_FM_Bridging_Header_h
 
-#import "Show.h"
 #import "ArrayDataSource.h"
 #import "SongTableViewCell.h"
 #import <Social/Social.h>

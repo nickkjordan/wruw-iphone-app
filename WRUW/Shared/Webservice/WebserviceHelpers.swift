@@ -33,12 +33,6 @@ extension SessionManager: NetworkManager {
 }
 
 public protocol NetworkRequest {
-    func responseJSON(
-        queue: DispatchQueue?,
-        options: JSONSerialization.ReadingOptions,
-        completionHandler: @escaping (DataResponse<Any>) -> Void
-    ) -> Self
-
     func responseData(
         queue: DispatchQueue?,
         completionHandler: @escaping (DataResponse<Data>) -> Void
@@ -46,18 +40,6 @@ public protocol NetworkRequest {
 }
 
 extension NetworkRequest {
-    @discardableResult func json(
-        queue: DispatchQueue? = nil,
-        options: JSONSerialization.ReadingOptions = .allowFragments,
-        completionHandler: @escaping (DataResponse<Any>) -> Void
-    ) -> Self {
-        return responseJSON(
-            queue: queue,
-            options: options,
-            completionHandler: completionHandler
-        )
-    }
-
     @discardableResult func data(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<Data>) -> Void

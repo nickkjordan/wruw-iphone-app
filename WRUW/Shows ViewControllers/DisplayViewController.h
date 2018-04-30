@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Show.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "PlaylistsTableViewController.h"

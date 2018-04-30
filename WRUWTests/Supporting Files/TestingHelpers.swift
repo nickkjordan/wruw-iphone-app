@@ -52,18 +52,6 @@ class MockRequest {
 }
 
 extension MockRequest: NetworkRequest {
-    // Replicating Request.responseJSON() 
-    func responseJSON(
-        queue: DispatchQueue?,
-        options: JSONSerialization.ReadingOptions,
-        completionHandler: @escaping (DataResponse<Any>) -> Void
-    ) -> Self {
-        return response(
-            serializer: DataRequest.jsonResponseSerializer(options: options),
-            completionHandler: completionHandler
-        )
-    }
-
     func responseData(
         queue: DispatchQueue?,
         completionHandler: @escaping (DataResponse<Data>) -> Void

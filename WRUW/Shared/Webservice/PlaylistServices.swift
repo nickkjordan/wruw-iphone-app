@@ -16,7 +16,9 @@ import Foundation
 
     init(manager: NetworkManager, showName: String, date: String) {
         self.parameters = ["showname": showName, "date": date]
+
         super.init()
+
         self.manager = manager
     }
 

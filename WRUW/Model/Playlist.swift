@@ -1,6 +1,6 @@
 import Foundation
 
-@objc class Playlist: NSObject, JSONConvertible, Decodable {
+@objc class Playlist: NSObject, Decodable {
     var date: String?,
         idValue: Int?,
         songs: [Song]?
@@ -9,15 +9,5 @@ import Foundation
         case songs
         case idValue = "PlaylistID"
         case date = "PlaylistDate"
-    }
-
-    required init(json dict: JSONDict) {
-        let songs = dict["songs"] as? [JSONDict]
-
-        self.songs = songs?.map(Song.init(json: ))
-        self.idValue = dict["PlaylistID"] as? Int
-        self.date = dict["PlaylistDate"] as? String
-
-        super.init()
     }
 }
