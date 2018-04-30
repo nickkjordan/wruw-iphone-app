@@ -52,25 +52,41 @@ extension DataRequest: NetworkRequest { }
 
 extension JSONDecoder {
     func decode<T>(type: T.Type, nested key: String, from data: Data) throws -> T where T: Decodable {
+        // Access JSON object from parent, with potential null values
         let json = try
-            JSONSerialization.jsonObject(with: data) as? [String: Any]
+            JSONSerialization.jsonObject(with: data) as? [String: Any?]
 
-        guard let nestedItem = json?[key] else {
-            let codingKey = CodingKeys.parent
-            let context = DecodingError.Context(
-                codingPath: [codingKey],
-                debugDescription: "nested key \(key) not found"
-            )
+        // Access nested JSON object
+        guard case let nestedItem?? = json?[key] else {
+            let codingKey = NestedCodingKeys(stringValue: key)!
 
-            throw DecodingError.keyNotFound(codingKey, context)
+            throw DecodingError.keyNotFound(codingKey, codingKey.context)
         }
 
+        // Reserialize back to data
         let data = try JSONSerialization.data(withJSONObject: nestedItem)
 
         return try decode(type, from: data)
     }
 
-    enum CodingKeys: String, CodingKey {
-        case parent
+    struct NestedCodingKeys: CodingKey {
+        var stringValue: String,
+            intValue: Int?
+
+        init?(stringValue: String) {
+            self.stringValue = stringValue
+        }
+
+        init?(intValue: Int) {
+            self.init(stringValue: String(intValue))
+            self.intValue = intValue
+        }
+
+        var context: DecodingError.Context {
+            return DecodingError.Context(
+                codingPath: [self],
+                debugDescription: "nested key \(stringValue) not found"
+            )
+        }
     }
 }
