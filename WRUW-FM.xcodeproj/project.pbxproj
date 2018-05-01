@@ -328,14 +328,6 @@
 			path = "../App Icon [Squared]";
 			sourceTree = "<group>";
 		};
-		012C926B1840026600C94210 /* Save Data */ = {
-			isa = PBXGroup;
-			children = (
-				01AFA8E02097A46400FCF468 /* FavoritesManager.swift */,
-			);
-			path = "Save Data";
-			sourceTree = "<group>";
-		};
 		01498CB61ACC5B5D00D23F1B /* Core Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,7 +445,6 @@
 				014F00CF20976C8B00BAF5AE /* View Controllers */,
 				01B94BA620437705000874E1 /* Webservice */,
 				01CAFF611C8B662000AD1E95 /* Shared */,
-				012C926B1840026600C94210 /* Save Data */,
 				01CAC82917DFACE400057340 /* images */,
 				0170904017DBA8F80005EC0F /* Supporting Files */,
 				01282C6320817BC600C873B6 /* Assets.xcassets */,
@@ -574,6 +565,7 @@
 			children = (
 				01042C031AC06A42003112F3 /* AnimatedButton */,
 				01F925DC1C8E3DBB00206537 /* StreamPlay */,
+				01997EC41C8CE2390007C38D /* CircleView.swift */,
 				01B9C2DB2062AA4800B18890 /* PlaylistTableView.swift */,
 			);
 			name = Views;
@@ -631,7 +623,7 @@
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
-				01997EC41C8CE2390007C38D /* CircleView.swift */,
+				01AFA8E02097A46400FCF468 /* FavoritesManager.swift */,
 				01D3A47D209913F40017DF17 /* ImageWrapper.swift */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01B02B68206558DF00673F25 /* Time.swift */,
