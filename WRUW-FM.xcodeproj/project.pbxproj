@@ -102,6 +102,8 @@
 		01CC43D817DBC685004916EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CC43D717DBC685004916EA /* AVFoundation.framework */; };
 		01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CFAA55183BA0C200535F96 /* SongTableViewCell.m */; };
 		01CFAA58183BA0ED00535F96 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */; };
+		01D3A47E209913F40017DF17 /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3A47D209913F40017DF17 /* ImageWrapper.swift */; };
+		01D3A4802099146B0017DF17 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3A47F2099146B0017DF17 /* UIImage+extensions.swift */; };
 		01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */; };
 		01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058C2049C8FA006F8012 /* ReleasesServices.swift */; };
 		01ED058F2049CBDA006F8012 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058E2049CBDA006F8012 /* Release.swift */; };
@@ -246,6 +248,8 @@
 		01CFAA54183BA0C200535F96 /* SongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTableViewCell.h; sourceTree = "<group>"; };
 		01CFAA55183BA0C200535F96 /* SongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTableViewCell.m; sourceTree = "<group>"; };
 		01CFAA57183BA0ED00535F96 /* SongTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
+		01D3A47D209913F40017DF17 /* ImageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageWrapper.swift; path = Shared/ImageWrapper.swift; sourceTree = "<group>"; };
+		01D3A47F2099146B0017DF17 /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+extensions.swift"; path = "Shared/Core Extensions/UIImage+extensions.swift"; sourceTree = "<group>"; };
 		01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicBrainzAPIRouter.swift; path = Shared/Webservice/MusicBrainzAPIRouter.swift; sourceTree = "<group>"; };
 		01ED058C2049C8FA006F8012 /* ReleasesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReleasesServices.swift; path = Shared/Webservice/ReleasesServices.swift; sourceTree = "<group>"; };
 		01ED058E2049CBDA006F8012 /* Release.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 			children = (
 				01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */,
 				01CAFF641C8B677800AD1E95 /* UIColor+extensions.swift */,
+				01D3A47F2099146B0017DF17 /* UIImage+extensions.swift */,
 				0173E3791AD4435D0092181B /* UIViewController+MSLayoutSupport.h */,
 				0173E37A1AD4435D0092181B /* UIViewController+MSLayoutSupport.m */,
 				01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */,
@@ -626,8 +631,9 @@
 				01498CB61ACC5B5D00D23F1B /* Core Extensions */,
 				010CF7A61898B8AC00875209 /* ArrayDataSource.h */,
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
-				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01997EC41C8CE2390007C38D /* CircleView.swift */,
+				01D3A47D209913F40017DF17 /* ImageWrapper.swift */,
+				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01B02B68206558DF00673F25 /* Time.swift */,
 			);
 			name = Shared;
@@ -956,6 +962,7 @@
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
+				01D3A4802099146B0017DF17 /* UIImage+extensions.swift in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
 				019D9FD320438D1900C05026 /* ShowServices.swift in Sources */,
 				0173E37B1AD4435D0092181B /* UIViewController+MSLayoutSupport.m in Sources */,
@@ -970,6 +977,7 @@
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
+				01D3A47E209913F40017DF17 /* ImageWrapper.swift in Sources */,
 				016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */,
 				012AF1A72093625F00AC5869 /* Show.swift in Sources */,
 				01CAFF631C8B663600AD1E95 /* Theme.swift in Sources */,

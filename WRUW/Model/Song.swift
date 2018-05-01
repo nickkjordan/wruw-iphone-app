@@ -6,17 +6,17 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 
 @objc(Song)
 
-class Song: NSObject, NSCoding, Codable {
-    @objc var artist: String,
-        songName: String,
-        album: String,
-        label: String
+class Song: NSObject, Codable {
+    @objc var artist: String!,
+        songName: String!,
+        album: String!,
+        label: String!
 
-    fileprivate var _image: UIImage?
+    fileprivate var loadedImage: ImageWrapper?
 
     @objc var image: UIImage {
-        get { return _image ?? Song.defaultAlbumArt }
-        set { _image = newValue }
+        get { return loadedImage?.image ?? Song.defaultAlbumArt }
+        set { loadedImage = ImageWrapper(image: newValue) }
     }
 
     static var defaultAlbumArt: UIImage = {
@@ -26,7 +26,7 @@ class Song: NSObject, NSCoding, Codable {
     }()
 
     var noImage: Bool {
-        return _image == nil
+        return loadedImage == nil
     }
 
     enum CodingKeys: String, CodingKey {
@@ -34,24 +34,7 @@ class Song: NSObject, NSCoding, Codable {
         case artist = "ArtistName"
         case album = "DiskName"
         case label = "LabelName"
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        self.songName = aDecoder.decodeObject(forKey: "songName") as! String
-        self.artist = aDecoder.decodeObject(forKey: "artist") as! String
-        self.album = aDecoder.decodeObject(forKey: "album") as! String
-        self.label = aDecoder.decodeObject(forKey: "label") as! String
-        self._image = aDecoder.decodeObject(forKey: "image") as? UIImage
-
-        super.init()
-    }
-
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(songName, forKey: "songName")
-        aCoder.encode(artist, forKey: "artist")
-        aCoder.encode(album, forKey: "album")
-        aCoder.encode(label, forKey: "label")
-        aCoder.encode(_image, forKey: "image")
+        case loadedImage
     }
 
     override func isEqual(_ object: Any?) -> Bool {
