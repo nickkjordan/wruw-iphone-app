@@ -16,8 +16,7 @@
 
 @synthesize currentVC, favShowsVC, favSongsVC;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view layoutIfNeeded];
@@ -61,7 +60,8 @@
     }
 }
 
--(void)moveToNewController:(UIViewController *) newController direction:(int) param{
+-(void)moveToNewController:(UIViewController *) newController
+                 direction:(int) param{
     [self.currentVC willMoveToParentViewController:nil];
     [self addChildViewController:newController];
     

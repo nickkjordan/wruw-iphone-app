@@ -71,48 +71,18 @@
                       }];
 }
 
--(NSString *) getFilePath {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favorites.plist"];
-}
-
 -(void) saveFavorite:(Song *)currentSong {
-    NSString *path = [self getFilePath];
-    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
-    
-    if (fileExists) {
-        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
-        // Get current content.
-        NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
-        // Make a mutable copy.
-//        NSMutableArray *newContent = [oldContent mutableCopy];
-        
-        if ([content containsObject:currentSong]) {
-            
-            [content removeObject:currentSong];
-            
-            NSDictionary *dataDict2=[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:self]
-                                                                forKeys:[NSArray arrayWithObject:@"cell"]];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"notification"
-                                                                object:self
-                                                              userInfo:dataDict2];
-        } else {
-            // Add new stuff.
-            [content insertObject:currentSong atIndex:0];
-        }
-        
-        // Now, write the plist:
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:content];
-        
-        [data writeToFile:path atomically:YES];
-    } else {
-        NSMutableArray *newFavorite = [[NSMutableArray alloc] initWithObjects:currentSong, nil];
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorite];
-        
-        [data writeToFile:path atomically:YES];
+    BOOL favorited = [FavoriteManager.instance saveFavoriteWithSong:currentSong];
+
+    if (!favorited) {
+        NSDictionary *dataDict2=
+            [NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:self]
+                                        forKeys:[NSArray arrayWithObject:@"cell"]];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"notification"
+                                                            object:self
+                                                          userInfo:dataDict2];
     }
- 
 }
 
 - (IBAction)favoritePush:(id)sender {

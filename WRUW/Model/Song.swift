@@ -6,7 +6,7 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 
 @objc(Song)
 
-class Song: NSObject, NSCoding, Decodable {
+class Song: NSObject, NSCoding, Codable {
     @objc var artist: String,
         songName: String,
         album: String,

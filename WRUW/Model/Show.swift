@@ -1,17 +1,6 @@
 import Foundation
 
-@objc class Show: NSObject, Decodable, NSCoding {
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(title, forKey: "title")
-        aCoder.encode(url, forKey: "url")
-        aCoder.encode(hosts, forKey: "hosts")
-        aCoder.encode(startTime, forKey: "startTime")
-        aCoder.encode(endTime, forKey: "endTime")
-        aCoder.encode(genre, forKey: "genre")
-        aCoder.encode(days, forKey: "day")
-        aCoder.encode(infoDescription, forKey: "infoDescription")
-    }
-
+@objc class Show: NSObject, Codable {
     @objc var title: String = "",
         url: String = "",
         genre: String = "",
@@ -34,7 +23,7 @@ import Foundation
         case hosts = "ShowUsers"
     }
 
-    struct Host: Decodable {
+    struct Host: Codable {
         var host: String
 
         enum CodingKeys: String, CodingKey {

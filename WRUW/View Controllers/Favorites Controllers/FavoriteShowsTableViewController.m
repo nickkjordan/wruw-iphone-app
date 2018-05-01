@@ -1,13 +1,6 @@
-//
-//  FavoriteShowsTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 12/13/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "FavoriteShowsTableViewController.h"
 #import "EmptyFavoritesView.h"
+#import "WRUWModule-Swift.h"
 
 @interface FavoriteShowsTableViewController ()
 {
@@ -40,7 +33,7 @@
          forCellReuseIdentifier:@"ShowCell"];
 }
 
--(void)checkIfEmpty:(float)time {
+-(void)checkIfEmpty {
     if (!_favorites.count) {
         _emptyView = [EmptyFavoritesView emptyShows];
         _emptyView.frame = self.view.frame;
@@ -49,17 +42,13 @@
         
         [_emptyView setAlpha:0.0];
         [self.view addSubview:_emptyView];
-        [UIView animateWithDuration:time
+        [UIView animateWithDuration:0
                          animations:^{self->_emptyView.alpha = 1.0;
                          }];
     } else if ([_emptyView isDescendantOfView:self.view]) {
         [_emptyView removeFromSuperview];
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
-}
-
--(void)checkIfEmpty {
-    [self checkIfEmpty:0.0];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -69,22 +58,15 @@
     [self checkIfEmpty];
 }
 
--(NSString *) getFilePath {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favoriteShows.plist"];
-}
-
 -(void)loadFavs {
-    NSString *myPath = [self getFilePath];
-    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:myPath];
-    
-    if (fileExists) {
-        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:myPath];
-        // Get current content.
-        
-        _favorites = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+    NSArray *favorites = [FavoriteManager.instance loadFavoriteShows];
+
+    if (favorites.count == 0) {
+        return;
     }
-    
+
+    _favorites = [favorites mutableCopy];
+
     [self setupTableView];
 }
 
@@ -96,14 +78,16 @@
 
 #pragma mark - Table view data source
 
-- (void)setupTableView
-{
+- (void)setupTableView {
     TableViewCellConfigureBlock configureCell = ^(ShowCell *cell, Show *show) {
         [cell configureForShow:show];
     };
-    self.showsArrayDataSource = [[ArrayDataSource alloc] initWithItems:_favorites
-                                                        cellIdentifier:@"ShowCell"
-                                                    configureCellBlock:configureCell];
+
+    self.showsArrayDataSource =
+        [[ArrayDataSource alloc] initWithItems:_favorites
+                                cellIdentifier:@"ShowCell"
+                            configureCellBlock:configureCell];
+
     self.tableView.dataSource = self.showsArrayDataSource;
     [self.tableView reloadData];
 }

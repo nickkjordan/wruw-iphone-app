@@ -1,11 +1,3 @@
-//
-//  FavoritesTableViewController.m
-//  WRUW
-//
-//  Created by Nick Jordan on 11/22/13.
-//  Copyright (c) 2013 Nick Jordan. All rights reserved.
-//
-
 #import "FavoritesTableViewController.h"
 #import <Social/Social.h>
 #import "EmptyFavoritesView.h"
@@ -37,7 +29,7 @@
     [super viewWillAppear:animated];
 
     [self loadFavs];
-    [self checkIfEmpty];
+    [self checkIfEmpty:0.0];
 }
 
 - (void)viewDidLoad {
@@ -80,31 +72,20 @@
     }
 }
 
--(void)checkIfEmpty {
-    [self checkIfEmpty:0.0];
-}
-
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
     [center removeObserver:self name:@"notification" object:nil];
 }
 
--(NSString *)getFilePath {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favorites.plist"];
-}
-
 -(void)loadFavs {
-    NSString *myPath = [self getFilePath];
-    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:myPath];
-    
-    if (fileExists) {
-        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:myPath];
-        // Get current content.
-        
-        _favorites = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+    NSArray *favorites = [FavoriteManager.instance loadFavoriteSongs];
+
+    if ([favorites count] == 0) {
+        return;
     }
+
+    _favorites = [favorites copy];
     
     [self setupTableView];
     
@@ -115,26 +96,17 @@
     }
 }
 
-+ (void)deletePList {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"favorites.plist"];
-    
-    NSError *error;
-    if(![[NSFileManager defaultManager] removeItemAtPath:path error:&error])
-    {
-        //TODO: Handle/Log error
-    }
-}
-
 -(void)deleteUnfavorited:(NSNotification *)notification {
-    NSIndexPath *clickedButtonPath = [self.tableView indexPathForCell:[[notification userInfo] objectForKey:@"cell"]];
+    NSIndexPath *clickedButtonPath =
+        [self.tableView indexPathForCell:[[notification userInfo]
+                                          objectForKey:@"cell"]];
 
     NSArray *indexPaths = [NSArray arrayWithObject:clickedButtonPath];
     
     [_favorites removeObjectAtIndex:clickedButtonPath.row];
     
-    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths
+                          withRowAnimation:UITableViewRowAnimationFade];
     
     [self checkIfEmpty:0.5];
 }
@@ -153,7 +125,8 @@
                             configureCellBlock:configureCell];
 
     self.tableView.dataSource = self.songsArrayDataSource;
-    [self.tableView registerNib:[UINib nibWithNibName:@"SongTableViewCell" bundle:nil ]
+    UINib *nib = [UINib nibWithNibName:@"SongTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SongTableViewCell"];
 
     [self.tableView reloadData];

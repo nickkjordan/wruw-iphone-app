@@ -118,55 +118,15 @@
     [self adjustHeightOfInfoView];
 }
 
--(NSString *) getFilePath {
-    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    return [[pathArray objectAtIndex:0] stringByAppendingPathComponent:@"favoriteShows.plist"];
-}
-
--(void) saveFavorite:(Show *)show {
-    
-    NSString *path = [self getFilePath];
-    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
-    
-    if (fileExists) {
-        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
-        // Get current content.
-        NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
-        // Make a mutable copy.
-        //        NSMutableArray *newContent = [oldContent mutableCopy];
-        
-        if ([content containsObject:show]) {
-            
-            [content removeObject:show];
-        } else {
-            // Add new stuff.
-            [content insertObject:show atIndex:0];
-        }
-        
-        // Now, write the plist:
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:content];
-        
-        [data writeToFile:path atomically:YES];
-    } else {
-        NSMutableArray *newFavorite = [[NSMutableArray alloc] initWithObjects:show, nil];
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorite];
-        
-        [data writeToFile:path atomically:YES];
-    }
-}
-
 - (IBAction)favoritePush:(id)sender {
-    [self saveFavorite:currentShow];
-    
-    NSData *testHeart  = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
-    NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
-    
+    BOOL saved = [FavoriteManager.instance saveFavoriteWithShow:currentShow];
+
     NSString *switchHeart;
-    if ([testHeart isEqualToData:currentHeart]){
+    if (saved) {
         switchHeart = @"heart_24_red.png";
-        [ARAnalytics event:@"Show Favorited" withProperties:@{
-                                                              @"Show": currentShow.title
-                                                              }];
+        [ARAnalytics event:@"Show Favorited"
+            withProperties:@{ @"Show": currentShow.title}
+         ];
     } else {
         switchHeart = @"heart_24.png";
     }

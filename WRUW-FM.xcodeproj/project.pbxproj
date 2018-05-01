@@ -27,7 +27,6 @@
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
 		01282C6420817BC600C873B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01282C6320817BC600C873B6 /* Assets.xcassets */; };
 		012AF1A72093625F00AC5869 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012AF1A62093625F00AC5869 /* Show.swift */; };
-		012C9267183FFF1900C94210 /* getFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9266183FFF1900C94210 /* getFilePath.m */; };
 		012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C9270184009E000C94210 /* FavoritesTableViewController.m */; };
 		01312D2818AA9403001FFD61 /* heart_24_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2718AA9402001FFD61 /* heart_24_red.png */; };
 		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
@@ -87,6 +86,7 @@
 		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
 		01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A254A9185990000069AB3F /* SegmentedViewController.m */; };
 		01ACEEEA1AA5201E009FB3DB /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ACEEE91AA5201E009FB3DB /* ShowCell.xib */; };
+		01AFA8E12097A46400FCF468 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AFA8E02097A46400FCF468 /* FavoritesManager.swift */; };
 		01B02B69206558DF00673F25 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B02B68206558DF00673F25 /* Time.swift */; };
 		01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B02B6A20655C5F00673F25 /* TimeTests.swift */; };
 		01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B94BA720437724000874E1 /* WruwApiRouter.swift */; };
@@ -156,8 +156,6 @@
 		011FECDF1836A531009B5BFA /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		01282C6320817BC600C873B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012AF1A62093625F00AC5869 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
-		012C9265183FFF1900C94210 /* getFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getFilePath.h; sourceTree = "<group>"; };
-		012C9266183FFF1900C94210 /* getFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = getFilePath.m; sourceTree = "<group>"; };
 		012C926F184009E000C94210 /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
 		012C9270184009E000C94210 /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 		01312D2718AA9402001FFD61 /* heart_24_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_24_red.png; sourceTree = "<group>"; };
@@ -231,6 +229,7 @@
 		01A254A8185990000069AB3F /* SegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedViewController.h; sourceTree = "<group>"; };
 		01A254A9185990000069AB3F /* SegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedViewController.m; sourceTree = "<group>"; };
 		01ACEEE91AA5201E009FB3DB /* ShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
+		01AFA8E02097A46400FCF468 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		01B02B68206558DF00673F25 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = Shared/Time.swift; sourceTree = "<group>"; };
 		01B02B6A20655C5F00673F25 /* TimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTests.swift; sourceTree = "<group>"; };
 		01B94BA720437724000874E1 /* WruwApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WruwApiRouter.swift; path = Shared/Webservice/WruwApiRouter.swift; sourceTree = "<group>"; };
@@ -328,8 +327,7 @@
 		012C926B1840026600C94210 /* Save Data */ = {
 			isa = PBXGroup;
 			children = (
-				012C9265183FFF1900C94210 /* getFilePath.h */,
-				012C9266183FFF1900C94210 /* getFilePath.m */,
+				01AFA8E02097A46400FCF468 /* FavoritesManager.swift */,
 			);
 			path = "Save Data";
 			sourceTree = "<group>";
@@ -956,7 +954,6 @@
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,
-				012C9267183FFF1900C94210 /* getFilePath.m in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,
@@ -967,6 +964,7 @@
 				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
+				01AFA8E12097A46400FCF468 /* FavoritesManager.swift in Sources */,
 				0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */,
 				0192BF80206A98CD00462061 /* Playlist.swift in Sources */,
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
