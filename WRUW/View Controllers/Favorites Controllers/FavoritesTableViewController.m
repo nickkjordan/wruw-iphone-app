@@ -85,7 +85,7 @@
         return;
     }
 
-    _favorites = [favorites copy];
+    _favorites = [favorites mutableCopy];
     
     [self setupTableView];
     

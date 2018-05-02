@@ -71,7 +71,7 @@
                       }];
 }
 
--(void) saveFavorite:(Song *)currentSong {
+-(BOOL)saveFavorite:(Song *)currentSong {
     BOOL favorited = [FavoriteManager.instance saveFavoriteWithSong:currentSong];
 
     if (!favorited) {
@@ -83,17 +83,14 @@
                                                             object:self
                                                           userInfo:dataDict2];
     }
+
+    return favorited;
 }
 
 - (IBAction)favoritePush:(id)sender {
-    [self saveFavorite:_currentSong];
+    BOOL favorited = [self saveFavorite:_currentSong];
     
-    NSData *testHeart = UIImagePNGRepresentation([UIImage imageNamed:@"heart_24.png"]);
-    NSData *currentHeart = UIImagePNGRepresentation(favButton.currentImage);
-    
-    NSString *switchHeart = ([testHeart isEqualToData:currentHeart]) ?
-        (@"heart_24_red.png") :
-        (@"heart_24.png");
+    NSString *switchHeart = favorited ? @"heart_24_red.png" : @"heart_24.png";
     
     [self buttonAnimation:favButton withImage:switchHeart];
 }
