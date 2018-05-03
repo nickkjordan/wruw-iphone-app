@@ -15,6 +15,8 @@ typealias JSONDict = [AnyHashable: Any]
 
 @objc protocol JSONConvertible {
     init(json dict: JSONDict)
+
+    func toJSONObject() -> Any
 }
 
 @objc class WruwResult: NSObject {

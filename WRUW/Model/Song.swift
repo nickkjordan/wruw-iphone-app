@@ -54,6 +54,13 @@ class Song: NSObject, NSCoding, JSONConvertible {
         self.label = dict[CodingKeys.label] as? String ?? ""
     }
 
+    func toJSONObject() -> Any {
+        return [
+            CodingKeys.songName.rawValue: songName,
+            CodingKeys.artist.rawValue: artist
+        ]
+    }
+
     func encode(with aCoder: NSCoder) {
         aCoder.encode(songName, forKey: "songName")
         aCoder.encode(artist, forKey: "artist")

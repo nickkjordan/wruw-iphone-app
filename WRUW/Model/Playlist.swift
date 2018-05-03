@@ -14,4 +14,8 @@ import Foundation
 
         super.init()
     }
+
+    func toJSONObject() -> Any {
+        return ""
+    }
 }

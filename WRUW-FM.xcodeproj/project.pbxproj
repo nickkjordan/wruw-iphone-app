@@ -23,6 +23,7 @@
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
 		01188AD3209B72A200FE3775 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01188AD2209B72A200FE3775 /* FavoritesManager.swift */; };
+		01188AD8209B772600FE3775 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01188AD4209B768200FE3775 /* FavoritesManagerTests.swift */; };
 		011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011FC228190C1E320074C93A /* AudioToolbox.framework */; };
 		011FECDA1836A2B6009B5BFA /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECD91836A2B6009B5BFA /* Show.m */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
@@ -152,6 +153,7 @@
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		01188AD2209B72A200FE3775 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesManager.swift; path = Shared/FavoritesManager.swift; sourceTree = "<group>"; };
+		01188AD4209B768200FE3775 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		011FECD81836A2B6009B5BFA /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		011FECD91836A2B6009B5BFA /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				0170906F17DBA8F80005EC0F /* Supporting Files */,
 				01B02B6A20655C5F00673F25 /* TimeTests.swift */,
 				0192E762206C757F00231091 /* PlaylistTableViewTests.swift */,
+				01188AD4209B768200FE3775 /* FavoritesManagerTests.swift */,
 			);
 			path = WRUWTests;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0109957720571C3D00BD8BDE /* ReleasesServicesTests.swift in Sources */,
+				01188AD8209B772600FE3775 /* FavoritesManagerTests.swift in Sources */,
 				019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */,
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,

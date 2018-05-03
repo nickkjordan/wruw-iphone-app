@@ -8,6 +8,15 @@ import Foundation
     enum FavoriteKey: String {
         case Songs = "favoriteSongs"
         case Shows = "favoriteShows"
+
+        static func key<T>(for type: T) -> FavoriteKey {
+            switch type {
+            case is Song:
+                return .Songs
+            default:
+                return .Shows
+            }
+        }
     }
 
     @objc func saveFavorite(show: Show) -> Bool {
@@ -16,6 +25,12 @@ import Foundation
 
     @objc func saveFavorite(song: Song) -> Bool {
         return saveFavorite(item: song, key: .Songs)
+    }
+
+    func saveFavorite<T: JSONConvertible & Hashable>(item: T) -> Bool {
+        let key = FavoriteKey.key(for: T.self)
+
+        return saveFavorite(item: item, key: key)
     }
 
     func saveFavorite<T: JSONConvertible & Hashable>(item: T, key: FavoriteKey) -> Bool {
@@ -30,15 +45,17 @@ import Foundation
             added = true
         }
 
-        return JSONSerialization.isValidJSONObject(item)
-//
-//        let encoder = JSONEncoder()
-//        if let encoded = try? encoder.encode(favoritesArray) {
-//            UserDefaults.standard.set(encoded, forKey: key.rawValue)
-//            return added
-//        }
-//
-//        return false
+        let jsonObject = favoritesArray.map { $0.toJSONObject() }
+
+        guard JSONSerialization.isValidJSONObject(jsonObject),
+            let data = try? JSONSerialization.data(withJSONObject: jsonObject)
+            else {
+                return false
+        }
+
+        UserDefaults.standard.set(data, forKey: key.rawValue)
+
+        return added
     }
 
     @objc func loadFavoriteSongs() -> [Song] {
