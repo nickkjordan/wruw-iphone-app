@@ -48,16 +48,18 @@ class Song: NSObject, NSCoding, JSONConvertible {
     }
 
     required init(json dict: JSONDict) {
-        self.songName = dict[CodingKeys.songName] as? String ?? ""
-        self.artist = dict[CodingKeys.artist] as? String ?? ""
-        self.album = dict[CodingKeys.album] as? String ?? ""
-        self.label = dict[CodingKeys.label] as? String ?? ""
+        self.songName = dict[CodingKeys.songName.rawValue] as? String ?? ""
+        self.artist = dict[CodingKeys.artist.rawValue] as? String ?? ""
+        self.album = dict[CodingKeys.album.rawValue] as? String ?? ""
+        self.label = dict[CodingKeys.label.rawValue] as? String ?? ""
     }
 
     func toJSONObject() -> Any {
         return [
             CodingKeys.songName.rawValue: songName,
-            CodingKeys.artist.rawValue: artist
+            CodingKeys.artist.rawValue: artist,
+            CodingKeys.album.rawValue: album,
+            CodingKeys.label.rawValue: label
         ]
     }
 

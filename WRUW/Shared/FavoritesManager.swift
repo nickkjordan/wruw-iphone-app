@@ -67,11 +67,12 @@ import Foundation
     }
 
     func loadFavorites<T: JSONConvertible>(with key: FavoriteKey) -> [T] {
-        if let data = UserDefaults.standard.data(forKey: key.rawValue),
-            case let values?? = try? JSONSerialization.jsonObject(with: data) as? Array<JSONDict> {
-            return values.flatMap { T(json: $0) }
+        guard let data = UserDefaults.standard.data(forKey: key.rawValue),
+            let values = try? JSONSerialization.jsonObject(with: data),
+            let favorites = values as? [JSONDict] else {
+                return []
         }
 
-        return []
+        return favorites.map { T(json: $0) }
     }
 }

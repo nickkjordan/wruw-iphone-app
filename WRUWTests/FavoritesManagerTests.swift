@@ -6,20 +6,28 @@ class FavoriteManagerTests: XCTestCase {
     var jsonDict: JSONDict!
     let favoritesManager = FavoriteManager.instance
 
+    func clear() {
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+    }
+
     override func setUp() {
         super.setUp()
 
         jsonDict = [
-            Song.CodingKeys.songName: "Atrocity Exhibition",
-            Song.CodingKeys.artist: "Joy Division",
-            Song.CodingKeys.album: "Closer",
-            Song.CodingKeys.label: "London Records"
+            Song.CodingKeys.songName.rawValue: "Atrocity Exhibition",
+            Song.CodingKeys.artist.rawValue: "Joy Division",
+            Song.CodingKeys.album.rawValue: "Closer",
+            Song.CodingKeys.label.rawValue: "London Records"
         ]
         song = Song(json: jsonDict)
+
+        clear()
     }
 
     func testMockCreation() {
-        let songName = jsonDict[Song.CodingKeys.songName] as? String
+        let songName = jsonDict[Song.CodingKeys.songName.rawValue] as? String
         XCTAssertNotNil(songName)
 
         XCTAssertEqual(song.songName, songName!)
