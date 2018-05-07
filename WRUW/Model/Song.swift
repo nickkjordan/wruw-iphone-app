@@ -59,7 +59,9 @@ class Song: NSObject, NSCoding, JSONConvertible {
             CodingKeys.songName.rawValue: songName,
             CodingKeys.artist.rawValue: artist,
             CodingKeys.album.rawValue: album,
-            CodingKeys.label.rawValue: label
+            CodingKeys.label.rawValue: label,
+            CodingKeys.loadedImage.rawValue:
+                UIImagePNGRepresentation(image)?.base64EncodedString()
         ]
     }
 

@@ -127,6 +127,8 @@
                                              selector:@selector(didAppear)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+
+    [self resaveFavorites];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -145,6 +147,25 @@
     //End recieving events
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     [self.streamPlay resignFirstResponder];
+}
+
+- (void)resaveFavorites {
+    NSArray *pathArray =
+    NSSearchPathForDirectoriesInDomains(
+                                        NSDocumentDirectory,
+                                        NSUserDomainMask,
+                                        YES);
+    NSString *path = [[pathArray objectAtIndex:0]
+            stringByAppendingPathComponent:@"favorites.plist"];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
+
+    if (fileExists) {
+        NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
+        // Get current content.
+        NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
+
+        [FavoriteManager.instance storeFavoriteSongsWithSongs:content];
+    }
 }
 
 #pragma mark - Navigation Bar delegate

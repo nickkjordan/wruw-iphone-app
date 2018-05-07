@@ -23,7 +23,7 @@ import Foundation
         return saveFavorite(item: show, key: .Shows)
     }
 
-    @objc func saveFavorite(song: Song) -> Bool {
+    @discardableResult @objc func saveFavorite(song: Song) -> Bool {
         return saveFavorite(item: song, key: .Songs)
     }
 
@@ -33,7 +33,9 @@ import Foundation
         return saveFavorite(item: item, key: key)
     }
 
-    func saveFavorite<T: JSONConvertible & Hashable>(item: T, key: FavoriteKey) -> Bool {
+    typealias Cacheable = JSONConvertible & Hashable
+
+    func saveFavorite<T: Cacheable>(item: T, key: FavoriteKey) -> Bool {
         var favoritesArray: [T] = loadFavorites(with: key)
         var added: Bool
 
@@ -45,7 +47,23 @@ import Foundation
             added = true
         }
 
-        let jsonObject = favoritesArray.map { $0.toJSONObject() }
+        return storeFavorites(items: favoritesArray, key: key) ?? added
+    }
+
+    func saveFavorites<T: Cacheable>(items: [T], key: FavoriteKey) {
+        var favoritesSet = Set<T>(loadFavorites(with: key))
+
+        favoritesSet = favoritesSet.union(items)
+
+        _ = storeFavorites(items: Array(favoritesSet), key: key)
+    }
+
+    func storeFavoriteSongs(songs: [Song]) {
+        _ = storeFavorites(items: songs, key: .Songs)
+    }
+
+    func storeFavorites<T: Cacheable>(items: [T], key: FavoriteKey) -> Bool? {
+        let jsonObject = items.map { $0.toJSONObject() }
 
         guard JSONSerialization.isValidJSONObject(jsonObject),
             let data = try? JSONSerialization.data(withJSONObject: jsonObject)
@@ -55,7 +73,7 @@ import Foundation
 
         UserDefaults.standard.set(data, forKey: key.rawValue)
 
-        return added
+        return nil
     }
 
     @objc func loadFavoriteSongs() -> [Song] {
