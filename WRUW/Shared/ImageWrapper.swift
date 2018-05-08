@@ -14,9 +14,17 @@ public struct ImageWrapper: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let data = try container.decode(Data.self, forKey: CodingKeys.image)
+        var data = try? container.decode(Data.self, forKey: CodingKeys.image)
 
-        guard let image = UIImage(data: data) else {
+        if data == nil {
+            let string =
+                try container.decode(String.self, forKey: CodingKeys.image)
+
+            data = Data(base64Encoded: string)
+        }
+
+        guard let imageData = data,
+            let image = UIImage(data: imageData) else {
             throw DecodingError.dataCorruptedError(
                 forKey: CodingKeys.image,
                 in: container,
