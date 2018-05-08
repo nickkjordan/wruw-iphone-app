@@ -10,11 +10,11 @@ local_podfile = "Pods/Podfile.local"
 pod 'MarqueeLabel'
 pod 'ARAnalytics', '~> 5.0.1', :subspecs => ["Mixpanel", "DSL"]
 pod 'SimulatorStatusMagic', :configurations => ['Debug']
-pod 'RxSwift', '~> 3.3.1'
-pod 'RxCocoa', '~> 3.3.1'
-pod 'NSObject+Rx', '~> 3.0.0'
-pod 'SnapKit', '~> 3.2.0'
-pod 'Alamofire', '~> 4.4.0'
+pod 'RxSwift', '~> 4.1.2'
+pod 'RxCocoa', '~> 4.1.2'
+pod 'NSObject+Rx', '~> 4.3.0'
+pod 'SnapKit', '~> 4.0.0'
+pod 'Alamofire', '~> 4.7.2'
 
   target 'WRUW-FMTests' do
     inherit! :search_paths

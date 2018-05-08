@@ -116,7 +116,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                                         ARAnalyticsClass: StreamPlayView.class,
                                         ARAnalyticsDetails: @[ @{
                                                 ARAnalyticsEventName: @"Stream Button Pressed",
-                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(statusChanged)),
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(didTapPlayer)),
                                                 }]
                                         },
                                                           @{

@@ -1,17 +1,13 @@
 import Foundation
 
-@objc class Playlist: NSObject, JSONConvertible {
+@objc class Playlist: NSObject, Decodable {
     var date: String?,
-        idValue: String?,
+        idValue: Int?,
         songs: [Song]?
 
-    required init(json dict: JSONDict) {
-        let songs = dict["songs"] as? [JSONDict]
-
-        self.songs = songs?.map(Song.init(json: ))
-        self.idValue = dict["PlaylistID"] as? String
-        self.date = dict["PlaylistDate"] as? String
-
-        super.init()
+    enum CodingKeys: String, CodingKey {
+        case songs
+        case idValue = "PlaylistID"
+        case date = "PlaylistDate"
     }
 }
