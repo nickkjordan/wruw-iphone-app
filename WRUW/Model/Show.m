@@ -73,7 +73,7 @@
              @"ShowName": _title,
              @"ShowUrl": _url,
              @"OnairTime": [self.startTime toJSON],
-             @"OffairTime": [_endTime toJSON],
+             @"OffairTime": [self.endTime toJSON],
              @"ShowCategory": self.genre,
              @"Weekdays": self.days,
              @"ShowDescription": self.infoDescription,
@@ -86,6 +86,7 @@
     [encoder encodeObject:_url forKey:@"url"];
     [encoder encodeObject:_hosts forKey:@"hosts"];
     [encoder encodeObject:_startTime forKey:@"startTime"];
+    [encoder encodeObject:_endTime forKey:@"endTime"];
     [encoder encodeObject:_genre forKey:@"genre"];
     [encoder encodeObject:_days forKey:@"day"];
     [encoder encodeObject:_infoDescription forKey:@"infoDescription"];
