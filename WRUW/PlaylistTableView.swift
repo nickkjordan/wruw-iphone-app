@@ -55,7 +55,16 @@ class PlaylistTableView: UITableView {
             }
 
             self.archive.insert(contentsOf: newSongs, at: index)
-            self.reloadData()
+            let indexPaths = (0..<newSongs.count)
+                .map { IndexPath(row: $0, section: 0) }
+
+            DispatchQueue.main.async {
+                if self.reversed {
+                    self.reloadRows(at: indexPaths, with: .top)
+                } else {
+                    self.reloadData()
+                }
+            }
 
             self.getReleaseInfo()
         }
