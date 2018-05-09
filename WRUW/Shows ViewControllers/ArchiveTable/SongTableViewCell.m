@@ -77,18 +77,25 @@
 }
 
 -(void) saveFavorite:(Song *)currentSong {
+    
+    // Save with manager for future release
+
+    [FavoriteManager.instance saveFavoriteWithSong:currentSong];
+
+    // Begin deprecated favorite save
+
+    // Check if favorites file exists
     NSString *path = [self getFilePath];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
-    
+
     if (fileExists) {
         NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
         // Get current content.
         NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
-        // Make a mutable copy.
-//        NSMutableArray *newContent = [oldContent mutableCopy];
-        
+
         if ([content containsObject:currentSong]) {
-            
+
+            // Remove from file to unfavorite song
             [content removeObject:currentSong];
             
             NSDictionary *dataDict2=[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:self]
@@ -107,12 +114,12 @@
         
         [data writeToFile:path atomically:YES];
     } else {
+        // Create a new file at the path
         NSMutableArray *newFavorite = [[NSMutableArray alloc] initWithObjects:currentSong, nil];
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorite];
         
         [data writeToFile:path atomically:YES];
     }
- 
 }
 
 - (IBAction)favoritePush:(id)sender {

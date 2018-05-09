@@ -128,7 +128,13 @@
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
 
-    [self resaveFavorites];
+    [self resaveFavorites:@"favorites.plist" completion:^(NSMutableArray *content) {
+        [FavoriteManager.instance storeFavoriteWithSongs:content];
+    }];
+
+    [self resaveFavorites:@"favoriteShows.plist" completion:^(NSMutableArray *content) {
+        [FavoriteManager.instance storeFavoriteWithShows:content];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -149,14 +155,15 @@
     [self.streamPlay resignFirstResponder];
 }
 
-- (void)resaveFavorites {
+- (void)resaveFavorites:(NSString *)file
+             completion:(void (^)(NSMutableArray *))completion {
     NSArray *pathArray =
     NSSearchPathForDirectoriesInDomains(
                                         NSDocumentDirectory,
                                         NSUserDomainMask,
                                         YES);
     NSString *path = [[pathArray objectAtIndex:0]
-            stringByAppendingPathComponent:@"favorites.plist"];
+            stringByAppendingPathComponent:file];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
 
     if (fileExists) {
@@ -164,7 +171,7 @@
         // Get current content.
         NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
 
-        [FavoriteManager.instance storeFavoriteSongsWithSongs:content];
+        completion(content);
     }
 }
 

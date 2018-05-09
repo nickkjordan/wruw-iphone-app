@@ -62,6 +62,25 @@
     return self;
 }
 
+- (id)toJSONObject {
+    NSMutableArray *hosts = [[NSMutableArray alloc] init];
+
+    [self.hosts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [hosts addObject:@{@"DJName": obj}];
+    }];
+
+    return @{
+             @"ShowName": _title,
+             @"ShowUrl": _url,
+             @"OnairTime": [self.startTime toJSON],
+             @"OffairTime": [_endTime toJSON],
+             @"ShowCategory": self.genre,
+             @"Weekdays": self.days,
+             @"ShowDescription": self.infoDescription,
+             @"ShowUsers": hosts
+             };
+}
+
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:_title forKey:@"title"];
     [encoder encodeObject:_url forKey:@"url"];

@@ -19,7 +19,7 @@ import Foundation
         }
     }
 
-    @objc func saveFavorite(show: Show) -> Bool {
+    @discardableResult @objc func saveFavorite(show: Show) -> Bool {
         return saveFavorite(item: show, key: .Shows)
     }
 
@@ -58,8 +58,12 @@ import Foundation
         _ = storeFavorites(items: Array(favoritesSet), key: key)
     }
 
-    func storeFavoriteSongs(songs: [Song]) {
+    func storeFavorite(songs: [Song]) {
         _ = storeFavorites(items: songs, key: .Songs)
+    }
+
+    func storeFavorite(shows: [Show]) {
+        _ = storeFavorites(items: shows, key: .Shows)
     }
 
     func storeFavorites<T: Cacheable>(items: [T], key: FavoriteKey) -> Bool? {
