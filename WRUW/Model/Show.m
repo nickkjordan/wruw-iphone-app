@@ -69,16 +69,17 @@
         [hosts addObject:@{@"DJName": obj}];
     }];
 
-    return @{
-             @"ShowName": _title,
-             @"ShowUrl": _url,
-             @"OnairTime": [self.startTime toJSON],
-             @"OffairTime": [self.endTime toJSON],
-             @"ShowCategory": self.genre,
-             @"Weekdays": self.days,
-             @"ShowDescription": self.infoDescription,
-             @"ShowUsers": hosts
-             };
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            _title, @"ShowName",
+            _url, @"ShowUrl",
+            [self.startTime toJSON], @"OnairTime",
+            [self.endTime toJSON], @"OffairTime",
+            self.genre,@"ShowCategory",
+            self.days,@"Weekdays",
+            self.infoDescription,@"ShowDescription",
+            hosts, @"ShowUsers",
+            nil
+        ];
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
