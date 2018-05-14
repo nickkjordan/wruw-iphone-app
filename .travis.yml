@@ -5,7 +5,11 @@ xcode_project: WRUW-FM.xcworkspace # path to your xcodeproj folder
 xcode_scheme: WRUW-FMTests
 osx_image: xcode9.3
 script:
-    - xcodebuild clean build -sdk iphonesimulator -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests CODE_SIGNING_REQUIRED=NO
+    - xcodebuild \
+        -workspace WRUW-FM.xcworkspace \ 
+        -scheme WRUW-FMTests \ 
+        -destination 'platform=iOS Simulator,name=iPhone X' \
+        test
 
 install:
  - gem install cocoapods-keys
