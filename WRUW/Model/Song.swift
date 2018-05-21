@@ -39,11 +39,31 @@ class Song: NSObject, NSCoding, JSONConvertible {
         super.init()
     }
 
+    enum CodingKeys: String, CodingKey {
+        case songName = "SongName"
+        case artist = "ArtistName"
+        case album = "DiskName"
+        case label = "LabelName"
+        case loadedImage
+    }
+
     required init(json dict: JSONDict) {
-        self.songName = dict["SongName"] as? String ?? ""
-        self.artist = dict["ArtistName"] as? String ?? ""
-        self.album = dict["DiskName"] as? String ?? ""
-        self.label = dict["LabelName"] as? String ?? ""
+        self.songName = dict[CodingKeys.songName.rawValue] as? String ?? ""
+        self.artist = dict[CodingKeys.artist.rawValue] as? String ?? ""
+        self.album = dict[CodingKeys.album.rawValue] as? String ?? ""
+        self.label = dict[CodingKeys.label.rawValue] as? String ?? ""
+    }
+
+    func toJSONObject() -> Any {
+        return [
+            CodingKeys.songName.rawValue: songName,
+            CodingKeys.artist.rawValue: artist,
+            CodingKeys.album.rawValue: album,
+            CodingKeys.label.rawValue: label,
+            CodingKeys.loadedImage.rawValue: [
+                "image": UIImagePNGRepresentation(image)?.base64EncodedString()
+            ]
+        ]
     }
 
     func encode(with aCoder: NSCoder) {
