@@ -37,6 +37,10 @@ import Foundation
     func displayTime() -> String {
         return Time.displayFormatter.string(from: self.date)
     }
+
+    func toJSON() -> String {
+        return Time.dateFormatter.string(from: self.date)
+    }
 }
 
 extension Time: NSCoding {

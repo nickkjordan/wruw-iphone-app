@@ -10,4 +10,8 @@ import Foundation
         self.id = dict["id"] as? String ?? ""
         self.title = dict["title"] as? String ?? ""
     }
+
+    func toJSONObject() -> Any {
+        return ""
+    }
 }

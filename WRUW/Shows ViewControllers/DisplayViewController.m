@@ -200,6 +200,10 @@
 }
 
 -(void) saveFavorite:(Show *)show {
+    // Save with Manager for future release
+    [FavoriteManager.instance saveFavoriteWithShow:show];
+
+    // Save method to be deprecated
     
     NSString *path = [self getFilePath];
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:path];
@@ -208,9 +212,7 @@
         NSData *favoritesData = [[NSData alloc] initWithContentsOfFile:path];
         // Get current content.
         NSMutableArray *content = [NSKeyedUnarchiver unarchiveObjectWithData:favoritesData];
-        // Make a mutable copy.
-        //        NSMutableArray *newContent = [oldContent mutableCopy];
-        
+
         if ([content containsObject:show]) {
             
             [content removeObject:show];
