@@ -67,6 +67,9 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.searchController.automaticallyAdjustsScrollViewInsets = NO;
+
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight, 0);
 }
 
 #pragma mark - Helper methods
