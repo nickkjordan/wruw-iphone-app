@@ -21,7 +21,8 @@ class FavoriteManagerTests: XCTestCase {
             Song.CodingKeys.album.rawValue: "Closer",
             Song.CodingKeys.label.rawValue: "London Records"
         ]
-        song = Song(json: jsonDict)
+        let data = try! JSONEncoder().encode(jsonDict as! [String: String])
+        song = try! JSONDecoder().decode(Song.self, from: data)
 
         clear()
     }
@@ -34,17 +35,17 @@ class FavoriteManagerTests: XCTestCase {
     }
 
     func testSaveableToUserDefaults() {
-        let result = favoritesManager.saveFavorite(item: song)
+        let result = favoritesManager.saveFavorite(song: song)
 
         XCTAssertTrue(result)
     }
 
     func testRemovableFavorites() {
-        let result = favoritesManager.saveFavorite(item: song)
+        let result = favoritesManager.saveFavorite(song: song)
 
         XCTAssertTrue(result)
 
-        let removed = favoritesManager.saveFavorite(item: song)
+        let removed = favoritesManager.saveFavorite(song: song)
 
         XCTAssertFalse(removed)
     }

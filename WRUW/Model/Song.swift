@@ -6,17 +6,17 @@ func ==(lhs: Song, rhs: Song) -> Bool {
 
 @objc(Song)
 
-class Song: NSObject, NSCoding, JSONConvertible {
-    var artist: String,
-        songName: String,
-        album: String,
-        label: String
+class Song: NSObject, Codable {
+    @objc var artist: String!,
+        songName: String!,
+        album: String!,
+        label: String!
 
-    fileprivate var _image: UIImage?
+    fileprivate var loadedImage: ImageWrapper?
 
-    var image: UIImage {
-        get { return _image ?? Song.defaultAlbumArt }
-        set { _image = newValue }
+    @objc var image: UIImage {
+        get { return loadedImage?.image ?? Song.defaultAlbumArt }
+        set { loadedImage = ImageWrapper(image: newValue) }
     }
 
     static var defaultAlbumArt: UIImage = {
@@ -26,17 +26,7 @@ class Song: NSObject, NSCoding, JSONConvertible {
     }()
 
     var noImage: Bool {
-        return _image == nil
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        self.songName = aDecoder.decodeObject(forKey: "songName") as! String
-        self.artist = aDecoder.decodeObject(forKey: "artist") as! String
-        self.album = aDecoder.decodeObject(forKey: "album") as! String
-        self.label = aDecoder.decodeObject(forKey: "label") as! String
-        self._image = aDecoder.decodeObject(forKey: "image") as? UIImage
-
-        super.init()
+        return loadedImage == nil
     }
 
     enum CodingKeys: String, CodingKey {
@@ -45,33 +35,6 @@ class Song: NSObject, NSCoding, JSONConvertible {
         case album = "DiskName"
         case label = "LabelName"
         case loadedImage
-    }
-
-    required init(json dict: JSONDict) {
-        self.songName = dict[CodingKeys.songName.rawValue] as? String ?? ""
-        self.artist = dict[CodingKeys.artist.rawValue] as? String ?? ""
-        self.album = dict[CodingKeys.album.rawValue] as? String ?? ""
-        self.label = dict[CodingKeys.label.rawValue] as? String ?? ""
-    }
-
-    func toJSONObject() -> Any {
-        return [
-            CodingKeys.songName.rawValue: songName,
-            CodingKeys.artist.rawValue: artist,
-            CodingKeys.album.rawValue: album,
-            CodingKeys.label.rawValue: label,
-            CodingKeys.loadedImage.rawValue: [
-                "image": UIImagePNGRepresentation(image)?.base64EncodedString()
-            ]
-        ]
-    }
-
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(songName, forKey: "songName")
-        aCoder.encode(artist, forKey: "artist")
-        aCoder.encode(album, forKey: "album")
-        aCoder.encode(label, forKey: "label")
-        aCoder.encode(_image, forKey: "image")
     }
 
     override func isEqual(_ object: Any?) -> Bool {
