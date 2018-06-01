@@ -10,4 +10,8 @@ import Foundation
         case idValue = "PlaylistID"
         case date = "PlaylistDate"
     }
+
+    func toJSONObject() -> Any {
+        return ""
+    }
 }

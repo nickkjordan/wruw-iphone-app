@@ -64,10 +64,11 @@
     self.tableView.dataSource = self;
     programs = [[NSMutableDictionary alloc] init];
     
-    self.extendedLayoutIncludesOpaqueBars = YES;
-    self.automaticallyAdjustsScrollViewInsets = YES;
     self.navigationController.navigationBar.translucent = NO;
     self.searchController.automaticallyAdjustsScrollViewInsets = NO;
+
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, tabBarHeight, 0);
 }
 
 #pragma mark - Helper methods
@@ -84,10 +85,6 @@
             });
         }
     }];
-    
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error: %@", error);
-//    }];
 }
 
 - (void)resetObjects {
@@ -130,10 +127,10 @@
     [_objects removeAllObjects];
 
     if (searchText.length > 0) {
-        NSArray *keys = @[@"title", @"hosts", @"genre"];
+        NSArray *keys = @[@"title", @"hostsDisplay", @"genre"];
         
         for (NSString *key in keys) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[c] %@", key, searchText];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", key, searchText];
             
             NSArray *matches = [_originalObjects filteredArrayUsingPredicate:predicate];
             [_objects addObjectsFromArray:matches];

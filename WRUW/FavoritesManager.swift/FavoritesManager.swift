@@ -10,6 +10,8 @@ import Foundation
         case Shows = "favoriteShows"
     }
 
+    // Can't use generics b/c of objc compatibility
+
     @objc func saveFavorite(show: Show) -> Bool {
         return saveFavorite(item: show, key: .Shows)
     }

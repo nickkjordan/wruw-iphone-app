@@ -28,14 +28,16 @@ class PlaylistTableView: UITableView {
 
     // Setup with show name and playlist date, then request playlist
     @objc func load(show: String, date: String) {
+        setupTableView()
+
         self.show = show
         self.date = date
 
         load { [unowned self] songs in
-            self.archive = songs
+            self.arrayDataSource.items = NSMutableArray(array: songs)
 
             DispatchQueue.main.async {
-                self.setupTableView()
+                self.reloadData()
             }
 
             self.getReleaseInfo()
@@ -45,17 +47,22 @@ class PlaylistTableView: UITableView {
     // Request any new songs in current playlist
     @objc func updateCurrentPlaylist() {
         load { songs in
-            var newSongs = songs.filter { !self.archive.contains($0) }
+            var newSongs =
+                songs.filter { !self.arrayDataSource.items.contains($0) }
 
             if newSongs.isEmpty { return }
 
-            let index = self.reversed ? 0 : self.archive.endIndex
+            let index = self.reversed ? 0 : self.arrayDataSource.items.count - 1
             if self.reversed {
                 newSongs.reverse()
             }
 
-            self.archive.insert(contentsOf: newSongs, at: index)
-            self.reloadData()
+            let indexSet = IndexSet(integer: index)
+            self.arrayDataSource.items.insert(newSongs, at: indexSet)
+
+            DispatchQueue.main.async {
+                self.reloadData()
+            }
 
             self.getReleaseInfo()
         }
@@ -98,8 +105,8 @@ fileprivate extension PlaylistTableView {
     // If release has no cover art, request is attempted with the next release
     // in order
     func getReleaseInfo() {
-        for (i, song) in archive.enumerated() {
-            guard song.noImage else {
+        for (i, song) in self.arrayDataSource.items.enumerated() {
+            guard let song = song as? Song, song.noImage else {
                 return
             }
 
@@ -189,12 +196,10 @@ fileprivate extension PlaylistTableView {
             cell.configure(for: song)
         }
 
-        let archive = NSMutableArray(array: self.archive)
-
         let cellIdentifier = "SongTableViewCell"
 
         arrayDataSource = ArrayDataSource(
-            items: archive,
+            items: [],
             cellIdentifier: cellIdentifier,
             configureCellBlock: closure
         )
@@ -204,8 +209,6 @@ fileprivate extension PlaylistTableView {
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
 
         register(nib, forCellReuseIdentifier: cellIdentifier)
-
-        reloadData()
     }
 }
 

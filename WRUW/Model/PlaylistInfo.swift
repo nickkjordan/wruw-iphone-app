@@ -22,4 +22,8 @@ import Foundation
     @objc var dateString: String {
         return PlaylistInfo.dateFormatter.string(from: self.date)
     }
+
+    func toJSONObject() -> Any {
+        return ""
+    }
 }
