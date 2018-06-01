@@ -632,7 +632,7 @@
 				01B02B68206558DF00673F25 /* Time.swift */,
 			);
 			name = Shared;
-			path = FavoritesManager.swift;
+			path = Shared.swift;
 			sourceTree = "<group>";
 		};
 		01F925DC1C8E3DBB00206537 /* StreamPlay */ = {
