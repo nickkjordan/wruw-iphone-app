@@ -5,6 +5,20 @@ import Foundation
         return FavoriteManager()
     }()
 
+    fileprivate var userDefaults: UserDefaultsProtocol
+
+    override init() {
+        userDefaults = UserDefaults.standard
+
+        super.init()
+    }
+
+    convenience init(userDefaults: UserDefaultsProtocol) {
+        self.init()
+
+        self.userDefaults = userDefaults
+    }
+
     enum FavoriteKey: String {
         case Songs = "favoriteSongs"
         case Shows = "favoriteShows"
@@ -34,7 +48,7 @@ import Foundation
 
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(favoritesArray) {
-            UserDefaults.standard.set(encoded, forKey: key.rawValue)
+            userDefaults.set(encoded, forKey: key.rawValue)
             return added
         }
 
@@ -52,7 +66,7 @@ import Foundation
     func loadFavorites<T: Codable>(with key: FavoriteKey) -> [T] {
         let decoder = JSONDecoder()
 
-        if let data = UserDefaults.standard.data(forKey: key.rawValue),
+        if let data = userDefaults.value(forKey: key.rawValue) as? Data,
             let values = try? decoder.decode([T].self, from: data) {
             return values
         }

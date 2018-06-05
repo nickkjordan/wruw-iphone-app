@@ -55,6 +55,8 @@
 		014D505920509213003D42C0 /* Archive.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505820509213003D42C0 /* Archive.json */; };
 		014D505B2050926B003D42C0 /* Show.json in Resources */ = {isa = PBXBuildFile; fileRef = 014D505A2050926B003D42C0 /* Show.json */; };
 		014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D505C20509529003D42C0 /* TestingHelpers.swift */; };
+		0153003D20C6181D00DB3ADB /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153003C20C6181D00DB3ADB /* UserDefaultsProtocol.swift */; };
+		0153003F20C6192A00DB3ADB /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153003E20C6192A00DB3ADB /* MockUserDefaults.swift */; };
 		0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F6189C827100331DD9 /* HomeViewController.m */; };
 		0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153B8F9189CA50100331DD9 /* ShowCell.m */; };
 		015A16371A9295FB000FC518 /* EmptyFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015A16361A9295FB000FC518 /* EmptyFavoritesView.xib */; };
@@ -190,6 +192,8 @@
 		014D505820509213003D42C0 /* Archive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Archive.json; path = "Supporting Files/StubbedResponses/Archive.json"; sourceTree = "<group>"; };
 		014D505A2050926B003D42C0 /* Show.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Show.json; path = "Supporting Files/StubbedResponses/Show.json"; sourceTree = "<group>"; };
 		014D505C20509529003D42C0 /* TestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestingHelpers.swift; path = "Supporting Files/TestingHelpers.swift"; sourceTree = "<group>"; };
+		0153003C20C6181D00DB3ADB /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		0153003E20C6192A00DB3ADB /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		0153B8F5189C827100331DD9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		0153B8F6189C827100331DD9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		0153B8F8189CA50100331DD9 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCell.h; sourceTree = "<group>"; };
@@ -482,6 +486,7 @@
 		0170906F17DBA8F80005EC0F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0153003E20C6192A00DB3ADB /* MockUserDefaults.swift */,
 				014D50552050902F003D42C0 /* StubbedResponses */,
 				0170907017DBA8F80005EC0F /* WRUW-FMTests-Info.plist */,
 				0170907117DBA8F80005EC0F /* InfoPlist.strings */,
@@ -630,6 +635,7 @@
 				01D3A47D209913F40017DF17 /* ImageWrapper.swift */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01B02B68206558DF00673F25 /* Time.swift */,
+				0153003C20C6181D00DB3ADB /* UserDefaultsProtocol.swift */,
 			);
 			name = Shared;
 			path = Shared.swift;
@@ -983,6 +989,7 @@
 				0153B8FA189CA50100331DD9 /* ShowCell.m in Sources */,
 				016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */,
 				01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */,
+				0153003D20C6181D00DB3ADB /* UserDefaultsProtocol.swift in Sources */,
 				0170904A17DBA8F80005EC0F /* AppDelegate.m in Sources */,
 				01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */,
 				01042C071AC06A42003112F3 /* AnimatedButton.swift in Sources */,
@@ -999,6 +1006,7 @@
 				019285442059751000A54822 /* PlaylistServicesTests.swift in Sources */,
 				014D505D20509529003D42C0 /* TestingHelpers.swift in Sources */,
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
+				0153003F20C6192A00DB3ADB /* MockUserDefaults.swift in Sources */,
 				01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */,
 				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
 				0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */,

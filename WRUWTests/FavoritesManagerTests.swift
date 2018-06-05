@@ -4,7 +4,7 @@ import XCTest
 class FavoriteManagerTests: XCTestCase {
     var song: Song!
     var jsonDict: JSONDict!
-    let favoritesManager = FavoriteManager.instance
+    let favoritesManager = FavoriteManager(userDefaults: MockUserDefaults())
 
     func clear() {
         if let bundleID = Bundle.main.bundleIdentifier {
