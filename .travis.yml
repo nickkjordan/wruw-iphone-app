@@ -5,11 +5,7 @@ xcode_project: WRUW-FM.xcworkspace # path to your xcodeproj folder
 xcode_scheme: WRUW-FMTests
 osx_image: xcode9.3
 script:
-    - xcodebuild \
-      -workspace WRUW-FM.xcworkspace \ 
-      -scheme WRUW-FMTests \ 
-      -destination 'platform=iOS Simulator,name=iPhone X' \
-      test
+    - xcodebuild -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests -destination 'platform=iOS Simulator,name=iPhone X' test -quiet
 
 before_install:
   - npm install ios-sim -g
@@ -17,5 +13,7 @@ before_install:
   - ios-sim start --devicetypeid "com.apple.CoreSimulator.SimDeviceType.iPhone-X, 11.3"
 
 install:
+ - rm ~/.cocoapods/keys/*
  - gem install cocoapods-keys
  - pod keys set "MixpanelToken" "-"
+ - pod install --repo-update --silent
