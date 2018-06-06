@@ -11,8 +11,8 @@ before_install:
   - npm install ios-sim -g
   # Pre-start iPhone 7 + iOS 10.2 simulator
   - ios-sim start --devicetypeid "com.apple.CoreSimulator.SimDeviceType.iPhone-X, 11.3"
-  - pod install
 
 install:
  - gem install cocoapods-keys
  - pod keys set "MixpanelToken" "-"
+ - pod install
