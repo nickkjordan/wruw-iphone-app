@@ -22,6 +22,7 @@ pod 'Alamofire', '~> 4.7.2'
 
 plugin 'cocoapods-keys', {
     :project => "WRUW",
+    :target => "WRUW",
     :keys => [
     "MixpanelToken"
     ]}

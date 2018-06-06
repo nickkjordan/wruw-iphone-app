@@ -4,16 +4,14 @@ import XCTest
 class FavoriteManagerTests: XCTestCase {
     var song: Song!
     var jsonDict: JSONDict!
-    let favoritesManager = FavoriteManager.instance
-
-    func clear() {
-        if let bundleID = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundleID)
-        }
-    }
+    var userDefaults: MockUserDefaults!
+    var favoritesManager: FavoriteManager!
 
     override func setUp() {
         super.setUp()
+
+        userDefaults = MockUserDefaults()
+        favoritesManager = FavoriteManager(userDefaults: userDefaults)
 
         jsonDict = [
             Song.CodingKeys.songName.rawValue: "Atrocity Exhibition",
@@ -23,8 +21,6 @@ class FavoriteManagerTests: XCTestCase {
         ]
         let data = try! JSONEncoder().encode(jsonDict as! [String: String])
         song = try! JSONDecoder().decode(Song.self, from: data)
-
-        clear()
     }
 
     func testMockCreation() {
