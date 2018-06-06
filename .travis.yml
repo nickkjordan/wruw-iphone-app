@@ -13,6 +13,7 @@ before_install:
   - ios-sim start --devicetypeid "com.apple.CoreSimulator.SimDeviceType.iPhone-X, 11.3"
 
 install:
+ - rm ~/.cocoapods/keys/*
  - gem install cocoapods-keys
  - pod keys set "MixpanelToken" "-"
  - pod install --repo-update --silent
