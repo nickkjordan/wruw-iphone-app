@@ -14,6 +14,5 @@ before_install:
 
 install:
  - gem install cocoapods-keys
- - pod keys rm --all
  - pod keys set "MixpanelToken" "-"
  - pod install --repo-update --silent
