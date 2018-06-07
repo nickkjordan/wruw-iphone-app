@@ -84,6 +84,8 @@
 		0192BF80206A98CD00462061 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192BF7F206A98CD00462061 /* Playlist.swift */; };
 		0192E761206C522E00231091 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E760206C522E00231091 /* Song.swift */; };
 		0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192E762206C757F00231091 /* PlaylistTableViewTests.swift */; };
+		0197579320C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197579220C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift */; };
+		0197579520C9E094008B9E81 /* AuthorizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197579420C9E094008B9E81 /* AuthorizationServices.swift */; };
 		01997EC51C8CE2390007C38D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC41C8CE2390007C38D /* CircleView.swift */; };
 		01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */; };
 		019D9FD320438D1900C05026 /* ShowServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D9FD220438D1900C05026 /* ShowServices.swift */; };
@@ -230,6 +232,8 @@
 		0192BF7F206A98CD00462061 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		0192E760206C522E00231091 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		0192E762206C757F00231091 /* PlaylistTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewTests.swift; sourceTree = "<group>"; };
+		0197579220C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthorizationRouter.swift; sourceTree = "<group>"; };
+		0197579420C9E094008B9E81 /* AuthorizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationServices.swift; sourceTree = "<group>"; };
 		01997EC41C8CE2390007C38D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		01997EC61C8D2F480007C38D /* Dictionary+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+extensions.swift"; sourceTree = "<group>"; };
 		019D9FD220438D1900C05026 /* ShowServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowServices.swift; sourceTree = "<group>"; };
@@ -552,6 +556,15 @@
 			path = ArchiveTable;
 			sourceTree = "<group>";
 		};
+		0197579120C9DB6B008B9E81 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				0197579420C9E094008B9E81 /* AuthorizationServices.swift */,
+				0197579220C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
 		01A721D118AC6808001FA64F /* Favorites Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +598,7 @@
 				01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */,
 				01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */,
 				014C4327204DD83200B09F6F /* MusicBrainz */,
+				0197579120C9DB6B008B9E81 /* Spotify */,
 				014C4328204DD83F00B09F6F /* WRUW */,
 			);
 			path = Webservice;
@@ -686,7 +700,6 @@
 				0170903317DBA8F80005EC0F /* Frameworks */,
 				0170903417DBA8F80005EC0F /* Resources */,
 				64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */,
-				F6DA7FC1D474CEB4FD22BFE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -705,8 +718,6 @@
 				0170906217DBA8F80005EC0F /* Sources */,
 				0170906317DBA8F80005EC0F /* Frameworks */,
 				0170906417DBA8F80005EC0F /* Resources */,
-				402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */,
-				074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -819,21 +830,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		074C587A9C3CF47DBF6861CA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		086B96F88EAB6A3FAF574774 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -850,21 +846,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		402E67AA60746ED06318E852 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FMTests/Pods-WRUW-FMTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		64A2E6920985FC2C834D9CD7 /* [CP] Embed Pods Frameworks */ = {
@@ -925,21 +906,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6DA7FC1D474CEB4FD22BFE2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WRUW-FM/Pods-WRUW-FM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -971,11 +937,13 @@
 				011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */,
 				01B02B69206558DF00673F25 /* Time.swift in Sources */,
 				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
+				0197579520C9E094008B9E81 /* AuthorizationServices.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
 				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
 				01AFA8E12097A46400FCF468 /* FavoritesManager.swift in Sources */,
 				0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */,
 				0192BF80206A98CD00462061 /* Playlist.swift in Sources */,
+				0197579320C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift in Sources */,
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,

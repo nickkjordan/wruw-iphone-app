@@ -7,12 +7,12 @@ PODS:
   - ARAnalytics/Mixpanel (5.0.1):
     - ARAnalytics/CoreIOS
     - Mixpanel
-  - Keys (1.0.0)
+  - Keys (1.0.1)
   - MarqueeLabel (3.1.4):
     - MarqueeLabel/ObjC (= 3.1.4)
   - MarqueeLabel/ObjC (3.1.4)
   - Mixpanel (3.3.0)
-  - NSObject+Rx (4.3.0):
+  - "NSObject+Rx (4.3.0)":
     - RxSwift (~> 4.0)
   - ReactiveObjC (2.1.2)
   - RSSwizzle (0.1.0)
@@ -28,11 +28,25 @@ DEPENDENCIES:
   - ARAnalytics/Mixpanel (~> 5.0.1)
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
-  - NSObject+Rx (~> 4.3.0)
+  - "NSObject+Rx (~> 4.3.0)"
   - RxCocoa (~> 4.1.2)
   - RxSwift (~> 4.1.2)
   - SimulatorStatusMagic
   - SnapKit (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ARAnalytics
+    - MarqueeLabel
+    - Mixpanel
+    - "NSObject+Rx"
+    - ReactiveObjC
+    - RSSwizzle
+    - RxCocoa
+    - RxSwift
+    - SimulatorStatusMagic
+    - SnapKit
 
 EXTERNAL SOURCES:
   Keys:
@@ -41,10 +55,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   ARAnalytics: 896e530551168721fbb8852e044b8afb9baffdde
-  Keys: af65e23feef2a047b3277b1ef0399f1209ef9d46
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   Mixpanel: 87170a967bb815b48c70a24f3e62de4ebca03454
-  NSObject+Rx: 9a5eeff5e08156f849fa973514456f28eef08742
+  "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
@@ -52,6 +66,6 @@ SPEC CHECKSUMS:
   SimulatorStatusMagic: 481558caf2b9ccb2ceba2cc193728d4db3dcac07
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: a08cae05062d61c071b4702be94b74ba5f61793c
+PODFILE CHECKSUM: 7606416d7f302fc2d60a73fb624b71ffe34f1f70
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
