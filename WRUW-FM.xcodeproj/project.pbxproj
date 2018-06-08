@@ -63,6 +63,7 @@
 		015A16391A929724000FC518 /* heart_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 015A16381A929724000FC518 /* heart_64.png */; };
 		015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */; };
 		015CB28F1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */; };
+		0165AE6E20CB2A020097876C /* SpotifyToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0165AE6D20CB2A020097876C /* SpotifyToken.swift */; };
 		016A21CC2047382300474490 /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A21CB2047382300474490 /* PlaylistInfo.swift */; };
 		016C99121A93F522008634DA /* EmptyFavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016C99111A93F522008634DA /* EmptyFavoritesView.m */; };
 		0170903A17DBA8F80005EC0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0170903917DBA8F80005EC0F /* UIKit.framework */; };
@@ -205,6 +206,7 @@
 		015B6380183B274F00942BE5 /* PlaylistsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistsTableViewController.h; sourceTree = "<group>"; };
 		015B6381183B274F00942BE5 /* PlaylistsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistsTableViewController.m; sourceTree = "<group>"; };
 		015CB28E1AC4CF8000BD5F86 /* WruwStorehouseIconList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WruwStorehouseIconList.plist; sourceTree = "<group>"; };
+		0165AE6D20CB2A020097876C /* SpotifyToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyToken.swift; sourceTree = "<group>"; };
 		016A21CB2047382300474490 /* PlaylistInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
 		016C99101A93F522008634DA /* EmptyFavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyFavoritesView.h; sourceTree = "<group>"; };
 		016C99111A93F522008634DA /* EmptyFavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyFavoritesView.m; sourceTree = "<group>"; };
@@ -672,6 +674,7 @@
 				01ED058E2049CBDA006F8012 /* Release.swift */,
 				0192E760206C522E00231091 /* Song.swift */,
 				012AF1A62093625F00AC5869 /* Show.swift */,
+				0165AE6D20CB2A020097876C /* SpotifyToken.swift */,
 			);
 			name = Models;
 			path = Model;
@@ -929,6 +932,7 @@
 				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,
 				010CF7A81898B8AC00875209 /* ArrayDataSource.m in Sources */,
+				0165AE6E20CB2A020097876C /* SpotifyToken.swift in Sources */,
 				0153B8F7189C827100331DD9 /* HomeViewController.m in Sources */,
 				01D3A4802099146B0017DF17 /* UIImage+extensions.swift in Sources */,
 				015B6382183B274F00942BE5 /* PlaylistsTableViewController.m in Sources */,

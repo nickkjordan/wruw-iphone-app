@@ -26,8 +26,7 @@ extension SpotifyAuthorizationRouter: URLRequestConvertible {
         }
 
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpBody =
-            Data(base64Encoded: "grant_type: client_credentials")
+        urlRequest.httpMethod = method.rawValue
         urlRequest.addValue(
             "application/x-www-form-urlencoded",
             forHTTPHeaderField: "Content-Type"
@@ -36,6 +35,10 @@ extension SpotifyAuthorizationRouter: URLRequestConvertible {
             "Basic \(WRUWKeys().spotifyToken)",
             forHTTPHeaderField: "Authorization"
         )
+
+        let body = "grant_type=client_credentials"
+        urlRequest.httpBody =
+            body.data(using: .utf8, allowLossyConversion: true)
 
         return urlRequest
     }

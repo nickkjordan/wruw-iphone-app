@@ -33,6 +33,13 @@ class PlaylistTableView: UITableView {
         self.show = show
         self.date = date
 
+        GetToken().request { response in
+            if let token = response.success as? SpotifyToken {
+                print(token.expiresIn)
+            }
+            print(response.failure)
+        }
+
         load { [unowned self] songs in
             self.arrayDataSource.items = NSMutableArray(array: songs)
 
