@@ -100,6 +100,8 @@
 		01C435051846B7CF0030B01F /* calendar_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C435041846B7CF0030B01F /* calendar_add.png */; };
 		01C435071846BA220030B01F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435061846BA220030B01F /* EventKit.framework */; };
 		01C435091846BBAC0030B01F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C435081846BBAC0030B01F /* EventKitUI.framework */; };
+		01C50B2320CEC387002F000D /* SpotifyApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C50B2220CEC387002F000D /* SpotifyApiRouter.swift */; };
+		01C50B2720CECBF3002F000D /* SpotifyApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C50B2520CECB1A002F000D /* SpotifyApiRouterTests.swift */; };
 		01C5EBBC20489E1900A43212 /* WebserviceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */; };
 		01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */; };
 		01CAFF5E1C8B49FA00AD1E95 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */; };
@@ -251,6 +253,8 @@
 		01C435041846B7CF0030B01F /* calendar_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_add.png; sourceTree = "<group>"; };
 		01C435061846BA220030B01F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		01C435081846BBAC0030B01F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		01C50B2220CEC387002F000D /* SpotifyApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyApiRouter.swift; sourceTree = "<group>"; };
+		01C50B2520CECB1A002F000D /* SpotifyApiRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyApiRouterTests.swift; sourceTree = "<group>"; };
 		01C5EBBB20489E1900A43212 /* WebserviceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelpers.swift; sourceTree = "<group>"; };
 		01C5EBBD2048AF8A00A43212 /* BaseWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebservice.swift; sourceTree = "<group>"; };
 		01CAFF5D1C8B49FA00AD1E95 /* UIView+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
@@ -503,6 +507,7 @@
 		0192854520597ED400A54822 /* Networking Tests */ = {
 			isa = PBXGroup;
 			children = (
+				01C50B2420CECADA002F000D /* SpotifyTests */,
 				014D505C20509529003D42C0 /* TestingHelpers.swift */,
 				0177151A2054648C00EB7773 /* WebserviceHelpersTests.swift */,
 				0192854620597EF200A54822 /* Router Tests */,
@@ -563,6 +568,7 @@
 			children = (
 				0197579420C9E094008B9E81 /* AuthorizationServices.swift */,
 				0197579220C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift */,
+				01C50B2220CEC387002F000D /* SpotifyApiRouter.swift */,
 			);
 			path = Spotify;
 			sourceTree = "<group>";
@@ -604,6 +610,14 @@
 				014C4328204DD83F00B09F6F /* WRUW */,
 			);
 			path = Webservice;
+			sourceTree = "<group>";
+		};
+		01C50B2420CECADA002F000D /* SpotifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				01C50B2520CECB1A002F000D /* SpotifyApiRouterTests.swift */,
+			);
+			path = SpotifyTests;
 			sourceTree = "<group>";
 		};
 		01CAC82917DFACE400057340 /* images */ = {
@@ -948,6 +962,7 @@
 				0192BF7E206A950100462061 /* ArchiveViewController.swift in Sources */,
 				0192BF80206A98CD00462061 /* Playlist.swift in Sources */,
 				0197579320C9DB93008B9E81 /* SpotifyAuthorizationRouter.swift in Sources */,
+				01C50B2320CEC387002F000D /* SpotifyApiRouter.swift in Sources */,
 				01997EC71C8D2F480007C38D /* Dictionary+extensions.swift in Sources */,
 				0170904617DBA8F80005EC0F /* main.m in Sources */,
 				01A254AA185990000069AB3F /* SegmentedViewController.m in Sources */,
@@ -983,6 +998,7 @@
 				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
 				0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */,
 				0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */,
+				01C50B2720CECBF3002F000D /* SpotifyApiRouterTests.swift in Sources */,
 				0177151D2054648C00EB7773 /* MusicBrainzApiRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
