@@ -1,8 +1,11 @@
 import Foundation
+import Alamofire
 
-struct SpotifyToken: Codable {
+struct SpotifyTokenAdapter: Codable {
     let accessToken: String
     var expiresIn: Date
+
+    private let lock = NSLock()
 
     init(decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -26,5 +29,22 @@ struct SpotifyToken: Codable {
 
     var isValid: Bool {
         return expiresIn > Date()
+    }
+}
+
+extension SpotifyTokenAdapter: RequestAdapter {
+    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+        var urlRequest = urlRequest
+
+        guard isValid else {
+            throw SpotifyApiError.expiredToken
+        }
+
+        urlRequest.setValue(
+            "Bearer \(accessToken)",
+            forHTTPHeaderField: "Authorization"
+        )
+
+        return urlRequest
     }
 }

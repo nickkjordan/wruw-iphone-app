@@ -3,21 +3,21 @@ import XCTest
 
 class SpotifyApiRouterTests: XCTestCase {
     var router: SpotifyApiRouter!
-    var validToken: SpotifyToken!
-    var invalidToken: SpotifyToken!
+    var validToken: SpotifyTokenAdapter!
+    var invalidToken: SpotifyTokenAdapter!
 
     override func setUp() {
         super.setUp()
 
-        validToken = SpotifyToken(accessToken: "token", expiresIn: 3600)
-        invalidToken = SpotifyToken(accessToken: "invalid", expiresIn: 0)
+        validToken = SpotifyTokenAdapter(accessToken: "token", expiresIn: 3600)
+        invalidToken = SpotifyTokenAdapter(accessToken: "invalid", expiresIn: 0)
     }
 
     func testValidToken() {
         router = SpotifyApiRouter(path: "", parameters: nil)
-        router.token = validToken
+        SpotifyApiRouter.token = validToken
 
-        XCTAssertTrue(router.token!.isValid)
+        XCTAssertTrue(SpotifyApiRouter.token!.isValid)
 
         do {
             _ = try router.asURLRequest()
@@ -28,9 +28,9 @@ class SpotifyApiRouterTests: XCTestCase {
 
     func testInvalidToken() {
         router = SpotifyApiRouter(path: "", parameters: nil)
-        router.token = invalidToken
+        SpotifyApiRouter.token = invalidToken
 
-        XCTAssertFalse(router.token!.isValid)
+        XCTAssertFalse(SpotifyApiRouter.token!.isValid)
 
         do {
             _ = try router.asURLRequest()
@@ -43,7 +43,7 @@ class SpotifyApiRouterTests: XCTestCase {
 
     func testPathSetup() {
         router = SpotifyApiRouter(path: "search", parameters: nil)
-        router.token = validToken
+        SpotifyApiRouter.token = validToken
 
         let request = try! router.asURLRequest()
         XCTAssertEqual(request.url!.lastPathComponent, "search")

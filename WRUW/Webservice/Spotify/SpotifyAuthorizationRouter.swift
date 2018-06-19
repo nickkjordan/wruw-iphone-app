@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import Keys
 
-@objc class SpotifyAuthorizationRouter: NSObject, APIRouter {
+class SpotifyAuthorizationRouter: APIRouter {
     let baseUrlString: String = "https://accounts.spotify.com/api/"
 
     var method: HTTPMethod = .post

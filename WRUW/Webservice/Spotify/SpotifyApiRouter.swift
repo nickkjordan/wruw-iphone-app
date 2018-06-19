@@ -14,7 +14,7 @@ import Alamofire
         self.parameters = parameters
     }
 
-    var token: SpotifyToken?
+    static var token: SpotifyTokenAdapter?
 }
 
 enum SpotifyApiError: Error {
@@ -30,17 +30,8 @@ extension SpotifyApiRouter: URLRequestConvertible {
             throw ApiError.invalidBaseUrl(string: uri)
         }
 
-        guard let token = token, token.isValid else {
-            throw SpotifyApiError.expiredToken
-        }
-
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-
-        urlRequest.addValue(
-            "Bearer \(token.accessToken)",
-            forHTTPHeaderField: "Authorization"
-        )
 
         let parameters = self.parameters as? [String: Any]
 

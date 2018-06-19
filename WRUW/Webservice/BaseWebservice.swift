@@ -39,7 +39,7 @@ protocol APIClient {
 }
 
 class WruwApiClient: NSObject, APIClient {
-    internal var manager: NetworkManager
+    internal var manager: NetworkManager = SessionManager.default
 
     var router: NSUrlRequestConvertible {
         fatalError()
@@ -49,13 +49,6 @@ class WruwApiClient: NSObject, APIClient {
         self.init()
 
         self.manager = manager
-    }
-
-    // Need separate init, can't have default params used in objc
-    override init() {
-        manager = SessionManager.default
-
-        super.init()
     }
 
     func decode(from data: Data) throws -> Any {
