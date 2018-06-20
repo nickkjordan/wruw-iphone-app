@@ -5,7 +5,7 @@ class SpotifyOAuth2Handler: RequestRetrier {
     private let lock = NSLock()
 
     private var isRefreshing = false
-    private var requestsToRetry: [RequestRetryCompletion] = []
+    fileprivate(set) var requestsToRetry: [RequestRetryCompletion] = []
 
     func should(
         _ manager: SessionManager,
@@ -22,14 +22,16 @@ class SpotifyOAuth2Handler: RequestRetrier {
 
         if let error = error as? SpotifyApiError, error == .expiredToken {
             retry()
+            return
         }
 
         if let response = request.task?.response as? HTTPURLResponse,
             response.statusCode == 401 {
             retry()
-            completion(false, 0.0)
             return
         }
+
+        completion(false, 0.0)
     }
 
     func retry(manager: SessionManager) {

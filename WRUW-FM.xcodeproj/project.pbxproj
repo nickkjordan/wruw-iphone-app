@@ -116,6 +116,7 @@
 		01D3A47E209913F40017DF17 /* ImageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3A47D209913F40017DF17 /* ImageWrapper.swift */; };
 		01D3A4802099146B0017DF17 /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D3A47F2099146B0017DF17 /* UIImage+extensions.swift */; };
 		01DFBE9F20D96D8100E7279D /* SpotifyTokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFBE9E20D96D8100E7279D /* SpotifyTokenAdapterTests.swift */; };
+		01DFBEA120D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFBEA020D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift */; };
 		01ED058B2049C6AB006F8012 /* MusicBrainzAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */; };
 		01ED058D2049C8FA006F8012 /* ReleasesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058C2049C8FA006F8012 /* ReleasesServices.swift */; };
 		01ED058F2049CBDA006F8012 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ED058E2049CBDA006F8012 /* Release.swift */; };
@@ -274,6 +275,7 @@
 		01D3A47D209913F40017DF17 /* ImageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapper.swift; sourceTree = "<group>"; };
 		01D3A47F2099146B0017DF17 /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
 		01DFBE9E20D96D8100E7279D /* SpotifyTokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyTokenAdapterTests.swift; sourceTree = "<group>"; };
+		01DFBEA020D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyOAuth2HandlerTests.swift; sourceTree = "<group>"; };
 		01ED058A2049C6AB006F8012 /* MusicBrainzAPIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPIRouter.swift; sourceTree = "<group>"; };
 		01ED058C2049C8FA006F8012 /* ReleasesServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleasesServices.swift; sourceTree = "<group>"; };
 		01ED058E2049CBDA006F8012 /* Release.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Release.swift; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				01C50B2520CECB1A002F000D /* SpotifyApiRouterTests.swift */,
 				0163333F20D328270044CCE4 /* SpotifySearchServiceTests.swift */,
 				01DFBE9E20D96D8100E7279D /* SpotifyTokenAdapterTests.swift */,
+				01DFBEA020D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift */,
 			);
 			path = SpotifyTests;
 			sourceTree = "<group>";
@@ -1010,6 +1013,7 @@
 				0177151C2054648C00EB7773 /* WebserviceHelpersTests.swift in Sources */,
 				0153003F20C6192A00DB3ADB /* MockUserDefaults.swift in Sources */,
 				01B02B6B20655C5F00673F25 /* TimeTests.swift in Sources */,
+				01DFBEA120D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift in Sources */,
 				0177151F2054660500EB7773 /* WruwApiRouterTests.swift in Sources */,
 				0192E763206C757F00231091 /* PlaylistTableViewTests.swift in Sources */,
 				0109957D205726D300BD8BDE /* ShowServicesTests.swift in Sources */,

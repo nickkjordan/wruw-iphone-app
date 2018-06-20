@@ -6,8 +6,6 @@ import Alamofire
 class SpotifyTokenAdapterTests: XCTestCase {
     var adapter: SpotifyTokenAdapter!
     var urlRequest: URLRequest!
-    var manager: SessionManager!
-    var request: DataRequest!
 
     var response: DataResponse<Any>!
 
