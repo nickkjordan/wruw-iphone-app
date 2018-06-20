@@ -27,6 +27,10 @@ import Alamofire
     }
 
     override func decode(from data: Data) throws -> Any {
-        return try decoder.decode(String.self, from: data)
+        return try decoder.decode(
+            type: [SpotifyAlbum].self,
+            multiple: ["albums", "items"],
+            from: data
+        )
     }
 }
