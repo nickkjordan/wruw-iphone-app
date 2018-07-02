@@ -26,7 +26,8 @@ class SpotifyOAuth2Handler: RequestRetrier {
         }
 
         if let response = request.task?.response as? HTTPURLResponse,
-            response.statusCode == 401 {
+            response.statusCode == 401,
+            request.retryCount == 0 {
             retry()
             return
         }
@@ -35,23 +36,32 @@ class SpotifyOAuth2Handler: RequestRetrier {
     }
 
     func retry(manager: SessionManager) {
+        guard !isRefreshing else { return }
+
+        isRefreshing = true
+
         GetToken(manager: manager).request { [weak self] result in
             guard let strongSelf = self else {
                 return
             }
 
-            strongSelf.lock.lock(); defer { strongSelf.lock.unlock() }
-
-            guard let token = result.success as? SpotifyTokenAdapter else {
+           guard let token = result.success as? SpotifyTokenAdapter else {
+                print("token failed")
                 strongSelf.requestsToRetry.forEach { $0(false, 0.0) }
                 strongSelf.requestsToRetry.removeAll()
 
                 return
             }
 
+            print("returned valid token: \(token.accessToken)")
+
             SpotifyApiRouter.token = token
+            manager.adapter = token
+            SearchSpotify.spotifyManager.adapter = token
             strongSelf.requestsToRetry.forEach { $0(true, 0.0) }
             strongSelf.requestsToRetry.removeAll()
+
+            strongSelf.isRefreshing = false
         }
     }
 }

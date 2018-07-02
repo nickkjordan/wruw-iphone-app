@@ -28,7 +28,7 @@ protocol NetworkManager {
 
 extension SessionManager: NetworkManager {
     func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest {
-        return request(URLRequest) as NetworkRequest
+        return request(URLRequest).validate() as NetworkRequest
     }
 }
 

@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 @objc class SearchSpotify: WruwApiClient {
-    lazy var spotifyManager: SessionManager = {
+    static let spotifyManager: SessionManager = {
         let manager = SessionManager()
         manager.adapter = SpotifyApiRouter.token
         manager.retrier = SpotifyOAuth2Handler()
@@ -15,7 +15,11 @@ import Alamofire
 
     var parameters: NSDictionary
 
-    init(manager: NetworkManager, query: String, type: String = "album") {
+    init(
+        manager: NetworkManager = SearchSpotify.spotifyManager,
+        query: String,
+        type: String = "album"
+    ) {
         self.parameters = [
             "query": query,
             "type": type

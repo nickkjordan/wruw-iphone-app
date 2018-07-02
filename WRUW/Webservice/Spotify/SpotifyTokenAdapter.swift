@@ -3,7 +3,7 @@ import Alamofire
 
 struct SpotifyTokenAdapter: Codable {
     let accessToken: String
-    var expiresIn: Date
+    let expiresIn: Date
 
     private let lock = NSLock()
 
@@ -14,7 +14,8 @@ struct SpotifyTokenAdapter: Codable {
             try container.decode(String.self, forKey: .accessToken)
 
         let expiresIn = try container.decode(Int.self, forKey: .expiresIn)
-        self.expiresIn = Date(timeIntervalSinceNow: TimeInterval(expiresIn))
+        print(expiresIn)
+        self.expiresIn = Date()
     }
 
     init(accessToken: String, expiresIn: Int) {
@@ -28,7 +29,8 @@ struct SpotifyTokenAdapter: Codable {
     }
 
     var isValid: Bool {
-        return expiresIn > Date()
+        print("\(expiresIn) vs \(Date())")
+        return true
     }
 }
 
@@ -39,6 +41,8 @@ extension SpotifyTokenAdapter: RequestAdapter {
         guard isValid else {
             throw SpotifyApiError.expiredToken
         }
+
+        print("adapting")
 
         urlRequest.setValue(
             "Bearer \(accessToken)",
