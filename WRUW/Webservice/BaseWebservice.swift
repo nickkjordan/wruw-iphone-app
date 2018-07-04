@@ -1,6 +1,10 @@
 import Foundation
 import Alamofire
 
+@objc protocol NSUrlRequestConvertible {
+    func asURLRequest() throws -> URLRequest
+}
+
 @objc protocol APIRouter: NSUrlRequestConvertible {
     var baseUrlString: String { get }
 
