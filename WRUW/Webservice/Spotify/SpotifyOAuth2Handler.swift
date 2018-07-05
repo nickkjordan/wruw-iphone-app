@@ -45,7 +45,7 @@ class SpotifyOAuth2Handler: RequestRetrier {
                 return
             }
 
-           guard let token = result.success as? SpotifyTokenAdapter else {
+            guard let token = result.success as? SpotifyTokenAdapter else {
                 print("token failed")
                 strongSelf.requestsToRetry.forEach { $0(false, 0.0) }
                 strongSelf.requestsToRetry.removeAll()

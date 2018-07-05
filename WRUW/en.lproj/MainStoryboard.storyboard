@@ -303,20 +303,20 @@
                         <viewControllerLayoutGuide type="bottom" id="hAQ-9O-ocG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AHF-7L-ulT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-LC-ST2">
-                                <rect key="frame" x="0.0" y="20" width="359" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNS-HD-XcD">
-                                        <rect key="frame" x="30" y="76" width="250" height="17"/>
+                                        <rect key="frame" x="30" y="76" width="33" height="17"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="14"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp8-CJ-X57">
-                                        <rect key="frame" x="30" y="93" width="250" height="16.5"/>
+                                        <rect key="frame" x="30" y="93" width="30" height="16.5"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -340,12 +340,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="285" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-1h-vgG">
-                                        <rect key="frame" x="30" y="34.5" width="250" height="33.5"/>
+                                        <rect key="frame" x="30" y="34.5" width="66" height="33.5"/>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="28"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
-                                        <rect key="frame" x="30" y="165.5" width="250" height="292"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
+                                        <rect key="frame" x="29.666666666666515" y="168" width="314" height="356"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -356,21 +356,23 @@
                                 <constraints>
                                     <constraint firstItem="aNS-HD-XcD" firstAttribute="top" secondItem="dyT-1h-vgG" secondAttribute="bottom" constant="8" id="0SN-Zk-9Xt"/>
                                     <constraint firstItem="pp8-CJ-X57" firstAttribute="top" secondItem="aNS-HD-XcD" secondAttribute="bottom" id="0lq-X3-e9v"/>
-                                    <constraint firstAttribute="bottom" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="20" id="CYh-4j-iC1"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="trailing" secondItem="tkI-LC-ST2" secondAttribute="trailing" constant="-31" id="5dO-15-P8U"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="7rf-51-Tc6" secondAttribute="bottom" constant="18" id="9FJ-8e-amG"/>
                                     <constraint firstItem="7rf-51-Tc6" firstAttribute="top" secondItem="pp8-CJ-X57" secondAttribute="bottom" constant="16" id="GEH-qo-Ztm"/>
                                     <constraint firstItem="dyT-1h-vgG" firstAttribute="top" secondItem="jLh-FS-2dc" secondAttribute="bottom" id="GUd-mS-a70"/>
-                                    <constraint firstAttribute="trailing" secondItem="dyT-1h-vgG" secondAttribute="trailing" constant="20" id="KiU-Ma-sLa"/>
-                                    <constraint firstAttribute="trailing" secondItem="jLh-FS-2dc" secondAttribute="trailing" constant="20" id="SJ1-z0-oo7"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyT-1h-vgG" secondAttribute="trailing" id="KiU-Ma-sLa"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="P5c-1r-Tlh"/>
+                                    <constraint firstAttribute="bottom" secondItem="GrK-1E-viR" secondAttribute="bottom" constant="30" id="PFG-gE-LKd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jLh-FS-2dc" secondAttribute="trailing" id="SJ1-z0-oo7"/>
                                     <constraint firstItem="dyT-1h-vgG" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="UDo-VU-jLc"/>
                                     <constraint firstItem="jLh-FS-2dc" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="eUP-7x-TjF"/>
                                     <constraint firstItem="jLh-FS-2dc" firstAttribute="top" secondItem="tkI-LC-ST2" secondAttribute="top" constant="20" id="fyU-HG-efs"/>
-                                    <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="7rf-51-Tc6" secondAttribute="bottom" constant="16" id="gGs-4l-rLP"/>
                                     <constraint firstItem="7rf-51-Tc6" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="45" id="gUX-4f-7hQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="pp8-CJ-X57" secondAttribute="trailing" constant="20" id="htu-75-hUc"/>
-                                    <constraint firstAttribute="trailing" secondItem="GrK-1E-viR" secondAttribute="trailing" constant="20" id="izO-vt-mAy"/>
-                                    <constraint firstItem="GrK-1E-viR" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="mpx-sj-eMD"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="top" secondItem="tkI-LC-ST2" secondAttribute="top" constant="168" id="hTb-Cq-K27"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pp8-CJ-X57" secondAttribute="trailing" id="htu-75-hUc"/>
                                     <constraint firstItem="pp8-CJ-X57" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="obl-SY-hvq"/>
-                                    <constraint firstAttribute="trailing" secondItem="aNS-HD-XcD" secondAttribute="trailing" constant="20" id="rKj-KD-hju"/>
+                                    <constraint firstItem="GrK-1E-viR" firstAttribute="centerX" secondItem="tkI-LC-ST2" secondAttribute="centerX" id="pGV-T0-AJU"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aNS-HD-XcD" secondAttribute="trailing" id="rKj-KD-hju"/>
                                     <constraint firstItem="aNS-HD-XcD" firstAttribute="leading" secondItem="tkI-LC-ST2" secondAttribute="leading" constant="30" id="uQh-01-nIB"/>
                                 </constraints>
                             </scrollView>
@@ -378,10 +380,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tkI-LC-ST2" firstAttribute="top" secondItem="fgf-lT-AfK" secondAttribute="bottom" id="8fj-1b-LzD"/>
-                            <constraint firstItem="tkI-LC-ST2" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leadingMargin" constant="-16" id="PRc-h8-x7b"/>
+                            <constraint firstItem="tkI-LC-ST2" firstAttribute="leading" secondItem="AHF-7L-ulT" secondAttribute="leading" id="PRc-h8-x7b"/>
                             <constraint firstItem="hAQ-9O-ocG" firstAttribute="top" secondItem="tkI-LC-ST2" secondAttribute="bottom" id="e9c-BQ-lGT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tkI-LC-ST2" secondAttribute="trailing" id="lZl-Es-6k4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tkI-LC-ST2" secondAttribute="trailing" id="zy8-Lg-Kdd"/>
+                            <constraint firstAttribute="trailing" secondItem="tkI-LC-ST2" secondAttribute="trailing" id="lZl-Es-6k4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Program Details" id="5ZJ-Za-fLl">
@@ -404,14 +405,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zd2-mc-H9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2665" y="821"/>
+            <point key="canvasLocation" x="2664.5" y="820.5"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="0AV-8r-I6f">
             <objects>
                 <tableViewController title="Playlists" id="yL9-fc-jfL" customClass="PlaylistsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0yJ-sr-RHN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -443,7 +444,7 @@
             <objects>
                 <viewController title="Archive List" id="cLJ-iw-wuT" customClass="ArchiveViewController" customModule="WRUWModule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="s91-as-ncb" customClass="PlaylistTableView" customModule="WRUWModule" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.89076192893963579" green="0.89476942080889343" blue="0.90679189641666658" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -743,7 +744,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
         <image name="mic_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qG6-Qv-KTw"/>
+        <segue reference="FaE-l5-dMP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
