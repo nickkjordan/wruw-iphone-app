@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 
 class PlaylistTableView: UITableView {
     fileprivate var archive: [Song]!,
@@ -40,7 +41,7 @@ class PlaylistTableView: UITableView {
                 self.reloadData()
             }
 
-            self.getReleaseInfo()
+            self.loadSpotifyArt()
         }
     }
 
@@ -64,7 +65,7 @@ class PlaylistTableView: UITableView {
                 self.reloadData()
             }
 
-            self.getReleaseInfo()
+            self.loadSpotifyArt()
         }
     }
 }
@@ -99,77 +100,37 @@ fileprivate extension PlaylistTableView {
 
     // MARK: Release and Cover Art Requests
 
-    // Get a list of possible releases for each playlist song,
-    // then attempt to request cover art
-    //
-    // If release has no cover art, request is attempted with the next release
-    // in order
-    func getReleaseInfo() {
+    func loadSpotifyArt() {
         for (i, song) in self.arrayDataSource.items.enumerated() {
             guard let song = song as? Song, song.noImage else {
                 return
             }
 
-            let releasesService =
-                GetReleases(release: song.album, artist: song.artist)
+            let spotifySearch =
+                SearchSpotify(query: "\(song.album!) \(song.artist!)")
 
-            releasesService.request { [unowned self] result in
-                // Check for correct result
-                guard let releases = result.success as? [Release],
-                    !releases.isEmpty else {
+            spotifySearch.request { [unowned self] result in
+                guard let albums = result.success as? [SpotifyAlbum],
+                    let albumArt = albums.first?.images,
+                    let largestAlbumArt = albumArt.sorted(by: >).first else {
                     return
                 }
 
-                var index = 0
+                SessionManager.default
+                    .request(largestAlbumArt.url, method: .get)
+                    .validate()
+                    .response { [unowned self] response in
+                        guard let value = response.data,
+                            let image = UIImage(data: value) else {
+                            print(response.error)
+                            return
+                        }
 
-                var completion: ((WruwResult) -> Void)!
-
-                completion = { [weak self] (result: WruwResult) in
-                    // Retry with next release in list if no cover art found
-                    guard let image = result.success as? UIImage else {
-                        index += 1
-
-                        self?.loadCoverArt(
-                            for: releases,
-                            index: index,
-                            completion: completion
-                        )
-
-                        return
-                    }
-
-                    print("release number: ", index)
-
-                    // Cover art found, load image at cell
-                    song.image = image
-                    self?.reloadCoverArt(at: i)
+                        song.image = image
+                        self.reloadCoverArt(at: i)
                 }
-
-                self.loadCoverArt(
-                    for: releases,
-                    index: index,
-                    completion: completion
-                )
             }
         }
-    }
-
-    // Setup and request cover art for song
-    func loadCoverArt(
-        for releases: [Release],
-        index: Int,
-        completion: @escaping (WruwResult) -> Void
-    ) {
-        guard releases.count > index else {
-            print(releases.count, " - ", index)
-            return
-        }
-
-        let release = releases[index]
-
-        guard !release.id.isEmpty else { return }
-
-        GetCoverArt(releaseId: release.id).request(completion: completion)
     }
 
     // Reload song cell at row

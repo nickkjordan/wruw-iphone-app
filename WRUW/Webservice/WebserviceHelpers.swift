@@ -28,7 +28,7 @@ protocol NetworkManager {
 
 extension SessionManager: NetworkManager {
     func networkRequest(_ URLRequest: URLRequestConvertible) -> NetworkRequest {
-        return request(URLRequest) as NetworkRequest
+        return request(URLRequest).validate() as NetworkRequest
     }
 }
 
@@ -51,17 +51,50 @@ extension NetworkRequest {
 extension DataRequest: NetworkRequest { }
 
 extension JSONDecoder {
-    func decode<T>(type: T.Type, nested key: String, from data: Data) throws -> T where T: Decodable {
-        // Access JSON object from parent, with potential null values
-        let json = try
-            JSONSerialization.jsonObject(with: data) as? [String: Any?]
+    func decode<T>(
+        type: T.Type,
+        nested key: String,
+        from data: Data
+    ) throws -> T where T: Decodable {
+        return try decode(type: T.self, multiple: [key], from: data)
+    }
 
-        // Access nested JSON object
+    func access(json: [String: Any?]?, at key: String) throws -> Any {
         guard case let nestedItem?? = json?[key] else {
             let codingKey = NestedCodingKeys(stringValue: key)!
 
             throw DecodingError.keyNotFound(codingKey, codingKey.context)
         }
+
+        return nestedItem
+    }
+
+    func decode<T>(
+        type: T.Type,
+        multiple keys: [String],
+        from data: Data
+    ) throws -> T where T: Decodable {
+        var keys = keys
+        let lastKey = keys.removeLast()
+
+        // Access JSON object from parent, with potential null values
+        var json = try
+            JSONSerialization.jsonObject(with: data) as? [String: Any?]
+
+        for key in keys {
+            // Access nested JSON object
+            guard let nestedItem =
+                try? access(json: json, at: key) as? [String: Any?]
+                else {
+                let codingKey = NestedCodingKeys(stringValue: key)!
+
+                throw DecodingError.keyNotFound(codingKey, codingKey.context)
+            }
+
+            json = nestedItem
+        }
+
+        let nestedItem = try access(json: json, at: lastKey)
 
         // Reserialize back to data
         let data = try JSONSerialization.data(withJSONObject: nestedItem)
