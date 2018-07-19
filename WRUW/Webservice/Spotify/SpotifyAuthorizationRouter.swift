@@ -32,7 +32,7 @@ extension SpotifyAuthorizationRouter: URLRequestConvertible {
             forHTTPHeaderField: "Content-Type"
         )
         urlRequest.addValue(
-            "Basic \(WRUWKeys().spotifyToken)",
+            "Basic \(WRUWFMKeys().spotifyToken)",
             forHTTPHeaderField: "Authorization"
         )
 
