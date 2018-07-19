@@ -4,16 +4,11 @@ swift:
 xcode_project: WRUW-FM.xcworkspace # path to your xcodeproj folder
 xcode_scheme: WRUW-FMTests
 osx_image: xcode9.3
+
 script:
-  - xcodebuild -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests build-for-testing -quiet CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-  - xctool -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests run-tests
-  #- xctool -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests run-tests -test-sdk iphonesimulator11.3
-#    - xcodebuild -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests -destination 'platform=iOS Simulator,name=iPhone X' test -quiet
+ - xcodebuild -workspace WRUW-FM.xcworkspace -scheme WRUW-FMTests test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.3' | xcpretty -tc
 
 before_install:
-  # - npm install ios-sim -g
-  # Pre-start iPhone 7 + iOS 10.2 simulator
-  # - ios-sim start --devicetypeid "com.apple.CoreSimulator.SimDeviceType.iPhone-X, 11.3"
   - gem install cocoapods-keys
   - pod keys set "MixpanelToken" "-"
   - pod keys set "SpotifyToken" "-"
