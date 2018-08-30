@@ -4,16 +4,14 @@ import XCTest
 class FavoriteManagerTests: XCTestCase {
     var song: Song!
     var jsonDict: JSONDict!
-    let favoritesManager = FavoriteManager.instance
-
-    func clear() {
-        if let bundleID = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundleID)
-        }
-    }
+    var userDefaults: MockUserDefaults!
+    var favoritesManager: FavoriteManager!
 
     override func setUp() {
         super.setUp()
+
+        userDefaults = MockUserDefaults()
+        favoritesManager = FavoriteManager(userDefaults: userDefaults)
 
         jsonDict = [
             Song.CodingKeys.songName.rawValue: "Atrocity Exhibition",
@@ -21,9 +19,8 @@ class FavoriteManagerTests: XCTestCase {
             Song.CodingKeys.album.rawValue: "Closer",
             Song.CodingKeys.label.rawValue: "London Records"
         ]
-        song = Song(json: jsonDict)
-
-        clear()
+        let data = try! JSONEncoder().encode(jsonDict as! [String: String])
+        song = try! JSONDecoder().decode(Song.self, from: data)
     }
 
     func testMockCreation() {
@@ -34,17 +31,17 @@ class FavoriteManagerTests: XCTestCase {
     }
 
     func testSaveableToUserDefaults() {
-        let result = favoritesManager.saveFavorite(item: song)
+        let result = favoritesManager.saveFavorite(song: song)
 
         XCTAssertTrue(result)
     }
 
     func testRemovableFavorites() {
-        let result = favoritesManager.saveFavorite(item: song)
+        let result = favoritesManager.saveFavorite(song: song)
 
         XCTAssertTrue(result)
 
-        let removed = favoritesManager.saveFavorite(item: song)
+        let removed = favoritesManager.saveFavorite(song: song)
 
         XCTAssertFalse(removed)
     }

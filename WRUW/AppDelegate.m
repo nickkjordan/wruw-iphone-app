@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <ARAnalytics/ARAnalytics.h>
 #import <ARAnalytics/ARDSL.h>
-#import <Keys/WRUWKeys.h>
+#import <Keys/WRUWFMKeys.h>
 #import "WRUWModule-Swift.h"
 #import "SongTableViewCell.h"
 #import "HomeViewController.h"
@@ -76,7 +76,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 }
 
 - (void)setupAnalytics {
-    WRUWKeys *keys = [[WRUWKeys alloc] init];
+    WRUWFMKeys *keys = [[WRUWFMKeys alloc] init];
 
     [ARAnalytics setupWithAnalytics:@{
             ARMixpanelToken : keys.mixpanelToken
@@ -116,7 +116,7 @@ void uncaughtExceptionHandler(NSException *exception) {
                                         ARAnalyticsClass: StreamPlayView.class,
                                         ARAnalyticsDetails: @[ @{
                                                 ARAnalyticsEventName: @"Stream Button Pressed",
-                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(statusChanged)),
+                                                ARAnalyticsSelectorName: NSStringFromSelector(@selector(didTapPlayer)),
                                                 }]
                                         },
                                                           @{

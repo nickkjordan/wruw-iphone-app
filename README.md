@@ -13,7 +13,7 @@ The app is now available on [the App Store](http://wruw.org/iphone). Now slowly 
 ## TO-DO
 - [x] Update networking layer, config with new API
 - [x] Fix bugs that cropped up from OS/Pods update
-- [ ] Convert Models to Swift
+- [x] Convert Models to Swift
 - [ ] Convert View Controllers to Swift
 - [ ] Add tests & MVVM architecture
 - [ ] Implement streams of previous archives
