@@ -60,8 +60,12 @@ class WruwApiClient: NSObject, APIClient {
     }
 
     @objc func request(completion: @escaping (WruwResult) -> Void) {
+        guard let router = router as? URLRequestConvertible else {
+            return
+        }
+
         manager
-            .networkRequest(router as! URLRequestConvertible)
+            .networkRequest(router)
             .data { completion(self.processData(response: $0)) }
     }
 

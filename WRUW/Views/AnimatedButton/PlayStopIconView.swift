@@ -16,7 +16,7 @@ class PlayStopIconView: UIView {
 
     override func layoutSubviews() {
         // initial shape of the view
-        initialPath = RoundedBezierIcons.RoundedPlayIcon(self.frame)
+        initialPath = RoundedBezierIcons.RoundedPlayIcon(frame: frame)
         
         // Create initial shape of the view
         shapeLayer.path = initialPath.cgPath
@@ -43,8 +43,8 @@ class PlayStopIconView: UIView {
         
         // Your new shape here
         animation.toValue = show ?
-            RoundedBezierIcons.RoundedPlayIcon(self.frame).cgPath :
-            RoundedBezierIcons.RoundedSquareIcon(self.frame).cgPath
+            RoundedBezierIcons.RoundedPlayIcon(frame: frame).cgPath :
+            RoundedBezierIcons.RoundedSquareIcon(frame: frame).cgPath
 
         animation.timingFunction =
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)

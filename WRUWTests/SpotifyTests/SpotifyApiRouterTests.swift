@@ -45,7 +45,11 @@ class SpotifyApiRouterTests: XCTestCase {
         router = SpotifyApiRouter(path: "search", parameters: nil)
         SpotifyApiRouter.token = validToken
 
-        let request = try! router.asURLRequest()
+        guard let request = try? router.asURLRequest() else {
+            XCTFail("Invalid request")
+            return
+        }
+
         XCTAssertEqual(request.url!.lastPathComponent, "search")
 
         let absoluteString = "https://api.spotify.com/v1/search"

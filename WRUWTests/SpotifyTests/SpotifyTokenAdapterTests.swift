@@ -13,8 +13,13 @@ class SpotifyTokenAdapterTests: XCTestCase {
         super.setUp()
 
         adapter = SpotifyTokenAdapter(accessToken: "", expiresIn: 60)
-        urlRequest =
-            try! URLRequest(url: "https://httpbin.org/get", method: .get)
+        guard let urlRequest =
+            try? URLRequest(url: "https://httpbin.org/get", method: .get) else {
+                XCTFail("Invalid request")
+                return
+        }
+
+        self.urlRequest = urlRequest
     }
 
     func testValidToken() {
@@ -22,7 +27,10 @@ class SpotifyTokenAdapterTests: XCTestCase {
     }
 
     func testAdaptsAuthorizationHeader() {
-        let adaptedRequest = try! adapter.adapt(urlRequest)
+        guard let adaptedRequest = try? adapter.adapt(urlRequest) else {
+            XCTFail("Unable to adapt request")
+            return
+        }
 
         let headerFields = adaptedRequest.allHTTPHeaderFields
         let hasAuthorizationHeader =
