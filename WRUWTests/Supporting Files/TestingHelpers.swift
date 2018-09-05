@@ -9,7 +9,7 @@ func stubbedResponse(_ filename: String) -> Data! {
 
     let bundle = Bundle(for: TestClass.self)
     let path = bundle.path(forResource: filename, ofType: "json")
-    
+
     return (try? Data(contentsOf: URL(fileURLWithPath: path!)))
 }
 
@@ -47,8 +47,8 @@ class MockManager: NetworkManager {
 
 // Mock Alamofire.Request
 class MockRequest {
-    var expectedData: Data? = nil
-    var expectedError: NSError? = nil
+    var expectedData: Data?
+    var expectedError: NSError? 
 }
 
 extension MockRequest: NetworkRequest {

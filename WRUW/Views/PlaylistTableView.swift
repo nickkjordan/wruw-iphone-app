@@ -101,7 +101,7 @@ fileprivate extension PlaylistTableView {
     // MARK: Release and Cover Art Requests
 
     func loadSpotifyArt() {
-        for (i, song) in self.arrayDataSource.items.enumerated() {
+        for (index, song) in self.arrayDataSource.items.enumerated() {
             guard let song = song as? Song, song.noImage else {
                 return
             }
@@ -127,7 +127,7 @@ fileprivate extension PlaylistTableView {
                         }
 
                         song.image = image
-                        self.reloadCoverArt(at: i)
+                        self.reloadCoverArt(at: index)
                 }
             }
         }
