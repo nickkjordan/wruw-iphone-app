@@ -74,7 +74,7 @@ class AnimatedButton: UIView {
         scaleAnimation.fromValue = NSNumber(value: 1.6 as Float)
         scaleAnimation.toValue = NSNumber(value: 1.4 as Float)
         scaleAnimation.timingFunction =
-            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            CAMediaTimingFunction(name: .easeInEaseOut)
         return scaleAnimation
     }()
 

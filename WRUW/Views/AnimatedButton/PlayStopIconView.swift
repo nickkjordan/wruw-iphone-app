@@ -46,12 +46,11 @@ class PlayStopIconView: UIView {
             RoundedBezierIcons.RoundedPlayIcon(self.frame).cgPath :
             RoundedBezierIcons.RoundedSquareIcon(self.frame).cgPath
 
-        animation.timingFunction =
-            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         
         // The next two line preserves the final shape of animation,
         // if you remove it the shape will return to the original shape after the animation finished
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         
         shapeLayer.add(animation, forKey: nil)
