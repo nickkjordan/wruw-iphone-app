@@ -46,7 +46,7 @@ import Alamofire
                 do {
                     urlRequest.httpBody = try JSONSerialization
                         .data(withJSONObject: parameters, options: [])
-                    print("HTTP Body: ", urlRequest.httpBody)
+                    print("HTTP Body: ", urlRequest.httpBody ?? "Empty")
                 } catch {
                     print("Error processing \(path) parameters")
                 }
