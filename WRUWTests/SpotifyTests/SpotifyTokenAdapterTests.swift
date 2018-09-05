@@ -44,11 +44,11 @@ class SpotifyTokenAdapterTests: XCTestCase {
         adapter = SpotifyTokenAdapter(accessToken: "", expiresIn: 0)
 
         do {
-            let _ = try adapter.adapt(urlRequest)
+            _ = try adapter.adapt(urlRequest)
         } catch let error as SpotifyApiError {
             XCTAssertEqual(error, SpotifyApiError.expiredToken)
         } catch {
-            XCTFail()
+            XCTFail("Unexpected Adapter error")
         }
     }
 }

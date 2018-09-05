@@ -1,12 +1,12 @@
 import Foundation
 
 @objc class PlaylistInfo: NSObject, Decodable {
-    @objc var id: Int = 0,
+    @objc var identifier: Int = 0,
         date: Date = Date(),
         showName: String = ""
 
     enum CodingKeys: String, CodingKey {
-        case id = "PlaylistID"
+        case identifier = "PlaylistID"
         case showName = "ShowName"
         case date = "PlaylistDate"
     }

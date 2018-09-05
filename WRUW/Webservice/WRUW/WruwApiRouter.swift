@@ -8,7 +8,7 @@ import Alamofire
     var path: String
 
     internal var parameters: NSDictionary?
-    
+
     required init(
         path: String,
         parameters: NSDictionary? = nil
@@ -62,5 +62,3 @@ import Alamofire
         return urlRequest
     }
 }
-
-

@@ -48,7 +48,7 @@ class MockManager: NetworkManager {
 // Mock Alamofire.Request
 class MockRequest {
     var expectedData: Data?
-    var expectedError: NSError? 
+    var expectedError: NSError?
 }
 
 extension MockRequest: NetworkRequest {

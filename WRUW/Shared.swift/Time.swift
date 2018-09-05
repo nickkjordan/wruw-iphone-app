@@ -30,7 +30,7 @@ import Foundation
 
         super.init()
     }
-    
+
     @objc init?(string: String) {
         guard let date = Time.dateFormatter.date(from: string) else {
             return nil
@@ -50,12 +50,12 @@ import Foundation
     }
 }
 
-func <(lhs: Time, rhs: Time) -> Bool {
+func < (lhs: Time, rhs: Time) -> Bool {
     return lhs.date < rhs.date
 }
 
-func ==(lhs: Time, rhs: Time) -> Bool {
+func == (lhs: Time, rhs: Time) -> Bool {
     return lhs.date == rhs.date
 }
 
-extension Time: Comparable  { }
+extension Time: Comparable { }
