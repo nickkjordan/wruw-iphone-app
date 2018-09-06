@@ -1192,7 +1192,7 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
@@ -1228,7 +1228,7 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
