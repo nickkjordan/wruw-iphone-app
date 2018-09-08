@@ -22,7 +22,7 @@ class StreamPlayViewModel: NSObject {
     }
 
     // MARK: Audio Player
-    
+
     fileprivate lazy var audioStreamPlayer: AVPlayer = {
         guard let urlStream = self.urlAddress else {
             return AVPlayer()
@@ -132,7 +132,7 @@ class StreamPlayViewModel: NSObject {
             [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0)]
     }()
 
-    fileprivate lazy var nowPlayingInfo: [String : Any] = {
+    fileprivate lazy var nowPlayingInfo: [String: Any] = {
         return [
             MPMediaItemPropertyTitle: "Listening Live",
             MPMediaItemPropertyArtist: "WRUW - 91.1 FM",

@@ -1,12 +1,12 @@
 import UIKit
 
 extension UIColor {
-    static func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat , _ alpha: CGFloat = 1)
+    static func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat = 1)
     -> UIColor {
         return UIColor(
-            red: r/255,
-            green: g/255,
-            blue: b/255,
+            red: red/255,
+            green: green/255,
+            blue: blue/255,
             alpha: alpha
         )
     }

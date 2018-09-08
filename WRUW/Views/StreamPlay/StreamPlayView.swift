@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-@objc class StreamPlayView: UIView  {
+@objc class StreamPlayView: UIView {
     let urlAddress = "http://wruw-stream.wruw.org:8000/stream128.mp3"
 
     var viewModel: StreamPlayViewModel!

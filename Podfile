@@ -17,6 +17,7 @@ pod 'RxCocoa', '~> 4.1.2'
 pod 'NSObject+Rx', '~> 4.3.0'
 pod 'SnapKit', '~> 4.0.0'
 pod 'Alamofire', '~> 4.7.2'
+pod 'SwiftLint'
 
   target 'WRUW-FMTests' do
     inherit! :search_paths

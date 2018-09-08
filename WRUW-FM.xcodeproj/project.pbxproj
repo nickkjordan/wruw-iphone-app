@@ -709,6 +709,7 @@
 				0170903317DBA8F80005EC0F /* Frameworks */,
 				0170903417DBA8F80005EC0F /* Resources */,
 				433438744CE760AA22535A5B /* [CP] Embed Pods Frameworks */,
+				01F6EBE0213F4DBA004CECD7 /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -839,6 +840,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01F6EBE0213F4DBA004CECD7 /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		156C7756F65FD2AADDC54545 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1177,7 +1192,7 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
@@ -1213,7 +1228,7 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
