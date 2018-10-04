@@ -50,7 +50,7 @@ class StreamPlayViewModel: NSObject {
 
         audioStreamPlayer.rx
             .observe(
-                AVPlayerStatus.self,
+                AVPlayer.Status.self,
                 "status",
                 options: .new,
                 retainSelf: true

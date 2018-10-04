@@ -14,7 +14,7 @@ extension UIImage {
     /// Convert to data
     var data: Data? {
         return hasAlpha
-            ? UIImagePNGRepresentation(self)
-            : UIImageJPEGRepresentation(self, 1.0)
+            ? self.pngData()
+            : self.jpegData(compressionQuality: 1.0)
     }
 }

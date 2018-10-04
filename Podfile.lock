@@ -16,9 +16,9 @@ PODS:
     - RxSwift (~> 4.0)
   - ReactiveObjC (2.1.2)
   - RSSwizzle (0.1.0)
-  - RxCocoa (4.1.2):
+  - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
+  - RxSwift (4.2.0)
   - SimulatorStatusMagic (2.1)
   - SnapKit (4.0.0)
   - SwiftLint (0.27.0)
@@ -30,10 +30,10 @@ DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - MarqueeLabel
   - "NSObject+Rx (~> 4.3.0)"
-  - RxCocoa (~> 4.1.2)
-  - RxSwift (~> 4.1.2)
+  - RxCocoa (from `https://github.com/ReactiveX/RxSwift.git`, branch `master`)
+  - RxSwift (~> 4.2.0)
   - SimulatorStatusMagic
-  - SnapKit (~> 4.0.0)
+  - SnapKit (from `https://github.com/SnapKit/SnapKit.git`, branch `develop`)
   - SwiftLint
 
 SPEC REPOS:
@@ -45,15 +45,27 @@ SPEC REPOS:
     - "NSObject+Rx"
     - ReactiveObjC
     - RSSwizzle
-    - RxCocoa
     - RxSwift
     - SimulatorStatusMagic
-    - SnapKit
     - SwiftLint
 
 EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
+  RxCocoa:
+    :branch: master
+    :git: https://github.com/ReactiveX/RxSwift.git
+  SnapKit:
+    :branch: develop
+    :git: https://github.com/SnapKit/SnapKit.git
+
+CHECKOUT OPTIONS:
+  RxCocoa:
+    :commit: d158e7700655114e990313948d2de561d50e1115
+    :git: https://github.com/ReactiveX/RxSwift.git
+  SnapKit:
+    :commit: 15beb5221834e220f099a87beb80cc9d9abb16cf
+    :git: https://github.com/SnapKit/SnapKit.git
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -64,12 +76,12 @@ SPEC CHECKSUMS:
   "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SimulatorStatusMagic: 481558caf2b9ccb2ceba2cc193728d4db3dcac07
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: 4b1c20a79bc7655f2bdefba4f008630681f63fe5
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 4baf0d5f7168b15d5e5f4a469c917ff59c7d7b98
+PODFILE CHECKSUM: 90fa24be326c2c151a43ae942ed67a1ae99c84e1
 
 COCOAPODS: 1.5.3

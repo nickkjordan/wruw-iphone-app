@@ -10,7 +10,8 @@ class SocialComposeViewController: SLComposeViewController {
 
         let topWindow = UIApplication.shared.windows.last
 
-        alertWindow?.windowLevel = topWindow?.windowLevel ?? 0 + 1
+        alertWindow?.windowLevel =
+            topWindow?.windowLevel ?? UIWindow.Level(rawValue: 1)
 
         alertWindow?.makeKeyAndVisible()
         alertWindow?.rootViewController?

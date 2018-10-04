@@ -14,7 +14,7 @@ class PlaylistTableView: UITableView {
         self.addSubview(view) { make in
             make.center.equalTo(self)
         }
-        view.activityIndicatorViewStyle = .gray
+        view.style = .gray
         view.color = UIColor.orange
         return view
     }()
