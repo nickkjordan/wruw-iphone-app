@@ -17,6 +17,7 @@ pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift.git', :branch => 'm
 pod 'NSObject+Rx', '~> 4.3.0'
 pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit.git', :branch => 'develop'
 pod 'Alamofire', '~> 4.7.2'
+pod 'SwiftLint'
 
   target 'WRUW-FMTests' do
     inherit! :search_paths

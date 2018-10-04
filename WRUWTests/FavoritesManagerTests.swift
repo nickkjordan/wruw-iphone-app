@@ -19,8 +19,15 @@ class FavoriteManagerTests: XCTestCase {
             Song.CodingKeys.album.rawValue: "Closer",
             Song.CodingKeys.label.rawValue: "London Records"
         ]
-        let data = try! JSONEncoder().encode(jsonDict as! [String: String])
-        song = try! JSONDecoder().decode(Song.self, from: data)
+
+        guard let stringDict = jsonDict as? [String: String],
+            let data = try? JSONEncoder().encode(stringDict),
+            let song = try? JSONDecoder().decode(Song.self, from: data) else {
+            XCTFail("Failure to construct Song object from json dictionary")
+            return
+        }
+
+        self.song = song
     }
 
     func testMockCreation() {

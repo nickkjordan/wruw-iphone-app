@@ -27,7 +27,7 @@ class TimeTests: XCTestCase {
 
     func testPostMeridiem() {
         let laterTime = Time(string: "14:00:00")
-        
+
         XCTAssertEqual("2:00 PM", laterTime!.displayTime())
     }
 

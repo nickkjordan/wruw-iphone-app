@@ -30,7 +30,7 @@ class AnimatedButton: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError() }
 
     // MARK: - Views
-    
+
     fileprivate lazy var circleView: UIView = {
         return CircleView()
             .backgroundColor(ThemeManager.current().streamButtonOrangeColor)
@@ -78,12 +78,12 @@ class AnimatedButton: UIView {
         return scaleAnimation
     }()
 
-    fileprivate lazy var playingColorAndScale: () -> () = {
+    fileprivate lazy var playingColorAndScale: () -> Void = {
         self.circleView.backgroundColor = ThemeManager.current().streamButtonRedColor
         self.circleView.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
     }
 
-    fileprivate lazy var stoppedColorAndScale: () -> () = {
+    fileprivate lazy var stoppedColorAndScale: () -> Void = {
         self.circleView.backgroundColor = ThemeManager.current().streamButtonOrangeColor
         self.circleView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }

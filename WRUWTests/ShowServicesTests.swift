@@ -39,7 +39,7 @@ class GetAllShowTests: NetworkingTests {
 
         getAllShowsService = GetAllShows(manager: mockManager)
     }
-    
+
     // MARK: - Enabled Tests
     func testSuccessResponse() {
         mockManager.expectedRequest?.expectedData = stubbedResponse("AllShows")

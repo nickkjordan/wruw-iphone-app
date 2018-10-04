@@ -33,7 +33,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 
     [session setActive:YES error:nil];
     if (![session setCategory:AVAudioSessionCategoryPlayback
-                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                  withOptions:0
                         error:&sessionError]) {
         // handle error
     }

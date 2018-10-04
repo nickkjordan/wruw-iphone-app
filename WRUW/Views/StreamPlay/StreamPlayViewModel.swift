@@ -22,7 +22,7 @@ class StreamPlayViewModel: NSObject {
     }
 
     // MARK: Audio Player
-    
+
     fileprivate lazy var audioStreamPlayer: AVPlayer = {
         guard let urlStream = self.urlAddress else {
             return AVPlayer()
@@ -110,7 +110,7 @@ class StreamPlayViewModel: NSObject {
 
     fileprivate lazy var artworkImage: UIImage = {
         let bundle = Bundle.main
-        if let path = bundle.path(forResource: "Default", ofType: "png"),
+        if let path = bundle.path(forResource: "iTunesArtwork", ofType: "png"),
             let imageView = UIImage(contentsOfFile: path) {
             return imageView
         }
@@ -132,7 +132,7 @@ class StreamPlayViewModel: NSObject {
             [MPNowPlayingInfoPropertyPlaybackRate: NSNumber(value: 1.0)]
     }()
 
-    fileprivate lazy var nowPlayingInfo: [String : Any] = {
+    fileprivate lazy var nowPlayingInfo: [String: Any] = {
         return [
             MPMediaItemPropertyTitle: "Listening Live",
             MPMediaItemPropertyArtist: "WRUW - 91.1 FM",

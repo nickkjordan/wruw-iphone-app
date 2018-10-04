@@ -42,7 +42,7 @@ import Foundation
         self.manager = manager
         decoder.dateDecodingStrategy = .formatted(PlaylistInfo.dateFormatter)
     }
-    
+
     @objc convenience init(showName: String) {
         self.init(manager: SessionManager.default, showName: showName)
     }

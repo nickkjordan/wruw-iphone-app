@@ -1,6 +1,6 @@
 import Foundation
 
-func ==(lhs: Song, rhs: Song) -> Bool {
+func == (lhs: Song, rhs: Song) -> Bool {
     return lhs.artist == rhs.artist && lhs.songName == rhs.songName
 }
 
