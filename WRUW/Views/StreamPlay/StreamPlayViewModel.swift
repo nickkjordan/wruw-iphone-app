@@ -110,7 +110,7 @@ class StreamPlayViewModel: NSObject {
 
     fileprivate lazy var artworkImage: UIImage = {
         let bundle = Bundle.main
-        if let path = bundle.path(forResource: "Default", ofType: "png"),
+        if let path = bundle.path(forResource: "iTunesArtwork", ofType: "png"),
             let imageView = UIImage(contentsOfFile: path) {
             return imageView
         }

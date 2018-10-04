@@ -21,7 +21,7 @@ PODS:
   - RxSwift (4.1.2)
   - SimulatorStatusMagic (2.1)
   - SnapKit (4.0.0)
-  - SwiftLint (0.25.1)
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.2)
@@ -68,7 +68,7 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SimulatorStatusMagic: 481558caf2b9ccb2ceba2cc193728d4db3dcac07
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
 PODFILE CHECKSUM: 4baf0d5f7168b15d5e5f4a469c917ff59c7d7b98
 
