@@ -7,10 +7,10 @@ func == (lhs: Song, rhs: Song) -> Bool {
 @objc(Song)
 
 class Song: NSObject, Codable {
-    @objc var artist: String!,
-        songName: String!,
-        album: String!,
-        label: String!
+    @objc var artist: String,
+        songName: String,
+        album: String,
+        label: String
 
     fileprivate var loadedImage: ImageWrapper?
 

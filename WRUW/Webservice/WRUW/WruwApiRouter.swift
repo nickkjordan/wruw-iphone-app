@@ -24,7 +24,7 @@ import Alamofire
         }
 
         let url = baseUrl.appendingPathComponent(path)
-        var urlRequest: URLRequest!
+        var urlRequest: URLRequest
 
         switch method {
         case .get:

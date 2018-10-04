@@ -107,7 +107,7 @@ fileprivate extension PlaylistTableView {
             }
 
             let spotifySearch =
-                SearchSpotify(query: "\(song.album!) \(song.artist!)")
+                SearchSpotify(query: "\(song.album) \(song.artist)")
 
             spotifySearch.request { [unowned self] result in
                 guard let albums = result.success as? [SpotifyAlbum],
