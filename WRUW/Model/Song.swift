@@ -1,16 +1,16 @@
 import Foundation
 
-func ==(lhs: Song, rhs: Song) -> Bool {
+func == (lhs: Song, rhs: Song) -> Bool {
     return lhs.artist == rhs.artist && lhs.songName == rhs.songName
 }
 
 @objc(Song)
 
 class Song: NSObject, Codable {
-    @objc var artist: String!,
-        songName: String!,
-        album: String!,
-        label: String!
+    @objc var artist: String,
+        songName: String,
+        album: String,
+        label: String
 
     fileprivate var loadedImage: ImageWrapper?
 

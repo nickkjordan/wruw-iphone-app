@@ -14,7 +14,7 @@ class PlaylistTableView: UITableView {
         self.addSubview(view) { make in
             make.center.equalTo(self)
         }
-        view.activityIndicatorViewStyle = .gray
+        view.style = .gray
         view.color = UIColor.orange
         return view
     }()
@@ -101,18 +101,18 @@ fileprivate extension PlaylistTableView {
     // MARK: Release and Cover Art Requests
 
     func loadSpotifyArt() {
-        for (i, song) in self.arrayDataSource.items.enumerated() {
+        for (index, song) in self.arrayDataSource.items.enumerated() {
             guard let song = song as? Song, song.noImage else {
                 return
             }
 
             let spotifySearch =
-                SearchSpotify(query: "\(song.album!) \(song.artist!)")
+                SearchSpotify(query: "\(song.album) \(song.artist)")
 
             spotifySearch.request { [unowned self] result in
                 guard let albums = result.success as? [SpotifyAlbum],
-                    let albumArt = albums.first?.images,
-                    let largestAlbumArt = albumArt.sorted(by: >).first else {
+                    let albumArt = albums.first?.images.sorted(by: >),
+                    let largestAlbumArt = albumArt.first else {
                     return
                 }
 
@@ -122,12 +122,12 @@ fileprivate extension PlaylistTableView {
                     .response { [unowned self] response in
                         guard let value = response.data,
                             let image = UIImage(data: value) else {
-                            print(response.error)
+                            print(response.error ?? "error")
                             return
                         }
 
                         song.image = image
-                        self.reloadCoverArt(at: i)
+                        self.reloadCoverArt(at: index)
                 }
             }
         }

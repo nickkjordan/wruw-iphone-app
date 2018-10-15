@@ -20,18 +20,18 @@ import Foundation
     }
 
     enum FavoriteKey: String {
-        case Songs = "favoriteSongs"
-        case Shows = "favoriteShows"
+        case songs = "favoriteSongs"
+        case shows = "favoriteShows"
     }
 
     // Can't use generics b/c of objc compatibility
 
     @objc func saveFavorite(show: Show) -> Bool {
-        return saveFavorite(item: show, key: .Shows)
+        return saveFavorite(item: show, key: .shows)
     }
 
     @objc func saveFavorite(song: Song) -> Bool {
-        return saveFavorite(item: song, key: .Songs)
+        return saveFavorite(item: song, key: .songs)
     }
 
     func saveFavorite<T: Codable & Hashable>(item: T, key: FavoriteKey) -> Bool {
@@ -56,11 +56,11 @@ import Foundation
     }
 
     @objc func loadFavoriteSongs() -> [Song] {
-        return loadFavorites(with: .Songs)
+        return loadFavorites(with: .songs)
     }
 
     @objc func loadFavoriteShows() -> [Show] {
-        return loadFavorites(with: .Shows)
+        return loadFavorites(with: .shows)
     }
 
     func loadFavorites<T: Codable>(with key: FavoriteKey) -> [T] {

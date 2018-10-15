@@ -26,7 +26,7 @@ extension UIView {
 
     @discardableResult func addSubview(
         _ subview: UIView,
-        constraintMaker: (ConstraintMaker) -> ()
+        constraintMaker: (ConstraintMaker) -> Void
     ) -> Self {
         addSubview(subview)
         subview.snp.makeConstraints(constraintMaker)

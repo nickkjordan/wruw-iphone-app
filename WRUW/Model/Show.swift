@@ -23,14 +23,6 @@ import Foundation
         case hosts = "ShowUsers"
     }
 
-    struct Host: Codable {
-        var host: String
-
-        enum CodingKeys: String, CodingKey {
-            case host = "DJName"
-        }
-    }
-
     @objc override init() {
         super.init()
     }
@@ -52,5 +44,13 @@ import Foundation
         }
 
         return title == show.title
+    }
+}
+
+struct Host: Codable {
+    var host: String
+
+    enum CodingKeys: String, CodingKey {
+        case host = "DJName"
     }
 }

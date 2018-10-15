@@ -709,6 +709,7 @@
 				0170903317DBA8F80005EC0F /* Frameworks */,
 				0170903417DBA8F80005EC0F /* Resources */,
 				433438744CE760AA22535A5B /* [CP] Embed Pods Frameworks */,
+				01F6EBE0213F4DBA004CECD7 /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -752,11 +753,11 @@
 				TargetAttributes = {
 					0170903517DBA8F80005EC0F = {
 						DevelopmentTeam = 7M2UVCY37Z;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 					0170906617DBA8F80005EC0F = {
 						DevelopmentTeam = 7M2UVCY37Z;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 						TestTargetID = 0170903517DBA8F80005EC0F;
 					};
 				};
@@ -839,6 +840,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01F6EBE0213F4DBA004CECD7 /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		156C7756F65FD2AADDC54545 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1177,14 +1192,13 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = Social/Social.h;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1213,14 +1227,13 @@
 				);
 				INFOPLIST_FILE = "WRUW/Supporting Files/WRUW-FM-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wruw.wruw;
 				PRODUCT_NAME = "WRUW-FM";
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = Social/Social.h;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/lib";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1245,8 +1258,7 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Debug;
@@ -1270,8 +1282,7 @@
 				PRODUCT_MODULE_NAME = WRUWModuleTests;
 				PRODUCT_NAME = WRUWTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WRUW/WRUW-FM-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WRUW-FM.app/WRUW-FM";
 			};
 			name = Release;

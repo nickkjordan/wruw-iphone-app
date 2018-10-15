@@ -8,7 +8,7 @@ import Alamofire
     var path: String
 
     internal var parameters: NSDictionary?
-    
+
     required init(
         path: String,
         parameters: NSDictionary? = nil
@@ -24,7 +24,7 @@ import Alamofire
         }
 
         let url = baseUrl.appendingPathComponent(path)
-        var urlRequest: URLRequest!
+        var urlRequest: URLRequest
 
         switch method {
         case .get:
@@ -46,7 +46,7 @@ import Alamofire
                 do {
                     urlRequest.httpBody = try JSONSerialization
                         .data(withJSONObject: parameters, options: [])
-                    print("HTTP Body: ", urlRequest.httpBody)
+                    print("HTTP Body: ", urlRequest.httpBody ?? "Empty")
                 } catch {
                     print("Error processing \(path) parameters")
                 }
@@ -62,5 +62,3 @@ import Alamofire
         return urlRequest
     }
 }
-
-
