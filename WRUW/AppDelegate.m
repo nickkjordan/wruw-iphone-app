@@ -13,7 +13,6 @@
 #import "WRUWModule-Swift.h"
 #import "SongTableViewCell.h"
 #import "HomeViewController.h"
-#import "GroupedProgramsTableViewController.h"
 //#import "SDStatusBarManager.h"
 
 @implementation AppDelegate

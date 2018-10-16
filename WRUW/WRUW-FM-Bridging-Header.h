@@ -12,5 +12,6 @@
 #import "ArrayDataSource.h"
 #import "SongTableViewCell.h"
 #import <Social/Social.h>
+#import "ShowsTableViewController.h"
 
 #endif /* WRUW_FM_Bridging_Header_h */

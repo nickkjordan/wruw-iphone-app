@@ -224,7 +224,7 @@
         <!--Programs-->
         <scene sceneID="qlM-pt-XyV">
             <objects>
-                <tableViewController title="Programs" id="Jsf-nb-LkS" customClass="GroupedProgramsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Programs" id="Jsf-nb-LkS" customClass="GroupedProgramsTableViewController" customModule="WRUWModule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Y8k-nH-7vc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
