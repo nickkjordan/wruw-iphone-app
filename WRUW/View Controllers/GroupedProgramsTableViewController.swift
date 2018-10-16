@@ -24,7 +24,7 @@ class GroupedProgramsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView,
-                   titleForHeaderInSection section: Int) -> String? {
+                            titleForHeaderInSection section: Int) -> String? {
         return "Pick A Day"
     }
 
