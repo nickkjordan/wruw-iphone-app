@@ -32,7 +32,6 @@
 		01312D2B18AA9A74001FFD61 /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2918AA9A74001FFD61 /* facebook_blue.png */; };
 		01312D2C18AA9A74001FFD61 /* twitter_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 01312D2A18AA9A74001FFD61 /* twitter_blue.png */; };
 		0132CD3B18E228590089C9D0 /* GroupedProgramsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */; };
-		01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01344B081ADC4C3F00F19914 /* AboutViewController.m */; };
 		0135505818430BB300534E5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0135505718430BB300534E5E /* Social.framework */; };
 		0137201A1AD5ACEF00BF3219 /* info_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720171AD5ACEF00BF3219 /* info_24.png */; };
 		0137201B1AD5ACEF00BF3219 /* info_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 013720181AD5ACEF00BF3219 /* info_48.png */; };
@@ -116,6 +115,7 @@
 		01DD15EE20DAC0270001860F /* SpotifyAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DD15ED20DAC0270001860F /* SpotifyAlbum.swift */; };
 		01DFBE9F20D96D8100E7279D /* SpotifyTokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFBE9E20D96D8100E7279D /* SpotifyTokenAdapterTests.swift */; };
 		01DFBEA120D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DFBEA020D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift */; };
+		01E6552F2176868E00A4C65C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E6552E2176868E00A4C65C /* AboutViewController.swift */; };
 		01F40DC018396A7800BFA783 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DBF18396A7800BFA783 /* CoreMedia.framework */; };
 		01F40DC218396A8900BFA783 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC118396A8900BFA783 /* AVFoundation.framework */; };
 		01F40DC418396A9200BFA783 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F40DC318396A9200BFA783 /* MediaPlayer.framework */; };
@@ -173,8 +173,6 @@
 		01312D2A18AA9A74001FFD61 /* twitter_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_blue.png; sourceTree = "<group>"; };
 		0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupedProgramsTableViewController.h; sourceTree = "<group>"; };
 		0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupedProgramsTableViewController.m; sourceTree = "<group>"; };
-		01344B071ADC4C3F00F19914 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		01344B081ADC4C3F00F19914 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		0135505718430BB300534E5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		013720171AD5ACEF00BF3219 /* info_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_24.png; sourceTree = "<group>"; };
 		013720181AD5ACEF00BF3219 /* info_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_48.png; sourceTree = "<group>"; };
@@ -270,6 +268,7 @@
 		01DD15ED20DAC0270001860F /* SpotifyAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbum.swift; sourceTree = "<group>"; };
 		01DFBE9E20D96D8100E7279D /* SpotifyTokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyTokenAdapterTests.swift; sourceTree = "<group>"; };
 		01DFBEA020D97C5A00E7279D /* SpotifyOAuth2HandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyOAuth2HandlerTests.swift; sourceTree = "<group>"; };
+		01E6552E2176868E00A4C65C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		01F40DBF18396A7800BFA783 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		01F40DC118396A8900BFA783 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		01F40DC318396A9200BFA783 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -383,8 +382,7 @@
 		014F00CF20976C8B00BAF5AE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01344B071ADC4C3F00F19914 /* AboutViewController.h */,
-				01344B081ADC4C3F00F19914 /* AboutViewController.m */,
+				01E6552E2176868E00A4C65C /* AboutViewController.swift */,
 				0132CD3918E228590089C9D0 /* GroupedProgramsTableViewController.h */,
 				0132CD3A18E228590089C9D0 /* GroupedProgramsTableViewController.m */,
 				0153B8F5189C827100331DD9 /* HomeViewController.h */,
@@ -946,7 +944,7 @@
 				01042C091AC06A42003112F3 /* RoundedBezierIcons.swift in Sources */,
 				01B94BA820437724000874E1 /* WruwApiRouter.swift in Sources */,
 				0138A9211AC0A4140091B7E5 /* StreamPlayView.swift in Sources */,
-				01344B091ADC4C3F00F19914 /* AboutViewController.m in Sources */,
+				01E6552F2176868E00A4C65C /* AboutViewController.swift in Sources */,
 				012C9271184009E000C94210 /* FavoritesTableViewController.m in Sources */,
 				01B9C2DC2062AA4800B18890 /* PlaylistTableView.swift in Sources */,
 				01CAFF651C8B677800AD1E95 /* UIColor+extensions.swift in Sources */,

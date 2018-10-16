@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="TJP-Mi-X5P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="TJP-Mi-X5P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -170,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNn-q0-3IC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592.5" y="-679.5"/>
+            <point key="canvasLocation" x="2548" y="-611.24437781109452"/>
         </scene>
         <!--Songs-->
         <scene sceneID="VOb-Hb-W5f">
@@ -220,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmJ-ej-oVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-577"/>
+            <point key="canvasLocation" x="3497.5999999999999" y="-519.04047976011998"/>
         </scene>
         <!--Programs-->
         <scene sceneID="qlM-pt-XyV">
@@ -261,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uur-gI-b45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="835"/>
+            <point key="canvasLocation" x="2531.1999999999998" y="751.12443778110946"/>
         </scene>
         <!--WRUW Shows-->
         <scene sceneID="CrZ-Yg-l7n">
@@ -292,7 +291,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMY-oc-8KR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="816"/>
+            <point key="canvasLocation" x="3451.1999999999998" y="734.03298350824593"/>
         </scene>
         <!--Program Details-->
         <scene sceneID="EQl-1z-VBy">
@@ -345,7 +344,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-1E-viR">
-                                        <rect key="frame" x="29.5" y="168" width="316" height="255"/>
+                                        <rect key="frame" x="30" y="167.5" width="315" height="255"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -404,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zd2-mc-H9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2664.5" y="820.5"/>
+            <point key="canvasLocation" x="4263.1999999999998" y="738.08095952023996"/>
         </scene>
         <!--Playlists-->
         <scene sceneID="0AV-8r-I6f">
@@ -436,7 +435,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rua-o1-Pd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3101" y="821"/>
+            <point key="canvasLocation" x="4961.6000000000004" y="738.53073463268368"/>
         </scene>
         <!--Archive List-->
         <scene sceneID="bMi-9T-ZOy">
@@ -464,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpT-Q5-ah9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3547" y="821"/>
+            <point key="canvasLocation" x="5675.1999999999998" y="738.53073463268368"/>
         </scene>
         <!--Programs-->
         <scene sceneID="XBk-md-lI5">
@@ -483,12 +482,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kk3-Xr-yFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="835"/>
+            <point key="canvasLocation" x="1646.4000000000001" y="751.12443778110946"/>
         </scene>
         <!--About-->
         <scene sceneID="PEr-jF-Wnk">
             <objects>
-                <viewController title="About" id="oMC-G1-mfc" customClass="AboutViewController" sceneMemberID="viewController">
+                <viewController title="About" id="oMC-G1-mfc" customClass="AboutViewController" customModule="WRUWModule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V1Y-hk-7aB"/>
                         <viewControllerLayoutGuide type="bottom" id="1C5-BD-gnS"/>
@@ -571,13 +570,13 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                     <tabBarItem key="tabBarItem" title="About" image="info_24.png" id="wx7-R5-KgQ"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="appInfoText" destination="CBE-eV-ZcY" id="ZD1-Fi-nv2"/>
-                        <outlet property="wruwInfoText" destination="aF2-h7-d16" id="EwF-sU-eps"/>
+                        <outlet property="appInfoText" destination="CBE-eV-ZcY" id="mKS-bU-QpV"/>
+                        <outlet property="wruwInfoText" destination="aF2-h7-d16" id="6eh-2e-k6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncn-mv-G5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="1482"/>
+            <point key="canvasLocation" x="1371.2" y="1333.1334332833585"/>
         </scene>
         <!--Shows-->
         <scene sceneID="T3M-jd-0dH">
@@ -634,7 +633,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anx-Fn-Db6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141" y="75"/>
+            <point key="canvasLocation" x="3425.5999999999999" y="67.466266866566727"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vLY-Wy-5OB">
@@ -657,7 +656,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjS-CV-MxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="97"/>
+            <point key="canvasLocation" x="804.79999999999995" y="87.256371814092958"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="zH7-PQ-gYE">
@@ -676,7 +675,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9O-M1-wsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="141"/>
+            <point key="canvasLocation" x="1697.5999999999999" y="126.83658170914543"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="nIG-sw-2Zz">
@@ -714,7 +713,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnD-Tv-X44" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="146"/>
+            <point key="canvasLocation" x="2536" y="131.33433283358323"/>
         </scene>
         <!--Home Navigation-->
         <scene sceneID="wU0-Ot-8i5">
@@ -733,7 +732,7 @@ For more information, you can visit www.wruw.org, or call into the station at 21
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMY-L9-4HX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="-679"/>
+            <point key="canvasLocation" x="1697.5999999999999" y="-610.79460269865069"/>
         </scene>
     </scenes>
     <resources>
