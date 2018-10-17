@@ -22,7 +22,6 @@
 		010F292B17E21AE900DC3631 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292117E21AE900DC3631 /* iTunesArtwork.png */; };
 		010F292C17E21AE900DC3631 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */; };
 		01188AD8209B772600FE3775 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01188AD4209B768200FE3775 /* FavoritesManagerTests.swift */; };
-		011CA3602177A706009D225A /* TableViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CA35F2177A706009D225A /* TableViewConfiguration.swift */; };
 		011FC229190C1E320074C93A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011FC228190C1E320074C93A /* AudioToolbox.framework */; };
 		011FECDD1836A506009B5BFA /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDC1836A506009B5BFA /* ShowsTableViewController.m */; };
 		011FECE01836A531009B5BFA /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011FECDF1836A531009B5BFA /* DisplayViewController.m */; };
@@ -160,7 +159,6 @@
 		010F292117E21AE900DC3631 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		010F292217E21AE900DC3631 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		01188AD4209B768200FE3775 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
-		011CA35F2177A706009D225A /* TableViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewConfiguration.swift; sourceTree = "<group>"; };
 		011FC228190C1E320074C93A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		011FECDB1836A506009B5BFA /* ShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowsTableViewController.h; sourceTree = "<group>"; };
 		011FECDC1836A506009B5BFA /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowsTableViewController.m; sourceTree = "<group>"; };
@@ -652,7 +650,6 @@
 				010CF7A71898B8AC00875209 /* ArrayDataSource.m */,
 				01AFA8E02097A46400FCF468 /* FavoritesManager.swift */,
 				01D3A47D209913F40017DF17 /* ImageWrapper.swift */,
-				011CA35F2177A706009D225A /* TableViewConfiguration.swift */,
 				01CAFF621C8B663600AD1E95 /* Theme.swift */,
 				01B02B68206558DF00673F25 /* Time.swift */,
 				0153003C20C6181D00DB3ADB /* UserDefaultsProtocol.swift */,
@@ -960,7 +957,6 @@
 				01C5EBBE2048AF8A00A43212 /* BaseWebservice.swift in Sources */,
 				0197579520C9E094008B9E81 /* AuthorizationServices.swift in Sources */,
 				01CFAA56183BA0C200535F96 /* SongTableViewCell.m in Sources */,
-				011CA3602177A706009D225A /* TableViewConfiguration.swift in Sources */,
 				0104CCC92044BC8500D3EB8F /* PlaylistServices.swift in Sources */,
 				01AFA8E12097A46400FCF468 /* FavoritesManager.swift in Sources */,
 				01E6553321768F8500A4C65C /* FavoriteShowsViewController.swift in Sources */,

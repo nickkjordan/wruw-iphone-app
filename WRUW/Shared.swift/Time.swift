@@ -22,6 +22,14 @@ import Foundation
         case date
     }
 
+    func encode(to encoder: Encoder) throws {
+        let string = Time.dateFormatter.string(from: date)
+
+        var container = encoder.singleValueContainer()
+
+        try container.encode(string)
+    }
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let string = try container.decode(String.self)

@@ -32,7 +32,7 @@
     if (self) {
         self.items = anItems;
         self.cellIdentifier = aCellIdentifier;
-        self.configureCellBlock = [aConfigureCellBlock copy];
+        self.configureCellBlock = aConfigureCellBlock;
     }
     return self;
 }

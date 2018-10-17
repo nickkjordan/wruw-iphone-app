@@ -16,15 +16,17 @@ class FavoriteShowsViewController: UITableViewController {
         return emptyView!
     }()
 
-    private lazy var configureCell: TableViewCellConfigure = {
-        (_ cell: ShowCell, _ item: Show) in
+    private lazy var configureCell: TableViewCellConfigureBlock = {
+        (_ cell, _ item) in
+        guard let item = item as? Show, let cell = cell as? ShowCell else { return }
+
         cell.configure(for: item)
     }
 
     private lazy var arrayDataSource =
         ArrayDataSource(items: NSMutableArray(array: self.favorites),
                         cellIdentifier: "ShowCell",
-                        configureCellBlock: self.configureCell as? TableViewCellConfigureBlock)
+                        configureCellBlock: self.configureCell)
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let displayViewController = segue.destination as? DisplayViewController,
