@@ -13,5 +13,6 @@
 #import "SongTableViewCell.h"
 #import <Social/Social.h>
 #import "ShowsTableViewController.h"
+#import "EmptyFavoritesView.h"
 
 #endif /* WRUW_FM_Bridging_Header_h */

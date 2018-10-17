@@ -7,7 +7,6 @@
 //
 
 #import "EmptyFavoritesView.h"
-#import "FavoriteShowsTableViewController.h"
 #import "FavoritesTableViewController.h"
 
 typedef NS_ENUM(NSInteger, FavoritesStyle) {
